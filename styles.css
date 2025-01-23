@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000fa;  
+    color: whitesmoke;  
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #0e0e0e;
+    /* background-color: #0f0f0ffb; */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+header img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: white; 
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+header p {
+    color: #ddd;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    background-color: #050505; 
+    color: whitesmoke;
+    font-size: 1.2rem;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:6px;
+}
+
+.button:hover {
+    background-color: #333;  
+    opacity: 0.7; 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); 
+    transform: translateY(-4px)
+}
+footer{
+    padding-top: 40px;
+}
+
+.tiktok-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #00F2EA, #FF0077);  
+    color: white;
+    font-size: 1.4rem;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tiktok-button i {
+    font-size: 1.6rem; 
+    margin-right: 10px; 
+}
+
+.tiktok-button:hover {
+    background: linear-gradient(45deg, #FF0077, #00F2EA);  
+    transform: scale(1.05);  
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.tiktok-button:active {
+    transform: scale(1);  
+}
+
+.instagram-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #F58529, #D50F6C, #833AB4);  /* Instagram-inspired gradient */
+    color: white;
+    font-size: 1.4rem;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.instagram-button i {
+    font-size: 1.6rem; 
+    margin-right: 10px; 
+}
+
+.instagram-button:hover {
+    background: linear-gradient(45deg, #833AB4, #D50F6C, #F58529);  
+    transform: scale(1.05);  
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-button:active {
+    transform: scale(1);  
+}
+
+
+.view-menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #808032, #c0c015); 
+    color: white;
+    font-size: 1.4rem;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.view-menu-button i {
+    font-size: 1.6rem; 
+    margin-right: 10px; 
+}
+
+.view-menu-button:hover {
+    background: linear-gradient(45deg, #c0c015,#808032); 
+    transform: scale(1.05);  
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.view-menu-button:active {
+    transform: scale(1); 
+}
+
+.order-now-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #471d1d, #ff0000); 
+    color: white;
+    font-size: 1.4rem;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.order-now-button i {
+    font-size: 1.6rem; 
+    margin-right: 10px; 
+}
+
+.order-now-button:hover {
+    background: linear-gradient(45deg, #ff0000, #471d1d);
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.order-now-button:active {
+    transform: scale(1);  
+}
