@@ -6,44 +6,62 @@
     <meta name="description" content="Ciccio's Burger">
     <title>Ciccio's Burger</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="logo.ico">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <div id="menuModal" class="modal">
-            <div class="modal-content" id="outer-modal">
-                <span class="close-btn" id="closeMenuBtn">&times;</span>
-                <div class="" id="container">
-                </div>
-            </div>
-        </div>
+        <!-- Header -->
         <header>
             <img src="logo.webp" alt="Ciccio's Burger Logo" class="logo">
             <h1>Ciccio's Burger</h1>
-            <p>📍Palermo - Viale Boris Giuliano 4<br>📍Palermo - Via Isidoro La Lumia 73<br>📍Palermo - Via Isidoro La Lumia 73<br>🛵Anche su Glovo💨 </p>
+            <p>
+                📍Palermo - Viale Boris Giuliano 4<br>
+                📍Palermo - Via Isidoro La Lumia 73<br>
+                📍Palermo - Viale del Fante, 50A, 50B, 50C<br>
+                🛵Anche su Glovo💨
+            </p>
         </header>
+
+        <!-- Main Content -->
         <main>
             <div class="button-container">
-                <a href="#" class="view-menu-button" id="showMenuButton">
-                    <i class="fas fa-utensils"></i> Mostra Menù
-                </a>
-                <a href="https://cicciosburger.pro.alvolo.app/" target="_blank" class="button order-now-button">
-                    <i class="fas fa-shipping-fast"></i> Ordina Ora
-                </a>
-                <a href="https://www.instagram.com/cicciosburger_" target="_blank" class="button instagram-button">
-                    <i class="fa-brands fa-instagram"></i> Instagram
-                </a>
+                <div class="near-buttons-container">
+                    <a href="#" class="button view-menu-button" id="showMenuButton">
+                        <i class="fas fa-utensils"></i> Mostra Menù
+                    </a>
+                    <a href="https://cicciosburger.pro.alvolo.app/TCAT/delivery" target="_blank" class="button order-now-button">
+                        <i class="fas fa-shipping-fast"></i> Ordina Ora
+                    </a>
+                </div>
                 <a href="https://www.tiktok.com/@cicciosburger" target="_blank" class="button tiktok-button">
-                    <i class="fa-brands fa-tiktok"></i> TikTok
+                    <i class="fab fa-tiktok"></i> TikTok
                 </a>
+                <div class="near-buttons-container">
+                    <a href="https://www.instagram.com/cicciosburger_" target="_blank" class="button instagram-button" style="display:inline">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://www.facebook.com/cicciosburger" target="_blank" class="button facebook-button" style="display:inline">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                </div>
             </div>
         </main>
 
+        <!-- Footer -->
         <footer>
             <p>&copy; 2025 Ciccio's Burger. All rights reserved.</p>
         </footer>
+
+        <!-- Modal -->
+        <div id="menuModal" class="modal">
+            <div class="modal-content" id="outer-modal">
+                <span class="close-btn" id="closeMenuBtn">&times;</span>
+                <div id="container"></div>
+                <h2 style="margin-bottom: 20px;">VISUALIZZA MENÙ</h2>
+            </div>
+        </div>
     </div>
 </body>
 </html>
