@@ -1,347 +1,555 @@
+/* General Reset */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/* Body and Container */
 body {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: #000000fa;
-	text-align: center;
-	padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000fa;
+    text-align: center;
+    padding: 20px;
 }
+
 .container {
-	max-width: 600px;
-	margin: 0 auto;
-	padding: 40px;
-	background-color: #0e0e0e;
-	/* background-color: #0f0f0ffb;
-	*/
-	border-radius: 12px;
-	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #0e0e0e;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* Header */
 header img {
-	width: 180px;
-	height: 180px;
-	border-radius: 50%;
-	margin-bottom: 20px;
-	object-fit: cover;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
 }
+
 header h1 {
-	font-size: 2.5rem;
-	color: white;
-	margin-bottom: 10px;
-	font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
 }
+
 header p {
-	color: #ddd;
-	font-size: 1.1rem;
-	margin-bottom: 40px;
-	font-weight: 300;
-	line-height: 1.5;
+    color: #ddd;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    line-height: 1.5;
 }
+
+/* Buttons */
 .button-container {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
 }
-.button {
-	display: inline-block;
-	background-color: #050505;
-	color: whitesmoke;
-	font-size: 1.2rem;
-	padding: 16px 24px;
-	border-radius: 50px;
-	text-decoration: none;
-	width: 100%;
-	text-align: center;
-	transition: all 0.3s ease;
-	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 6px;
+
+.button, .tiktok-button, .instagram-button, .facebook-button, .view-menu-button, .order-now-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
-.button:hover {
-	background-color: #333;
-	opacity: 0.7;
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-	transform: translateY(-4px)
+
+.button:hover, .tiktok-button:hover, .instagram-button:hover, .facebook-button:hover, .view-menu-button:hover, .order-now-button:hover {
+    opacity: 0.7;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
-footer {
-	padding-top: 40px;
+
+.button:active, .tiktok-button:active, .instagram-button:active, .facebook-button:active, .view-menu-button:active, .order-now-button:active {
+    transform: scale(1);
 }
+
+.button i, .tiktok-button i, .instagram-button i, .facebook-button i, .view-menu-button i, .order-now-button i {
+    font-size: 1.6rem;
+    margin-right: 10px;
+}
+
+/* Specific Button Styles */
 .tiktok-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(45deg, #00F2EA, #FF0077);
-	/* TikTok-inspired gradient */
-	color: white;
-	font-size: 1.4rem;
-	padding: 16px 24px;
-	border-radius: 50px;
-	text-decoration: none;
-	width: 100%;
-	text-align: center;
-	font-weight: bold;
-	border: none;
-	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
-	cursor: pointer;
+    background: linear-gradient(45deg, #00F2EA, #FF0077);
 }
-.tiktok-button i {
-	font-size: 1.6rem;
-	/* Icon size */
-	margin-right: 10px;
-	/* Space between icon and text */
-}
+
 .tiktok-button:hover {
-	background: linear-gradient(45deg, #FF0077, #00F2EA);
-	/* Reverse gradient on hover */
-	transform: scale(1.05);
-	/* Slightly enlarge the button */
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #FF0077, #00F2EA);
 }
-.tiktok-button:active {
-	transform: scale(1);
-	/* Slightly shrink the button when clicked */
-}
-/* Base Instagram Button Styling */
+
 .instagram-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(45deg, #F58529, #D50F6C, #833AB4);
-	/* Instagram-inspired gradient */
-	color: white;
-	font-size: 1.4rem;
-	padding: 16px 24px;
-	border-radius: 50px;
-	text-decoration: none;
-	width: 100%;
-	text-align: center;
-	font-weight: bold;
-	border: none;
-	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
-	cursor: pointer;
+    background: linear-gradient(45deg, #F58529, #D50F6C, #833AB4);
 }
-.instagram-button i {
-	font-size: 1.6rem;
-	/* Icon size */
-	margin-right: 10px;
-	/* Space between icon and text */
-}
+
 .instagram-button:hover {
-	background: linear-gradient(45deg, #833AB4, #D50F6C, #F58529);
-	/* Reverse gradient on hover */
-	transform: scale(1.05);
-	/* Slightly enlarge the button */
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #833AB4, #D50F6C, #F58529);
 }
-.instagram-button:active {
-	transform: scale(1);
-	/* Slightly shrink the button when clicked */
+
+.facebook-button {
+    background: linear-gradient(45deg, #1877F2, #0A58CA);
 }
-/* Base View Menu Button Styling */
+
+.facebook-button:hover {
+    background: linear-gradient(45deg, #0A58CA, #1877F2);
+}
+
 .view-menu-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(45deg, #808032, #c0c015);
-	/* Vibrant gradient */
-	color: white;
-	font-size: 1.4rem;
-	padding: 16px 24px;
-	border-radius: 50px;
-	text-decoration: none;
-	width: 100%;
-	text-align: center;
-	font-weight: bold;
-	border: none;
-	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
-	cursor: pointer;
+    background: linear-gradient(45deg, #808032, #c0c015);
 }
-.view-menu-button i {
-	font-size: 1.6rem;
-	/* Icon size */
-	margin-right: 10px;
-	/* Space between icon and text */
-}
+
 .view-menu-button:hover {
-	background: linear-gradient(45deg, #c0c015, #808032);
-	/* Reverse gradient on hover */
-	transform: scale(1.05);
-	/* Slightly enlarge the button */
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #c0c015, #808032);
 }
-.view-menu-button:active {
-	transform: scale(1);
-	/* Slightly shrink the button when clicked */
-}
-/* Base Order Now Button Styling */
+
 .order-now-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(45deg, #471d1d, #ff0000);
-	/* Orange-yellow gradient */
-	color: white;
-	font-size: 1.4rem;
-	padding: 16px 24px;
-	border-radius: 50px;
-	text-decoration: none;
-	width: 100%;
-	text-align: center;
-	font-weight: bold;
-	border: none;
-	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
-	cursor: pointer;
+    background: linear-gradient(45deg, #471d1d, #ff0000);
 }
-.order-now-button i {
-	font-size: 1.6rem;
-	/* Icon size */
-	margin-right: 10px;
-	/* Space between icon and text */
-}
+
 .order-now-button:hover {
-	background: linear-gradient(45deg, #ff0000, #471d1d);
-	/* Reverse gradient on hover */
-	transform: scale(1.05);
-	/* Slightly enlarge the button */
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #ff0000, #471d1d);
 }
-.order-now-button:active {
-	transform: scale(1);
-	/* Slightly shrink the button when clicked */
+
+/* Footer */
+footer {
+    padding-top: 40px;
+    color: #ddd;
 }
-/* ----------------------------------- */
-/* Base styling for the View Menu button */
-/* Modal Background */
+
+/* Modal */
 .modal {
-	display: none;
-	/* Hidden by default */
-	position: fixed;
-	z-index: 1;
-	/* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	/* Black with transparency */
-	overflow: auto;
-	padding-top: 60px;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding-top: 60px;
 }
-/* Modal Content Box */
+
 .modal-content {
-	background-color: #fff;
-	margin: 5% auto;
-	padding: 20px;
-	border-radius: 10px;
-	width: 80%;
-	/* Width of the modal */
-	max-width: 900px;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
 }
-/* Close Button */
+
 .close-btn {
-	color: #aaa;
-	font-size: 36px;
-	font-weight: bold;
-	position: absolute;
-	right: 20px;
-	top: 20px;
-	cursor: pointer;
+    color: #aaa;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
 }
-.close-btn:hover,.close-btn:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
+
+.close-btn:hover, .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
-/* Menu Items Grid */
+
+/* Menu Grid */
 .menu-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-	/* Flexible columns */
-	gap: 15px;
-	/* Space between items */
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: 3px solid black;
-	padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
-/* Individual Menu Item Styling */
+
 .menu-item {
-	background-color: #f9f9f9;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	text-align: center;
-	padding: 15px;
-	transition: transform 0.3s ease;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border:1px solid black;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
 }
-/* .menu-item:hover {
-	transform: scale(1.02);
-}
-*/
-/* Image Styling */
+
 .menu-item img {
-	width: 100%;
-	height: 200px;
-	/* Fixed height for images */
-	object-fit: contain;
-	/* Ensure image covers the container */
-	border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
 }
-/* Text Styling */
-.menu-item h3 {
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: #333;
-	margin: 10px 0;
+
+.menu-item h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
 }
+
 .menu-item .product-price {
-	font-size: 1.2rem;
-	color: #050505;
-	/* Orange color for price */
-	margin: 10px 0;
+    font-size: 1.2rem;
+    color: #050505;
+    margin: 10px 0;
 }
+
 .menu-item .product-description {
-	font-size: 1rem;
-	color: #777;
-	/* Grey color for description */
-	padding: 0 10px;
+    font-size: 1rem;
+    color: #777;
+    padding: 0 10px;
 }
-.category-container {
-	margin: 20px;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 8px;
+
+/* Collapsible Buttons */
+.collapsible {
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
-.category-title {
-	background-color: black;
-	font-size: 24px;
-	font-weight: bold;
-	color:white;
-	border: 2px solid black;
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
 }
-.product-container {
-	margin-top: 10px;
-	padding: 10px;
-	border-top: 2px solid black;
+
+.collapsible.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
-.product-title {
-	font-size: 20px;
-	color:#050505;
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
-.product-price {
-	font-size: 18px;
-	color: green;
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+	margin:0px;
+	padding:0px;
 }
-.product-img {
-	width: 100px;
-	height: 100px;
+
+.menu-item img {
+    display: none; /* Hide images by default */
+}
+
+.content.open .menu-item img {
+    display: block; /* Show images when expanded */
+}
+
+/* Default layout for larger screens */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.menu-item h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.menu-item .product-price {
+    font-size: 1.2rem;
+    color: #050505;
+    margin: 10px 0;
+}
+
+.menu-item .product-description {
+    font-size: 1rem;
+    color: #777;
+    padding: 0 10px;
+}
+
+
+/* Collapsible Button */
+.collapsible {
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark text color */
+    font-size: 1.1rem;
+    font-weight: 600; /* Semi-bold text */
+    padding: 12px 20px; /* Comfortable padding */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hover Effect */
+.collapsible:hover {
+    background-color: #f9f9f9; /* Light background on hover */
+    border-color: #d0d0d0; /* Slightly darker border on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Active State (When Button is Open) */
+.collapsible.active {
+    background-color: #f5f5f5; /* Slightly darker background when open */
+    border-color: #c0c0c0; /* Darker border when open */
+}
+
+/* Icon for Collapsible Button */
+.collapsible::after {
+    content: '\25BC'; /* Unicode for down arrow (▼) */
+    font-size: 0.9rem;
+    color: #666; /* Subtle icon color */
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+/* Rotate Icon When Button is Active */
+.collapsible.active::after {
+    transform: rotate(180deg); /* Rotate arrow when open */
+}
+
+/* Collapsible Content */
+.content {
+    padding: 0 20px; /* Padding for content */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-top: none; /* Remove top border to blend with button */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth expansion */
+}
+
+
+
+/* Collapsible Content */
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth expansion */
+    padding: 0 20px; /* Padding for content */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-top: none; /* Remove top border to blend with button */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}
+
+/* Expanded Content */
+.content.open {
+    padding: 20px; /* Add padding when expanded */
+}
+
+/* Default layout for larger screens */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.menu-item h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.menu-item .product-price {
+    font-size: 1.2rem;
+    color: #050505;
+    margin: 10px 0;
+}
+
+.menu-item .product-description {
+    font-size: 1rem;
+    color: #777;
+    padding: 0 10px;
+}
+
+/* Mobile layout */
+/* Mobile layout */
+@media (max-width: 900px) {
+    .menu-item {
+        display: grid;
+        grid-template-columns: 100px 1fr ; /* Left column for text, right column for image */
+        grid-template-rows: auto auto auto; /* Three rows for title, description, and price */
+        gap: 10px; /* Space between grid items */
+        align-items: start;
+        text-align: left;
+        overflow: hidden; /* Prevent content from overflowing */
+    }
+
+    .menu-item img {
+        width: 100px; /* Adjust image width for mobile */
+        height: 100px; /* Adjust image height for mobile */
+        max-width: 100%; /* Ensure the image doesn't exceed its container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: contain; /* Scale the image to fit within the container */
+        grid-column: 1; /* Place image in the right column */
+        grid-row: 1 / span 3; /* Span image across all rows */
+        align-self: center; /* Center the image vertically */
+        margin: 0; /* Remove default margin */
+        border: 0.5px solid black;
+    }
+
+    .menu-item h1 {
+        grid-column: 2; /* Place title in the left column */
+        grid-row: 1; /* Place title in the top row */
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .menu-item .product-description {
+        grid-column: 2; /* Place description in the left column */
+        grid-row: 2; /* Place description in the middle row */
+        font-size: 0.9rem;
+        padding: 0;
+    }
+
+    .menu-item .product-price {
+        grid-column: 3; /* Place price in the left column */
+        grid-row: 1; /* Place price in the bottom row */
+        font-size: 1rem;
+        margin: 0;
+    }
+	.modal-content {
+		width: 90%;
+	  }
+	.menu-grid {
+		grid-template-columns: auto;
+		gap:10px;
+		margin-bottom:10px;
+	}
+}
+
+/* Mobile layout for screens smaller than 400px */
+@media (max-width: 450px) {
+	header p{
+		margin-bottom:20px;
+	}
+	header img{
+		margin-bottom:0px;
+	}
+	footer{
+		padding-top:15px;
+	}
+	.container{
+		padding:25px;
+	}
+    .menu-item {
+        grid-template-columns: 80px 1fr; /* Reduce image width and allocate more space for text */
+        gap: 5px; /* Reduce gap between items */
+    }
+
+    .menu-item img {
+        width: 80px; /* Adjust image width for very small screens */
+        height: 80px; /* Adjust image height for very small screens */
+    }
+
+    .menu-item h1 {
+        font-size: 1rem; /* Reduce font size for title */
+    }
+
+    .menu-item .product-description {
+        font-size: 0.8rem; /* Reduce font size for description */
+    }
+
+    .menu-item .product-price {
+        font-size: 0.9rem; /* Reduce font size for price */
+        grid-column: 2; /* Move price to the second column */
+        grid-row: 3; /* Place price in the bottom row */
+    }
+	.modal-content {
+		width: 95%;
+	  }
+	.menu-grid {
+		grid-template-columns: auto;
+		gap:10px;
+		margin-bottom:10px;
+	}
+}
+
+@media (min-width: 1200px) {
+	/* Container for Instagram and Facebook buttons */
+	.near-buttons-container {
+		display: flex;
+		gap: 8px; /* Space between the two buttons */
+		width: 100%; /* Make the container take the full width */
+	}
+
+	/* Adjust the width of Instagram and Facebook buttons */
+	.near-buttons-container .button {
+		flex: 1; /* Each button takes equal space */
+		width: 50%; /* Each button takes half the container width */
+	}
+
+	/* Ensure the buttons align properly */
+	.near-buttons-container .instagram-button,
+	.near-buttons-container .facebook-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+@media (max-width: 1200px) {
+	.near-buttons-container {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		justify-content: center;
+	}
+}
+
+.fa-leaf{
+	color:green;
 }
