@@ -4480,9 +4480,9 @@
             "active": true,
             "visible": true,
             "relevant": false,
-            "title": "CONFIGURA IL MENU'",
+            "title": "CREA IL TUO MENÙ",
             "short_description": null,
-            "long_description": "CONFIGURA IL MENU'",
+            "long_description": "CONFIGURA IL MENÙ",
             "catalog_assoc": [{
                 "catalog": 781
             }],
