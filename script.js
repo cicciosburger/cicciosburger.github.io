@@ -55,30 +55,36 @@ document.addEventListener("DOMContentLoaded", function () {
                         leafIcon.style.marginLeft = "10px"; // Add some spacing
                         title.appendChild(leafIcon);
                     }
+                    console.log(product.price.price);
+                    if (product.price[0].price==0){
+                        let titleExtracted,lowestPrice;
+                        lowestPrice=product.variants[0].items[0].price_variation;
+                        titleExtracted = product.title
+                        if (product.title.includes("(")) {
+                            let inputString = product.title;
+                            const openParenIndex = inputString.indexOf("(");
 
-                    if (product.title.includes("(")) {
-                        let inputString = product.title;
-                        const openParenIndex = inputString.indexOf("(");
-                        const closeParenIndex = inputString.indexOf(")");
-                        let titleExtracted, priceExtracted;
+                            if (openParenIndex !== -1) {
+                                titleExtracted = inputString.slice(0, openParenIndex).trim();
+                            } else {
+                                titleExtracted = inputString.trim();
+                                lowestPrice= "";
+                            }
 
-                        if (openParenIndex !== -1 && closeParenIndex !== -1) {
-                            titleExtracted = inputString.slice(0, openParenIndex).trim();
-                            priceExtracted = inputString.slice(openParenIndex + 1, closeParenIndex).trim();
-                        } else {
-                            titleExtracted = inputString.trim();
-                            priceExtracted = "Nessun prezzo disponibile!";
+                            
+                        }//menu
+                        for(item in product.variants[0].items){
+                            if(item.price_variation<lowestPrice){
+                                lowestPrice=item.price_variation;
+                            }
                         }
-
                         title.prepend(document.createTextNode(titleExtracted)); // Add text before the icon
-                        price.textContent = priceExtracted;
-                    } else {
+                        price.textContent = `da ${parseFloat(lowestPrice).toFixed(2).toString().replace(".",",")}€`;
+                        
+                    } 
+                    else {
                         title.prepend(document.createTextNode(product.title)); // Add text before the icon
-                        if (product.price[0].price == 0) {
-                            price.textContent = ``;
-                        } else {
-                            price.textContent = `${product.price[0].price.toString().replace(".", ",")}€`;
-                        }
+                        price.textContent = `${parseFloat(product.price[0].price).toFixed(2).toString().replace(".", ",")}€`;
                     }
 
                     const image = document.createElement("img");
