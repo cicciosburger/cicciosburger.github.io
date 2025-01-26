@@ -39,7 +39,31 @@
                 "product_id": 5497,
                 "order": 9
             }]
-        }, {
+        },  {
+            "id": 567,
+            "code": "10300",
+            "active": true,
+            "visible": true,
+            "title": "CLASSIC BURGER",
+            "short_description": "CLASSIC BURGER",
+            "long_description": "CLASSIC BURGER",
+            "thumb": null,
+            "parent": null,
+            "order": 4,
+            "items_assoc": [{
+                "product_id": 5096,
+                "order": 1
+            }, {
+                "product_id": 6116,
+                "order": 2
+            }, {
+                "product_id": 6117,
+                "order": 3
+            }, {
+                "product_id": 6118,
+                "order": 4
+            }]
+        },{
             "id": 566,
             "code": "10200",
             "active": true,
@@ -88,30 +112,24 @@
                 "order": 12
             }]
         }, {
-            "id": 567,
-            "code": "10300",
+            "id": 781,
+            "code": "11200",
             "active": true,
             "visible": true,
-            "title": "CLASSIC BURGER",
-            "short_description": "CLASSIC BURGER",
-            "long_description": "CLASSIC BURGER",
+            "title": "MENU BURGER",
+            "short_description": "MENU",
+            "long_description": "MENU",
             "thumb": null,
             "parent": null,
-            "order": 4,
+            "order": 10,
             "items_assoc": [{
-                "product_id": 5096,
+                "product_id": 7721,
                 "order": 1
             }, {
-                "product_id": 6116,
+                "product_id": 12296,
                 "order": 2
-            }, {
-                "product_id": 6117,
-                "order": 3
-            }, {
-                "product_id": 6118,
-                "order": 4
             }]
-        }, {
+        },{
             "id": 568,
             "code": "10400",
             "active": true,
@@ -188,24 +206,6 @@
             }, {
                 "product_id": 6135,
                 "order": 4
-            }]
-        }, {
-            "id": 781,
-            "code": "11200",
-            "active": true,
-            "visible": true,
-            "title": "MENU",
-            "short_description": "MENU",
-            "long_description": "MENU",
-            "thumb": null,
-            "parent": null,
-            "order": 10,
-            "items_assoc": [{
-                "product_id": 7721,
-                "order": 1
-            }, {
-                "product_id": 12296,
-                "order": 2
             }]
         }]
     },
