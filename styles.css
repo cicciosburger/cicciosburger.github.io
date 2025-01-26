@@ -54,7 +54,7 @@ header p {
     justify-content: center;
 }
 
-.button, .tiktok-button, .instagram-button, .facebook-button, .view-menu-button, .order-now-button {
+.button, .tiktok-button, .instagram-button, .truck-button, .view-menu-button, .order-now-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -72,17 +72,17 @@ header p {
     cursor: pointer;
 }
 
-.button:hover, .tiktok-button:hover, .instagram-button:hover, .facebook-button:hover, .view-menu-button:hover, .order-now-button:hover {
+.button:hover, .tiktok-button:hover, .instagram-button:hover, .truck-button:hover, .view-menu-button:hover, .order-now-button:hover {
     opacity: 0.7;
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.button:active, .tiktok-button:active, .instagram-button:active, .facebook-button:active, .view-menu-button:active, .order-now-button:active {
+.button:active, .tiktok-button:active, .instagram-button:active, .truck-button:active, .view-menu-button:active, .order-now-button:active {
     transform: scale(1);
 }
 
-.button i, .tiktok-button i, .instagram-button i, .facebook-button i, .view-menu-button i, .order-now-button i {
+.button i, .tiktok-button i, .instagram-button i, .truck-button i, .view-menu-button i, .order-now-button i {
     font-size: 1.6rem;
     margin-right: 10px;
 }
@@ -104,12 +104,12 @@ header p {
     background: linear-gradient(45deg, #833AB4, #D50F6C, #F58529);
 }
 
-.facebook-button {
-    background: linear-gradient(45deg, #1877F2, #0A58CA);
+.truck-button {
+    background: linear-gradient(45deg, #4285F4, #34A853);
 }
 
-.facebook-button:hover {
-    background: linear-gradient(45deg, #0A58CA, #1877F2);
+.truck-button:hover {
+    background: linear-gradient(45deg, #34A853, #4285F4);
 }
 
 .view-menu-button {
@@ -562,4 +562,86 @@ footer {
 
 .fa-leaf{
 	color:green;
+}
+
+/* Locate Food Truck Button */
+.locate-foodtruck-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: linear-gradient(45deg, #4285F4, #34A853); /* Google Maps-inspired gradient */
+}
+
+.locate-foodtruck-button:hover {
+    background: linear-gradient(45deg, #34A853, #4285F4); /* Reverse gradient on hover */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.locate-foodtruck-button:active {
+    transform: scale(0.98); /* Slight scale-down effect when clicked */
+}
+
+.locate-foodtruck-button i {
+    font-size: 1.6rem;
+    margin-right: 10px;
+}
+
+/* Modal Styles */
+.modalTruck {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    overflow: auto;
+}
+
+.modalTruck-content {
+    background-color: #fff;
+    margin: 20% auto; /* Center the modal vertically */
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.modalTruck-content p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+}
+
+.closeTruck-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.closeTruck-btn:hover,
+.closeTruck-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
