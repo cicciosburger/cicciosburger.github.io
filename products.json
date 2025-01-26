@@ -35,55 +35,7 @@
             "cart_crossselling": [],
             "fixed_price": false,
             "frozen": false,
-            "variants": [{
-                "code": "$P_129_10101_A9850",
-                "title": "SALSA",
-                "short_description": null,
-                "long_description": null,
-                "min": null,
-                "max": 10,
-                "items": [{
-                    "code": "10509",
-                    "title": "BBQ HEINZ",
-                    "short_description": null,
-                    "long_description": null,
-                    "price_variation": 0.4,
-                    "default": 0,
-                    "min": null,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "10501",
-                    "title": "MAIONESE HEINZ",
-                    "short_description": null,
-                    "long_description": null,
-                    "price_variation": 0.4,
-                    "default": 0,
-                    "min": null,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "10507",
-                    "title": "SALSA CICCIO'S 60ML",
-                    "short_description": null,
-                    "long_description": null,
-                    "price_variation": 1,
-                    "default": 0,
-                    "min": null,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "10511",
-                    "title": "KETCHUP HEINZ",
-                    "short_description": null,
-                    "long_description": null,
-                    "price_variation": 0.4,
-                    "default": 0,
-                    "min": null,
-                    "max": 1,
-                    "price_part": false
-                }]
-            }],
+            "variants": null,
             "capacity_required": 0,
             "capacity_required_default": 0,
             "enable_name_on_package": false
@@ -107,7 +59,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di pollo pastellato e fritto, cheddar, bacon, lattuga, salsa Ciccio's",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_13ba5cad7a42aecddb7abd403d118be3_crispy.jpg",
@@ -352,7 +304,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, salsa Ciccio's",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_c603e0ba9545dab26818c0fdfbf0e6db_hamburger.jpg",
@@ -606,7 +558,7 @@
                 "vat": 10
             }],
             "ingredients": "bocconcini di pollo tritato pastellati, fatti a mano",
-            "allergens": "Gluten, Eggs, Milk",
+            "allergens": "Glutine, Uova, Latte",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_2d809b226b5c98055724039020e3baf4_nuggets.jpg",
@@ -673,7 +625,7 @@
                 "vat": 10
             }],
             "ingredients": "patate con buccia con crema di cheddar home made e bacon croccante",
-            "allergens": "Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_3225373cb14ad7773bd62ca0b62450d5_bacon-cheese-fries.jpg",
@@ -688,55 +640,7 @@
             "cart_crossselling": [],
             "fixed_price": false,
             "frozen": false,
-            "variants": [{
-                "code": "$P_129_10102_A9855",
-                "title": "SALSA",
-                "short_description": null,
-                "long_description": null,
-                "min": null,
-                "max": 10,
-                "items": [{
-                    "code": "10509",
-                    "title": "BBQ HEINZ",
-                    "short_description": null,
-                    "long_description": null,
-                    "price_variation": 0.4,
-                    "default": 0,
-                    "min": null,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "10501",
-                    "title": "MAIONESE HEINZ",
-                    "short_description": null,
-                    "long_description": null,
-                    "price_variation": 0.4,
-                    "default": 0,
-                    "min": null,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "10507",
-                    "title": "SALSA CICCIO'S 60ML",
-                    "short_description": null,
-                    "long_description": null,
-                    "price_variation": 1,
-                    "default": 0,
-                    "min": null,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "10511",
-                    "title": "KETCHUP HEINZ",
-                    "short_description": null,
-                    "long_description": null,
-                    "price_variation": 0.4,
-                    "default": 0,
-                    "min": null,
-                    "max": 1,
-                    "price_part": false
-                }]
-            }],
+            "variants": null,
             "capacity_required": 0,
             "capacity_required_default": 0,
             "enable_name_on_package": false
@@ -1267,7 +1171,7 @@
                 "vat": 10
             }],
             "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante",
-            "allergens": "Gluten, Eggs, Milk",
+            "allergens": "Glutine, Uova, Latte",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_e51bacd5d58ed5117ba9665ac79ac84e_chicken-pop-corn.jpg",
@@ -1334,7 +1238,7 @@
                 "vat": 10
             }],
             "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio",
-            "allergens": "Gluten, Eggs, Milk",
+            "allergens": "Glutine, Uova, Latte",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_eefd63fff0e36a650f49c8ae435a68a2_meat-ball.jpg",
@@ -1401,7 +1305,7 @@
                 "vat": 10
             }],
             "ingredients": "provola dolce con tripla pastellatura a mano",
-            "allergens": "Gluten, Milk",
+            "allergens": "Glutine, Latte",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_d8ffaede354e0a140da413c2f315648c_provola-goat.jpg",
@@ -1439,16 +1343,6 @@
                     "short_description": null,
                     "long_description": null,
                     "price_variation": 0.4,
-                    "default": 0,
-                    "min": null,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "10507",
-                    "title": "SALSA CICCIO'S 60ML",
-                    "short_description": null,
-                    "long_description": null,
-                    "price_variation": 1,
                     "default": 0,
                     "min": null,
                     "max": 1,
@@ -1622,7 +1516,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, cheddar, salsa Ciccio's",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_619edc41b73dc049e121fe18aea31ee3_cheese-burger.jpg",
@@ -1847,7 +1741,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_c17af969f571d67af8ec92b94e1c26da_bacon-cheese-burger.jpg",
@@ -2082,7 +1976,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_dbc94473d699833349047fff6b205489_american-bacon-cheese.jpg",
@@ -2337,7 +2231,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_202e2e86826c14ac2e4ff7b756ac893e_brie.jpg",
@@ -2592,7 +2486,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_136d218b8e937e1cf0e5a3aa764ec193_tal.jpg",
@@ -2857,7 +2751,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_4d9c505b960f6f09e7e9d6723f720be5_egg.jpg",
@@ -3112,7 +3006,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccant",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_0b116762652e7b88c6a1b1fc109c3ec2_tuma.jpg",
@@ -3367,7 +3261,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fic",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard, Sulphur dioxide and sulphites",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape, Anidride solforosa e solfiti",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_4235260f7b75554d82d8e7320a0ebd00_pancetta.jpg",
@@ -3642,7 +3536,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_9e508afa5a6791555d526aa34feca2f0_double-triple.jpg",
@@ -3877,7 +3771,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di pollo fritto con panatura super croccante, lattuga, pomodoro, maionese",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_39c694d9414751fd14d4ef61a54e70b2_crispy-goat1.jpg",
@@ -4112,7 +4006,7 @@
                 "vat": 10
             }],
             "ingredients": "ciabatta di rimacino con sovracoscia di pollo in doppia cottura, scamorza, lattuga, pomodoro, s",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_0555d820e6040723aa5dfc9f3814eac2_chicken-cbt.jpg",
@@ -4199,7 +4093,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, Burger vegetale, lattuga, cheddar, cipolla caramellata, salsa ciccio's",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_b9dde3ca74e89872c1b187d9ae30ee34_green.jpg",
@@ -4444,7 +4338,7 @@
                 "vat": 10
             }],
             "ingredients": "Panino con nutella e bacon",
-            "allergens": "Gluten",
+            "allergens": "Glutine",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_cbc3d936c31215260875f93e40a1c4d4_kiss_67890061aff41.jpg",
@@ -4522,7 +4416,7 @@
                 "vat": 10
             }],
             "ingredients": null,
-            "allergens": "Gluten, Milk",
+            "allergens": "Glutine, Latte",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_167604feff4eac0a2b59c8f162d5b5a0_tiramiciccios.jpg",
@@ -4561,7 +4455,7 @@
                 "vat": 10
             }],
             "ingredients": null,
-            "allergens": "Gluten, Eggs, Milk",
+            "allergens": "Glutine, Uova, Latte",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_bd4ecc727683a32ff0ca06cf6a4884bc_brookies_678900349284b.jpg",
@@ -5041,7 +4935,7 @@
                 "vat": 10
             }],
             "ingredients": "Alette di pollo pastellate e fritte",
-            "allergens": "Gluten, Peanuts, Nuts, Mustard",
+            "allergens": "Glutine, Arachidi, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_abee1c5250a888efab079a4486c28150_alette-crunchy.jpg",
@@ -5136,7 +5030,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's ",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_bafc0c53271177c403503e4f6cf4fc71_old-school.jpg",
@@ -5391,7 +5285,7 @@
                 "vat": 10
             }],
             "ingredients": "bun, burger di manzo 170g, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Cic",
-            "allergens": "Gluten, Eggs, Peanuts, Milk, Nuts, Mustard",
+            "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {
                 "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_b325557aacf46cbdb966deedfe2cc39f_porchetta.jpg",
@@ -5690,6 +5584,70 @@
                     "price_part": false
                 }]
             }, {
+                "code": "$MIG_10_$M_2",
+                "title": null,
+                "short_description": null,
+                "long_description": null,
+                "min": 1,
+                "max": 1,
+                "items": [{
+                    "code": "$MI_10101",
+                    "title": "FRIES",
+                    "short_description": "patate con buccia",
+                    "long_description": null,
+                    "price_variation": 0,
+                    "default": 1,
+                    "min": 1,
+                    "max": 1,
+                    "price_part": false
+                }]
+            }, {
+                "code": "$MIG_11_$M_2",
+                "title": null,
+                "short_description": null,
+                "long_description": null,
+                "min": 1,
+                "max": 1,
+                "items": [{
+                    "code": "$MI_10913",
+                    "title": "NUGGETS 2 PEZZI",
+                    "short_description": " ",
+                    "long_description": null,
+                    "price_variation": 0,
+                    "default": 1,
+                    "min": 1,
+                    "max": 1,
+                    "price_part": false
+                }]
+            }, {
+                "code": "$MIG_9_$M_2",
+                "title": "BIBITE",
+                "short_description": null,
+                "long_description": null,
+                "min": 1,
+                "max": 1,
+                "items": [{
+                    "code": "$MI_10415",
+                    "title": "ACQUA NATURALE 25CL",
+                    "short_description": " ",
+                    "long_description": null,
+                    "price_variation": 0,
+                    "default": 0,
+                    "min": 1,
+                    "max": 1,
+                    "price_part": false
+                }, {
+                    "code": "$MI_10416",
+                    "title": "COCA COLA 25CL",
+                    "short_description": " ",
+                    "long_description": null,
+                    "price_variation": 0,
+                    "default": 0,
+                    "min": 1,
+                    "max": 1,
+                    "price_part": false
+                }]
+            }, {
                 "code": "$MIG_7_$M_2",
                 "title": "SALSE",
                 "short_description": null,
@@ -5726,82 +5684,6 @@
                     "min": 1,
                     "max": 1,
                     "price_part": false
-                }, {
-                    "code": "$MI_10507",
-                    "title": "SALSA CICCIO'S 60ML",
-                    "short_description": " ",
-                    "long_description": null,
-                    "price_variation": 0,
-                    "default": 0,
-                    "min": 1,
-                    "max": 1,
-                    "price_part": false
-                }]
-            }, {
-                "code": "$MIG_8_$M_2",
-                "title": "STARTERS",
-                "short_description": null,
-                "long_description": null,
-                "min": 1,
-                "max": 1,
-                "items": [{
-                    "code": "$MI_10101",
-                    "title": "FRIES",
-                    "short_description": "patate con buccia",
-                    "long_description": null,
-                    "price_variation": 0,
-                    "default": 0,
-                    "min": 1,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "$MI_10913",
-                    "title": "NUGGETS 2 PEZZI",
-                    "short_description": " ",
-                    "long_description": null,
-                    "price_variation": 0,
-                    "default": 0,
-                    "min": 1,
-                    "max": 1,
-                    "price_part": false
-                }]
-            }, {
-                "code": "$MIG_9_$M_2",
-                "title": "BIBITE",
-                "short_description": null,
-                "long_description": null,
-                "min": 1,
-                "max": 1,
-                "items": [{
-                    "code": "$MI_10415",
-                    "title": "ACQUA NATURALE 25CL",
-                    "short_description": " ",
-                    "long_description": null,
-                    "price_variation": 0,
-                    "default": 0,
-                    "min": 1,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "$MI_10416",
-                    "title": "COCA COLA 25CL",
-                    "short_description": " ",
-                    "long_description": null,
-                    "price_variation": 0,
-                    "default": 0,
-                    "min": 1,
-                    "max": 1,
-                    "price_part": false
-                }, {
-                    "code": "$MI_10417",
-                    "title": "COCA COLA SENZA CAFFEINA 25CL",
-                    "short_description": " ",
-                    "long_description": null,
-                    "price_variation": 0,
-                    "default": 0,
-                    "min": 1,
-                    "max": 1,
-                    "price_part": false
                 }]
             }],
             "capacity_required": null,
@@ -5809,5 +5691,5 @@
             "enable_name_on_package": false
         }]
     },
-    "crc": "26cdab014734d3caff3eafad8bae76ba"
+    "crc": "e93247d536cc165a7920dcc9bdeb534f"
 }
