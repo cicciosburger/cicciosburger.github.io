@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const description = document.createElement("p");
                     description.classList.add("product-description");
-                    description.textContent = product.short_description;
+                    description.textContent = product.ingredients;
 
                     productDiv.appendChild(image);
                     productDiv.appendChild(title);
@@ -125,6 +125,41 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Expand the content
                 content.style.maxHeight = content.scrollHeight + 50 + "px"; // Use scrollHeight for dynamic height
             }
+        }
+    });
+    // Get references to the modal and buttons
+    const openMapModalButton = document.getElementById('open-map-modal');
+    const inactiveModal = document.getElementById('inactive-modal');
+    const closeInactiveModalButton = document.getElementById('close-inactive-modal');
+
+    // Function to check if the <a> tag has an href attribute
+    function checkHref() {
+        const href = openMapModalButton.getAttribute('href');
+        if (!href || href === '#') {
+            inactiveModal.style.display = 'block'; // Show the "Food Truck non attivo!" modal
+            return false; // Prevent further action
+        }
+        return true; // Allow further action
+    }
+
+    // Open the modal or navigate to the link when the button is clicked
+    openMapModalButton.addEventListener('click', (e) => {
+        // Check if the <a> tag has an href attribute
+        if (!checkHref()) {
+            e.preventDefault(); // Prevent default link behavior only if href is not set
+        }
+        // If href is set, the link will open normally
+    });
+
+    // Close the "Food Truck non attivo!" modal when the close button is clicked
+    closeInactiveModalButton.addEventListener('click', () => {
+        inactiveModal.style.display = 'none'; // Hide the modal
+    });
+
+    // Close the "Food Truck non attivo!" modal when clicking outside the modal content
+    window.addEventListener('click', (e) => {
+        if (e.target === inactiveModal) {
+            inactiveModal.style.display = 'none'; // Hide the modal
         }
     });
 });
