@@ -686,17 +686,17 @@ footer {
 .allergeni-container{
     display:flex;
 }
-.leggenda-text{
+.legenda-text{
     display:inline;
     margin-bottom:10px;
 }
-.leggenda-container{
+.legenda-container{
     /* display: inline; */
     margin-bottom:30px;
     /* padding:30px; */
     
 }
-.icona-leggenda{
+.icona-legenda{
     display: inline;
     padding-left:2px;
     padding-right:2px;
@@ -708,7 +708,7 @@ footer {
     display:flex;
 
 }
-.leggenda-item{
+.legenda-item{
     display: inline;
 }
   /* .glutine { background: #FFA726; }       
@@ -726,7 +726,7 @@ footer {
   .senape { background: #FBC02D; }       
   .solfiti { background: #B0BEC5; }       */
 
-  .leggenda-container {
+  .legenda-container {
     margin-top:5px;
     display: flex;
     flex-wrap: wrap; /* Permette agli elementi di andare a capo */
@@ -734,14 +734,14 @@ footer {
     margin-bottom: 30px;
 }
 
-.leggenda-item {
+.legenda-item {
     display: flex;
     align-items: center; /* Allinea icona e testo verticalmente */
     gap: 5px; /* Spazio tra icona e testo */
     white-space: nowrap; /* Impedisce al testo di andare a capo */
 }
 
-.icona-leggenda {
+.icona-legenda {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -754,7 +754,7 @@ footer {
     margin: 2px;
 }
 
-.leggenda-text {
+.legenda-text {
     font-weight: 500;
     color: grey;
     margin-bottom:0px;
@@ -831,7 +831,7 @@ footer {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
-    border:1px solid black;
+    border: 1px solid black;
     background: linear-gradient(45deg, #4285F4, #34A853); /* Gradiente ispirato a Google */
 }
 
