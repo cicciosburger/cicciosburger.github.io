@@ -831,6 +831,7 @@ footer {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
+    border:1px solid black;
     background: linear-gradient(45deg, #4285F4, #34A853); /* Gradiente ispirato a Google */
 }
 
