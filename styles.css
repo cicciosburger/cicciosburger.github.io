@@ -916,8 +916,9 @@ footer {
     color:whitesmoke;
     background: #005AA7;
   background: linear-gradient(
-    to left,
-    #005AA7,#8d8d8d
+    to right,
+    #8d8d8d,
+    #005AA7
   );
 }
 
@@ -935,4 +936,11 @@ footer {
     #0a2342
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: -olinear-gradient(to top, #283e51, #0a2342);
+}
+
+.delivery{
+    color:whitesmoke;
+    background: #005AA7;
+    background: light;
+  background: linear-gradient(45deg,#005AA7, rgb(74, 136, 175), #005AA7);
 }
