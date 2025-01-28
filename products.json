@@ -4539,7 +4539,7 @@
                 }, {
                     "code": "$MI_11104",
                     "title": "BRIE",
-                    "short_description": "bun, burger di manzo 170g, songino, brie, cipolla ",
+                    "short_description": "bun, burger di manzo 170g, songino, brie, cipolla",
                     "long_description": null,
                     "price_variation": 13.4,
                     "default": 0,
@@ -5284,7 +5284,7 @@
                 "vat_price": 9.9,
                 "vat": 10
             }],
-            "ingredients": "burger di manzo 170g, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
+            "ingredients": "burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
             "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
             "notes": null,
             "thumb": {

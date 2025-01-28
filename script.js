@@ -17,6 +17,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    // Mappatura degli allergeni con le classi CSS
+    const allergeniMap = {
+        "Glutine": { className: "glutine", emoji: "🌾" },
+        "Latte": { className: "latte", emoji: "🥛" },
+        "Uova": { className: "uova", emoji: "🥚" },
+        "Frutta a guscio": { className: "frutta-a-guscio", emoji: "🌰" },
+        "Arachidi": { className: "arachidi", emoji: "🥜" },
+        "Soia": { className: "soia", emoji: "🌱" },
+        "Pesce": { className: "pesce", emoji: "🐟" },
+        "Crostacei": { className: "crostacei", emoji: "🦐" },
+        "Molluschi": { className: "molluschi", emoji: "🐚" },
+        "Sedano": { className: "sedano", emoji: "🥬" },
+        "Lupini": { className: "lupini", emoji: "🌼" },
+        "Sesamo": { className: "sesamo", emoji: "⚪" },
+        "Senape": { className: "senape", emoji: "🟡" },
+        "Solfiti": { className: "solfiti", emoji: "⚗️" },
+      };
+    
     // Load categories and products
     Promise.all([
         fetch('categories.json').then(response => response.json()),
@@ -34,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const categoryDiv = document.createElement("div");
             categoryDiv.classList.add("menu-grid", "content");
             outerContainer.appendChild(categoryDiv);
+            
+
 
             category.items_assoc.forEach(item => {
                 const product = productData.payload.products.find(p => p.id === item.product_id);
@@ -55,7 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         leafIcon.style.marginLeft = "10px"; // Add some spacing
                         title.appendChild(leafIcon);
                     }
-                    console.log(product.price.price);
+
+
                     if (product.price[0].price==0){
                         let titleExtracted,lowestPrice;
                         lowestPrice=product.variants[0].items[0].price_variation;
@@ -99,6 +120,34 @@ document.addEventListener("DOMContentLoaded", function () {
                     productDiv.appendChild(title);
                     productDiv.appendChild(description);
                     productDiv.appendChild(price);
+                    if(product.allergens){
+                        // Contenitore in cui aggiungere le icone
+                        const allergeniContainer = document.createElement("div");
+                        allergeniContainer.classList.add("allergeni-container");
+                        
+                        const allergeniText = document.createElement("p");
+                        allergeniText.classList.add("allergeni-text");
+                        // allergeniText.classList.add("product-description");
+                        allergeniText.textContent="Allergeni"
+                        allergeniContainer.appendChild(allergeniText)
+                        // Dividiamo la lista degli allergeni
+                        listallergeni = product.allergens;
+                        const allergeniArray = listallergeni.split(", ");
+
+                        // Iteriamo sugli allergeni e aggiungiamo le icone
+                        allergeniArray.forEach(allergene => {
+                            const allergeneData = allergeniMap[allergene];
+                            if (allergeneData) {
+                                // Creiamo l'elemento div per l'icona
+                                const icona = document.createElement("div");
+                                icona.className = `icona ${allergeneData.className}`;
+                                icona.textContent = allergeneData.emoji; // Mostra solo l'icona (emoji)
+                                allergeniContainer.appendChild(icona);
+                            }
+                        });
+                        
+                        productDiv.appendChild(allergeniContainer);
+                    }
 
                     categoryDiv.appendChild(productDiv);
                 }
@@ -162,4 +211,23 @@ document.addEventListener("DOMContentLoaded", function () {
             inactiveModal.style.display = 'none'; // Hide the modal
         }
     });
+
+    const showClockButton = document.getElementById("showClockButton");
+    const modalClock = document.getElementById("clockModal");
+    const closeClockBtn = document.getElementById("closeClockBtn");
+
+    showClockButton.onclick = function () {
+        modalClock.style.display = "block";
+    };
+
+    closeClockBtn.onclick = function () {
+        modalClock.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modalClock) {
+            modalClock.style.display = "none";
+        }
+    };
+    
 });
