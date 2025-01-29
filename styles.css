@@ -297,6 +297,8 @@ footer {
 
 .content.open .menu-item img {
     display: block; /* Show images when expanded */
+    margin: 5px auto;
+    border: 1px solid black;
 }
 
 /* Default layout for larger screens */
@@ -422,7 +424,7 @@ footer {
 .menu-item img {
     width: 100%;
     height: 200px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -445,10 +447,33 @@ footer {
     color: #777;
     padding: 0 10px;
 }
-
+.allergeni-text{
+    margin-right:5px;
+    margin-bottom:2px;
+    font-weight:500;
+    color: grey;
+    align-self: center;
+    display:block;
+}
+.allergeni-container{
+    display: block;
+}
+.allergeni-inner-container{
+    display:flex;
+}
 /* Mobile layout */
 /* Mobile layout */
 @media (max-width: 1050px) {
+    .allergeni-text{
+        display: flex;
+        margin-right:2px;
+        font-weight:500;
+        color: grey;
+        align-self: center;
+    }
+    .allergeni-container{
+        display:inline;
+    }
     .menu-item {
         display: grid;
         grid-template-columns: 100px 1fr ; /* Left column for text, right column for image */
@@ -695,16 +720,7 @@ footer {
     padding-top: 0px;
     border: 1px solid gray;
   }
-.allergeni-text{
-    display: inline;
-    margin-right:5px;
-    font-weight:500;
-    color: grey;
-    align-self: center;
-}
-.allergeni-container{
-    display:flex;
-}
+
 .legenda-text{
     display:inline;
     margin-bottom:10px;
