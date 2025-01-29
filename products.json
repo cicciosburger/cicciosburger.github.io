@@ -1,6 +1,7 @@
 {
     "payload": {
-        "products": [{
+        "products": [
+            {
                 "id": 5094,
                 "sku": "10101",
                 "active": true,
@@ -9,16 +10,20 @@
                 "title": "FRIES",
                 "short_description": "patate con buccia",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 565
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 3.5,
-                    "default_price": 3.5,
-                    "vat_price": 3.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 3.5,
+                        "default_price": 3.5,
+                        "vat_price": 3.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "patate con buccia",
                 "allergens": null,
                 "notes": null,
@@ -49,18 +54,22 @@
                 "title": "CRISPY GOAT",
                 "short_description": "burger di pollo pastellato e fritto, cheddar, bacon, lattuga, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di pollo pastellato e fritto, cheddar, bacon, lattuga, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_13ba5cad7a42aecddb7abd403d118be3_crispy.jpg",
@@ -75,14 +84,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "6_9906_A9906",
                         "title": "INGREDIENTI CRISPY GOAT",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 4,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11008",
                                 "title": "NO CHEDDAR",
                                 "short_description": " ",
@@ -135,7 +146,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -316,18 +328,22 @@
                 "title": "HAMBURGER",
                 "short_description": "burger di manzo 170g, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 567
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 6.5,
-                    "default_price": 6.5,
-                    "vat_price": 6.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 567
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 6.5,
+                        "default_price": 6.5,
+                        "vat_price": 6.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_c603e0ba9545dab26818c0fdfbf0e6db_hamburger.jpg",
@@ -342,24 +358,27 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "1_9852_A9852",
                         "title": "INGREDIENTI HAMBURGER",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": null,
-                        "items": [{
-                            "code": "11012",
-                            "title": "NO SALSA CICCIO'S",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 0,
-                            "default": 0,
-                            "min": null,
-                            "max": 1,
-                            "price_part": false
-                        }]
+                        "items": [
+                            {
+                                "code": "11012",
+                                "title": "NO SALSA CICCIO'S",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 0,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            }
+                        ]
                     },
                     {
                         "code": "2_9852_A9852",
@@ -368,7 +387,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -549,16 +569,20 @@
                 "title": "ACQUA NATURALE 50CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 1.5,
-                    "default_price": 1.5,
-                    "vat_price": 1.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 1.5,
+                        "default_price": 1.5,
+                        "vat_price": 1.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -589,16 +613,20 @@
                 "title": "NUGGETS (da 2,70\u20ac)",
                 "short_description": "bocconcini di pollo tritato pastellati, fatti a mano",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 565
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 0,
-                    "default_price": 0,
-                    "vat_price": 0,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0,
+                        "default_price": 0,
+                        "vat_price": 0,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "bocconcini di pollo tritato pastellati, fatti a mano",
                 "allergens": "Glutine, Uova, Latte",
                 "notes": null,
@@ -615,37 +643,40 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
-                    "code": "24_9856_A9856",
-                    "title": "SCEGLI QUANTITA' NUGGETS",
-                    "short_description": "QUANTITA'",
-                    "long_description": "QUANTITA'",
-                    "min": 1,
-                    "max": 1,
-                    "items": [{
-                            "code": "10901",
-                            "title": "NUGGETS 3 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 2.7,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        },
-                        {
-                            "code": "10902",
-                            "title": "NUGGETS 6 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 4.9,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        }
-                    ]
-                }],
+                "variants": [
+                    {
+                        "code": "24_9856_A9856",
+                        "title": "SCEGLI QUANTITA' NUGGETS",
+                        "short_description": "QUANTITA'",
+                        "long_description": "QUANTITA'",
+                        "min": 1,
+                        "max": 1,
+                        "items": [
+                            {
+                                "code": "10901",
+                                "title": "NUGGETS 3 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 2.7,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10902",
+                                "title": "NUGGETS 6 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 4.9,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            }
+                        ]
+                    }
+                ],
                 "capacity_required": 0,
                 "capacity_required_default": 0,
                 "enable_name_on_package": false
@@ -659,18 +690,22 @@
                 "title": "BACON CHEDDAR FRIES",
                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 565
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 6.5,
-                    "default_price": 6.5,
-                    "vat_price": 6.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 6.5,
+                        "default_price": 6.5,
+                        "vat_price": 6.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "patate con buccia con crema di cheddar home made e bacon croccante",
-                "allergens": "Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_3225373cb14ad7773bd62ca0b62450d5_bacon-cheese-fries.jpg",
@@ -699,16 +734,20 @@
                 "title": "ACQUA FRIZZANTE 50CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 1.5,
-                    "default_price": 1.5,
-                    "vat_price": 1.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 1.5,
+                        "default_price": 1.5,
+                        "vat_price": 1.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -739,16 +778,20 @@
                 "title": "FUZE TEA PESCA 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 2.5,
-                    "default_price": 2.5,
-                    "vat_price": 2.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 2.5,
+                        "default_price": 2.5,
+                        "vat_price": 2.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -779,16 +822,20 @@
                 "title": "FUZE TEA LIMONE 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 2.5,
-                    "default_price": 2.5,
-                    "vat_price": 2.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 2.5,
+                        "default_price": 2.5,
+                        "vat_price": 2.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -819,16 +866,20 @@
                 "title": "SPRITE 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 2.5,
-                    "default_price": 2.5,
-                    "vat_price": 2.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 2.5,
+                        "default_price": 2.5,
+                        "vat_price": 2.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -859,16 +910,20 @@
                 "title": "FANTA 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 2.5,
-                    "default_price": 2.5,
-                    "vat_price": 2.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 2.5,
+                        "default_price": 2.5,
+                        "vat_price": 2.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -899,16 +954,20 @@
                 "title": "COCA COLA 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 2.5,
-                    "default_price": 2.5,
-                    "vat_price": 2.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 2.5,
+                        "default_price": 2.5,
+                        "vat_price": 2.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -939,16 +998,20 @@
                 "title": "COCA COLA ZERO 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 2.5,
-                    "default_price": 2.5,
-                    "vat_price": 2.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 2.5,
+                        "default_price": 2.5,
+                        "vat_price": 2.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -979,16 +1042,20 @@
                 "title": "CHINOTTO SAN PELLEGRINO 20CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 2.5,
-                    "default_price": 2.5,
-                    "vat_price": 2.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 2.5,
+                        "default_price": 2.5,
+                        "vat_price": 2.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -1019,16 +1086,20 @@
                 "title": "HEINEKEN 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 3.9,
-                    "default_price": 3.9,
-                    "vat_price": 3.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 3.9,
+                        "default_price": 3.9,
+                        "vat_price": 3.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -1059,16 +1130,20 @@
                 "title": "HIPPANA BIANCA 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 5,
-                    "default_price": 5,
-                    "vat_price": 5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 5,
+                        "default_price": 5,
+                        "vat_price": 5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -1099,16 +1174,20 @@
                 "title": "HIPPANA BIONDA 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 5,
-                    "default_price": 5,
-                    "vat_price": 5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 5,
+                        "default_price": 5,
+                        "vat_price": 5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -1139,16 +1218,20 @@
                 "title": "HIPPANA ROSSA 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 5,
-                    "default_price": 5,
-                    "vat_price": 5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 5,
+                        "default_price": 5,
+                        "vat_price": 5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -1179,16 +1262,20 @@
                 "title": "HIPPANA AMBRATA 33CL",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 568
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 5,
-                    "default_price": 5,
-                    "vat_price": 5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 568
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 5,
+                        "default_price": 5,
+                        "vat_price": 5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -1219,16 +1306,20 @@
                 "title": "CHICKEN POP CORN (da 2,70\u20ac)",
                 "short_description": "polpettine di pollo fatte a mano con speciale panatura super croccante",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 565
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 0,
-                    "default_price": 0,
-                    "vat_price": 0,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0,
+                        "default_price": 0,
+                        "vat_price": 0,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante",
                 "allergens": "Glutine, Uova, Latte",
                 "notes": null,
@@ -1245,37 +1336,40 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
-                    "code": "25_9880_A9880",
-                    "title": "SCEGLI QUANTITA' CHICKEN POP CORN",
-                    "short_description": "QUANTITA'",
-                    "long_description": "QUANTITA'",
-                    "min": 1,
-                    "max": 1,
-                    "items": [{
-                            "code": "10904",
-                            "title": "CHICKEN POP CORN 4 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 2.7,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        },
-                        {
-                            "code": "10905",
-                            "title": "CHICKEN POP CORN 8 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 4.9,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        }
-                    ]
-                }],
+                "variants": [
+                    {
+                        "code": "25_9880_A9880",
+                        "title": "SCEGLI QUANTITA' CHICKEN POP CORN",
+                        "short_description": "QUANTITA'",
+                        "long_description": "QUANTITA'",
+                        "min": 1,
+                        "max": 1,
+                        "items": [
+                            {
+                                "code": "10904",
+                                "title": "CHICKEN POP CORN 4 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 2.7,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10905",
+                                "title": "CHICKEN POP CORN 8 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 4.9,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            }
+                        ]
+                    }
+                ],
                 "capacity_required": 0,
                 "capacity_required_default": 0,
                 "enable_name_on_package": false
@@ -1289,16 +1383,20 @@
                 "title": "MEAT BALLS (da 2,70\u20ac)",
                 "short_description": "polpettine di carne fatte a mano con speciale panatura al formaggio",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 565
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 0,
-                    "default_price": 0,
-                    "vat_price": 0,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0,
+                        "default_price": 0,
+                        "vat_price": 0,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio",
                 "allergens": "Glutine, Uova, Latte",
                 "notes": null,
@@ -1315,37 +1413,40 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
-                    "code": "26_9883_A9883",
-                    "title": "SCEGLI QUANTITA' MEAT BALLS",
-                    "short_description": "QUANTITA'",
-                    "long_description": "QUANTITA'",
-                    "min": 1,
-                    "max": 1,
-                    "items": [{
-                            "code": "10906",
-                            "title": "MEAT BALL 4 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 2.7,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        },
-                        {
-                            "code": "10907",
-                            "title": "MEAT BALL 8 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 4.9,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        }
-                    ]
-                }],
+                "variants": [
+                    {
+                        "code": "26_9883_A9883",
+                        "title": "SCEGLI QUANTITA' MEAT BALLS",
+                        "short_description": "QUANTITA'",
+                        "long_description": "QUANTITA'",
+                        "min": 1,
+                        "max": 1,
+                        "items": [
+                            {
+                                "code": "10906",
+                                "title": "MEAT BALL 4 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 2.7,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10907",
+                                "title": "MEAT BALL 8 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 4.9,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            }
+                        ]
+                    }
+                ],
                 "capacity_required": 0,
                 "capacity_required_default": 0,
                 "enable_name_on_package": false
@@ -1359,16 +1460,20 @@
                 "title": "PROVOLA GOAT",
                 "short_description": "provola dolce con tripla pastellatura a mano",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 565
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 4.5,
-                    "default_price": 4.5,
-                    "vat_price": 4.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 4.5,
+                        "default_price": 4.5,
+                        "vat_price": 4.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "provola dolce con tripla pastellatura a mano",
                 "allergens": "Glutine, Latte",
                 "notes": null,
@@ -1385,48 +1490,51 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
-                    "code": "$P_129_10106_A9884",
-                    "title": "SALSA",
-                    "short_description": null,
-                    "long_description": null,
-                    "min": null,
-                    "max": 10,
-                    "items": [{
-                            "code": "10509",
-                            "title": "BBQ HEINZ",
-                            "short_description": " ",
-                            "long_description": null,
-                            "price_variation": 0.4,
-                            "default": 0,
-                            "min": null,
-                            "max": 1,
-                            "price_part": false
-                        },
-                        {
-                            "code": "10501",
-                            "title": "MAIONESE HEINZ",
-                            "short_description": " ",
-                            "long_description": null,
-                            "price_variation": 0.4,
-                            "default": 0,
-                            "min": null,
-                            "max": 1,
-                            "price_part": false
-                        },
-                        {
-                            "code": "10511",
-                            "title": "KETCHUP HEINZ",
-                            "short_description": " ",
-                            "long_description": null,
-                            "price_variation": 0.4,
-                            "default": 0,
-                            "min": null,
-                            "max": 1,
-                            "price_part": false
-                        }
-                    ]
-                }],
+                "variants": [
+                    {
+                        "code": "$P_129_10106_A9884",
+                        "title": "SALSA",
+                        "short_description": null,
+                        "long_description": null,
+                        "min": null,
+                        "max": 10,
+                        "items": [
+                            {
+                                "code": "10509",
+                                "title": "BBQ HEINZ",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.4,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10501",
+                                "title": "MAIONESE HEINZ",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.4,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10511",
+                                "title": "KETCHUP HEINZ",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.4,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            }
+                        ]
+                    }
+                ],
                 "capacity_required": 0,
                 "capacity_required_default": 0,
                 "enable_name_on_package": false
@@ -1440,16 +1548,20 @@
                 "title": "GREEN NUGGETS VEG (da 2,70\u20ac)",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 565
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 0,
-                    "default_price": 0,
-                    "vat_price": 0,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0,
+                        "default_price": 0,
+                        "vat_price": 0,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -1466,37 +1578,40 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
-                    "code": "33_9886_A9886",
-                    "title": "SCEGLI QUANTITA' GREEN NUGGETS",
-                    "short_description": "QUANTITA'",
-                    "long_description": "QUANTITA'",
-                    "min": 1,
-                    "max": 1,
-                    "items": [{
-                            "code": "10909",
-                            "title": "GREEN NUGGETS 3 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 2.7,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        },
-                        {
-                            "code": "10912",
-                            "title": "GREEN NUGGETS 6 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 4.9,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        }
-                    ]
-                }],
+                "variants": [
+                    {
+                        "code": "33_9886_A9886",
+                        "title": "SCEGLI QUANTITA' GREEN NUGGETS",
+                        "short_description": "QUANTITA'",
+                        "long_description": "QUANTITA'",
+                        "min": 1,
+                        "max": 1,
+                        "items": [
+                            {
+                                "code": "10909",
+                                "title": "GREEN NUGGETS 3 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 2.7,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10912",
+                                "title": "GREEN NUGGETS 6 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 4.9,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            }
+                        ]
+                    }
+                ],
                 "capacity_required": 0,
                 "capacity_required_default": 0,
                 "enable_name_on_package": false
@@ -1510,16 +1625,20 @@
                 "title": "GREEN BALL VEG (da 2,70\u20ac)",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 565
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 0,
-                    "default_price": 0,
-                    "vat_price": 0,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0,
+                        "default_price": 0,
+                        "vat_price": 0,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -1536,37 +1655,40 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
-                    "code": "32_9887_A9887",
-                    "title": "SCEGLI QUANTITA' GREEN BALL",
-                    "short_description": "QUANTITA'",
-                    "long_description": "QUANTITA'",
-                    "min": 1,
-                    "max": 1,
-                    "items": [{
-                            "code": "10903",
-                            "title": "GREEN BALL 4 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 2.7,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        },
-                        {
-                            "code": "10908",
-                            "title": "GREEN BALL 8 PEZZI",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 4.9,
-                            "default": 0,
-                            "min": null,
-                            "max": null,
-                            "price_part": false
-                        }
-                    ]
-                }],
+                "variants": [
+                    {
+                        "code": "32_9887_A9887",
+                        "title": "SCEGLI QUANTITA' GREEN BALL",
+                        "short_description": "QUANTITA'",
+                        "long_description": "QUANTITA'",
+                        "min": 1,
+                        "max": 1,
+                        "items": [
+                            {
+                                "code": "10903",
+                                "title": "GREEN BALL 4 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 2.7,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10908",
+                                "title": "GREEN BALL 8 PEZZI",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 4.9,
+                                "default": 0,
+                                "min": null,
+                                "max": null,
+                                "price_part": false
+                            }
+                        ]
+                    }
+                ],
                 "capacity_required": 0,
                 "capacity_required_default": 0,
                 "enable_name_on_package": false
@@ -1580,18 +1702,22 @@
                 "title": "CHEESEBURGER",
                 "short_description": "burger di manzo 170g, cheddar, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 567
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 6.9,
-                    "default_price": 6.9,
-                    "vat_price": 6.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 567
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 6.9,
+                        "default_price": 6.9,
+                        "vat_price": 6.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, cheddar, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_619edc41b73dc049e121fe18aea31ee3_cheese-burger.jpg",
@@ -1606,14 +1732,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "4_9903_A9903",
                         "title": "INGREDIENTI CHEESEBURGER",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 2,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11008",
                                 "title": "NO CHEDDAR",
                                 "short_description": " ",
@@ -1644,7 +1772,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -1825,18 +1954,22 @@
                 "title": "BACON CHEESEBURGER",
                 "short_description": "burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 567
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 8.9,
-                    "default_price": 8.9,
-                    "vat_price": 8.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 567
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 8.9,
+                        "default_price": 8.9,
+                        "vat_price": 8.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_c17af969f571d67af8ec92b94e1c26da_bacon-cheese-burger.jpg",
@@ -1851,14 +1984,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "5_9904_A9904",
                         "title": "INGREDIENTI BACON CHEESEBURGER",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 3,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11009",
                                 "title": "NO BACON",
                                 "short_description": " ",
@@ -1900,7 +2035,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -2081,18 +2217,22 @@
                 "title": "AMERICAN BACONCHEESE",
                 "short_description": "burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 567
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 8.9,
-                    "default_price": 8.9,
-                    "vat_price": 8.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 567
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 8.9,
+                        "default_price": 8.9,
+                        "vat_price": 8.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_dbc94473d699833349047fff6b205489_american-bacon-cheese.jpg",
@@ -2107,14 +2247,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "3_9905_A9905",
                         "title": "INGREDIENTI  AMERICAN BACONCHEESE",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 5,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11008",
                                 "title": "NO CHEDDAR",
                                 "short_description": " ",
@@ -2178,7 +2320,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -2359,18 +2502,22 @@
                 "title": "BRIE",
                 "short_description": "burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_202e2e86826c14ac2e4ff7b756ac893e_brie.jpg",
@@ -2385,14 +2532,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "7_9907_A9907",
                         "title": "INGREDIENTI BRIE",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 5,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11013",
                                 "title": "NO SONGINO",
                                 "short_description": " ",
@@ -2456,7 +2605,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -2637,18 +2787,22 @@
                 "title": "TAL\u00c8",
                 "short_description": "burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_136d218b8e937e1cf0e5a3aa764ec193_tal.jpg",
@@ -2663,14 +2817,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "8_9908_A9908",
                         "title": "INGREDIENTI TAL\u00c8",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 6,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11013",
                                 "title": "NO SONGINO",
                                 "short_description": " ",
@@ -2745,7 +2901,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -2926,18 +3083,22 @@
                 "title": "EGG",
                 "short_description": "burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_4d9c505b960f6f09e7e9d6723f720be5_egg.jpg",
@@ -2952,14 +3113,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "9_9909_A9909",
                         "title": "INGREDIENTI EGG",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 5,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11013",
                                 "title": "NO SONGINO",
                                 "short_description": " ",
@@ -3023,7 +3186,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -3204,18 +3368,22 @@
                 "title": "TUMA",
                 "short_description": "burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_0b116762652e7b88c6a1b1fc109c3ec2_tuma.jpg",
@@ -3230,14 +3398,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "11_9911_A9911",
                         "title": "INGREDIENTI TUMA",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 5,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11013",
                                 "title": "NO SONGINO",
                                 "short_description": " ",
@@ -3301,7 +3471,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -3482,18 +3653,22 @@
                 "title": "PANCETTA",
                 "short_description": "burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape, Anidride solforosa e solfiti",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape, Anidride solforosa e solfiti",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_4235260f7b75554d82d8e7320a0ebd00_pancetta.jpg",
@@ -3508,14 +3683,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "12_9912_A9912",
                         "title": "INGREDIENTI PANCETTA",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 7,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11013",
                                 "title": "NO SONGINO",
                                 "short_description": " ",
@@ -3601,7 +3778,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -3782,18 +3960,22 @@
                 "title": "DOUBLE TRIPLE",
                 "short_description": "doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 11.9,
-                    "default_price": 11.9,
-                    "vat_price": 11.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 11.9,
+                        "default_price": 11.9,
+                        "vat_price": 11.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_9e508afa5a6791555d526aa34feca2f0_double-triple.jpg",
@@ -3808,14 +3990,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "13_9913_A9913",
                         "title": "INGREDIENTI DOUBLE TRIPLE",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 3,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11032",
                                 "title": "NO TRIPLO CHEDDAR",
                                 "short_description": " ",
@@ -3857,7 +4041,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -4038,18 +4223,22 @@
                 "title": "SUPER CRISPY",
                 "short_description": "burger di pollo fritto con panatura super croccante, lattuga, pomodoro, maionese",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di pollo fritto con panatura super croccante, lattuga, pomodoro, maionese",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_39c694d9414751fd14d4ef61a54e70b2_crispy-goat1.jpg",
@@ -4064,14 +4253,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "15_9915_A9915",
                         "title": "INGREDIENTI SUPER CRISPY",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 3,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11011",
                                 "title": "NO LATTUGA",
                                 "short_description": " ",
@@ -4113,7 +4304,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -4294,18 +4486,22 @@
                 "title": "CHICKEN CBT",
                 "short_description": "sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_0555d820e6040723aa5dfc9f3814eac2_chicken-cbt.jpg",
@@ -4320,59 +4516,62 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
-                    "code": "18_9918_A9918",
-                    "title": "INGREDIENTI CHICKEN CBT",
-                    "short_description": "PERSONALIZZA INGREDIENTI",
-                    "long_description": "PERSONALIZZA INGREDIENTI",
-                    "min": null,
-                    "max": 4,
-                    "items": [{
-                            "code": "11029",
-                            "title": "NO SCAMORZA",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 0,
-                            "default": 0,
-                            "min": null,
-                            "max": 1,
-                            "price_part": false
-                        },
-                        {
-                            "code": "11011",
-                            "title": "NO LATTUGA",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 0,
-                            "default": 0,
-                            "min": null,
-                            "max": 1,
-                            "price_part": false
-                        },
-                        {
-                            "code": "11010",
-                            "title": "NO POMODORO",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 0,
-                            "default": 0,
-                            "min": null,
-                            "max": 1,
-                            "price_part": false
-                        },
-                        {
-                            "code": "11057",
-                            "title": "NO SALSA WHITE CICCIO'S",
-                            "short_description": " ",
-                            "long_description": " ",
-                            "price_variation": 0,
-                            "default": 0,
-                            "min": null,
-                            "max": 1,
-                            "price_part": false
-                        }
-                    ]
-                }],
+                "variants": [
+                    {
+                        "code": "18_9918_A9918",
+                        "title": "INGREDIENTI CHICKEN CBT",
+                        "short_description": "PERSONALIZZA INGREDIENTI",
+                        "long_description": "PERSONALIZZA INGREDIENTI",
+                        "min": null,
+                        "max": 4,
+                        "items": [
+                            {
+                                "code": "11029",
+                                "title": "NO SCAMORZA",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 0,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11011",
+                                "title": "NO LATTUGA",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 0,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11010",
+                                "title": "NO POMODORO",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 0,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11057",
+                                "title": "NO SALSA WHITE CICCIO'S",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 0,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            }
+                        ]
+                    }
+                ],
                 "capacity_required": 0,
                 "capacity_required_default": 0,
                 "enable_name_on_package": false
@@ -4386,18 +4585,22 @@
                 "title": "GREEN",
                 "short_description": "Burger vegetale, lattuga, cheddar, cipolla caramellata, salsa ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "Burger vegetale, lattuga, cheddar, cipolla caramellata, salsa ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_b9dde3ca74e89872c1b187d9ae30ee34_green.jpg",
@@ -4412,14 +4615,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "19_9919_A9919",
                         "title": "INGREDIENTI GREEN",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 4,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11011",
                                 "title": "NO LATTUGA",
                                 "short_description": " ",
@@ -4472,7 +4677,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -4653,16 +4859,20 @@
                 "title": "KISS",
                 "short_description": "Panino con nutella e bacon",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 643
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 3.5,
-                    "default_price": 3.5,
-                    "vat_price": 3.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 643
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 3.5,
+                        "default_price": 3.5,
+                        "vat_price": 3.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "Panino con nutella e bacon",
                 "allergens": "Glutine",
                 "notes": null,
@@ -4693,18 +4903,22 @@
                 "title": "CHEESE CAKE",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 643
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 3.5,
-                    "default_price": 3.5,
-                    "vat_price": 3.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 643
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 3.5,
+                        "default_price": 3.5,
+                        "vat_price": 3.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
-                "allergens": "Glutine, Uova, Arachidi, Seme di soia, Latte, Noci",
+                "allergens": "Glutine, Uova, Arachidi, Soia, Latte, Frutta a guscio",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_fb1defb2bfb2ec210cd2fbdcbad727c8_cheese-cake.jpg",
@@ -4733,16 +4947,20 @@
                 "title": "TIRAMIS\u00d9",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 643
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 4.5,
-                    "default_price": 4.5,
-                    "vat_price": 4.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 643
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 4.5,
+                        "default_price": 4.5,
+                        "vat_price": 4.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": "Glutine, Latte",
                 "notes": null,
@@ -4773,16 +4991,20 @@
                 "title": "BROOKIES",
                 "short_description": null,
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 643
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 4.5,
-                    "default_price": 4.5,
-                    "vat_price": 4.5,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 643
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 4.5,
+                        "default_price": 4.5,
+                        "vat_price": 4.5,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": "Glutine, Uova, Latte",
                 "notes": null,
@@ -4810,19 +5032,23 @@
                 "active": true,
                 "visible": true,
                 "relevant": false,
-                "title": "CONFIGURA IL MENU'",
+                "title": "CREA IL TUO MENU'",
                 "short_description": null,
-                "long_description": "CONFIGURA IL MENU'",
-                "catalog_assoc": [{
-                    "catalog": 781
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 0,
-                    "default_price": 0,
-                    "vat_price": 0,
-                    "vat": 10
-                }],
+                "long_description": "CREA IL TUO MENU'",
+                "catalog_assoc": [
+                    {
+                        "catalog": 781
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0,
+                        "default_price": 0,
+                        "vat_price": 0,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -4839,14 +5065,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "$MIG_1_$M_1",
                         "title": "PANINI",
                         "short_description": "PANINI",
                         "long_description": "PANINI",
                         "min": 1,
                         "max": 1,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "$MI_11202",
                                 "title": "OLD SCHOOL",
                                 "short_description": "burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
@@ -4860,7 +5088,7 @@
                             {
                                 "code": "$MI_11203",
                                 "title": "PORCHETTA",
-                                "short_description": "burger di manzo 170g, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
+                                "short_description": "burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
                                 "long_description": null,
                                 "price_variation": 13.4,
                                 "default": 0,
@@ -5031,7 +5259,8 @@
                         "long_description": "PATATINE",
                         "min": 1,
                         "max": 1,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "$MI_10101",
                                 "title": "FRIES",
                                 "short_description": "patate con buccia",
@@ -5062,7 +5291,8 @@
                         "long_description": "STARTERS",
                         "min": 1,
                         "max": 1,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "$MI_10913",
                                 "title": "NUGGETS 2 PEZZI",
                                 "short_description": " ",
@@ -5126,7 +5356,8 @@
                         "long_description": "BIBITA",
                         "min": 1,
                         "max": 1,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "$MI_10402",
                                 "title": "ACQUA FRIZZANTE 50CL",
                                 "short_description": " ",
@@ -5296,18 +5527,22 @@
                 "title": "ALETTE CRUNCHY (da 2,70\u20ac)",
                 "short_description": "Alette di pollo pastellate e fritte, laccate con salsa thai",
                 "long_description": "Alette di pollo pastellate e fritte, laccate con salsa thai",
-                "catalog_assoc": [{
-                    "catalog": 565
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 0,
-                    "default_price": 0,
-                    "vat_price": 0,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0,
+                        "default_price": 0,
+                        "vat_price": 0,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "Alette di pollo pastellate e fritte, laccate con salsa thai",
-                "allergens": "Glutine, Arachidi, Noci, Senape",
+                "allergens": "Glutine, Arachidi, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_abee1c5250a888efab079a4486c28150_alette-crunchy.jpg",
@@ -5322,14 +5557,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "28_9885_A9885",
                         "title": "SCEGLI QUANTITA' ALETTE",
                         "short_description": "QUANTITA'",
                         "long_description": "QUANTITA'",
                         "min": 1,
                         "max": 1,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "10910",
                                 "title": "ALETTE CRUNCHY 3 PEZZI ",
                                 "short_description": " ",
@@ -5360,7 +5597,8 @@
                         "long_description": " ",
                         "min": 1,
                         "max": 1,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11052",
                                 "title": "LEGGERMENTE PICCANTE",
                                 "short_description": " ",
@@ -5398,18 +5636,22 @@
                 "title": "OLD SCHOOL",
                 "short_description": "burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": "burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_bafc0c53271177c403503e4f6cf4fc71_old-school.jpg",
@@ -5424,14 +5666,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "30_10048_A10048",
                         "title": "INGREDIENTI OLD SCHOOL",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
                         "max": 5,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11022",
                                 "title": "NO DOPPIO CHEDDAR",
                                 "short_description": " ",
@@ -5495,7 +5739,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -5674,20 +5919,24 @@
                 "visible": true,
                 "relevant": false,
                 "title": "PORCHETTA",
-                "short_description": "burger di manzo 170g, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
+                "short_description": "burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
                 "long_description": null,
-                "catalog_assoc": [{
-                    "catalog": 566
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 9.9,
-                    "default_price": 9.9,
-                    "vat_price": 9.9,
-                    "vat": 10
-                }],
-            "ingredients": "burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Noci, Senape",
+                "catalog_assoc": [
+                    {
+                        "catalog": 566
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 9.9,
+                        "default_price": 9.9,
+                        "vat_price": 9.9,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": "burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
+                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_b325557aacf46cbdb966deedfe2cc39f_porchetta.jpg",
@@ -5702,14 +5951,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "31_10051_A10051",
                         "title": "INGREDIENTI PORCHETTA",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
                         "min": null,
-                        "max": 5,
-                        "items": [{
+                        "max": 6,
+                        "items": [
+                            {
                                 "code": "11011",
                                 "title": "NO LATTUGA",
                                 "short_description": " ",
@@ -5763,6 +6014,17 @@
                                 "min": null,
                                 "max": 1,
                                 "price_part": false
+                            },
+                            {
+                                "code": "11029",
+                                "title": "NO SCAMORZA",
+                                "short_description": " ",
+                                "long_description": " ",
+                                "price_variation": 0,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
                             }
                         ]
                     },
@@ -5773,7 +6035,8 @@
                         "long_description": " ",
                         "min": null,
                         "max": 35,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "11117",
                                 "title": "BACON",
                                 "short_description": " ",
@@ -5954,16 +6217,20 @@
                 "title": "HAPPY CICCIO'S",
                 "short_description": null,
                 "long_description": "HAPPY CICCIO'S",
-                "catalog_assoc": [{
-                    "catalog": 781
-                }],
-                "price": [{
-                    "pricelist_id": "1",
-                    "price": 0,
-                    "default_price": 0,
-                    "vat_price": 0,
-                    "vat": 10
-                }],
+                "catalog_assoc": [
+                    {
+                        "catalog": 781
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0,
+                        "default_price": 0,
+                        "vat_price": 0,
+                        "vat": 10
+                    }
+                ],
                 "ingredients": null,
                 "allergens": null,
                 "notes": null,
@@ -5980,14 +6247,16 @@
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
-                "variants": [{
+                "variants": [
+                    {
                         "code": "$MIG_6_$M_2",
                         "title": "PANINI",
                         "short_description": "PANINI",
                         "long_description": "PANINI",
                         "min": 1,
                         "max": 1,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "$MI_10301",
                                 "title": "HAMBURGER",
                                 "short_description": "burger di manzo 170g, salsa Ciccio's",
@@ -6018,17 +6287,19 @@
                         "long_description": null,
                         "min": 1,
                         "max": 1,
-                        "items": [{
-                            "code": "$MI_10101",
-                            "title": "FRIES",
-                            "short_description": "patate con buccia",
-                            "long_description": null,
-                            "price_variation": 0,
-                            "default": 1,
-                            "min": 1,
-                            "max": 1,
-                            "price_part": false
-                        }]
+                        "items": [
+                            {
+                                "code": "$MI_10101",
+                                "title": "FRIES",
+                                "short_description": "patate con buccia",
+                                "long_description": null,
+                                "price_variation": 0,
+                                "default": 1,
+                                "min": 1,
+                                "max": 1,
+                                "price_part": false
+                            }
+                        ]
                     },
                     {
                         "code": "$MIG_11_$M_2",
@@ -6037,17 +6308,19 @@
                         "long_description": null,
                         "min": 1,
                         "max": 1,
-                        "items": [{
-                            "code": "$MI_10913",
-                            "title": "NUGGETS 2 PEZZI",
-                            "short_description": " ",
-                            "long_description": null,
-                            "price_variation": 0,
-                            "default": 1,
-                            "min": 1,
-                            "max": 1,
-                            "price_part": false
-                        }]
+                        "items": [
+                            {
+                                "code": "$MI_10913",
+                                "title": "NUGGETS 2 PEZZI",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0,
+                                "default": 1,
+                                "min": 1,
+                                "max": 1,
+                                "price_part": false
+                            }
+                        ]
                     },
                     {
                         "code": "$MIG_9_$M_2",
@@ -6056,7 +6329,8 @@
                         "long_description": "BIBITE",
                         "min": 1,
                         "max": 1,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "$MI_10415",
                                 "title": "ACQUA NATURALE 25CL",
                                 "short_description": " ",
@@ -6087,7 +6361,8 @@
                         "long_description": "SALSE",
                         "min": 1,
                         "max": 1,
-                        "items": [{
+                        "items": [
+                            {
                                 "code": "$MI_10511",
                                 "title": "KETCHUP HEINZ",
                                 "short_description": " ",
@@ -6129,5 +6404,5 @@
             }
         ]
     },
-    "crc": "91441c09dc0da060c210874d7c0053a7"
+    "crc": "faa79d0e37ca0a6f970b66faf80ab04e"
 }
