@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         const allergeniContainer = document.createElement("div");
                         allergeniContainer.classList.add("allergeni-container");
                         
+
                         const allergeniText = document.createElement("p");
                         allergeniText.classList.add("allergeni-text");
                         // allergeniText.classList.add("product-description");
@@ -134,6 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         listallergeni = product.allergens;
                         const allergeniArray = listallergeni.split(", ");
 
+                        const allergeniInnerContainer = document.createElement("div");
+                        allergeniInnerContainer.classList.add("allergeni-inner-container");
+                        allergeniContainer.appendChild(allergeniInnerContainer);
+
                         // Iteriamo sugli allergeni e aggiungiamo le icone
                         allergeniArray.forEach(allergene => {
                             const allergeneData = allergeniMap[allergene];
@@ -142,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 const icona = document.createElement("div");
                                 icona.className = `icona ${allergeneData.className}`;
                                 icona.textContent = allergeneData.emoji; // Mostra solo l'icona (emoji)
-                                allergeniContainer.appendChild(icona);
+                                allergeniInnerContainer.appendChild(icona);
                             }
                         });
                         
