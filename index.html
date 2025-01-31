@@ -13,6 +13,7 @@
     <title>Ciccio's Burger</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="logo.ico">
     <script src="script.js" defer></script>
 </head>
@@ -21,197 +22,169 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <img src="logo.webp" alt="Ciccio's Burger Logo" class="logo">
-            <h1 class="outlined-text">Ciccio's Burger</h1>
-            <p>
-
-                Via Isidoro La Lumia, 73<br>
-                Viale Boris Giuliano, 4<br>
-                Viale del Fante, 50B<br>
-                🛵Anche su Glovo💨<br>
-            </p>
+            <img src="./logo.png" alt="Ciccio's Burger Logo" class="logo">
+            <!-- <h1 class="outlined-text">Ciccio's Burger</h1> -->
         </header>
 
         <!-- Main Content -->
+
         <main>
             <div class="button-container">
-                <div class="near-buttons-container">
-                    <a href="#" class="button view-menu-button" id="showMenuButton">
-                        <i class="fas fa-utensils"></i> Mostra Menù
-                    </a>
-                    <a href="https://cicciosburger.pro.alvolo.app/TCAT/delivery" target="_blank"
-                        class="button order-now-button">
-                        <i class="fas fa-shipping-fast"></i> Ordina Ora
+                <div style="margin-top: 30px;" id="showMenuButton">
+                    <i class="fas fa-utensils" style="font-size:3rem;"></i>
+                    <a href="#" class="button">
+                        Mostra Menù
                     </a>
                 </div>
-                <div class="near-buttons-container">
-                    <a class="button clock-button" id="showClockButton">
-                        <i class="fa-solid fa-clock"></i> Orari Ristoranti
-                    </a>
-                    <a href="" target="_blank" class="button truck-button" id="open-map-modal">
-                        <i class="fa-solid fa-map-location-dot"></i> FoodTruck
-                    </a>
+                <hr style="border: 0; height: 1px; background-color: black;">
+                <a href="https://cicciosburger.pro.alvolo.app/TCAT/delivery" target="_blank">
+                    <i class="fa-solid fa-cart-shopping" style="font-size:3rem;"></i>
+                    <p class="button">
+                        Ordina Ora
+                    </p>
+                </a>
+                <hr style="border: 0; height: 1px; background-color: black;">
+
+                <div id="showClockButton">
+                    <i class="fa-solid fa-clock" style="font-size:3rem;"></i>
+                    <p class="button">
+                        Orari Ristoranti
+                    </p>
                 </div>
-                <div class="near-buttons-container">
-                    <a href="https://www.tiktok.com/@cicciosburger" target="_blank" class="button tiktok-button"
-                        style="display:inline">
-                        <i class="fab fa-tiktok"></i> TikTok
-                    </a>
-                    <a href="https://www.instagram.com/cicciosburger_" target="_blank" class="button instagram-button"
-                        style="display:inline">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
+                <hr style="border: 0; height: 1px; background-color: black;">
+
+                <a href="" target="_blank" id="open-map-modal">
+                    <i class="fa-solid fa-map-location-dot" style="font-size:3rem;"></i>
+                    <p class="button">
+                        FoodTruck
+                    </p>
+
+                </a>
+            <!-- <p>
+
+                    Via Isidoro La Lumia, 73<br>
+                    Viale Boris Giuliano, 4<br>
+                    Viale del Fante, 50B<br>
+                    🛵Anche su Glovo💨<br>
+                </p> -->
+            <hr style="border: 0; height: 1px; background-color: black;">
+
+            <a href="https://www.tiktok.com/@cicciosburger" target="_blank">
+                <i class="fab fa-tiktok" style="font-size:3rem;"></i>
+                <p class="button">
+                    TikTok
+                </p>
+            </a>
+            <hr style="border: 0; height: 1px; background-color: black;">
+
+            <a href="https://www.instagram.com/cicciosburger_" target="_blank">
+                <i class="fab fa-instagram" style="font-size:3rem;"></i>
+                <p class="button">
+                    Instagram
+                </p>
+            </a>
+
+    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Ciccio's Burger. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="menuModal" class="modal">
+        <div class="modal-content" id="outer-modal">
+            <span class="close-btn" id="closeMenuBtn">&times;</span>
+            <div id="container"></div>
+            <h2 style="margin-bottom: 20px;">VISUALIZZA MENÙ</h2>
+            <div id="generatedContentMenu"></div>
+            <h3>Legenda Allergeni</h3>
+            <div class="legenda-container">
+                <div class="legenda-item">
+                    <div class="icona icona-legenda glutine">🌾</div>
+                    <p class="legenda-text allergeni-text">Glutine</p>
                 </div>
-
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2025 Ciccio's Burger. All rights reserved.</p>
-        </footer>
-
-        <!-- Modal -->
-        <div id="menuModal" class="modal">
-            <div class="modal-content" id="outer-modal">
-                <span class="close-btn" id="closeMenuBtn">&times;</span>
-                <div id="container"></div>
-                <h2 style="margin-bottom: 20px;">VISUALIZZA MENÙ</h2>
-                <h3>Legenda Allergeni</h3>
-                <div class="legenda-container">
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda glutine">🌾</div>
-                        <p class="legenda-text allergeni-text">Glutine</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda latte">🥛</div>
-                        <p class="legenda-text allergeni-text">Latte</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda uova">🥚</div>
-                        <p class="legenda-text allergeni-text">Uova</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda frutta-a-guscio">🌰</div>
-                        <p class="legenda-text allergeni-text">Frutta a guscio</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda arachidi">🥜</div>
-                        <p class="legenda-text allergeni-text">Arachidi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda soia">🌱</div>
-                        <p class="legenda-text allergeni-text">Soia</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda pesce">🐟</div>
-                        <p class="legenda-text allergeni-text">Pesce</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda crostacei">🦐</div>
-                        <p class="legenda-text allergeni-text">Crostacei</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda molluschi">🐚</div>
-                        <p class="legenda-text allergeni-text">Molluschi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sedano">🥬</div>
-                        <p class="legenda-text allergeni-text">Sedano</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda lupini">🌼</div>
-                        <p class="legenda-text allergeni-text">Lupini</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sesamo">⚪</div>
-                        <p class="legenda-text allergeni-text">Sesamo</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda senape">🟡</div>
-                        <p class="legenda-text allergeni-text">Senape</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda solfiti">⚗️</div>
-                        <p class="legenda-text allergeni-text">Solfiti</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda"><i class="fas fa-leaf"></i></div>
-                        <p class="legenda-text allergeni-text">Vegetariano</p>
-                    </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda latte">🥛</div>
+                    <p class="legenda-text allergeni-text">Latte</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda uova">🥚</div>
+                    <p class="legenda-text allergeni-text">Uova</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda frutta-a-guscio">🌰</div>
+                    <p class="legenda-text allergeni-text">Frutta a guscio</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda arachidi">🥜</div>
+                    <p class="legenda-text allergeni-text">Arachidi</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda soia">🌱</div>
+                    <p class="legenda-text allergeni-text">Soia</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda pesce">🐟</div>
+                    <p class="legenda-text allergeni-text">Pesce</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda crostacei">🦐</div>
+                    <p class="legenda-text allergeni-text">Crostacei</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda molluschi">🐚</div>
+                    <p class="legenda-text allergeni-text">Molluschi</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda sedano">🥬</div>
+                    <p class="legenda-text allergeni-text">Sedano</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda lupini">🌼</div>
+                    <p class="legenda-text allergeni-text">Lupini</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda sesamo">⚪</div>
+                    <p class="legenda-text allergeni-text">Sesamo</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda senape">🟡</div>
+                    <p class="legenda-text allergeni-text">Senape</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda solfiti">⚗️</div>
+                    <p class="legenda-text allergeni-text">Solfiti</p>
+                </div>
+                <div class="legenda-item">
+                    <div class="icona icona-legenda"><i class="fas fa-leaf"></i></div>
+                    <p class="legenda-text allergeni-text">Vegetariano</p>
                 </div>
             </div>
         </div>
-        <div id="inactive-modal" class="modalTruck">
-            <div class="modalTruck-content">
-                <span class="closeTruck-btn" id="close-inactive-modal">&times;</span>
-                <p>Food Truck non attivo!</p>
-            </div>
+    </div>
+    <div id="inactive-modal" class="modalTruck">
+        <div class="modalTruck-content">
+            <span class="closeTruck-btn" id="close-inactive-modal">&times;</span>
+            <p>Food Truck non attivo!</p>
         </div>
-        <div id="clockModal" class="modal">
-            <div class="clock-content" id="outer-clockmodal">
-                <span class="close-btn" id="closeClockBtn">&times;</span>
-                <!-- <h1>Orari Punti Vendita</h1>
+    </div>
+    <div id="clockModal" class="modal">
+        <div class="clock-content" id="outer-clockmodal">
+            <span class="close-btn" id="closeClockBtn">&times;</span>
+            <!-- <h1>Orari Punti Vendita</h1>
          -->
-                <div class="restaurant">
-                    <h2>CICCIO'S STADIO</h2>
-                    <p>Viale del Fante 50B</p>
-                    <div class="box-orari">
-                        <div class="day">
-                            <span class="label">Lunedì - Domenica</span>
-                            <div class="time-bar">
-                                <div class="slot morning">11:30 - 15:00</div>
-                                <!-- <div class="slot delivery">15:00 - 18:30 <br> Asporto e Delivery</div> -->
-                                <div class="slot evening">18:30 - 23:00</div>
-                            </div>
-                            <div class="time-bar" style="margin-top:10px;">
-                                <div class="slot delivery">15:00 - 18:30 <br> Solo asporto* e delivery</div>
-                            </div>
-                            <p style="color:grey; margin-top:5px;">* è comunque possibile consumare presso i nostri tavoli esterni il vostro ordine</p>
-                        </div>
-                    </div>
-                    <!-- <ul class="timetable">
-                        <li>Lunedi - Sabato: 11:30 - 15:00 | 18:30 - 23:00</li>
-                        <li>Domenica: 18:30 - 23:00</li>
-                    </ul> -->
-                    <a href="https://www.google.com/maps/place/Viale+del+Fante,+50,+90146+Palermo+PA/@38.1481196,13.3405517,17z/"
-                        target="_blank" class="open-google-maps-button">
-                        <i class="fas fa-map-marker-alt"></i> Apri su Google Maps
-                    </a>
-
-                </div>
-
-                <div class="restaurant">
-                    <h2>CICCIO'S LUMIA</h2>
-                    <p>Via Isidoro La Lumia 73</p>
-                    <div class="box-orari">
-                        <div class="day">
-                            <span class="label">Lunedì - Domenica</span>
-                            <div class="time-bar">
-                                <div class="slot morning">11:30 - 15:00</div>
-                                <div class="slot evening">18:30 - 23:00</div>
-                            </div>
-                        </div>
-                        <!-- Sunday -->
-                    </div>
-                    <!-- <ul class="timetable">
-                        <li>Lunedi - Sabato: 11:30 - 15:00 | 18:30 - 23:00</li>
-                        <li>Domenica: 18:30 - 23:00</li>
-                    </ul> -->
-                    <a href="https://maps.app.goo.gl/immtevJZezTBbfa48" target="_blank" class="open-google-maps-button">
-                        <i class="fas fa-map-marker-alt"></i> Apri su Google Maps
-                    </a>
-                </div>
-
-
-                <div class="restaurant">
-                    <h2>CICCIO'S SPERLINGA</h2>
-                    <p>Viale Boris Giuliano 4</p>
+         <div class="locations">
+            <h2>Punti vendita</h2>
+            <div class="location-grid">
+                <div class="location">
+                    <img src="./sperlinga.png" alt="" class="loc-pic">
                     <div class="box-orari">
                         <div class="day">
                             <span class="label">Lunedì</span>
                             <div class="time-bar">
-                                <div class="slot evening">CHIUSO</div>
+                                <div class="slot closed">CHIUSO</div>
                             </div>
                         </div>
                         <!-- Sunday -->
@@ -229,17 +202,54 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <ul class="timetable">
-                        <li>Lunedi: 18:30 - 23:00</li>
-                        <li>Martedi - Domenica: 11:30 - 15:00 | 18:30 - 23:00</li>
-                    </ul> -->
                     <a href="https://maps.app.goo.gl/WKyRuiBWLvt5Hefp9" target="_blank" class="open-google-maps-button">
-                        <i class="fas fa-map-marker-alt"></i> Apri su Google Maps
+                        <img src="./googlemaps.png" class="maps-img"> Google Maps
                     </a>
                 </div>
-
+                <div class="location">
+                   <img src="./stadio.png" alt="" class="loc-pic">
+                    <div class="box-orari">
+                        <div class="day">
+                            <span class="label">Lunedì - Domenica</span>
+                            <div class="time-bar">
+                                <div class="slot morning">11:30 - 15:00</div>
+                                <!-- <div class="slot delivery">15:00 - 18:30 <br> Asporto e Delivery</div> -->
+                                <div class="slot evening">18:30 - 23:00</div>
+                            </div>
+                            <div class="time-bar" style="margin-top:10px;">
+                                <div class="slot delivery">15:00 - 18:30 <br> Solo asporto* e delivery</div>
+                            </div>
+                            <p style="color:grey; margin-top:5px;">* è comunque possibile consumare presso i nostri tavoli esterni il vostro ordine</p>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/place/Viale+del+Fante,+50,+90146+Palermo+PA/@38.1481196,13.3405517,17z/"
+                        target="_blank" class="open-google-maps-button">
+                        <img src="./googlemaps.png" class="maps-img"> Google Maps
+                    </a>
+    
+                </div>
+                <div class="location">
+                    <img src="./lumia.png" alt="" class="loc-pic">
+                    <div class="box-orari">
+                        <div class="day">
+                            <span class="label">Lunedì - Domenica</span>
+                            <div class="time-bar">
+                                <div class="slot morning">11:30 - 15:00</div>
+                                <div class="slot evening">18:30 - 23:00</div>
+                            </div>
+                        </div>
+                        <!-- Sunday -->
+                    </div>
+                    <a href="https://maps.app.goo.gl/immtevJZezTBbfa48" target="_blank" class="open-google-maps-button">
+                        <img src="./googlemaps.png" class="maps-img"> Google Maps
+                    </a>
+                </div>
+    
             </div>
         </div>
+
+        </div>
+    </div>
 
 </body>
 
