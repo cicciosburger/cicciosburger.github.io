@@ -1,4 +1,10 @@
 /* General Reset */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,8 +22,8 @@
   }
 /* Body and Container */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #000000fa;
+    /* background-color: #000000fa; */
+    background-color: white;
     text-align: center;
     padding: 20px;
 }
@@ -27,6 +33,7 @@ body {
     margin: 0 auto;
     padding: 40px;
     background-color: #0e0e0e;
+    background-color: white;
     border-radius: 12px;
     border:1px solid gray;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
@@ -34,19 +41,18 @@ body {
 
 /* Header */
 header img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+    width: 100%;
+    /* border-radius: 50%; */
     margin-bottom: 20px;
     object-fit: cover;
-    border: 5px double white;
+    /* background: white; */
+    /* border: 5px double white; */
 }
 
 header h1 {
     font-size: 2.5rem;
     color: white;
     margin-bottom: 10px;
-    font-family: 'Arial', sans-serif;
 }
 
 header p {
@@ -151,7 +157,7 @@ header p {
 /* Footer */
 footer {
     padding-top: 40px;
-    color: #ddd;
+    color: black;
 }
 
 /* Modal */
@@ -992,4 +998,3 @@ header p{
     /* color:black; */
     /* background: linear-gradient(to right, lightseagreen, yellow); */
 }
-
