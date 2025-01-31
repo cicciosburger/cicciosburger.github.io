@@ -620,10 +620,14 @@ footer {
 @media (max-width: 1200px) {
 	.near-buttons-container {
 		display: flex;
-		flex-direction: column;
-		gap: 20px;
+		flex-direction: row;
+		/* gap: 20px; */
 		justify-content: center;
+        align-items: center;
 	}
+    .near-buttons-container>div{
+        width: 50%;
+    }
 }
 
 .fa-leaf{
