@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch('products.json').then(response => response.json())
     ])
     .then(([categoryData, productData]) => {
-        const outerContainer = document.getElementById("outer-modal");
+        const outerContainer = document.getElementById("generatedContentMenu");
 
         categoryData.payload.categories.forEach(category => {
             const categoryTitle = document.createElement("button");
