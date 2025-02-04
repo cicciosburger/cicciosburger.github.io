@@ -69,7 +69,7 @@
                     }
                 ],
                 "ingredients": "burger di pollo pastellato e fritto, cheddar, bacon, lattuga, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_13ba5cad7a42aecddb7abd403d118be3_crispy.jpg",
@@ -409,7 +409,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_c603e0ba9545dab26818c0fdfbf0e6db_hamburger.jpg",
@@ -1849,7 +1849,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, cheddar, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_619edc41b73dc049e121fe18aea31ee3_cheese-burger.jpg",
@@ -2167,7 +2167,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_c17af969f571d67af8ec92b94e1c26da_bacon-cheese-burger.jpg",
@@ -2496,7 +2496,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_dbc94473d699833349047fff6b205489_american-bacon-cheese.jpg",
@@ -2847,7 +2847,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_202e2e86826c14ac2e4ff7b756ac893e_brie.jpg",
@@ -3198,7 +3198,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_136d218b8e937e1cf0e5a3aa764ec193_tal.jpg",
@@ -3560,7 +3560,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_4d9c505b960f6f09e7e9d6723f720be5_egg.jpg",
@@ -3911,7 +3911,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_0b116762652e7b88c6a1b1fc109c3ec2_tuma.jpg",
@@ -4262,7 +4262,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape, Anidride solforosa e solfiti",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape, Anidride solforosa e solfiti",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_4235260f7b75554d82d8e7320a0ebd00_pancetta.jpg",
@@ -4635,7 +4635,7 @@
                     }
                 ],
                 "ingredients": "doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_9e508afa5a6791555d526aa34feca2f0_double-triple.jpg",
@@ -4964,7 +4964,7 @@
                     }
                 ],
                 "ingredients": "burger di pollo fritto con panatura super croccante, lattuga, pomodoro, maionese",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_39c694d9414751fd14d4ef61a54e70b2_crispy-goat1.jpg",
@@ -5293,7 +5293,7 @@
                     }
                 ],
                 "ingredients": "sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_0555d820e6040723aa5dfc9f3814eac2_chicken-cbt.jpg",
@@ -5633,7 +5633,7 @@
                     }
                 ],
                 "ingredients": "Burger vegetale, lattuga, cheddar, cipolla caramellata, salsa ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_b9dde3ca74e89872c1b187d9ae30ee34_green.jpg",
@@ -6750,7 +6750,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_bafc0c53271177c403503e4f6cf4fc71_old-school.jpg",
@@ -7101,7 +7101,7 @@
                     }
                 ],
                 "ingredients": "burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
-                "allergens": "Glutine, Uova, Arachidi, Latte, Frutta a guscio, Senape",
+                "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
                     "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_b325557aacf46cbdb966deedfe2cc39f_porchetta.jpg",
@@ -7635,5 +7635,5 @@
             }
         ]
     },
-    "crc": "cd700b202b11741c9ad105075a4fb904"
+    "crc": "3761e3ba6ffe3ac6310bb75f34565f2a"
 }

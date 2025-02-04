@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: black;
     text-align: center;
     padding: 20px;
 }
@@ -34,7 +34,7 @@ a{
     margin: 0 auto;
     padding: 40px;
     background-color: #0e0e0e;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 12px;
     border:1px solid gray;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
@@ -43,9 +43,10 @@ a{
 /* Header */
 header img {
     width: 100%;
-    /* border-radius: 50%; */
+    border-radius: 20%;
     margin-bottom: 20px;
     object-fit: cover;
+    background:white;
     /* background: white; */
     /* border: 5px double white; */
 }
@@ -87,8 +88,13 @@ header p {
     transition: all 0.3s ease;
     cursor: pointer;
     background: transparent; 
-    color:black; 
+    /* color:black;  */
     box-shadow: none;
+    padding-bottom:0px;
+}
+
+i{
+    color:white;
 }
 
 .button:hover{
@@ -109,7 +115,7 @@ header p {
 /* Footer */
 footer {
     padding-top: 40px;
-    color: black;
+    color: white;
 }
 
 /* Modal */
