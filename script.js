@@ -19,149 +19,190 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Mappatura degli allergeni con le classi CSS
     const allergeniMap = {
-        "Glutine": { className: "glutine", emoji: "🌾" },
-        "Latte": { className: "latte", emoji: "🥛" },
-        "Uova": { className: "uova", emoji: "🥚" },
-        "Frutta a guscio": { className: "frutta-a-guscio", emoji: "🌰" },
-        "Arachidi": { className: "arachidi", emoji: "🥜" },
-        "Soia": { className: "soia", emoji: "🌱" },
-        "Pesce": { className: "pesce", emoji: "🐟" },
-        "Crostacei": { className: "crostacei", emoji: "🦐" },
-        "Molluschi": { className: "molluschi", emoji: "🐚" },
-        "Sedano": { className: "sedano", emoji: "🥬" },
-        "Lupini": { className: "lupini", emoji: "🌼" },
-        "Sesamo": { className: "sesamo", emoji: "⚪" },
-        "Senape": { className: "senape", emoji: "🟡" },
-        "Solfiti": { className: "solfiti", emoji: "⚗️" },
-      };
-    
+        "Glutine": {
+            className: "glutine",
+            emoji: "🌾"
+        },
+        "Latte": {
+            className: "latte",
+            emoji: "🥛"
+        },
+        "Uova": {
+            className: "uova",
+            emoji: "🥚"
+        },
+        "Frutta a guscio": {
+            className: "frutta-a-guscio",
+            emoji: "🌰"
+        },
+        "Arachidi": {
+            className: "arachidi",
+            emoji: "🥜"
+        },
+        "Soia": {
+            className: "soia",
+            emoji: "🌱"
+        },
+        "Pesce": {
+            className: "pesce",
+            emoji: "🐟"
+        },
+        "Crostacei": {
+            className: "crostacei",
+            emoji: "🦐"
+        },
+        "Molluschi": {
+            className: "molluschi",
+            emoji: "🐚"
+        },
+        "Sedano": {
+            className: "sedano",
+            emoji: "🥬"
+        },
+        "Lupini": {
+            className: "lupini",
+            emoji: "🌼"
+        },
+        "Sesamo": {
+            className: "sesamo",
+            emoji: "⚪"
+        },
+        "Senape": {
+            className: "senape",
+            emoji: "🟡"
+        },
+        "Solfiti": {
+            className: "solfiti",
+            emoji: "⚗️"
+        },
+    };
+
     // Load categories and products
     Promise.all([
-        fetch('categories.json').then(response => response.json()),
-        fetch('products.json').then(response => response.json())
-    ])
-    .then(([categoryData, productData]) => {
-        const outerContainer = document.getElementById("generatedContentMenu");
+            fetch('categories.json').then(response => response.json()),
+            fetch('products.json').then(response => response.json())
+        ])
+        .then(([categoryData, productData]) => {
+            const outerContainer = document.getElementById("generatedContentMenu");
 
-        categoryData.payload.categories.forEach(category => {
-            const categoryTitle = document.createElement("button");
-            categoryTitle.classList.add("collapsible");
-            categoryTitle.textContent = category.title;
-            outerContainer.appendChild(categoryTitle);
+            categoryData.payload.categories.forEach(category => {
+                const categoryTitle = document.createElement("button");
+                categoryTitle.classList.add("collapsible");
+                categoryTitle.textContent = category.title;
+                outerContainer.appendChild(categoryTitle);
 
-            const categoryDiv = document.createElement("div");
-            categoryDiv.classList.add("menu-grid", "content");
-            outerContainer.appendChild(categoryDiv);
-            
-
-
-            category.items_assoc.forEach(item => {
-                const product = productData.payload.products.find(p => p.id === item.product_id);
-
-                if (product) {
-                    const productDiv = document.createElement("div");
-                    productDiv.classList.add("menu-item");
-
-                    const title = document.createElement("h1");
-                    title.classList.add("product-title");
-
-                    const price = document.createElement("p");
-                    price.classList.add("product-price");
-
-                    // Check if the product title contains "green" (case-insensitive)
-                    if (product.title.toLowerCase().includes("green")) {
-                        const leafIcon = document.createElement("i");
-                        leafIcon.classList.add("fas", "fa-leaf");
-                        leafIcon.style.marginLeft = "10px"; // Add some spacing
-                        title.appendChild(leafIcon);
-                    }
+                const categoryDiv = document.createElement("div");
+                categoryDiv.classList.add("menu-grid", "content");
+                outerContainer.appendChild(categoryDiv);
 
 
-                    if (product.price[0].price==0){
-                        let titleExtracted,lowestPrice;
-                        lowestPrice=product.variants[0].items[0].price_variation;
-                        titleExtracted = product.title
-                        if (product.title.includes("(")) {
-                            let inputString = product.title;
-                            const openParenIndex = inputString.indexOf("(");
 
-                            if (openParenIndex !== -1) {
-                                titleExtracted = inputString.slice(0, openParenIndex).trim();
-                            } else {
-                                titleExtracted = inputString.trim();
-                                lowestPrice= "";
-                            }
+                category.items_assoc.forEach(item => {
+                    const product = productData.payload.products.find(p => p.id === item.product_id);
 
-                            
-                        }//menu
-                        for(item in product.variants[0].items){
-                            if(item.price_variation<lowestPrice){
-                                lowestPrice=item.price_variation;
-                            }
+                    if (product) {
+                        const productDiv = document.createElement("div");
+                        productDiv.classList.add("menu-item");
+
+                        const title = document.createElement("h1");
+                        title.classList.add("product-title");
+
+                        const price = document.createElement("p");
+                        price.classList.add("product-price");
+
+                        // Check if the product title contains "green" (case-insensitive)
+                        if (product.title.toLowerCase().includes("green")) {
+                            const leafIcon = document.createElement("i");
+                            leafIcon.classList.add("fas", "fa-leaf");
+                            leafIcon.style.marginLeft = "10px"; // Add some spacing
+                            title.appendChild(leafIcon);
                         }
-                        title.prepend(document.createTextNode(titleExtracted)); // Add text before the icon
-                        price.textContent = `da ${parseFloat(lowestPrice).toFixed(2).toString().replace(".",",")}€`;
-                        
-                    } 
-                    else {
-                        title.prepend(document.createTextNode(product.title)); // Add text before the icon
-                        price.textContent = `${parseFloat(product.price[0].price).toFixed(2).toString().replace(".", ",")}€`;
-                    }
 
-                    const image = document.createElement("img");
-                    image.classList.add("product-img");
-                    image.src = product.thumb.thumb;
 
-                    const description = document.createElement("p");
-                    description.classList.add("product-description");
-                    description.textContent = product.ingredients;
+                        if (product.price[0].price == 0) {
+                            let titleExtracted, lowestPrice;
+                            lowestPrice = product.variants[0].items[0].price_variation;
+                            titleExtracted = product.title
+                            if (product.title.includes("(")) {
+                                let inputString = product.title;
+                                const openParenIndex = inputString.indexOf("(");
 
-                    productDiv.appendChild(image);
-                    productDiv.appendChild(title);
-                    productDiv.appendChild(description);
-                    productDiv.appendChild(price);
-                    if(product.allergens){
-                        // Contenitore in cui aggiungere le icone
-                        const allergeniContainer = document.createElement("div");
-                        allergeniContainer.classList.add("allergeni-container");
-                        
+                                if (openParenIndex !== -1) {
+                                    titleExtracted = inputString.slice(0, openParenIndex).trim();
+                                } else {
+                                    titleExtracted = inputString.trim();
+                                    lowestPrice = "";
+                                }
 
-                        const allergeniText = document.createElement("p");
-                        allergeniText.classList.add("allergeni-text");
-                        // allergeniText.classList.add("product-description");
-                        allergeniText.textContent="Allergeni"
-                        allergeniContainer.appendChild(allergeniText)
-                        // Dividiamo la lista degli allergeni
-                        listallergeni = product.allergens;
-                        const allergeniArray = listallergeni.split(", ");
 
-                        const allergeniInnerContainer = document.createElement("div");
-                        allergeniInnerContainer.classList.add("allergeni-inner-container");
-                        allergeniContainer.appendChild(allergeniInnerContainer);
-
-                        // Iteriamo sugli allergeni e aggiungiamo le icone
-                        allergeniArray.forEach(allergene => {
-                            const allergeneData = allergeniMap[allergene];
-                            if (allergeneData) {
-                                // Creiamo l'elemento div per l'icona
-                                const icona = document.createElement("div");
-                                icona.className = `icona ${allergeneData.className}`;
-                                icona.textContent = allergeneData.emoji; // Mostra solo l'icona (emoji)
-                                allergeniInnerContainer.appendChild(icona);
+                            } //menu
+                            for (item in product.variants[0].items) {
+                                if (item.price_variation < lowestPrice) {
+                                    lowestPrice = item.price_variation;
+                                }
                             }
-                        });
-                        
-                        productDiv.appendChild(allergeniContainer);
-                    }
+                            title.prepend(document.createTextNode(titleExtracted)); // Add text before the icon
+                            price.textContent = `da ${parseFloat(lowestPrice).toFixed(2).toString().replace(".",",")}€`;
 
-                    categoryDiv.appendChild(productDiv);
-                }
+                        } else {
+                            title.prepend(document.createTextNode(product.title)); // Add text before the icon
+                            price.textContent = `${parseFloat(product.price[0].price).toFixed(2).toString().replace(".", ",")}€`;
+                        }
+
+                        const image = document.createElement("img");
+                        image.classList.add("product-img");
+                        image.src = product.thumb.thumb;
+
+                        const description = document.createElement("p");
+                        description.classList.add("product-description");
+                        description.textContent = product.ingredients;
+
+                        productDiv.appendChild(image);
+                        productDiv.appendChild(title);
+                        productDiv.appendChild(description);
+                        productDiv.appendChild(price);
+                        if (product.allergens) {
+                            // Contenitore in cui aggiungere le icone
+                            const allergeniContainer = document.createElement("div");
+                            allergeniContainer.classList.add("allergeni-container");
+
+
+                            const allergeniText = document.createElement("p");
+                            allergeniText.classList.add("allergeni-text");
+                            // allergeniText.classList.add("product-description");
+                            allergeniText.textContent = "Allergeni"
+                            allergeniContainer.appendChild(allergeniText)
+                            // Dividiamo la lista degli allergeni
+                            listallergeni = product.allergens;
+                            const allergeniArray = listallergeni.split(", ");
+
+                            const allergeniInnerContainer = document.createElement("div");
+                            allergeniInnerContainer.classList.add("allergeni-inner-container");
+                            allergeniContainer.appendChild(allergeniInnerContainer);
+
+                            // Iteriamo sugli allergeni e aggiungiamo le icone
+                            allergeniArray.forEach(allergene => {
+                                const allergeneData = allergeniMap[allergene];
+                                if (allergeneData) {
+                                    // Creiamo l'elemento div per l'icona
+                                    const icona = document.createElement("div");
+                                    icona.className = `icona ${allergeneData.className}`;
+                                    icona.textContent = allergeneData.emoji; // Mostra solo l'icona (emoji)
+                                    allergeniInnerContainer.appendChild(icona);
+                                }
+                            });
+
+                            productDiv.appendChild(allergeniContainer);
+                        }
+
+                        categoryDiv.appendChild(productDiv);
+                    }
+                });
             });
+        })
+        .catch(error => {
+            console.error('Error loading the files:', error);
         });
-    })
-    .catch(error => {
-        console.error('Error loading the files:', error);
-    });
 
     // Event delegation for collapsible buttons
     document.addEventListener("click", function (event) {
@@ -234,5 +275,25 @@ document.addEventListener("DOMContentLoaded", function () {
             modalClock.style.display = "none";
         }
     };
-    
+
+    //FORM MODAL
+    // FORM MODAL
+    const showFormButton = document.getElementById("showFormButton");
+    const modalForm = document.getElementById("formModal");
+    const closeFormBtn = document.getElementById("close-inactive-form-modal"); // Ensure this ID matches your close button
+
+    showFormButton.onclick = function () {
+        modalForm.style.display = "flex"; // Use flex to center the modal
+    };
+
+    closeFormBtn.onclick = function () {
+        modalForm.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modalForm) {
+            modalForm.style.display = "none";
+        }
+    };
+
 });

@@ -43,10 +43,8 @@ a{
 /* Header */
 header img {
     width: 100%;
-    border-radius: 20%;
     margin-bottom: 20px;
     object-fit: cover;
-    background:white;
     /* background: white; */
     /* border: 5px double white; */
 }
@@ -1061,4 +1059,54 @@ header p{
     font-weight: bold;
     color: black;
     margin-bottom: 8px;
+}
+/* Modal Styles */
+#formModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    overflow: auto;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.modalForm-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px; /* Adjust the max-width as needed */
+    position: relative;
+    text-align: center;
+    margin: auto; /* Center the modal content */
+}
+
+/* Close Button for Form Modal */
+.closeModal-btn {
+    color: #aaa;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.closeModal-btn:hover,
+.closeModal-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Iframe Styles */
+iframe {
+    width: 100%; /* Make the iframe fill the modal content */
+    height: 80vh; /* Adjust the height as needed */
+    border: none; /* Remove iframe border */
 }
