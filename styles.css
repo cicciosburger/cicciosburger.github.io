@@ -916,6 +916,13 @@ header p{
     margin-right: 15px;
 }
 
+.location-grid{
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    margin-right: 0px;
+}
+
 @media (max-width: 768px) {
     .locations{
         padding-right:10px;
