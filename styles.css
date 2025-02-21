@@ -1117,3 +1117,122 @@ iframe {
     height: 80vh; /* Adjust the height as needed */
     border: none; /* Remove iframe border */
 }
+
+/* Membership Form Modal Styles */
+#membershipModal .modalForm-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+}
+
+#membershipModal .modalForm-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#membershipModal .modalForm-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#membershipModal .modalForm-content label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#membershipModal .modalForm-content input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#membershipModal .modalForm-content .phone-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+#membershipModal .modalForm-content .phone-prefix {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+}
+
+#membershipModal .modalForm-content .phone-input {
+    flex: 1;
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+}
+
+#membershipModal .modalForm-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#membershipModal .modalForm-content button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+#membershipModal .modalForm-content #result {
+    margin-top: 20px;
+    display: none;
+}
+
+#membershipModal .modalForm-content #barcode {
+    margin-top: 10px;
+}
+
+/* Style for the phone container */
+#membershipModal .modalForm-content .phone-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+/* Style for the phone prefix */
+#membershipModal .modalForm-content .phone-prefix {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    height: 38px; /* Match the height of the input field */
+    display: flex;
+    align-items: center; /* Center the text vertically */
+}
+
+input#terms {
+    width: 15px !important;
+    padding: 5px !important;
+    margin-left: 2px;
+    height: 15px !important;
+}
+
+input#phone {
+    margin: 0px !important;
+    padding: auto !important;
+}
+#submit-button{
+    color:white !important;
+    background-color: black !important;
+}
