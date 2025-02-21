@@ -276,24 +276,170 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    //FORM MODAL
-    // FORM MODAL
-    const showFormButton = document.getElementById("showFormButton");
-    const modalForm = document.getElementById("formModal");
-    const closeFormBtn = document.getElementById("close-inactive-form-modal"); // Ensure this ID matches your close button
+    // Membership Form Modal
+    const showMembershipButton = document.getElementById("showFormButton");
+    const membershipModal = document.getElementById("membershipModal");
+    const closeMembershipBtn = document.getElementById("closeMembershipBtn");
 
-    showFormButton.onclick = function () {
-        modalForm.style.display = "flex"; // Use flex to center the modal
+    showMembershipButton.onclick = function () {
+        membershipModal.style.display = "flex";
     };
 
-    closeFormBtn.onclick = function () {
-        modalForm.style.display = "none";
+    closeMembershipBtn.onclick = function () {
+        membershipModal.style.display = "none";
     };
 
     window.onclick = function (event) {
-        if (event.target == modalForm) {
-            modalForm.style.display = "none";
+        if (event.target == membershipModal) {
+            membershipModal.style.display = "none";
         }
     };
 
+    const barcodeData = getCookie("barcodeData");
+    if (barcodeData) {
+        // Display the barcode directly
+        JsBarcode("#barcode", barcodeData, {
+            format: "ean13",
+            lineColor: "#000",
+            width: 2,
+            height: 100,
+            displayValue: true,
+        });
+        document.getElementById("result").style.display = "block";
+        document.getElementById("downloadBarcodeButton").style.display = "block";
+        document.getElementById("data-form").style.display = "none";
+    }
+
+    // Form Submission
+    const form = document.getElementById("data-form");
+    const submitButton = document.getElementById("submit-button");
+    const resultSection = document.getElementById("result");
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        // Validate reCAPTCHA
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+            alert("Completa il reCAPTCHA.");
+            return;
+        }
+
+        submitButton.disabled = true;
+
+        const formData = new FormData(form);
+        formData.set("email", formData.get("email").toLowerCase());
+
+        const dob = new Date(formData.get("dob"));
+        const today = new Date();
+        const age = today.getFullYear() - dob.getFullYear();
+        if (age < 16 || (age === 16 && today < new Date(dob.setFullYear(dob.getFullYear() + 16))) || age > 100) {
+            alert("Devi avere almeno 16 anni per iscriverti.");
+            submitButton.disabled = false;
+            return;
+        }
+
+        const phone = formData.get("phone");
+        const fullPhone = `+39${phone}`;
+
+        const data = Object.fromEntries(formData.entries());
+        data.phone = fullPhone;
+
+        try {
+            const response = await fetch("http://api.cicciosburger.it:5000/api/generate-barcode", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                alert("Errore: " + errorText);
+                submitButton.disabled = false;
+                return;
+            }
+
+            const barcodeCode = await response.text();
+
+            // Save barcode data in a cookie
+            setCookie("barcodeData", barcodeCode, 30);
+
+            JsBarcode("#barcode", barcodeCode, {
+                format: "ean13",
+                lineColor: "#000",
+                width: 2,
+                height: 100,
+                displayValue: true,
+            });
+
+            form.style.display = "none";
+            resultSection.style.display = "block";
+            document.getElementById("downloadBarcodeButton").style.display = "block";
+
+        } catch (error) {
+            alert("Errore: " + error.message);
+        } finally {
+            submitButton.disabled = false;
+        }
+    });
+
+    // Download Barcode
+    document.getElementById("downloadBarcodeButton").addEventListener("click", function () {
+        const barcodeElement = document.getElementById("barcode");
+        console.log("Barcode Element:", barcodeElement);
+        const svg=barcodeElement
+        // const svg = barcodeElement.getElementsByTagName("svg");
+        // console.log("SVG Element:", svg);
+    
+        if (!svg) {
+            alert("Il codice a barre non è stato generato correttamente.");
+            return;
+        }
+    
+        // Add a small delay to ensure the SVG is fully rendered
+        setTimeout(() => {
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+    
+            // Convert SVG to canvas
+            const svgData = new XMLSerializer().serializeToString(svg);
+            const img = new Image();
+            img.src = "data:image/svg+xml;base64," + btoa(svgData);
+    
+            img.onload = function () {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+    
+                // Create a download link
+                const link = document.createElement("a");
+                link.href = canvas.toDataURL("image/png");
+                link.download = "barcode.png";
+                link.click();
+            };
+        }, 100); // 100ms delay
+    });
+    
+
 });
+
+// Cookie Functions
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const cookieName = name + "=";
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
+        if (cookie.indexOf(cookieName) === 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+    return "";
+}

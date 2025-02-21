@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="shortcut icon" type="image/x-icon" href="logo.ico">
     <script src="script.js" defer></script>
 </head>
@@ -52,14 +54,14 @@
                     </p>
 
                 </a> -->
-                <!-- <hr style="border: 0; height: 1px; background-color: white;">
+                <hr style="border: 0; height: 1px; background-color: white;">
                 <div id="showFormButton">
                     <i class="fa-solid fa-address-card" style="font-size:3rem;"></i>
                     <p class="button">
                         Membership
                     </p>
 
-                </div> -->
+                </div>
 
                 <hr style="border: 0; height: 1px; background-color: white;">
                 <div id="showClockButton">
@@ -272,13 +274,59 @@
             </div>
         </div>
         <!-- Form Modal -->
-        <div id="formModal" class="modal">
+        <!-- <div id="formModal" class="modal">
             <div class="modalForm-content">
                 <span class="closeModal-btn" id="close-inactive-form-modal">&times;</span>
                 <iframe src="https://forms.office.com/e/tp9Q1tPD6D?embed=true" frameborder="0" marginwidth="0"
                     marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen
                     webkitallowfullscreen mozallowfullscreen msallowfullscreen>
                 </iframe>
+            </div>
+        </div> -->
+
+        <!-- Membership Form Modal -->
+        <div id="membershipModal" class="modal">
+            <div class="modalForm-content">
+                <span class="closeModal-btn" id="closeMembershipBtn">&times;</span>
+                <h1>Iscrizione Membership Card</h1>
+                <p style="background-color: yellow;">L'ordine di iscrizione non influisce sulla posizione fisica in fila.</p>
+                <form id="data-form">
+                    <label for="name">Nome:*</label>
+                    <input type="text" id="name" name="name" required pattern="[A-Za-z ]+" title="Sono ammesse solo lettere" placeholder="Inserisci il tuo nome">
+        
+                    <label for="surname">Cognome:*</label>
+                    <input type="text" id="surname" name="surname" required pattern="[A-Za-z ]+" title="Sono ammesse solo lettere" placeholder="Inserisci il tuo cognome">
+        
+                    <label for="dob">Data di Nascita:*</label>
+                    <input type="date" id="dob" name="dob" required placeholder="Seleziona la tua data di nascita">
+        
+                    <label for="email">Email:*</label>
+                    <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Inserisci una email valida (es., esempio@dominio.com)" placeholder="esempio@dominio.com">
+        
+                    <label for="phone">Numero di telefono:*</label>
+                    <div class="phone-container">
+                        <div class="phone-prefix">+39</div>
+                        <input type="text" id="phone" name="phone" class="phone-input" required pattern="^\d{10}$" title="Il numero deve contenere 10 numeri (es., 3281234567)" placeholder="3281234567">
+                    </div>
+        
+                    <div class="terms-container">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">
+                            Accetto
+                            <a href="https://docs.google.com/document/d/1H6UBx_cvAu7Z4-Hpv2FWCsYuzl8sLlw2GnY_U2_JCZ4/edit?usp=sharing" target="_blank">Privacy Policy
+                            e Termini e condizioni</a>.*
+                        </label>
+                    </div>
+        
+                    <div class="g-recaptcha" data-sitekey="6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_"></div>
+                    <button type="submit" id="submit-button">Richiedi tessera</button>
+                </form>
+        
+                <div id="result">
+                    <h2>Presenta questo codice:</h2>
+                    <svg id="barcode"></svg>
+                    <button id="downloadBarcodeButton" style="display: none;">Scarica Codice a Barre</button>
+                </div>
             </div>
         </div>
 
