@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data.phone = fullPhone;
 
         try {
-            const response = await fetch("http://api.cicciosburger.it:5000/api/generate-barcode", {
+            const response = await fetch("https://api.cicciosburger.it/api/generate-barcode", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
