@@ -1236,3 +1236,7 @@ input#phone {
     color:white !important;
     background-color: black !important;
 }
+#submit-button {
+    z-index: 10 !important;
+    position: relative !important;
+}
