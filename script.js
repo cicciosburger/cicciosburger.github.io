@@ -443,3 +443,92 @@ function getCookie(name) {
     }
     return "";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cookieConsentBanner = document.getElementById("cookieConsent");
+    const acceptCookiesBtn = document.getElementById("acceptCookiesBtn");
+    const rejectCookiesBtn = document.getElementById("rejectCookiesBtn");
+    const membershipModal = document.getElementById("membershipModal");
+    const cookieWarning = document.getElementById("cookieWarning");
+    const dataForm = document.getElementById("data-form");
+    const recaptchaContainer = document.getElementById("recaptcha-container");
+
+    // Flag per tracciare se il reCAPTCHA è già stato caricato
+    let recaptchaLoaded = false;
+
+    // Controlla se l'utente ha già accettato i cookie
+    function checkCookieConsent() {
+        if (!localStorage.getItem("cookieConsent")) {
+            cookieConsentBanner.style.display = "block"; // Mostra il banner
+        } else {
+            enableForm(); // Abilita il modulo
+            loadRecaptcha(); // Carica il reCAPTCHA
+        }
+    }
+
+    // Abilita il modulo di registrazione
+    function enableForm() {
+        dataForm.style.display = "flex";
+        cookieWarning.style.display = "none";
+    }
+
+    // Disabilita il modulo di registrazione
+    function disableForm() {
+        dataForm.style.display = "none";
+        cookieWarning.style.display = "block";
+    }
+
+    // Carica il reCAPTCHA solo dopo il consenso
+    function loadRecaptcha() {
+        if (!recaptchaLoaded) {
+            const script = document.createElement("script");
+            script.src = "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit";
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+
+            // Imposta il flag per evitare di caricare il reCAPTCHA più volte
+            recaptchaLoaded = true;
+        }
+    }
+
+    // Callback per quando il reCAPTCHA è caricato
+    window.onRecaptchaLoad = function () {
+        console.log("reCAPTCHA caricato con successo.");
+        const recaptchaContainer = document.getElementById("recaptcha-container");
+        if (recaptchaContainer) {
+            grecaptcha.render(recaptchaContainer, {
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Sostituisci con la tua chiave reCAPTCHA
+            });
+        } else {
+            console.error("Elemento reCAPTCHA non trovato.");
+        }
+    };
+
+    // Gestisci il clic su "Accetta"
+    acceptCookiesBtn.addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "accepted");
+        cookieConsentBanner.style.display = "none";
+        enableForm();
+        loadRecaptcha(); // Carica il reCAPTCHA dopo l'accettazione
+    });
+
+    // Gestisci il clic su "Rifiuta"
+    rejectCookiesBtn.addEventListener("click", function () {
+        localStorage.removeItem("cookieConsent");
+        cookieConsentBanner.style.display = "none";
+        disableForm();
+    });
+
+    // Controlla lo stato dei cookie quando il modulo viene aperto
+    document.getElementById("showFormButton").addEventListener("click", function () {
+        if (!localStorage.getItem("cookieConsent")) {
+            disableForm();
+        } else {
+            enableForm();
+        }
+    });
+
+    // Esegui il controllo all'avvio
+    checkCookieConsent();
+});
