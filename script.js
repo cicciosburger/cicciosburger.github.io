@@ -449,7 +449,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const acceptCookiesBtn = document.getElementById("acceptCookiesBtn");
     const rejectCookiesBtn = document.getElementById("rejectCookiesBtn");
     const membershipModal = document.getElementById("membershipModal");
-    const cookieWarning = document.getElementById("cookieWarning");
+    const cookieWarning = document.getElementById("cookieMsg");
     const dataForm = document.getElementById("data-form");
     const recaptchaContainer = document.getElementById("recaptcha-container");
 
