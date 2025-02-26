@@ -507,7 +507,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Gestisci il clic su "Accetta"
     acceptCookiesBtn.addEventListener("click", function () {
-        localStorage.setItem("cookieConsent", "accepted");
+        setCookie("cookieConsent", "accepted", 180);
         cookieConsentBanner.style.display = "none";
         enableForm();
         loadRecaptcha(); // Carica il reCAPTCHA dopo l'accettazione
