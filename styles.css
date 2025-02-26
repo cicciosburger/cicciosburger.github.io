@@ -1288,3 +1288,8 @@ input#phone {
     background-color: #f5c6cb;
 }
 
+#cookieWarning {
+    display: none; /* Hidden by default */
+    color: red;
+    margin-bottom: 20px;
+}
