@@ -1842,9 +1842,9 @@
                 "price": [
                     {
                         "pricelist_id": "1",
-                        "price": 6.9,
-                        "default_price": 6.9,
-                        "vat_price": 6.9,
+                        "price": 7.9,
+                        "default_price": 7.9,
+                        "vat_price": 7.9,
                         "vat": 10
                     }
                 ],
