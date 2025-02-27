@@ -453,32 +453,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const dataForm = document.getElementById("data-form");
     const recaptchaContainer = document.getElementById("recaptcha-container");
 
-    // Flag per tracciare se il reCAPTCHA è già stato caricato
+    // Flag to track if reCAPTCHA has been loaded
     let recaptchaLoaded = false;
 
-    // Controlla se l'utente ha già accettato i cookie
+    // Check if the user has already accepted cookies
     function checkCookieConsent() {
         if (!localStorage.getItem("cookieConsent")) {
-            cookieConsentBanner.style.display = "block"; // Mostra il banner
+            cookieConsentBanner.style.display = "block"; // Show the banner
         } else {
-            enableForm(); // Abilita il modulo
-            loadRecaptcha(); // Carica il reCAPTCHA
+            enableForm(); // Enable the form
+            loadRecaptcha(); // Load reCAPTCHA
         }
     }
 
-    // Abilita il modulo di registrazione
+    // Enable the registration form
     function enableForm() {
         dataForm.style.display = "flex";
-        cookieWarning.style.display = "none";
+        cookieWarning.style.display = "none"; // Ensure the cookie message is hidden
     }
 
-    // Disabilita il modulo di registrazione
+    // Disable the registration form
     function disableForm() {
         dataForm.style.display = "none";
         cookieWarning.style.display = "block";
     }
 
-    // Carica il reCAPTCHA solo dopo il consenso
+    // Load reCAPTCHA only after consent
     function loadRecaptcha() {
         if (!recaptchaLoaded) {
             const script = document.createElement("script");
@@ -487,40 +487,40 @@ document.addEventListener("DOMContentLoaded", function () {
             script.defer = true;
             document.body.appendChild(script);
 
-            // Imposta il flag per evitare di caricare il reCAPTCHA più volte
+            // Set the flag to avoid loading reCAPTCHA multiple times
             recaptchaLoaded = true;
         }
     }
 
-    // Callback per quando il reCAPTCHA è caricato
+    // Callback when reCAPTCHA is loaded
     window.onRecaptchaLoad = function () {
-        console.log("reCAPTCHA caricato con successo.");
+        console.log("reCAPTCHA loaded successfully.");
         const recaptchaContainer = document.getElementById("recaptcha-container");
         if (recaptchaContainer) {
             grecaptcha.render(recaptchaContainer, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Sostituisci con la tua chiave reCAPTCHA
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
             });
         } else {
-            console.error("Elemento reCAPTCHA non trovato.");
+            console.error("reCAPTCHA element not found.");
         }
     };
 
-    // Gestisci il clic su "Accetta"
+    // Handle click on "Accept"
     acceptCookiesBtn.addEventListener("click", function () {
-        setCookie("cookieConsent", "accepted", 180);
+        localStorage.setItem("cookieConsent", "accepted");
         cookieConsentBanner.style.display = "none";
         enableForm();
-        loadRecaptcha(); // Carica il reCAPTCHA dopo l'accettazione
+        loadRecaptcha(); // Load reCAPTCHA after acceptance
     });
 
-    // Gestisci il clic su "Rifiuta"
+    // Handle click on "Reject"
     rejectCookiesBtn.addEventListener("click", function () {
         localStorage.removeItem("cookieConsent");
         cookieConsentBanner.style.display = "none";
         disableForm();
     });
 
-    // Controlla lo stato dei cookie quando il modulo viene aperto
+    // Check the cookie status when the form is opened
     document.getElementById("showFormButton").addEventListener("click", function () {
         if (!localStorage.getItem("cookieConsent")) {
             disableForm();
@@ -529,6 +529,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Esegui il controllo all'avvio
+    // Run the check on startup
     checkCookieConsent();
 });
