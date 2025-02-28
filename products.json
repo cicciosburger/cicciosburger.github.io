@@ -7158,8 +7158,8 @@
                 "price": [
                     {
                         "pricelist_id": "1",
-                        "price": 10.4,
-                        "default_price": 10.4,
+                        "price": 11.4,
+                        "default_price": 11.4,
                         "vat_price": 0,
                         "vat": 10
                     }
