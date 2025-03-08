@@ -737,6 +737,50 @@
                 "enable_name_on_package": false
             },
             {
+                "id": 5098,
+                "sku": "10501",
+                "active": true,
+                "visible": true,
+                "relevant": false,
+                "title": "MAIONESE HEINZ",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 569
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0.4,
+                        "default_price": 0.4,
+                        "vat_price": 0.4,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_8d84bdcd33b4c6d71fe9e03f03a3a8ca_maionese.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_8d84bdcd33b4c6d71fe9e03f03a3a8ca_maionese.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_8d84bdcd33b4c6d71fe9e03f03a3a8ca_maionese.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_8d84bdcd33b4c6d71fe9e03f03a3a8ca_maionese.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_8d84bdcd33b4c6d71fe9e03f03a3a8ca_maionese.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_8d84bdcd33b4c6d71fe9e03f03a3a8ca_maionese.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
                 "id": 5477,
                 "sku": "10103",
                 "active": true,
@@ -1663,6 +1707,61 @@
                                 "min": null,
                                 "max": 1,
                                 "price_part": false
+                            },
+                            {
+                                "code": "10502",
+                                "title": "SALSA CHEDDAR CALDA 170ML",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 3,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10507",
+                                "title": "SALSA CICCIO'S 60ML",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 1,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10503",
+                                "title": "THAI 60ML",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 1.2,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10505",
+                                "title": "HOT THAI 60ML",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 1.2,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "10506",
+                                "title": "SPICY CHEDDAR 60ML",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 1.2,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
                             }
                         ]
                     }
@@ -1821,6 +1920,314 @@
                         ]
                     }
                 ],
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 5498,
+                "sku": "10502",
+                "active": true,
+                "visible": true,
+                "relevant": false,
+                "title": "SALSA CHEDDAR CALDA 170ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 569
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 3,
+                        "default_price": 3,
+                        "vat_price": 3,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_736c2a21e61a4f14682ffd6c916f7725_salsa-cheddart.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_736c2a21e61a4f14682ffd6c916f7725_salsa-cheddart.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_736c2a21e61a4f14682ffd6c916f7725_salsa-cheddart.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_736c2a21e61a4f14682ffd6c916f7725_salsa-cheddart.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_736c2a21e61a4f14682ffd6c916f7725_salsa-cheddart.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_736c2a21e61a4f14682ffd6c916f7725_salsa-cheddart.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 5499,
+                "sku": "10503",
+                "active": true,
+                "visible": true,
+                "relevant": false,
+                "title": "THAI 60ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 569
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 1.2,
+                        "default_price": 1.2,
+                        "vat_price": 1.2,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_24c15aadbd48dda870564154a8c0c660_salsa-thai.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_24c15aadbd48dda870564154a8c0c660_salsa-thai.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_24c15aadbd48dda870564154a8c0c660_salsa-thai.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_24c15aadbd48dda870564154a8c0c660_salsa-thai.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_24c15aadbd48dda870564154a8c0c660_salsa-thai.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_24c15aadbd48dda870564154a8c0c660_salsa-thai.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 5501,
+                "sku": "10505",
+                "active": true,
+                "visible": true,
+                "relevant": false,
+                "title": "HOT THAI 60ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 569
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 1.2,
+                        "default_price": 1.2,
+                        "vat_price": 1.2,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_d2f170995d2d03e4b5607d941aed978b_salsa-hot-thai.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_d2f170995d2d03e4b5607d941aed978b_salsa-hot-thai.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_d2f170995d2d03e4b5607d941aed978b_salsa-hot-thai.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_d2f170995d2d03e4b5607d941aed978b_salsa-hot-thai.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_d2f170995d2d03e4b5607d941aed978b_salsa-hot-thai.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_d2f170995d2d03e4b5607d941aed978b_salsa-hot-thai.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 5502,
+                "sku": "10506",
+                "active": true,
+                "visible": true,
+                "relevant": false,
+                "title": "SPICY CHEDDAR 60ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 569
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 1.2,
+                        "default_price": 1.2,
+                        "vat_price": 1.2,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_0586745a00dd0252a1c1086b5e0b1469_spicy-cheddar.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_0586745a00dd0252a1c1086b5e0b1469_spicy-cheddar.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_0586745a00dd0252a1c1086b5e0b1469_spicy-cheddar.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_0586745a00dd0252a1c1086b5e0b1469_spicy-cheddar.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_0586745a00dd0252a1c1086b5e0b1469_spicy-cheddar.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_0586745a00dd0252a1c1086b5e0b1469_spicy-cheddar.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 5503,
+                "sku": "10507",
+                "active": true,
+                "visible": true,
+                "relevant": false,
+                "title": "SALSA CICCIO'S 60ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 569
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 1,
+                        "default_price": 1,
+                        "vat_price": 1,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_e76d08645cf4e30a6c7e87cc2067cb16_salsa-ciccios.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_e76d08645cf4e30a6c7e87cc2067cb16_salsa-ciccios.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_e76d08645cf4e30a6c7e87cc2067cb16_salsa-ciccios.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_e76d08645cf4e30a6c7e87cc2067cb16_salsa-ciccios.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_e76d08645cf4e30a6c7e87cc2067cb16_salsa-ciccios.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_e76d08645cf4e30a6c7e87cc2067cb16_salsa-ciccios.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 5505,
+                "sku": "10509",
+                "active": true,
+                "visible": true,
+                "relevant": false,
+                "title": "BBQ HEINZ",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 569
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0.4,
+                        "default_price": 0.4,
+                        "vat_price": 0.4,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_80d6a204015ba20235b93b088eb2468d_bbq.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_80d6a204015ba20235b93b088eb2468d_bbq.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_80d6a204015ba20235b93b088eb2468d_bbq.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_80d6a204015ba20235b93b088eb2468d_bbq.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_80d6a204015ba20235b93b088eb2468d_bbq.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_80d6a204015ba20235b93b088eb2468d_bbq.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 5507,
+                "sku": "10511",
+                "active": true,
+                "visible": true,
+                "relevant": false,
+                "title": "KETCHUP HEINZ",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 569
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0.4,
+                        "default_price": 0.4,
+                        "vat_price": 0.4,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_e9e67dc4f2e1a6936eb7dc1a6d09e140_ketchup-heinz.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_e9e67dc4f2e1a6936eb7dc1a6d09e140_ketchup-heinz.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_e9e67dc4f2e1a6936eb7dc1a6d09e140_ketchup-heinz.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_e9e67dc4f2e1a6936eb7dc1a6d09e140_ketchup-heinz.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_e9e67dc4f2e1a6936eb7dc1a6d09e140_ketchup-heinz.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_e9e67dc4f2e1a6936eb7dc1a6d09e140_ketchup-heinz.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
                 "capacity_required": 0,
                 "capacity_required_default": 0,
                 "enable_name_on_package": false
@@ -4628,9 +5035,9 @@
                 "price": [
                     {
                         "pricelist_id": "1",
-                        "price": 11.9,
-                        "default_price": 11.9,
-                        "vat_price": 11.9,
+                        "price": 12.3,
+                        "default_price": 12.3,
+                        "vat_price": 12.3,
                         "vat": 10
                     }
                 ],
@@ -5994,50 +6401,6 @@
                 "enable_name_on_package": false
             },
             {
-                "id": 6133,
-                "sku": "10802",
-                "active": true,
-                "visible": true,
-                "relevant": false,
-                "title": "CHEESE CAKE",
-                "short_description": "Non la classica NY cheesecake con nutella",
-                "long_description": null,
-                "catalog_assoc": [
-                    {
-                        "catalog": 643
-                    }
-                ],
-                "price": [
-                    {
-                        "pricelist_id": "1",
-                        "price": 3.5,
-                        "default_price": 3.5,
-                        "vat_price": 3.5,
-                        "vat": 10
-                    }
-                ],
-                "ingredients": null,
-                "allergens": "Glutine, Uova, Arachidi, Soia, Latte, Frutta a guscio",
-                "notes": null,
-                "thumb": {
-                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_fb1defb2bfb2ec210cd2fbdcbad727c8_cheese-cake.jpg",
-                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_fb1defb2bfb2ec210cd2fbdcbad727c8_cheese-cake.jpg",
-                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_fb1defb2bfb2ec210cd2fbdcbad727c8_cheese-cake.jpg"
-                },
-                "detail": {
-                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_fb1defb2bfb2ec210cd2fbdcbad727c8_cheese-cake.jpg",
-                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_fb1defb2bfb2ec210cd2fbdcbad727c8_cheese-cake.jpg",
-                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_fb1defb2bfb2ec210cd2fbdcbad727c8_cheese-cake.jpg"
-                },
-                "cart_crossselling": [],
-                "fixed_price": false,
-                "frozen": false,
-                "variants": null,
-                "capacity_required": 0,
-                "capacity_required_default": 0,
-                "enable_name_on_package": false
-            },
-            {
                 "id": 6134,
                 "sku": "10803",
                 "active": true,
@@ -7158,8 +7521,8 @@
                 "price": [
                     {
                         "pricelist_id": "1",
-                        "price": 11.4,
-                        "default_price": 11.4,
+                        "price": 10.4,
+                        "default_price": 10.4,
                         "vat_price": 0,
                         "vat": 10
                     }
@@ -7182,7 +7545,7 @@
                 "frozen": false,
                 "variants": [
                     {
-                        "code": "$MIG_12_$M_3",
+                        "code": "$MIG_145_$M_3",
                         "title": "Componente base",
                         "short_description": null,
                         "long_description": null,
@@ -7203,7 +7566,7 @@
                         ]
                     },
                     {
-                        "code": "4_9903_M12",
+                        "code": "4_9903_M145",
                         "title": "INGREDIENTI CHEESEBURGER",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
@@ -7235,7 +7598,7 @@
                         ]
                     },
                     {
-                        "code": "2_9903_M12",
+                        "code": "2_9903_M145",
                         "title": "MODIFICA IL TUO PANINO",
                         "short_description": " ",
                         "long_description": " ",
@@ -7476,7 +7839,7 @@
                         ]
                     },
                     {
-                        "code": "$MIG_13_$M_3",
+                        "code": "$MIG_141_$M_3",
                         "title": "PATATINE",
                         "short_description": "PATATINE",
                         "long_description": "PATATINE",
@@ -7508,7 +7871,7 @@
                         ]
                     },
                     {
-                        "code": "$MIG_14_$M_3",
+                        "code": "$MIG_142_$M_3",
                         "title": "STARTERS",
                         "short_description": "STARTERS",
                         "long_description": "STARTERS",
@@ -7573,7 +7936,7 @@
                         ]
                     },
                     {
-                        "code": "$MIG_15_$M_3",
+                        "code": "$MIG_143_$M_3",
                         "title": "BIBITA",
                         "short_description": "BIBITA",
                         "long_description": "BIBITA",
@@ -7782,7 +8145,7 @@
                 "frozen": false,
                 "variants": [
                     {
-                        "code": "$MIG_16_$M_4",
+                        "code": "$MIG_144_$M_4",
                         "title": "Componente base",
                         "short_description": null,
                         "long_description": null,
@@ -7803,7 +8166,7 @@
                         ]
                     },
                     {
-                        "code": "3_9905_M16",
+                        "code": "3_9905_M144",
                         "title": "INGREDIENTI  AMERICAN BACONCHEESE",
                         "short_description": "PERSONALIZZA INGREDIENTI",
                         "long_description": "PERSONALIZZA INGREDIENTI",
@@ -7868,7 +8231,7 @@
                         ]
                     },
                     {
-                        "code": "2_9905_M16",
+                        "code": "2_9905_M144",
                         "title": "MODIFICA IL TUO PANINO",
                         "short_description": " ",
                         "long_description": " ",
@@ -9998,7 +10361,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 340,
+                                "price_variation": 3.4,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -11231,7 +11594,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 340,
+                                "price_variation": 3.4,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -13708,7 +14071,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 340,
+                                "price_variation": 3.4,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -17139,5 +17502,5 @@
             }
         ]
     },
-    "crc": "b417b6e31a43ada7ee94985782469ecd"
+    "crc": "973af984d5f30ed73d45c84ea5e8efbe"
 }
