@@ -373,16 +373,17 @@ footer {
     margin: 10px 0;
 }
 
-.menu-item .product-price {
+/* .menu-item .product-price {
     font-size: 1.2rem;
     color: #050505;
     margin: 10px 0;
-}
+} */
 
-.menu-item .product-description {
-    font-size: 1rem;
-    color: #777;
-    padding: 0 10px;
+.allergeni-container{
+    display: block;
+}
+.allergeni-inner-container{
+    display:flex;
 }
 .allergeni-text{
     margin-right:5px;
@@ -392,46 +393,28 @@ footer {
     align-self: center;
     display:block;
 }
-.allergeni-container{
-    display: block;
-}
-.allergeni-inner-container{
-    display:flex;
-}
 /* Mobile layout */
-/* Mobile layout */
+
+/* Mobile layout for screens smaller than 400px */
 @media (max-width: 1050px) {
-    .allergeni-text{
-        display: flex;
-        margin-right:2px;
-        font-weight:500;
-        color: grey;
-        align-self: center;
-    }
-    .allergeni-container{
-        display:inline;
-    }
     .menu-item {
         display: grid;
         grid-template-columns: 100px 1fr ; /* Left column for text, right column for image */
         grid-template-rows: auto auto auto; /* Three rows for title, description, and price */
         gap: 10px; /* Space between grid items */
-        align-items: start;
         text-align: left;
         overflow: hidden; /* Prevent content from overflowing */
     }
 
     .menu-item img {
-        width: 100px; /* Adjust image width for mobile */
-        height: 100px; /* Adjust image height for mobile */
-        max-width: 100%; /* Ensure the image doesn't exceed its container */
-        height: auto; /* Maintain aspect ratio */
-        object-fit: contain; /* Scale the image to fit within the container */
-        grid-column: 1; /* Place image in the right column */
-        grid-row: 1 / span 3; /* Span image across all rows */
-        align-self: center; /* Center the image vertically */
-        margin: 0; /* Remove default margin */
-        border: 0.5px solid black;
+        width: 100px; 
+        height: 100px; 
+        max-width: 100%; 
+        height: auto; 
+        object-fit: contain; 
+        grid-column: 1; 
+        grid-row: 1 / span 3; 
+        align-self: center; 
     }
 
     .menu-item h1 {
@@ -449,7 +432,6 @@ footer {
     }
 
     .menu-item .product-price {
-        grid-column: 3; /* Place price in the left column */
         grid-row: 1; /* Place price in the bottom row */
         font-size: 1rem;
         margin: 0;
@@ -465,16 +447,6 @@ footer {
     .allergeni-container{
         grid-column: 1;
         grid-row: 4;
-    }
-    .outlined-text {
-        font-size: 40px;
-    }
-}
-
-/* Mobile layout for screens smaller than 400px */
-@media (max-width: 450px) {
-    .outlined-text {
-        font-size: 40px;
     }
 	header p{
 		margin-bottom:20px;
@@ -512,14 +484,6 @@ footer {
         grid-column: 2; /* Move price to the second column */
         grid-row: 3; /* Place price in the bottom row */
     }
-	.modal-content {
-		width: 95%;
-	  }
-	.menu-grid {
-		grid-template-columns: auto;
-		gap:10px;
-		margin-bottom:10px;
-	}
 }
 
 .product-price{
@@ -530,101 +494,9 @@ footer {
 	color:green;
 }
 
-/* Locate Food Truck Button */
+/* MENU */
 
-/* Modal Styles */
-.modalTruck {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    overflow: auto;
-}
-
-.modalTruck-content {
-    background-color: #fff;
-    margin: 20% auto; /* Center the modal vertically */
-    padding: 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-    text-align: center;
-}
-
-.modalTruck-content p {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 0;
-}
-
-.closeTruck-btn {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    cursor: pointer;
-}
-
-.closeTruck-btn:hover,
-.closeTruck-btn:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.icona {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    margin: 2px;
-    padding:4px;
-    padding-top: 2px;
-    padding-left:3px;
-    /* border: 1px solid gray; */
-  }
-
-.legenda-container{
-    /* display: inline; */
-    margin-bottom:30px;
-    /* padding:30px; */
-    
-}
-.mid-cont{
-    align-items: start;
-    display:flex;
-
-}
-.legenda-item{
-    display: inline;
-}
-  /* .glutine { background: #FFA726; }       
-  .latte { background: #29B6F6; }        
-  .uova { background: #FFEB3B; }         
-  .frutta-a-guscio { background: #8D6E63; } 
-  .arachidi { background: #FF7043; }     
-  .soia { background: #66BB6A; }         
-  .pesce { background: #0288D1; }        
-  .crostacei { background: #FF5252; }    
-  .molluschi { background: #B39DDB; }    
-  .sedano { background: #81C784; }       
-  .lupini { background: #FFD54F; }       
-  .sesamo { background: #D4E157; }       
-  .senape { background: #FBC02D; }       
-  .solfiti { background: #B0BEC5; }       */
-
-  .legenda-container {
+.legenda-container {
     margin-top:5px;
     display: flex;
     flex-wrap: wrap; /* Permette agli elementi di andare a capo */
@@ -639,118 +511,51 @@ footer {
     white-space: nowrap; /* Impedisce al testo di andare a capo */
 }
 
-.icona-legenda {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
-    color: white;
-    margin: 0px;
-}
 
-.legenda-text {
-    font-weight: 500;
-    color: grey;
-    margin-bottom:0px;
-}
+/* PUNTI VENDITA ORARI */
 
-/*  */
-.clock-content h1 {
-    text-align: center;
-    color: #444;
-    margin-bottom: 30px;
-}
-
-/* Restaurant Styles */
 .clock-content{
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 95%;
+    margin: 10px auto;
+    padding: 15px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
-.restaurant {
-    margin-bottom: 30px;
-    padding: 20px;
-    /* background-color: #bdbdbd; */
-    border: 1px black solid;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
 
-.restaurant h2 {
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.restaurant p {
-    font-style: italic;
-    color: #777;
-    margin-bottom: 15px;
-}
-
-/* Timetable Styles */
-.timetable {
-    list-style-type: none;
-    margin-bottom: 10px;
-}
-
-.timetable li {
-    background-color: #e0e0e0;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 4px;
-    color: #333;
-}
-
-.timetable li:nth-child(odd) {
-    background-color: #d0d0d0;
-}
-
-.open-google-maps-button {
-    display: inline-flex;
-    align-items: center;
+.location-grid{
+    display:flex;
+    flex-direction: row;
     justify-content: center;
-    color: whitesmoke;
-    font-size: 1.2rem;
-    padding: 16px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    width: auto; /* Larghezza automatica (non al 100%) */
+}
+
+.location {
+    margin-bottom: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 8px;
+}
+
+@media (max-width: 768px) { /*hours display horizon*/
+	.location-grid{
+        flex-direction: column;
+    }
+}
+
+.slot{
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: black;
     font-weight: bold;
-    border: none;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    background-color: #f0f0f0;
     border: 1px solid black;
-    background: linear-gradient(45deg, #4285F4, #34A853); /* Gradiente ispirato a Google */
 }
 
-/* Icona di Font Awesome */
-.open-google-maps-button i {
-    font-size: 1.6rem;
-    margin-right: 10px;
-}
-
-/* Effetto hover */
-.open-google-maps-button:hover {
-    background: linear-gradient(45deg, #34A853, #4285F4); /* Gradiente invertito */
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-/* Effetto attivo (cliccato) */
-.open-google-maps-button:active {
-    transform: scale(0.98); /* Leggera riduzione delle dimensioni */
-}
-
-
-/* ------- */
 .box-orari{
     border: 1px solid black;
     border-radius: 8px;
@@ -758,22 +563,10 @@ footer {
     margin-bottom: 20px;
 }
 
-.graph-container {
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: left;
+.loc-pic{
+    width:100%;
 }
 
-.graph-container h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: #333;
-    text-align: center;
-    font-weight: 600;
-}
 
 .day {
     margin-bottom: 15px;
@@ -784,113 +577,29 @@ footer {
     gap: 5px;
 }
 
-.slot {
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    flex: 1;
-    background-color: #f0f0f0;
-    border: 1px solid black;
-    transition: background-color 0.3s ease;
-}
-
-.slot:hover {
-    background-color: #e0e0e0;
-}
-
 .morning {
     color:whitesmoke;
-    background: #005AA7;
-  background: linear-gradient(
-    to right,
-    #8d8d8d,
-    #005AA7
-  );
+    background: linear-gradient(
+        to right,
+        gray,
+        rgb(73, 73, 73)
+    );
 }
 
 .evening {
     color:whitesmoke;
     background: #4b79a1; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #005AA7,
-    #0a2342
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #005AA7,
-    #0a2342
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: -olinear-gradient(to top, #283e51, #0a2342);
+    background: linear-gradient(
+        to right,
+        rgb(73, 73, 73),
+        rgb(60, 60, 60)
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 
 .delivery{
-    color:whitesmoke;
-    background: #005AA7;
-    background: light;
-  background: linear-gradient(45deg,#005AA7, rgb(74, 136, 175), #005AA7);
-}
-
-header p{
-    margin-bottom:20px;
-    font-size:1rem;
-    /* border:3px groove white;  */
-    border:5px double white; 
-    border-radius: 8px; 
-    padding: 6px;
-    font-weight:700;
-    /* color:black; */
-    /* background: linear-gradient(to right, lightseagreen, yellow); */
-}
-
-.clock-content{
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-.location {
-    margin-bottom: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    padding: 10px;
-}
-
-.location h2 {
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.location p {
-    font-style: italic;
-    color: #777;
-    margin-bottom: 15px;
-}
-
-/* Timetable Styles */
-.timetable {
-    list-style-type: none;
-    margin-bottom: 10px;
-}
-
-.timetable li {
-    background-color: #e0e0e0;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 4px;
-    color: #333;
-}
-
-.timetable li:nth-child(odd) {
-    background-color: #d0d0d0;
+    color: white;
+    background: darkgoldenrod;
 }
 
 .open-google-maps-button {
@@ -916,182 +625,27 @@ header p{
     margin-right: 15px;
 }
 
-.location-grid{
-    display:flex;
-    flex-direction: row;
-    align-content: center;
-    margin-right: 0px;
+.open-google-maps-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
-    .locations{
-        padding-right:10px;
-        padding-left:5px;
-    }
-	.location-grid{
-        display:flex;
-        flex-direction: column;
-    }
-    .location{
-        width:100%;
-        padding: 5px;
-        padding-left: 3px;
-    }
-}
-
-/* ------- */
-.box-orari{
-    /* border: 1px solid black; */
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.graph-container {
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: left;
-}
-
-.graph-container h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: #333;
-    text-align: center;
-    font-weight: 600;
-}
-
-.day {
-    margin-bottom: 15px;
-}
-
-.time-bar {
-    display: flex;
-    gap: 5px;
-}
-
-.slot {
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    flex: 1;
-    background-color: #f0f0f0;
-    /* border: 1px solid white; */
-    transition: background-color 0.3s ease;
-}
-
-.slot:hover {
-    background-color: #e0e0e0;
-}
-
-.morning {
-    color:whitesmoke;
-    background: #005AA7;
-  background: linear-gradient(
-    to right,
-    gray,
-    rgb(73, 73, 73)
-  );
-}
-
-.evening {
-    color:whitesmoke;
-    background: #4b79a1; /* fallback for old browsers */
-  background: linear-gradient(
-    to right,
-    rgb(73, 73, 73),
-    rgb(60, 60, 60)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: -olinear-gradient(to top, #283e51, #0a2342);
-}
-
-.loc-pic{
-    width:100%;
-}
-
-.closed {
-    color:black;
-
-    background: whitesmoke; /* fallback for old browsers */
-
-}
-
-.delivery{
-    color: white;
-    background: darkgoldenrod;
-}
-
-
-/* END OPENING HOURS */
-
-@media (max-width: 768px) {
-    .locations{
-        padding-right:10px;
-        padding-left:5px;
-    }
-	.location-grid{
-        display:flex;
-        flex-direction: column;
-    }
-    .location{
-        width:100%;
-        padding: 5px;
-        padding-left: 3px;
-    }
-}
-
-.open-google-maps-button i {
-    font-size: 1.6rem;
-    margin-right: 10px;
-}
-
-/* Effetto attivo (cliccato) */
 .open-google-maps-button:active {
-    transform: scale(0.98); /* Leggera riduzione delle dimensioni */
+    transform: scale(0.98); 
 }
 
-.maps-img{
+.maps-img{ /*GOOGLE MAPS ICON*/
     height:3.5vh;
     margin-right: 8px;
 }
 
 .label {
-    display: block;
+    display: inline;
     font-weight: bold;
     color: black;
     margin-bottom: 8px;
 }
 /* Modal Styles */
-#formModal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    overflow: auto;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-
-.modalForm-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 600px; /* Adjust the max-width as needed */
-    position: relative;
-    text-align: center;
-    margin: auto; /* Center the modal content */
-}
 
 /* Close Button for Form Modal */
 .closeModal-btn {
@@ -1111,14 +665,16 @@ header p{
     cursor: pointer;
 }
 
-/* Iframe Styles */
-iframe {
-    width: 100%; /* Make the iframe fill the modal content */
-    height: 80vh; /* Adjust the height as needed */
-    border: none; /* Remove iframe border */
+
+/* ---- MEMBERSHIP ---- */
+
+#cookieMsg { /*COOKIE MESSAGE ON REGISTRATION FORM*/
+    display: none; /* Hidden by default */
+    color: red;
+    margin-bottom: 20px;
 }
 
-/* Membership Form Modal Styles */
+/*MEMBERSHIP FORM CONTAINER*/
 #membershipModal .modalForm-content {
     background-color: #fff;
     padding: 20px;
@@ -1130,7 +686,8 @@ iframe {
     margin: auto;
 }
 
-#membershipModal .modalForm-content h1 {
+/*ISCRIZIONE MEMBERSHIP CARD TITLE*/
+#membershipModal .modalForm-content h1 { 
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
@@ -1155,53 +712,24 @@ iframe {
     border-radius: 4px;
 }
 
-#membershipModal .modalForm-content .phone-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 300px;
-}
-
-#membershipModal .modalForm-content .phone-prefix {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 8px;
-    border-radius: 4px 0 0 4px;
-    font-size: 14px;
-}
-
-#membershipModal .modalForm-content .phone-input {
-    flex: 1;
-    border-radius: 0 4px 4px 0;
-    border-left: none;
-}
-
-#membershipModal .modalForm-content button {
+/*RICHIEDI TESSERA/SCARICA CODICE A BARRE*/
+#membershipModal .modalForm-content button { 
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-#membershipModal .modalForm-content button:disabled {
+#membershipModal .modalForm-content button:disabled { /*DISABLE BUTTON FORM*/
     background-color: #aaa;
     cursor: not-allowed;
 }
 
-#membershipModal .modalForm-content #result {
-    margin-top: 20px;
-    display: none;
-}
 
-#membershipModal .modalForm-content #barcode {
-    margin-top: 10px;
-}
-
-/* Style for the phone container */
-#membershipModal .modalForm-content .phone-container {
+/* PHONE CONTAINER */
+.phone-container {
     display: flex;
     align-items: center; /* Align items vertically */
     width: 100%;
@@ -1209,39 +737,65 @@ iframe {
     margin-bottom: 10px;
 }
 
-/* Style for the phone prefix */
-#membershipModal .modalForm-content .phone-prefix {
-    background-color: #f0f0f0;
+.phone-container .phone-prefix { /*PHONE +39*/
     border: 1px solid #ccc;
+    background-color: #f0f0f0;
     padding: 8px;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px !important;
     font-size: 14px;
-    height: 38px; /* Match the height of the input field */
+    height: 33.6px; /* Match the height of the input field */
     display: flex;
     align-items: center; /* Center the text vertically */
 }
 
-input#terms {
-    width: 15px !important;
-    padding: 5px !important;
-    margin-left: 2px;
-    height: 15px !important;
-}
-
-input#phone {
+.phone-container input#phone { /*PHONE NUMBER*/
     margin: 0px !important;
     padding: auto !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    margin-left: 5px !important;
+    height: 33.6px;
 }
-#submit-button{
+.terms-container{ /*TERMS CONTAINER*/
+    display: flex;
+    align-items: start;
+    align-content: flex-start;
+    max-width: 300px;
+    margin-bottom: 5px;
+}
+.terms-container input { /*TERMS CHECKBOX*/
+    height: 25px !important;
+    width: 25px !important;
+    align-self: center;
+    margin:0px !important;
+}
+.terms-container label{ /*TERMS TEXT*/
+    margin: 0px !important;
+    text-align: left;
+    margin-left: 10px !important;
+    font-size: 14px;
+}
+#submit-button { /*RICHIEDI TESSERA*/
     color:white !important;
     background-color: black !important;
-}
-#submit-button {
     z-index: 10 !important;
     position: relative !important;
     width:100%;
 }
- /* Stile per il banner dei cookie */
+/* FORM RESULT */
+#result {
+    margin-top: 20px;
+    display: none;
+}
+
+#result #downloadBarcodeButton{
+    color: white !important;
+    background-color: rgb(17, 168, 0) !important;
+    z-index: 10 !important;
+    position: relative !important;
+    width: 100%;
+}
+ /* -------- COOKIE BANNER -------- */
  #cookieConsent {
     background-color: #333;
     color: white;
@@ -1292,8 +846,51 @@ input#phone {
     background-color: #f5c6cb;
 }
 
-#cookieMsg {
+/* -------- COOKIE BANNER -------- */
+
+/* FOOD TRUCK */
+.modalTruck {
     display: none; /* Hidden by default */
-    color: red;
-    margin-bottom: 20px;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    overflow: auto;
+}
+
+.modalTruck-content {
+    background-color: #fff;
+    margin: 20% auto; /* Center the modal vertically */
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.modalTruck-content p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+}
+
+.closeTruck-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.closeTruck-btn:hover,
+.closeTruck-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }

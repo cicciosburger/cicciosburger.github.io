@@ -296,6 +296,52 @@
                 ]
             },
             {
+                "id": 569,
+                "code": "10500",
+                "active": true,
+                "visible": true,
+                "title": "SALSE",
+                "short_description": "SALSE",
+                "long_description": "SALSE",
+                "thumb": null,
+                "parent": null,
+                "order": 6,
+                "items_assoc": [
+                    {
+                        "product_id": 5098,
+                        "order": 1
+                    },
+                    {
+                        "product_id": 5498,
+                        "order": 2
+                    },
+                    {
+                        "product_id": 5499,
+                        "order": 3
+                    },
+                    {
+                        "product_id": 5501,
+                        "order": 4
+                    },
+                    {
+                        "product_id": 5502,
+                        "order": 5
+                    },
+                    {
+                        "product_id": 5503,
+                        "order": 6
+                    },
+                    {
+                        "product_id": 5505,
+                        "order": 7
+                    },
+                    {
+                        "product_id": 5507,
+                        "order": 8
+                    }
+                ]
+            },
+            {
                 "id": 643,
                 "code": "10800",
                 "active": true,
@@ -312,20 +358,16 @@
                         "order": 1
                     },
                     {
-                        "product_id": 6133,
+                        "product_id": 6134,
                         "order": 2
                     },
                     {
-                        "product_id": 6134,
-                        "order": 3
-                    },
-                    {
                         "product_id": 6135,
-                        "order": 4
+                        "order": 3
                     }
                 ]
             }
         ]
     },
-    "crc": "2e10476dcdc041019dfb9a70fe77c980"
+    "crc": "4de86d4986f13e974278823c8000afec"
 }
