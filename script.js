@@ -152,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         const image = document.createElement("img");
                         image.classList.add("product-img");
                         image.src = product.thumb.thumb;
+                        image.loading = "lazy";
 
                         const description = document.createElement("p");
                         description.classList.add("product-description");

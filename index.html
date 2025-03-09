@@ -14,8 +14,18 @@
     <title>Ciccio's Burger</title>
     <link rel="preload" href="./img/logo.webp" as="image">
     <link rel="stylesheet" href="styles.css">
+    <!-- Preload Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="stylesheet">
+
+    <!-- Preload Google Fonts (Poppins) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
+
+    <!-- Link to Font Awesome (CSS) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="shortcut icon" type="image/x-icon" href="./img/logo.ico">
     <script src="script.js" defer></script>
 </head>
@@ -180,7 +190,7 @@
                     <h2>Punti vendita</h2>
                     <div class="location-grid">
                         <div class="location">
-                            <img src="./img/sperlinga.webp" alt="" class="loc-pic">
+                            <img src="./img/sperlinga.webp" alt="" class="loc-pic" loading="lazy">
                             <div class="box-orari">
                                 <div class="day">
                                     <span class="label">Lunedì</span>
@@ -205,11 +215,11 @@
                             </div>
                             <a href="https://maps.app.goo.gl/WKyRuiBWLvt5Hefp9" target="_blank"
                                 class="open-google-maps-button">
-                                <img src="./img/googlemaps.webp" class="maps-img"> Google Maps
+                                <img src="./img/googlemaps.webp" class="maps-img" loading="lazy"> Google Maps
                             </a>
                         </div>
                         <div class="location">
-                            <img src="./img/stadio.webp" alt="" class="loc-pic">
+                            <img src="./img/stadio.webp" alt="" class="loc-pic" loading="lazy">
                             <div class="box-orari">
                                 <div class="day">
                                     <span class="label">Lunedì - Domenica</span>
@@ -227,12 +237,12 @@
                             </div>
                             <a href="https://www.google.com/maps/place/Viale+del+Fante,+50,+90146+Palermo+PA/@38.1481196,13.3405517,17z/"
                                 target="_blank" class="open-google-maps-button">
-                                <img src="./img/googlemaps.webp" class="maps-img"> Google Maps
+                                <img src="./img/googlemaps.webp" class="maps-img" loading="lazy"> Google Maps
                             </a>
 
                         </div>
                         <div class="location">
-                            <img src="./img/lumia.webp" alt="" class="loc-pic">
+                            <img src="./img/lumia.webp" alt="" class="loc-pic" loading="lazy">
                             <div class="box-orari">
                                 <div class="day">
                                     <span class="label">Lunedì - Domenica</span>
@@ -245,7 +255,7 @@
                             </div>
                             <a href="https://maps.app.goo.gl/immtevJZezTBbfa48" target="_blank"
                                 class="open-google-maps-button">
-                                <img src="./img/googlemaps.webp" class="maps-img"> Google Maps
+                                <img src="./img/googlemaps.webp" class="maps-img" loading="lazy"> Google Maps
                             </a>
                         </div>
 
