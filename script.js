@@ -1,3 +1,103 @@
+let recaptchaWidgetId;
+let recaptchaOrderWidgetId;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cookieConsentBanner = document.getElementById("cookieConsent");
+    const acceptCookiesBtn = document.getElementById("acceptCookiesBtn");
+    const rejectCookiesBtn = document.getElementById("rejectCookiesBtn");
+    const cookieWarning = document.getElementById("cookieMsg");
+    const cookieOrderWarning = document.getElementById("cookieOrderMsg");
+    const dataForm = document.getElementById("data-form");
+    const orderForm = document.getElementById("orderForm");
+
+    let recaptchaLoaded = false;
+    let barcodeScriptLoaded = false;
+
+    // Check if the user has already accepted cookies
+    function checkCookieConsent() {
+        if (!localStorage.getItem("cookieConsent")) {
+            cookieConsentBanner.style.display = "block"; // Show the banner
+            disableForm(); // Ensure the form is disabled initially
+        } else {
+            enableForm(); // Enable the form
+            loadRecaptcha(); // Load reCAPTCHA
+        }
+    }
+
+    // Enable the registration form
+    function enableForm() {
+        dataForm.style.display = "flex";
+        orderForm.style.display = "flex";
+        cookieWarning.style.display = "none"; // Hide the cookie warning
+        cookieOrderWarning.style.display = "none"; // Hide the cookie warning
+    }
+
+    // Disable the registration form
+    function disableForm() {
+        dataForm.style.display = "none";
+        orderForm.style.display = "none";
+        cookieWarning.style.display = "block"; // Show the cookie warning
+        cookieOrderWarning.style.display = "block"; // Show the cookie order warning
+    }
+
+
+    function loadRecaptcha() {
+        if (!recaptchaLoaded) {
+            const script = document.createElement("script");
+            script.src = "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit";
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+            recaptchaLoaded = true;
+        }
+    }
+
+    // Callback when reCAPTCHA is loaded
+    window.onRecaptchaLoad = function () {
+        console.log("reCAPTCHA loaded successfully.");
+        const recaptchaContainer = document.getElementById("recaptcha-container");
+        const recaptchaContainerOrder = document.getElementById("recaptcha-container-order");
+        if (recaptchaContainer) {
+            recaptchaWidgetId =grecaptcha.render(recaptchaContainer, {
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
+            });
+        }
+        if (recaptchaContainerOrder) {
+            recaptchaOrderWidgetId =grecaptcha.render(recaptchaContainerOrder, {
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
+            });
+        }
+    };
+
+    // Handle click on "Accept"
+    acceptCookiesBtn.addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "accepted");
+        cookieConsentBanner.style.display = "none";
+        enableForm();
+        loadRecaptcha(); // Load reCAPTCHA after acceptance
+    });
+
+    // Handle click on "Reject"
+    rejectCookiesBtn.addEventListener("click", function () {
+        localStorage.removeItem("cookieConsent");
+        cookieConsentBanner.style.display = "none";
+        disableForm();
+    });
+
+    // Check the cookie status when the form is opened
+    document.getElementById("showFormButton").addEventListener("click", function () {
+        if (!localStorage.getItem("cookieConsent")) {
+            disableForm();
+        } else {
+            enableForm();
+        }
+    });
+
+    // Run the check on startup
+    checkCookieConsent();
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const showMenuButton = document.getElementById("showMenuButton");
     const modal = document.getElementById("menuModal");
@@ -312,14 +412,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Form Submission
-    const form = document.getElementById("data-form");
     const submitButton = document.getElementById("submit-button");
     const resultSection = document.getElementById("result");
+    const form = document.getElementById("data-form");
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         // Validate reCAPTCHA
-        const recaptchaResponse = grecaptcha.getResponse();
+        const recaptchaResponse = grecaptcha.getResponse(recaptchaWidgetId);
         if (!recaptchaResponse) {
             alert("Completa il reCAPTCHA.");
             return;
@@ -344,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const data = Object.fromEntries(formData.entries());
         data.phone = fullPhone;
-
+        console.log(JSON.stringify(data))
         try {
             const response = await fetch("https://api.cicciosburger.it/api/generate-barcode", {
                 method: "POST",
@@ -445,114 +545,188 @@ function getCookie(name) {
     return "";
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const cookieConsentBanner = document.getElementById("cookieConsent");
-    const acceptCookiesBtn = document.getElementById("acceptCookiesBtn");
-    const rejectCookiesBtn = document.getElementById("rejectCookiesBtn");
-    const membershipModal = document.getElementById("membershipModal");
-    const cookieWarning = document.getElementById("cookieMsg");
-    const dataForm = document.getElementById("data-form");
-    const recaptchaContainer = document.getElementById("recaptcha-container");
 
-    // Flag to track if reCAPTCHA has been loaded
-    let recaptchaLoaded = false;
-    let barcodeScriptLoaded = false;
+// order form
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("orderModal");
+    const openModalBtn = document.getElementById("showOrderFormButton");
+    const closeModal = document.querySelector(".close");
+    const addToCartBtn = document.getElementById("addToCart");
+    const sendOrderBtn = document.getElementById("sendOrder");
+    const cartList = document.getElementById("cart");
 
-    // Check if the user has already accepted cookies
-    function checkCookieConsent() {
-        if (!localStorage.getItem("cookieConsent")) {
-            cookieConsentBanner.style.display = "block"; // Show the banner
-        } else {
-            enableForm(); // Enable the form
-            loadRecaptcha(); // Load reCAPTCHA
+    let cart = [];
+    let typeData = {}; // Store JSON data for types and sizes
+
+    openModalBtn.addEventListener("click", () => {
+        modal.style.display = "block";
+    });
+
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
         }
-    }
+    });
 
-    // Enable the registration form
-    function enableForm() {
-        dataForm.style.display = "flex";
-        cookieWarning.style.display = "none"; // Ensure the cookie message is hidden
-    }
+    fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+            typeData = data;
 
-    // Disable the registration form
-    function disableForm() {
-        dataForm.style.display = "none";
-        cookieWarning.style.display = "block";
-    }
+            const typeSelect = document.getElementById("order-type");
+            typeSelect.innerHTML = "";
 
-    // Load reCAPTCHA only after consent
-
-    function addJsBarcodeScript() {
-        // Create a script element
-        if(!barcodeScriptLoaded){
-            var script = document.createElement('script');
-            
-            // Set the source of the script to the JsBarcode URL
-            script.src = "https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js";
-            
-            // Optionally, you can add an onload callback if you want to know when the script has been loaded
-            script.onload = function() {
-              console.log('JsBarcode script has been loaded.');
-            };
-          
-            // Append the script to the head or body of the document
-            document.head.appendChild(script);
-            barcodeScriptLoaded= true;
-        }
-      }
-      
-      // Call the function to add the script
-    function loadRecaptcha() {
-        if (!recaptchaLoaded) {
-            const script = document.createElement("script");
-            script.src = "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit";
-            script.async = true;
-            script.defer = true;
-            document.body.appendChild(script);
-
-            // Set the flag to avoid loading reCAPTCHA multiple times
-            recaptchaLoaded = true;
-            addJsBarcodeScript()
-        }
-    }
-
-    // Callback when reCAPTCHA is loaded
-    window.onRecaptchaLoad = function () {
-        console.log("reCAPTCHA loaded successfully.");
-        const recaptchaContainer = document.getElementById("recaptcha-container");
-        if (recaptchaContainer) {
-            grecaptcha.render(recaptchaContainer, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
+            Object.keys(typeData).forEach(type => {
+                let option = document.createElement("option");
+                option.value = type;
+                option.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+                typeSelect.appendChild(option);
             });
-        } else {
-            console.error("reCAPTCHA element not found.");
+
+            updateSizeOptions();
+        });
+
+    function updateSizeOptions() {
+        const typeSelect = document.getElementById("order-type");
+        const sizeSelect = document.getElementById("order-size");
+        sizeSelect.innerHTML = "";
+
+        const selectedType = typeSelect.value;
+        if (typeData[selectedType]) {
+            typeData[selectedType].forEach(size => {
+                let option = document.createElement("option");
+                option.value = size.toLowerCase();
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
         }
-    };
+    }
 
-    // Handle click on "Accept"
-    acceptCookiesBtn.addEventListener("click", function () {
-        localStorage.setItem("cookieConsent", "accepted");
-        cookieConsentBanner.style.display = "none";
-        enableForm();
-        loadRecaptcha(); // Load reCAPTCHA after acceptance
-    });
+    document.getElementById("order-type").addEventListener("change", updateSizeOptions);
 
-    // Handle click on "Reject"
-    rejectCookiesBtn.addEventListener("click", function () {
-        localStorage.removeItem("cookieConsent");
-        cookieConsentBanner.style.display = "none";
-        disableForm();
-    });
+    addToCartBtn.addEventListener("click", () => {
+        const name = document.getElementById("order-name").value;
+        const surname = document.getElementById("order-surname").value;
+        const email = document.getElementById("order-email").value;
+        const shop = document.getElementById("order-shop").value;
+        const quantity = parseInt(document.getElementById("order-quantity").value);
+        const type = document.getElementById("order-type").value;
+        const size = document.getElementById("order-size").value;
 
-    // Check the cookie status when the form is opened
-    document.getElementById("showFormButton").addEventListener("click", function () {
-        if (!localStorage.getItem("cookieConsent")) {
-            disableForm();
-        } else {
-            enableForm();
+        if (!name || !surname || !email || isNaN(quantity) || quantity < 1 || quantity > 5) {
+            alert("Compila tutti i campi correttamente.");
+            return;
         }
+
+        let found = false;
+
+        cart = cart.map(item => {
+            if (item.type === type && item.size === size) {
+                found = true;
+                return { ...item, quantity: Math.min(item.quantity + quantity, 5) };
+            }
+            return item;
+        });
+
+        if (!found) {
+            cart.push({ quantity, type, size });
+        }
+
+        updateCart();
     });
 
-    // Run the check on startup
-    checkCookieConsent();
+    function updateCart() {
+        cartList.innerHTML = "";
+        cart.forEach((item, index) => {
+            let itemDiv = document.createElement("div");
+            itemDiv.classList.add("itemDiv");
+
+            let itemQuantity= document.createElement("p");
+            itemQuantity.classList.add("itemQuantity");
+            itemQuantity.textContent= `${item.quantity}`
+
+            let itemInternalDiv = document.createElement("div");
+            itemInternalDiv.classList.add("itemInternalDiv");
+
+            let itemTitle= document.createElement("p");
+            itemTitle.classList.add("itemTitle");
+            itemTitle.textContent= item.type
+
+            let itemSize= document.createElement("p");
+            itemSize.classList.add("itemSize");
+            itemSize.textContent= `Taglia: ${item.size}`
+            
+            let removeBtn = document.createElement("button");
+            removeBtn.textContent = "Rimuovi";
+            removeBtn.classList.add("remove");
+            removeBtn.addEventListener("click", () => {
+                cart.splice(index, 1);
+                updateCart();
+            });
+            itemInternalDiv.appendChild(itemTitle);
+            itemInternalDiv.appendChild(itemSize);
+            
+            itemDiv.appendChild(itemQuantity);
+            itemDiv.appendChild(itemInternalDiv);
+            itemDiv.appendChild(removeBtn);
+            cartList.appendChild(itemDiv);
+        });
+    }
+
+    sendOrderBtn.addEventListener("click", () => {
+        if (cart.length === 0) {
+            alert("Il carrello è vuoto!");
+            return;
+        }
+    
+        const recaptchaResponse = grecaptcha.getResponse(recaptchaOrderWidgetId); // Ensure you pass the correct widget ID
+        if (!recaptchaResponse) {
+            alert("Completa il reCAPTCHA.");
+            return;
+        }
+    
+        const name = document.getElementById("order-name").value;
+        const surname = document.getElementById("order-surname").value;
+        const email = document.getElementById("order-email").value;
+        const shop = document.getElementById("order-shop").value;
+    
+        if (!name || !surname || !email) {
+            alert("Compila tutti i campi obbligatori.");
+            return;
+        }
+    
+        // Add CAPTCHA response to the order data
+        const orderData = {
+            name,
+            surname,
+            email,
+            shop,
+            cart,
+            recaptchaResponse // Include the CAPTCHA response here
+        };
+    
+        console.log(JSON.stringify(orderData)); // Check the object in the console
+    
+        fetch("https://api.cicciosburger.it/api/generate-order-number", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(orderData) // Send the order data including CAPTCHA response
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("Ordine inviato con successo!");
+            cart = [];
+            updateCart();
+            modal.style.display = "none";
+        })
+        .catch(error => {
+            console.error("Errore nell'invio dell'ordine:", error);
+        });
+    });    
 });

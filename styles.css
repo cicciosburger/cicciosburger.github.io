@@ -868,6 +868,8 @@ footer {
     max-width: 300px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    height: 33.6px;
+    -webkit-appearance: none;
 }
 
 /*RICHIEDI TESSERA/SCARICA CODICE A BARRE*/
@@ -914,20 +916,23 @@ footer {
     margin-left: 5px !important;
     height: 33.6px;
 }
-.terms-container{ /*TERMS CONTAINER*/
+.terms-container {
     display: flex;
     align-items: start;
-    align-content: flex-start;
     max-width: 300px;
     margin-bottom: 5px;
 }
-.terms-container input { /*TERMS CHECKBOX*/
+
+.terms-container input {
     height: 25px !important;
     width: 25px !important;
     align-self: center;
-    margin:0px !important;
+    margin: 0px !important;
+    pointer-events: auto; /* Ensure the checkbox is clickable */
+    z-index: 10000 !important; /* Ensure it's above other elements */
 }
-.terms-container label{ /*TERMS TEXT*/
+
+.terms-container label {
     margin: 0px !important;
     text-align: left;
     margin-left: 10px !important;
@@ -1059,4 +1064,222 @@ footer {
 .svgicon{
     width:3.5rem; 
     height:3.5rem;
+}
+
+/* ORDER FORM */
+
+/* Primary Button */
+.orderModal button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.orderModal button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal Background */
+.orderModal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+}
+
+/* Modal Content */
+.orderModal .order-modal-content {
+    background-color: white;
+    margin: 8% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.orderModal .close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+.orderModal .close:hover {
+    color: #ff4d4d;
+}
+
+/* Form Container */
+.orderModal .order-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Form */
+.orderModal #orderForm {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Labels */
+.orderModal label {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95rem;
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+.orderModal .selector{
+    border:1px solid #ccc;
+    border-radius: 6px;
+    padding:5px;
+}
+
+.orderModal .selector label{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+/* Input Fields */
+.orderModal input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    box-sizing: border-box; /* Ensures padding/border don't affect width */
+}
+
+.orderModal input:focus, .orderModal select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Add to Cart Button */
+.orderModal #addToCart {
+    margin-top: 20px;
+    background-color: #28a745;
+    width: 100%;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+
+.orderModal #addToCart:hover {
+    background-color: #218838;
+}
+
+/* Cart Section */
+.orderModal #cart {
+    width: 95%;
+    list-style-type: none;
+    padding: 0px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Items */
+.orderModal .itemDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin: 5px;
+    margin-bottom:10px;
+    /* margin: 5px 0; */
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Item Details */
+.orderModal .itemQuantity {
+    font-weight: bold;
+    color: #333;
+    padding: 5px 12px;
+    margin-left:15px;
+    border-radius: 5px;
+    background-color: #e1e1e1;
+}
+
+.orderModal .itemInternalDiv {
+    flex-grow: 1;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.orderModal .itemTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.orderModal .itemSize {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Remove Button */
+.orderModal .remove {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.orderModal .remove:hover {
+    background-color: #cc0000;
+}
+
+/* Submit Button */
+.orderModal #sendOrder {
+    margin-top:20px;
+    background-color: #007bff;
+    width: 95%;
+}
+
+.orderModal #sendOrder:hover {
+    background-color: #0056b3;
+}
+.orderModal .itemTitle{
+    margin-top: 0px;
+    margin-bottom:0px;
+}
+.orderModal .itemSize{
+    margin-top:0px;
+    margin-bottom:0px;
+}
+#recaptcha-container-order{
+    margin-top:20px;
+}
+
+.terms-container input[type="checkbox"] {
+    appearance: checkbox !important; /* Ensure the default checkbox appearance is used */
+    opacity: 1 !important; /* Ensure it is not transparent */
 }

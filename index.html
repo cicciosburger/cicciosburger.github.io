@@ -17,6 +17,7 @@
     <link rel="preload" href="fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/x-icon" href="./img/logo.ico">
     <script src="script.js" defer></script>
+    <script src="JsBarcode.ean-upc.min.js"></script>
 </head>
 
 <body>
@@ -61,6 +62,18 @@
                     </svg>
                     <p class="button">
                         Membership
+                    </p>
+
+                </div>
+                <hr style="border: 0; height: 1px; background-color: white;">
+                <div id="showOrderFormButton">
+                    <svg class="svgicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+                        <path fill="white"
+                            d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-352 96c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H86.4C74 384 64 375.4 64 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2zM512 312c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z" />
+                    </svg>
+                    <p class="button">
+                        Abbigliamento
                     </p>
 
                 </div>
@@ -290,7 +303,7 @@
                 <div id="cookieMsg" style="display: none; color: red; margin-bottom: 20px;">
                     I cookie sono necessari per completare la registrazione. Accettali e ricarica la pagina per
                     continuare. </div>
-                <form id="data-form">
+                <form id="data-form" action="#">
                     <label for="name">Nome:*</label>
                     <input type="text" id="name" name="name" required pattern="[A-Za-z ]+"
                         title="Sono ammesse solo lettere" placeholder="Inserisci il tuo nome">
@@ -331,6 +344,65 @@
                     <h2>Presenta questo codice in cassa per ricevere la carta:</h2>
                     <svg id="barcode"></svg>
                     <button id="downloadBarcodeButton" style="display: none;">Scarica Codice a Barre</button>
+                </div>
+            </div>
+        </div>
+        <div id="orderModal" class="orderModal">
+            <div class="order-modal-content">
+                <span class="close">&times;</span>
+                <h2>Effettua un Ordine</h2>
+                <div id="cookieOrderMsg" style="display: none; color: red; margin-bottom: 20px;">
+                    I cookie sono necessari per effetuare l'ordine. Accettali e ricarica la pagina per
+                    continuare. </div>
+                <div class="order-container">
+                    <form id="orderForm">
+                        <label for="order-name">Nome:*</label>
+                        <input type="text" id="order-name" name="name" required pattern="[A-Za-z ]+"
+                            title="Sono ammesse solo lettere" placeholder="Inserisci il tuo nome">
+    
+                        <label for="order-surname">Cognome:*</label>
+                        <input type="text" id="order-surname" name="surname" required pattern="[A-Za-z ]+"
+                            title="Sono ammesse solo lettere" placeholder="Inserisci il tuo cognome">
+    
+                        <label for="order-email">Email:*</label>
+                        <input type="email" id="order-email" name="email" required
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                            title="Inserisci una email valida (es., esempio@dominio.com)" placeholder="esempio@dominio.com">
+                        
+                        <label for="order-shop">Negozio di ritiro:</label>
+                        <select id="order-shop" required>
+                            <option value="lumia">Lumia</option>
+                            <option value="stadio">Stadio</option>
+                            <option value="sperlinga">Sperlinga</option>
+                        </select>
+                        <div class="selector">
+                            <label for="order-quantity">Quantità (max 5):</label>
+                            <select id="order-quantity">
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                            </select>
+    
+                            <label for="order-type">Tipo:</label>
+                            <select id="order-type"></select>
+    
+                            <label for="order-size">Taglia:</label>
+                            <select id="order-size"></select>
+    
+                            <button type="button" id="addToCart">Aggiungi al Carrello</button>
+                        </div>
+                    </form>
+                    <h3>Carrello</h3>
+                    <div id="cart"></div>
+                    <div class="g-recaptcha" id="recaptcha-container-order"></div>
+                
+                    <button id="sendOrder">Invia Ordine</button>
+                    <p>Premendo "Invia Ordine" accetti
+                        <a href="https://docs.google.com/document/d/1H6UBx_cvAu7Z4-Hpv2FWCsYuzl8sLlw2GnY_U2_JCZ4/edit?usp=sharing"
+                            target="_blank">Privacy Policy
+                            e Termini e condizioni</a>.*</p>
                 </div>
             </div>
         </div>
