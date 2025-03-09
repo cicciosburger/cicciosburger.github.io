@@ -455,6 +455,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Flag to track if reCAPTCHA has been loaded
     let recaptchaLoaded = false;
+    let barcodeScriptLoaded = false;
 
     // Check if the user has already accepted cookies
     function checkCookieConsent() {
@@ -479,6 +480,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Load reCAPTCHA only after consent
+
+    function addJsBarcodeScript() {
+        // Create a script element
+        if(!barcodeScriptLoaded){
+            var script = document.createElement('script');
+            
+            // Set the source of the script to the JsBarcode URL
+            script.src = "https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js";
+            
+            // Optionally, you can add an onload callback if you want to know when the script has been loaded
+            script.onload = function() {
+              console.log('JsBarcode script has been loaded.');
+            };
+          
+            // Append the script to the head or body of the document
+            document.head.appendChild(script);
+            barcodeScriptLoaded= true;
+        }
+      }
+      
+      // Call the function to add the script
     function loadRecaptcha() {
         if (!recaptchaLoaded) {
             const script = document.createElement("script");
@@ -489,6 +511,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Set the flag to avoid loading reCAPTCHA multiple times
             recaptchaLoaded = true;
+            addJsBarcodeScript()
         }
     }
 
