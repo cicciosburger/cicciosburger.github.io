@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const orderForm = document.getElementById("orderForm");
 
     let recaptchaLoaded = false;
-    let barcodeScriptLoaded = false;
 
     // Check if the user has already accepted cookies
     function checkCookieConsent() {
@@ -369,14 +368,23 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const barcodeData = getCookie("barcodeData");
+    function loadJsBarcodeScript(callback) {
+        // Create script element
+        var script = document.createElement('script');
+        script.src = './JsBarcode.ean-upc.min.js';
+        script.onload = callback; // Execute callback once the script is loaded
+        document.head.appendChild(script);
+    }
     if (barcodeData) {
         // Display the barcode directly
-        JsBarcode("#barcode", barcodeData, {
-            format: "ean13",
-            lineColor: "#000",
-            width: 2,
-            height: 100,
-            displayValue: true,
+        loadJsBarcodeScript(function() {
+            JsBarcode("#barcode", barcodeData, {
+                format: "ean13",
+                lineColor: "#000",
+                width: 2,
+                height: 100,
+                displayValue: true,
+            });
         });
         document.getElementById("result").style.display = "block";
         document.getElementById("downloadBarcodeButton").style.display = "block";
