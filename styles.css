@@ -1258,14 +1258,14 @@ footer {
 }
 
 /* Submit Button */
-.orderModal #sendOrder {
+#sendOrder, #newOrderButton {
     margin-top:20px;
-    background-color: #007bff;
+    background-color: black;
     width: 95%;
 }
 
-.orderModal #sendOrder:hover {
-    background-color: #0056b3;
+#sendOrder:hover, #newOrderButton {
+    background-color: black;
 }
 .orderModal .itemTitle{
     margin-top: 0px;
@@ -1282,4 +1282,13 @@ footer {
 .terms-container input[type="checkbox"] {
     appearance: checkbox !important; /* Ensure the default checkbox appearance is used */
     opacity: 1 !important; /* Ensure it is not transparent */
+}
+#confirmationMessage {
+    display: none; /* Hidden by default */
+}
+#checkmark {
+    font-size: 4rem; /* Make the checkmark big */
+    color: green; /* Make the checkmark white */
+    display: block; /* Ensure it's on its own line */
+    margin-bottom: 10px; /* Add space below the checkmark */
 }

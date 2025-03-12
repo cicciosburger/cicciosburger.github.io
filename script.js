@@ -546,7 +546,7 @@ function getCookie(name) {
 }
 
 
-// order form
+// ORDER FORM
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("orderModal");
     const openModalBtn = document.getElementById("showOrderFormButton");
@@ -583,7 +583,9 @@ document.addEventListener("DOMContentLoaded", function() {
             Object.keys(typeData).forEach(type => {
                 let option = document.createElement("option");
                 option.value = type;
-                option.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+                // Show price with two decimals in the dropdown
+                const price = typeData[type].price.toFixed(2);  // Ensure 2 decimal places
+                option.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} - ${price}€`;
                 typeSelect.appendChild(option);
             });
 
@@ -597,7 +599,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const selectedType = typeSelect.value;
         if (typeData[selectedType]) {
-            typeData[selectedType].forEach(size => {
+            typeData[selectedType].sizes.forEach(size => {
                 let option = document.createElement("option");
                 option.value = size.toLowerCase();
                 option.textContent = size;
@@ -633,7 +635,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         if (!found) {
-            cart.push({ quantity, type, size });
+            const price = typeData[type].price;
+            cart.push({ quantity, type, size, price });
         }
 
         updateCart();
@@ -645,21 +648,26 @@ document.addEventListener("DOMContentLoaded", function() {
             let itemDiv = document.createElement("div");
             itemDiv.classList.add("itemDiv");
 
-            let itemQuantity= document.createElement("p");
+            let itemQuantity = document.createElement("p");
             itemQuantity.classList.add("itemQuantity");
-            itemQuantity.textContent= `${item.quantity}`
+            itemQuantity.textContent = `${item.quantity}`;
 
             let itemInternalDiv = document.createElement("div");
             itemInternalDiv.classList.add("itemInternalDiv");
 
-            let itemTitle= document.createElement("p");
+            let itemTitle = document.createElement("p");
             itemTitle.classList.add("itemTitle");
-            itemTitle.textContent= item.type
+            itemTitle.textContent = item.type;
 
-            let itemSize= document.createElement("p");
+            let itemSize = document.createElement("p");
             itemSize.classList.add("itemSize");
-            itemSize.textContent= `Taglia: ${item.size}`
-            
+            itemSize.textContent = `Taglia: ${item.size}`;
+
+            let itemPrice = document.createElement("p");
+            itemPrice.classList.add("itemPrice");
+            const totalPrice = (item.quantity * item.price).toFixed(2);  // Format total price to 2 decimals
+            itemPrice.textContent = `Prezzo: ${totalPrice}€`;
+
             let removeBtn = document.createElement("button");
             removeBtn.textContent = "Rimuovi";
             removeBtn.classList.add("remove");
@@ -667,9 +675,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 cart.splice(index, 1);
                 updateCart();
             });
+
             itemInternalDiv.appendChild(itemTitle);
             itemInternalDiv.appendChild(itemSize);
-            
+            itemInternalDiv.appendChild(itemPrice);
+
             itemDiv.appendChild(itemQuantity);
             itemDiv.appendChild(itemInternalDiv);
             itemDiv.appendChild(removeBtn);
@@ -677,13 +687,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    sendOrderBtn.addEventListener("click", () => {
+    sendOrderBtn.addEventListener("click", async () => {
         if (cart.length === 0) {
             alert("Il carrello è vuoto!");
             return;
         }
     
-        const recaptchaResponse = grecaptcha.getResponse(recaptchaOrderWidgetId); // Ensure you pass the correct widget ID
+        const recaptchaResponse = grecaptcha.getResponse(recaptchaOrderWidgetId);
         if (!recaptchaResponse) {
             alert("Completa il reCAPTCHA.");
             return;
@@ -699,6 +709,10 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
     
+        // Disable the button to prevent multiple clicks
+        sendOrderBtn.disabled = true;
+        sendOrderBtn.textContent = "Invio in corso..."; // Update button text to indicate processing
+    
         // Add CAPTCHA response to the order data
         const orderData = {
             name,
@@ -706,27 +720,59 @@ document.addEventListener("DOMContentLoaded", function() {
             email,
             shop,
             cart,
-            recaptchaResponse // Include the CAPTCHA response here
+            recaptchaResponse,
         };
     
-        console.log(JSON.stringify(orderData)); // Check the object in the console
+        try {
+            const response = await fetch("https://api.cicciosburger.it/api/generate-order-number", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(orderData),
+            });
     
-        fetch("https://api.cicciosburger.it/api/generate-order-number", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(orderData) // Send the order data including CAPTCHA response
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert("Ordine inviato con successo!");
-            cart = [];
-            updateCart();
-            modal.style.display = "none";
-        })
-        .catch(error => {
+            if (!response.ok) {
+                throw new Error("Errore nell'invio dell'ordine.");
+            }
+    
+            const orderNumber = await response.text(); // Get the raw text response
+    
+            // Hide the form and cart
+            document.getElementById("orderContainer").style.display = "none";
+    
+            // Show the confirmation message
+            const confirmationMessage = document.getElementById("confirmationMessage");
+            const orderNumberDisplay = document.getElementById("orderNumberDisplay");
+            orderNumberDisplay.textContent = orderNumber; // Set the order number
+            confirmationMessage.style.display = "block"; // Make the confirmation message visible
+    
+            // Add event listener for the "Make a New Order" button
+            const newOrderButton = document.getElementById("newOrderButton");
+            newOrderButton.addEventListener("click", () => {
+                // Reset the modal to its original state
+                resetOrderModal();
+            });
+        } catch (error) {
             console.error("Errore nell'invio dell'ordine:", error);
-        });
-    });    
+            alert("Si è verificato un errore durante l'invio dell'ordine. Riprova più tardi.");
+        } finally {
+            // Re-enable the button and reset its text
+            sendOrderBtn.disabled = false;
+            sendOrderBtn.textContent = "Invia Ordine";
+        }
+    });
+    
+    // Function to reset the modal to its original state
+    function resetOrderModal() {
+        // Show the form and cart
+        document.getElementById("orderContainer").style.display = "block";
+    
+        // Hide the confirmation message
+        document.getElementById("confirmationMessage").style.display = "none";
+    
+        // Clear the cart
+        cart = [];
+        updateCart();
+    }
 });
