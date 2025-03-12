@@ -1010,17 +1010,17 @@ footer {
 }
 
 #cookieConsent .accept-btn {
-    background-color: #28a745; /* Verde */
-    color: white;
+    background-color: #00D123; /* Verde */
+    color: black;
 }
 
 #cookieConsent .accept-btn:hover {
-    background-color: #218838;
+    background-color: #009816;
 }
 
 #cookieConsent .reject-btn {
-    background-color: #f8d7da; /* Rosso chiaro */
-    color: #721c24;
+    background-color: #FAE5E7; /* Rosso chiaro */
+    color: #671921;
 }
 
 #cookieConsent .reject-btn:hover {
