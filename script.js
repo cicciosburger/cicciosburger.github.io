@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load categories and products
     Promise.all([
             fetch('categories.json').then(response => response.json()),
-            fetch('products.json').then(response => response.json())
+            fetch('clean_products.json').then(response => response.json())
         ])
         .then(([categoryData, productData]) => {
             const outerContainer = document.getElementById("generatedContentMenu");
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 category.items_assoc.forEach(item => {
-                    const product = productData.payload.products.find(p => p.id === item.product_id);
+                    const product = productData.products.find(p => p.id === item.product_id);
 
                     if (product) {
                         const productDiv = document.createElement("div");
@@ -218,40 +218,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             title.appendChild(leafIcon);
                         }
 
-
-                        if (product.price[0].price == 0) {
-                            let titleExtracted, lowestPrice;
-                            lowestPrice = product.variants[0].items[0].price_variation;
-                            titleExtracted = product.title
-                            if (product.title.includes("(")) {
-                                let inputString = product.title;
-                                const openParenIndex = inputString.indexOf("(");
-
-                                if (openParenIndex !== -1) {
-                                    titleExtracted = inputString.slice(0, openParenIndex).trim();
-                                } else {
-                                    titleExtracted = inputString.trim();
-                                    lowestPrice = "";
-                                }
-
-
-                            } //menu
-                            for (item in product.variants[0].items) {
-                                if (item.price_variation < lowestPrice) {
-                                    lowestPrice = item.price_variation;
-                                }
-                            }
-                            title.prepend(document.createTextNode(titleExtracted)); // Add text before the icon
-                            price.textContent = `da ${parseFloat(lowestPrice).toFixed(2).toString().replace(".",",")}€`;
-
-                        } else {
-                            title.prepend(document.createTextNode(product.title)); // Add text before the icon
-                            price.textContent = `${parseFloat(product.price[0].price).toFixed(2).toString().replace(".", ",")}€`;
-                        }
+                        title.prepend(document.createTextNode(product.title)); // Add text before the icon
+                        price.textContent = `${parseFloat(product.price).toFixed(2).toString().replace(".", ",")}€`;
 
                         const image = document.createElement("img");
                         image.classList.add("product-img");
-                        image.src = product.thumb.thumb;
+                        image.src = product.thumb;
                         image.loading = "lazy";
 
                         const description = document.createElement("p");
