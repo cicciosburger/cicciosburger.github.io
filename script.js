@@ -370,6 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const barcodeData = getCookie("barcodeData");
     function loadJsBarcodeScript(callback) {
         // Create script element
+        console.log("Barcode script loaded")
         var script = document.createElement('script');
         script.src = './JsBarcode.ean-upc.min.js';
         script.onload = callback; // Execute callback once the script is loaded
