@@ -447,7 +447,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Save barcode data in a cookie
             setCookie("barcodeData", barcodeCode, 30);
             loadJsBarcodeScript(function() {
-                JsBarcode("#barcode", barcodeData, {
+                JsBarcode("#barcode", barcodeCode, {
                     format: "ean13",
                     lineColor: "#000",
                     width: 2,
