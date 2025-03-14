@@ -1310,6 +1310,3 @@ footer {
     display: block; /* Ensure it's on its own line */
     margin-bottom: 10px; /* Add space below the checkmark */
 }
-#showOrderFormButton, #orderBar{
-    display: none;
-}
