@@ -596,12 +596,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const name = document.getElementById("order-name").value;
         const surname = document.getElementById("order-surname").value;
         const email = document.getElementById("order-email").value;
+        const partialPhone = document.getElementById("order-phone").value;
         const shop = document.getElementById("order-shop").value;
         const quantity = parseInt(document.getElementById("order-quantity").value);
         const type = document.getElementById("order-type").value;
         const size = document.getElementById("order-size").value;
 
-        if (!name || !surname || !email || isNaN(quantity) || quantity < 1 || quantity > 5) {
+        if (!name || !surname || !email || !partialPhone | isNaN(quantity) || quantity < 1 || quantity > 5) {
             alert("Compila tutti i campi correttamente.");
             return;
         }
@@ -684,9 +685,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const name = document.getElementById("order-name").value;
         const surname = document.getElementById("order-surname").value;
         const email = document.getElementById("order-email").value;
+        const partialPhone = document.getElementById("order-phone").value;
+        const phone = `+39${partialPhone}`;
         const shop = document.getElementById("order-shop").value;
     
-        if (!name || !surname || !email) {
+        if (!name || !surname || !email || !partialPhone) {
             alert("Compila tutti i campi obbligatori.");
             return;
         }
@@ -700,6 +703,7 @@ document.addEventListener("DOMContentLoaded", function() {
             name,
             surname,
             email,
+            phone,
             shop,
             cart,
             recaptchaResponse,
