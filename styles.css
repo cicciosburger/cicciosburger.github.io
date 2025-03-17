@@ -907,7 +907,7 @@ footer {
 
 
 /* PHONE CONTAINER */
-.phone-container {
+.phone-container, .order-phone-container {
     display: flex;
     align-items: center; /* Align items vertically */
     width: 100%;
@@ -915,7 +915,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.phone-container .phone-prefix { /*PHONE +39*/
+.phone-container .phone-prefix, .order-phone-container .order-phone-prefix { /*PHONE +39*/
     border: 1px solid #ccc;
     background-color: #f0f0f0;
     padding: 8px;
@@ -926,7 +926,7 @@ footer {
     align-items: center; /* Center the text vertically */
 }
 
-.phone-container input#phone { /*PHONE NUMBER*/
+.phone-container input#phone, .order-phone-container input#order-phone { /*PHONE NUMBER*/
     margin: 0px !important;
     padding: auto !important;
     border: 1px solid #ccc !important;
@@ -1309,4 +1309,7 @@ footer {
     color: green; /* Make the checkmark white */
     display: block; /* Ensure it's on its own line */
     margin-bottom: 10px; /* Add space below the checkmark */
+}
+.order-phone-container{
+    max-width: 100%;
 }
