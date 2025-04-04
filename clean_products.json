@@ -538,11 +538,11 @@
         },
         {
             "id": 13918,
-            "title": "BERGACICCIO",
+            "title": "PRIMAVERA",
             "price": 9.9,
-            "ingredients": "burger di manzo 170g, bergamino di bufala, fichi senapati, polvere di capperi, pomodoro semidry, carciofina, maionese, pancetta",
+            "ingredients": " burger di manzo 170g, pecorino di primavera, lardo, nocciole, pere caramellate, songino, salsa Ciccio's",
             "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d73c389a732555b964530a6ce519cfb7_progetto-senza-titolo-16.jpg"
+            "thumb": "./img/paninodelmese.jpg"
         }
     ]
 }
