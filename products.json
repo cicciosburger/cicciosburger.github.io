@@ -1713,7 +1713,7 @@
                                 "title": "SALSA CHEDDAR CALDA 170ML",
                                 "short_description": " ",
                                 "long_description": null,
-                                "price_variation": 3,
+                                "price_variation": 2.5,
                                 "default": 0,
                                 "min": null,
                                 "max": 1,
@@ -1721,10 +1721,10 @@
                             },
                             {
                                 "code": "10507",
-                                "title": "SALSA CICCIO'S 60ML",
+                                "title": "SALSA CICCIO'S 30ML",
                                 "short_description": " ",
                                 "long_description": null,
-                                "price_variation": 1,
+                                "price_variation": 0.5,
                                 "default": 0,
                                 "min": null,
                                 "max": 1,
@@ -1732,10 +1732,10 @@
                             },
                             {
                                 "code": "10503",
-                                "title": "THAI 60ML",
+                                "title": "THAI 30ML",
                                 "short_description": " ",
                                 "long_description": null,
-                                "price_variation": 1.2,
+                                "price_variation": 0.6,
                                 "default": 0,
                                 "min": null,
                                 "max": 1,
@@ -1743,10 +1743,10 @@
                             },
                             {
                                 "code": "10505",
-                                "title": "HOT THAI 60ML",
+                                "title": "HOT THAI 30ML",
                                 "short_description": " ",
                                 "long_description": null,
-                                "price_variation": 1.2,
+                                "price_variation": 0.6,
                                 "default": 0,
                                 "min": null,
                                 "max": 1,
@@ -1754,7 +1754,7 @@
                             },
                             {
                                 "code": "10506",
-                                "title": "SPICY CHEDDAR 60ML",
+                                "title": "SPICY CHEDDAR 30ML",
                                 "short_description": " ",
                                 "long_description": null,
                                 "price_variation": 1.2,
@@ -1941,9 +1941,9 @@
                 "price": [
                     {
                         "pricelist_id": "1",
-                        "price": 3,
-                        "default_price": 3,
-                        "vat_price": 3,
+                        "price": 2.5,
+                        "default_price": 2.5,
+                        "vat_price": 2.5,
                         "vat": 10
                     }
                 ],
@@ -1974,7 +1974,7 @@
                 "active": true,
                 "visible": true,
                 "relevant": false,
-                "title": "THAI 60ML",
+                "title": "THAI 30ML",
                 "short_description": null,
                 "long_description": null,
                 "catalog_assoc": [
@@ -1985,9 +1985,9 @@
                 "price": [
                     {
                         "pricelist_id": "1",
-                        "price": 1.2,
-                        "default_price": 1.2,
-                        "vat_price": 1.2,
+                        "price": 0.6,
+                        "default_price": 0.6,
+                        "vat_price": 0.6,
                         "vat": 10
                     }
                 ],
@@ -2018,7 +2018,7 @@
                 "active": true,
                 "visible": true,
                 "relevant": false,
-                "title": "HOT THAI 60ML",
+                "title": "HOT THAI 30ML",
                 "short_description": null,
                 "long_description": null,
                 "catalog_assoc": [
@@ -2029,9 +2029,9 @@
                 "price": [
                     {
                         "pricelist_id": "1",
-                        "price": 1.2,
-                        "default_price": 1.2,
-                        "vat_price": 1.2,
+                        "price": 0.6,
+                        "default_price": 0.6,
+                        "vat_price": 0.6,
                         "vat": 10
                     }
                 ],
@@ -2062,7 +2062,7 @@
                 "active": true,
                 "visible": true,
                 "relevant": false,
-                "title": "SPICY CHEDDAR 60ML",
+                "title": "SPICY CHEDDAR 30ML",
                 "short_description": null,
                 "long_description": null,
                 "catalog_assoc": [
@@ -2106,7 +2106,7 @@
                 "active": true,
                 "visible": true,
                 "relevant": false,
-                "title": "SALSA CICCIO'S 60ML",
+                "title": "SALSA CICCIO'S 30ML",
                 "short_description": null,
                 "long_description": null,
                 "catalog_assoc": [
@@ -2117,9 +2117,9 @@
                 "price": [
                     {
                         "pricelist_id": "1",
-                        "price": 1,
-                        "default_price": 1,
-                        "vat_price": 1,
+                        "price": 0.5,
+                        "default_price": 0.5,
+                        "vat_price": 0.5,
                         "vat": 10
                     }
                 ],
@@ -7337,14 +7337,14 @@
                 "allergens": null,
                 "notes": null,
                 "thumb": {
-                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_facc628fe58e1113dc9e827277869890_285.jpg",
-                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_facc628fe58e1113dc9e827277869890_285.jpg",
-                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_facc628fe58e1113dc9e827277869890_285.jpg"
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_cf1ab98781ebf1f31aba41a2ecc7c765_happynuovo.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_cf1ab98781ebf1f31aba41a2ecc7c765_happynuovo.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_cf1ab98781ebf1f31aba41a2ecc7c765_happynuovo.jpg"
                 },
                 "detail": {
-                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_facc628fe58e1113dc9e827277869890_285.jpg",
-                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_facc628fe58e1113dc9e827277869890_285.jpg",
-                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_facc628fe58e1113dc9e827277869890_285.jpg"
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_cf1ab98781ebf1f31aba41a2ecc7c765_happynuovo.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_cf1ab98781ebf1f31aba41a2ecc7c765_happynuovo.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_cf1ab98781ebf1f31aba41a2ecc7c765_happynuovo.jpg"
                 },
                 "cart_crossselling": [],
                 "fixed_price": false,
@@ -7862,7 +7862,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -8495,7 +8495,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -9106,7 +9106,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -9739,7 +9739,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -10361,7 +10361,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -10983,7 +10983,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -11594,7 +11594,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -12227,7 +12227,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -12849,7 +12849,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -13438,7 +13438,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -14071,7 +14071,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -14726,7 +14726,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -15370,7 +15370,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -15981,7 +15981,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -16625,7 +16625,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -17258,7 +17258,7 @@
                                 "title": "BACON CHEDDAR FRIES",
                                 "short_description": "patate con buccia con crema di cheddar home made e bacon croccante",
                                 "long_description": null,
-                                "price_variation": 3.4,
+                                "price_variation": 2.9,
                                 "default": 0,
                                 "min": 1,
                                 "max": 1,
@@ -17501,14 +17501,14 @@
                 "enable_name_on_package": false
             },
             {
-                "id": 13918,
-                "sku": "11204",
+                "id": 14061,
+                "sku": "11206",
                 "active": true,
                 "visible": true,
                 "relevant": false,
-                "title": "BERGACICCIO",
-                "short_description": "burger di manzo 170g, bergamino di bufala, fichi senapati, polvere di capperi, pomodoro semidry, carciofina, maionese, pancetta",
-                "long_description": "burger di manzo 170g, bergamino di bufala, fichi senapati, polvere di capperi, pomodoro semidry, car",
+                "title": "PRIMAVERA",
+                "short_description": "burger di manzo 170g, pecorino di primavera, lardo, nocciole, pere caramellate, songino, salsa Cicci",
+                "long_description": "burger di manzo 170g, pecorino di primavera, lardo, nocciole, pere caramellate, songino, salsa Cicci",
                 "catalog_assoc": [
                     {
                         "catalog": 566
@@ -17523,36 +17523,36 @@
                         "vat": 10
                     }
                 ],
-                "ingredients": "burger di manzo 170g, bergamino di bufala, fichi senapati, polvere di capperi, pomodoro semidry, carciofina, maionese, pancetta",
+                "ingredients": "burger di manzo 170g, pecorino di primavera, lardo, nocciole, pere caramellate, songino, salsa Cicci",
                 "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
                 "notes": null,
                 "thumb": {
-                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_d73c389a732555b964530a6ce519cfb7_progetto-senza-titolo-16.jpg",
-                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_d73c389a732555b964530a6ce519cfb7_progetto-senza-titolo-16.jpg",
-                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_d73c389a732555b964530a6ce519cfb7_progetto-senza-titolo-16.jpg"
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_c498826e5d8e65977c4c7df96faae2da_panino-del-mese.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_c498826e5d8e65977c4c7df96faae2da_panino-del-mese.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_c498826e5d8e65977c4c7df96faae2da_panino-del-mese.jpg"
                 },
                 "detail": {
-                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_d73c389a732555b964530a6ce519cfb7_progetto-senza-titolo-16.jpg",
-                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_d73c389a732555b964530a6ce519cfb7_progetto-senza-titolo-16.jpg",
-                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_d73c389a732555b964530a6ce519cfb7_progetto-senza-titolo-16.jpg"
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_c498826e5d8e65977c4c7df96faae2da_panino-del-mese.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_c498826e5d8e65977c4c7df96faae2da_panino-del-mese.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_c498826e5d8e65977c4c7df96faae2da_panino-del-mese.jpg"
                 },
                 "cart_crossselling": [],
                 "fixed_price": false,
                 "frozen": false,
                 "variants": [
                     {
-                        "code": "38_10096_A10096",
-                        "title": "INGREDIENTI BERGACICCIO",
-                        "short_description": "PERSONALIZZA INGREDIENTI",
-                        "long_description": " ",
+                        "code": "$P_218_11206_A10120",
+                        "title": "PERSONALIZZA IL TUO PANINO",
+                        "short_description": null,
+                        "long_description": null,
                         "min": null,
-                        "max": 7,
+                        "max": 6,
                         "items": [
                             {
-                                "code": "11066",
-                                "title": "SENZA BERGAMINO DI BUFALA",
+                                "code": "11017",
+                                "title": "SENZA NOCCIOLE",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 0,
                                 "default": 0,
                                 "min": null,
@@ -17560,10 +17560,10 @@
                                 "price_part": false
                             },
                             {
-                                "code": "11062",
-                                "title": "SENZA FICHI SENAPATI",
+                                "code": "11016",
+                                "title": "SENZA PERE CARAMELLATE",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 0,
                                 "default": 0,
                                 "min": null,
@@ -17571,10 +17571,10 @@
                                 "price_part": false
                             },
                             {
-                                "code": "11063",
-                                "title": "SENZA POLVERE DI CAPPERI",
+                                "code": "11013",
+                                "title": "SENZA SONGINO",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 0,
                                 "default": 0,
                                 "min": null,
@@ -17582,43 +17582,10 @@
                                 "price_part": false
                             },
                             {
-                                "code": "11064",
-                                "title": "SENZA POMODORO SEMIDRY",
+                                "code": "11012",
+                                "title": "SENZA SALSA CICCIO'S",
                                 "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0,
-                                "default": 0,
-                                "min": null,
-                                "max": 1,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11065",
-                                "title": "SENZA CARCIOFINA",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0,
-                                "default": 0,
-                                "min": null,
-                                "max": 1,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11033",
-                                "title": "SENZA MAIONESE",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0,
-                                "default": 0,
-                                "min": null,
-                                "max": 1,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11030",
-                                "title": "SENZA PANCETTA DOLCE",
-                                "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 0,
                                 "default": 0,
                                 "min": null,
@@ -17628,242 +17595,242 @@
                         ]
                     },
                     {
-                        "code": "2_10096_A10096",
-                        "title": "MODIFICA IL TUO PANINO",
-                        "short_description": " ",
-                        "long_description": " ",
+                        "code": "$P_212_11206_A10120",
+                        "title": "SOSTITUISCI O AGGIUNGI  INGREDIENTI ",
+                        "short_description": null,
+                        "long_description": null,
                         "min": null,
-                        "max": 34,
+                        "max": 19,
                         "items": [
                             {
-                                "code": "11406",
-                                "title": "AGGIUNGI DOPPIA SALSA",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0.3,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
                                 "code": "11407",
-                                "title": "SALSA BBQ AL POSTO DI PREVISTA",
+                                "title": ".SOST. SALSA BBQ",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 0.1,
                                 "default": 0,
                                 "min": null,
-                                "max": null,
+                                "max": 1,
                                 "price_part": false
                             },
                             {
                                 "code": "11408",
-                                "title": "SALSA WHITE CICCIO'S AL POSTO DI PREVIST",
+                                "title": ".SOST. SALSA WHITE CICCIO'S",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 0.1,
                                 "default": 0,
                                 "min": null,
-                                "max": null,
+                                "max": 1,
                                 "price_part": false
                             },
                             {
                                 "code": "11409",
-                                "title": "SALSA KETCHUP AL POSTO DI PREVISTA",
+                                "title": ".SOST. SALSA KETCHUP",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 0.1,
                                 "default": 0,
                                 "min": null,
-                                "max": null,
+                                "max": 1,
                                 "price_part": false
                             },
                             {
                                 "code": "11410",
-                                "title": "SALSA MAYO AL POSTO DI PREVISTA",
+                                "title": ".SOST. SALSA MAYO",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 0.1,
                                 "default": 0,
                                 "min": null,
-                                "max": null,
+                                "max": 1,
                                 "price_part": false
                             },
                             {
                                 "code": "11411",
-                                "title": "SALSA CICCIO'S AL POSTO DI PREVISTA",
+                                "title": ".SOST. SALSA CICCIO'S",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 0.1,
                                 "default": 0,
                                 "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11401",
-                                "title": "AGGIUNGI SALSA BBQ",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0.3,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11402",
-                                "title": "AGGIUNGI SALSA WHITE CICCIO'S",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0.3,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11403",
-                                "title": "AGGIUNGI SALSA KETCHUP",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0.3,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11404",
-                                "title": "AGGIUNGI SALSA MAYO",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0.3,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11405",
-                                "title": "AGGIUNGI SALSA CICCIO'S",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0.3,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
+                                "max": 1,
                                 "price_part": false
                             },
                             {
                                 "code": "11117",
-                                "title": "AGGIUNGI BACON",
+                                "title": "BACON",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 1.5,
                                 "default": 0,
                                 "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11118",
-                                "title": "AGGIUNGI POMODORO",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0.5,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11119",
-                                "title": "AGGIUNGI LATTUGA",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0.5,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11120",
-                                "title": "AGGIUNGI SONGINO",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 0.5,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11122",
-                                "title": "AGGIUNGI CIPOLLA CARAMELLATA",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 1,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11134",
-                                "title": "AGGIUNGI SCAMORZA",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 1,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11142",
-                                "title": "AGGIUNGI CENTRIOLI",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 1,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11143",
-                                "title": "AGGIUNGI JALAPENO",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 1,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
-                                "price_part": false
-                            },
-                            {
-                                "code": "11102",
-                                "title": "AGGIUNGI CHEDDAR",
-                                "short_description": " ",
-                                "long_description": " ",
-                                "price_variation": 1,
-                                "default": 0,
-                                "min": null,
-                                "max": null,
+                                "max": 1,
                                 "price_part": false
                             },
                             {
                                 "code": "11172",
-                                "title": "AGGIUNGI DOPPIO BURGER",
+                                "title": "DOPPIO BURGER",
                                 "short_description": " ",
-                                "long_description": " ",
+                                "long_description": null,
                                 "price_variation": 3,
                                 "default": 0,
                                 "min": null,
-                                "max": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11122",
+                                "title": "CIPOLLA CARAMELLATA",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 1,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11102",
+                                "title": "CHEDDAR",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 1,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11134",
+                                "title": "SCAMORZA",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 1,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11119",
+                                "title": "LATTUGA",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.5,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11120",
+                                "title": "SONGINO",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.5,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11118",
+                                "title": "POMODORO",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.5,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11142",
+                                "title": "CETRIOLI",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 1,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11143",
+                                "title": "JALAPENO",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 1,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11402",
+                                "title": "SALSA WHITE CICCIO'S",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.3,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11401",
+                                "title": "SALSA BBQ",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.3,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11403",
+                                "title": "SALSA KETCHUP",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.3,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11404",
+                                "title": "SALSA MAYO",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.3,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11405",
+                                "title": "SALSA CICCIO'S",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.3,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
+                                "price_part": false
+                            },
+                            {
+                                "code": "11406",
+                                "title": "DOPPIA SALSA",
+                                "short_description": " ",
+                                "long_description": null,
+                                "price_variation": 0.3,
+                                "default": 0,
+                                "min": null,
+                                "max": 1,
                                 "price_part": false
                             }
                         ]
@@ -17872,8 +17839,404 @@
                 "capacity_required": 0,
                 "capacity_required_default": 0,
                 "enable_name_on_package": false
+            },
+            {
+                "id": 14068,
+                "sku": "11701",
+                "active": true,
+                "visible": false,
+                "relevant": false,
+                "title": "MAIONESE HEINZ",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 1659
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0.4,
+                        "default_price": 0.4,
+                        "vat_price": 0.4,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_d73eb1d9239d2ccc8b9d37fc13839849_heinz-mayo.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_d73eb1d9239d2ccc8b9d37fc13839849_heinz-mayo.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_d73eb1d9239d2ccc8b9d37fc13839849_heinz-mayo.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_d73eb1d9239d2ccc8b9d37fc13839849_heinz-mayo.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_d73eb1d9239d2ccc8b9d37fc13839849_heinz-mayo.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_d73eb1d9239d2ccc8b9d37fc13839849_heinz-mayo.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 14069,
+                "sku": "11702",
+                "active": true,
+                "visible": false,
+                "relevant": false,
+                "title": "SALSA CHEDDAR CALDA 170ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 1659
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 2.5,
+                        "default_price": 2.5,
+                        "vat_price": 2.5,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_bbec69cadb7e44d6a45776b6faaa0d64_salsa-cheddar.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_bbec69cadb7e44d6a45776b6faaa0d64_salsa-cheddar.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_bbec69cadb7e44d6a45776b6faaa0d64_salsa-cheddar.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_bbec69cadb7e44d6a45776b6faaa0d64_salsa-cheddar.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_bbec69cadb7e44d6a45776b6faaa0d64_salsa-cheddar.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_bbec69cadb7e44d6a45776b6faaa0d64_salsa-cheddar.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 14070,
+                "sku": "11703",
+                "active": true,
+                "visible": false,
+                "relevant": false,
+                "title": "THAI 30ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 1659
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0.6,
+                        "default_price": 0.6,
+                        "vat_price": 0.6,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_ff877bff908f490e5fc9c957245b4e56_salsa-hot-thai_67ee416d098dd.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_ff877bff908f490e5fc9c957245b4e56_salsa-hot-thai_67ee416d098dd.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_ff877bff908f490e5fc9c957245b4e56_salsa-hot-thai_67ee416d098dd.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_0ba59e9295b56d4b90f3f65d3e6cf822_salsa-hot-thai_67ee416fdf7cf.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_0ba59e9295b56d4b90f3f65d3e6cf822_salsa-hot-thai_67ee416fdf7cf.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_0ba59e9295b56d4b90f3f65d3e6cf822_salsa-hot-thai_67ee416fdf7cf.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 14071,
+                "sku": "11704",
+                "active": true,
+                "visible": false,
+                "relevant": false,
+                "title": "HOT THAI 30ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 1659
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0.6,
+                        "default_price": 0.6,
+                        "vat_price": 0.6,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_683a012524ff9e1f4a505194ef540c1e_salsa-hot-thai_67ee40cebfde8.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_683a012524ff9e1f4a505194ef540c1e_salsa-hot-thai_67ee40cebfde8.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_683a012524ff9e1f4a505194ef540c1e_salsa-hot-thai_67ee40cebfde8.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_efda953813b20d8407dbc726d5cf3964_salsa-hot-thai_67ee40d75fb5e.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_efda953813b20d8407dbc726d5cf3964_salsa-hot-thai_67ee40d75fb5e.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_efda953813b20d8407dbc726d5cf3964_salsa-hot-thai_67ee40d75fb5e.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 14072,
+                "sku": "11705",
+                "active": true,
+                "visible": false,
+                "relevant": false,
+                "title": "SPICY CHEDDAR 30ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 1659
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 1.2,
+                        "default_price": 1.2,
+                        "vat_price": 1.2,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_35aee0a4fbfb6f39cd93add6fc2bf345_salsa-ciccios_67ee4183ebca7.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_35aee0a4fbfb6f39cd93add6fc2bf345_salsa-ciccios_67ee4183ebca7.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_35aee0a4fbfb6f39cd93add6fc2bf345_salsa-ciccios_67ee4183ebca7.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_53c456b39834b0ffb6e64372805dc6f1_salsa-ciccios_67ee41870dc4d.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_53c456b39834b0ffb6e64372805dc6f1_salsa-ciccios_67ee41870dc4d.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_53c456b39834b0ffb6e64372805dc6f1_salsa-ciccios_67ee41870dc4d.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 14073,
+                "sku": "11706",
+                "active": true,
+                "visible": false,
+                "relevant": false,
+                "title": "SALSA CICCIO'S 30ML",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 1659
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0.5,
+                        "default_price": 0.5,
+                        "vat_price": 0.5,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_63068d6eb00eca85b36d5a186db54142_salsa-ciccios_67ee4113639dd.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_63068d6eb00eca85b36d5a186db54142_salsa-ciccios_67ee4113639dd.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_63068d6eb00eca85b36d5a186db54142_salsa-ciccios_67ee4113639dd.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_a72a2f7d36426a85cb753bac9dcc0676_salsa-ciccios_67ee411764472.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_a72a2f7d36426a85cb753bac9dcc0676_salsa-ciccios_67ee411764472.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_a72a2f7d36426a85cb753bac9dcc0676_salsa-ciccios_67ee411764472.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 14074,
+                "sku": "11707",
+                "active": true,
+                "visible": false,
+                "relevant": false,
+                "title": "BBQ HEINZ",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 1659
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0.4,
+                        "default_price": 0.4,
+                        "vat_price": 0.4,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_41feab44a1382b4488c4ce15ee8d6bd8_heinz-bbq.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_41feab44a1382b4488c4ce15ee8d6bd8_heinz-bbq.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_41feab44a1382b4488c4ce15ee8d6bd8_heinz-bbq.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_41feab44a1382b4488c4ce15ee8d6bd8_heinz-bbq.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_41feab44a1382b4488c4ce15ee8d6bd8_heinz-bbq.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_41feab44a1382b4488c4ce15ee8d6bd8_heinz-bbq.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 14075,
+                "sku": "11709",
+                "active": true,
+                "visible": false,
+                "relevant": false,
+                "title": "KETCHUP HEINZ",
+                "short_description": null,
+                "long_description": null,
+                "catalog_assoc": [
+                    {
+                        "catalog": 1659
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 0.4,
+                        "default_price": 0.4,
+                        "vat_price": 0.4,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": null,
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_d82898f9d3e4ce94f7c13ee183613603_heinz-ketchup.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_d82898f9d3e4ce94f7c13ee183613603_heinz-ketchup.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_d82898f9d3e4ce94f7c13ee183613603_heinz-ketchup.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_d82898f9d3e4ce94f7c13ee183613603_heinz-ketchup.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_d82898f9d3e4ce94f7c13ee183613603_heinz-ketchup.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_d82898f9d3e4ce94f7c13ee183613603_heinz-ketchup.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
+            },
+            {
+                "id": 14125,
+                "sku": "10111",
+                "active": true,
+                "visible": true,
+                "relevant": false,
+                "title": "LINGOTTI 2PZ",
+                "short_description": "Maxi nuggets di pollo con panatura super croccante accompagnato con cheddar calda",
+                "long_description": "Maxi nuggets di pollo con panatura super croccante accompagnato con cheddar calda",
+                "catalog_assoc": [
+                    {
+                        "catalog": 565
+                    }
+                ],
+                "price": [
+                    {
+                        "pricelist_id": "1",
+                        "price": 4.5,
+                        "default_price": 4.5,
+                        "vat_price": 4.5,
+                        "vat": 10
+                    }
+                ],
+                "ingredients": "Maxi nuggets di pollo con panatura super croccante accompagnato con cheddar calda",
+                "allergens": null,
+                "notes": null,
+                "thumb": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_2548913ba48a93fbbb2ab4ebd26c1b45_lingotti.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_2548913ba48a93fbbb2ab4ebd26c1b45_lingotti.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_2548913ba48a93fbbb2ab4ebd26c1b45_lingotti.jpg"
+                },
+                "detail": {
+                    "fast": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/fast_2548913ba48a93fbbb2ab4ebd26c1b45_lingotti.jpg",
+                    "thumb": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/thumb_2548913ba48a93fbbb2ab4ebd26c1b45_lingotti.jpg",
+                    "medium": "https:\/\/dashboardprod-149ac.kxcdn.com\/gallery\/TCAT\/medium_2548913ba48a93fbbb2ab4ebd26c1b45_lingotti.jpg"
+                },
+                "cart_crossselling": [],
+                "fixed_price": false,
+                "frozen": false,
+                "variants": null,
+                "capacity_required": 0,
+                "capacity_required_default": 0,
+                "enable_name_on_package": false
             }
         ]
     },
-    "crc": "9423eacf9c38265f6b7563e9574a2621"
+    "crc": "a8b7646588886ca6bcae92cae1d7beb7"
 }

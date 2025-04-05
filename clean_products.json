@@ -210,23 +210,23 @@
         },
         {
             "id": 5499,
-            "title": "THAI 60ML",
-            "price": 1.2,
+            "title": "THAI 30ML",
+            "price": 0.6,
             "ingredients": null,
             "allergens": null,
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_24c15aadbd48dda870564154a8c0c660_salsa-thai.jpg"
         },
         {
             "id": 5501,
-            "title": "HOT THAI 60ML",
-            "price": 1.2,
+            "title": "HOT THAI 30ML",
+            "price": 0.6,
             "ingredients": null,
             "allergens": null,
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d2f170995d2d03e4b5607d941aed978b_salsa-hot-thai.jpg"
         },
         {
             "id": 5502,
-            "title": "SPICY CHEDDAR 60ML",
+            "title": "SPICY CHEDDAR 30ML",
             "price": 1.2,
             "ingredients": null,
             "allergens": null,
@@ -234,8 +234,8 @@
         },
         {
             "id": 5503,
-            "title": "SALSA CICCIO'S 60ML",
-            "price": 1,
+            "title": "SALSA CICCIO'S 30ML",
+            "price": 0.5,
             "ingredients": null,
             "allergens": null,
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_e76d08645cf4e30a6c7e87cc2067cb16_salsa-ciccios.jpg"
@@ -406,7 +406,7 @@
             "price": 7.9,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_facc628fe58e1113dc9e827277869890_285.jpg"
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_cf1ab98781ebf1f31aba41a2ecc7c765_happynuovo.jpg"
         },
         {
             "id": 13362,
@@ -537,12 +537,84 @@
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_83eab646709bcfdd143ba69372f238aa_tuma_67ae01113b985.jpg"
         },
         {
-            "id": 13918,
+            "id": 14061,
             "title": "PRIMAVERA",
             "price": 9.9,
-            "ingredients": " burger di manzo 170g, pecorino di primavera, lardo, nocciole, pere caramellate, songino, salsa Ciccio's",
+            "ingredients": "burger di manzo 170g, pecorino di primavera, lardo, nocciole, pere caramellate, songino, salsa Cicci",
             "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
-            "thumb": "./img/paninodelmese.jpg"
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_c498826e5d8e65977c4c7df96faae2da_panino-del-mese.jpg"
+        },
+        {
+            "id": 14068,
+            "title": "MAIONESE HEINZ",
+            "price": 0.4,
+            "ingredients": null,
+            "allergens": null,
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d73eb1d9239d2ccc8b9d37fc13839849_heinz-mayo.jpg"
+        },
+        {
+            "id": 14069,
+            "title": "SALSA CHEDDAR CALDA 170ML",
+            "price": 2.5,
+            "ingredients": null,
+            "allergens": null,
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_bbec69cadb7e44d6a45776b6faaa0d64_salsa-cheddar.jpg"
+        },
+        {
+            "id": 14070,
+            "title": "THAI 30ML",
+            "price": 0.6,
+            "ingredients": null,
+            "allergens": null,
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_ff877bff908f490e5fc9c957245b4e56_salsa-hot-thai_67ee416d098dd.jpg"
+        },
+        {
+            "id": 14071,
+            "title": "HOT THAI 30ML",
+            "price": 0.6,
+            "ingredients": null,
+            "allergens": null,
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_683a012524ff9e1f4a505194ef540c1e_salsa-hot-thai_67ee40cebfde8.jpg"
+        },
+        {
+            "id": 14072,
+            "title": "SPICY CHEDDAR 30ML",
+            "price": 1.2,
+            "ingredients": null,
+            "allergens": null,
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_35aee0a4fbfb6f39cd93add6fc2bf345_salsa-ciccios_67ee4183ebca7.jpg"
+        },
+        {
+            "id": 14073,
+            "title": "SALSA CICCIO'S 30ML",
+            "price": 0.5,
+            "ingredients": null,
+            "allergens": null,
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_63068d6eb00eca85b36d5a186db54142_salsa-ciccios_67ee4113639dd.jpg"
+        },
+        {
+            "id": 14074,
+            "title": "BBQ HEINZ",
+            "price": 0.4,
+            "ingredients": null,
+            "allergens": null,
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_41feab44a1382b4488c4ce15ee8d6bd8_heinz-bbq.jpg"
+        },
+        {
+            "id": 14075,
+            "title": "KETCHUP HEINZ",
+            "price": 0.4,
+            "ingredients": null,
+            "allergens": null,
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d82898f9d3e4ce94f7c13ee183613603_heinz-ketchup.jpg"
+        },
+        {
+            "id": 14125,
+            "title": "LINGOTTI 2PZ",
+            "price": 4.5,
+            "ingredients": "Maxi nuggets di pollo con panatura super croccante accompagnato con cheddar calda",
+            "allergens": null,
+            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_2548913ba48a93fbbb2ab4ebd26c1b45_lingotti.jpg"
         }
     ]
 }
