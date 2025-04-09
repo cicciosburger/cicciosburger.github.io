@@ -374,52 +374,6 @@
                         "order": 17
                     }
                 ]
-            },
-            {
-                "id": 1659,
-                "code": "11700",
-                "active": true,
-                "visible": true,
-                "title": "SALSE GLOVO ",
-                "short_description": "SALSE GLOVO ",
-                "long_description": "SALSE GLOVO ",
-                "thumb": null,
-                "parent": null,
-                "order": 12,
-                "items_assoc": [
-                    {
-                        "product_id": 14068,
-                        "order": 1
-                    },
-                    {
-                        "product_id": 14069,
-                        "order": 2
-                    },
-                    {
-                        "product_id": 14070,
-                        "order": 3
-                    },
-                    {
-                        "product_id": 14071,
-                        "order": 4
-                    },
-                    {
-                        "product_id": 14072,
-                        "order": 5
-                    },
-                    {
-                        "product_id": 14073,
-                        "order": 6
-                    },
-                    {
-                        "product_id": 14074,
-                        "order": 7
-                    },
-                    {
-                        "product_id": 14075,
-                        "order": 8
-                    }
-                ]
             }
         ]
     },
