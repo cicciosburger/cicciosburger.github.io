@@ -530,11 +530,11 @@
         },
         {
             "id": 14061,
-            "title": "PRIMAVERA",
+            "title": "MORTADELLO",
             "price": 9.9,
-            "ingredients": "burger di manzo 170g, pecorino di primavera, lardo, nocciole, pere caramellate, songino, salsa Cicci",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_c498826e5d8e65977c4c7df96faae2da_panino-del-mese.jpg"
+            "ingredients": "burger di manzo 170g, cipolla caramellata, gran P&V al tartufo, mortadella, maionese senapata al miele",
+            "allergens": "",
+            "thumb": "./img/mortadello.png"
         },
         {
             "id": 14068,
