@@ -233,39 +233,44 @@ document.addEventListener("DOMContentLoaded", function () {
                         productDiv.appendChild(title);
                         productDiv.appendChild(description);
                         productDiv.appendChild(price);
-                        if (product.allergens) {
-                            // Contenitore in cui aggiungere le icone
+                        // NEW IF
+                        if (product.allergens && typeof product.allergens === "object") {
                             const allergeniContainer = document.createElement("div");
                             allergeniContainer.classList.add("allergeni-container");
-
-
-                            const allergeniText = document.createElement("p");
-                            allergeniText.classList.add("allergeni-text");
-                            // allergeniText.classList.add("product-description");
-                            allergeniText.textContent = "Allergeni"
-                            allergeniContainer.appendChild(allergeniText)
-                            // Dividiamo la lista degli allergeni
-                            listallergeni = product.allergens;
-                            const allergeniArray = listallergeni.split(", ");
-
-                            const allergeniInnerContainer = document.createElement("div");
-                            allergeniInnerContainer.classList.add("allergeni-inner-container");
-                            allergeniContainer.appendChild(allergeniInnerContainer);
-
-                            // Iteriamo sugli allergeni e aggiungiamo le icone
-                            allergeniArray.forEach(allergene => {
-                                const allergeneData = allergeniMap[allergene];
-                                if (allergeneData) {
-                                    // Creiamo l'elemento div per l'icona
-                                    const icona = document.createElement("div");
-                                    icona.className = `icona ${allergeneData.className}`;
-                                    icona.textContent = allergeneData.emoji; // Mostra solo l'icona (emoji)
-                                    allergeniInnerContainer.appendChild(icona);
-                                }
-                            });
-
+                        
+                            // const allergeniText = document.createElement("p");
+                            // allergeniText.classList.add("allergeni-text");
+                            // allergeniText.textContent = "Allergeni";
+                            // allergeniContainer.appendChild(allergeniText);
+                        
+                            // Iterate over allergen categories (e.g., Bread, Beef)
+                            for (const [category, allergeniStr] of Object.entries(product.allergens)) {
+                                const categoryTitle = document.createElement("p");
+                                categoryTitle.classList.add("allergeni-text");
+                                categoryTitle.textContent = category;
+                                allergeniContainer.appendChild(categoryTitle);
+                        
+                                const allergeniArray = allergeniStr.split(", ");
+                        
+                                const allergeniInnerContainer = document.createElement("div");
+                                allergeniInnerContainer.classList.add("allergeni-inner-container");
+                        
+                                allergeniArray.forEach(allergene => {
+                                    const allergeneData = allergeniMap[allergene];
+                                    if (allergeneData) {
+                                        const icona = document.createElement("div");
+                                        icona.className = `icona ${allergeneData.className}`;
+                                        icona.textContent = allergeneData.emoji;
+                                        allergeniInnerContainer.appendChild(icona);
+                                    }
+                                });
+                        
+                                allergeniContainer.appendChild(allergeniInnerContainer);
+                            }
+                        
                             productDiv.appendChild(allergeniContainer);
                         }
+                        
 
                         categoryDiv.appendChild(productDiv);
                     }

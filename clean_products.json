@@ -13,7 +13,7 @@
             "title": "CRISPY GOAT",
             "price": 9.9,
             "ingredients": "burger di pollo pastellato e fritto, cheddar, bacon, lattuga, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_13ba5cad7a42aecddb7abd403d118be3_crispy.jpg"
         },
         {
@@ -21,7 +21,7 @@
             "title": "HAMBURGER",
             "price": 6.5,
             "ingredients": "burger di manzo 170g, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_c603e0ba9545dab26818c0fdfbf0e6db_hamburger.jpg"
         },
         {
@@ -45,7 +45,7 @@
             "title": "NUGGETS (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "bocconcini di pollo tritato pastellati, fatti a mano",
-            "allergens": "Glutine, Uova, Latte",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_2d809b226b5c98055724039020e3baf4_nuggets.jpg"
         },
         {
@@ -53,7 +53,7 @@
             "title": "BACON CHEDDAR FRIES",
             "price": 6.5,
             "ingredients": "patate con buccia con crema di cheddar home made e bacon croccante",
-            "allergens": "Uova, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Uova, Arachidi, Latte, Frutta a guscio, Senape"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_3225373cb14ad7773bd62ca0b62450d5_bacon-cheese-fries.jpg"
         },
         {
@@ -165,7 +165,7 @@
             "title": "CHICKEN POP CORN (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante",
-            "allergens": "Glutine, Uova, Latte",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_e51bacd5d58ed5117ba9665ac79ac84e_chicken-pop-corn.jpg"
         },
         {
@@ -173,7 +173,7 @@
             "title": "MEAT BALLS (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio",
-            "allergens": "Glutine, Uova, Latte",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_eefd63fff0e36a650f49c8ae435a68a2_meat-ball.jpg"
         },
         {
@@ -181,7 +181,7 @@
             "title": "PROVOLA GOAT",
             "price": 4.5,
             "ingredients": "provola dolce con tripla pastellatura a mano",
-            "allergens": "Glutine, Latte",
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d8ffaede354e0a140da413c2f315648c_provola-goat.jpg"
         },
         {
@@ -189,7 +189,7 @@
             "title": "GREEN NUGGETS VEGGIE (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": null,
-            "allergens": "Uova, Soia, Latte, Sedano, Senape",
+            "allergens": {"Allergeni":"Uova, Soia, Latte, Sedano, Senape"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_253f31ecbc1a169882fb471a51eaba88_green-nuggets.jpg"
         },
         {
@@ -197,7 +197,7 @@
             "title": "GREEN BALL VEGGIE (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": null,
-            "allergens": "Uova, Soia, Latte, Anidride solforosa e solfiti",
+            "allergens": {"Allergeni":"Uova, Soia, Latte, Anidride solforosa e solfiti"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_2ce34708a729c246b127c5711cd02081_green-meatball.jpg"
         },
         {
@@ -253,7 +253,7 @@
             "title": "CHEESEBURGER",
             "price": 7.9,
             "ingredients": "burger di manzo 170g, cheddar, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_619edc41b73dc049e121fe18aea31ee3_cheese-burger.jpg"
         },
         {
@@ -261,7 +261,7 @@
             "title": "BACON CHEESEBURGER",
             "price": 8.9,
             "ingredients": "burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_c17af969f571d67af8ec92b94e1c26da_bacon-cheese-burger.jpg"
         },
         {
@@ -269,7 +269,7 @@
             "title": "AMERICAN BACONCHEESE",
             "price": 8.9,
             "ingredients": "burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_dbc94473d699833349047fff6b205489_american-bacon-cheese.jpg"
         },
         {
@@ -277,7 +277,7 @@
             "title": "BRIE",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_202e2e86826c14ac2e4ff7b756ac893e_brie.jpg"
         },
         {
@@ -285,7 +285,7 @@
             "title": "TAL\u00c8",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte, Frutta a guscio", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_136d218b8e937e1cf0e5a3aa764ec193_tal.jpg"
         },
         {
@@ -293,7 +293,7 @@
             "title": "EGG",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_4d9c505b960f6f09e7e9d6723f720be5_egg.jpg"
         },
         {
@@ -301,7 +301,7 @@
             "title": "TUMA",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_0b116762652e7b88c6a1b1fc109c3ec2_tuma.jpg"
         },
         {
@@ -309,7 +309,7 @@
             "title": "PANCETTA",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape, Anidride solforosa e solfiti",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte, Senape, Anidride solforosa e solfiti", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_4235260f7b75554d82d8e7320a0ebd00_pancetta.jpg"
         },
         {
@@ -317,7 +317,7 @@
             "title": "DOUBLE TRIPLE",
             "price": 12.3,
             "ingredients": "doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_9e508afa5a6791555d526aa34feca2f0_double-triple.jpg"
         },
         {
@@ -325,7 +325,7 @@
             "title": "SUPER CRISPY",
             "price": 9.9,
             "ingredients": "burger di pollo fritto con panatura super croccante, lattuga, pomodoro, maionese",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_39c694d9414751fd14d4ef61a54e70b2_crispy-goat1.jpg"
         },
         {
@@ -333,7 +333,7 @@
             "title": "CHICKEN CBT",
             "price": 9.9,
             "ingredients": "sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_0555d820e6040723aa5dfc9f3814eac2_chicken-cbt.jpg"
         },
         {
@@ -341,7 +341,7 @@
             "title": "GREEN",
             "price": 9.9,
             "ingredients": "Burger vegetale, lattuga, cheddar, cipolla caramellata, salsa ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_b9dde3ca74e89872c1b187d9ae30ee34_green.jpg"
         },
         {
@@ -349,7 +349,7 @@
             "title": "KISS",
             "price": 3.5,
             "ingredients": "Panino con nutella e bacon",
-            "allergens": "Glutine",
+            "allergens": {"Allergeni":"Glutine"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_cbc3d936c31215260875f93e40a1c4d4_kiss_67890061aff41.jpg"
         },
         {
@@ -357,7 +357,7 @@
             "title": "TIRAMICICCIO'S",
             "price": 4.5,
             "ingredients": null,
-            "allergens": "Glutine, Latte",
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_167604feff4eac0a2b59c8f162d5b5a0_tiramiciccios.jpg"
         },
         {
@@ -365,7 +365,7 @@
             "title": "BROOKIES",
             "price": 4.5,
             "ingredients": null,
-            "allergens": "Glutine, Uova, Latte",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_bd4ecc727683a32ff0ca06cf6a4884bc_brookies_678900349284b.jpg"
         },
         {
@@ -373,7 +373,7 @@
             "title": "ALETTE CRUNCHY (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "Alette di pollo pastellate e fritte, laccate con salsa thai",
-            "allergens": "Glutine, Arachidi, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Arachidi, Frutta a guscio, Senape"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_abee1c5250a888efab079a4486c28150_alette-crunchy.jpg"
         },
         {
@@ -381,7 +381,7 @@
             "title": "OLD SCHOOL",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_bafc0c53271177c403503e4f6cf4fc71_old-school.jpg"
         },
         {
@@ -389,7 +389,7 @@
             "title": "PORCHETTA",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
-            "allergens": "Glutine, Uova, Pesce, Arachidi, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_b325557aacf46cbdb966deedfe2cc39f_porchetta.jpg"
         },
         {
@@ -533,7 +533,7 @@
             "title": "MORTADELLO",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, cipolla caramellata, gran P&V al tartufo, mortadella, maionese senapata al miele",
-            "allergens": "Glutine, Uova, Latte, Frutta a guscio, Senape",
+            "allergens": {"Allergeni":"Glutine, Uova, Latte, Frutta a guscio, Senape", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "./img/mortadello.png"
         },
         {
