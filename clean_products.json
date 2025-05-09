@@ -6,7 +6,7 @@
             "price": 3.5,
             "ingredients": "patate con buccia",
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_86eba43f823cd6892509ad7899e94b12_fries.jpg"
+            "thumb": "./img/menu/starters/fries.webp"
         },
         {
             "id": 5095,
@@ -14,7 +14,7 @@
             "price": 9.9,
             "ingredients": "burger di pollo pastellato e fritto, cheddar, bacon, lattuga, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_13ba5cad7a42aecddb7abd403d118be3_crispy.jpg"
+            "thumb": "./img/menu/ciccios/crispygoat.webp"
         },
         {
             "id": 5096,
@@ -22,7 +22,7 @@
             "price": 6.5,
             "ingredients": "burger di manzo 170g, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_c603e0ba9545dab26818c0fdfbf0e6db_hamburger.jpg"
+            "thumb": "./img/menu/classic/hamburger.webp"
         },
         {
             "id": 5097,
@@ -30,7 +30,7 @@
             "price": 1.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_eb6ce3464bf6c69e041fb592792984b5_acqua-naturale.jpg"
+            "thumb": "./img/menu/bibite/acquanaturale.webp"
         },
         {
             "id": 5098,
@@ -38,7 +38,7 @@
             "price": 0.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_8d84bdcd33b4c6d71fe9e03f03a3a8ca_maionese.jpg"
+            "thumb": "./img/menu/salse/maionese.webp"
         },
         {
             "id": 5477,
@@ -46,7 +46,7 @@
             "price": 2.7,
             "ingredients": "bocconcini di pollo tritato pastellati, fatti a mano",
             "allergens": {"Allergeni":"Glutine, Uova, Latte"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_2d809b226b5c98055724039020e3baf4_nuggets.jpg"
+            "thumb": "./img/menu/starters/nuggets.webp"
         },
         {
             "id": 5478,
@@ -54,7 +54,7 @@
             "price": 6.5,
             "ingredients": "patate con buccia con crema di cheddar home made e bacon croccante",
             "allergens": {"Allergeni":"Uova, Arachidi, Latte, Frutta a guscio, Senape"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_3225373cb14ad7773bd62ca0b62450d5_bacon-cheese-fries.jpg"
+            "thumb": "./img/menu/starters/baconcheesefries.webp"
         },
         {
             "id": 5479,
@@ -62,7 +62,7 @@
             "price": 1.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_23286f51ff1ee0e5749b38d2ca9d8dec_prova.jpg"
+            "thumb": "./img/menu/bibite/acquafrizzante.webp"
         },
         {
             "id": 5480,
@@ -70,7 +70,7 @@
             "price": 2.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_38fdfa11acf25a73dfc1f341d5e19b87_the-alla-pesca.jpg"
+            "thumb": "./img/menu/bibite/tepesca.webp"
         },
         {
             "id": 5481,
@@ -78,7 +78,7 @@
             "price": 2.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_4313cdc0857a9da1f2ad8a9599b56754_the-al-limone.jpg"
+            "thumb": "./img/menu/bibite/telimone.webp"
         },
         {
             "id": 5482,
@@ -86,7 +86,7 @@
             "price": 2.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_977d9d3e8ecbb9a024abb83b03c6ffb4_sprite.jpg"
+            "thumb": "./img/menu/bibite/sprite.webp"
         },
         {
             "id": 5483,
@@ -94,7 +94,7 @@
             "price": 2.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_40c542a36ed5197646d4ca86dae277c2_fanta.jpg"
+            "thumb": "./img/menu/bibite/fanta.webp"
         },
         {
             "id": 5484,
@@ -102,7 +102,7 @@
             "price": 2.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_fcc368286e325e89543e78142a6afeb5_coca-cola.jpg"
+            "thumb": "./img/menu/bibite/cocanormale.webp"
         },
         {
             "id": 5485,
@@ -110,7 +110,7 @@
             "price": 2.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_35de808db50fb089210295012bca951e_coca-cola-zero.jpg"
+            "thumb": "./img/menu/bibite/cocazero.webp"
         },
         {
             "id": 5486,
@@ -118,7 +118,7 @@
             "price": 2.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_489902a0b83efd4490ba8c4a1a7417f3_chinotto-vetro.jpg"
+            "thumb": "./img/menu/bibite/chinotto.webp"
         },
         {
             "id": 5487,
@@ -126,7 +126,7 @@
             "price": 3.9,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_a18f040d75f3cccf5f7ff03ce0f1bc67_heineken.jpg"
+            "thumb": "./img/menu/bibite/heineken.webp"
         },
         {
             "id": 5488,
@@ -134,7 +134,7 @@
             "price": 5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_880e6bea886d25eda3a63c020830f1e9_hippana-bianca.jpg"
+            "thumb": "./img/menu/bibite/hippanabianca.webp"
         },
         {
             "id": 5489,
@@ -142,7 +142,7 @@
             "price": 5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d11a547e3bd4221d85c05874c396eda5_hippana-bionda.jpg"
+            "thumb": "./img/menu/bibite/hippanabionda.webp"
         },
         {
             "id": 5490,
@@ -150,7 +150,7 @@
             "price": 5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_3d9bd5f97a903c2a0a47f8552ed66a0d_hippana-rossa.jpg"
+            "thumb": "./img/menu/bibite/hippanarossa.webp"
         },
         {
             "id": 5491,
@@ -158,7 +158,7 @@
             "price": 5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_be213d43ec3c4ad3d1a67d540364eacf_hippana-ambrata.jpg"
+            "thumb": "./img/menu/bibite/hippanaambrata.webp"
         },
         {
             "id": 5492,
@@ -166,7 +166,7 @@
             "price": 2.7,
             "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante",
             "allergens": {"Allergeni":"Glutine, Uova, Latte"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_e51bacd5d58ed5117ba9665ac79ac84e_chicken-pop-corn.jpg"
+            "thumb": "./img/menu/starters/chickenpopcorn.webp"
         },
         {
             "id": 5493,
@@ -174,7 +174,7 @@
             "price": 2.7,
             "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio",
             "allergens": {"Allergeni":"Glutine, Uova, Latte"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_eefd63fff0e36a650f49c8ae435a68a2_meat-ball.jpg"
+            "thumb": "./img/menu/starters/meatball.webp"
         },
         {
             "id": 5494,
@@ -182,7 +182,7 @@
             "price": 4.5,
             "ingredients": "provola dolce con tripla pastellatura a mano",
             "allergens": {"Allergeni":"Glutine, Latte"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d8ffaede354e0a140da413c2f315648c_provola-goat.jpg"
+            "thumb": "./img/menu/starters/provolagoat.webp"
         },
         {
             "id": 5496,
@@ -190,7 +190,7 @@
             "price": 2.7,
             "ingredients": null,
             "allergens": {"Allergeni":"Uova, Soia, Latte, Sedano, Senape"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_253f31ecbc1a169882fb471a51eaba88_green-nuggets.jpg"
+            "thumb": "./img/menu/starters/greennuggets.webp"
         },
         {
             "id": 5497,
@@ -198,7 +198,7 @@
             "price": 2.7,
             "ingredients": null,
             "allergens": {"Allergeni":"Uova, Soia, Latte, Anidride solforosa e solfiti"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_2ce34708a729c246b127c5711cd02081_green-meatball.jpg"
+            "thumb": "./img/menu/starters/greenball.webp"
         },
         {
             "id": 5498,
@@ -206,7 +206,7 @@
             "price": 2.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_736c2a21e61a4f14682ffd6c916f7725_salsa-cheddart.jpg"
+            "thumb": "./img/menu/salse/salsacheddar170.webp"
         },
         {
             "id": 5499,
@@ -214,7 +214,7 @@
             "price": 0.6,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_24c15aadbd48dda870564154a8c0c660_salsa-thai.jpg"
+            "thumb": "./img/menu/salse/thai.webp"
         },
         {
             "id": 5501,
@@ -222,7 +222,7 @@
             "price": 0.6,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d2f170995d2d03e4b5607d941aed978b_salsa-hot-thai.jpg"
+            "thumb": "./img/menu/salse/hotthai.webp"
         },
         {
             "id": 5503,
@@ -230,7 +230,7 @@
             "price": 0.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_e76d08645cf4e30a6c7e87cc2067cb16_salsa-ciccios.jpg"
+            "thumb": "./img/menu/salse/salsaciccios.webp"
         },
         {
             "id": 5505,
@@ -238,7 +238,7 @@
             "price": 0.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_80d6a204015ba20235b93b088eb2468d_bbq.jpg"
+            "thumb": "./img/menu/salse/bbq.webp"
         },
         {
             "id": 5507,
@@ -246,7 +246,7 @@
             "price": 0.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_e9e67dc4f2e1a6936eb7dc1a6d09e140_ketchup-heinz.jpg"
+            "thumb": "./img/menu/salse/ketchup.webp"
         },
         {
             "id": 6116,
@@ -254,7 +254,7 @@
             "price": 7.9,
             "ingredients": "burger di manzo 170g, cheddar, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_619edc41b73dc049e121fe18aea31ee3_cheese-burger.jpg"
+            "thumb": "./img/menu/classic/cheeseburger.webp"
         },
         {
             "id": 6117,
@@ -262,7 +262,7 @@
             "price": 8.9,
             "ingredients": "burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_c17af969f571d67af8ec92b94e1c26da_bacon-cheese-burger.jpg"
+            "thumb": "./img/menu/classic/baconcheeseburger.webp"
         },
         {
             "id": 6118,
@@ -270,7 +270,7 @@
             "price": 8.9,
             "ingredients": "burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_dbc94473d699833349047fff6b205489_american-bacon-cheese.jpg"
+            "thumb": "./img/menu/classic/americanbaconcheese.webp"
         },
         {
             "id": 6119,
@@ -278,7 +278,7 @@
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_202e2e86826c14ac2e4ff7b756ac893e_brie.jpg"
+            "thumb": "./img/menu/ciccios/brie.webp"
         },
         {
             "id": 6120,
@@ -286,7 +286,7 @@
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte, Frutta a guscio", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_136d218b8e937e1cf0e5a3aa764ec193_tal.jpg"
+            "thumb": "./img/menu/ciccios/tale.webp"
         },
         {
             "id": 6121,
@@ -294,7 +294,7 @@
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_4d9c505b960f6f09e7e9d6723f720be5_egg.jpg"
+            "thumb": "./img/menu/ciccios/egg.webp"
         },
         {
             "id": 6123,
@@ -302,7 +302,7 @@
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_0b116762652e7b88c6a1b1fc109c3ec2_tuma.jpg"
+            "thumb": "./img/menu/ciccios/tuma.webp"
         },
         {
             "id": 6124,
@@ -310,7 +310,7 @@
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte, Senape, Anidride solforosa e solfiti", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_4235260f7b75554d82d8e7320a0ebd00_pancetta.jpg"
+            "thumb": "./img/menu/ciccios/pancetta.webp"
         },
         {
             "id": 6125,
@@ -318,7 +318,7 @@
             "price": 12.3,
             "ingredients": "doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_9e508afa5a6791555d526aa34feca2f0_double-triple.jpg"
+            "thumb": "./img/menu/ciccios/doubletriple.webp"
         },
         {
             "id": 6127,
@@ -326,7 +326,7 @@
             "price": 9.9,
             "ingredients": "burger di pollo fritto con panatura super croccante, lattuga, pomodoro, maionese",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_39c694d9414751fd14d4ef61a54e70b2_crispy-goat1.jpg"
+            "thumb": "./img/menu/ciccios/supercrispy.webp"
         },
         {
             "id": 6130,
@@ -334,7 +334,7 @@
             "price": 9.9,
             "ingredients": "sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
             "allergens": {"Allergeni":"Glutine, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_0555d820e6040723aa5dfc9f3814eac2_chicken-cbt.jpg"
+            "thumb": "./img/menu/ciccios/chickencbt.webp"
         },
         {
             "id": 6131,
@@ -342,7 +342,7 @@
             "price": 9.9,
             "ingredients": "Burger vegetale, lattuga, cheddar, cipolla caramellata, salsa ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_b9dde3ca74e89872c1b187d9ae30ee34_green.jpg"
+            "thumb": "./img/menu/ciccios/green.webp"
         },
         {
             "id": 6132,
@@ -350,7 +350,7 @@
             "price": 3.5,
             "ingredients": "Panino con nutella e bacon",
             "allergens": {"Allergeni":"Glutine"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_cbc3d936c31215260875f93e40a1c4d4_kiss_67890061aff41.jpg"
+            "thumb": "./img/menu/dolci/kiss.webp"
         },
         {
             "id": 6134,
@@ -358,7 +358,7 @@
             "price": 4.5,
             "ingredients": null,
             "allergens": {"Allergeni":"Glutine, Latte"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_167604feff4eac0a2b59c8f162d5b5a0_tiramiciccios.jpg"
+            "thumb": "./img/menu/dolci/tiramiciccios.webp"
         },
         {
             "id": 6135,
@@ -366,7 +366,7 @@
             "price": 4.5,
             "ingredients": null,
             "allergens": {"Allergeni":"Glutine, Uova, Latte"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_bd4ecc727683a32ff0ca06cf6a4884bc_brookies_678900349284b.jpg"
+            "thumb": "./img/menu/dolci/brookies.webp"
         },
         {
             "id": 11937,
@@ -374,7 +374,7 @@
             "price": 2.7,
             "ingredients": "Alette di pollo pastellate e fritte, laccate con salsa thai",
             "allergens": {"Allergeni":"Glutine, Arachidi, Frutta a guscio, Senape"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_abee1c5250a888efab079a4486c28150_alette-crunchy.jpg"
+            "thumb": "./img/menu/starters/alettecrunchy.webp"
         },
         {
             "id": 11938,
@@ -382,7 +382,7 @@
             "price": 9.9,
             "ingredients": "burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_bafc0c53271177c403503e4f6cf4fc71_old-school.jpg"
+            "thumb": "./img/menu/ciccios/oldschool.webp"
         },
         {
             "id": 11939,
@@ -390,7 +390,7 @@
             "price": 9.9,
             "ingredients": "burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_b325557aacf46cbdb966deedfe2cc39f_porchetta.jpg"
+            "thumb": "./img/menu/ciccios/porchetta.webp"
         },
         {
             "id": 12296,
@@ -398,7 +398,7 @@
             "price": 7.9,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_cf1ab98781ebf1f31aba41a2ecc7c765_happynuovo.jpg"
+            "thumb": "./img/menu/classic/happynuovo.webp"
         },
         {
             "id": 13362,
@@ -406,7 +406,7 @@
             "price": 10.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_619edc41b73dc049e121fe18aea31ee3_cheese-burger.jpg"
+            "thumb": "./img/menu/classic/cheeseburger.webp"
         },
         {
             "id": 13363,
@@ -414,7 +414,7 @@
             "price": 12.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_dbc94473d699833349047fff6b205489_american-bacon-cheese.jpg"
+            "thumb": "./img/menu/classic/americanbaconcheese.webp"
         },
         {
             "id": 13364,
@@ -422,7 +422,7 @@
             "price": 12.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_c17af969f571d67af8ec92b94e1c26da_bacon-cheese-burger.jpg"
+            "thumb": "./img/menu/classic/baconcheeseburger.webp"
         },
         {
             "id": 13365,
@@ -430,7 +430,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_202e2e86826c14ac2e4ff7b756ac893e_brie.jpg"
+            "thumb": "./img/menu/ciccios/brie.webp"
         },
         {
             "id": 13366,
@@ -438,7 +438,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_0555d820e6040723aa5dfc9f3814eac2_chicken-cbt.jpg"
+            "thumb": "./img/menu/ciccios/chickencbt.webp"
         },
         {
             "id": 13367,
@@ -446,7 +446,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_13ba5cad7a42aecddb7abd403d118be3_crispy.jpg"
+            "thumb": "./img/menu/ciccios/crispygoat.webp"
         },
         {
             "id": 13368,
@@ -454,7 +454,7 @@
             "price": 15.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_9e508afa5a6791555d526aa34feca2f0_double-triple.jpg"
+            "thumb": "./img/menu/ciccios/doubletriple.webp"
         },
         {
             "id": 13369,
@@ -462,7 +462,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_4d9c505b960f6f09e7e9d6723f720be5_egg.jpg"
+            "thumb": "./img/menu/ciccios/egg.webp"
         },
         {
             "id": 13370,
@@ -470,7 +470,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_b9dde3ca74e89872c1b187d9ae30ee34_green.jpg"
+            "thumb": "./img/menu/ciccios/brie.webp"
         },
         {
             "id": 13371,
@@ -478,7 +478,7 @@
             "price": 10,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_c603e0ba9545dab26818c0fdfbf0e6db_hamburger.jpg"
+            "thumb": "./img/menu/classic/hamburger.webp"
         },
         {
             "id": 13372,
@@ -486,7 +486,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_bafc0c53271177c403503e4f6cf4fc71_old-school.jpg"
+            "thumb": "./img/menu/ciccios/oldschool.webp"
         },
         {
             "id": 13373,
@@ -494,7 +494,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_4235260f7b75554d82d8e7320a0ebd00_pancetta.jpg"
+            "thumb": "./img/menu/ciccios/pancetta.webp"
         },
         {
             "id": 13374,
@@ -502,7 +502,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_b325557aacf46cbdb966deedfe2cc39f_porchetta.jpg"
+            "thumb": "./img/menu/ciccios/porchetta.webp"
         },
         {
             "id": 13375,
@@ -510,7 +510,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_39c694d9414751fd14d4ef61a54e70b2_crispy-goat1.jpg"
+            "thumb": "./img/menu/ciccios/supercrispy.webp"
         },
         {
             "id": 13376,
@@ -518,7 +518,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_136d218b8e937e1cf0e5a3aa764ec193_tal.jpg"
+            "thumb": "./img/menu/ciccios/tale.webp"
         },
         {
             "id": 13377,
@@ -526,7 +526,7 @@
             "price": 13.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_83eab646709bcfdd143ba69372f238aa_tuma_67ae01113b985.jpg"
+            "thumb": "./img/menu/ciccios/tuma.webp"
         },
         {
             "id": 14061,
@@ -534,7 +534,7 @@
             "price": 9.9,
             "ingredients": "burger di manzo 170g, cipolla caramellata, gran P&V al tartufo, mortadella, maionese senapata al miele",
             "allergens": {"Allergeni":"Glutine, Uova, Latte, Frutta a guscio, Senape", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
-            "thumb": "./img/mortadello.png"
+            "thumb": "./img/menu/ciccios/mortadello.webp"
         },
         {
             "id": 14068,
@@ -542,7 +542,7 @@
             "price": 0.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d73eb1d9239d2ccc8b9d37fc13839849_heinz-mayo.jpg"
+            "thumb": "./img/menu/salse/maionese.webp"
         },
         {
             "id": 14069,
@@ -550,7 +550,7 @@
             "price": 2.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_bbec69cadb7e44d6a45776b6faaa0d64_salsa-cheddar.jpg"
+            "thumb": "./img/menu/salse/salsacheddar170.webp"
         },
         {
             "id": 14070,
@@ -558,7 +558,7 @@
             "price": 0.6,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_ff877bff908f490e5fc9c957245b4e56_salsa-hot-thai_67ee416d098dd.jpg"
+            "thumb": "./img/menu/salse/thai.webp"
         },
         {
             "id": 14071,
@@ -566,7 +566,7 @@
             "price": 0.6,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_683a012524ff9e1f4a505194ef540c1e_salsa-hot-thai_67ee40cebfde8.jpg"
+            "thumb": "./img/menu/salse/thai.webp"
         },
         {
             "id": 14072,
@@ -574,7 +574,7 @@
             "price": 1.2,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_35aee0a4fbfb6f39cd93add6fc2bf345_salsa-ciccios_67ee4183ebca7.jpg"
+            "thumb": "./img/menu/salse/salsaciccios.webp"
         },
         {
             "id": 14073,
@@ -582,7 +582,7 @@
             "price": 0.5,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_63068d6eb00eca85b36d5a186db54142_salsa-ciccios_67ee4113639dd.jpg"
+            "thumb": "./img/menu/salse/salsaciccios.webp"
         },
         {
             "id": 14074,
@@ -590,7 +590,7 @@
             "price": 0.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_41feab44a1382b4488c4ce15ee8d6bd8_heinz-bbq.jpg"
+            "thumb": "./img/menu/salse/bbq.webp"
         },
         {
             "id": 14075,
@@ -598,7 +598,7 @@
             "price": 0.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_d82898f9d3e4ce94f7c13ee183613603_heinz-ketchup.jpg"
+            "thumb": "./img/menu/salse/ketchup.webp"
         },
         {
             "id": 14125,
@@ -606,7 +606,7 @@
             "price": 4.5,
             "ingredients": "Maxi nuggets di pollo con panatura super croccante accompagnato con cheddar calda",
             "allergens": null,
-            "thumb": "https://dashboardprod-149ac.kxcdn.com/gallery/TCAT/thumb_2548913ba48a93fbbb2ab4ebd26c1b45_lingotti.jpg"
+            "thumb": "./img/menu/starters/lingotti.webp"
         }
     ]
 }
