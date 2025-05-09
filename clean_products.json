@@ -45,7 +45,7 @@
             "title": "NUGGETS (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "bocconcini di pollo tritato pastellati, fatti a mano",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte"},
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/nuggets.webp"
         },
         {
@@ -315,7 +315,7 @@
         {
             "id": 6125,
             "title": "DOUBLE TRIPLE",
-            "price": 12.3,
+            "price": 11.9,
             "ingredients": "doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
             "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
             "thumb": "./img/menu/ciccios/doubletriple.webp"
@@ -605,7 +605,7 @@
             "title": "LINGOTTI 2PZ",
             "price": 4.5,
             "ingredients": "Maxi nuggets di pollo con panatura super croccante accompagnato con cheddar calda",
-            "allergens": null,
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/lingotti.webp"
         }
     ]
