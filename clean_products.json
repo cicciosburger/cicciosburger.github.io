@@ -13,7 +13,7 @@
             "title": "CRISPY GOAT",
             "price": 9.9,
             "ingredients": "burger di pollo pastellato e fritto, cheddar, bacon, lattuga, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/crispygoat.webp"
         },
         {
@@ -21,7 +21,7 @@
             "title": "HAMBURGER",
             "price": 6.5,
             "ingredients": "burger di manzo 170g, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/classic/hamburger.webp"
         },
         {
@@ -53,7 +53,7 @@
             "title": "BACON CHEDDAR FRIES",
             "price": 6.5,
             "ingredients": "patate con buccia con crema di cheddar home made e bacon croccante",
-            "allergens": {"Allergeni":"Uova, Arachidi, Latte, Frutta a guscio, Senape"},
+            "allergens": {"Allergeni":"Uova, Arachidi, Latte, Senape"},
             "thumb": "./img/menu/starters/baconcheesefries.webp"
         },
         {
@@ -253,7 +253,7 @@
             "title": "CHEESEBURGER",
             "price": 7.9,
             "ingredients": "burger di manzo 170g, cheddar, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/classic/cheeseburger.webp"
         },
         {
@@ -261,7 +261,7 @@
             "title": "BACON CHEESEBURGER",
             "price": 8.9,
             "ingredients": "burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/classic/baconcheeseburger.webp"
         },
         {
@@ -269,7 +269,7 @@
             "title": "AMERICAN BACONCHEESE",
             "price": 8.9,
             "ingredients": "burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/classic/americanbaconcheese.webp"
         },
         {
@@ -277,7 +277,7 @@
             "title": "BRIE",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/brie.webp"
         },
         {
@@ -285,7 +285,7 @@
             "title": "TAL\u00c8",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte, Frutta a guscio", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Frutta a guscio, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/tale.webp"
         },
         {
@@ -293,7 +293,7 @@
             "title": "EGG",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/egg.webp"
         },
         {
@@ -301,7 +301,7 @@
             "title": "TUMA",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/tuma.webp"
         },
         {
@@ -309,7 +309,7 @@
             "title": "PANCETTA",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte, Senape, Anidride solforosa e solfiti", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte, Senape, Anidride solforosa e solfiti", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/pancetta.webp"
         },
         {
@@ -317,7 +317,7 @@
             "title": "DOUBLE TRIPLE",
             "price": 11.9,
             "ingredients": "doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/doubletriple.webp"
         },
         {
@@ -325,7 +325,7 @@
             "title": "SUPER CRISPY",
             "price": 9.9,
             "ingredients": "burger di pollo fritto con panatura super croccante, lattuga, pomodoro, maionese",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/supercrispy.webp"
         },
         {
@@ -333,7 +333,7 @@
             "title": "CHICKEN CBT",
             "price": 9.9,
             "ingredients": "sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/chickencbt.webp"
         },
         {
@@ -341,7 +341,7 @@
             "title": "GREEN",
             "price": 9.9,
             "ingredients": "Burger vegetale, lattuga, cheddar, cipolla caramellata, salsa ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/green.webp"
         },
         {
@@ -373,7 +373,7 @@
             "title": "ALETTE CRUNCHY (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "Alette di pollo pastellate e fritte, laccate con salsa thai",
-            "allergens": {"Allergeni":"Glutine, Arachidi, Frutta a guscio, Senape"},
+            "allergens": {"Allergeni":"Glutine, Arachidi, Senape"},
             "thumb": "./img/menu/starters/alettecrunchy.webp"
         },
         {
@@ -381,7 +381,7 @@
             "title": "OLD SCHOOL",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/oldschool.webp"
         },
         {
@@ -389,7 +389,7 @@
             "title": "PORCHETTA",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/porchetta.webp"
         },
         {
@@ -533,7 +533,7 @@
             "title": "MORTADELLO",
             "price": 9.9,
             "ingredients": "burger di manzo 170g, cipolla caramellata, gran P&V al tartufo, mortadella, maionese senapata al miele",
-            "allergens": {"Allergeni":"Glutine, Uova, Latte, Frutta a guscio, Senape", "Salsa":"Uova, Senape, Arachidi, Frutta a guscio, Pesce"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte, Senape", "Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/mortadello.webp"
         },
         {
