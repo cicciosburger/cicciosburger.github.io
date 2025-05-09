@@ -310,16 +310,20 @@
                         "order": 1
                     },
                     {
+                        "product_id": 13371,
+                        "order": 11
+                    },
+                    {
                         "product_id": 13362,
                         "order": 2
                     },
                     {
-                        "product_id": 13363,
-                        "order": 3
-                    },
-                    {
                         "product_id": 13364,
                         "order": 4
+                    },
+                    {
+                        "product_id": 13363,
+                        "order": 3
                     },
                     {
                         "product_id": 13365,
@@ -344,10 +348,6 @@
                     {
                         "product_id": 13370,
                         "order": 10
-                    },
-                    {
-                        "product_id": 13371,
-                        "order": 11
                     },
                     {
                         "product_id": 13372,
