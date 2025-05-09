@@ -45,7 +45,7 @@
             "title": "NUGGETS (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "bocconcini di pollo tritato pastellati, fatti a mano",
-            "allergens": {"Allergeni Panino":"Glutine, Latte"},
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/nuggets.webp"
         },
         {
@@ -53,7 +53,7 @@
             "title": "BACON CHEDDAR FRIES",
             "price": 6.5,
             "ingredients": "patate con buccia con crema di cheddar home made e bacon croccante",
-            "allergens": {"Allergeni Panino":"Glutine, Latte, Senape"},
+            "allergens": {"Allergeni":"Glutine, Latte, Senape"},
             "thumb": "./img/menu/starters/baconcheesefries.webp"
         },
         {
@@ -165,7 +165,7 @@
             "title": "CHICKEN POP CORN (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante",
-            "allergens": {"Allergeni Panino":"Glutine, Latte"},
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/chickenpopcorn.webp"
         },
         {
@@ -173,7 +173,7 @@
             "title": "MEAT BALLS (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio",
-            "allergens": {"Allergeni Panino":"Glutine, Uova, Latte"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte"},
             "thumb": "./img/menu/starters/meatball.webp"
         },
         {
@@ -181,7 +181,7 @@
             "title": "PROVOLA GOAT",
             "price": 4.5,
             "ingredients": "provola dolce con tripla pastellatura a mano",
-            "allergens": {"Allergeni Panino":"Glutine, Latte"},
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/provolagoat.webp"
         },
         {
@@ -189,7 +189,7 @@
             "title": "GREEN NUGGETS VEGGIE (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": null,
-            "allergens": {"Allergeni Panino":"Uova, Soia, Latte, Sedano, Senape"},
+            "allergens": {"Allergeni":"Uova, Soia, Latte, Sedano, Senape"},
             "thumb": "./img/menu/starters/greennuggets.webp"
         },
         {
@@ -197,7 +197,7 @@
             "title": "GREEN BALL VEGGIE (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": null,
-            "allergens": {"Allergeni Panino":"Uova, Soia, Latte, Anidride solforosa e solfiti"},
+            "allergens": {"Allergeni":"Uova, Soia, Latte, Anidride solforosa e solfiti"},
             "thumb": "./img/menu/starters/greenball.webp"
         },
         {
@@ -205,7 +205,7 @@
             "title": "SALSA CHEDDAR CALDA 170ML",
             "price": 2.5,
             "ingredients": null,
-            "allergens": {"Allergeni Panino":"Glutine, Latte"},
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/salse/salsacheddar170.webp"
         },
         {
@@ -349,7 +349,7 @@
             "title": "KISS",
             "price": 3.5,
             "ingredients": "Panino con nutella e bacon",
-            "allergens": {"Allergeni Panino":"Glutine"},
+            "allergens": {"Allergeni":"Glutine"},
             "thumb": "./img/menu/dolci/kiss.webp"
         },
         {
@@ -357,7 +357,7 @@
             "title": "TIRAMICICCIO'S",
             "price": 4.5,
             "ingredients": null,
-            "allergens": {"Allergeni Panino":"Glutine, Latte"},
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/dolci/tiramiciccios.webp"
         },
         {
@@ -365,7 +365,7 @@
             "title": "BROOKIES",
             "price": 4.5,
             "ingredients": null,
-            "allergens": {"Allergeni Panino":"Glutine, Uova, Latte"},
+            "allergens": {"Allergeni":"Glutine, Uova, Latte"},
             "thumb": "./img/menu/dolci/brookies.webp"
         },
         {
@@ -373,7 +373,7 @@
             "title": "ALETTE CRUNCHY (da 2,70\u20ac)",
             "price": 2.7,
             "ingredients": "Alette di pollo pastellate e fritte, laccate con salsa thai",
-            "allergens": {"Allergeni Panino":"Glutine, Senape"},
+            "allergens": {"Allergeni":"Glutine, Senape"},
             "thumb": "./img/menu/starters/alettecrunchy.webp"
         },
         {
@@ -605,7 +605,7 @@
             "title": "LINGOTTI 2PZ",
             "price": 4.5,
             "ingredients": "Maxi nuggets di pollo con panatura super croccante accompagnato con cheddar calda",
-            "allergens": {"Allergeni Panino":"Glutine, Latte"},
+            "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/lingotti.webp"
         }
     ]
