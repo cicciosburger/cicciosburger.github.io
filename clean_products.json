@@ -42,8 +42,8 @@
         },
         {
             "id": 5477,
-            "title": "NUGGETS (da 2,70\u20ac)",
-            "price": 2.7,
+            "title": "NUGGETS",
+            "price": "da 2,70\u20ac",
             "ingredients": "bocconcini di pollo tritato pastellati, fatti a mano",
             "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/nuggets.webp"
@@ -162,16 +162,16 @@
         },
         {
             "id": 5492,
-            "title": "CHICKEN POP CORN (da 2,70\u20ac)",
-            "price": 2.7,
+            "title": "CHICKEN POP CORN",
+            "price": "da 2,70\u20ac",
             "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante",
             "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/chickenpopcorn.webp"
         },
         {
             "id": 5493,
-            "title": "MEAT BALLS (da 2,70\u20ac)",
-            "price": 2.7,
+            "title": "MEAT BALLS",
+            "price": "da 2,70\u20ac",
             "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio",
             "allergens": {"Allergeni":"Glutine, Uova, Latte"},
             "thumb": "./img/menu/starters/meatball.webp"
@@ -186,16 +186,16 @@
         },
         {
             "id": 5496,
-            "title": "GREEN NUGGETS VEGGIE (da 2,70\u20ac)",
-            "price": 2.7,
+            "title": "GREEN NUGGETS VEGGIE",
+            "price": "da 2,70\u20ac",
             "ingredients": null,
             "allergens": {"Allergeni":"Uova, Soia, Latte, Sedano, Senape"},
             "thumb": "./img/menu/starters/greennuggets.webp"
         },
         {
             "id": 5497,
-            "title": "GREEN BALL VEGGIE (da 2,70\u20ac)",
-            "price": 2.7,
+            "title": "GREEN BALL VEGGIE",
+            "price": "da 2,70\u20ac",
             "ingredients": null,
             "allergens": {"Allergeni":"Uova, Soia, Latte, Anidride solforosa e solfiti"},
             "thumb": "./img/menu/starters/greenball.webp"
@@ -370,8 +370,8 @@
         },
         {
             "id": 11937,
-            "title": "ALETTE CRUNCHY (da 2,70\u20ac)",
-            "price": 2.7,
+            "title": "ALETTE CRUNCHY",
+            "price": "da 2,70\u20ac",
             "ingredients": "Alette di pollo pastellate e fritte, laccate con salsa thai",
             "allergens": {"Allergeni":"Glutine, Senape"},
             "thumb": "./img/menu/starters/alettecrunchy.webp"

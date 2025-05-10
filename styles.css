@@ -1,1315 +1,885 @@
-
-/* Poppins Regular */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* Poppins Italic */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  /* Poppins Light */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* Poppins Light Italic */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  /* Poppins Medium */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* Poppins Medium Italic */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  /* Poppins SemiBold */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* Poppins SemiBold Italic */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-SemiBoldItalic.ttf') format('truetype');
-    font-weight: 600;
-    font-style: italic;
-    font-display: swap;
-  }
-  
   /* Poppins Bold */
   @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* Poppins Bold Italic */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  /* Poppins ExtraBold */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* Poppins ExtraBold Italic */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
-    font-weight: 800;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  /* Poppins ExtraLight */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-ExtraLight.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* Poppins ExtraLight Italic */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-ExtraLightItalic.ttf') format('truetype');
-    font-weight: 200;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  /* Poppins Thin */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-Thin.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* Poppins Thin Italic */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-ThinItalic.ttf') format('truetype');
-    font-weight: 100;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  /* Poppins Black */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* Poppins Black Italic */
-  @font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins-BlackItalic.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
+      font-family: 'Poppins';
+      src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
   }
 
-  /* Example for Poppins font */
-@font-face {
-    font-family: 'Poppins';
-    src: url('fonts/Poppins-Regular.ttf') format('truetype');
-    font-display: swap; /* Ensure fallback font is used */
-}
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('fonts/Poppins-Bold.ttf') format('truetype');
-    font-display: swap;
-}
-  
-/* General Reset */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    text-align: center;
-    padding: 20px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a{
-    color:black;
-}
-
-.outlined-text {
-    font-size: 50px;
-    color: #0e0e0e; /* Make text color transparent */
-    text-shadow: 
-      1px 1px 0 white, 
-      -1px -1px 0 white,
-      1px -1px 0 white,
-      -1px 1px 0 white; /* Create outline effect */
+  /* General Reset */
+  body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      text-align: center;
+      padding: 20px;
   }
-/* Body and Container */
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #0e0e0e;
-    /* background-color: white; */
-    border-radius: 12px;
-    border:1px solid gray;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
 
-/* Header */
-header img {
+
+  /* Body and Container */
+
+  .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #0e0e0e;
+      border-radius: 12px;
+      border: 1px solid gray;
+  }
+
+  /* Header */
+  header img {
+      width: 100%;
+      margin-bottom: 20px;
+      object-fit: cover;
+  }
+
+  /* Buttons */
+  .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+  }
+
+  .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      padding: 16px 24px;
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      border: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      background: transparent;
+      box-shadow: none;
+      padding-bottom: 0px;
+  }
+
+  .button-container>a,
+  .button-container>div {
+      transition: all 0.3s ease;
+
+  }
+
+  .button-container>a:hover,
+  .button-container>div:hover {
+      opacity: 0.7;
+      transform: translateY(-4px);
+  }
+
+  /* Footer */
+  footer {
+      padding-top: 40px;
+      color: white;
+  }
+
+  /* Modal */
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      overflow: auto;
+      padding-top: 60px;
+  }
+
+  .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 10px;
+      border-radius: 10px;
+      width: 95%;
+      max-width: 1000px;
+  }
+
+  /* Menu Grid */
+  .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 15px;
+  }
+
+  /* Default layout for larger screens */
+  .menu-item {
+      display: flex;
+      flex-direction: row;
+      /* Align items horizontally */
+      align-items: flex-start;
+      text-align: left;
+      /* Align text to the left */
+      padding: 0px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid black;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .product-img {
+      display: block;
+      -webkit-mask-image: linear-gradient(to bottom, black 94%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 94%, transparent 100%);
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0px;
+  }
+
+  .menu-item-info {
     width: 100%;
-    margin-bottom: 20px;
-    object-fit: cover;
-    /* background: white; */
-    /* border: 5px double white; */
-}
-
-header h1 {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 10px;
-}
-
-header p {
-    color: #ddd;
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    font-weight: 300;
-    line-height: 1.5;
-}
-
-/* Buttons */
-.button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-}
-
-.button{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    padding: 16px 24px;
-    text-decoration: none;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    border: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    background: transparent; 
-    /* color:black;  */
-    box-shadow: none;
-    padding-bottom:0px;
-}
-
-i{
-    color:white;
-}
-
-.button:hover{
-    opacity: 0.7;
-    transform: translateY(-4px);
-    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); */
-}
-
-.button:active {
-    transform: scale(1);
-}
-
-.button i {
-    font-size: 1.6rem;
-    margin-right: 10px;
-}
-
-/* Footer */
-footer {
-    padding-top: 40px;
-    color: white;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    overflow: auto;
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 900px;
-}
-
-.close-btn {
-    color: #aaa;
-    font-size: 36px;
-    font-weight: bold;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    cursor: pointer;
-}
-
-.close-btn:hover, .close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Menu Grid */
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-/* Default layout for larger screens */
-.menu-item {
-    display: flex;
-    flex-direction: row; /* Align items horizontally */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space out items */
-    text-align: left; /* Align text to the left */
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid black;
-    transition: transform 0.3s ease;
-}
-
-.menu-item img {
-    width: 100px; /* Fixed width for the image */
-    height: 100px; /* Fixed height for the image */
-    object-fit: contain; /* Ensure the image fits within the container */
-    border-radius: 8px;
-    margin-right: 20px; /* Space between image and text */
-}
-
-.menu-item h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
-    flex: 1; /* Allow the title to take up remaining space */
-}
-
-.menu-item .product-description {
-    font-size: 1rem;
-    color: #777;
-    margin: 0;
-    flex: 1; /* Allow the description to take up remaining space */
-}
-
-.menu-item .product-price {
-    font-size: 1.2rem;
-    color: #050505;
-    margin: 0;
-    margin-left: 20px; /* Space between description and price */
-    white-space: nowrap; /* Prevent price from wrapping */
-}
-
-/* Collapsible Buttons */
-
-
-.content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-.content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-	margin:0px;
-	padding:0px;
-}
-
-.menu-item img {
-    display: none; /* Hide images by default */
-}
-
-.content.open .menu-item img {
-    display: block; /* Show images when expanded */
-    margin: 5px auto;
-    border: 1px solid black;
-}
-
-/* Default layout for larger screens */
-.menu-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.menu-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.menu-item h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin: 10px 0;
-}
-
-.menu-item .product-price {
-    font-size: 1.2rem;
-    color: #050505;
-    margin: 10px 0;
-}
-
-.menu-item .product-description {
-    font-size: 1rem;
-    color: #777;
-    padding: 0 10px;
-}
-
-
-/* Collapsible Button */
-.collapsible {
-    background-color: black; /* White background */
-    color: white; /* Dark text color */
-    font-size: 1.1rem;
-    font-weight: 600; /* Semi-bold text */
-    padding: 12px 20px; /* Comfortable padding */
-    border: 1px solid #e0e0e0; /* Subtle border */
-    border-radius: 8px; /* Rounded corners */
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transitions */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Hover Effect */
-.collapsible:hover {
-    background-color: #404040; /* Light background on hover */
-    border-color: #d0d0d0; /* Slightly darker border on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-}
-
-/* Active State (When Button is Open) */
-.collapsible.active {
-    background-color: #404040; /* Light background on hover */
-    border-color: #c0c0c0; /* Darker border when open */
-}
-
-/* Icon for Collapsible Button */
-.collapsible::after {
-    content: '\25BC'; /* Unicode for down arrow (▼) */
-    font-size: 0.9rem;
-    color: #666; /* Subtle icon color */
-    transition: transform 0.3s ease; /* Smooth rotation */
-}
-
-/* Rotate Icon When Button is Active */
-.collapsible.active::after {
-    transform: rotate(180deg); /* Rotate arrow when open */
-}
-
-/* Collapsible Content */
-.content {
-    padding: 0 20px; /* Padding for content */
-    background-color: black; /* White background */
-    border: 1px solid #e0e0e0; /* Subtle border */
-    border-top: none; /* Remove top border to blend with button */
-    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth expansion */
-}
-
-
-
-/* Collapsible Content */
-.content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth expansion */
-    padding: 0 20px; /* Padding for content */
-    background-color: #ffffff; /* White background */
-    border: 1px solid #e0e0e0; /* Subtle border */
-    border-top: none; /* Remove top border to blend with button */
-    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
-}
-
-/* Expanded Content */
-.content.open {
-    padding: 20px; /* Add padding when expanded */
-}
-
-/* Default layout for larger screens */
-.menu-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.menu-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.menu-item h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin: 10px 0;
-}
-
-/* .menu-item .product-price {
-    font-size: 1.2rem;
-    color: #050505;
-    margin: 10px 0;
-} */
-
-.allergeni-container{
-    display: block;
-}
-.allergeni-inner-container{
-    display:flex;
-}
-.allergeni-text{
-    margin-right:5px;
-    margin-bottom:2px;
-    font-weight:500;
-    color: grey;
-    align-self: center;
-    display:block;
-}
-/* Mobile layout */
-
-/* Mobile layout for screens smaller than 400px */
-@media (max-width: 1050px) {
-    .menu-item {
-        display: grid;
-        grid-template-columns: 100px 1fr ; /* Left column for text, right column for image */
-        grid-template-rows: auto auto auto; /* Three rows for title, description, and price */
-        gap: 10px; /* Space between grid items */
-        text-align: left;
-        overflow: hidden; /* Prevent content from overflowing */
-    }
-
-    .menu-item img {
-        width: 100px; 
-        height: 100px; 
-        max-width: 100%; 
-        height: auto; 
-        object-fit: contain; 
-        grid-column: 1; 
-        grid-row: 1 / span 3; 
-        align-self: center; 
-    }
-
-    .menu-item h1 {
-        grid-column: 2; /* Place title in the left column */
-        grid-row: 1; /* Place title in the top row */
-        font-size: 1.2rem;
-        margin: 0;
-    }
-
-    .menu-item .product-description {
-        grid-column: 2; /* Place description in the left column */
-        grid-row: 2; /* Place description in the middle row */
-        font-size: 0.9rem;
-        padding: 0;
-    }
-
-    .menu-item .product-price {
-        grid-row: 1; /* Place price in the bottom row */
-        font-size: 1rem;
-        margin: 0;
-    }
-	.modal-content {
-		width: 90%;
-	  }
-	.menu-grid {
-		grid-template-columns: auto;
-		gap:10px;
-		margin-bottom:10px;
-	}
-    .allergeni-container{
-        grid-column: 1;
-        grid-row: 4;
-    }
-	header p{
-		margin-bottom:20px;
-        font-size:1rem;
-	}
-	header img{
-		margin-bottom:0px;
-	}
-	footer{
-		padding-top:15px;
-	}
-	.container{
-		padding:25px;
-	}
-    .menu-item {
-        grid-template-columns: 80px 1fr; /* Reduce image width and allocate more space for text */
-        gap: 5px; /* Reduce gap between items */
-    }
-
-    .menu-item img {
-        width: 80px; /* Adjust image width for very small screens */
-        height: 80px; /* Adjust image height for very small screens */
-    }
-
-    .menu-item h1 {
-        font-size: 1rem; /* Reduce font size for title */
-    }
-
-    .menu-item .product-description .allergeni-text {
-        font-size: 0.8rem; /* Reduce font size for description */
-    }
-
-    .menu-item .product-price {
-        font-size: 0.9rem; /* Reduce font size for price */
-        grid-column: 2; /* Move price to the second column */
-        grid-row: 3; /* Place price in the bottom row */
-    }
-}
-
-.product-price{
-    font-weight: bold;
-}
-
-.fa-leaf{
-	color:green;
-}
-
-/* MENU */
-
-.legenda-container {
-    margin-top:5px;
-    display: flex;
-    flex-wrap: wrap; /* Permette agli elementi di andare a capo */
-    gap: 10px; /* Spazio tra gli elementi */
-    margin-bottom: 30px;
-}
-
-.legenda-item {
-    display: flex;
-    align-items: center; /* Allinea icona e testo verticalmente */
-    gap: 5px; /* Spazio tra icona e testo */
-    white-space: nowrap; /* Impedisce al testo di andare a capo */
-}
-
-
-/* PUNTI VENDITA ORARI */
-
-.clock-content{
-    max-width: 95%;
-    margin: 10px auto;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.location-grid{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.location {
-    margin-bottom: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 8px;
-}
-
-@media (max-width: 768px) { /*hours display horizon*/
-	.location-grid{
-        flex-direction: column;
-    }
-}
-
-.slot{
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    flex: 1;
-    background-color: #f0f0f0;
-    border: 1px solid black;
-}
-
-.box-orari{
-    border: 1px solid black;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.loc-pic{
-    width:100%;
-}
-
-
-.day {
-    margin-bottom: 15px;
-}
-
-.time-bar {
-    display: flex;
-    gap: 5px;
-}
-
-.morning {
-    color:whitesmoke;
-    background: linear-gradient(
-        to right,
-        gray,
-        rgb(73, 73, 73)
-    );
-}
-
-.evening {
-    color:whitesmoke;
-    background: #4b79a1; /* fallback for old browsers */
-    background: linear-gradient(
-        to right,
-        rgb(73, 73, 73),
-        rgb(60, 60, 60)
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-
-.delivery{
-    color: white;
-    background: darkgoldenrod;
-}
-
-.open-google-maps-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    font-size: 1.2rem;
-    padding: 16px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    width: auto; /* Larghezza automatica (non al 100%) */
-    text-align: center;
-    font-weight: bold;
-    border: none;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 1px solid black;
-    background: white; /* Gradiente ispirato a Google */
-    margin-top: auto;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.open-google-maps-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-.open-google-maps-button:active {
-    transform: scale(0.98); 
-}
-
-.maps-img{ /*GOOGLE MAPS ICON*/
-    height:3.5vh;
-    margin-right: 8px;
-}
-
-.label {
-    display: inline;
-    font-weight: bold;
-    color: black;
-    margin-bottom: 8px;
-}
-/* Modal Styles */
-
-/* Close Button for Form Modal */
-.closeModal-btn {
-    color: #aaa;
-    font-size: 36px;
-    font-weight: bold;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    cursor: pointer;
-}
-
-.closeModal-btn:hover,
-.closeModal-btn:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-/* ---- MEMBERSHIP ---- */
-
-#cookieMsg { /*COOKIE MESSAGE ON REGISTRATION FORM*/
-    display: none; /* Hidden by default */
-    color: red;
-    margin-bottom: 20px;
-}
-
-/*MEMBERSHIP FORM CONTAINER*/
-#membershipModal .modalForm-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 600px;
-    position: relative;
-    text-align: center;
-    margin: auto;
-}
-
-/*ISCRIZIONE MEMBERSHIP CARD TITLE*/
-#membershipModal .modalForm-content h1 { 
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-#membershipModal .modalForm-content form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#membershipModal .modalForm-content label {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-#membershipModal .modalForm-content input {
-    margin-bottom: 10px;
-    padding: 8px;
-    width: 100%;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    height: 33.6px;
-    -webkit-appearance: none;
-}
-
-/*RICHIEDI TESSERA/SCARICA CODICE A BARRE*/
-#membershipModal .modalForm-content button { 
-    margin-top: 20px;
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#membershipModal .modalForm-content button:disabled { /*DISABLE BUTTON FORM*/
-    background-color: #aaa;
-    cursor: not-allowed;
-}
-
-
-/* PHONE CONTAINER */
-.phone-container, .order-phone-container {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 10px;
-}
-
-.phone-container .phone-prefix, .order-phone-container .order-phone-prefix { /*PHONE +39*/
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
-    padding: 8px;
-    border-radius: 4px !important;
-    font-size: 14px;
-    height: 33.6px; /* Match the height of the input field */
-    display: flex;
-    align-items: center; /* Center the text vertically */
-}
-
-.phone-container input#phone, .order-phone-container input#order-phone { /*PHONE NUMBER*/
-    margin: 0px !important;
-    padding: auto !important;
-    border: 1px solid #ccc !important;
-    border-radius: 4px !important;
-    margin-left: 5px !important;
-    height: 33.6px;
-}
-.terms-container {
-    display: flex;
-    align-items: start;
-    max-width: 300px;
-    margin-bottom: 5px;
-}
-
-.terms-container input {
-    height: 25px !important;
-    width: 25px !important;
-    align-self: center;
-    margin: 0px !important;
-    pointer-events: auto; /* Ensure the checkbox is clickable */
-    z-index: 10000 !important; /* Ensure it's above other elements */
-}
-
-.terms-container label {
-    margin: 0px !important;
-    text-align: left;
-    margin-left: 10px !important;
-    font-size: 14px;
-}
-#submit-button { /*RICHIEDI TESSERA*/
-    color:white !important;
-    background-color: black !important;
-    z-index: 10 !important;
-    position: relative !important;
-    width:100%;
-}
-/* FORM RESULT */
-#result {
-    margin-top: 20px;
-    display: none;
-}
-
-#result #downloadBarcodeButton{
-    color: white !important;
-    background-color: rgb(17, 168, 0) !important;
-    z-index: 10 !important;
-    position: relative !important;
-    width: 100%;
-}
- /* -------- COOKIE BANNER -------- */
- #cookieConsent {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-    text-align: center;
-    display: none;
-}
-
-#cookieConsent p{
-    font-size:2svh;
-}
-
-#cookieConsent a {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-#cookieConsent button {
-    font-size: 1.5svh;
-    width: 30%;
-    padding: 10px 10px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-}
-
-#cookieConsent .accept-btn {
-    background-color: #00D123; /* Verde */
-    color: black;
-}
-
-#cookieConsent .accept-btn:hover {
-    background-color: #009816;
-}
-
-#cookieConsent .reject-btn {
-    background-color: #FAE5E7; /* Rosso chiaro */
-    color: #671921;
-}
-
-#cookieConsent .reject-btn:hover {
-    background-color: #f5c6cb;
-}
-
-/* -------- COOKIE BANNER -------- */
-
-/* FOOD TRUCK */
-.modalTruck {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    overflow: auto;
-}
-
-.modalTruck-content {
-    background-color: #fff;
-    margin: 20% auto; /* Center the modal vertically */
-    padding: 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-    text-align: center;
-}
-
-.modalTruck-content p {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 0;
-}
-
-.closeTruck-btn {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    cursor: pointer;
-}
-
-.closeTruck-btn:hover,
-.closeTruck-btn:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.button{
-    padding-top:3px;
-}
-.svgicon{
-    width:3.5rem; 
-    height:3.5rem;
-}
-
-/* ORDER FORM */
-
-/* Primary Button */
-.orderModal button {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.orderModal button:hover {
-    background-color: #0056b3;
-}
-
-/* Modal Background */
-.orderModal {
-    display: none;
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    overflow: auto;
-}
-
-/* Modal Content */
-.orderModal .order-modal-content {
-    background-color: white;
-    margin: 8% auto;
-    padding: 30px;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Close Button */
-.orderModal .close {
-    float: right;
-    font-size: 28px;
-    cursor: pointer;
-    color: #333;
-}
-
-.orderModal .close:hover {
-    color: #ff4d4d;
-}
-
-/* Form Container */
-.orderModal .order-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-/* Form */
-.orderModal #orderForm {
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* Labels */
-.orderModal label {
-    font-weight: bold;
-    color: #333;
-    font-size: 0.95rem;
-    text-align: left;
-    width: 100%;
-    display: block;
-}
-.orderModal .selector{
-    border:1px solid #ccc;
-    border-radius: 6px;
-    padding:5px;
-}
-
-.orderModal .selector label{
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-
-/* Input Fields */
-.orderModal input, select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    outline: none;
-    transition: 0.2s ease-in-out;
-    box-sizing: border-box; /* Ensures padding/border don't affect width */
-}
-
-.orderModal input:focus, .orderModal select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-/* Add to Cart Button */
-.orderModal #addToCart {
-    margin-top: 20px;
-    background-color: #28a745;
-    width: 100%;
-    padding-top:6px;
-    padding-bottom:6px;
-}
-
-.orderModal #addToCart:hover {
-    background-color: #218838;
-}
-
-/* Cart Section */
-.orderModal #cart {
-    width: 95%;
-    list-style-type: none;
-    padding: 0px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: white;
-    margin-top: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Cart Items */
-.orderModal .itemDiv {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    margin: 5px;
-    margin-bottom:10px;
-    /* margin: 5px 0; */
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Cart Item Details */
-.orderModal .itemQuantity {
-    font-weight: bold;
-    color: #333;
-    padding: 5px 12px;
-    margin-left:15px;
-    border-radius: 5px;
-    background-color: #e1e1e1;
-}
-
-.orderModal .itemInternalDiv {
-    flex-grow: 1;
-    text-align: left;
-    padding: 0 10px;
-}
-
-.orderModal .itemTitle {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #444;
-}
-
-.orderModal .itemSize {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Remove Button */
-.orderModal .remove {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 15px;
-    transition: 0.3s ease-in-out;
-}
-
-.orderModal .remove:hover {
-    background-color: #cc0000;
-}
-
-/* Submit Button */
-#sendOrder, #newOrderButton {
-    margin-top:20px;
-    background-color: black;
-    width: 95%;
-}
-
-#sendOrder:hover, #newOrderButton {
-    background-color: black;
-}
-.orderModal .itemTitle{
-    margin-top: 0px;
-    margin-bottom:0px;
-}
-.orderModal .itemSize{
-    margin-top:0px;
-    margin-bottom:0px;
-}
-#recaptcha-container-order{
-    margin-top:20px;
-}
-
-.terms-container input[type="checkbox"] {
-    appearance: checkbox !important; /* Ensure the default checkbox appearance is used */
-    opacity: 1 !important; /* Ensure it is not transparent */
-}
-#confirmationMessage {
-    display: none; /* Hidden by default */
-}
-#checkmark {
-    font-size: 4rem; /* Make the checkmark big */
-    color: green; /* Make the checkmark white */
-    display: block; /* Ensure it's on its own line */
-    margin-bottom: 10px; /* Add space below the checkmark */
-}
-.order-phone-container{
-    max-width: 100%;
-}
+      display: grid;
+      grid-template-areas:
+          "product-title product-title product-price"
+          "product-description product-description product-description"
+          "allergeni-container allergeni-container allergeni-container";
+      /* space between rows */
+      padding: 20px;
+      text-align: left;
+  }
+
+  /* Collapsible Buttons */
+  .product-title {
+      /* margin-left: 10px; */
+      font-size: 1.4rem;
+      color: #333;
+      grid-area: product-title;
+      place-self: center start;
+      text-align: left;
+  }
+
+  .product-price {
+      grid-area: product-price;
+      place-self: center end;
+      /* padding-right: 20px; */
+
+  }
+
+  .product-description {
+      font-size: 0.85rem;
+      color: #555;
+      grid-area: product-description;
+      margin-bottom: 10px;
+  }
+
+  .allergeni-container {
+      font-size: 0.8rem;
+      grid-area: allergeni-container;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .allergeni-inner-container {
+      display: flex;
+  }
+
+  .allergeni-text {
+      margin-right: 5px;
+      margin-bottom: 2px;
+      font-weight: 500;
+      color: grey;
+      align-self: center;
+      display: block;
+  }
+
+  .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      margin: 0px;
+      padding: 0px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+      /* Smooth expansion */
+      padding: 0 20px;
+      /* Padding for content */
+      background-color: #ffffff;
+      /* White background */
+      border: 1px solid #e0e0e0;
+      /* Subtle border */
+      border-top: none;
+      /* Remove top border to blend with button */
+      border-radius: 0 0 8px 8px;
+      /* Rounded bottom corners */
+  }
+
+  .content.open {
+      padding: 15px;
+      /* Add padding when expanded */
+  }
+
+  /* Default layout for larger screens */
+
+  /* Collapsible Button */
+  .collapsible {
+      background-color: black;
+      /* White background */
+      color: white;
+      /* Dark text color */
+      font-size: 1.1rem;
+      font-weight: 600;
+      /* Semi-bold text */
+      padding: 12px 20px;
+      /* Comfortable padding */
+      /* Subtle border */
+      border-radius: 8px;
+      /* Rounded corners */
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      /* Smooth transitions */
+      /* Subtle shadow */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  /* Active State (When Button is Open) */
+  .collapsible.active {
+      background-color: #404040;
+  }
+
+  /* Icon for Collapsible Button */
+  .collapsible::after {
+      content: '\25BC';
+      /* Unicode for down arrow (▼) */
+      font-size: 1.3rem;
+      color: #666;
+      /* Subtle icon color */
+      transition: transform 0.3s ease;
+      /* Smooth rotation */
+  }
+
+  /* Rotate Icon When Button is Active */
+  .collapsible.active::after {
+      transform: rotate(180deg);
+      /* Rotate arrow when open */
+  }
+
+  /* Expanded Content */
+
+  /* Default layout for larger screens */
+
+  /* MENU */
+
+  .legenda-container {
+      margin-top: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      /* Permette agli elementi di andare a capo */
+      gap: 10px;
+      /* Spazio tra gli elementi */
+      margin-bottom: 30px;
+  }
+
+  .legenda-item {
+      display: flex;
+      align-items: center;
+      /* Allinea icona e testo verticalmente */
+      gap: 5px;
+      /* Spazio tra icona e testo */
+      white-space: nowrap;
+      /* Impedisce al testo di andare a capo */
+  }
+
+
+  /* PUNTI VENDITA ORARI */
+
+  .location-grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+  }
+
+  .location {
+      margin-bottom: 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 8px;
+  }
+
+  @media (max-width: 768px) {
+
+      /*hours display horizon*/
+      .location-grid {
+          flex-direction: column;
+      }
+  }
+
+  .slot {
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      flex: 1;
+      background-color: #f0f0f0;
+      border: 1px solid black;
+  }
+
+  .box-orari {
+      border: 1px solid black;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 20px;
+  }
+
+  .loc-pic {
+      width: 100%;
+  }
+
+
+  .day {
+      margin-bottom: 15px;
+  }
+
+  .time-bar {
+      display: flex;
+      gap: 5px;
+  }
+
+  .morning {
+      color: whitesmoke;
+      background: linear-gradient(to right,
+              gray,
+              rgb(73, 73, 73));
+  }
+
+  .evening {
+      color: whitesmoke;
+      background: #4b79a1;
+      /* fallback for old browsers */
+      background: linear-gradient(to right,
+              rgb(73, 73, 73),
+              rgb(60, 60, 60));
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+
+  .delivery {
+      color: white;
+      background: darkgoldenrod;
+  }
+
+  .open-google-maps-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      font-size: 1.2rem;
+      padding: 16px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      width: auto;
+      /* Larghezza automatica (non al 100%) */
+      text-align: center;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid black;
+      background: white;
+      /* Gradiente ispirato a Google */
+      margin-top: auto;
+      margin-left: 15px;
+      margin-right: 15px;
+  }
+
+  .open-google-maps-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .open-google-maps-button:active {
+      transform: scale(0.98);
+  }
+
+  .maps-img {
+      /*GOOGLE MAPS ICON*/
+      height: 3.5vh;
+      margin-right: 8px;
+  }
+
+  .label {
+      display: inline;
+      font-weight: bold;
+      color: black;
+      margin-bottom: 8px;
+  }
+
+  /* Modal Styles */
+  .close-modal {
+      color: #aaa;
+      font-size: 36px;
+      font-weight: bold;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+  }
+
+  .close-modal:hover,
+  .close-modal:focus {
+      color: grey;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  /* ---- MEMBERSHIP ---- */
+
+  #cookieMsg {
+      /*COOKIE MESSAGE ON REGISTRATION FORM*/
+      display: none;
+      /* Hidden by default */
+      color: red;
+      margin-bottom: 20px;
+  }
+
+  /*MEMBERSHIP FORM CONTAINER*/
+  #membershipModal .modalForm-content {
+      text-align: center;
+  }
+
+  /*ISCRIZIONE MEMBERSHIP CARD TITLE*/
+  #membershipModal .modalForm-content h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+  }
+
+  #membershipModal .modalForm-content form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #membershipModal .modalForm-content label {
+      margin-top: 10px;
+      font-weight: bold;
+  }
+
+  #membershipModal .modalForm-content input {
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      height: 33.6px;
+      -webkit-appearance: none;
+  }
+
+  /*RICHIEDI TESSERA/SCARICA CODICE A BARRE*/
+  #membershipModal .modalForm-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  #membershipModal .modalForm-content button:disabled {
+      /*DISABLE BUTTON FORM*/
+      background-color: #aaa;
+      cursor: not-allowed;
+  }
+
+
+  /* PHONE CONTAINER */
+  .phone-container,
+  .order-phone-container {
+      display: flex;
+      align-items: center;
+      /* Align items vertically */
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 10px;
+  }
+
+  .phone-container .phone-prefix,
+  .order-phone-container .order-phone-prefix {
+      /*PHONE +39*/
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+      padding: 8px;
+      border-radius: 4px !important;
+      font-size: 14px;
+      height: 33.6px;
+      /* Match the height of the input field */
+      display: flex;
+      align-items: center;
+      /* Center the text vertically */
+  }
+
+  .phone-container input#phone,
+  .order-phone-container input#order-phone {
+      /*PHONE NUMBER*/
+      margin: 0px !important;
+      padding: auto !important;
+      border: 1px solid #ccc !important;
+      border-radius: 4px !important;
+      margin-left: 5px !important;
+      height: 33.6px;
+  }
+
+  .terms-container {
+      display: flex;
+      align-items: start;
+      max-width: 300px;
+      margin-bottom: 5px;
+  }
+
+  .terms-container input {
+      height: 25px !important;
+      width: 25px !important;
+      align-self: center;
+      margin: 0px !important;
+      pointer-events: auto;
+      /* Ensure the checkbox is clickable */
+      z-index: 10000 !important;
+      /* Ensure it's above other elements */
+  }
+
+  .terms-container label {
+      margin: 0px !important;
+      text-align: left;
+      margin-left: 10px !important;
+      font-size: 14px;
+  }
+
+  #submit-button {
+      /*RICHIEDI TESSERA*/
+      color: white !important;
+      background-color: black !important;
+      z-index: 10 !important;
+      position: relative !important;
+      width: 100%;
+  }
+
+  /* FORM RESULT */
+  #result {
+      margin-top: 20px;
+      display: none;
+  }
+
+  #result #downloadBarcodeButton {
+      color: white !important;
+      background-color: rgb(17, 168, 0) !important;
+      z-index: 10 !important;
+      position: relative !important;
+      width: 100%;
+  }
+
+  /* -------- COOKIE BANNER -------- */
+  #cookieConsent {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100svw;
+      max-height: 35svh;
+      z-index: 9999;
+      text-align: center;
+      display: none;
+  }
+
+  #cookieConsent p {
+      font-size: 0.75rem;
+  }
+
+  #cookieConsent a {
+      color: #ffcc00;
+      text-decoration: none;
+  }
+
+  #cookieConsent button {
+      font-size: 1.5svh;
+      width: 30%;
+      padding: 10px 10px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+  }
+
+  #cookieConsent .accept-btn {
+      background-color: #00D123;
+      /* Verde */
+      color: black;
+  }
+
+  #cookieConsent .accept-btn:hover {
+      background-color: #009816;
+  }
+
+  #cookieConsent .reject-btn {
+      background-color: #FAE5E7;
+      /* Rosso chiaro */
+      color: #671921;
+  }
+
+  #cookieConsent .reject-btn:hover {
+      background-color: #f5c6cb;
+  }
+
+  /* -------- COOKIE BANNER -------- */
+
+
+  .button {
+      padding-top: 3px;
+  }
+
+  .svgicon {
+      width: 3.5rem;
+      height: 3.5rem;
+  }
+
+  /* ORDER FORM */
+
+  /* Primary Button */
+  .orderModal button {
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+  }
+
+  /* Modal Background */
+  .orderModal {
+      z-index: 10;
+  }
+
+
+  /* Form Container */
+  .orderModal .order-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+  }
+
+  /* Form */
+  .orderModal #orderForm {
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+  }
+
+  /* Labels */
+  .orderModal label {
+      font-weight: bold;
+      color: #333;
+      font-size: 0.95rem;
+      text-align: left;
+      width: 100%;
+      display: block;
+  }
+
+  .orderModal .selector {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 5px;
+  }
+
+  .orderModal .selector label {
+      margin-bottom: 5px;
+      margin-top: 5px;
+  }
+
+  /* Input Fields */
+  .orderModal input,
+  select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s ease-in-out;
+      box-sizing: border-box;
+      /* Ensures padding/border don't affect width */
+  }
+
+  .orderModal input:focus,
+  .orderModal select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+
+  /* Add to Cart Button */
+  .orderModal #addToCart {
+      margin-top: 20px;
+      background-color: #28a745;
+      width: 100%;
+      padding-top: 6px;
+      padding-bottom: 6px;
+  }
+
+  .orderModal #addToCart:hover {
+      background-color: #218838;
+  }
+
+  /* Cart Section */
+  .orderModal #cart {
+      width: 95%;
+      list-style-type: none;
+      padding: 0px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: white;
+      margin-top: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Cart Items */
+  .orderModal .itemDiv {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      margin: 5px;
+      margin-bottom: 10px;
+      /* margin: 5px 0; */
+      border-radius: 8px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Cart Item Details */
+  .orderModal .itemQuantity {
+      font-weight: bold;
+      color: #333;
+      padding: 5px 12px;
+      margin-left: 15px;
+      border-radius: 5px;
+      background-color: #e1e1e1;
+  }
+
+  .orderModal .itemInternalDiv {
+      flex-grow: 1;
+      text-align: left;
+      padding: 0 10px;
+  }
+
+  .orderModal .itemTitle {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #444;
+  }
+
+  .orderModal .itemSize {
+      font-size: 0.9rem;
+      color: #666;
+  }
+
+  /* Remove Button */
+  .orderModal .remove {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 15px;
+      transition: 0.3s ease-in-out;
+  }
+
+  .orderModal .remove:hover {
+      background-color: #cc0000;
+  }
+
+  /* Submit Button */
+  #sendOrder,
+  #newOrderButton {
+      margin-top: 20px;
+      background-color: black;
+      width: 95%;
+  }
+
+  #sendOrder:hover,
+  #newOrderButton {
+      background-color: black;
+  }
+
+  .orderModal .itemTitle {
+      margin-top: 0px;
+      margin-bottom: 0px;
+  }
+
+  .orderModal .itemSize {
+      margin-top: 0px;
+      margin-bottom: 0px;
+  }
+
+  #recaptcha-container-order {
+      margin-top: 20px;
+  }
+
+  .terms-container input[type="checkbox"] {
+      appearance: checkbox !important;
+      /* Ensure the default checkbox appearance is used */
+      opacity: 1 !important;
+      /* Ensure it is not transparent */
+  }
+
+  #confirmationMessage {
+      display: none;
+      /* Hidden by default */
+  }
+
+  #checkmark {
+      font-size: 4rem;
+      /* Make the checkmark big */
+      color: green;
+      /* Make the checkmark white */
+      display: block;
+      /* Ensure it's on its own line */
+      margin-bottom: 10px;
+      /* Add space below the checkmark */
+  }
+
+  .order-phone-container {
+      max-width: 100%;
+  }
