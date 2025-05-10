@@ -2,120 +2,6 @@ let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
 
 document.addEventListener("DOMContentLoaded", function () {
-    const cookieConsentBanner = document.getElementById("cookieConsent");
-    const acceptCookiesBtn = document.getElementById("acceptCookiesBtn");
-    const rejectCookiesBtn = document.getElementById("rejectCookiesBtn");
-    const cookieWarning = document.getElementById("cookieMsg");
-    const cookieOrderWarning = document.getElementById("cookieOrderMsg");
-    const dataForm = document.getElementById("data-form");
-    const orderForm = document.getElementById("orderForm");
-
-    let recaptchaLoaded = false;
-
-    // Check if the user has already accepted cookies
-    function checkCookieConsent() {
-        if (!localStorage.getItem("cookieConsent")) {
-            cookieConsentBanner.style.display = "block"; // Show the banner
-            disableForm(); // Ensure the form is disabled initially
-        } else {
-            enableForm(); // Enable the form
-            loadRecaptcha(); // Load reCAPTCHA
-        }
-    }
-
-    // Enable the registration form
-    function enableForm() {
-        dataForm.style.display = "flex";
-        orderForm.style.display = "flex";
-        cookieWarning.style.display = "none"; // Hide the cookie warning
-        cookieOrderWarning.style.display = "none"; // Hide the cookie warning
-    }
-
-    // Disable the registration form
-    function disableForm() {
-        dataForm.style.display = "none";
-        orderForm.style.display = "none";
-        cookieWarning.style.display = "block"; // Show the cookie warning
-        cookieOrderWarning.style.display = "block"; // Show the cookie order warning
-    }
-
-
-    function loadRecaptcha() {
-        if (!recaptchaLoaded) {
-            const script = document.createElement("script");
-            script.src = "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit";
-            script.async = true;
-            script.defer = true;
-            document.body.appendChild(script);
-            recaptchaLoaded = true;
-        }
-    }
-
-    // Callback when reCAPTCHA is loaded
-    window.onRecaptchaLoad = function () {
-        console.log("reCAPTCHA loaded successfully.");
-        const recaptchaContainer = document.getElementById("recaptcha-container");
-        const recaptchaContainerOrder = document.getElementById("recaptcha-container-order");
-        if (recaptchaContainer) {
-            recaptchaWidgetId =grecaptcha.render(recaptchaContainer, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
-            });
-        }
-        if (recaptchaContainerOrder) {
-            recaptchaOrderWidgetId =grecaptcha.render(recaptchaContainerOrder, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
-            });
-        }
-    };
-
-    // Handle click on "Accept"
-    acceptCookiesBtn.addEventListener("click", function () {
-        localStorage.setItem("cookieConsent", "accepted");
-        cookieConsentBanner.style.display = "none";
-        enableForm();
-        loadRecaptcha(); // Load reCAPTCHA after acceptance
-    });
-
-    // Handle click on "Reject"
-    rejectCookiesBtn.addEventListener("click", function () {
-        localStorage.removeItem("cookieConsent");
-        cookieConsentBanner.style.display = "none";
-        disableForm();
-    });
-
-    // Check the cookie status when the form is opened
-    document.getElementById("showFormButton").addEventListener("click", function () {
-        if (!localStorage.getItem("cookieConsent")) {
-            disableForm();
-        } else {
-            enableForm();
-        }
-    });
-
-    // Run the check on startup
-    checkCookieConsent();
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const showMenuButton = document.getElementById("showMenuButton");
-    const modal = document.getElementById("menuModal");
-    const closeMenuBtn = document.getElementById("closeMenuBtn");
-
-    showMenuButton.onclick = function () {
-        modal.style.display = "block";
-    };
-
-    closeMenuBtn.onclick = function () {
-        modal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
-
     // Mappatura degli allergeni con le classi CSS
     const allergeniMap = {
         "Glutine": {
@@ -203,6 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         const productDiv = document.createElement("div");
                         productDiv.classList.add("menu-item");
 
+                        const productInfoDiv = document.createElement("div");
+                        productInfoDiv.classList.add("menu-item-info");
+
                         const title = document.createElement("h1");
                         title.classList.add("product-title");
 
@@ -218,8 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
 
                         title.prepend(document.createTextNode(product.title)); // Add text before the icon
-                        price.textContent = `${parseFloat(product.price).toFixed(2).toString().replace(".", ",")}€`;
-
+                        if (typeof product.price === "number") {
+                            price.textContent = `${product.price.toFixed(2).toString().replace(".", ",")}€`;
+                        } else {
+                            price.textContent = product.price;
+                        }
                         const image = document.createElement("img");
                         image.classList.add("product-img");
                         image.src = product.thumb;
@@ -230,31 +122,32 @@ document.addEventListener("DOMContentLoaded", function () {
                         description.textContent = product.ingredients;
 
                         productDiv.appendChild(image);
-                        productDiv.appendChild(title);
-                        productDiv.appendChild(description);
-                        productDiv.appendChild(price);
+                        productInfoDiv.appendChild(title);
+                        productInfoDiv.appendChild(description);
+                        productInfoDiv.appendChild(price);
                         // NEW IF
                         if (product.allergens && typeof product.allergens === "object") {
                             const allergeniContainer = document.createElement("div");
                             allergeniContainer.classList.add("allergeni-container");
-                        
+
                             // const allergeniText = document.createElement("p");
                             // allergeniText.classList.add("allergeni-text");
                             // allergeniText.textContent = "Allergeni";
                             // allergeniContainer.appendChild(allergeniText);
-                        
+
                             // Iterate over allergen categories (e.g., Bread, Beef)
                             for (const [category, allergeniStr] of Object.entries(product.allergens)) {
+                                const allergeniBoxContainer = document.createElement("div")
                                 const categoryTitle = document.createElement("p");
                                 categoryTitle.classList.add("allergeni-text");
                                 categoryTitle.textContent = category;
-                                allergeniContainer.appendChild(categoryTitle);
-                        
+                                allergeniBoxContainer.appendChild(categoryTitle);
+
                                 const allergeniArray = allergeniStr.split(", ");
-                        
+
                                 const allergeniInnerContainer = document.createElement("div");
                                 allergeniInnerContainer.classList.add("allergeni-inner-container");
-                        
+
                                 allergeniArray.forEach(allergene => {
                                     const allergeneData = allergeniMap[allergene];
                                     if (allergeneData) {
@@ -264,13 +157,15 @@ document.addEventListener("DOMContentLoaded", function () {
                                         allergeniInnerContainer.appendChild(icona);
                                     }
                                 });
-                        
-                                allergeniContainer.appendChild(allergeniInnerContainer);
+
+                                allergeniBoxContainer.appendChild(allergeniInnerContainer);
+                                allergeniContainer.appendChild(allergeniBoxContainer)
                             }
-                        
-                            productDiv.appendChild(allergeniContainer);
+
+                            productInfoDiv.appendChild(allergeniContainer);
                         }
-                        
+
+                        productDiv.appendChild(productInfoDiv);
 
                         categoryDiv.appendChild(productDiv);
                     }
@@ -299,80 +194,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-    // Get references to the modal and buttons
-    const openMapModalButton = document.getElementById('open-map-modal');
-    const inactiveModal = document.getElementById('inactive-modal');
-    const closeInactiveModalButton = document.getElementById('close-inactive-modal');
-
-    // Function to check if the <a> tag has an href attribute
-    function checkHref() {
-        const href = openMapModalButton.getAttribute('href');
-        if (!href || href === '#') {
-            inactiveModal.style.display = 'block'; // Show the "Food Truck non attivo!" modal
-            return false; // Prevent further action
-        }
-        return true; // Allow further action
-    }
-
-    // Open the modal or navigate to the link when the button is clicked
-    openMapModalButton.addEventListener('click', (e) => {
-        // Check if the <a> tag has an href attribute
-        if (!checkHref()) {
-            e.preventDefault(); // Prevent default link behavior only if href is not set
-        }
-        // If href is set, the link will open normally
-    });
-
-    // Close the "Food Truck non attivo!" modal when the close button is clicked
-    closeInactiveModalButton.addEventListener('click', () => {
-        inactiveModal.style.display = 'none'; // Hide the modal
-    });
-
-    // Close the "Food Truck non attivo!" modal when clicking outside the modal content
-    window.addEventListener('click', (e) => {
-        if (e.target === inactiveModal) {
-            inactiveModal.style.display = 'none'; // Hide the modal
-        }
-    });
-
-    const showClockButton = document.getElementById("showClockButton");
-    const modalClock = document.getElementById("clockModal");
-    const closeClockBtn = document.getElementById("closeClockBtn");
-
-    showClockButton.onclick = function () {
-        modalClock.style.display = "block";
-    };
-
-    closeClockBtn.onclick = function () {
-        modalClock.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-        if (event.target == modalClock) {
-            modalClock.style.display = "none";
-        }
-    };
-
-    // Membership Form Modal
-    const showMembershipButton = document.getElementById("showFormButton");
-    const membershipModal = document.getElementById("membershipModal");
-    const closeMembershipBtn = document.getElementById("closeMembershipBtn");
-
-    showMembershipButton.onclick = function () {
-        membershipModal.style.display = "flex";
-    };
-
-    closeMembershipBtn.onclick = function () {
-        membershipModal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-        if (event.target == membershipModal) {
-            membershipModal.style.display = "none";
-        }
-    };
 
     const barcodeData = getCookie("barcodeData");
+
     function loadJsBarcodeScript(callback) {
         // Create script element
         console.log("Barcode script loaded")
@@ -383,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (barcodeData) {
         // Display the barcode directly
-        loadJsBarcodeScript(function() {
+        loadJsBarcodeScript(function () {
             JsBarcode("#barcode", barcodeData, {
                 format: "ean13",
                 lineColor: "#000",
@@ -451,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Save barcode data in a cookie
             setCookie("barcodeData", barcodeCode, 30);
-            loadJsBarcodeScript(function() {
+            loadJsBarcodeScript(function () {
                 JsBarcode("#barcode", barcodeCode, {
                     format: "ean13",
                     lineColor: "#000",
@@ -476,30 +300,28 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("downloadBarcodeButton").addEventListener("click", function () {
         const barcodeElement = document.getElementById("barcode");
         console.log("Barcode Element:", barcodeElement);
-        const svg=barcodeElement
-        // const svg = barcodeElement.getElementsByTagName("svg");
-        // console.log("SVG Element:", svg);
-    
+        const svg = barcodeElement
+
         if (!svg) {
             alert("Il codice a barre non è stato generato correttamente.");
             return;
         }
-    
+
         // Add a small delay to ensure the SVG is fully rendered
         setTimeout(() => {
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
-    
+
             // Convert SVG to canvas
             const svgData = new XMLSerializer().serializeToString(svg);
             const img = new Image();
             img.src = "data:image/svg+xml;base64," + btoa(svgData);
-    
+
             img.onload = function () {
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
-    
+
                 // Create a download link
                 const link = document.createElement("a");
                 link.href = canvas.toDataURL("image/png");
@@ -508,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
         }, 100); // 100ms delay
     });
-    
+
 
 });
 
@@ -534,10 +356,7 @@ function getCookie(name) {
 
 
 // ORDER FORM
-document.addEventListener("DOMContentLoaded", function() {
-    const modal = document.getElementById("orderModal");
-    const openModalBtn = document.getElementById("showOrderFormButton");
-    const closeModal = document.querySelector(".close");
+document.addEventListener("DOMContentLoaded", function () {
     const addToCartBtn = document.getElementById("addToCart");
     const sendOrderBtn = document.getElementById("sendOrder");
     const cartList = document.getElementById("cart");
@@ -545,19 +364,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let cart = [];
     let typeData = {}; // Store JSON data for types and sizes
 
-    openModalBtn.addEventListener("click", () => {
-        modal.style.display = "block";
-    });
-
-    closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
 
     fetch("data.json")
         .then(response => response.json())
@@ -571,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let option = document.createElement("option");
                 option.value = type;
                 // Show price with two decimals in the dropdown
-                const price = typeData[type].price.toFixed(2);  // Ensure 2 decimal places
+                const price = typeData[type].price.toFixed(2); // Ensure 2 decimal places
                 option.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} - ${price}€`;
                 typeSelect.appendChild(option);
             });
@@ -598,33 +404,31 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("order-type").addEventListener("change", updateSizeOptions);
 
     addToCartBtn.addEventListener("click", () => {
-        const name = document.getElementById("order-name").value;
-        const surname = document.getElementById("order-surname").value;
-        const email = document.getElementById("order-email").value;
-        const partialPhone = document.getElementById("order-phone").value;
-        const shop = document.getElementById("order-shop").value;
         const quantity = parseInt(document.getElementById("order-quantity").value);
         const type = document.getElementById("order-type").value;
         const size = document.getElementById("order-size").value;
-
-        if (!name || !surname || !email || !partialPhone | isNaN(quantity) || quantity < 1 || quantity > 5) {
-            alert("Compila tutti i campi correttamente.");
-            return;
-        }
 
         let found = false;
 
         cart = cart.map(item => {
             if (item.type === type && item.size === size) {
                 found = true;
-                return { ...item, quantity: Math.min(item.quantity + quantity, 5) };
+                return {
+                    ...item,
+                    quantity: Math.min(item.quantity + quantity, 5)
+                };
             }
             return item;
         });
 
         if (!found) {
             const price = typeData[type].price;
-            cart.push({ quantity, type, size, price });
+            cart.push({
+                quantity,
+                type,
+                size,
+                price
+            });
         }
 
         updateCart();
@@ -653,7 +457,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             let itemPrice = document.createElement("p");
             itemPrice.classList.add("itemPrice");
-            const totalPrice = (item.quantity * item.price).toFixed(2);  // Format total price to 2 decimals
+            const totalPrice = (item.quantity * item.price).toFixed(2); // Format total price to 2 decimals
             itemPrice.textContent = `Prezzo: ${totalPrice}€`;
 
             let removeBtn = document.createElement("button");
@@ -680,29 +484,29 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Il carrello è vuoto!");
             return;
         }
-    
+
         const recaptchaResponse = grecaptcha.getResponse(recaptchaOrderWidgetId);
         if (!recaptchaResponse) {
             alert("Completa il reCAPTCHA.");
             return;
         }
-    
+
         const name = document.getElementById("order-name").value;
         const surname = document.getElementById("order-surname").value;
         const email = document.getElementById("order-email").value;
         const partialPhone = document.getElementById("order-phone").value;
         const phone = `+39${partialPhone}`;
         const shop = document.getElementById("order-shop").value;
-    
+
         if (!name || !surname || !email || !partialPhone) {
             alert("Compila tutti i campi obbligatori.");
             return;
         }
-    
+
         // Disable the button to prevent multiple clicks
         sendOrderBtn.disabled = true;
         sendOrderBtn.textContent = "Invio in corso..."; // Update button text to indicate processing
-    
+
         // Add CAPTCHA response to the order data
         const orderData = {
             name,
@@ -713,7 +517,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cart,
             recaptchaResponse,
         };
-    
+
         try {
             const response = await fetch("https://api.cicciosburger.it/api/generate-order-number", {
                 method: "POST",
@@ -722,22 +526,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
                 body: JSON.stringify(orderData),
             });
-    
+
             if (!response.ok) {
                 throw new Error("Errore nell'invio dell'ordine.");
             }
-    
+
             const orderNumber = await response.text(); // Get the raw text response
-    
+
             // Hide the form and cart
             document.getElementById("orderContainer").style.display = "none";
-    
+
             // Show the confirmation message
             const confirmationMessage = document.getElementById("confirmationMessage");
             const orderNumberDisplay = document.getElementById("orderNumberDisplay");
             orderNumberDisplay.textContent = orderNumber; // Set the order number
             confirmationMessage.style.display = "block"; // Make the confirmation message visible
-    
+
             // Add event listener for the "Make a New Order" button
             const newOrderButton = document.getElementById("newOrderButton");
             newOrderButton.addEventListener("click", () => {
@@ -753,17 +557,145 @@ document.addEventListener("DOMContentLoaded", function() {
             sendOrderBtn.textContent = "Invia Ordine";
         }
     });
-    
+
     // Function to reset the modal to its original state
     function resetOrderModal() {
         // Show the form and cart
         document.getElementById("orderContainer").style.display = "block";
-    
+
         // Hide the confirmation message
         document.getElementById("confirmationMessage").style.display = "none";
-    
+
         // Clear the cart
         cart = [];
         updateCart();
     }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const cookieConsentBanner = document.getElementById("cookieConsent");
+    const acceptCookiesBtn = document.getElementById("acceptCookiesBtn");
+    const rejectCookiesBtn = document.getElementById("rejectCookiesBtn");
+    const cookieWarning = document.getElementById("cookieMsg");
+    const cookieOrderWarning = document.getElementById("cookieOrderMsg");
+    const dataForm = document.getElementById("data-form");
+    const orderForm = document.getElementById("orderForm");
+
+    let recaptchaLoaded = false;
+
+    // Check if the user has already accepted cookies
+    function checkCookieConsent() {
+        if (!localStorage.getItem("cookieConsent")) {
+            cookieConsentBanner.style.display = "block"; // Show the banner
+            disableForm(); // Ensure the form is disabled initially
+        } else {
+            enableForm(); // Enable the form
+            loadRecaptcha(); // Load reCAPTCHA
+        }
+    }
+
+    // Enable the registration form
+    function enableForm() {
+        dataForm.style.display = "flex";
+        orderForm.style.display = "flex";
+        cookieWarning.style.display = "none"; // Hide the cookie warning
+        cookieOrderWarning.style.display = "none"; // Hide the cookie warning
+    }
+
+    // Disable the registration form
+    function disableForm() {
+        dataForm.style.display = "none";
+        orderForm.style.display = "none";
+        cookieWarning.style.display = "block"; // Show the cookie warning
+        cookieOrderWarning.style.display = "block"; // Show the cookie order warning
+    }
+
+
+    function loadRecaptcha() {
+        if (!recaptchaLoaded) {
+            const script = document.createElement("script");
+            script.src = "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit";
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+            recaptchaLoaded = true;
+        }
+    }
+
+    // Callback when reCAPTCHA is loaded
+    window.onRecaptchaLoad = function () {
+        console.log("reCAPTCHA loaded successfully.");
+        const recaptchaContainer = document.getElementById("recaptcha-container");
+        const recaptchaContainerOrder = document.getElementById("recaptcha-container-order");
+        if (recaptchaContainer) {
+            recaptchaWidgetId = grecaptcha.render(recaptchaContainer, {
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
+            });
+        }
+        if (recaptchaContainerOrder) {
+            recaptchaOrderWidgetId = grecaptcha.render(recaptchaContainerOrder, {
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
+            });
+        }
+    };
+
+    // Handle click on "Accept"
+    acceptCookiesBtn.addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "accepted");
+        cookieConsentBanner.style.display = "none";
+        enableForm();
+        loadRecaptcha(); // Load reCAPTCHA after acceptance
+    });
+
+    // Handle click on "Reject"
+    rejectCookiesBtn.addEventListener("click", function () {
+        localStorage.removeItem("cookieConsent");
+        cookieConsentBanner.style.display = "none";
+        disableForm();
+    });
+    checkCookieConsent();
+    const modals = document.querySelectorAll('.modal');
+
+    document.querySelectorAll('.open-modal').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const modalId = button.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            console.log(modalId)
+            console.log(modal)
+            if (modalId == "membershipModal") {
+                if (!localStorage.getItem("cookieConsent")) {
+                    disableForm();
+                } else {
+                    enableForm();
+                }
+            }
+            if (modalId == "inactive-modal") {
+                // Check if the <a> tag has an href attribute
+                if (!button.getAttribute('href')) {
+                    event.preventDefault()
+                    modal.style.display = 'block';
+                }
+            } else {
+                if (modal) modal.style.display = 'block';
+            }
+        });
+    });
+
+    // Close modal
+    document.querySelectorAll('.close-modal').forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+            closeBtn.closest('.modal').style.display = 'none';
+        });
+    });
+
+    // Optional: Close modal when clicking outside the modal content
+    modals.forEach(modal => {
+        modal.addEventListener('click', e => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
 });
