@@ -210,24 +210,24 @@
         },
         {
             "id": 5499,
-            "title": "THAI 30ML",
-            "price": 0.6,
+            "title": "THAI 60ML",
+            "price": 1.2,
             "ingredients": null,
             "allergens": null,
             "thumb": "./img/menu/salse/thai.webp"
         },
         {
             "id": 5501,
-            "title": "HOT THAI 30ML",
-            "price": 0.6,
+            "title": "HOT THAI 60ML",
+            "price": 1.2,
             "ingredients": null,
             "allergens": null,
             "thumb": "./img/menu/salse/hotthai.webp"
         },
         {
             "id": 5503,
-            "title": "SALSA CICCIO'S 30ML",
-            "price": 0.5,
+            "title": "SALSA CICCIO'S 60ML",
+            "price": 1.0,
             "ingredients": null,
             "allergens": null,
             "thumb": "./img/menu/salse/salsaciccios.webp"
@@ -554,23 +554,23 @@
         },
         {
             "id": 14070,
-            "title": "THAI 30ML",
-            "price": 0.6,
+            "title": "THAI 60ML",
+            "price": 1.2,
             "ingredients": null,
             "allergens": null,
             "thumb": "./img/menu/salse/thai.webp"
         },
         {
             "id": 14071,
-            "title": "HOT THAI 30ML",
-            "price": 0.6,
+            "title": "HOT THAI 60ML",
+            "price": 1.2,
             "ingredients": null,
             "allergens": null,
             "thumb": "./img/menu/salse/thai.webp"
         },
         {
             "id": 14072,
-            "title": "SPICY CHEDDAR 30ML",
+            "title": "SPICY CHEDDAR 60ML",
             "price": 1.2,
             "ingredients": null,
             "allergens": null,
@@ -578,8 +578,8 @@
         },
         {
             "id": 14073,
-            "title": "SALSA CICCIO'S 30ML",
-            "price": 0.5,
+            "title": "SALSA CICCIO'S 60ML",
+            "price": 1.0,
             "ingredients": null,
             "allergens": null,
             "thumb": "./img/menu/salse/salsaciccios.webp"
