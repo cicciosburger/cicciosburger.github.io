@@ -68,6 +68,67 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch('clean_products.json').then(response => response.json())
         ])
         .then(([categoryData, productData]) => {
+            const allergeniIngredientiMap = {
+                "bun": "Glutine",
+                "nutella": "Frutta a guscio, Soia, Latte",
+                "tiramisù": "Glutine, Latte, Uova",
+                "brookies": "Glutine, Latte, Uova",
+                "bocconcini di pollo tritato pastellati fatti a mano": "Glutine, Latte",
+                "polpettine di pollo fatte a mano con speciale panatura super croccante": "Glutine, Latte",
+                "polpettine di carne fatte a mano con speciale panatura al formaggio": "Glutine, Uova, Latte",
+                "provola dolce con tripla pastellatura a mano": "Glutine, Latte",
+                "nuggets vegetali": "Uova, Soia, Latte, Sedano, Senape, Glutine",
+                "Alette di pollo pastellate e fritte laccate con salsa thai": "Uova, Senape",
+                "Maxi nuggets di pollo con panatura super croccante accompagnato con cheddar calda": "Glutine, Latte",
+                "polpettine vegetali": "Uova, Soia, Latte, Anidride solforosa e solfiti, Glutine",
+                "burger di manzo 170g": "Latte(Senza lattosio), Glutine, Uova",
+                "doppio burger di manzo 170g": "Latte(Senza lattosio), Glutine, Uova",
+                "burger di pollo pastellato e fritto": "Latte(Senza lattosio), Glutine",
+                "burger di pollo fritto con panatura super croccante": "Latte(Senza lattosio), Glutine",
+                "sovracoscia di pollo alla piastra": null,
+                "burger vegetale": "Latte, Uova",
+                "cheddar": "Latte",
+                "doppio cheddar": "Latte",
+                "triplo cheddar": "Latte",
+                "brie": "Latte",
+                "tuma caramellata al miele": "Latte",
+                "gran P&V al tartufo": "Latte",
+                "taleggio": "Latte",
+                "scamorza": "Latte",
+                "uovo fritto": "Uova",
+                "guanciale croccante": null,
+                "guanciale": null,
+                "bacon": null,
+                "doppio bacon": null,
+                "bacon croccante": null,
+                "pancetta dolce": null,
+                "porchetta": null,
+                "mortadella": "Frutta a guscio",
+                "lattuga": null,
+                "pomodoro": null,
+                "cipolla": null,
+                "cipolla caramellata": null,
+                "cipolla croccante": null,
+                "songino": null,
+                "pere caramellate": null,
+                "rosti di patate": null,
+                "confettura di fichi": "Anidride solforosa",
+                "nocciole": "Frutta a guscio",
+                "miele": null,
+                "salsa cheddar calda da 170ml": "Glutine, Latte",
+                "patate con buccia": null,
+                "crema cheddar home made": "Glutine, Latte",
+                "salsa Ciccio's": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+                "salsa white Ciccio's": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+                "maionese al tartufo": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+                "maionese senapata al miele": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+                "maionese": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+                "salsa bbq": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+                "salsa thai 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+                "salsa hot thai 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+                "salsa ciccio's 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+            };
+
             const outerContainer = document.getElementById("generatedContentMenu");
 
             categoryData.payload.categories.forEach(category => {
@@ -86,6 +147,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     const product = productData.products.find(p => p.id === item.product_id);
 
                     if (product) {
+                        product.allergeniIngredientiMap = {};
+                        const ingredienti = product.ingredients?.split(",").map(i => i.trim()) || [];
+
+                        ingredienti.forEach(ingrediente => {
+                            const nomeIngrediente = ingrediente.split(":")[0].trim();
+                            if (allergeniIngredientiMap.hasOwnProperty(nomeIngrediente)) {
+                                product.allergeniIngredientiMap[nomeIngrediente] = allergeniIngredientiMap[nomeIngrediente];
+                            }
+                        });
                         const productDiv = document.createElement("div");
                         productDiv.classList.add("menu-item");
 
@@ -117,13 +187,46 @@ document.addEventListener("DOMContentLoaded", function () {
                         image.src = product.thumb;
                         image.loading = "lazy";
 
-                        const description = document.createElement("p");
-                        description.classList.add("product-description");
-                        description.textContent = product.ingredients;
+                        const ingredients = product.ingredients?.split(",").map(i => i.trim()) || [];
+
+                        const inlineText = document.createElement("p");
+                        inlineText.classList.add("product-description");
+                        inlineText.textContent = ingredients.join(", ");
+
+                        const detailedContainer = document.createElement("div");
+                        detailedContainer.classList.add("ingredient-detail");
+                        // Rendi visibile il dettaglio solo se lo switch è attivo
+                        if (document.getElementById("toggleIngredients").checked) {
+                            detailedContainer.classList.add("show");
+                        }
+
+                        ingredients.forEach(name => {
+                            const row = document.createElement("div");
+                            row.className = "ingredient-row";
+
+                            const nameSpan = document.createElement("span");
+                            nameSpan.textContent = name;
+
+                            const allergenSpan = document.createElement("span");
+                            allergenSpan.className = "allergens";
+
+                            const found = Object.entries(product.allergeniIngredientiMap || {}).find(([key]) =>
+                                key.toLowerCase().includes(name.toLowerCase()) || name.toLowerCase().includes(key.toLowerCase())
+                            );
+
+                            allergenSpan.textContent = found ? found[1] : "Nessun allergene noto";
+
+                            row.appendChild(nameSpan);
+                            row.appendChild(allergenSpan);
+                            detailedContainer.appendChild(row);
+                        });
+
+                        productInfoDiv.appendChild(inlineText);
+                        productInfoDiv.appendChild(detailedContainer);
+
 
                         productDiv.appendChild(image);
                         productInfoDiv.appendChild(title);
-                        productInfoDiv.appendChild(description);
                         productInfoDiv.appendChild(price);
                         // NEW IF
                         if (product.allergens && typeof product.allergens === "object") {
@@ -171,6 +274,26 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
             });
+            document.getElementById("toggleIngredients").addEventListener("change", e => {
+                const show = e.target.checked;
+                document.querySelectorAll(".product-description").forEach(p => {
+                    p.style.display = show ? "none" : "block";
+                });
+                document.querySelectorAll(".ingredient-detail").forEach(div => {
+                    div.classList.toggle("show", show);
+                });
+
+                // 🔄 Recalculate maxHeight for all open collapsibles
+                document.querySelectorAll(".collapsible.active").forEach(button => {
+                    const content = button.nextElementSibling;
+                    if (content.classList.contains("open")) {
+                        // Temporarily unset maxHeight to allow correct scrollHeight
+                        content.style.maxHeight = null;
+                        content.style.maxHeight = content.scrollHeight + 50 + "px";
+                    }
+                });
+            });
+
         })
         .catch(error => {
             console.error('Error loading the files:', error);
