@@ -530,11 +530,11 @@
         },
         {
             "id": 14061,
-            "title": "MORTADELLO",
+            "title": "PANINO DELL'ESTATE",
             "price": 9.9,
-            "ingredients": "bun, burger di manzo 170g, cipolla caramellata, gran P&V al tartufo, mortadella, maionese senapata al miele",
-            "allergens": {"Allergeni Panino":"Glutine, Uova, Latte, Senape, Frutta a guscio", "Allergeni Salsa":"Uova, Senape, Arachidi, Pesce"},
-            "thumb": "./img/menu/ciccios/mortadello.webp"
+            "ingredients": "bun, roast beef, robiolina con pomodoro semi-dry, tzatziki, grana, songino",
+            "allergens": null,
+            "thumb": "./img/menu/ciccios/paninoestate-nobg.png"
         },
         {
             "id": 14068,
