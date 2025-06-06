@@ -127,6 +127,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 "salsa thai 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
                 "salsa hot thai 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
                 "salsa ciccio's 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+                "robiolina con pomodoro semi-dry": "Latte, Solfiti, può contenere tracce di Frutta a guscio e Pesce",
+                "tzatziki": "Latte",
+                "grana": "Latte",
+                "roast beef": null,
             };
 
             const outerContainer = document.getElementById("generatedContentMenu");
