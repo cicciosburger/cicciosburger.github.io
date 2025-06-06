@@ -533,7 +533,7 @@
             "title": "PANINO DELL'ESTATE",
             "price": 9.9,
             "ingredients": "bun, roast beef, robiolina con pomodoro semi-dry, tzatziki, grana, songino",
-            "allergens": null,
+            "allergens": {"Allergeni":"Glutine, Latte, Solfiti, Frutta a guscio, Pesce"},
             "thumb": "./img/menu/ciccios/paninoestate-nobg.png"
         },
         {
