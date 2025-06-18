@@ -12,7 +12,7 @@
             "id": 5095,
             "title": "CRISPY GOAT",
             "price": 9.9,
-            "ingredients": "bun, burger di pollo pastellato e fritto, cheddar, bacon, lattuga, salsa Ciccio's",
+            "ingredients": "bun, burger di pollo pastellato e fritto*, cheddar, bacon, lattuga, salsa Ciccio's",
             "allergens": {"Allergeni Panino":"Glutine, Uova, Latte", "Allergeni Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/crispygoat.webp"
         },
@@ -34,17 +34,17 @@
         },
         {
             "id": 5098,
-            "title": "MAIONESE HEINZ",
+            "title": "MAIONESE CICCIO'S 25gr",
             "price": 0.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "./img/menu/salse/maionese.webp"
+            "thumb": "./img/menu/salse/maioneseciccios.webp"
         },
         {
             "id": 5477,
             "title": "NUGGETS",
             "price": "da 2,70\u20ac",
-            "ingredients": "bocconcini di pollo tritato pastellati fatti a mano",
+            "ingredients": "bocconcini di pollo tritato pastellati fatti a mano*",
             "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/nuggets.webp"
         },
@@ -164,7 +164,7 @@
             "id": 5492,
             "title": "CHICKEN POP CORN",
             "price": "da 2,70\u20ac",
-            "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante",
+            "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante*",
             "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/chickenpopcorn.webp"
         },
@@ -172,7 +172,7 @@
             "id": 5493,
             "title": "MEAT BALLS",
             "price": "da 2,70\u20ac",
-            "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio",
+            "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio*",
             "allergens": {"Allergeni":"Glutine, Uova, Latte"},
             "thumb": "./img/menu/starters/meatball.webp"
         },
@@ -180,7 +180,7 @@
             "id": 5494,
             "title": "PROVOLA GOAT",
             "price": 4.5,
-            "ingredients": "provola dolce con tripla pastellatura a mano",
+            "ingredients": "provola dolce con tripla pastellatura a mano*",
             "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/provolagoat.webp"
         },
@@ -188,7 +188,7 @@
             "id": 5496,
             "title": "GREEN NUGGETS VEGGIE",
             "price": "da 2,70\u20ac",
-            "ingredients": "nuggets vegetali",
+            "ingredients": "nuggets vegetali*",
             "allergens": {"Allergeni":"Uova, Soia, Latte, Sedano, Senape, Glutine"},
             "thumb": "./img/menu/starters/greennuggets.webp"
         },
@@ -196,7 +196,7 @@
             "id": 5497,
             "title": "GREEN BALL VEGGIE",
             "price": "da 2,70\u20ac",
-            "ingredients": "polpettine vegetali",
+            "ingredients": "polpettine vegetali*",
             "allergens": {"Allergeni":"Uova, Soia, Latte, Anidride solforosa e solfiti, Glutine"},
             "thumb": "./img/menu/starters/greenball.webp"
         },
@@ -226,27 +226,27 @@
         },
         {
             "id": 5503,
-            "title": "SALSA CICCIO'S 60ML",
+            "title": "SALSA CICCIO'S 25gr",
             "price": 1.0,
-            "ingredients": "salsa ciccio's 60ml",
-            "allergens": {"Allergeni":"Senape, Uova, Arachidi, Pesce"},
+            "ingredients": null,
+            "allergens": null,
             "thumb": "./img/menu/salse/salsaciccios.webp"
         },
         {
             "id": 5505,
-            "title": "BBQ HEINZ",
+            "title": "BBQ CICCIO'S 25gr",
             "price": 0.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "./img/menu/salse/bbq.webp"
+            "thumb": "./img/menu/salse/bbqciccios.webp"
         },
         {
             "id": 5507,
-            "title": "KETCHUP HEINZ",
+            "title": "KETCHUP CICCIO'S 25gr",
             "price": 0.4,
             "ingredients": null,
             "allergens": null,
-            "thumb": "./img/menu/salse/ketchup.webp"
+            "thumb": "./img/menu/salse/ketchupciccios.webp"
         },
         {
             "id": 6116,
@@ -324,7 +324,7 @@
             "id": 6127,
             "title": "SUPER CRISPY",
             "price": 9.9,
-            "ingredients": "bun, burger di pollo fritto con panatura super croccante, lattuga, pomodoro, maionese",
+            "ingredients": "bun, burger di pollo fritto con panatura super croccante*, lattuga, pomodoro, maionese",
             "allergens": {"Allergeni Panino":"Glutine, Uova, Latte", "Allergeni Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/supercrispy.webp"
         },
@@ -537,14 +537,6 @@
             "thumb": "./img/menu/ciccios/paninoestate-nobg.png"
         },
         {
-            "id": 14068,
-            "title": "MAIONESE HEINZ",
-            "price": 0.4,
-            "ingredients": null,
-            "allergens": null,
-            "thumb": "./img/menu/salse/maionese.webp"
-        },
-        {
             "id": 14069,
             "title": "SALSA CHEDDAR CALDA 170ML",
             "price": 2.5,
@@ -577,34 +569,10 @@
             "thumb": "./img/menu/salse/salsaciccios.webp"
         },
         {
-            "id": 14073,
-            "title": "SALSA CICCIO'S 60ML",
-            "price": 1.0,
-            "ingredients": null,
-            "allergens": null,
-            "thumb": "./img/menu/salse/salsaciccios.webp"
-        },
-        {
-            "id": 14074,
-            "title": "BBQ HEINZ",
-            "price": 0.4,
-            "ingredients": null,
-            "allergens": null,
-            "thumb": "./img/menu/salse/bbq.webp"
-        },
-        {
-            "id": 14075,
-            "title": "KETCHUP HEINZ",
-            "price": 0.4,
-            "ingredients": null,
-            "allergens": null,
-            "thumb": "./img/menu/salse/ketchup.webp"
-        },
-        {
             "id": 14125,
             "title": "LINGOTTI 2PZ",
             "price": 4.5,
-            "ingredients": "Maxi nuggets di pollo con panatura super croccante accompagnato con cheddar calda",
+            "ingredients": "Maxi nuggets di pollo con panatura super croccante* accompagnato con cheddar calda",
             "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/lingotti.webp"
         }
