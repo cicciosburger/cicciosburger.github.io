@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "polpettine di pollo fatte a mano con speciale panatura super croccante*": "Glutine, Latte",
                 "polpettine di carne fatte a mano con speciale panatura al formaggio*": "Glutine, Uova, Latte",
                 "provola dolce con tripla pastellatura a mano*": "Glutine, Latte",
-                "nuggets vegetali*": "Uova, Soia, Latte, Sedano, Senape, Glutine",
+                "nuggets vegetali": "Uova, Soia, Latte, Sedano, Senape, Glutine",
                 "Alette di pollo pastellate e fritte laccate con salsa thai": "Uova, Senape",
                 "Maxi nuggets di pollo con panatura super croccante* accompagnato con cheddar calda": "Glutine, Latte",
                 "polpettine vegetali*": "Uova, Soia, Latte, Anidride solforosa e solfiti, Glutine",
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "nocciole": "Frutta a guscio",
                 "miele": null,
                 "salsa cheddar calda da 170ml": "Glutine, Latte",
-                "patate con buccia": null,
+                "patate con buccia**": null,
                 "crema cheddar home made": "Glutine, Latte",
                 "salsa Ciccio's": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
                 "salsa white Ciccio's": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
@@ -848,7 +848,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            if (modalId === "inactive-modal") {
+            if (modalId === "foodtruck") {
                 if (!button.getAttribute('href')) {
                     event.preventDefault();
                     modal.style.display = 'block';
