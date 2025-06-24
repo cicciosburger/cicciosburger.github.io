@@ -1,26 +1,74 @@
 {
-    "Tshirt Manica Lunga Nera": {
-        "sizes": ["XS", "S", "M", "L", "XL"],
-        "price": 29.90
-    },
-    "Tshirt Manica Corta Nera": {
-        "sizes": ["S", "M", "L", "XL"],
-        "price": 14.90
-    },
-    "Felpa Nera": {
-        "sizes": ["S", "M", "L", "XL"],
-        "price": 43.90
-    },
-    "Felpa Bambini Blu": {
-        "sizes": ["3-4 anni (XS)", "5-6 anni (S)", "7-8 anni (M)", "9-10 anni (L)", "11-12 anni (XL)"],
-        "price": 27.90
-    },
-    "Telo Mare": {
-        "sizes": ["unica"],
-        "price": 15.00
-    },
-    "Pastelli": {
-        "sizes": ["unica"],
-        "price": 4.90
-    }
+  "Tshirt Ciccio's Spacca": {
+    "sizes": ["S", "M", "L", "XL","XXL"],
+    "price": 14.90,
+    "image": "img/shop/cicciosSpacca.png"
+  },
+  "Tshirt Menu Bianca": {
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "price": 14.90,
+    "image": "img/shop/cicciosMenuBianco.png"
+  },
+  "Tshirt Menu Nera": {
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "price": 14.90,
+    "image": "img/shop/cicciosMenuNero.png"
+  },
+  "Tshirt Ciccio's Foodtruck": {
+    "sizes": ["S", "M", "L"],
+    "price": 14.90,
+    "image": "img/shop/cicciosFoodtruck.png"
+  },
+  "Tshirt Ciccio's Crafting Burgers": {
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "price": 14.90,
+    "image": "img/shop/cicciosCraftingBurgers.png"
+  },
+  "Tshirt Bambini Ciccio's Spacca": {
+    "sizes": ["5-6 anni (S)", "7-8 anni (M)", "9-10 anni (L)"],
+    "price": 9.90,
+    "image": "img/shop/cicciosSpaccaBaby.png"
+  },
+  "Tshirt Bambini Ciccio's Crafting Burgers": {
+    "sizes": ["5-6 anni (S)", "7-8 anni (M)", "9-10 anni (L)"],
+    "price": 9.90,
+    "image": "img/shop/cicciosCraftingBurgersBaby.png"
+  },
+  "Tshirt Bambini AstroCiccio's": {
+    "sizes": ["5-6 anni (S)", "7-8 anni (M)"],
+    "price": 9.90,
+    "image": "img/shop/astroCicciosBaby.png"
+  },
+  "Tshirt Manica Lunga Nera": {
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "price": 29.90,
+    "image": "img/shop/manichelungheciccios.png"
+  },
+  "Tshirt Manica Corta Nera": {
+    "sizes": ["S", "M", "L", "XL"],
+    "price": 14.90,
+    "image": "img/shop/manichecorteciccios.png"
+  },
+  "Felpa Nera": {
+    "sizes": ["S", "M", "L", "XL"],
+    "price": 43.90,
+    "image": "img/shop/felpaneraciccios.png"
+  },
+  "Felpa Bambini Blu": {
+    "sizes": [
+      "3-4 anni (XS)", "5-6 anni (S)", "7-8 anni (M)", "9-10 anni (L)", "11-12 anni (XL)"
+    ],
+    "price": 27.90,
+    "image": "img/shop/felpacicciosbaby.png"
+  },
+  "Telo Mare": {
+    "sizes": ["unica"],
+    "price": 15.00,
+    "image": "img/shop/telomare.png"
+  },
+  "Pastelli": {
+    "sizes": ["unica"],
+    "price": 4.90,
+    "image": "img/shop/pastelli.png"
+  }
 }
