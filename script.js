@@ -497,19 +497,46 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             typeData = data;
 
-            const typeSelect = document.getElementById("order-type");
-            typeSelect.innerHTML = "";
+            const dropdownContainer = document.querySelector("#custom-type-select .dropdown");
+            const selected = document.querySelector("#custom-type-select .selected");
+            const hiddenInput = document.getElementById("order-type");
+
+            dropdownContainer.innerHTML = "";
 
             Object.keys(typeData).forEach(type => {
-                let option = document.createElement("option");
-                option.value = type;
-                // Show price with two decimals in the dropdown
-                const price = typeData[type].price.toFixed(2); // Ensure 2 decimal places
-                option.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} - ${price}€`;
-                typeSelect.appendChild(option);
+                const item = document.createElement("div");
+                item.classList.add("dropdown-item");
+
+                const img = document.createElement("img");
+                img.src = typeData[type].image;
+                img.alt = type;
+                img.classList.add("dropdown-img");
+
+                const label = document.createElement("span");
+                const price = typeData[type].price.toFixed(2);
+                label.textContent = `${type} - ${price}€`;
+
+                item.appendChild(img);
+                item.appendChild(label);
+
+                item.addEventListener("click", () => {
+                    selected.innerHTML = "";
+                    selected.appendChild(img.cloneNode());
+                    selected.appendChild(document.createTextNode(` ${type} - ${price}€`));
+                    hiddenInput.value = type;
+
+                    dropdownContainer.classList.remove("show");
+                    updateSizeOptions();
+                });
+
+                dropdownContainer.appendChild(item);
             });
 
-            updateSizeOptions();
+            // Toggle the dropdown open/close
+            selected.addEventListener("click", () => {
+                dropdownContainer.classList.toggle("show");
+            });
+
         });
 
     function updateSizeOptions() {
@@ -564,12 +591,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateCart() {
         cartList.innerHTML = "";
         cart.forEach((item, index) => {
+            let itemImage = document.createElement("img");
+            itemImage.classList.add("itemImage");
+            itemImage.src = typeData[item.type].image;
+            itemImage.alt = item.type;
+
             let itemDiv = document.createElement("div");
             itemDiv.classList.add("itemDiv");
 
             let itemQuantity = document.createElement("p");
             itemQuantity.classList.add("itemQuantity");
             itemQuantity.textContent = `${item.quantity}`;
+
 
             let itemInternalDiv = document.createElement("div");
             itemInternalDiv.classList.add("itemInternalDiv");
@@ -595,13 +628,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 updateCart();
             });
 
+            itemInternalDiv.appendChild(itemQuantity);
             itemInternalDiv.appendChild(itemTitle);
             itemInternalDiv.appendChild(itemSize);
             itemInternalDiv.appendChild(itemPrice);
+            itemInternalDiv.appendChild(removeBtn);
 
-            itemDiv.appendChild(itemQuantity);
+            
+            itemDiv.appendChild(itemImage);
             itemDiv.appendChild(itemInternalDiv);
-            itemDiv.appendChild(removeBtn);
+            
             cartList.appendChild(itemDiv);
         });
     }
