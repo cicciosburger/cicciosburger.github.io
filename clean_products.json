@@ -4,7 +4,7 @@
             "id": 5094,
             "title": "FRIES",
             "price": 3.5,
-            "ingredients": "patate con buccia",
+            "ingredients": "patate con buccia**",
             "allergens": null,
             "thumb": "./img/menu/starters/fries.webp"
         },
@@ -52,7 +52,7 @@
             "id": 5478,
             "title": "BACON CHEDDAR FRIES",
             "price": 6.5,
-            "ingredients": "patate con buccia, crema cheddar home made, bacon croccante",
+            "ingredients": "patate con buccia**, crema cheddar home made, bacon croccante",
             "allergens": {"Allergeni":"Glutine, Latte"},
             "thumb": "./img/menu/starters/baconcheesefries.webp"
         },
@@ -188,7 +188,7 @@
             "id": 5496,
             "title": "GREEN NUGGETS VEGGIE",
             "price": "da 2,70\u20ac",
-            "ingredients": "nuggets vegetali*",
+            "ingredients": "nuggets vegetali",
             "allergens": {"Allergeni":"Uova, Soia, Latte, Sedano, Senape, Glutine"},
             "thumb": "./img/menu/starters/greennuggets.webp"
         },
