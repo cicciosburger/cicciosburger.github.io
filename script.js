@@ -634,10 +634,10 @@ document.addEventListener("DOMContentLoaded", function () {
             itemInternalDiv.appendChild(itemPrice);
             itemInternalDiv.appendChild(removeBtn);
 
-            
+
             itemDiv.appendChild(itemImage);
             itemDiv.appendChild(itemInternalDiv);
-            
+
             cartList.appendChild(itemDiv);
         });
     }
@@ -735,6 +735,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.substring(1); // es. "menuModal"
+    if (hash) {
+        const modal = document.getElementById(hash);
+        if (modal) {
+            modal.style.display = 'block';
+        }
+    }
+});
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -825,23 +836,28 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (event) => {
             const modalId = button.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
-            console.log(modalId)
-            console.log(modal)
-            if (modalId == "membershipModal") {
+
+            console.log(modalId);
+            console.log(modal);
+
+            if (modalId === "membershipModal") {
                 if (!localStorage.getItem("cookieConsent")) {
                     disableForm();
                 } else {
                     enableForm();
                 }
             }
-            if (modalId == "inactive-modal") {
-                // Check if the <a> tag has an href attribute
+
+            if (modalId === "inactive-modal") {
                 if (!button.getAttribute('href')) {
-                    event.preventDefault()
+                    event.preventDefault();
                     modal.style.display = 'block';
                 }
             } else {
-                if (modal) modal.style.display = 'block';
+                if (modal) {
+                    modal.style.display = 'block';
+                    history.replaceState(null, '', `#${modalId}`); // <-- aggiorna hash URL
+                }
             }
         });
     });
@@ -849,16 +865,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close modal
     document.querySelectorAll('.close-modal').forEach(closeBtn => {
         closeBtn.addEventListener('click', () => {
-            closeBtn.closest('.modal').style.display = 'none';
+            const modal = closeBtn.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+                history.replaceState(null, '', window.location.pathname); // ← rimuove l'hash
+            }
         });
     });
 
-    // Optional: Close modal when clicking outside the modal content
+
+    // Close modal when clicking outside the modal content
     modals.forEach(modal => {
         modal.addEventListener('click', e => {
             if (e.target === modal) {
                 modal.style.display = 'none';
+                history.replaceState(null, '', window.location.pathname); // rimuove l'hash
             }
         });
     });
+
 });
