@@ -66,6 +66,11 @@
     "price": 15.00,
     "image": "img/shop/telomare.png"
   },
+  "Shopper": {
+    "sizes": ["unica"],
+    "price": 9.90,
+    "image": "img/logo.webp"
+  },
   "Pastelli": {
     "sizes": ["unica"],
     "price": 4.90,
