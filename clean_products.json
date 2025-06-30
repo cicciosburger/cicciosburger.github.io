@@ -333,7 +333,7 @@
             "title": "CHICKEN CBT",
             "price": 9.9,
             "ingredients": "bun, sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
-            "allergens": {"Allergeni Panino":"Glutine, Latte", "Allergeni Salsa":"Uova, Senape, Arachidi, Pesce"},
+            "allergens": {"Allergeni Panino":"Glutine, Uova, Latte", "Allergeni Salsa":"Uova, Senape, Arachidi, Pesce"},
             "thumb": "./img/menu/ciccios/chickencbt.webp"
         },
         {
@@ -349,7 +349,7 @@
             "title": "KISS",
             "price": 3.5,
             "ingredients": "bun, nutella, bacon",
-            "allergens": {"Allergeni":"Glutine, Frutta a guscio, Soia, Latte"},
+            "allergens": {"Allergeni":"Glutine, Frutta a guscio, Soia, Uova, Latte"},
             "thumb": "./img/menu/dolci/kiss.webp"
         },
         {

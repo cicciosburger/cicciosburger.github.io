@@ -1,75 +1,54 @@
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
+let recaptchaHappyOrderWidgetId;
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Mappatura degli allergeni con le classi CSS
-    const allergeniMap = {
-        "Glutine": {
-            className: "glutine",
-            emoji: "🌾"
-        },
-        "Latte": {
-            className: "latte",
-            emoji: "🥛"
-        },
-        "Uova": {
-            className: "uova",
-            emoji: "🥚"
-        },
-        "Frutta a guscio": {
-            className: "frutta-a-guscio",
-            emoji: "🌰"
-        },
-        "Arachidi": {
-            className: "arachidi",
-            emoji: "🥜"
-        },
-        "Soia": {
-            className: "soia",
-            emoji: "🌱"
-        },
-        "Pesce": {
-            className: "pesce",
-            emoji: "🐟"
-        },
-        "Crostacei": {
-            className: "crostacei",
-            emoji: "🦐"
-        },
-        "Molluschi": {
-            className: "molluschi",
-            emoji: "🐚"
-        },
-        "Sedano": {
-            className: "sedano",
-            emoji: "🥬"
-        },
-        "Lupini": {
-            className: "lupini",
-            emoji: "🌼"
-        },
-        "Sesamo": {
-            className: "sesamo",
-            emoji: "⚪"
-        },
-        "Senape": {
-            className: "senape",
-            emoji: "🟡"
-        },
-        "Solfiti": {
-            className: "solfiti",
-            emoji: "⚗️"
-        },
-    };
 
-    // Load categories and products
-    Promise.all([
-            fetch('categories.json').then(response => response.json()),
-            fetch('clean_products.json').then(response => response.json())
-        ])
-        .then(([categoryData, productData]) => {
-            const allergeniIngredientiMap = {
-                "bun": "Glutine",
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize the map and set its view (lat, lng, zoom)
+  const [lat, lng] = [38.2064711, 13.3252011];
+  const map = L.map('map').setView([lat, lng], 18);  // Example: Palermo
+
+
+  // Add OpenStreetMap tiles
+//   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; OpenStreetMap contributors'
+//   }).addTo(map);
+L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a> | © OpenStreetMap',
+    subdomains: "abcd",
+    maxZoom: 19
+  }).addTo(map);
+  // Define custom icon
+  const customDivIcon = L.divIcon({
+    html: `
+      <div class="marker-wrapper">
+        <div class="marker-label">CLICCAMI</div>
+        <img src="./img/logofoodclean.png" class="marker-img" />
+      </div>
+    `,
+    className: "", // no default Leaflet styles
+    iconSize: [80,50],
+    iconAnchor: [16, 64]
+  });
+
+    const marker = L.marker([lat, lng], { icon: customDivIcon }).addTo(map);
+
+marker.on('click', () => {
+  const url = `https://www.google.com/maps?q=${lat},${lng}`;
+  window.open(url, '_blank'); // Open in new tab
+});
+
+
+    window.addEventListener('load', () => {
+    map.invalidateSize();
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Allergeni map (keep your existing one)
+    const allergeniIngredientiMap = {
+                "bun": "Glutine, Uova",
                 "nutella": "Frutta a guscio, Soia, Latte",
                 "tiramisù": "Glutine, Latte, Uova",
                 "brookies": "Glutine, Latte, Uova",
@@ -133,194 +112,633 @@ document.addEventListener("DOMContentLoaded", function () {
                 "roast beef": null,
             };
 
-            const outerContainer = document.getElementById("generatedContentMenu");
+    // Allergeni icons map (keep your existing one)
+    const allergeniMap = {
+        "Glutine": {
+            className: "glutine",
+            emoji: "🌾"
+        },
+        "Latte": {
+            className: "latte",
+            emoji: "🥛"
+        },
+        "Uova": {
+            className: "uova",
+            emoji: "🥚"
+        },
+        "Frutta a guscio": {
+            className: "frutta-a-guscio",
+            emoji: "🌰"
+        },
+        "Arachidi": {
+            className: "arachidi",
+            emoji: "🥜"
+        },
+        "Soia": {
+            className: "soia",
+            emoji: "🌱"
+        },
+        "Pesce": {
+            className: "pesce",
+            emoji: "🐟"
+        },
+        "Crostacei": {
+            className: "crostacei",
+            emoji: "🦐"
+        },
+        "Molluschi": {
+            className: "molluschi",
+            emoji: "🐚"
+        },
+        "Sedano": {
+            className: "sedano",
+            emoji: "🥬"
+        },
+        "Lupini": {
+            className: "lupini",
+            emoji: "🌼"
+        },
+        "Sesamo": {
+            className: "sesamo",
+            emoji: "⚪"
+        },
+        "Senape": {
+            className: "senape",
+            emoji: "🟡"
+        },
+        "Solfiti": {
+            className: "solfiti",
+            emoji: "⚗️"
+        },
+    };
 
-            categoryData.payload.categories.forEach(category => {
-                const categoryTitle = document.createElement("button");
-                categoryTitle.classList.add("collapsible");
-                categoryTitle.textContent = category.title;
-                outerContainer.appendChild(categoryTitle);
+    // Global menu data
+    let menuData = null;
 
-                const categoryDiv = document.createElement("div");
-                categoryDiv.classList.add("menu-grid", "content");
-                outerContainer.appendChild(categoryDiv);
-
-
-
-                category.items_assoc.forEach(item => {
-                    const product = productData.products.find(p => p.id === item.product_id);
-
-                    if (product) {
-                        product.allergeniIngredientiMap = {};
-                        const ingredienti = product.ingredients?.split(",").map(i => i.trim()) || [];
-
-                        ingredienti.forEach(ingrediente => {
-                            const nomeIngrediente = ingrediente.split(":")[0].trim();
-                            if (allergeniIngredientiMap.hasOwnProperty(nomeIngrediente)) {
-                                product.allergeniIngredientiMap[nomeIngrediente] = allergeniIngredientiMap[nomeIngrediente];
-                            }
-                        });
-                        const productDiv = document.createElement("div");
-                        productDiv.classList.add("menu-item");
-
-                        const productInfoDiv = document.createElement("div");
-                        productInfoDiv.classList.add("menu-item-info");
-
-                        const title = document.createElement("h1");
-                        title.classList.add("product-title");
-
-                        const price = document.createElement("p");
-                        price.classList.add("product-price");
-
-                        // Check if the product title contains "green" (case-insensitive)
-                        if (product.title.toLowerCase().includes("green")) {
-                            const leafIcon = document.createElement("i");
-                            leafIcon.classList.add("fas", "fa-leaf");
-                            leafIcon.style.marginLeft = "10px"; // Add some spacing
-                            title.appendChild(leafIcon);
-                        }
-
-                        title.prepend(document.createTextNode(product.title)); // Add text before the icon
-                        if (typeof product.price === "number") {
-                            price.textContent = `${product.price.toFixed(2).toString().replace(".", ",")}€`;
-                        } else {
-                            price.textContent = product.price;
-                        }
-                        const image = document.createElement("img");
-                        image.classList.add("product-img");
-                        image.src = product.thumb;
-                        image.loading = "lazy";
-
-                        const ingredients = product.ingredients?.split(",").map(i => i.trim()) || [];
-
-                        const inlineText = document.createElement("p");
-                        inlineText.classList.add("product-description");
-                        inlineText.textContent = ingredients.join(", ");
-
-                        const detailedContainer = document.createElement("div");
-                        detailedContainer.classList.add("ingredient-detail");
-                        // Rendi visibile il dettaglio solo se lo switch è attivo
-                        if (document.getElementById("toggleIngredients").checked) {
-                            detailedContainer.classList.add("show");
-                        }
-
-                        ingredients.forEach(name => {
-                            const row = document.createElement("div");
-                            row.className = "ingredient-row";
-
-                            const nameSpan = document.createElement("span");
-                            nameSpan.textContent = name;
-
-                            const allergenSpan = document.createElement("span");
-                            allergenSpan.className = "allergens";
-
-                            const found = Object.entries(product.allergeniIngredientiMap || {}).find(([key]) =>
-                                key.toLowerCase().includes(name.toLowerCase()) || name.toLowerCase().includes(key.toLowerCase())
-                            );
-
-                            allergenSpan.textContent = found ? found[1] : "Nessun allergene noto";
-
-                            row.appendChild(nameSpan);
-                            row.appendChild(allergenSpan);
-                            detailedContainer.appendChild(row);
-                        });
-
-                        productInfoDiv.appendChild(inlineText);
-                        productInfoDiv.appendChild(detailedContainer);
-
-
-                        productDiv.appendChild(image);
-                        productInfoDiv.appendChild(title);
-                        productInfoDiv.appendChild(price);
-                        // NEW IF
-                        if (product.allergens && typeof product.allergens === "object") {
-                            const allergeniContainer = document.createElement("div");
-                            allergeniContainer.classList.add("allergeni-container");
-
-                            // const allergeniText = document.createElement("p");
-                            // allergeniText.classList.add("allergeni-text");
-                            // allergeniText.textContent = "Allergeni";
-                            // allergeniContainer.appendChild(allergeniText);
-
-                            // Iterate over allergen categories (e.g., Bread, Beef)
-                            for (const [category, allergeniStr] of Object.entries(product.allergens)) {
-                                const allergeniBoxContainer = document.createElement("div")
-                                const categoryTitle = document.createElement("p");
-                                categoryTitle.classList.add("allergeni-text");
-                                categoryTitle.textContent = category;
-                                allergeniBoxContainer.appendChild(categoryTitle);
-
-                                const allergeniArray = allergeniStr.split(", ");
-
-                                const allergeniInnerContainer = document.createElement("div");
-                                allergeniInnerContainer.classList.add("allergeni-inner-container");
-
-                                allergeniArray.forEach(allergene => {
-                                    const allergeneData = allergeniMap[allergene];
-                                    if (allergeneData) {
-                                        const icona = document.createElement("div");
-                                        icona.className = `icona ${allergeneData.className}`;
-                                        icona.textContent = allergeneData.emoji;
-                                        allergeniInnerContainer.appendChild(icona);
-                                    }
-                                });
-
-                                allergeniBoxContainer.appendChild(allergeniInnerContainer);
-                                allergeniContainer.appendChild(allergeniBoxContainer)
-                            }
-
-                            productInfoDiv.appendChild(allergeniContainer);
-                        }
-
-                        productDiv.appendChild(productInfoDiv);
-
-                        categoryDiv.appendChild(productDiv);
-                    }
-                });
-            });
-            document.getElementById("toggleIngredients").addEventListener("change", e => {
-                const show = e.target.checked;
-                document.querySelectorAll(".product-description").forEach(p => {
-                    p.style.display = show ? "none" : "block";
-                });
-                document.querySelectorAll(".ingredient-detail").forEach(div => {
-                    div.classList.toggle("show", show);
-                });
-
-                // 🔄 Recalculate maxHeight for all open collapsibles
-                document.querySelectorAll(".collapsible.active").forEach(button => {
-                    const content = button.nextElementSibling;
-                    if (content.classList.contains("open")) {
-                        // Temporarily unset maxHeight to allow correct scrollHeight
-                        content.style.maxHeight = null;
-                        content.style.maxHeight = content.scrollHeight + 50 + "px";
-                    }
-                });
-            });
-
+    // Load menu data
+    fetch('menu.json')
+        .then(response => response.json())
+        .then(data => {
+            menuData = data;
+            // Generate both menus immediately
+            generateMenu('menuModal', 'LOCALE');
+            generateMenu('foodtruck', 'FOODTRUCK');
+            generateMenu('ghiotto', 'GHIOTTO');
         })
-        .catch(error => {
-            console.error('Error loading the files:', error);
-        });
+        .catch(error => console.error('Error loading menu:', error));
 
-    // Event delegation for collapsible buttons
-    document.addEventListener("click", function (event) {
-        if (event.target.classList.contains("collapsible")) {
-            const collapsibleButton = event.target;
-            collapsibleButton.classList.toggle("active");
+    // Main menu generation function
+    function generateMenu(modalId, menuType) {
+        let contentId
+        if(modalId == 'menuModal'){
+            contentId='generatedContentLocale'
+        }
+        else if(modalId == 'foodtruck'){
+            contentId='generatedContentFoodtruck'
+        }
+        else{
+            contentId='generatedContentGhiotto'
+        }
+        const container = document.getElementById(contentId);
+        container.innerHTML = '';
 
-            const content = collapsibleButton.nextElementSibling;
-            content.classList.toggle("open");
+        if (!menuData) return;
 
-            if (content.style.maxHeight) {
-                // Collapse the content
-                content.style.maxHeight = null;
-            } else {
-                // Expand the content
-                content.style.maxHeight = content.scrollHeight + 50 + "px"; // Use scrollHeight for dynamic height
+        for (const [categoryName, products] of Object.entries(menuData)) {
+            const filteredProducts = products.filter(p => p.available_in.includes(menuType));
+            
+            if (filteredProducts.length > 0) {
+                // Create category header
+                const categoryTitle = document.createElement('button');
+                categoryTitle.classList.add('collapsible');
+                categoryTitle.textContent = categoryName;
+                container.appendChild(categoryTitle);
+
+                const categoryDiv = document.createElement('div');
+                categoryDiv.classList.add('menu-grid', 'content');
+                container.appendChild(categoryDiv);
+
+                // Add products
+                filteredProducts.forEach(product => {
+                    const productDiv = createProductElement(product);
+                    categoryDiv.appendChild(productDiv);
+                });
             }
         }
+
+        initCollapsibles(container);
+        setupIngredientToggle(modalId, container);
+    }
+
+    // Create individual product element
+    function createProductElement(product) {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('menu-item');
+
+        // Process ingredients and allergens
+        product.allergeniIngredientiMap = {};
+        const ingredienti = product.ingredients?.split(",").map(i => i.trim()) || [];
+
+        ingredienti.forEach(ingrediente => {
+            const nomeIngrediente = ingrediente.split(":")[0].trim();
+            if (allergeniIngredientiMap.hasOwnProperty(nomeIngrediente)) {
+                product.allergeniIngredientiMap[nomeIngrediente] = allergeniIngredientiMap[nomeIngrediente];
+            }
+        });
+
+        // Product image
+        const image = document.createElement('img');
+        image.classList.add('product-img');
+        image.src = product.thumb;
+        image.loading = "lazy";
+        productDiv.appendChild(image);
+
+        // Product info container
+        const productInfoDiv = document.createElement('div');
+        productInfoDiv.classList.add('menu-item-info');
+        
+        // Product title
+        const title = document.createElement('h1');
+        title.classList.add('product-title');
+        title.textContent = product.title;
+        
+        // Add leaf icon for green items
+        if (product.title.toLowerCase().includes("green")) {
+            const leafIcon = document.createElement('i');
+            leafIcon.classList.add("fas", "fa-leaf");
+            leafIcon.style.marginLeft = "10px";
+            title.appendChild(leafIcon);
+        }
+        productInfoDiv.appendChild(title);
+
+        // Product price
+        const price = document.createElement('p');
+        price.classList.add('product-price');
+        price.textContent = typeof product.price === 'number' 
+            ? `${product.price.toFixed(2).toString().replace(".", ",")}€`
+            : product.price;
+        productInfoDiv.appendChild(price);
+
+        // Ingredients
+        const ingredients = product.ingredients?.split(",").map(i => i.trim()) || [];
+        
+        // Short description
+        const inlineText = document.createElement('p');
+        inlineText.classList.add('product-description');
+        inlineText.textContent = ingredients.join(", ");
+        productInfoDiv.appendChild(inlineText);
+
+        // Detailed ingredients
+        const detailedContainer = document.createElement('div');
+        detailedContainer.classList.add('ingredient-detail');
+        
+        ingredients.forEach(name => {
+            const row = document.createElement('div');
+            row.className = "ingredient-row";
+
+            const nameSpan = document.createElement('span');
+            nameSpan.textContent = name;
+
+            const allergenSpan = document.createElement('span');
+            allergenSpan.className = "allergens";
+
+            const found = Object.entries(product.allergeniIngredientiMap || {}).find(([key]) =>
+                key.toLowerCase().includes(name.toLowerCase()) || name.toLowerCase().includes(key.toLowerCase())
+            );
+
+            allergenSpan.textContent = found ? found[1] : "Nessun allergene noto";
+            row.appendChild(nameSpan);
+            row.appendChild(allergenSpan);
+            detailedContainer.appendChild(row);
+        });
+        productInfoDiv.appendChild(detailedContainer);
+
+        // Allergens display
+        if (product.allergens && typeof product.allergens === 'object') {
+            const allergeniContainer = document.createElement('div');
+            allergeniContainer.classList.add('allergeni-container');
+
+            for (const [category, allergeniStr] of Object.entries(product.allergens)) {
+                const allergeniBoxContainer = document.createElement('div');
+                const categoryTitle = document.createElement('p');
+                categoryTitle.classList.add('allergeni-text');
+                categoryTitle.textContent = category;
+                allergeniBoxContainer.appendChild(categoryTitle);
+
+                const allergeniArray = allergeniStr.split(", ");
+                const allergeniInnerContainer = document.createElement('div');
+                allergeniInnerContainer.classList.add('allergeni-inner-container');
+
+                allergeniArray.forEach(allergene => {
+                    const allergeneData = allergeniMap[allergene];
+                    if (allergeneData) {
+                        const icona = document.createElement('div');
+                        icona.className = `icona ${allergeneData.className}`;
+                        icona.textContent = allergeneData.emoji;
+                        allergeniInnerContainer.appendChild(icona);
+                    }
+                });
+
+                allergeniBoxContainer.appendChild(allergeniInnerContainer);
+                allergeniContainer.appendChild(allergeniBoxContainer);
+            }
+            productInfoDiv.appendChild(allergeniContainer);
+        }
+
+        productDiv.appendChild(productInfoDiv);
+        return productDiv;
+    }
+
+    // Initialize collapsible sections
+    function initCollapsibles(container) {
+    container.querySelectorAll('.collapsible').forEach(coll => {
+        const content = coll.nextElementSibling;
+        
+        // Initialize all categories as COLLAPSED by default
+        coll.classList.remove('active');
+        content.style.maxHeight = '0';
+        content.style.opacity = '0';
+        content.style.paddingTop = '0';
+        content.style.paddingBottom = '0';
+        
+        coll.addEventListener('click', function() {
+            this.classList.toggle('active');
+            if (this.classList.contains('active')) {
+                // Expand - show content with padding
+                content.style.maxHeight = content.scrollHeight + 50 + 'px';
+                content.style.opacity = '1';
+                content.style.paddingTop = '10px';
+                content.style.paddingBottom = '10px';
+            } else {
+                // Collapse - hide everything including padding
+                content.style.maxHeight = '0';
+                content.style.opacity = '0';
+                content.style.paddingTop = '0';
+                content.style.paddingBottom = '0';
+            }
+        });
     });
+}
+
+    // Setup ingredient toggle for a specific modal
+    function setupIngredientToggle(modalId, container) {
+        let toggleId
+        if(modalId == 'menuModal'){
+            toggleId = 'toggleIngredientsLocale'
+        }
+        else if(modalId == 'foodtruck'){
+            toggleId = 'toggleIngredientsFoodtruck'
+        }
+        else{
+            toggleId = 'toggleIngredientsGhiotto'
+        }
+        const toggle = document.getElementById(toggleId);
+        
+        if (!toggle) return;
+        
+        toggle.addEventListener('change', function() {
+            const show = this.checked;
+            
+            container.querySelectorAll('.product-description').forEach(p => {
+                p.style.display = show ? 'none' : 'block';
+            });
+            
+            container.querySelectorAll('.ingredient-detail').forEach(div => {
+                div.classList.toggle('show', show);
+            });
+
+            // Recalculate maxHeight for open collapsibles
+            container.querySelectorAll('.collapsible.active').forEach(button => {
+                const content = button.nextElementSibling;
+                content.style.maxHeight = content.scrollHeight + 50 + 'px';
+            });
+        });
+    }
+});
+
+// ------------------------------------------------------------
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Mappatura degli allergeni con le classi CSS
+    const allergeniMap = {
+        "Glutine": {
+            className: "glutine",
+            emoji: "🌾"
+        },
+        "Latte": {
+            className: "latte",
+            emoji: "🥛"
+        },
+        "Uova": {
+            className: "uova",
+            emoji: "🥚"
+        },
+        "Frutta a guscio": {
+            className: "frutta-a-guscio",
+            emoji: "🌰"
+        },
+        "Arachidi": {
+            className: "arachidi",
+            emoji: "🥜"
+        },
+        "Soia": {
+            className: "soia",
+            emoji: "🌱"
+        },
+        "Pesce": {
+            className: "pesce",
+            emoji: "🐟"
+        },
+        "Crostacei": {
+            className: "crostacei",
+            emoji: "🦐"
+        },
+        "Molluschi": {
+            className: "molluschi",
+            emoji: "🐚"
+        },
+        "Sedano": {
+            className: "sedano",
+            emoji: "🥬"
+        },
+        "Lupini": {
+            className: "lupini",
+            emoji: "🌼"
+        },
+        "Sesamo": {
+            className: "sesamo",
+            emoji: "⚪"
+        },
+        "Senape": {
+            className: "senape",
+            emoji: "🟡"
+        },
+        "Solfiti": {
+            className: "solfiti",
+            emoji: "⚗️"
+        },
+    };
+
+    // Load categories and products
+    // Promise.all([
+    //         fetch('categories.json').then(response => response.json()),
+    //         fetch('clean_products.json').then(response => response.json())
+    //     ])
+    //     .then(([categoryData, productData]) => {
+    //         const allergeniIngredientiMap = {
+    //             "bun": "Glutine",
+    //             "nutella": "Frutta a guscio, Soia, Latte",
+    //             "tiramisù": "Glutine, Latte, Uova",
+    //             "brookies": "Glutine, Latte, Uova",
+    //             "bocconcini di pollo tritato pastellati fatti a mano*": "Glutine, Latte",
+    //             "polpettine di pollo fatte a mano con speciale panatura super croccante*": "Glutine, Latte",
+    //             "polpettine di carne fatte a mano con speciale panatura al formaggio*": "Glutine, Uova, Latte",
+    //             "provola dolce con tripla pastellatura a mano*": "Glutine, Latte",
+    //             "nuggets vegetali": "Uova, Soia, Latte, Sedano, Senape, Glutine",
+    //             "Alette di pollo pastellate e fritte laccate con salsa thai": "Uova, Senape",
+    //             "Maxi nuggets di pollo con panatura super croccante* accompagnato con cheddar calda": "Glutine, Latte",
+    //             "polpettine vegetali*": "Uova, Soia, Latte, Anidride solforosa e solfiti, Glutine",
+    //             "burger di manzo 170g": "Latte(Senza lattosio), Glutine, Uova",
+    //             "doppio burger di manzo 170g": "Latte(Senza lattosio), Glutine, Uova",
+    //             "burger di pollo pastellato e fritto": "Latte(Senza lattosio), Glutine",
+    //             "burger di pollo fritto con panatura super croccante": "Latte(Senza lattosio), Glutine",
+    //             "sovracoscia di pollo alla piastra": null,
+    //             "burger vegetale": "Latte, Uova",
+    //             "cheddar": "Latte",
+    //             "doppio cheddar": "Latte",
+    //             "triplo cheddar": "Latte",
+    //             "brie": "Latte",
+    //             "tuma caramellata al miele": "Latte",
+    //             "gran P&V al tartufo": "Latte",
+    //             "taleggio": "Latte",
+    //             "scamorza": "Latte",
+    //             "uovo fritto": "Uova",
+    //             "guanciale croccante": null,
+    //             "guanciale": null,
+    //             "bacon": null,
+    //             "doppio bacon": null,
+    //             "bacon croccante": null,
+    //             "pancetta dolce": null,
+    //             "porchetta": null,
+    //             "mortadella": "Frutta a guscio",
+    //             "lattuga": null,
+    //             "pomodoro": null,
+    //             "cipolla": null,
+    //             "cipolla caramellata": null,
+    //             "cipolla croccante": null,
+    //             "songino": null,
+    //             "pere caramellate": null,
+    //             "rosti di patate": null,
+    //             "confettura di fichi": "Anidride solforosa",
+    //             "nocciole": "Frutta a guscio",
+    //             "miele": null,
+    //             "salsa cheddar calda da 170ml": "Glutine, Latte",
+    //             "patate con buccia**": null,
+    //             "crema cheddar home made": "Glutine, Latte",
+    //             "salsa Ciccio's": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+    //             "salsa white Ciccio's": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+    //             "maionese al tartufo": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+    //             "maionese senapata al miele": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+    //             "maionese": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+    //             "salsa bbq": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+    //             "salsa thai 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+    //             "salsa hot thai 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+    //             "salsa ciccio's 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
+    //             "robiolina con pomodoro semi-dry": "Latte, Solfiti, può contenere tracce di Frutta a guscio e Pesce",
+    //             "tzatziki": "Latte",
+    //             "grana": "Latte",
+    //             "roast beef": null,
+    //         };
+
+    //         const outerContainer = document.getElementById("generatedContentMenu");
+
+    //         categoryData.payload.categories.forEach(category => {
+    //             const categoryTitle = document.createElement("button");
+    //             categoryTitle.classList.add("collapsible");
+    //             categoryTitle.textContent = category.title;
+    //             outerContainer.appendChild(categoryTitle);
+
+    //             const categoryDiv = document.createElement("div");
+    //             categoryDiv.classList.add("menu-grid", "content");
+    //             outerContainer.appendChild(categoryDiv);
+
+
+
+    //             category.items_assoc.forEach(item => {
+    //                 const product = productData.products.find(p => p.id === item.product_id);
+
+    //                 if (product) {
+    //                     product.allergeniIngredientiMap = {};
+    //                     const ingredienti = product.ingredients?.split(",").map(i => i.trim()) || [];
+
+    //                     ingredienti.forEach(ingrediente => {
+    //                         const nomeIngrediente = ingrediente.split(":")[0].trim();
+    //                         if (allergeniIngredientiMap.hasOwnProperty(nomeIngrediente)) {
+    //                             product.allergeniIngredientiMap[nomeIngrediente] = allergeniIngredientiMap[nomeIngrediente];
+    //                         }
+    //                     });
+    //                     const productDiv = document.createElement("div");
+    //                     productDiv.classList.add("menu-item");
+
+    //                     const productInfoDiv = document.createElement("div");
+    //                     productInfoDiv.classList.add("menu-item-info");
+
+    //                     const title = document.createElement("h1");
+    //                     title.classList.add("product-title");
+
+    //                     const price = document.createElement("p");
+    //                     price.classList.add("product-price");
+
+    //                     // Check if the product title contains "green" (case-insensitive)
+    //                     if (product.title.toLowerCase().includes("green")) {
+    //                         const leafIcon = document.createElement("i");
+    //                         leafIcon.classList.add("fas", "fa-leaf");
+    //                         leafIcon.style.marginLeft = "10px"; // Add some spacing
+    //                         title.appendChild(leafIcon);
+    //                     }
+
+    //                     title.prepend(document.createTextNode(product.title)); // Add text before the icon
+    //                     if (typeof product.price === "number") {
+    //                         price.textContent = `${product.price.toFixed(2).toString().replace(".", ",")}€`;
+    //                     } else {
+    //                         price.textContent = product.price;
+    //                     }
+    //                     const image = document.createElement("img");
+    //                     image.classList.add("product-img");
+    //                     image.src = product.thumb;
+    //                     image.loading = "lazy";
+
+    //                     const ingredients = product.ingredients?.split(",").map(i => i.trim()) || [];
+
+    //                     const inlineText = document.createElement("p");
+    //                     inlineText.classList.add("product-description");
+    //                     inlineText.textContent = ingredients.join(", ");
+
+    //                     const detailedContainer = document.createElement("div");
+    //                     detailedContainer.classList.add("ingredient-detail");
+    //                     // Rendi visibile il dettaglio solo se lo switch è attivo
+    //                     if (document.getElementById("toggleIngredients").checked) {
+    //                         detailedContainer.classList.add("show");
+    //                     }
+
+    //                     ingredients.forEach(name => {
+    //                         const row = document.createElement("div");
+    //                         row.className = "ingredient-row";
+
+    //                         const nameSpan = document.createElement("span");
+    //                         nameSpan.textContent = name;
+
+    //                         const allergenSpan = document.createElement("span");
+    //                         allergenSpan.className = "allergens";
+
+    //                         const found = Object.entries(product.allergeniIngredientiMap || {}).find(([key]) =>
+    //                             key.toLowerCase().includes(name.toLowerCase()) || name.toLowerCase().includes(key.toLowerCase())
+    //                         );
+
+    //                         allergenSpan.textContent = found ? found[1] : "Nessun allergene noto";
+
+    //                         row.appendChild(nameSpan);
+    //                         row.appendChild(allergenSpan);
+    //                         detailedContainer.appendChild(row);
+    //                     });
+
+    //                     productInfoDiv.appendChild(inlineText);
+    //                     productInfoDiv.appendChild(detailedContainer);
+
+
+    //                     productDiv.appendChild(image);
+    //                     productInfoDiv.appendChild(title);
+    //                     productInfoDiv.appendChild(price);
+    //                     // NEW IF
+    //                     if (product.allergens && typeof product.allergens === "object") {
+    //                         const allergeniContainer = document.createElement("div");
+    //                         allergeniContainer.classList.add("allergeni-container");
+
+    //                         // const allergeniText = document.createElement("p");
+    //                         // allergeniText.classList.add("allergeni-text");
+    //                         // allergeniText.textContent = "Allergeni";
+    //                         // allergeniContainer.appendChild(allergeniText);
+
+    //                         // Iterate over allergen categories (e.g., Bread, Beef)
+    //                         for (const [category, allergeniStr] of Object.entries(product.allergens)) {
+    //                             const allergeniBoxContainer = document.createElement("div")
+    //                             const categoryTitle = document.createElement("p");
+    //                             categoryTitle.classList.add("allergeni-text");
+    //                             categoryTitle.textContent = category;
+    //                             allergeniBoxContainer.appendChild(categoryTitle);
+
+    //                             const allergeniArray = allergeniStr.split(", ");
+
+    //                             const allergeniInnerContainer = document.createElement("div");
+    //                             allergeniInnerContainer.classList.add("allergeni-inner-container");
+
+    //                             allergeniArray.forEach(allergene => {
+    //                                 const allergeneData = allergeniMap[allergene];
+    //                                 if (allergeneData) {
+    //                                     const icona = document.createElement("div");
+    //                                     icona.className = `icona ${allergeneData.className}`;
+    //                                     icona.textContent = allergeneData.emoji;
+    //                                     allergeniInnerContainer.appendChild(icona);
+    //                                 }
+    //                             });
+
+    //                             allergeniBoxContainer.appendChild(allergeniInnerContainer);
+    //                             allergeniContainer.appendChild(allergeniBoxContainer)
+    //                         }
+
+    //                         productInfoDiv.appendChild(allergeniContainer);
+    //                     }
+
+    //                     productDiv.appendChild(productInfoDiv);
+
+    //                     categoryDiv.appendChild(productDiv);
+    //                 }
+    //             });
+    //         });
+    //         document.getElementById("toggleIngredients").addEventListener("change", e => {
+    //             const show = e.target.checked;
+    //             document.querySelectorAll(".product-description").forEach(p => {
+    //                 p.style.display = show ? "none" : "block";
+    //             });
+    //             document.querySelectorAll(".ingredient-detail").forEach(div => {
+    //                 div.classList.toggle("show", show);
+    //             });
+
+    //             // 🔄 Recalculate maxHeight for all open collapsibles
+    //             document.querySelectorAll(".collapsible.active").forEach(button => {
+    //                 const content = button.nextElementSibling;
+    //                 if (content.classList.contains("open")) {
+    //                     // Temporarily unset maxHeight to allow correct scrollHeight
+    //                     content.style.maxHeight = null;
+    //                     content.style.maxHeight = content.scrollHeight + 50 + "px";
+    //                 }
+    //             });
+    //         });
+
+    //     })
+    //     .catch(error => {
+    //         console.error('Error loading the files:', error);
+    //     });
+
+    // Event delegation for collapsible buttons
+    // document.addEventListener("click", function (event) {
+    //     if (event.target.classList.contains("collapsible")) {
+    //         const collapsibleButton = event.target;
+    //         collapsibleButton.classList.toggle("active");
+
+    //         const content = collapsibleButton.nextElementSibling;
+    //         content.classList.toggle("open");
+
+    //         if (content.style.maxHeight) {
+    //             // Collapse the content
+    //             content.style.maxHeight = null;
+    //         } else {
+    //             // Expand the content
+    //             content.style.maxHeight = content.scrollHeight + 50 + "px"; // Use scrollHeight for dynamic height
+    //         }
+    //     }
+    // });
 
     const barcodeData = getCookie("barcodeData");
 
@@ -803,6 +1221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("reCAPTCHA loaded successfully.");
         const recaptchaContainer = document.getElementById("recaptcha-container");
         const recaptchaContainerOrder = document.getElementById("recaptcha-container-order");
+        const recaptchaHappyContainerOrder = document.getElementById("happy-recaptcha-container-order");
         if (recaptchaContainer) {
             recaptchaWidgetId = grecaptcha.render(recaptchaContainer, {
                 sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
@@ -810,6 +1229,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (recaptchaContainerOrder) {
             recaptchaOrderWidgetId = grecaptcha.render(recaptchaContainerOrder, {
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
+            });
+        }
+        if (recaptchaHappyContainerOrder) {
+            recaptchaHappyOrderWidgetId = grecaptcha.render(recaptchaHappyContainerOrder, {
                 sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
             });
         }
@@ -840,20 +1264,15 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(modalId);
             console.log(modal);
 
-            if (modalId === "membershipModal") {
+            if (modalId == "membershipModal") {
+                modal.style.display = 'block';
                 if (!localStorage.getItem("cookieConsent")) {
                     disableForm();
                 } else {
                     enableForm();
                 }
             }
-
-            if (modalId === "foodtruck") {
-                if (!button.getAttribute('href')) {
-                    event.preventDefault();
-                    modal.style.display = 'block';
-                }
-            } else {
+            else {
                 if (modal) {
                     modal.style.display = 'block';
                     history.replaceState(null, '', `#${modalId}`); // <-- aggiorna hash URL
@@ -884,4 +1303,236 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+});
+
+
+
+
+
+
+
+// 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const addToCartBtn = document.getElementById("happy-addToCart");
+    const sendOrderBtn = document.getElementById("happy-sendOrder");
+    const cartList = document.getElementById("happy-cart");
+
+    let cart = [];
+    let typeData = {};
+
+    fetch("free.json")
+        .then(response => response.json())
+        .then(data => {
+            typeData = data;
+
+            const dropdownContainer = document.querySelector("#happy-custom-type-select .dropdown");
+            const selected = document.querySelector("#happy-custom-type-select .selected");
+            const hiddenInput = document.getElementById("happy-order-type");
+
+            dropdownContainer.innerHTML = "";
+
+            Object.keys(typeData).forEach(type => {
+                const item = document.createElement("div");
+                item.classList.add("dropdown-item");
+
+                const img = document.createElement("img");
+                img.src = typeData[type].image;
+                img.alt = type;
+                img.classList.add("dropdown-img");
+
+                const label = document.createElement("span");
+                label.textContent = type;
+
+                item.appendChild(img);
+                item.appendChild(label);
+
+                item.addEventListener("click", () => {
+                    selected.innerHTML = "";
+                    selected.appendChild(img.cloneNode());
+                    selected.appendChild(document.createTextNode(` ${type}`));
+                    hiddenInput.value = type;
+
+                    dropdownContainer.classList.remove("show");
+                    updateSizeOptions();
+                });
+
+                dropdownContainer.appendChild(item);
+            });
+
+            selected.addEventListener("click", () => {
+                dropdownContainer.classList.toggle("show");
+            });
+        });
+
+    function updateSizeOptions() {
+        const typeSelect = document.getElementById("happy-order-type");
+        const sizeSelect = document.getElementById("happy-order-size");
+        sizeSelect.innerHTML = "";
+
+        const selectedType = typeSelect.value;
+        if (typeData[selectedType]) {
+            typeData[selectedType].sizes.forEach(size => {
+                let option = document.createElement("option");
+                option.value = size.toLowerCase();
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        }
+    }
+
+    document.getElementById("happy-order-type").addEventListener("change", updateSizeOptions);
+
+    addToCartBtn.addEventListener("click", () => {
+        const type = document.getElementById("happy-order-type").value;
+        const size = document.getElementById("happy-order-size").value;
+
+        if (!type || !size) {
+            alert("Seleziona un prodotto e una taglia");
+            return;
+        }
+
+        cart = [];
+        cart.push({
+            type,
+            size
+        });
+
+        updateCart();
+    });
+
+    function updateCart() {
+        cartList.innerHTML = "";
+        if (cart.length === 0) {
+            cartList.innerHTML = "<p>Nessun prodotto selezionato</p>";
+            return;
+        }
+
+        const item = cart[0];
+        
+        let itemImage = document.createElement("img");
+        itemImage.classList.add("itemImage");
+        itemImage.src = typeData[item.type].image;
+        itemImage.alt = item.type;
+
+        let itemDiv = document.createElement("div");
+        itemDiv.classList.add("itemDiv");
+
+        let itemInternalDiv = document.createElement("div");
+        itemInternalDiv.classList.add("itemInternalDiv");
+
+        let itemTitle = document.createElement("p");
+        itemTitle.classList.add("itemTitle");
+        itemTitle.textContent = item.type;
+
+        let itemSize = document.createElement("p");
+        itemSize.classList.add("itemSize");
+        itemSize.textContent = `Taglia: ${item.size}`;
+
+        let removeBtn = document.createElement("button");
+        removeBtn.textContent = "Rimuovi";
+        removeBtn.classList.add("remove");
+        removeBtn.addEventListener("click", () => {
+            cart = [];
+            updateCart();
+        });
+
+        itemInternalDiv.appendChild(itemTitle);
+        itemInternalDiv.appendChild(itemSize);
+        itemInternalDiv.appendChild(removeBtn);
+
+        itemDiv.appendChild(itemImage);
+        itemDiv.appendChild(itemInternalDiv);
+
+        cartList.appendChild(itemDiv);
+    }
+
+    sendOrderBtn.addEventListener("click", async () => {
+        if (cart.length === 0) {
+            alert("Il carrello è vuoto!");
+            return;
+        }
+
+        const recaptchaResponse = grecaptcha.getResponse(recaptchaHappyOrderWidgetId);
+        if (!recaptchaResponse) {
+            alert("Completa il reCAPTCHA.");
+            return;
+        }
+
+        const name = document.getElementById("happy-order-name").value;
+        const surname = document.getElementById("happy-order-surname").value;
+        const email = document.getElementById("happy-order-email").value;
+        const partialPhone = document.getElementById("happy-order-phone").value;
+        const phone = `+39${partialPhone}`;
+        const shop = "stadio";
+
+        if (!name || !surname || !email || !partialPhone) {
+            alert("Compila tutti i campi obbligatori.");
+            return;
+        }
+
+        sendOrderBtn.disabled = true;
+        sendOrderBtn.textContent = "Invio in corso...";
+
+        const formattedCart = cart.map(item => ({
+            quantity: 1,  // Always set to 1
+            type: item.type,
+            size: item.size,
+            price: 0      // Always set to 0
+        }));
+
+        const orderData = {
+            name,
+            surname,
+            email,
+            phone,
+            shop,
+            cart: formattedCart,  // Use the formatted cart
+            recaptchaResponse,
+        };
+
+        try {
+            const response = await fetch("https://api.cicciosburger.it/api/generate-happy-order-number", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(orderData),
+            });
+
+            if (!response.ok) {
+                throw new Error("Errore nell'invio dell'ordine.");
+            }
+
+            const orderNumber = await response.text();
+
+            document.getElementById("happyOrderContainer").style.display = "none";
+
+            const confirmationMessage = document.getElementById("happy-confirmationMessage");
+            const orderNumberDisplay = document.getElementById("happy-orderNumberDisplay");
+            orderNumberDisplay.textContent = orderNumber;
+            confirmationMessage.style.display = "block";
+
+            document.getElementById("happy-newOrderButton").addEventListener("click", () => {
+                resetOrderModal();
+            });
+        } catch (error) {
+            console.error("Errore nell'invio dell'ordine:", error);
+            alert("Si è verificato un errore durante l'invio dell'ordine. Riprova più tardi.");
+        } finally {
+            sendOrderBtn.disabled = false;
+            sendOrderBtn.textContent = "Invia Ordine";
+        }
+    });
+
+    function resetOrderModal() {
+        document.getElementById("happyOrderContainer").style.display = "block";
+        document.getElementById("happy-confirmationMessage").style.display = "none";
+        cart = [];
+        updateCart();
+        document.getElementById("happyOrderForm").reset();
+        document.querySelector("#happy-custom-type-select .selected").innerHTML = "Seleziona un prodotto";
+        document.getElementById("happy-order-type").value = "";
+        document.getElementById("happy-order-size").innerHTML = "";
+    }
 });

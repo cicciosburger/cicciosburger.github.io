@@ -104,7 +104,7 @@
 
   .modal-content {
       background-color: #fff;
-      margin: 5% auto;
+      margin: 2% auto;
       padding: 10px;
       border-radius: 10px;
       width: 95%;
@@ -154,7 +154,7 @@
   }
 
   .menu-item-info {
-    width: 100%;
+      width: 100%;
       display: grid;
       grid-template-areas:
           "product-title product-title product-price"
@@ -336,6 +336,7 @@
       .location-grid {
           flex-direction: column;
       }
+      
   }
 
   .slot {
@@ -447,8 +448,8 @@
       font-size: 36px;
       font-weight: bold;
       position: absolute;
-      right: 20px;
-      top: 20px;
+      right: 60px;
+      top: 30px;
       cursor: pointer;
   }
 
@@ -459,6 +460,18 @@
       cursor: pointer;
   }
 
+  @media (max-width:800px) {
+    .close-modal {
+      color: #ccc;
+      font-size: 36px;
+      font-weight: bold;
+      position: absolute;
+        right: 10px;
+      top: 10px;
+      cursor: pointer;
+  }
+    
+  }
   /* ---- MEMBERSHIP ---- */
 
   #cookieMsg {
@@ -673,7 +686,7 @@
   /* ORDER FORM */
 
   /* Primary Button */
-  .orderModal button {
+  .orderModal button, .orderModal button {
       color: white;
       padding: 12px 20px;
       border: none;
@@ -684,13 +697,13 @@
   }
 
   /* Modal Background */
-  .orderModal {
+  .orderModal, .orderModal  {
       z-index: 10;
   }
 
 
   /* Form Container */
-  .orderModal .order-container {
+  .orderModal .order-container, .orderModal .order-container{
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -698,7 +711,7 @@
   }
 
   /* Form */
-  .orderModal #orderForm {
+  .orderModal #orderForm, .orderModal #happyOrderForm{
       width: 95%;
       display: flex;
       flex-direction: column;
@@ -706,7 +719,7 @@
   }
 
   /* Labels */
-  .orderModal label {
+  .orderModal label, .orderModal label {
       font-weight: bold;
       color: #333;
       font-size: 0.95rem;
@@ -715,20 +728,20 @@
       display: block;
   }
 
-  .orderModal .selector {
+  .orderModal .selector, .orderModal .selector {
       border: 1px solid #ccc;
       border-radius: 6px;
       padding: 5px;
   }
 
-  .orderModal .selector label {
+  .orderModal .selector label, .orderModal .selector label {
       margin-bottom: 5px;
       margin-top: 5px;
   }
 
   /* Input Fields */
   .orderModal input,
-  select {
+  select , .orderModal input{
       width: 100%;
       padding: 10px;
       border: 1px solid #ddd;
@@ -741,13 +754,15 @@
   }
 
   .orderModal input:focus,
+  .orderModal select:focus,
+  .orderModal input:focus,
   .orderModal select:focus {
       border-color: #007bff;
       box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
   }
 
   /* Add to Cart Button */
-  .orderModal #addToCart {
+  .orderModal #addToCart, .orderModal #happy-addToCart{
       margin-top: 20px;
       background-color: #28a745;
       width: 100%;
@@ -755,12 +770,12 @@
       padding-bottom: 6px;
   }
 
-  .orderModal #addToCart:hover {
+  .orderModal #addToCart:hover, .orderModal #happy-addToCart:hover {
       background-color: #218838;
   }
 
   /* Cart Section */
-  .orderModal #cart {
+  .orderModal #cart, .orderModal #happy-cart {
       width: 95%;
       list-style-type: none;
       padding: 0px;
@@ -772,7 +787,7 @@
   }
 
   /* Cart Items */
-  .orderModal .itemDiv {
+  .orderModal .itemDiv, .orderModal .itemDiv {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -786,7 +801,7 @@
   }
 
   /* Cart Item Details */
-  .orderModal .itemQuantity {
+  .orderModal .itemQuantity, .orderModal .itemQuantity {
       font-weight: bold;
       color: #333;
       padding: 5px 10px;
@@ -797,27 +812,27 @@
       background-color: #e1e1e1;
   }
 
-  .orderModal .itemInternalDiv {
-    margin-top:10px;
-    align-self: self-start;
+  .orderModal .itemInternalDiv, .orderModal .itemInternalDiv {
+      margin-top: 10px;
+      align-self: self-start;
       flex-grow: 1;
       text-align: left;
       padding: 0 10px;
   }
 
-  .orderModal .itemTitle {
+  .orderModal .itemTitle, .orderModal .itemTitle {
       font-size: 1rem;
       font-weight: bold;
       color: #444;
   }
 
-  .orderModal .itemSize {
+  .orderModal .itemSize, .orderModal .itemSize {
       font-size: 0.9rem;
       color: #666;
   }
 
   /* Remove Button */
-  .orderModal .remove {
+  .orderModal .remove, .orderModal .remove {
       background-color: #ff4d4d;
       color: white;
       border: none;
@@ -831,34 +846,34 @@
       transition: 0.3s ease-in-out;
   }
 
-  .orderModal .remove:hover {
+  .orderModal .remove:hover, .orderModal  .remove:hover {
       background-color: #cc0000;
   }
 
   /* Submit Button */
   #sendOrder,
-  #newOrderButton {
+  #newOrderButton, #happy-sendOrder, #happy-newOrderButton {
       margin-top: 20px;
       background-color: black;
       width: 95%;
   }
 
   #sendOrder:hover,
-  #newOrderButton {
+  #newOrderButton, #happy-sendOrder:hover, #happy-newOrderButton {
       background-color: black;
   }
 
-  .orderModal .itemTitle {
+  .orderModal .itemTitle, .orderModal .itemTitle {
       margin-top: 0px;
       margin-bottom: 0px;
   }
 
-  .orderModal .itemSize {
+  .orderModal .itemSize, .orderModal .itemSize {
       margin-top: 0px;
       margin-bottom: 0px;
   }
 
-  #recaptcha-container-order {
+  #recaptcha-container-order, #happy-recaptcha-container-order {
       margin-top: 20px;
   }
 
@@ -869,7 +884,7 @@
       /* Ensure it is not transparent */
   }
 
-  #confirmationMessage {
+  #confirmationMessage, #happy-confirmationMessage {
       display: none;
       /* Hidden by default */
   }
@@ -888,165 +903,253 @@
   .order-phone-container {
       max-width: 100%;
   }
+
   .switch-container {
-    display: flex;
-    align-items: center center;
-    gap: 10px;
-    margin: 10px;
-    margin-left:2px;
-    font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center center;
+      gap: 10px;
+      margin: 10px;
+      margin-left: 2px;
+      font-family: 'Segoe UI', sans-serif;
   }
+
   .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 28px;
   }
+
   .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+      opacity: 0;
+      width: 0;
+      height: 0;
   }
+
   .slider {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
-    border-radius: 34px;
-    transition: background-color 0.4s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: background-color 0.4s;
   }
+
   .slider:before {
-    content: "";
-    position: absolute;
-    height: 22px;
-    width: 22px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    border-radius: 50%;
-    transition: transform 0.4s;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      content: "";
+      position: absolute;
+      height: 22px;
+      width: 22px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.4s;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   }
-  .switch input:checked + .slider {
-    background-color: #4cd964;
+
+  .switch input:checked+.slider {
+      background-color: #4cd964;
   }
-  .switch input:checked + .slider:before {
-    transform: translateX(22px);
+
+  .switch input:checked+.slider:before {
+      transform: translateX(22px);
   }
+
   .ingredient-detail {
-    opacity: 0;
-    height: 0;
-    width: 100%;
-    grid-area: product-description;
-    overflow: hidden;
-    transition: opacity 0.4s ease, height 0.4s ease;
+      opacity: 0;
+      height: 0;
+      width: 100%;
+      grid-area: product-description;
+      overflow: hidden;
+      transition: opacity 0.4s ease, height 0.4s ease;
   }
+
   .ingredient-detail.show {
-    opacity: 1;
-    height: auto;
+      opacity: 1;
+      height: auto;
   }
+
   .ingredient-row {
-    /* background: white; */
-    border: 1px solid grey;
-    padding: 4px 4px;
-    border-radius: 8px;
-    margin: 4px 0;
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
+      /* background: white; */
+      border: 1px solid grey;
+      padding: 4px 4px;
+      border-radius: 8px;
+      margin: 4px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
   }
-  .ingredient-row span{
-    font-size: 0.85rem;
-    color: #555;
-    margin-left:2px;
+
+  .ingredient-row span {
+      font-size: 0.85rem;
+      color: #555;
+      margin-left: 2px;
   }
+
   .ingredient-row .allergens {
-    color: #666;
-    font-size: 12px;
-    text-align: right;
-    margin-right:2px;
+      color: #666;
+      font-size: 12px;
+      text-align: right;
+      margin-right: 2px;
   }
 
   /* new code image on form */
 
-/* Mantiene lo stile coerente con gli altri campi */
-.custom-select {
-    position: relative;
-    width: 100%;
-    padding: 10px; /* come gli input */
-    border: 1px solid #ddd; /* come .orderModal */
-    border-radius: 6px;
-    font-size: 1rem;
-    outline: none;
-    transition: 0.2s ease-in-out;
-    box-sizing: border-box;
-    background-color: #fff;
-    cursor: pointer;
+  /* Mantiene lo stile coerente con gli altri campi */
+  .custom-select {
+      position: relative;
+      width: 100%;
+      padding: 10px;
+      /* come gli input */
+      border: 1px solid #ddd;
+      /* come .orderModal */
+      border-radius: 6px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s ease-in-out;
+      box-sizing: border-box;
+      background-color: #fff;
+      cursor: pointer;
+  }
+
+  /* Elemento selezionato */
+  .custom-select .selected {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+
+  /* Dropdown */
+  .custom-select .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 2px);
+      /* piccola distanza dal campo */
+      left: 0;
+      width: 100%;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      z-index: 1000;
+      max-height: 300px;
+      overflow-y: auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Dropdown visibile */
+  .custom-select .dropdown.show {
+      display: block;
+  }
+
+  /* Oggetto del dropdown */
+  .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      transition: background 0.2s ease-in-out;
+      font-size: 1rem;
+      cursor: pointer;
+  }
+
+  .dropdown-item:hover {
+      background: #f5f5f5;
+  }
+
+  /* Immagini nei dropdown */
+  .dropdown-item img,
+  .custom-select .selected img {
+      width: 100px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+  }
+
+  .itemImage {
+      width: 200px;
+      height: auto;
+      margin: 0 10px;
+      margin-left: 10px;
+      border-radius: 8px;
+      object-fit: cover;
+      -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+      mask-image: linear-gradient(to right, black 90%, transparent 100%);
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+  }
+
+  .collapsible.active::after {
+      content: '-';
+  }
+
+  .menu-grid.content.expanded {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      max-height: 2000px;
+      /* Arbitrary large value */
+      opacity: 1;
+  }
+
+
+  .collapsible {
+      cursor: pointer;
+      width: 100%;
+      transition: 0.4s;
+      margin-top: 2px;
+  }
+
+  .collapsible {
+      /* Your existing collapsible styles */
+      transition: all 0.3s ease;
+      margin-bottom: 0;
+      /* Remove any bottom margin */
+  }
+
+  .menu-grid.content {
+      padding: 0 5px;
+      box-sizing: border-box;
+      overflow: hidden;
+      transition:
+          max-height 0.3s ease,
+          opacity 0.2s ease,
+          padding-top 0.3s ease,
+          padding-bottom 0.3s ease;
+  }
+
+  #map {
+      margin: 0 auto;
+      height: 400px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+
+
+  .marker-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Elemento selezionato */
-.custom-select .selected {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.marker-label {
+  /* background: black; */
+  color: black;
+  /* padding: 2px 6px; */
+  /* border-radius: 4px; */
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.2); */
 }
 
-/* Dropdown */
-.custom-select .dropdown {
-    display: none;
-    position: absolute;
-    top: calc(100% + 2px); /* piccola distanza dal campo */
-    left: 0;
-    width: 100%;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    z-index: 1000;
-    max-height: 300px;
-    overflow-y: auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Dropdown visibile */
-.custom-select .dropdown.show {
-    display: block;
-}
-
-/* Oggetto del dropdown */
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    transition: background 0.2s ease-in-out;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.dropdown-item:hover {
-    background: #f5f5f5;
-}
-
-/* Immagini nei dropdown */
-.dropdown-item img,
-.custom-select .selected img {
-    width: 100px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 6px;
-    flex-shrink: 0;
-}
-
- .itemImage {
-     width: 200px;
-     height: auto;
-     margin: 0 10px;
-     margin-left: 10px;
-    border-radius: 8px;
-    object-fit: cover;
-    -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
-    mask-image: linear-gradient(to right, black 90%, transparent 100%);
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+.marker-img {
+  width: 80px;
+  height: 40px;
 }
