@@ -23,6 +23,102 @@
         "LOCALE",
         "FOODTRUCK"
       ]
+    },
+    {
+      "title": "NUGGETS",
+      "price": "da 2,70€",
+      "ingredients": "bocconcini di pollo tritato pastellati fatti a mano*",
+      "allergens": {
+        "Allergeni": "Glutine, Latte"
+      },
+      "thumb": "./img/menu/starters/nuggets.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "CHICKEN POP CORN",
+      "price": "da 2,70€",
+      "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante*",
+      "allergens": {
+        "Allergeni": "Glutine, Latte"
+      },
+      "thumb": "./img/menu/starters/chickenpopcorn.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "MEAT BALLS",
+      "price": "da 2,70€",
+      "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio*",
+      "allergens": {
+        "Allergeni": "Glutine, Uova, Latte"
+      },
+      "thumb": "./img/menu/starters/meatball.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "PROVOLA GOAT",
+      "price": 4.5,
+      "ingredients": "provola dolce con tripla pastellatura a mano*",
+      "allergens": {
+        "Allergeni": "Glutine, Latte"
+      },
+      "thumb": "./img/menu/starters/provolagoat.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "ALETTE CRUNCHY",
+      "price": "da 2,70€",
+      "ingredients": "Alette di pollo pastellate e fritte laccate con salsa thai",
+      "allergens": {
+        "Allergeni": "Glutine, Senape"
+      },
+      "thumb": "./img/menu/starters/alettecrunchy.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "GREEN NUGGETS VEGGIE",
+      "price": "da 2,70€",
+      "ingredients": "nuggets vegetali",
+      "allergens": {
+        "Allergeni": "Uova, Soia, Latte, Sedano, Senape, Glutine"
+      },
+      "thumb": "./img/menu/starters/greennuggets.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "GREEN BALL VEGGIE",
+      "price": "da 2,70€",
+      "ingredients": "polpettine vegetali*",
+      "allergens": {
+        "Allergeni": "Uova, Soia, Latte, Anidride solforosa e solfiti, Glutine"
+      },
+      "thumb": "./img/menu/starters/greenball.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "LINGOTTI 2PZ",
+      "price": 4.5,
+      "ingredients": "Maxi nuggets di pollo con panatura super croccante* accompagnato con cheddar calda",
+      "allergens": {
+        "Allergeni": "Glutine, Latte"
+      },
+      "thumb": "./img/menu/starters/lingotti.webp",
+      "available_in": [
+        "LOCALE"
+      ]
     }
   ],
   "CICCIO'S BURGER": [
@@ -548,7 +644,7 @@
   "MENU": [
     {
       "title": "HAPPY CICCIO'S ",
-      "price": 6.9,
+      "price": 7.9,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/classic/happynuovo.webp",
@@ -558,7 +654,7 @@
     },
     {
       "title": "HAMBURGER MENU",
-      "price": 9,
+      "price": 10,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/classic/hamburger.webp",
@@ -568,7 +664,7 @@
     },
     {
       "title": "CHEESEBURGER MENU ",
-      "price": 9.4,
+      "price": 10.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/classic/cheeseburger.webp",
@@ -578,7 +674,7 @@
     },
     {
       "title": "BACON CHEESEBURGER MENU",
-      "price": 11.4,
+      "price": 12.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
@@ -588,7 +684,7 @@
     },
     {
       "title": "AMERICAN BACONCHEESE MENU",
-      "price": 11.4,
+      "price": 12.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
@@ -598,7 +694,7 @@
     },
     {
       "title": "BRIE MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
@@ -608,7 +704,7 @@
     },
     {
       "title": "CHICKEN CBT MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/chickencbt.webp",
@@ -618,7 +714,7 @@
     },
     {
       "title": "CRISPY GOAT MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/crispygoat.webp",
@@ -628,7 +724,7 @@
     },
     {
       "title": "DOUBLE TRIPLE MENU",
-      "price": 14.4,
+      "price": 15.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/doubletriple.webp",
@@ -638,7 +734,7 @@
     },
     {
       "title": "EGG MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/egg.webp",
@@ -648,7 +744,7 @@
     },
     {
       "title": "GREEN MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
@@ -658,7 +754,7 @@
     },
     {
       "title": "OLD SCHOOL MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/oldschool.webp",
@@ -668,7 +764,7 @@
     },
     {
       "title": "PANCETTA MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/pancetta.webp",
@@ -678,7 +774,7 @@
     },
     {
       "title": "PORCHETTA MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/porchetta.webp",
@@ -688,7 +784,7 @@
     },
     {
       "title": "SUPER CRISPY MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/supercrispy.webp",
@@ -698,7 +794,7 @@
     },
     {
       "title": "TALE' MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/tale.webp",
@@ -708,7 +804,7 @@
     },
     {
       "title": "TUMA MENU",
-      "price": 12.4,
+      "price": 13.4,
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/tuma.webp",
