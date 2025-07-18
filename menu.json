@@ -206,6 +206,19 @@
         "LOCALE",
         "FOODTRUCK"
       ]
+    },
+    {
+      "title": "CALABRESE",
+      "price": 9.9,
+      "ingredients": "bun, burger di manzo 170g, pecorino al peperoncino, cipolla caramellata alla birra, nduja, giri saltati, gocce di peperoncino",
+      "allergens": {
+        "Allergeni": "Glutine, Uova, Latte"
+      },
+      "thumb": "./img/menu/ciccios/calabrese.webp",
+      "available_in": [
+        "LOCALE",
+        "FOODTRUCK"
+      ]
     }
   ],
   "CLASSIC BURGER": [
@@ -260,6 +273,189 @@
         "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
       },
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
+      "available_in": [
+        "LOCALE",
+        "FOODTRUCK"
+      ]
+    }
+  ],
+  "MENU": [
+    {
+      "title": "HAPPY CICCIO'S ",
+      "price": 6.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/happc-1.png",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "HAMBURGER MENU",
+      "price": 9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/hamburger.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "CHEESEBURGER MENU ",
+      "price": 9.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/cheeseburger.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "BACON CHEESEBURGER MENU",
+      "price": 11.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/baconcheeseburger.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "AMERICAN BACONCHEESE MENU",
+      "price": 11.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/americanbaconcheese.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "BRIE MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/brie.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "CHICKEN CBT MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/chickencbt.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "CRISPY GOAT MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/crispygoat.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "DOUBLE TRIPLE MENU",
+      "price": 14.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/doubletriple.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "EGG MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/egg.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "GREEN MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/brie.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "OLD SCHOOL MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/oldschool.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "PANCETTA MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/pancetta.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "PORCHETTA MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/porchetta.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "SUPER CRISPY MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/supercrispy.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "TALE' MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/tale.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "TUMA MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/tuma.webp",
+      "available_in": [
+        "LOCALE"
+      ]
+    },
+    {
+      "title": "CALABRESE MENU",
+      "price": 12.4,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/calabrese.webp",
       "available_in": [
         "LOCALE",
         "FOODTRUCK"
@@ -544,177 +740,5 @@
         "LOCALE"
       ]
     }
-  ],
-  "MENU": [
-    {
-      "title": "HAPPY CICCIO'S ",
-      "price": 6.9,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/classic/happc-1.png",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "HAMBURGER MENU",
-      "price": 9,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/classic/hamburger.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "CHEESEBURGER MENU ",
-      "price": 9.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/classic/cheeseburger.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "BACON CHEESEBURGER MENU",
-      "price": 11.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/classic/baconcheeseburger.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "AMERICAN BACONCHEESE MENU",
-      "price": 11.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/classic/americanbaconcheese.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "BRIE MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/brie.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "CHICKEN CBT MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/chickencbt.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "CRISPY GOAT MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/crispygoat.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "DOUBLE TRIPLE MENU",
-      "price": 14.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/doubletriple.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "EGG MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/egg.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "GREEN MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/brie.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "OLD SCHOOL MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/oldschool.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "PANCETTA MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/pancetta.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "PORCHETTA MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/porchetta.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "SUPER CRISPY MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/supercrispy.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "TALE' MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/tale.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    },
-    {
-      "title": "TUMA MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/tuma.webp",
-      "available_in": [
-        "LOCALE"
-      ]
-    }
-  ]
+  ]  
 }

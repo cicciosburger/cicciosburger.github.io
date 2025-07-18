@@ -110,6 +110,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 "tzatziki": "Latte",
                 "grana": "Latte",
                 "roast beef": null,
+                "pecorino al peperoncino":"Latte",
+                "cipolla caramellata alla birra":"Glutine", 
+                "nduja":null, 
+                "giri saltati":null, 
+                "gocce di peperoncino":null
             };
 
     // Allergeni icons map (keep your existing one)
