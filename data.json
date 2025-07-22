@@ -10,7 +10,7 @@
     "image": "img/shop/cicciosMenuBianco.png"
   },
   "Tshirt Menu Nera": {
-    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "sizes": ["S", "M", "L", "XXL"],
     "price": 14.90,
     "image": "img/shop/cicciosMenuNero.png"
   },
