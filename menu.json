@@ -20,9 +20,7 @@
       },
       "thumb": "./img/menu/starters/baconcheesefries.webp",
       "available_in": [
-        "LOCALE",
-        "FOODTRUCK"
-      ]
+        "LOCALE"      ]
     },
     {
       "title": "ALETTE CRUNCHY",
@@ -299,7 +297,8 @@
       "allergens": null,
       "thumb": "./img/menu/classic/happc-1.png",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -309,7 +308,8 @@
       "allergens": null,
       "thumb": "./img/menu/classic/hamburger.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -319,7 +319,8 @@
       "allergens": null,
       "thumb": "./img/menu/classic/cheeseburger.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -329,7 +330,8 @@
       "allergens": null,
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -339,7 +341,8 @@
       "allergens": null,
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -349,7 +352,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -359,7 +363,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/chickencbt.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -369,7 +374,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/crispygoat.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -379,7 +385,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/doubletriple.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -389,7 +396,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/egg.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -399,7 +407,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -409,7 +418,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/oldschool.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -419,7 +429,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/pancetta.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -429,7 +440,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -439,7 +451,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/supercrispy.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -449,7 +462,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/tale.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -459,7 +473,8 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
-        "LOCALE"
+        "LOCALE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -651,9 +666,7 @@
       },
       "thumb": "./img/menu/salse/salsacheddar170.webp",
       "available_in": [
-        "LOCALE",
-        "FOODTRUCK"
-      ]
+        "LOCALE"      ]
     },
     {
       "title": "THAI 60ML",
@@ -664,9 +677,7 @@
       },
       "thumb": "./img/menu/salse/thai.webp",
       "available_in": [
-        "LOCALE",
-        "FOODTRUCK"
-      ]
+        "LOCALE"      ]
     },
     {
       "title": "HOT THAI 60ML",
@@ -677,9 +688,7 @@
       },
       "thumb": "./img/menu/salse/hotthai.webp",
       "available_in": [
-        "LOCALE",
-        "FOODTRUCK"
-      ]
+        "LOCALE"      ]
     },
     {
       "title": "SALSA CICCIO'S 25gr",
