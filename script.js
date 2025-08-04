@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
             generateMenu('menuModal', 'LOCALE');
             generateMenu('foodtruck', 'FOODTRUCK');
             generateMenu('ghiotto', 'GHIOTTO');
+            generateMenu('menuSpeciale', 'SPECIALE');
         })
         .catch(error => console.error('Error loading menu:', error));
 
@@ -200,6 +201,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         else if(modalId == 'foodtruck'){
             contentId='generatedContentFoodtruck'
+        }
+        else if(modalId == 'menuSpeciale'){
+            contentId='generatedContentMenuSpeciale'
         }
         else{
             contentId='generatedContentGhiotto'
@@ -393,6 +397,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         else if(modalId == 'foodtruck'){
             toggleId = 'toggleIngredientsFoodtruck'
+        }
+        else if(modalId == 'menuSpeciale'){
+            toggleId = 'toggleIngredientsMenuSpeciale'
         }
         else{
             toggleId = 'toggleIngredientsGhiotto'
