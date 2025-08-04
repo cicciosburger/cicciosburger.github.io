@@ -761,5 +761,176 @@
         "LOCALE"
       ]
     }
-  ]  
+  ],
+  "PANINI": [
+    {
+      "title": "BRIE",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/brie.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "TALÈ",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Frutta a guscio, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/tale.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "EGG",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/egg.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "TUMA",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/tuma.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "PANCETTA",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte, Senape, Anidride solforosa e solfiti",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/pancetta.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "DOUBLE TRIPLE",
+      "price": null,
+      "ingredients": "bun, doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/doubletriple.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "CHICKEN CBT",
+      "price": null,
+      "ingredients": "bun, sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/chickencbt.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "OLD SCHOOL",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/oldschool.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "PORCHETTA",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/porchetta.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "HAMBURGER",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/hamburger.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "CHEESEBURGER",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, cheddar, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/cheeseburger.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "BACON CHEESEBURGER",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/baconcheeseburger.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "AMERICAN BACONCHEESE",
+      "price": null,
+      "ingredients": "bun, burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/americanbaconcheese.webp",
+      "available_in": [
+        "SPECIALE"
+      ]
+    }
+  ] 
 }
