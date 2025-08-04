@@ -46,6 +46,8 @@ marker.on('click', () => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    
     // Allergeni map (keep your existing one)
     const allergeniIngredientiMap = {
                 "bun": "Glutine, Uova",
@@ -61,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Maxi nuggets di pollo con panatura super croccante* accompagnato con cheddar calda": "Glutine, Latte",
                 "polpettine vegetali*": "Uova, Soia, Latte, Anidride solforosa e solfiti, Glutine",
                 "burger di manzo 170g": "Latte(Senza lattosio), Glutine, Uova",
+                "burger di manzo": "Latte(Senza lattosio), Glutine, Uova",
                 "doppio burger di manzo 170g": "Latte(Senza lattosio), Glutine, Uova",
                 "burger di pollo pastellato e fritto": "Latte(Senza lattosio), Glutine",
                 "burger di pollo fritto con panatura super croccante": "Latte(Senza lattosio), Glutine",
@@ -186,7 +189,25 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             menuData = data;
             // Generate both menus immediately
-            generateMenu('menuModal', 'LOCALE');
+            let currentStore = "LUMIA";
+            generateMenu('menuModal', currentStore);
+
+            // Gestione click su bottoni
+            const storeButtons = document.querySelectorAll('.store-button');
+            storeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedStore = button.getAttribute('data-store');
+                currentStore = selectedStore;
+
+                // Rimuove "active" da tutti
+                storeButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Rigenera il menu
+                generateMenu('menuModal', currentStore);
+            });
+            });
+            ;
             generateMenu('foodtruck', 'FOODTRUCK');
             generateMenu('ghiotto', 'GHIOTTO');
             generateMenu('menuSpeciale', 'SPECIALE');

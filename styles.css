@@ -1159,3 +1159,83 @@
   width: 80px;
   height: 40px;
 }
+
+
+/* switch store */
+.store-switcher {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+}
+
+.store-button {
+  flex: 1 1 0;
+  padding: 10px;
+  border-radius: 999px;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.store-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 999px;
+  background-color: black;
+  z-index: 1;
+  width: 0;
+  transform: translateX(0);
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.3s ease-in-out;
+}
+.store-switcher-wrapper {
+  overflow-x: auto;
+  padding: 10px;
+}
+.store-switcher {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.store-button {
+  flex: 1 1 0;
+  padding: clamp(6px, 2vw, 10px);
+  border-radius: 999px;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  font-weight: bold;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  z-index: 2;
+  overflow: hidden;
+  min-width: 0; /* Allows shrinking */
+}
+
+.store-button.active {
+  background-color: black;
+  color: white;
+  /* transform: scale(1.03); */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}

@@ -7,7 +7,10 @@
       "allergens": null,
       "thumb": "./img/menu/starters/fries.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -20,7 +23,11 @@
       },
       "thumb": "./img/menu/starters/baconcheesefries.webp",
       "available_in": [
-        "LOCALE"      ]
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"      
+      ]
     },
     {
       "title": "ALETTE CRUNCHY",
@@ -31,7 +38,10 @@
       },
       "thumb": "./img/menu/starters/alettecrunchy.webp",
       "available_in": [
-        "LOCALE"
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"
       ]
     }
   ],
@@ -46,7 +56,10 @@
       },
       "thumb": "./img/menu/ciccios/crispygoat.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -60,7 +73,10 @@
       },
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -74,7 +90,10 @@
       },
       "thumb": "./img/menu/ciccios/tale.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -88,7 +107,10 @@
       },
       "thumb": "./img/menu/ciccios/egg.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -102,7 +124,10 @@
       },
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -116,7 +141,10 @@
       },
       "thumb": "./img/menu/ciccios/pancetta.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -130,7 +158,10 @@
       },
       "thumb": "./img/menu/ciccios/doubletriple.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -144,7 +175,10 @@
       },
       "thumb": "./img/menu/ciccios/supercrispy.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -158,7 +192,10 @@
       },
       "thumb": "./img/menu/ciccios/chickencbt.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -172,7 +209,10 @@
       },
       "thumb": "./img/menu/ciccios/green.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -186,7 +226,10 @@
       },
       "thumb": "./img/menu/ciccios/oldschool.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -200,7 +243,10 @@
       },
       "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -213,7 +259,10 @@
       },
       "thumb": "./img/menu/ciccios/paninoestate-nobg.png",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -226,7 +275,10 @@
       },
       "thumb": "./img/menu/ciccios/calabrese.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     }
@@ -242,7 +294,10 @@
       },
       "thumb": "./img/menu/classic/hamburger.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -256,7 +311,10 @@
       },
       "thumb": "./img/menu/classic/cheeseburger.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -270,7 +328,10 @@
       },
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -284,7 +345,10 @@
       },
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     }
@@ -297,7 +361,10 @@
       "allergens": null,
       "thumb": "./img/menu/classic/happc-1.png",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -308,7 +375,10 @@
       "allergens": null,
       "thumb": "./img/menu/classic/hamburger.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -319,7 +389,10 @@
       "allergens": null,
       "thumb": "./img/menu/classic/cheeseburger.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -330,7 +403,10 @@
       "allergens": null,
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -341,7 +417,10 @@
       "allergens": null,
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -352,7 +431,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -363,7 +445,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/chickencbt.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -374,7 +459,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/crispygoat.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -385,7 +473,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/doubletriple.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -396,7 +487,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/egg.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -407,7 +501,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -418,7 +515,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/oldschool.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -429,7 +529,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/pancetta.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -440,7 +543,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -451,7 +557,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/supercrispy.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -462,7 +571,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/tale.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -473,7 +585,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -484,7 +599,10 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/calabrese.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     }
@@ -497,7 +615,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/acquanaturale.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -508,7 +629,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/acquafrizzante.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -519,7 +643,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/tepesca.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -530,7 +657,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/telimone.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -541,7 +671,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/sprite.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -552,7 +685,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/fanta.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -563,7 +699,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/cocanormale.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -574,7 +713,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/cocazero.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -585,7 +727,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/chinotto.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -596,7 +741,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/heineken.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -607,7 +755,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/hippanabianca.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -618,7 +769,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/hippanabionda.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -629,7 +783,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/hippanarossa.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -640,7 +797,10 @@
       "allergens": null,
       "thumb": "./img/menu/bibite/hippanaambrata.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     }
@@ -653,7 +813,10 @@
       "allergens": null,
       "thumb": "./img/menu/salse/maioneseciccios.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -666,7 +829,10 @@
       },
       "thumb": "./img/menu/salse/salsacheddar170.webp",
       "available_in": [
-        "LOCALE"      ]
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"      ]
     },
     {
       "title": "THAI 60ML",
@@ -677,7 +843,10 @@
       },
       "thumb": "./img/menu/salse/thai.webp",
       "available_in": [
-        "LOCALE"      ]
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"      ]
     },
     {
       "title": "HOT THAI 60ML",
@@ -688,7 +857,10 @@
       },
       "thumb": "./img/menu/salse/hotthai.webp",
       "available_in": [
-        "LOCALE"      ]
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"      ]
     },
     {
       "title": "SALSA CICCIO'S 25gr",
@@ -697,7 +869,10 @@
       "allergens": null,
       "thumb": "./img/menu/salse/salsaciccios.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -708,7 +883,10 @@
       "allergens": null,
       "thumb": "./img/menu/salse/bbqciccios.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     },
@@ -719,7 +897,10 @@
       "allergens": null,
       "thumb": "./img/menu/salse/ketchupciccios.webp",
       "available_in": [
-        "LOCALE",
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
         "FOODTRUCK"
       ]
     }
@@ -734,7 +915,8 @@
       },
       "thumb": "./img/menu/dolci/kiss.webp",
       "available_in": [
-        "LOCALE"
+        "STADIO",
+        "MONDELLO"
       ]
     },
     {
@@ -746,7 +928,8 @@
       },
       "thumb": "./img/menu/dolci/tiramiciccios.webp",
       "available_in": [
-        "LOCALE"
+        "STADIO",
+        "MONDELLO"
       ]
     },
     {
@@ -758,11 +941,38 @@
       },
       "thumb": "./img/menu/dolci/brookies.webp",
       "available_in": [
-        "LOCALE"
+        "STADIO",
+        "MONDELLO"
       ]
     }
   ],
   "PANINI": [
+    {
+      "title": "HAPPY HAMBURGHER",
+      "price": null,
+      "ingredients": "bun, burger di manzo, bacon, lattuga, pomodoro, salsa a scelta",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/happc-1.png",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
+    {
+      "title": "HAPPY CHEESEBURGER",
+      "price": null,
+      "ingredients": "bun, burger di manzo, cheddar, bacon, lattuga, pomodoro, salsa a scelta",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/happc-1.png",
+      "available_in": [
+        "SPECIALE"
+      ]
+    },
     {
       "title": "BRIE",
       "price": null,
