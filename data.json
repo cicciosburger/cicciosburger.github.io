@@ -44,11 +44,6 @@
     "price": 29.90,
     "image": "img/shop/manichelungheciccios.png"
   },
-  "Tshirt Manica Corta Nera": {
-    "sizes": ["S", "M", "L", "XL"],
-    "price": 14.90,
-    "image": "img/shop/manichecorteciccios.png"
-  },
   "Felpa Nera": {
     "sizes": ["S", "M", "L", "XL"],
     "price": 43.90,
