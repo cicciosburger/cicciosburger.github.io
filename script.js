@@ -183,11 +183,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Global menu data
     let menuData = null;
 
-    // Load menu data
-    fetch('menu.json')
-        .then(response => response.json())
-        .then(data => {
-            menuData = data;
+    fetch('https://api.cicciosburger.it/menu/static/menu.json')
+    .then(response => {
+        if (!response.ok) throw new Error('Remote menu not available');
+        return response.json();
+    })
+    .catch(() => {
+        // Se il fetch remoto fallisce, tenta il locale
+        return fetch('menu.json').then(localRes => {
+        if (!localRes.ok) throw new Error('Fallback menu.json non trovato');
+        return localRes.json();
+        });
+    })
+    .then(data => {
+        menuData = data;
             // Generate both menus immediately
             let currentStore = "LUMIA";
             generateMenu('menuModal', currentStore);
