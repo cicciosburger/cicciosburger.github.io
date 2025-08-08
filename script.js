@@ -828,17 +828,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         throw new Error(error.message || "Errore nella prenotazione.");
       }
 
-      const resultText = await res.text(); // <-- perché è plain text, non JSON
+      const resultText = await res.text(); // <-- qui!
         console.log("Numero ordine:", resultText);
+
+        // Mostra messaggio di conferma
+        form.style.display = "none";
+        document.getElementById("confirmationMessage").style.display = "block";
         document.getElementById("orderNumberDisplay").textContent = resultText;
 
-
-      // Nascondi il form e mostra il messaggio di conferma
-      form.style.display = "none";
-      document.getElementById("confirmationMessage").style.display = "block";
-      document.getElementById("orderNumberDisplay").textContent = result.orderNumber || "(numero non disponibile)";
-
-      cart = [];
+        cart = [];
       renderCart();
     } catch (err) {
       console.error(err);
