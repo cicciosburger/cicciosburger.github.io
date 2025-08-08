@@ -684,257 +684,183 @@ function getCookie(name) {
 
 
 // ORDER FORM
-document.addEventListener("DOMContentLoaded", function () {
-    const addToCartBtn = document.getElementById("addToCart");
-    const sendOrderBtn = document.getElementById("sendOrder");
-    const cartList = document.getElementById("cart");
+document.addEventListener("DOMContentLoaded", async () => {
+  let merch = [];
+  let cart = [];
 
-    let cart = [];
-    let typeData = {}; // Store JSON data for types and sizes
+  // Caricamento prodotti
+  async function fetchMerch() {
+    try {
+      const response = await fetch("data.json");
+      const data = await response.json();
 
+      merch = Object.entries(data).map(([name, info], index) => ({
+        id: index + 1,
+        name,
+        price: info.price,
+        img: info.image,
+        sizes: info.sizes
+      }));
 
-    fetch("data.json")
-        .then(response => response.json())
-        .then(data => {
-            typeData = data;
-
-            const dropdownContainer = document.querySelector("#custom-type-select .dropdown");
-            const selected = document.querySelector("#custom-type-select .selected");
-            const hiddenInput = document.getElementById("order-type");
-
-            dropdownContainer.innerHTML = "";
-
-            Object.keys(typeData).forEach(type => {
-                const item = document.createElement("div");
-                item.classList.add("dropdown-item");
-
-                const img = document.createElement("img");
-                img.src = typeData[type].image;
-                img.alt = type;
-                img.classList.add("dropdown-img");
-
-                const label = document.createElement("span");
-                const price = typeData[type].price.toFixed(2);
-                label.textContent = `${type} - ${price}€`;
-
-                item.appendChild(img);
-                item.appendChild(label);
-
-                item.addEventListener("click", () => {
-                    selected.innerHTML = "";
-                    selected.appendChild(img.cloneNode());
-                    selected.appendChild(document.createTextNode(` ${type} - ${price}€`));
-                    hiddenInput.value = type;
-
-                    dropdownContainer.classList.remove("show");
-                    updateSizeOptions();
-                });
-
-                dropdownContainer.appendChild(item);
-            });
-
-            // Toggle the dropdown open/close
-            selected.addEventListener("click", () => {
-                dropdownContainer.classList.toggle("show");
-            });
-
-        });
-
-    function updateSizeOptions() {
-        const typeSelect = document.getElementById("order-type");
-        const sizeSelect = document.getElementById("order-size");
-        sizeSelect.innerHTML = "";
-
-        const selectedType = typeSelect.value;
-        if (typeData[selectedType]) {
-            typeData[selectedType].sizes.forEach(size => {
-                let option = document.createElement("option");
-                option.value = size.toLowerCase();
-                option.textContent = size;
-                sizeSelect.appendChild(option);
-            });
-        }
+      renderProducts();
+    } catch (err) {
+      console.error("Errore nel caricamento dei prodotti:", err);
     }
+  }
 
-    document.getElementById("order-type").addEventListener("change", updateSizeOptions);
+  function renderProducts() {
+    const container = document.getElementById("merch-products");
+    container.innerHTML = "";
+    merch.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "merch-card";
 
-    addToCartBtn.addEventListener("click", () => {
-        const quantity = parseInt(document.getElementById("order-quantity").value);
-        const type = document.getElementById("order-type").value;
-        const size = document.getElementById("order-size").value;
+      const sizeOptions = product.sizes
+        .map(size => `<option value="${size}">${size}</option>`)
+        .join("");
 
-        let found = false;
-
-        cart = cart.map(item => {
-            if (item.type === type && item.size === size) {
-                found = true;
-                return {
-                    ...item,
-                    quantity: Math.min(item.quantity + quantity, 5)
-                };
-            }
-            return item;
-        });
-
-        if (!found) {
-            const price = typeData[type].price;
-            cart.push({
-                quantity,
-                type,
-                size,
-                price
-            });
-        }
-
-        updateCart();
+      card.innerHTML = `
+        <img src="${product.img}" class="merch-product-img" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p><strong>€${product.price.toFixed(2)}</strong></p>
+        <select id="merch-size-${product.id}" class="merch-input">${sizeOptions}</select>
+        <button onclick="addToCart(${product.id})" class="merch-button">Aggiungi al carrello</button>
+      `;
+      container.appendChild(card);
     });
+  }
 
-    function updateCart() {
-        cartList.innerHTML = "";
-        cart.forEach((item, index) => {
-            let itemImage = document.createElement("img");
-            itemImage.classList.add("itemImage");
-            itemImage.src = typeData[item.type].image;
-            itemImage.alt = item.type;
+  window.addToCart = function (productId) {
+    const size = document.getElementById(`merch-size-${productId}`).value;
+    const existingIndex = cart.findIndex(item => item.id === productId && item.size === size);
 
-            let itemDiv = document.createElement("div");
-            itemDiv.classList.add("itemDiv");
-
-            let itemQuantity = document.createElement("p");
-            itemQuantity.classList.add("itemQuantity");
-            itemQuantity.textContent = `${item.quantity}`;
-
-
-            let itemInternalDiv = document.createElement("div");
-            itemInternalDiv.classList.add("itemInternalDiv");
-
-            let itemTitle = document.createElement("p");
-            itemTitle.classList.add("itemTitle");
-            itemTitle.textContent = item.type;
-
-            let itemSize = document.createElement("p");
-            itemSize.classList.add("itemSize");
-            itemSize.textContent = `Taglia: ${item.size}`;
-
-            let itemPrice = document.createElement("p");
-            itemPrice.classList.add("itemPrice");
-            const totalPrice = (item.quantity * item.price).toFixed(2); // Format total price to 2 decimals
-            itemPrice.textContent = `Prezzo: ${totalPrice}€`;
-
-            let removeBtn = document.createElement("button");
-            removeBtn.textContent = "Rimuovi";
-            removeBtn.classList.add("remove");
-            removeBtn.addEventListener("click", () => {
-                cart.splice(index, 1);
-                updateCart();
-            });
-
-            itemInternalDiv.appendChild(itemQuantity);
-            itemInternalDiv.appendChild(itemTitle);
-            itemInternalDiv.appendChild(itemSize);
-            itemInternalDiv.appendChild(itemPrice);
-            itemInternalDiv.appendChild(removeBtn);
-
-
-            itemDiv.appendChild(itemImage);
-            itemDiv.appendChild(itemInternalDiv);
-
-            cartList.appendChild(itemDiv);
-        });
+    if (existingIndex >= 0) {
+      if (cart[existingIndex].qty < 5) {
+        cart[existingIndex].qty++;
+      } else {
+        alert("Puoi aggiungere al massimo 5 articoli per taglia.");
+        return;
+      }
+    } else {
+      cart.push({ id: productId, size, qty: 1 });
     }
 
-    sendOrderBtn.addEventListener("click", async () => {
-        if (cart.length === 0) {
-            alert("Il carrello è vuoto!");
-            return;
-        }
+    renderCart();
+  };
 
-        const recaptchaResponse = grecaptcha.getResponse(recaptchaOrderWidgetId);
+  function renderCart() {
+    const container = document.getElementById("merch-cart-items");
+    container.innerHTML = "";
+    if (cart.length === 0) {
+      container.innerHTML = "<p class='merch-empty'>Il carrello è vuoto.</p>";
+      return;
+    }
+
+    cart.forEach((item, index) => {
+      const product = merch.find(p => p.id === item.id);
+      const row = document.createElement("div");
+      row.className = "merch-cart-item";
+      row.innerHTML = `
+        <div><strong>${product.name}</strong> (${item.size}) x ${item.qty} - €${(product.price * item.qty).toFixed(2)}</div>
+        <button onclick="removeCartItem(${index})" class="merch-remove">Rimuovi</button>
+      `;
+      container.appendChild(row);
+    });
+  }
+
+  window.removeCartItem = function (index) {
+    cart.splice(index, 1);
+    renderCart();
+  };
+
+  window.handleSubmit = async function (e) {
+    e.preventDefault();
+    if (cart.length === 0) {
+      alert("Aggiungi almeno un articolo al carrello.");
+      return;
+    }
+
+    const form = e.target;
+    const name = form.querySelector('input[placeholder="Nome"]').value.trim();
+    const surname = form.querySelector('input[placeholder="Cognome"]').value.trim();
+    const phone = "+39" + form.querySelector('.merch-phone-field').value.trim();
+    const email = form.querySelector('input[type="email"]').value.trim();
+    const shop = form.querySelector('select').value;
+
+    const recaptchaResponse = grecaptcha.getResponse(recaptchaOrderWidgetId);
         if (!recaptchaResponse) {
             alert("Completa il reCAPTCHA.");
             return;
         }
 
-        const name = document.getElementById("order-name").value;
-        const surname = document.getElementById("order-surname").value;
-        const email = document.getElementById("order-email").value;
-        const partialPhone = document.getElementById("order-phone").value;
-        const phone = `+39${partialPhone}`;
-        const shop = document.getElementById("order-shop").value;
 
-        if (!name || !surname || !email || !partialPhone) {
-            alert("Compila tutti i campi obbligatori.");
-            return;
-        }
-
-        // Disable the button to prevent multiple clicks
-        sendOrderBtn.disabled = true;
-        sendOrderBtn.textContent = "Invio in corso..."; // Update button text to indicate processing
-
-        // Add CAPTCHA response to the order data
-        const orderData = {
-            name,
-            surname,
-            email,
-            phone,
-            shop,
-            cart,
-            recaptchaResponse,
-        };
-
-        try {
-            const response = await fetch("https://api.cicciosburger.it/api/generate-order-number", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(orderData),
-            });
-
-            if (!response.ok) {
-                throw new Error("Errore nell'invio dell'ordine.");
-            }
-
-            const orderNumber = await response.text(); // Get the raw text response
-
-            // Hide the form and cart
-            document.getElementById("orderContainer").style.display = "none";
-
-            // Show the confirmation message
-            const confirmationMessage = document.getElementById("confirmationMessage");
-            const orderNumberDisplay = document.getElementById("orderNumberDisplay");
-            orderNumberDisplay.textContent = orderNumber; // Set the order number
-            confirmationMessage.style.display = "block"; // Make the confirmation message visible
-
-            // Add event listener for the "Make a New Order" button
-            const newOrderButton = document.getElementById("newOrderButton");
-            newOrderButton.addEventListener("click", () => {
-                // Reset the modal to its original state
-                resetOrderModal();
-            });
-        } catch (error) {
-            console.error("Errore nell'invio dell'ordine:", error);
-            alert("Si è verificato un errore durante l'invio dell'ordine. Riprova più tardi.");
-        } finally {
-            // Re-enable the button and reset its text
-            sendOrderBtn.disabled = false;
-            sendOrderBtn.textContent = "Invia Ordine";
-        }
+    const cartData = cart.map(item => {
+      const product = merch.find(p => p.id === item.id);
+      return {
+        quantity: item.qty,
+        type: product.name,
+        size: item.size,
+        price: product.price
+      };
     });
 
-    // Function to reset the modal to its original state
-    function resetOrderModal() {
-        // Show the form and cart
-        document.getElementById("orderContainer").style.display = "block";
+    const payload = {
+      name,
+      surname,
+      email,
+      phone,
+      shop,
+      cart: cartData,
+      recaptchaResponse
+    };
 
-        // Hide the confirmation message
-        document.getElementById("confirmationMessage").style.display = "none";
+    try {
+      const res = await fetch("https://api.cicciosburger.it/api/generate-order-number", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
 
-        // Clear the cart
-        cart = [];
-        updateCart();
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.message || "Errore nella prenotazione.");
+      }
+
+      const resultText = await res.text(); // <-- perché è plain text, non JSON
+        console.log("Numero ordine:", resultText);
+        document.getElementById("orderNumberDisplay").textContent = resultText;
+
+
+      // Nascondi il form e mostra il messaggio di conferma
+      form.style.display = "none";
+      document.getElementById("confirmationMessage").style.display = "block";
+      document.getElementById("orderNumberDisplay").textContent = result.orderNumber || "(numero non disponibile)";
+
+      cart = [];
+      renderCart();
+    } catch (err) {
+      console.error(err);
+      alert("Errore: " + err.message);
     }
+  };
+
+  // Pulsante "Fai un nuovo ordine"
+  const newOrderBtn = document.getElementById("newOrderButton");
+  if (newOrderBtn) {
+    newOrderBtn.addEventListener("click", () => {
+      document.querySelector("form").style.display = "block";
+      document.getElementById("confirmationMessage").style.display = "none";
+      document.querySelector("form").reset();
+    });
+  }
+
+  // Inizio
+  await fetchMerch();
 });
+
+
 
 window.addEventListener('DOMContentLoaded', () => {
     const hash = window.location.hash.substring(1); // es. "menuModal"
@@ -956,7 +882,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cookieWarning = document.getElementById("cookieMsg");
     const cookieOrderWarning = document.getElementById("cookieOrderMsg");
     const dataForm = document.getElementById("data-form");
-    const orderForm = document.getElementById("orderForm");
+    const orderForm = document.getElementById("merch-box");
 
     let recaptchaLoaded = false;
 
@@ -974,7 +900,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Enable the registration form
     function enableForm() {
         dataForm.style.display = "flex";
-        orderForm.style.display = "flex";
+        orderForm.style.display = "block";
         cookieWarning.style.display = "none"; // Hide the cookie warning
         cookieOrderWarning.style.display = "none"; // Hide the cookie warning
     }

@@ -730,81 +730,57 @@
         <div id="orderModal" class="modal orderModal">
             <div class="modal-content order-modal-content">
                 <span class="close-modal">&times;</span>
-                <h2>Prenota il tuo merch</h2>
                 <div id="cookieOrderMsg" style="display: none; color: red; margin-bottom: 20px;">
-                    I cookie sono necessari per effetuare l'ordine. Accettali e ricarica la pagina per
-                    continuare. </div>
-                <div class="order-container" id="orderContainer">
-                    <form id="orderForm">
-                        <label for="order-name">Nome:*</label>
-                        <input type="text" id="order-name" name="name" required pattern="[A-Za-z ]+"
-                            title="Sono ammesse solo lettere" placeholder="Inserisci il tuo nome">
+            I cookie sono necessari per effetuare l'ordine. Accettali e ricarica la pagina per
+            continuare. </div>
+                <div class="merch-container" id="merch-box">
+    <h1 class="merch-title">Prenota il tuo Merch</h1>
 
-                        <label for="order-surname">Cognome:*</label>
-                        <input type="text" id="order-surname" name="surname" required pattern="[A-Za-z ]+"
-                            title="Sono ammesse solo lettere" placeholder="Inserisci il tuo cognome">
+    <!-- Prodotti -->
+    <div id="merch-products" class="merch-grid"></div>
 
-                        <label for="order-email">Email:*</label>
-                        <input type="email" id="order-email" name="email" required
-                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                            title="Inserisci una email valida (es., esempio@dominio.com)"
-                            placeholder="esempio@dominio.com">
+    <!-- Carrello -->
+    <div class="merch-card">
+      <h2 class="merch-subtitle">Il tuo carrello</h2>
+      <div id="merch-cart-items"></div>
+    </div>
 
-                        <label for="order-phone">Numero di telefono:*</label>
-                        <div class="order-phone-container">
-                            <div class="order-phone-prefix">+39</div>
-                            <input type="text" id="order-phone" name="phone" class="order-phone-input" required
-                                pattern="^\d{10}$" title="Il numero deve contenere 10 numeri (es., 3281234567)"
-                                placeholder="3281234567">
-                        </div>
-
-                        <label for="order-shop">Negozio di ritiro:</label>
-                        <select id="order-shop" required>
-                            <option value="lumia">Lumia</option>
-                            <option value="stadio">Stadio</option>
-                            <option value="sperlinga">Sperlinga</option>
-                        </select>
-                        <div class="selector">
-                            <label for="order-quantity">Quantità (max 5):</label>
-                            <select id="order-quantity">
-                                <option value=1>1</option>
-                                <option value=2>2</option>
-                                <option value=3>3</option>
-                                <option value=4>4</option>
-                                <option value=5>5</option>
-                            </select>
-
-                            <label for="order-type">Tipo:</label>
-                            <div id="custom-type-select" class="custom-select">
-                                <div class="selected">Seleziona un prodotto</div>
-                                <div class="dropdown"></div>
-                            </div>
-                            <input type="hidden" id="order-type" />
-
-                            <label for="order-size">Taglia:</label>
-                            <select id="order-size"></select>
-
-                            <button type="button" id="addToCart">Aggiungi al Carrello</button>
-                        </div>
-                    </form>
-                    <h3>Carrello</h3>
-                    <div id="cart"></div>
-                    <div class="g-recaptcha" id="recaptcha-container-order"></div>
-
-                    <button id="sendOrder">Invia Ordine</button>
-                    <p>Premendo "Invia Ordine" accetti
-                        <a href="https://docs.google.com/document/d/1H6UBx_cvAu7Z4-Hpv2FWCsYuzl8sLlw2GnY_U2_JCZ4/edit?usp=sharing"
-                            target="_blank">Privacy Policy
-                            e Termini e condizioni</a>.*</p>
-                </div>
+    <!-- Dati utente -->
+    <div class="merch-card" style="margin-top: 3rem;">
+      <h2 class="merch-subtitle">Dati per la prenotazione</h2>
+      <form onsubmit="handleSubmit(event)">
+        <div class="merch-form-grid">
+          <input type="text" placeholder="Nome" class="merch-input" required>
+          <input type="text" placeholder="Cognome" class="merch-input" required>
+        </div>
+        <div class="merch-form-grid">
+          <div class="merch-phone-input">
+            <span class="merch-phone-prefix">+39</span>
+            <input type="tel" placeholder="Numero di telefono" class="merch-phone-field" required>
+          </div>
+          <input type="email" placeholder="Email" class="merch-input" required>
+        </div>
+        <select class="merch-input" required>
+          <option value="">Seleziona punto di ritiro</option>
+          <option value="lumia">Lumia</option>
+          <option value="stadio">Stadio</option>
+          <option value="sperlinga">Sperlinga</option>
+        </select>
+        <div class="g-recaptcha" id="recaptcha-container-order"></div>
+        <button type="submit" class="merch-button">Prenota</button>
+      </form>
+    </div>
+  </div>
                 <!-- Confirmation message (hidden by default) -->
-                <div id="confirmationMessage">
-                    <span id="checkmark">&#10004;</span>
-                    <h2>Grazie per il tuo ordine!</h2>
-                    <p>Il numero del tuo ordine è: <strong id="orderNumberDisplay"></strong></p>
-                    <p>Riceverai a breve una email con il riepilogo del tuo preordine</p>
-                    <button id="newOrderButton">Fai un nuovo ordine</button>
-                </div>
+                <!-- Subito dopo il form -->
+<div id="confirmationMessage" style="display: none;">
+  <span id="checkmark">&#10004;</span>
+  <h2>Grazie per il tuo ordine!</h2>
+  <p>Il numero del tuo ordine è: <strong id="orderNumberDisplay"></strong></p>
+  <p>Riceverai a breve una email con il riepilogo del tuo preordine</p>
+  <button id="newOrderButton">Fai un nuovo ordine</button>
+</div>
+
             </div>
         </div>
         
