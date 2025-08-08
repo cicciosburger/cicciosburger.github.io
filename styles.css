@@ -1239,3 +1239,137 @@
   /* transform: scale(1.03); */
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+
+
+.merch-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.merch-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.merch-subtitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.merch-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 3rem;
+}
+
+.merch-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.merch-product-img {
+  width: 100%;
+  max-width: 150px;
+  max-height: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+.merch-input,
+.merch-select,
+.merch-phone-field {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.merch-button {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.merch-button:hover {
+  background: #1e40af;
+}
+
+.merch-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.merch-phone-input {
+  display: flex;
+  align-items: stretch;
+}
+
+.merch-phone-prefix {
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  background: #e5e7eb;
+  border: 1px solid #d1d5db;
+  border-right: none;
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.merch-phone-field {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-left: none;
+  border-radius: 0 0.375rem 0.375rem 0;
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+.merch-cart-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+}
+
+.merch-remove {
+  color: #dc2626 !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.merch-remove:hover {
+  text-decoration: underline;
+}
+
+.merch-empty {
+  color: #374151;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
