@@ -815,33 +815,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     try {
-      const res = await fetch("https://api.cicciosburger.it/api/generate-order-number", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
+        const res = await fetch("https://api.cicciosburger.it/api/generate-order-number", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
 
-      if (!res.ok) {
-        const error = await res.json();
-        throw new Error(error.message || "Errore nella prenotazione.");
-      }
+        const resultText = await res.text(); 
+        console.log("Risposta API (text):", resultText);
 
-      const resultText = await res.text(); // <-- qui!
-        console.log("Numero ordine:", resultText);
+        if (!res.ok) {
+            throw new Error("Errore nella prenotazione: " + resultText);
+        }
 
-        // Mostra messaggio di conferma
         form.style.display = "none";
         document.getElementById("confirmationMessage").style.display = "block";
         document.getElementById("orderNumberDisplay").textContent = resultText;
 
         cart = [];
-      renderCart();
+        renderCart();
     } catch (err) {
-      console.error(err);
-      alert("Errore: " + err.message);
+        console.error(err);
+        alert("Errore: " + err.message);
     }
+
   };
 
   // Pulsante "Fai un nuovo ordine"
