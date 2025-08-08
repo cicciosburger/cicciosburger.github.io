@@ -743,9 +743,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         <img src="${product.img}" class="merch-product-img" alt="${product.name}">
         <h3>${product.name}</h3>
         <p><strong>€${product.price.toFixed(2)}</strong></p>
-        <select id="merch-size-${product.id}" class="merch-input">${sizeOptions}</select>
-        <button onclick="addToCart(${product.id})" class="merch-button">Aggiungi al carrello</button>
-      `;
+        <div class="merch-card-bottom">
+            <select id="merch-size-${product.id}" class="merch-input">${sizeOptions}</select>
+            <button onclick="addToCart(${product.id})" class="merch-button">Aggiungi al carrello</button>
+        </div>
+        `;
+
       container.appendChild(card);
     });
   }
