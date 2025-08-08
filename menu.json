@@ -358,6 +358,53 @@
         "MONDELLO",
         "FOODTRUCK"
       ]
+    },
+    {
+      "title": "SUINO 1",
+      "price": 7.0,
+      "ingredients": "bun, burger di suino, primo sale di pecora fresco, cipolla croccante, cipolla caramellata alla birra, songino, salsa al guanciale",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/logosagrasalsiccia.png",
+      "available_in": [
+      ]
+    },
+    {
+      "title": "SUINO 2",
+      "price": 7.0,
+      "ingredients": "bun, burger di suino, rosti di patate, scaglie di parmigiano reggiano, salsa bbq",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/logosagrasalsiccia.png",
+      "available_in": [
+      ]
+    },
+    {
+      "title": "SUINO 3",
+      "price": 7.0,
+      "ingredients": "bun, burger di suino, bacon, cheddar, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/logosagrasalsiccia.png",
+      "available_in": [
+      ]
+    },
+    {
+      "title": "SUINO 4",
+      "price": 4.0,
+      "ingredients": "bun, burger di suino, olio al limone",
+      "allergens": {
+        "Allergeni": "Glutine, Uova, Latte"
+      },
+      "thumb": "./img/menu/ciccios/logosagrasalsiccia.png",
+      "available_in": [
+      ]
     }
   ],
   "CLASSIC BURGER": [
