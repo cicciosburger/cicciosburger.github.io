@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "doppio burger di manzo 170g": "Latte(Senza lattosio), Glutine, Uova",
                 "burger di pollo pastellato e fritto": "Latte(Senza lattosio), Glutine",
                 "burger di pollo fritto con panatura super croccante": "Latte(Senza lattosio), Glutine",
+                "burger di suino": null,
                 "sovracoscia di pollo alla piastra": null,
                 "burger vegetale": "Latte, Uova",
                 "cheddar": "Latte",
@@ -117,6 +118,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 "cipolla caramellata alla birra":"Glutine", 
                 "nduja":null, 
                 "giri saltati":null, 
+                "olio al limone":null, 
+                "scaglie di parmigiano reggiano":"Latte(Senza lattosio)", 
+                "primo sale di pecora fresco":"Latte", 
+                "salsa al guanciale":"Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce", 
                 "gocce di peperoncino":null
             };
 
