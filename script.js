@@ -3,22 +3,37 @@ let recaptchaOrderWidgetId;
 let recaptchaHappyOrderWidgetId;
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialize the map and set its view (lat, lng, zoom)
-  const [lat, lng] = [38.2064711, 13.3252011];
-  const map = L.map('map').setView([lat, lng], 18);  // Example: Palermo
+document.addEventListener("DOMContentLoaded", async () => {
+  // Default coordinates
+  let lat = 38.2064711;
+  let lng = 13.3252011;
 
+  // Try to fetch coords.json from remote API
+  try {
+    const res = await fetch('https://api.cicciosburger.it/menu/static/coords.json');
+    if (!res.ok) throw new Error("Non disponibile");
+    const data = await res.json();
+    if (typeof data.lat === "number" && typeof data.lng === "number") {
+      lat = data.lat;
+      lng = data.lng;
+    } else {
+      throw new Error("Parsing fallito");
+    }
+  } catch (err) {
+    console.warn("Coordinate non disponibili, uso default:", err);
+  }
 
-  // Add OpenStreetMap tiles
-//   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; OpenStreetMap contributors'
-//   }).addTo(map);
-L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+  // Initialize the map
+  const map = L.map('map').setView([lat, lng], 18);
+
+  // Tiles
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
     attribution: '&copy; <a href="https://carto.com/">CARTO</a> | © OpenStreetMap',
     subdomains: "abcd",
     maxZoom: 19
   }).addTo(map);
-  // Define custom icon
+
+  // Custom icon
   const customDivIcon = L.divIcon({
     html: `
       <div class="marker-wrapper">
@@ -26,20 +41,20 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
         <img src="./img/logofoodclean.png" class="marker-img" />
       </div>
     `,
-    className: "", // no default Leaflet styles
-    iconSize: [80,50],
+    className: "",
+    iconSize: [80, 50],
     iconAnchor: [16, 64]
   });
 
-    const marker = L.marker([lat, lng], { icon: customDivIcon }).addTo(map);
+  // Add marker
+  const marker = L.marker([lat, lng], { icon: customDivIcon }).addTo(map);
+  marker.on('click', () => {
+    const url = `https://www.google.com/maps?q=${lat},${lng}`;
+    window.open(url, '_blank');
+  });
 
-marker.on('click', () => {
-  const url = `https://www.google.com/maps?q=${lat},${lng}`;
-  window.open(url, '_blank'); // Open in new tab
-});
-
-
-    window.addEventListener('load', () => {
+  // Fix map sizing
+  window.addEventListener('load', () => {
     map.invalidateSize();
   });
 });
