@@ -734,43 +734,43 @@
             I cookie sono necessari per effetuare l'ordine. Accettali e ricarica la pagina per
             continuare. </div>
                 <div class="merch-container" id="merch-box">
-    <h1 class="merch-title">Prenota il tuo Merch</h1>
+                    <h1 class="merch-title">Prenota il tuo Merch</h1>
 
-    <!-- Prodotti -->
-    <div id="merch-products" class="merch-grid"></div>
+                    <!-- Prodotti -->
+                    <div id="merch-products" class="merch-grid"></div>
 
-    <!-- Carrello -->
-    <div class="merch-card">
-      <h2 class="merch-subtitle">Il tuo carrello</h2>
-      <div id="merch-cart-items"></div>
-    </div>
+                    <!-- Carrello -->
+                    <div class="merch-card">
+                    <h2 class="merch-subtitle">Il tuo carrello</h2>
+                    <div id="merch-cart-items"></div>
+                    </div>
 
-    <!-- Dati utente -->
-    <div class="merch-card" style="margin-top: 3rem;">
-      <h2 class="merch-subtitle">Dati per la prenotazione</h2>
-      <form onsubmit="handleSubmit(event)">
-        <div class="merch-form-grid">
-          <input type="text" placeholder="Nome" class="merch-input" required>
-          <input type="text" placeholder="Cognome" class="merch-input" required>
-        </div>
-        <div class="merch-form-grid">
-          <div class="merch-phone-input">
-            <span class="merch-phone-prefix">+39</span>
-            <input type="tel" placeholder="Numero di telefono" class="merch-phone-field" required>
-          </div>
-          <input type="email" placeholder="Email" class="merch-input" required>
-        </div>
-        <select class="merch-input" required>
-          <option value="">Seleziona punto di ritiro</option>
-          <option value="lumia">Lumia</option>
-          <option value="stadio">Stadio</option>
-          <option value="sperlinga">Sperlinga</option>
-        </select>
-        <div class="g-recaptcha" id="recaptcha-container-order"></div>
-        <button type="submit" class="merch-button">Prenota</button>
-      </form>
-    </div>
-  </div>
+                    <!-- Dati utente -->
+                    <div class="merch-card" style="margin-top: 3rem;">
+                    <h2 class="merch-subtitle">Dati per la prenotazione</h2>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="merch-form-grid">
+                        <input type="text" placeholder="Nome" class="merch-input" required>
+                        <input type="text" placeholder="Cognome" class="merch-input" required>
+                        </div>
+                        <div class="merch-form-grid">
+                        <div class="merch-phone-input">
+                            <span class="merch-phone-prefix">+39</span>
+                            <input type="tel" placeholder="Numero di telefono" class="merch-phone-field" required>
+                        </div>
+                        <input type="email" placeholder="Email" class="merch-input" required>
+                        </div>
+                        <select class="merch-input" required>
+                        <option value="">Seleziona punto di ritiro</option>
+                        <option value="lumia">Lumia</option>
+                        <option value="stadio">Stadio</option>
+                        <option value="sperlinga">Sperlinga</option>
+                        </select>
+                        <div class="g-recaptcha" id="recaptcha-container-order"></div>
+                        <button type="submit" class="merch-button">Prenota</button>
+                    </form>
+                    </div>
+                </div>
                 <!-- Confirmation message (hidden by default) -->
                 <!-- Subito dopo il form -->
 <div id="confirmationMessage" style="display: none;">

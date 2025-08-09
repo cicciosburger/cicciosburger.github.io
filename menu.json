@@ -360,7 +360,7 @@
       ]
     },
     {
-      "title": "SUINO 1",
+      "title": "PRIMO SALE",
       "price": 7.0,
       "ingredients": "bun, burger di suino, primo sale di pecora fresco, cipolla croccante, cipolla caramellata alla birra, songino, salsa al guanciale",
       "allergens": {
@@ -372,7 +372,7 @@
       ]
     },
     {
-      "title": "SUINO 2",
+      "title": "SASIZZA E PATATE",
       "price": 7.0,
       "ingredients": "bun, burger di suino, rosti di patate, scaglie di parmigiano reggiano, salsa bbq",
       "allergens": {
@@ -384,7 +384,7 @@
       ]
     },
     {
-      "title": "SUINO 3",
+      "title": "AMERICAN",
       "price": 7.0,
       "ingredients": "bun, burger di suino, bacon, cheddar, salsa Ciccio's",
       "allergens": {
@@ -396,7 +396,7 @@
       ]
     },
     {
-      "title": "SUINO 4",
+      "title": "CLASSICO",
       "price": 4.0,
       "ingredients": "bun, burger di suino, olio al limone",
       "allergens": {
