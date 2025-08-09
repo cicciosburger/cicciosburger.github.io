@@ -30,6 +30,17 @@
       ]
     },
     {
+      "title": "BACON CHEDDAR FRIES",
+      "price": 4.0,
+      "ingredients": "patate con buccia**, crema cheddar home made, bacon croccante",
+      "allergens": {
+        "Allergeni": "Glutine, Latte"
+      },
+      "thumb": "./img/menu/starters/baconcheesefries.webp",
+      "available_in": [      
+      ]
+    },
+    {
       "title": "NUGGETS",
       "price": "da 2,70€",
       "ingredients": "bocconcini di pollo tritato pastellati fatti a mano*",
