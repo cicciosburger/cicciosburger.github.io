@@ -30,17 +30,6 @@
       ]
     },
     {
-      "title": "BACON CHEDDAR FRIES ",
-      "price": 4.0,
-      "ingredients": "patate con buccia**, crema cheddar home made, bacon croccante",
-      "allergens": {
-        "Allergeni": "Glutine, Latte"
-      },
-      "thumb": "./img/menu/starters/baconcheesefries.webp",
-      "available_in": [      
-      ]
-    },
-    {
       "title": "NUGGETS",
       "price": "da 2,70€",
       "ingredients": "bocconcini di pollo tritato pastellati fatti a mano*",
@@ -368,53 +357,6 @@
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "PRIMO SALE",
-      "price": 7.0,
-      "ingredients": "bun, burger di suino, primo sale di pecora fresco, cipolla croccante, cipolla caramellata alla birra, songino, salsa al guanciale",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
-      "thumb": "./img/menu/ciccios/logosagrasalsiccia.png",
-      "available_in": [
-      ]
-    },
-    {
-      "title": "SASIZZA E PATATE",
-      "price": 7.0,
-      "ingredients": "bun, burger di suino, rosti di patate, scaglie di parmigiano reggiano, salsa bbq",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
-      "thumb": "./img/menu/ciccios/logosagrasalsiccia.png",
-      "available_in": [
-      ]
-    },
-    {
-      "title": "AMERICAN",
-      "price": 7.0,
-      "ingredients": "bun, burger di suino, bacon, cheddar, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
-      "thumb": "./img/menu/ciccios/logosagrasalsiccia.png",
-      "available_in": [
-      ]
-    },
-    {
-      "title": "CLASSICO",
-      "price": 4.0,
-      "ingredients": "bun, burger di suino, olio al limone",
-      "allergens": {
-        "Allergeni": "Glutine, Uova, Latte"
-      },
-      "thumb": "./img/menu/ciccios/logosagrasalsiccia.png",
-      "available_in": [
       ]
     }
   ],
