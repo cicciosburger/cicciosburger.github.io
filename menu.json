@@ -386,6 +386,42 @@
         "MONDELLO",
         "FOODTRUCK"
       ]
+    },
+        {
+      "title": "BRIE ",
+      "price": 7.9,
+      "ingredients": "bun, burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/brie.webp",
+      "available_in": [
+      ]
+    },
+    {
+      "title": "TUMA ",
+      "price": 7.9,
+      "ingredients": "bun, burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/tuma.webp",
+      "available_in": [
+      ]
+    },
+    {
+      "title": "PANCETTA ",
+      "price": 7.9,
+      "ingredients": "bun, burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte, Senape, Anidride solforosa e solfiti",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/ciccios/pancetta.webp",
+      "available_in": [
+      ]
     }
   ],
   "CLASSIC BURGER": [
@@ -455,6 +491,54 @@
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "HAMBURGER ",
+      "price": 6.9,
+      "ingredients": "bun, burger di manzo 170g, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/hamburger.webp",
+      "available_in": [
+      ]
+    },
+    {
+      "title": "CHEESEBURGER ",
+      "price": 6.9,
+      "ingredients": "bun, burger di manzo 170g, cheddar, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/cheeseburger.webp",
+      "available_in": [
+      ]
+    },
+    {
+      "title": "BACON CHEESEBURGER ",
+      "price": 6.9,
+      "ingredients": "bun, burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/baconcheeseburger.webp",
+      "available_in": [
+      ]
+    },
+    {
+      "title": "AMERICAN BACONCHEESE ",
+      "price": 7.9,
+      "ingredients": "bun, burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
+      "allergens": {
+        "Allergeni Panino": "Glutine, Uova, Latte",
+        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
+      },
+      "thumb": "./img/menu/classic/americanbaconcheese.webp",
+      "available_in": [
       ]
     }
   ],
