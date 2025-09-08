@@ -1,4 +1,24 @@
 {
+  "Cappello Vai in buca": {
+    "sizes": ["unica"],
+    "price": 15.00,
+    "image": "img/shop/cappello_bianco.png"
+  },
+  "Cappello Ciccio's": {
+    "sizes": ["unica"],
+    "price": 15.00,
+    "image": "img/shop/cappello_nero.png"
+  },
+  "Cappello Ciccio's Burger Truck": {
+    "sizes": ["unica"],
+    "price": 15.00,
+    "image": "img/shop/cappello_rosso.png"
+  },
+  "Cappello Ciccio's Fottuto Vizio": {
+    "sizes": ["unica"],
+    "price": 15.00,
+    "image": "img/shop/cappello_vizio.png"
+  },
   "Tshirt Ciccio's Spacca": {
     "sizes": ["S", "M", "L", "XL","XXL"],
     "price": 14.90,
