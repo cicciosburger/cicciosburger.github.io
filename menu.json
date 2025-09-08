@@ -91,7 +91,7 @@
     },
     {
       "title": "ALETTE CRUNCHY",
-      "price": "da 2,70€",
+      "price": "da 2,00€",
       "ingredients": "Alette di pollo pastellate e fritte laccate con salsa thai",
       "allergens": {
         "Allergeni": "Glutine, Senape"
@@ -458,7 +458,7 @@
       ]
     }
   ],
-  "MENU": [
+  "MENU(Panino + Patatine + Starter a scelta*** + Bibita)": [
     {
       "title": "HAPPY CICCIO'S",
       "price": 7.9,
