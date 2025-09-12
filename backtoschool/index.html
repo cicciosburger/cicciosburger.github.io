@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Sblocca sconto con follow → EAN-13</title>
+<style>
+  :root{
+    --bg:#0b0b0c; --fg:#fff; --panel:#141416; --border:#202226; --accent:#6ee7ff;
+    --radius:18px;
+    --space:clamp(14px, 2.5vw, 22px);
+    --fs-h1:clamp(1.1rem, 2.6vw, 1.45rem);
+    --fs-body:clamp(0.95rem, 2.2vw, 1rem);
+    --fs-small:clamp(0.82rem, 1.8vw, 0.9rem);
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  .wrap{max-width:640px; margin:0 auto; padding:var(--space);}
+  h1{margin:0 0 8px; font-size:var(--fs-h1);}
+  p{margin:0; color:#c9c9cf; line-height:1.5; font-size:var(--fs-body);}
+  .meta,.hint{font-size:var(--fs-small); color:#aeb3bb;}
+
+  /* Scene for 3D */
+  .scene{perspective:1200px;}
+
+  /* Card: frame that DOES NOT FLIP */
+  .card{
+    position:relative;
+    display:grid;
+    grid-template-rows:auto 1fr;      /* sticky header + flip area */
+    width:100%;
+    height:100svh;                    /* full display height */
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:0 10px 28px rgba(0,0,0,.35);
+    overflow:hidden;
+  }
+
+  /* Brand header: fixed (not flipping) */
+  .brand{
+    grid-row:1;
+    position:sticky; top:0; z-index:3;
+    background:linear-gradient(180deg, rgba(20,20,22,.98), rgba(20,20,22,.92));
+    padding:var(--space); border-bottom:1px solid #1e2126;
+  }
+  .brand-stack{
+    display:flex; flex-direction:column; align-items:center; gap:12px;
+  }
+  .brand-logo{
+    width:min(320px, 70%);
+    max-height:26svh; height:auto; object-fit:contain; display:block;
+    margin-inline:auto;
+    filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));
+  }
+  .brand-banner{
+    width:100%;
+    max-height:28svh; height:auto;
+    object-fit:contain; display:block; margin-inline:auto;
+    border-radius:12px;
+    box-shadow:0 6px 16px rgba(0,0,0,.35);
+  }
+
+  /* Flip area: ONLY this flips */
+  #flip{
+    grid-row:2;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  #flip.is-flipped{ transform:rotateY(180deg); }
+
+  /* Faces inside flip */
+  .face{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column;
+    backface-visibility:hidden;
+  }
+  .front{ transform:rotateY(0deg); }
+  .back{ transform:rotateY(180deg); }
+
+  /* Scrollable content inside faces */
+  .face-content{
+    overflow:hidden; padding:var(--space);
+    display:flex; flex-direction:column; gap:var(--space);
+    height: auto;
+  }
+
+  /* Buttons */
+  .btn{
+    appearance:none; border:0; border-radius:999px;
+    padding:14px 18px; font-weight:700; width:100%; cursor:pointer;
+    background:var(--accent); color:#0b0b0c; min-height:48px; font-size:1rem;
+    transition:transform .05s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn.secondary{background:#23262b; color:#fff;}
+  .stack{display:flex; flex-direction:column; gap:10px;}
+  .hidden{display:none !important;}
+
+  /* Progress */
+  .progress{height:12px; background:#1b1d1f; border-radius:999px; overflow:hidden;}
+  .bar{height:100%; width:0%; background:linear-gradient(90deg,#6ee7ff,#b1ffa6); transition:width .28s ease;}
+  .step{font-size:var(--fs-small); color:#c9c9cf;}
+
+  /* Barcode result */
+  .headline{font-weight:800; font-size:clamp(1.1rem,2.6vw,1.35rem); text-align:center;}
+  .sub{color:#a4a7ad; font-size:var(--fs-body); text-align:center;}
+  .barcode-wrap{
+    width:100%; max-width:520px; margin-inline:auto;
+    background:#fff; border-radius:14px; padding:10px;
+    box-shadow:0 6px 18px rgba(0,0,0,.35);
+  }
+  canvas{display:block; width:100%; height:auto;}
+  .err{background:#2a1111; border:1px solid #5a1b1b; color:#f7c6c6; padding:10px 12px; border-radius:10px;}
+
+  @media (max-width:480px){
+    .brand-banner{ max-height:24svh; }
+    .brand-logo{ max-height:16svh; }
+  }
+  @media (prefers-reduced-motion: reduce){ #flip{transition:none;} }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="scene">
+      <div class="card">
+        <!-- HEADER fissa (non flippa) -->
+        <div class="brand">
+          <div class="brand-stack">
+            <img class="brand-logo" src="logo.webp" alt="Ciccio's logo">
+            <img class="brand-banner" src="bts-banner.webp" alt="Promo banner">
+          </div>
+        </div>
+
+        <!-- AREA CHE FLIPPA -->
+        <div id="flip">
+          <!-- FRONT -->
+          <div class="face front">
+            <div class="face-content">
+              <p>Segui <strong>@cicciosburger_</strong> su Instagram. Poi torna qui e premi “Ho seguito la pagina” per sbloccare lo sconto.</p>
+
+              <div id="errorBox" class="err hidden"></div>
+
+              <div class="stack" id="step1">
+                <button id="followBtn" class="btn">Segui su Instagram</button>
+              </div>
+
+              <div class="stack hidden" id="step2">
+                <button id="iveFollowedBtn" class="btn secondary">Ho seguito la pagina</button>
+              </div>
+
+              <div id="progressWrap" class="hidden" aria-live="polite">
+                <div class="progress"><div id="bar" class="bar"></div></div>
+                <div id="stepText" class="step">Verifica in corso…</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BACK -->
+          <div class="face back">
+            <div class="face-content">
+              <!-- <div class="headline">Ecco il tuo sconto 30%</div> -->
+              
+              <div class="barcode-wrap">
+                  <canvas id="eanCanvas" aria-label="EAN-13"></canvas>
+                </div>
+                <div class="sub">Mostra questo barcode alla cassa</div>
+            </div>
+          </div>
+        </div> <!-- /#flip -->
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const IG_USERNAME = 'cicciosburger_';
+  const DELAY_AFTER_OPEN_MS = 2800;
+  const FAKE_VERIFY_MS = 2200;
+
+  const flip = document.getElementById('flip');
+  const followBtn = document.getElementById('followBtn');
+  const iveFollowedBtn = document.getElementById('iveFollowedBtn');
+  const step1 = document.getElementById('step1');
+  const step2 = document.getElementById('step2');
+  const progressWrap = document.getElementById('progressWrap');
+  const bar = document.getElementById('bar');
+  const stepText = document.getElementById('stepText');
+  const errorBox = document.getElementById('errorBox');
+  const eanCanvas = document.getElementById('eanCanvas');
+
+  /* Helpers */
+  function getParam(name){ return new URL(window.location.href).searchParams.get(name); }
+  function b64decodeSafe(str){
+    try{ const pad = str.length%4===2?'==':str.length%4===3?'=':''; return atob((str||'').replace(/-/g,'+').replace(/_/g,'/')+pad); }
+    catch{ return null; }
+  }
+  function showError(msg){ errorBox.textContent = msg; errorBox.classList.remove('hidden'); }
+
+  /* EAN-13 encoder */
+  const L={"0":"0001101","1":"0011001","2":"0010011","3":"0111101","4":"0100011","5":"0110001","6":"0101111","7":"0111011","8":"0110111","9":"0001011"};
+  const G={"0":"0100111","1":"0110011","2":"0011011","3":"0100001","4":"0011101","5":"0111001","6":"0000101","7":"0010001","8":"0001001","9":"0010111"};
+  const R={"0":"1110010","1":"1100110","2":"1101100","3":"1000010","4":"1011100","5":"1001110","6":"1010000","7":"1000100","8":"1001000","9":"1110100"};
+  const PARITY={"0":"LLLLLL","1":"LLGLGG","2":"LLGGLG","3":"LLGGGL","4":"LGLLGG","5":"LGGLLG","6":"LGGGLL","7":"LGLGLG","8":"LGLGGL","9":"LGGLGL"};
+
+  function calcChecksum12(d12){ let s=0; for(let i=0;i<12;i++){ const n=+d12[i]; s += (i%2===0)?n:n*3; } const m=s%10; return (10-m)%10; }
+  function validateOrCompleteEAN13(raw){
+    const digits=(raw||'').replace(/\D/g,'');
+    if(digits.length===12) return digits+calcChecksum12(digits);
+    if(digits.length===13){ const exp=calcChecksum12(digits.slice(0,12)); if(+digits[12]!==exp) throw new Error(`Checksum non valido: atteso ${exp}, trovato ${digits[12]}`); return digits; }
+    throw new Error('Il contenuto decodificato deve avere 12 o 13 cifre.');
+  }
+  function ean13ToBits(e){
+    const first=e[0], left=e.slice(1,7).split(''), right=e.slice(7).split(''), parity=PARITY[first];
+    let bits='101'; for(let i=0;i<6;i++) bits += (parity[i]==='L'?L[left[i]]:G[left[i]]);
+    bits+='01010'; for(let i=0;i<6;i++) bits += R[right[i]]; bits+='101'; return bits;
+  }
+  function drawEAN13Responsive(canvas, ean13){
+    const parent = canvas.parentElement;
+    const cssWidth = parent.clientWidth;
+    const dpr = Math.max(1, window.devicePixelRatio||1);
+    const W = Math.max(260, Math.floor(cssWidth*dpr));
+    const Htot = Math.floor(W*0.36);
+    canvas.width=W; canvas.height=Htot; canvas.style.width='100%'; canvas.style.height='auto';
+    const ctx=canvas.getContext('2d'); ctx.clearRect(0,0,W,Htot);
+    const QUIET=10; const bits=ean13ToBits(ean13); const modules=bits.length+2*QUIET;
+    const mw=Math.max(1, Math.floor(W/modules)); const qpx=QUIET*mw; const totalW=modules*mw; const offX=Math.floor((W-totalW)/2);
+    const H=Math.floor(Htot*0.72), HG=Math.floor(Htot*0.84);
+    ctx.fillStyle='#fff'; ctx.fillRect(0,0,W,Htot);
+    let x=offX+qpx;
+    for(let i=0;i<bits.length;i++){
+      const b=bits[i]; const inStart=i<3, inCenter=(i>=3+7*6&&i<3+7*6+5), inEnd=(i>=bits.length-3);
+      const h=(inStart||inCenter||inEnd)?HG:H;
+      if(b==='1'){ ctx.fillStyle='#000'; ctx.fillRect(x, 8*dpr, mw, h); }
+      x+=mw;
+    }
+    ctx.fillStyle='#000'; ctx.font=`${Math.max(12*dpr, W*0.04)}px monospace`;
+    const m=ctx.measureText(ean13);
+    ctx.fillText(ean13, Math.max(6*dpr,(W-m.width)/2), Htot-6*dpr);
+  }
+
+  /* Read & validate param b (base64 of 12/13 digits) */
+  let digits13=null;
+  const b = getParam('b');
+  if(!b){ showError('Attenzione url non valido, riscansiona il qrcode!'); }
+  else{
+    const decoded=b64decodeSafe(b);
+    if(!decoded){ showError('Attenzione url non valido, riscansiona il qrcode!'); }
+    else{ try{ digits13=validateOrCompleteEAN13(decoded); } catch(e){ showError(e.message); } }
+  }
+
+  /* Flow */
+  followBtn.addEventListener('click', ()=>{
+    window.open(`https://instagram.com/${encodeURIComponent(IG_USERNAME)}`, '_blank', 'noopener,noreferrer');
+    setTimeout(()=>step2.classList.remove('hidden'), 2800);
+  });
+
+  iveFollowedBtn.addEventListener('click', ()=>{
+    step1.classList.add('hidden'); step2.classList.add('hidden'); progressWrap.classList.remove('hidden');
+    let p=0; const tick=140, total=FAKE_VERIFY_MS;
+    const t=setInterval(()=>{
+      p=Math.min(100, p+(100*tick/total)); bar.style.width=p+'%';
+      if(p>30&&p<70) stepText.textContent='Sincronizzo con Instagram…';
+      if(p>=70&&p<100) stepText.textContent='Quasi fatto…';
+      if(p>=100){ clearInterval(t); setTimeout(()=>{
+        flip.classList.add('is-flipped');
+        if(digits13) drawEAN13Responsive(eanCanvas, digits13);
+      },200);}
+    },tick);
+  });
+
+  document.addEventListener('visibilitychange', ()=>{
+    if(!document.hidden && step2.classList.contains('hidden')) step2.classList.remove('hidden');
+  });
+})();
+</script>
+</body>
+</html>
