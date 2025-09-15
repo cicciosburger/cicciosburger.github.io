@@ -166,16 +166,27 @@
     };
   } catch (e) {
     // Parametri mancanti o errati → non mostrare nulla
-    const card = document.querySelector(".invite");
-    if (card) card.style.display = "none";
-    return; // <<< IMPORTANTE: interrompe l'esecuzione
-  }
+    document.querySelector(".invite").style.display = "none";
+}
 
   // ==== UTIL ====
   function pad(n){ return String(n).padStart(2,'0'); }
+  function toDateTimeInTZ(dateStr, timeStr, tz){
+    // Crea un Date coerente per Europe/Rome partendo da componenti locali
+    const [y,m,d] = dateStr.split('-').map(Number);
+    const [H,Mi] = timeStr.split(':').map(Number);
+    // Costruzione a partire da UTC, poi correzione con offset della TZ
+    // Usiamo il trucco di ottenere l'offset di quella TZ per quel momento
+    const dt = new Date(Date.UTC(y, m-1, d, H, Mi, 0));
+    // Intl non permette di cambiare internamente il valore, ma per formattare ICS useremo DTSTART;TZID
+    return dt;
+  }
+  function fmtLocalICS(d){
+    // formato locale senza offset: YYYYMMDDTHHMMSS per DTSTART;TZID
+    return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+'T'+pad(d.getHours())+pad(d.getMinutes())+pad(d.getSeconds());
+  }
   function fmtUTC(d){
-    return d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+'T'
-         + pad(d.getUTCHours())+pad(d.getUTCMinutes())+pad(d.getUTCSeconds())+'Z';
+    return d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+'T'+pad(d.getUTCHours())+pad(d.getUTCMinutes())+pad(d.getUTCSeconds())+'Z';
   }
   function normalizePhoneForWA(raw){
     let t = (raw||'').replace(/\s+/g,'');
@@ -184,16 +195,20 @@
     }
     return t;
   }
+  function italianWhenString(dateObj, tz){
+    // Mostra: Sabato 21 Giugno, ore 17:00 (Europe/Rome)
+    const fmtDay = new Intl.DateTimeFormat('it-IT',{ weekday:'long', day:'numeric', month:'long', timeZone: tz });
+    const fmtTime = new Intl.DateTimeFormat('it-IT',{ hour:'2-digit', minute:'2-digit', hour12:false, timeZone: tz });
+    const dayPart = fmtDay.format(dateObj);
+    const timePart = fmtTime.format(dateObj);
+    return dayPart.charAt(0).toUpperCase()+dayPart.slice(1)+`, ore ${timePart}`;
+  }
 
   // ==== DATI INVITO DERIVATI ====
   const TIMEZONE = 'Europe/Rome';
-  const [y,m,d] = PARAMS.data.split('-').map(Number);
-  const [H,Mi]  = PARAMS.ora.split(':').map(Number);
+  const start = toDateTimeInTZ(PARAMS.data, PARAMS.ora, TIMEZONE);
   const durationMinutes = 120; // fisso come in originale
-
-  // Date usate solo per calcoli (deadline) e per mostrare la DATA (non l'ora)
-  const startDate = new Date(y, m-1, d, H, Mi, 0);
-  const endDate   = new Date(startDate.getTime() + durationMinutes*60000);
+  const end = new Date(start.getTime() + durationMinutes*60000);
 
   const phoneWA = normalizePhoneForWA(PARAMS.tel);
 
@@ -201,14 +216,16 @@
   document.title = `Invito Compleanno – ${PARAMS.nome}`;
   document.getElementById('titolo-invito').textContent = `Sei invitato al compleanno di ${PARAMS.nome}!`;
   document.getElementById('age-pill').textContent = `Compie ${PARAMS.anni} 🎉`;
-  // Mostra data in italiano + ORA esattamente come passata
   document.getElementById('when').textContent =
-    `${startDate.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' })}, ore ${PARAMS.ora}`;
+  `${start.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' })}, ore ${PARAMS.ora}`;
+
 
   // scadenza conferma: 7 giorni prima della data
-  const deadline = new Date(startDate.getTime() - 7*24*60*60*1000);
-  const dd = pad(deadline.getDate());
-  const mm = pad(deadline.getMonth()+1);
+  const deadline = new Date(start.getTime() - 7*24*60*60*1000);
+  const d = deadline;
+  const dd = pad(d.getDate());
+  const mm = pad(d.getMonth()+1);
+  const yyyy = d.getFullYear();
   document.getElementById('deadline').textContent = `${dd}/${mm}`;
 
   // WhatsApp CTA
@@ -217,36 +234,20 @@
   const waBtn = document.getElementById('whatsappBtn');
   waBtn.href = waLink;
 
-  // ==== ICS (senza shift; usa i valori esatti, con TZID=Europe/Rome) ====
-  function ymdHis(Y,M,D,Hh,Mi,S=0){
-    return `${Y}${pad(M)}${pad(D)}T${pad(Hh)}${pad(Mi)}${pad(S)}`;
-  }
-  function addMinutesTo(Y,M,D,Hh,Mi,add){
-    let total = Hh*60 + Mi + add;
-    let carryDays = Math.floor(total / 1440);
-    let H2 = Math.floor((total % 1440) / 60);
-    let Mi2 = (total % 60);
-    const base = new Date(Y, M-1, D);
-    base.setDate(base.getDate() + carryDays);
-    const YY = base.getFullYear();
-    const MM = base.getMonth()+1;
-    const DD = base.getDate();
-    return ymdHis(YY,MM,DD,H2,Mi2);
-  }
-
-  const dtstartLocal = ymdHis(y,m,d,H,Mi);                       // es. 20251010T170000
-  const dtendLocal   = addMinutesTo(y,m,d,H,Mi,durationMinutes); // +120 min
-
+  // ==== ICS ====
   const INVITE = {
     title: `Compleanno di ${PARAMS.nome} @ Ciccio's`,
     description: `Festeggiamo insieme tra panini, risate e tante sorprese. Conferma su WhatsApp: ${phoneWA}`,
-    location: "Ciccio's Burger – Mondello"
+    location: "Ciccio's Burger – Mondello",
+    timezone: TIMEZONE,
+    start,
+    end
   };
 
   const ics = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Ciccio\\'s Invite//IT',
+    'PRODID:-//Ciccio\'s Invite//IT',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',
@@ -255,8 +256,8 @@
     'SUMMARY:'+INVITE.title,
     'DESCRIPTION:'+INVITE.description,
     'LOCATION:'+INVITE.location,
-    'DTSTART;TZID=Europe/Rome:'+dtstartLocal,
-    'DTEND;TZID=Europe/Rome:'+dtendLocal,
+    'DTSTART;TZID='+INVITE.timezone+':'+fmtLocalICS(INVITE.start),
+    'DTEND;TZID='+INVITE.timezone+':'+fmtLocalICS(INVITE.end),
     'END:VEVENT',
     'END:VCALENDAR'
   ].join('\n');
@@ -268,7 +269,6 @@
     btn.href = url;
     btn.download = `invito-${PARAMS.nome.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.ics`;
   }
-})();
-</script>
+})();</script>
 </body>
 </html>
