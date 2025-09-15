@@ -172,15 +172,13 @@
   // ==== UTIL ====
   function pad(n){ return String(n).padStart(2,'0'); }
   function toDateTimeInTZ(dateStr, timeStr, tz){
-    // Crea un Date coerente per Europe/Rome partendo da componenti locali
-    const [y,m,d] = dateStr.split('-').map(Number);
-    const [H,Mi] = timeStr.split(':').map(Number);
-    // Costruzione a partire da UTC, poi correzione con offset della TZ
-    // Usiamo il trucco di ottenere l'offset di quella TZ per quel momento
-    const dt = new Date(Date.UTC(y, m-1, d, H, Mi, 0));
-    // Intl non permette di cambiare internamente il valore, ma per formattare ICS useremo DTSTART;TZID
-    return dt;
-  }
+  const [y,m,d] = dateStr.split('-').map(Number);
+  const [H,Mi] = timeStr.split(':').map(Number);
+  // This makes a Date interpreted in the browser’s local TZ.
+  // That’s fine, since we export with TZID in ICS.
+  return new Date(y, m-1, d, H, Mi, 0);
+}
+
   function fmtLocalICS(d){
     // formato locale senza offset: YYYYMMDDTHHMMSS per DTSTART;TZID
     return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+'T'+pad(d.getHours())+pad(d.getMinutes())+pad(d.getSeconds());
@@ -243,7 +241,6 @@
     start,
     end
   };
-
   const ics = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
