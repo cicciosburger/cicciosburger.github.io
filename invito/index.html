@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invito Compleanno – Ciccio's</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#ffd54f; /* giallo caldo, adatto ai bambini ma elegante */
+      --ink:#f3f4f6;
+      --muted:#b8bec8;
+      --card-bg:#0e0e0e; /* richiesto */
+      --page-bg:#000;    /* richiesto */
+      --radius:24px;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0; background:var(--page-bg);
+      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--ink);
+      display:grid; place-items:center; padding:24px;
+    }
+    .invite{
+      width:min(820px, 94vw);
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      min-height: 360px;
+      margin: 0 auto;
+    }
+    .hero{
+      padding:24px;
+      background:radial-gradient(circle at 20% -10%, rgba(255,213,79,.35), transparent 40%),
+                 radial-gradient(circle at 90% 10%, rgba(255,213,79,.25), transparent 45%),
+                 #0e0e0e;
+      color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      border-right:1px solid rgba(255,255,255,.08);
+    }
+    .brand{ display:flex; align-items:center; justify-content:center; gap:16px; }
+    .brand img{ max-width:100%; height:auto; display:block; }
+    .content{ padding:42px 28px 32px; }
+    .title{
+      font-family:"Playfair Display", serif; font-weight:700; font-size: clamp(28px, 5vw, 40px);
+      line-height:1.1; margin:0 0 10px; letter-spacing:.3px;
+    }
+    .subtitle{ color:var(--muted); margin:0 0 22px; font-size:clamp(16px, 2.6vw, 18px);} 
+    .age-pill{ background:var(--accent); color:#000; font-weight:800; font-size:.95rem; border-radius:999px; padding:8px 12px; display:inline-block; margin:6px 0 0; }      
+    .details{
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:14px;
+      margin:18px 0 6px;
+    }
+    .detail{
+      border:1px dashed rgba(255,255,255,.12); border-radius:16px; padding:14px 16px; background:#121212;
+    }
+    .label{ font-size:12px; letter-spacing:.6px; text-transform:uppercase; color:var(--muted); }
+    .value{ font-size:18px; font-weight:600; margin-top:4px; }
+    .value a{ color:var(--ink); text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:3px; }
+
+    .note{ margin-top:22px; font-size:15px; color:var(--muted); }
+
+    .cta{ margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; }
+    .btn{ cursor:pointer; border:none; padding:12px 16px; border-radius:14px; font-weight:700; display:inline-block; text-decoration:none; }
+    .btn.accent{ background:var(--accent); color:#000; }
+    .btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,.20); color:var(--ink); }
+
+    /* stampa: mostra solo la card e ottimizza i margini */
+    @media print{
+      body{ background:#fff; padding:0; }
+      .invite{ box-shadow:none; border:0; width:100%; }
+      .btn{ display:none; }
+    }
+    @media (max-width: 640px){
+      html, body{ height:auto; }
+      body{ display:block; padding:12px; }
+      .invite{ width:100%; margin:0; grid-template-columns: 1fr; border-radius:20px; }
+      .hero{ border-right:none; border-bottom:1px solid rgba(255,255,255,.08); }
+      .content{ padding:24px 16px 22px; }
+      .logo-rect{ max-height:140px; }
+    }
+    .logo-rect{ width:100%; max-height:200px; object-fit:contain; }
+    *,*::before,*::after{ box-sizing:border-box; }
+    /* Animazioni */
+    @keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+    .invite{animation:cardIn .55s ease-out both;will-change:transform}
+    .content>*{opacity:0;animation:fadeInUp .6s ease-out forwards}
+    .title{animation-delay:.05s}
+    .age-pill{animation-delay:.12s}
+    .subtitle{animation-delay:.2s}
+    .note{animation-delay:.26s}
+    .details{animation-delay:.28s}
+    .cta{animation-delay:.38s}
+
+    .hero .logo-rect{animation:logoFloat 6s ease-in-out infinite}
+
+    .detail{transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+    .detail:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4);border-color:rgba(255,255,255,.2)}
+    .btn{transition:transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .btn.accent:hover{box-shadow:0 8px 16px rgba(255,213,79,.25)}
+    .btn.ghost:hover{border-color:rgba(255,255,255,.35)}
+
+    @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important} }
+  </style>
+</head>
+<body>
+  <main class="invite" aria-labelledby="titolo-invito">
+    <section class="hero">
+      <div class="brand" aria-label="Logo">
+        <img class="logo-rect" src="logo.png" alt="Logo" />
+      </div>
+    </section>
+
+    <section class="content">
+      <h1 id="titolo-invito" class="title"></h1>
+      <span class="age-pill" id="age-pill"></span>
+      <p class="subtitle">Festeggiamo insieme tra panini, risate e tante sorprese 🎈</p>
+
+      <div class="details" role="list">
+        <div class="detail" role="listitem">
+          <div class="label">Quando</div>
+          <div class="value" id="when"></div>
+        </div>
+        <div class="detail" role="listitem">
+          <div class="label">Dove</div>
+          <div class="value"><a href="https://maps.app.goo.gl/PYJv9nW1jbXnkRZg7" target="_blank" rel="noopener">Ciccio's Burger – Mondello</a></div>
+        </div>
+      </div>
+
+      <p class="note" id="note">Per favore conferma la presenza entro il <span id="deadline">14/06</span>. Se hai allergie, comunicacelo e penseremo a tutto noi.</p>
+
+      <div class="cta" aria-label="Azioni">
+        <a class="btn accent" id="whatsappBtn" href="#" target="_blank" rel="noopener">IO CI SONO</a>
+        <a class="btn ghost" id="addToCal" href="#" rel="noopener">Aggiungi al calendario</a>
+      </div>
+    </section>
+  </main>
+<script>
+(function(){
+  const q = new URLSearchParams(location.search);
+  let PARAMS = null;
+
+  try {
+    const raw = q.get('d');
+    if (!raw) throw new Error("manca d");
+    const decoded = atob(raw);
+    const parts = decoded.split(/[,|]/);
+    if (parts.length !== 5) throw new Error("formato errato");
+
+    PARAMS = {
+      nome: parts[0].trim(),
+      anni: parseInt(parts[1], 10),
+      data: parts[2].trim(),
+      ora: parts[3].trim(),
+      tel: parts[4].trim()
+    };
+  } catch (e) {
+    // Parametri mancanti o errati → non mostrare nulla
+    document.querySelector(".invite").style.display = "none";
+}
+
+  // ==== UTIL ====
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function toDateTimeInTZ(dateStr, timeStr, tz){
+    // Crea un Date coerente per Europe/Rome partendo da componenti locali
+    const [y,m,d] = dateStr.split('-').map(Number);
+    const [H,Mi] = timeStr.split(':').map(Number);
+    // Costruzione a partire da UTC, poi correzione con offset della TZ
+    // Usiamo il trucco di ottenere l'offset di quella TZ per quel momento
+    const dt = new Date(Date.UTC(y, m-1, d, H, Mi, 0));
+    // Intl non permette di cambiare internamente il valore, ma per formattare ICS useremo DTSTART;TZID
+    return dt;
+  }
+  function fmtLocalICS(d){
+    // formato locale senza offset: YYYYMMDDTHHMMSS per DTSTART;TZID
+    return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+'T'+pad(d.getHours())+pad(d.getMinutes())+pad(d.getSeconds());
+  }
+  function fmtUTC(d){
+    return d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+'T'+pad(d.getUTCHours())+pad(d.getUTCMinutes())+pad(d.getUTCSeconds())+'Z';
+  }
+  function normalizePhoneForWA(raw){
+    let t = (raw||'').replace(/\s+/g,'');
+    if(!t.startsWith('+')){
+      if(t.startsWith('39')) t = '+'+t; else t = '+39'+t; // default Italia
+    }
+    return t;
+  }
+  function italianWhenString(dateObj, tz){
+    // Mostra: Sabato 21 Giugno, ore 17:00 (Europe/Rome)
+    const fmtDay = new Intl.DateTimeFormat('it-IT',{ weekday:'long', day:'numeric', month:'long', timeZone: tz });
+    const fmtTime = new Intl.DateTimeFormat('it-IT',{ hour:'2-digit', minute:'2-digit', hour12:false, timeZone: tz });
+    const dayPart = fmtDay.format(dateObj);
+    const timePart = fmtTime.format(dateObj);
+    return dayPart.charAt(0).toUpperCase()+dayPart.slice(1)+`, ore ${timePart}`;
+  }
+
+  // ==== DATI INVITO DERIVATI ====
+  const TIMEZONE = 'Europe/Rome';
+  const start = toDateTimeInTZ(PARAMS.data, PARAMS.ora, TIMEZONE);
+  const durationMinutes = 120; // fisso come in originale
+  const end = new Date(start.getTime() + durationMinutes*60000);
+
+  const phoneWA = normalizePhoneForWA(PARAMS.tel);
+
+  // ==== POPOLA TESTI ====
+  document.title = `Invito Compleanno – ${PARAMS.nome}`;
+  document.getElementById('titolo-invito').textContent = `Sei invitato al compleanno di ${PARAMS.nome}!`;
+  document.getElementById('age-pill').textContent = `Compie ${PARAMS.anni} 🎉`;
+  document.getElementById('when').textContent =
+  `${start.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' })}, ore ${PARAMS.ora}`;
+
+
+  // scadenza conferma: 7 giorni prima della data
+  const deadline = new Date(start.getTime() - 7*24*60*60*1000);
+  const d = deadline;
+  const dd = pad(d.getDate());
+  const mm = pad(d.getMonth()+1);
+  const yyyy = d.getFullYear();
+  document.getElementById('deadline').textContent = `${dd}/${mm}`;
+
+  // WhatsApp CTA
+  const waMsg = encodeURIComponent(`Ciao! Confermo per il compleanno di ${PARAMS.nome} (${PARAMS.anni} anni) per ${document.getElementById('when').textContent}.`);
+  const waLink = `https://wa.me/${phoneWA.replace('+','')}/?text=${waMsg}`;
+  const waBtn = document.getElementById('whatsappBtn');
+  waBtn.href = waLink;
+
+  // ==== ICS ====
+  const INVITE = {
+    title: `Compleanno di ${PARAMS.nome} @ Ciccio's`,
+    description: `Festeggiamo insieme tra panini, risate e tante sorprese. Conferma su WhatsApp: ${phoneWA}`,
+    location: "Ciccio's Burger – Mondello",
+    timezone: TIMEZONE,
+    start,
+    end
+  };
+
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Ciccio\'s Invite//IT',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    'UID:ciccios-'+Date.now()+'@invite',
+    'DTSTAMP:'+fmtUTC(new Date()),
+    'SUMMARY:'+INVITE.title,
+    'DESCRIPTION:'+INVITE.description,
+    'LOCATION:'+INVITE.location,
+    'DTSTART;TZID='+INVITE.timezone+':'+fmtLocalICS(INVITE.start),
+    'DTEND;TZID='+INVITE.timezone+':'+fmtLocalICS(INVITE.end),
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\n');
+
+  const btn = document.getElementById('addToCal');
+  if(btn){
+    const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    btn.href = url;
+    btn.download = `invito-${PARAMS.nome.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.ics`;
+  }
+})();</script>
+</body>
+</html>
