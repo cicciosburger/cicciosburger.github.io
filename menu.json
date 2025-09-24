@@ -876,6 +876,188 @@
       ]
     }
   ],
+  "MENU(PANINO + PATATINE)": [
+    {
+      "title": "HAPPY CICCIO'S",
+      "price": 6.5,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/happc-1.png",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "HAMBURGER MENU",
+      "price": 7.5,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/hamburger.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "CHEESEBURGER MENU",
+      "price": 9.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/cheeseburger.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "BACON CHEESEBURGER MENU",
+      "price": 10.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/baconcheeseburger.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "AMERICAN BACONCHEESE MENU",
+      "price": 10.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/classic/americanbaconcheese.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "BRIE MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/brie.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "CHICKEN CBT MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/chickencbt.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "CRISPY GOAT MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/crispygoat.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "DOUBLE TRIPLE MENU",
+      "price": 13.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/doubletriple.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "EGG MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/egg.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "GREEN MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/brie.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "OLD SCHOOL MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/oldschool.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "PANCETTA MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/pancetta.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "PORCHETTA MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/porchetta.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "SUPER CRISPY MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/supercrispy.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "TALE' MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/tale.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "TUMA MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/tuma.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "CALABRESE MENU",
+      "price": 11.9,
+      "ingredients": null,
+      "allergens": null,
+      "thumb": "./img/menu/ciccios/calabrese.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    }
+  ],
   "BEVANDE": [
     {
       "title": "ACQUA NATURALE 50CL",
