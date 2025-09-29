@@ -356,22 +356,6 @@
       ]
     },
     {
-      "title": "PANINO DELL'ESTATE",
-      "price": 9.9,
-      "ingredients": "bun, roast beef, robiolina con pomodoro semi-dry, tzatziki, grana, songino",
-      "allergens": {
-        "Allergeni": "Glutine, Uova, Latte, Solfiti, Frutta a guscio, Pesce"
-      },
-      "thumb": "./img/menu/ciccios/paninoestate-nobg.png",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
-      ]
-    },
-    {
       "title": "CALABRESE",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, pecorino al peperoncino, cipolla caramellata alla birra, nduja, giri saltati, gocce di peperoncino",
@@ -1379,8 +1363,6 @@
       },
       "thumb": "./img/menu/dolci/tiramiciccios.webp",
       "available_in": [
-        "STADIO",
-        "MONDELLO"
       ]
     },
     {
@@ -1392,8 +1374,6 @@
       },
       "thumb": "./img/menu/dolci/brookies.webp",
       "available_in": [
-        "STADIO",
-        "MONDELLO"
       ]
     }
   ]
