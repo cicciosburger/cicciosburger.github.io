@@ -356,19 +356,18 @@
       ]
     },
     {
-      "title": "CALABRESE",
-      "price": 9.9,
-      "ingredients": "bun, burger di manzo 170g, pecorino al peperoncino, cipolla caramellata alla birra, nduja, giri saltati, gocce di peperoncino",
+      "title": "WAGYU",
+      "price": 13.5,
+      "ingredients": "bun, burger di wagyu",
       "allergens": {
         "Allergeni": "Glutine, Uova, Latte"
       },
-      "thumb": "./img/menu/ciccios/calabrese.webp",
+      "thumb": "./img/menu/ciccios/wagyu.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     }
   ],
