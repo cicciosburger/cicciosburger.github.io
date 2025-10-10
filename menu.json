@@ -662,19 +662,6 @@
         "SPERLINGA",
         "MONDELLO"
       ]
-    },
-    {
-      "title": "CALABRESE MENU",
-      "price": 13.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/calabrese.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
     }
   ],
   "MENU(PANINO + PATATINE + BIBITA)": [
@@ -847,16 +834,6 @@
       "available_in": [
         "FOODTRUCK"
       ]
-    },
-    {
-      "title": "CALABRESE MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/calabrese.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
     }
   ],
   "MENU(PANINO + PATATINE)": [
@@ -1026,16 +1003,6 @@
       "ingredients": null,
       "allergens": null,
       "thumb": "./img/menu/ciccios/tuma.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "CALABRESE MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "allergens": null,
-      "thumb": "./img/menu/ciccios/calabrese.webp",
       "available_in": [
         "FOODTRUCK"
       ]
