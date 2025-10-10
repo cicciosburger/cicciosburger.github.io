@@ -672,8 +672,7 @@
       "allergens": null,
       "thumb": "./img/menu/classic/happc-1.png",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "HAMBURGER MENU",
@@ -682,8 +681,7 @@
       "allergens": null,
       "thumb": "./img/menu/classic/hamburger.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "CHEESEBURGER MENU",
@@ -692,8 +690,7 @@
       "allergens": null,
       "thumb": "./img/menu/classic/cheeseburger.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "BACON CHEESEBURGER MENU",
@@ -702,8 +699,7 @@
       "allergens": null,
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "AMERICAN BACONCHEESE MENU",
@@ -712,8 +708,7 @@
       "allergens": null,
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "BRIE MENU",
@@ -722,8 +717,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "CHICKEN CBT MENU",
@@ -732,8 +726,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/chickencbt.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "CRISPY GOAT MENU",
@@ -742,8 +735,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/crispygoat.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "DOUBLE TRIPLE MENU",
@@ -752,8 +744,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/doubletriple.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "EGG MENU",
@@ -762,8 +753,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/egg.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "GREEN MENU",
@@ -772,8 +762,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "OLD SCHOOL MENU",
@@ -782,8 +771,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/oldschool.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "PANCETTA MENU",
@@ -792,8 +780,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/pancetta.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "PORCHETTA MENU",
@@ -802,8 +789,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "SUPER CRISPY MENU",
@@ -812,8 +798,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/supercrispy.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "TALE' MENU",
@@ -822,8 +807,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/tale.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     },
     {
       "title": "TUMA MENU",
@@ -832,8 +816,7 @@
       "allergens": null,
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
+              ]
     }
   ],
   "MENU(PANINO + PATATINE)": [
