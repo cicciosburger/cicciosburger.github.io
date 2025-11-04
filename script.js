@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Allergeni map (keep your existing one)
     const allergeniIngredientiMap = {
-                "bun": "Glutine, Uova",
+                "bun": "Glutine",
                 "nutella": "Frutta a guscio, Soia, Latte",
                 "tiramisù": "Glutine, Latte, Uova",
                 "brookies": "Glutine, Latte, Uova",
