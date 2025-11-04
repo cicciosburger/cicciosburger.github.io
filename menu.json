@@ -356,13 +356,13 @@
       ]
     },
     {
-      "title": "WAGYU",
-      "price": 13.5,
-      "ingredients": "bun, burger di wagyu",
+      "title": "TUMAZZO E SALSICCIA",
+      "price": 9.9,
+      "ingredients": "bun, burger di salsiccia 170gr, tuma, maionese al basilico, pomodoro, lattuga, bacon",
       "allergens": {
         "Allergeni": "Glutine, Uova, Latte"
       },
-      "thumb": "./img/menu/ciccios/wagyu.webp",
+      "thumb": "",
       "available_in": [
         "LUMIA",
         "STADIO",
