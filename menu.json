@@ -358,9 +358,9 @@
     {
       "title": "TUMAZZO E SALSICCIA",
       "price": 9.9,
-      "ingredients": "bun, burger di salsiccia 170gr, tuma, maionese al basilico, pomodoro, lattuga, bacon",
+      "ingredients": "bun, burger di salsiccia 170g, tuma, maionese al basilico, pomodoro, lattuga, bacon",
       "allergens": {
-        "Allergeni": "Glutine, Uova, Latte"
+        "Allergeni": "Glutine, Uova, Latte, Senape, Arachidi, Pesce"
       },
       "thumb": "",
       "available_in": [
