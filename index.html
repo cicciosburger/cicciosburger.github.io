@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
     <script src="script.js" defer></script>
-
-
 </head>
 
 
@@ -27,11 +25,6 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <!-- <img src="./img/logo.webp" alt="Ciccio's Burger Logo" fetchpriority="high" class="logo"
-                srcset="./img/logo-small.webp 500w,
-                        ./img/logo.webp 1000w"
-                sizes="(max-width: 600px) 500px,
-                        1000px"> -->
             <object data="./img/logocleanbigsmaller.svg" type="image/svg+xml"
                 style="width:80%; max-width: 300px; padding: 5px;" role="img" aria-label="Ciccio's Burger Logo">Ciccio's
                 Burger Logo</object>
@@ -116,10 +109,10 @@
                     </p>
                 </a>
 
-                <hr style="border: 0; height: 1px; background-color: white;">
+                <!-- <hr style="border: 0; height: 1px; background-color: white;">
                 <div class="open-modal" data-modal="membershipModal">
                     <svg class="svgicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                        <!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+                        Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
                         <path fill="white"
                             d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-352 96c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H86.4C74 384 64 375.4 64 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2zM512 312c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z" />
                     </svg>
@@ -127,7 +120,7 @@
                         Membership
                     </p>
 
-                </div>
+                </div> -->
                 <hr id="orderBar" style="border: 0; height: 1px; background-color: white;">
                 <div id="showOrderFormButton" class="open-modal" data-modal="orderModal">
 
@@ -141,19 +134,6 @@
                     </p>
 
                 </div>
-
-                <!-- <hr style="border: 0; height: 1px; background-color: white;"> -->
-                <!-- <div id="showHappyFormButton" class="open-modal" data-modal="happyOrderModal">
-
-                    <svg class="svgicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                        <path fill="white"
-                            d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0l12.6 0c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7 480 448c0 35.3-28.7 64-64 64l-192 0c-35.3 0-64-28.7-64-64l0-250.3-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0l12.6 0z" />
-                    </svg>
-                    <p class="button">
-                        Hai completato l'album?
-                    </p>
-
-                </div> -->
 
                 <hr style="border: 0; height: 1px; background-color: white;">
                 
@@ -245,7 +225,7 @@
                         <input type="checkbox" id="toggleIngredientsLocale" />
                         <span class="slider"></span>
                     </label>
-                    <label for="toggleIngredientsLocale">Mostra allergeni con dettaglio</label>
+                    <label for="toggleIngredientsLocale">Mostra allergeni</label>
                 </div>
                 <img src="./img/spiegazionemenu.webp" alt="" style="width:90%;">
                 <div id="generatedContentLocale"></div>
@@ -253,69 +233,6 @@
                 <h3 style="text-align: left;">*Prodotto fresco, lavorato e abbattuto</h3>
                 <h3 style="text-align: left;">**Prodotto congelato</h3>
                 <h4 style="text-align: left;">***Starters a scelta tra: nuggets, meatball, chicken pop corn, green nuggets, green meat ball(le varianti green sono solo per il menu Green)</h4>
-                <h3>Legenda Allergeni</h3>
-                <div class="legenda-container">
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda glutine">🌾</div>
-                        <p class="legenda-text allergeni-text">Glutine</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda latte">🥛</div>
-                        <p class="legenda-text allergeni-text">Latte</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda uova">🥚</div>
-                        <p class="legenda-text allergeni-text">Uova</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda frutta-a-guscio">🌰</div>
-                        <p class="legenda-text allergeni-text">Frutta a guscio</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda arachidi">🥜</div>
-                        <p class="legenda-text allergeni-text">Arachidi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda soia">🌱</div>
-                        <p class="legenda-text allergeni-text">Soia</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda pesce">🐟</div>
-                        <p class="legenda-text allergeni-text">Può contenere tracce di pesce</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda crostacei">🦐</div>
-                        <p class="legenda-text allergeni-text">Crostacei</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda molluschi">🐚</div>
-                        <p class="legenda-text allergeni-text">Molluschi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sedano">🥬</div>
-                        <p class="legenda-text allergeni-text">Sedano</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda lupini">🌼</div>
-                        <p class="legenda-text allergeni-text">Lupini</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sesamo">⚪</div>
-                        <p class="legenda-text allergeni-text">Sesamo</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda senape">🟡</div>
-                        <p class="legenda-text allergeni-text">Senape</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda solfiti">⚗️</div>
-                        <p class="legenda-text allergeni-text">Solfiti</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda"><i class="fas fa-leaf"></i></div>
-                        <p class="legenda-text allergeni-text">Vegetariano</p>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -336,69 +253,6 @@
                 <div id="generatedContentFoodtruck"></div>
                 <h3 style="text-align: left;">*Prodotto fresco, lavorato e abbattuto</h3>
                 <h3 style="text-align: left;">**Prodotto congelato</h3>
-                <h3>Legenda Allergeni</h3>
-                <div class="legenda-container">
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda glutine">🌾</div>
-                        <p class="legenda-text allergeni-text">Glutine</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda latte">🥛</div>
-                        <p class="legenda-text allergeni-text">Latte</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda uova">🥚</div>
-                        <p class="legenda-text allergeni-text">Uova</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda frutta-a-guscio">🌰</div>
-                        <p class="legenda-text allergeni-text">Frutta a guscio</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda arachidi">🥜</div>
-                        <p class="legenda-text allergeni-text">Arachidi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda soia">🌱</div>
-                        <p class="legenda-text allergeni-text">Soia</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda pesce">🐟</div>
-                        <p class="legenda-text allergeni-text">Può contenere tracce di pesce</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda crostacei">🦐</div>
-                        <p class="legenda-text allergeni-text">Crostacei</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda molluschi">🐚</div>
-                        <p class="legenda-text allergeni-text">Molluschi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sedano">🥬</div>
-                        <p class="legenda-text allergeni-text">Sedano</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda lupini">🌼</div>
-                        <p class="legenda-text allergeni-text">Lupini</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sesamo">⚪</div>
-                        <p class="legenda-text allergeni-text">Sesamo</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda senape">🟡</div>
-                        <p class="legenda-text allergeni-text">Senape</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda solfiti">⚗️</div>
-                        <p class="legenda-text allergeni-text">Solfiti</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda"><i class="fas fa-leaf"></i></div>
-                        <p class="legenda-text allergeni-text">Vegetariano</p>
-                    </div>
-                </div>
             </div>
         </div>
         
@@ -419,72 +273,9 @@
                 <div id="generatedContentGhiotto"></div>
                 <h3 style="text-align: left;">*Prodotto fresco, lavorato e abbattuto</h3>
                 <h3 style="text-align: left;">**Prodotto congelato</h3>
-                <h3>Legenda Allergeni</h3>
-                <div class="legenda-container">
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda glutine">🌾</div>
-                        <p class="legenda-text allergeni-text">Glutine</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda latte">🥛</div>
-                        <p class="legenda-text allergeni-text">Latte</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda uova">🥚</div>
-                        <p class="legenda-text allergeni-text">Uova</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda frutta-a-guscio">🌰</div>
-                        <p class="legenda-text allergeni-text">Frutta a guscio</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda arachidi">🥜</div>
-                        <p class="legenda-text allergeni-text">Arachidi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda soia">🌱</div>
-                        <p class="legenda-text allergeni-text">Soia</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda pesce">🐟</div>
-                        <p class="legenda-text allergeni-text">Può contenere tracce di pesce</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda crostacei">🦐</div>
-                        <p class="legenda-text allergeni-text">Crostacei</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda molluschi">🐚</div>
-                        <p class="legenda-text allergeni-text">Molluschi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sedano">🥬</div>
-                        <p class="legenda-text allergeni-text">Sedano</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda lupini">🌼</div>
-                        <p class="legenda-text allergeni-text">Lupini</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sesamo">⚪</div>
-                        <p class="legenda-text allergeni-text">Sesamo</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda senape">🟡</div>
-                        <p class="legenda-text allergeni-text">Senape</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda solfiti">⚗️</div>
-                        <p class="legenda-text allergeni-text">Solfiti</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda"><i class="fas fa-leaf"></i></div>
-                        <p class="legenda-text allergeni-text">Vegetariano</p>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- GHIOTTO Modal -->
+        <!-- MENU SPECIALE Modal -->
 
          <div id="menuSpeciale" class="modal">
             <div class="modal-content">
@@ -502,138 +293,16 @@
                 <div id="generatedContentMenuSpeciale"></div>
                 <h3 style="text-align: left;">*Prodotto fresco, lavorato e abbattuto</h3>
                 <h3 style="text-align: left;">**Prodotto congelato</h3>
-                <h3>Legenda Allergeni</h3>
-                <div class="legenda-container">
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda glutine">🌾</div>
-                        <p class="legenda-text allergeni-text">Glutine</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda latte">🥛</div>
-                        <p class="legenda-text allergeni-text">Latte</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda uova">🥚</div>
-                        <p class="legenda-text allergeni-text">Uova</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda frutta-a-guscio">🌰</div>
-                        <p class="legenda-text allergeni-text">Frutta a guscio</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda arachidi">🥜</div>
-                        <p class="legenda-text allergeni-text">Arachidi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda soia">🌱</div>
-                        <p class="legenda-text allergeni-text">Soia</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda pesce">🐟</div>
-                        <p class="legenda-text allergeni-text">Può contenere tracce di pesce</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda crostacei">🦐</div>
-                        <p class="legenda-text allergeni-text">Crostacei</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda molluschi">🐚</div>
-                        <p class="legenda-text allergeni-text">Molluschi</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sedano">🥬</div>
-                        <p class="legenda-text allergeni-text">Sedano</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda lupini">🌼</div>
-                        <p class="legenda-text allergeni-text">Lupini</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda sesamo">⚪</div>
-                        <p class="legenda-text allergeni-text">Sesamo</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda senape">🟡</div>
-                        <p class="legenda-text allergeni-text">Senape</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda solfiti">⚗️</div>
-                        <p class="legenda-text allergeni-text">Solfiti</p>
-                    </div>
-                    <div class="legenda-item">
-                        <div class="icona icona-legenda"><i class="fas fa-leaf"></i></div>
-                        <p class="legenda-text allergeni-text">Vegetariano</p>
-                    </div>
-                </div>
             </div>
         </div>
-
-        
 
 
         <div id="clockModal" class="modal">
             <div class="modal-content" id="outer-clockmodal">
                 <span class="close-modal">&times;</span>
                 <div class="locations">
-                    <h2>Punti vendita</h2>
+                    <h2 class="locations-title">PUNTI VENDITA</h2>
                     <div class="location-grid">
-                        <div class="location">
-                            <img src="./img/sperlinga.webp" alt="" class="loc-pic" loading="lazy">
-                            <div class="box-orari">
-                                <div class="day">
-                                    <span class="label">Lunedì - Domenica</span>
-                                    <div class="time-bar">
-                                        <div class="slot closed">CHIUSO</div>
-                                    </div>
-                                </div>
-                                <!-- <div class="day">
-                                    <span class="label">Lunedì</span>
-                                    <div class="time-bar">
-                                        <div class="slot closed">CHIUSO</div>
-                                    </div>
-                                </div>
-                                <div class="day">
-                                    <span class="label">Martedì</span>
-                                    <div class="time-bar">
-                                        <div class="slot evening">18:30 - 23:00</div>
-                                    </div>
-                                </div>
-                                <div class="day">
-                                    <span class="label">Mercoledì - Domenica</span>
-                                    <div class="time-bar">
-                                        <div class="slot morning">11:30 - 15:00</div>
-                                        <div class="slot evening">18:30 - 23:00</div>
-                                    </div>
-                                </div> -->
-                            </div>
-                            <a href="https://maps.app.goo.gl/WKyRuiBWLvt5Hefp9" target="_blank"
-                                class="open-google-maps-button">
-                                <img src="./img/googlemaps.webp" class="maps-img" loading="lazy"> Google Maps
-                            </a>
-                        </div>
-                        <div class="location">
-                            <img src="./img/stadio.webp" alt="" class="loc-pic" loading="lazy">
-                            <div class="box-orari">
-                                <div class="day">
-                                    <span class="label">Lunedì - Domenica</span>
-                                    <div class="time-bar">
-                                        <div class="slot morning">11:30 - 15:00</div>
-                                        <div class="slot evening">18:30 - 23:00</div>
-                                    </div>
-                                    <div class="time-bar" style="margin-top:10px;">
-                                        <div class="slot delivery">15:00 - 18:30 <br> Solo asporto* e delivery
-                                        </div>
-                                    </div>
-                                    <p style="color:grey; margin-top:5px;">* è comunque possibile consumare
-                                        presso i nostri tavoli esterni il vostro ordine</p>
-                                </div>
-                            </div>
-                            <a href="https://www.google.com/maps/place/Viale+del+Fante,+50,+90146+Palermo+PA/@38.1481196,13.3405517,17z/"
-                                target="_blank" class="open-google-maps-button">
-                                <img src="./img/googlemaps.webp" class="maps-img" loading="lazy"> Google Maps
-                            </a>
-
-                        </div>
                         <div class="location">
                             <img src="./img/lumia.webp" alt="" class="loc-pic" loading="lazy">
                             <div class="box-orari">
@@ -668,24 +337,82 @@
                             </a>
 
                         </div>
+                        <div class="location">
+                            <img src="./img/stadio.webp" alt="" class="loc-pic" loading="lazy">
+                            <div class="box-orari">
+                                <div class="day">
+                                    <span class="label">Lunedì - Domenica</span>
+                                    <div class="time-bar">
+                                        <div class="slot morning">11:30 - 15:00</div>
+                                        <div class="slot evening">18:30 - 23:00</div>
+                                    </div>
+                                    <div class="time-bar" style="margin-top:10px;">
+                                        <div class="slot delivery">15:00 - 18:30 <br> Solo asporto* e delivery
+                                        </div>
+                                    </div>
+                                    <p style="color:grey; margin-top:5px;">* è comunque possibile consumare
+                                        presso i nostri tavoli esterni il vostro ordine</p>
+                                </div>
+                            </div>
+                            <a href="https://www.google.com/maps/place/Viale+del+Fante,+50,+90146+Palermo+PA/@38.1481196,13.3405517,17z/"
+                                target="_blank" class="open-google-maps-button">
+                                <img src="./img/googlemaps.webp" class="maps-img" loading="lazy"> Google Maps
+                            </a>
+
+                        </div>
+                        <div class="location">
+                            <img src="./img/sperlinga.webp" alt="" class="loc-pic" loading="lazy">
+                            <div class="box-orari">
+                                <div class="day">
+                                    <span class="label">Lunedì - Domenica</span>
+                                    <div class="time-bar">
+                                        <div class="slot closed">CHIUSO</div>
+                                    </div>
+                                </div>
+                                <!-- <div class="day">
+                                    <span class="label">Lunedì</span>
+                                    <div class="time-bar">
+                                        <div class="slot closed">CHIUSO</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <span class="label">Martedì</span>
+                                    <div class="time-bar">
+                                        <div class="slot evening">18:30 - 23:00</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <span class="label">Mercoledì - Domenica</span>
+                                    <div class="time-bar">
+                                        <div class="slot morning">11:30 - 15:00</div>
+                                        <div class="slot evening">18:30 - 23:00</div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <a href="https://maps.app.goo.gl/WKyRuiBWLvt5Hefp9" target="_blank"
+                                class="open-google-maps-button">
+                                <img src="./img/googlemaps.webp" class="maps-img" loading="lazy"> Google Maps
+                            </a>
+                        </div>
 
                     </div>
                 </div>
-
+                
             </div>
         </div>
 
-        <!-- Membership Form Modal -->
+
+        <!-- The burger club Modal -->
         <div id="membershipModal" class="modal">
             <div class="modal-content modalForm-content">
                 <span class="close-modal">&times;</span>
-                <h1>Iscrizione Membership Card</h1>
+                <h1>Iscrizione The Burger Club</h1>
                 <a href="https://docs.google.com/document/d/1H6UBx_cvAu7Z4-Hpv2FWCsYuzl8sLlw2GnY_U2_JCZ4/edit?usp=sharing"
-                    target="_blank" style="background-color: lightblue; padding: 8px; border-radius: 8px;">Clicca per
-                    leggere il regolamento</a>
+                target="_blank" style="background-color: lightblue; padding: 8px; border-radius: 8px;">Clicca per
+                leggere il regolamento</a>
                 <div id="cookieMsg" style="display: none; color: red; margin-bottom: 20px;">
-                    I cookie sono necessari per completare la registrazione. Accettali e ricarica la pagina per
-                    continuare. </div>
+                    I cookie sono necessari per completare la registrazione. Accettali e ricarica la pagina per continuare.
+                </div>
                 <form id="data-form" action="#">
                     <label for="name">Nome:*</label>
                     <input type="text" id="name" name="name" required pattern="[A-Za-z ]+"
@@ -701,13 +428,28 @@
                     <label for="email">Email:*</label>
                     <input type="email" id="email" name="email" required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                        title="Inserisci una email valida (es., esempio@dominio.com)" placeholder="esempio@dominio.com">
-
+                        title="Inserisci una email valida (es., esempio@dominio.com)"
+                        placeholder="esempio@dominio.com"
+                        oninput="validateEmailDomain(this)"
+                        onblur="validateEmailComplete(this)">
+                    <span id="email-error" style="
+                        display:none;
+                        color: #b00020; /* rosso scuro leggibile */
+                        background-color: #fddede; /* rosso molto chiaro di sfondo */
+                        border: 1px solid #b00020;
+                        border-radius: 4px;
+                        padding: 4px 4px;
+                        font-size: 0.8em;
+                        margin-top: 4px;
+                        max-width: 300px;
+                    ">
+                        Indirizzo email non consentito. Usa un indirizzo email comune, ad esempio @gmail.com o @libero.it.
+                    </span>                    
                     <label for="phone">Numero di telefono:*</label>
                     <div class="phone-container">
                         <div class="phone-prefix">+39</div>
-                        <input type="text" id="phone" name="phone" class="phone-input" required pattern="^\d{10}$"
-                            title="Il numero deve contenere 10 numeri (es., 3281234567)" placeholder="3281234567">
+                        <input type="text" id="phone" name="phone" class="phone-input" required pattern="^3[2-9]\d{8}$"
+                            title="Il numero deve contenere 10 numeri (es. 3281234567)" placeholder="3281234567">
                     </div>
 
                     <div class="terms-container">
@@ -715,21 +457,47 @@
                         <label for="terms">
                             Accetto
                             <a href="https://docs.google.com/document/d/1H6UBx_cvAu7Z4-Hpv2FWCsYuzl8sLlw2GnY_U2_JCZ4/edit?usp=sharing"
-                                target="_blank">Privacy Policy
-                                e Termini e condizioni</a>.*
+                                target="_blank">Privacy Policy e Termini e condizioni</a>.*
                         </label>
                     </div>
 
                     <div class="g-recaptcha" id="recaptcha-container"></div>
                     <button type="submit" id="submit-button">Richiedi tessera</button>
                 </form>
-                <div id="result">
-                    <h2>Presenta questo codice in cassa per ricevere la carta:</h2>
-                    <svg id="barcode"></svg>
-                    <button id="downloadBarcodeButton" style="display: none;">Scarica Codice a Barre</button>
+                <div id="otp-section" style="display: none;">
+                    <p style="text-align: center; margin-bottom: 20px; margin-top: 20px; color: #333;">
+                        Inserisci il codice di verifica inviato alla tua email.
+                    </p>
+                    
+                    <!-- Container delle 6 caselle OTP -->
+                    <div class="otp-container">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="0">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="1">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="2">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="3">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="4">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="5">
+                    </div>
+                    
+                    <button type="button" id="verify-otp-btn" class="verify-btn">
+                        Verifica e Registrati
+                    </button>
+                </div>
+                <div id="result" style="display: none;">
+                    <h2>La tua carta è pronta!</h2>
+                    <p>Aggiungi la tua Membership Card al wallet:</p>
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                        <a id="appleWalletButton" href="#" target="_blank" style="text-decoration: none;">
+                            <div id="appleSvgContainer"></div>
+                        </a>
+                        <a id="googleWalletButton" href="#" target="_blank" style="text-decoration: none;">
+                            <div id="googleSvgContainer"></div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div id="orderModal" class="modal orderModal">
             <div class="modal-content order-modal-content" style="background-color: #f3f4f6 !important;">
                 <span class="close-modal">&times;</span>
@@ -776,87 +544,20 @@
                 </div>
                 <!-- Confirmation message (hidden by default) -->
                 <!-- Subito dopo il form -->
-<div id="confirmationMessage" style="display: none;">
-  <span id="checkmark">&#10004;</span>
-  <h2>Grazie per il tuo ordine!</h2>
-  <p>Il numero del tuo ordine è: <strong id="orderNumberDisplay"></strong></p>
-  <p>Riceverai a breve una email con il riepilogo del tuo preordine</p>
-  <button id="newOrderButton">Fai un nuovo ordine</button>
-</div>
+                <div id="confirmationMessage" style="display: none;">
+                <span id="checkmark">&#10004;</span>
+                <h2>Grazie per il tuo ordine!</h2>
+                <p>Il numero del tuo ordine è: <strong id="orderNumberDisplay"></strong></p>
+                <p>Riceverai a breve una email con il riepilogo del tuo preordine</p>
+                <button id="newOrderButton">Fai un nuovo ordine</button>
+                </div>
 
             </div>
         </div>
         
 
     </div>
-    <div id="happyOrderModal" class="modal orderModal">
-    <div class="modal-content order-modal-contentt" style="background-color: #f3f4f6 !important;">
-        <span class="close-modal">&times;</span>
-        <h2>Prenota il tuo premio</h2>
-        <div id="happyCookieOrderMsg" style="display: none; color: red; margin-bottom: 20px;">
-            I cookie sono necessari per effetuare l'ordine. Accettali e ricarica la pagina per
-            continuare. </div>
-        <div class="order-container" id="happyOrderContainer">
-            <p style="background-color: yellow;">⚠️ Ricorda: ALBUM COMPLETO il giorno del ritiro!</p>
-            <form id="happyOrderForm">
-                <label for="happy-order-name">Nome:*</label>
-                <input type="text" id="happy-order-name" name="name" required pattern="[A-Za-z ]+"
-                    title="Sono ammesse solo lettere" placeholder="Inserisci il tuo nome">
-
-                <label for="happy-order-surname">Cognome:*</label>
-                <input type="text" id="happy-order-surname" name="surname" required pattern="[A-Za-z ]+"
-                    title="Sono ammesse solo lettere" placeholder="Inserisci il tuo cognome">
-
-                <label for="happy-order-email">Email:*</label>
-                <input type="email" id="happy-order-email" name="email" required
-                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                    title="Inserisci una email valida (es., esempio@dominio.com)"
-                    placeholder="esempio@dominio.com">
-
-                <label for="happy-order-phone">Numero di telefono:*</label>
-                <div class="order-phone-container">
-                    <div class="order-phone-prefix">+39</div>
-                    <input type="text" id="happy-order-phone" name="phone" class="order-phone-input" required
-                        pattern="^\d{10}$" title="Il numero deve contenere 10 numeri (es., 3281234567)"
-                        placeholder="3281234567">
-                </div>
-                PUNTO DI RITIRO: STADIO
-                <input type="hidden" id="happy-order-shop" value="stadio">
-
-                <div class="selector">
-                    <label for="happy-order-type">Prodotto:</label>
-                    <div id="happy-custom-type-select" class="custom-select">
-                        <div class="selected">Seleziona un prodotto</div>
-                        <div class="dropdown"></div>
-                    </div>
-                    <input type="hidden" id="happy-order-type" />
-
-                    <label for="happy-order-size">Taglia:</label>
-                    <select id="happy-order-size"></select>
-
-                    <button type="button" id="happy-addToCart">Conferma scelta</button>
-                </div>
-            </form>
-            <h3>Carrello</h3>
-            <div id="happy-cart"></div>
-            <div class="g-recaptcha" id="happy-recaptcha-container-order"></div>
-
-            <button id="happy-sendOrder">Invia Ordine</button>
-            <p>Premendo "Invia Ordine" accetti
-                <a href="https://docs.google.com/document/d/1H6UBx_cvAu7Z4-Hpv2FWCsYuzl8sLlw2GnY_U2_JCZ4/edit?usp=sharing"
-                    target="_blank">Privacy Policy
-                    e Termini e condizioni</a>.*</p>
-        </div>
-        <!-- Confirmation message (hidden by default) -->
-        <div id="happy-confirmationMessage">
-            <span class="checkmark">&#10004;</span>
-            <h2>Grazie per il tuo ordine!</h2>
-            <p>Il numero del tuo ordine è: <strong id="happy-orderNumberDisplay"></strong></p>
-            <p>Riceverai a breve una email con il riepilogo del tuo preordine</p>
-            <button id="happy-newOrderButton">Fai un nuovo ordine</button>
-        </div>
     </div>
-</div>
 </body>
 
 </html>

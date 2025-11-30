@@ -4,7 +4,6 @@
       "title": "FRIES",
       "price": 3.5,
       "ingredients": "patate con buccia**",
-      "allergens": null,
       "thumb": "./img/menu/starters/fries.webp",
       "available_in": [
         "LUMIA",
@@ -18,84 +17,66 @@
       "title": "BACON CHEDDAR FRIES",
       "price": 6.5,
       "ingredients": "patate con buccia**, crema cheddar home made, bacon croccante",
-      "allergens": {
-        "Allergeni": "Glutine, Latte"
-      },
       "thumb": "./img/menu/starters/baconcheesefries.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      
+        "MONDELLO"
       ]
     },
     {
       "title": "NUGGETS",
       "price": "da 2,70€",
       "ingredients": "bocconcini di pollo tritato pastellati fatti a mano*",
-      "allergens": {
-        "Allergeni": "Glutine, Latte"
-      },
       "thumb": "./img/menu/starters/nuggets.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      
+        "MONDELLO"
       ]
     },
     {
       "title": "CHICKEN POP CORN",
       "price": "da 2,70€",
       "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante*",
-      "allergens": {
-        "Allergeni": "Glutine, Latte"
-      },
       "thumb": "./img/menu/starters/chickenpopcorn.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      
+        "MONDELLO"
       ]
     },
     {
       "title": "MEAT BALLS",
       "price": "da 2,70€",
       "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio*",
-      "allergens": {
-        "Allergeni": "Glutine, Uova, Latte"
-      },
       "thumb": "./img/menu/starters/meatball.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      
+        "MONDELLO"
       ]
     },
     {
       "title": "PROVOLA GOAT",
       "price": 4.5,
       "ingredients": "provola dolce con tripla pastellatura a mano*",
-      "allergens": {
-        "Allergeni": "Glutine, Latte"
-      },
       "thumb": "./img/menu/starters/provolagoat.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      
+        "MONDELLO"
       ]
     },
     {
       "title": "ALETTE CRUNCHY",
       "price": "da 2,70€",
       "ingredients": "Alette di pollo pastellate e fritte laccate con salsa thai",
-      "allergens": {
-        "Allergeni": "Glutine, Senape"
-      },
       "thumb": "./img/menu/starters/alettecrunchy.webp",
       "available_in": [
         "LUMIA",
@@ -108,45 +89,36 @@
       "title": "GREEN NUGGETS VEGGIE",
       "price": "da 2,70€",
       "ingredients": "nuggets vegetali",
-      "allergens": {
-        "Allergeni": "Uova, Soia, Latte, Sedano, Senape, Glutine"
-      },
       "thumb": "./img/menu/starters/greennuggets.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      
+        "MONDELLO"
       ]
     },
     {
       "title": "GREEN BALL VEGGIE",
       "price": "da 2,70€",
       "ingredients": "polpettine vegetali*",
-      "allergens": {
-        "Allergeni": "Uova, Soia, Latte, Anidride solforosa e solfiti, Glutine"
-      },
       "thumb": "./img/menu/starters/greenball.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      
+        "MONDELLO"
       ]
     },
     {
       "title": "LINGOTTI 2PZ",
       "price": 4.5,
       "ingredients": "Maxi nuggets di pollo con panatura super croccante* accompagnato con cheddar calda",
-      "allergens": {
-        "Allergeni": "Glutine, Latte"
-      },
       "thumb": "./img/menu/starters/lingotti.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      
+        "MONDELLO"
       ]
     }
   ],
@@ -155,10 +127,6 @@
       "title": "CRISPY GOAT",
       "price": 9.9,
       "ingredients": "bun, burger di pollo pastellato e fritto*, cheddar, bacon, lattuga, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/crispygoat.webp",
       "available_in": [
         "LUMIA",
@@ -172,10 +140,6 @@
       "title": "BRIE",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
         "LUMIA",
@@ -189,10 +153,6 @@
       "title": "TALÈ",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Frutta a guscio, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/tale.webp",
       "available_in": [
         "LUMIA",
@@ -206,10 +166,6 @@
       "title": "EGG",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/egg.webp",
       "available_in": [
         "LUMIA",
@@ -223,10 +179,6 @@
       "title": "TUMA",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
         "LUMIA",
@@ -240,10 +192,6 @@
       "title": "PANCETTA",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte, Senape, Anidride solforosa e solfiti",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/pancetta.webp",
       "available_in": [
         "LUMIA",
@@ -257,10 +205,6 @@
       "title": "DOUBLE TRIPLE",
       "price": 11.9,
       "ingredients": "bun, doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/doubletriple.webp",
       "available_in": [
         "LUMIA",
@@ -274,10 +218,6 @@
       "title": "SUPER CRISPY",
       "price": 9.9,
       "ingredients": "bun, burger di pollo fritto con panatura super croccante*, lattuga, pomodoro, maionese",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/supercrispy.webp",
       "available_in": [
         "LUMIA",
@@ -291,10 +231,6 @@
       "title": "CHICKEN CBT",
       "price": 9.9,
       "ingredients": "bun, sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/chickencbt.webp",
       "available_in": [
         "LUMIA",
@@ -308,10 +244,6 @@
       "title": "GREEN",
       "price": 9.9,
       "ingredients": "bun, burger vegetale, lattuga, cheddar, cipolla caramellata, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/green.webp",
       "available_in": [
         "LUMIA",
@@ -325,10 +257,6 @@
       "title": "OLD SCHOOL",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/oldschool.webp",
       "available_in": [
         "LUMIA",
@@ -342,10 +270,6 @@
       "title": "PORCHETTA",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
         "LUMIA",
@@ -359,9 +283,6 @@
       "title": "TUMAZZO E SALSICCIA",
       "price": 9.9,
       "ingredients": "bun, burger di salsiccia 170g, tuma, maionese al basilico, pomodoro, lattuga, bacon",
-      "allergens": {
-        "Allergeni": "Glutine, Latte, Senape, Sesamo, Soia"
-      },
       "thumb": "",
       "available_in": [
         "LUMIA",
@@ -376,10 +297,6 @@
       "title": "HAMBURGER",
       "price": 6.5,
       "ingredients": "bun, burger di manzo 170g, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/classic/hamburger.webp",
       "available_in": [
         "LUMIA",
@@ -393,10 +310,6 @@
       "title": "CHEESEBURGER",
       "price": 7.9,
       "ingredients": "bun, burger di manzo 170g, cheddar, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/classic/cheeseburger.webp",
       "available_in": [
         "LUMIA",
@@ -410,10 +323,6 @@
       "title": "BACON CHEESEBURGER",
       "price": 8.9,
       "ingredients": "bun, burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
       "available_in": [
         "LUMIA",
@@ -427,10 +336,6 @@
       "title": "AMERICAN BACONCHEESE",
       "price": 8.9,
       "ingredients": "bun, burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
-      "allergens": {
-        "Allergeni Panino": "Glutine, Uova, Latte",
-        "Allergeni Salsa": "Uova, Senape, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
       "available_in": [
         "LUMIA",
@@ -446,7 +351,6 @@
       "title": "HAPPY CICCIO'S",
       "price": 7.9,
       "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + 2 Nuggets + Acqua 25ml / Coca Cola 15cl",
-      "allergens": null,
       "thumb": "./img/menu/classic/happc-1.png",
       "available_in": [
         "LUMIA",
@@ -459,7 +363,6 @@
       "title": "HAMBURGER MENU",
       "price": 10,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/hamburger.webp",
       "available_in": [
         "LUMIA",
@@ -472,7 +375,6 @@
       "title": "CHEESEBURGER MENU ",
       "price": 11.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/cheeseburger.webp",
       "available_in": [
         "LUMIA",
@@ -485,7 +387,6 @@
       "title": "BACON CHEESEBURGER MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
       "available_in": [
         "LUMIA",
@@ -498,7 +399,6 @@
       "title": "AMERICAN BACONCHEESE MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
       "available_in": [
         "LUMIA",
@@ -511,7 +411,6 @@
       "title": "BRIE MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
         "LUMIA",
@@ -524,7 +423,6 @@
       "title": "CHICKEN CBT MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/chickencbt.webp",
       "available_in": [
         "LUMIA",
@@ -537,7 +435,6 @@
       "title": "CRISPY GOAT MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/crispygoat.webp",
       "available_in": [
         "LUMIA",
@@ -550,7 +447,6 @@
       "title": "DOUBLE TRIPLE MENU",
       "price": 15.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/doubletriple.webp",
       "available_in": [
         "LUMIA",
@@ -563,7 +459,6 @@
       "title": "EGG MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/egg.webp",
       "available_in": [
         "LUMIA",
@@ -576,7 +471,6 @@
       "title": "GREEN MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
         "LUMIA",
@@ -589,7 +483,6 @@
       "title": "OLD SCHOOL MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/oldschool.webp",
       "available_in": [
         "LUMIA",
@@ -602,7 +495,6 @@
       "title": "PANCETTA MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/pancetta.webp",
       "available_in": [
         "LUMIA",
@@ -615,7 +507,6 @@
       "title": "PORCHETTA MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
         "LUMIA",
@@ -628,7 +519,6 @@
       "title": "SUPER CRISPY MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/supercrispy.webp",
       "available_in": [
         "LUMIA",
@@ -641,7 +531,6 @@
       "title": "TALE' MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/tale.webp",
       "available_in": [
         "LUMIA",
@@ -654,7 +543,6 @@
       "title": "TUMA MENU",
       "price": 13.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
         "LUMIA",
@@ -669,154 +557,120 @@
       "title": "HAPPY CICCIO'S",
       "price": 6.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/happc-1.png",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "HAMBURGER MENU",
       "price": 9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/hamburger.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "CHEESEBURGER MENU",
       "price": 10.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/cheeseburger.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "BACON CHEESEBURGER MENU",
       "price": 11.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "AMERICAN BACONCHEESE MENU",
       "price": 11.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "BRIE MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "CHICKEN CBT MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/chickencbt.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "CRISPY GOAT MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/crispygoat.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "DOUBLE TRIPLE MENU",
       "price": 14.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/doubletriple.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "EGG MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/egg.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "GREEN MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "OLD SCHOOL MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/oldschool.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "PANCETTA MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/pancetta.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "PORCHETTA MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/porchetta.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "SUPER CRISPY MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/supercrispy.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "TALE' MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/tale.webp",
-      "available_in": [
-              ]
+      "available_in": []
     },
     {
       "title": "TUMA MENU",
       "price": 12.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/tuma.webp",
-      "available_in": [
-              ]
+      "available_in": []
     }
   ],
   "MENU(PANINO + PATATINE)": [
@@ -824,7 +678,6 @@
       "title": "HAPPY CICCIO'S",
       "price": 6.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/happc-1.png",
       "available_in": [
         "FOODTRUCK"
@@ -834,7 +687,6 @@
       "title": "HAMBURGER MENU",
       "price": 8.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/hamburger.webp",
       "available_in": [
         "FOODTRUCK"
@@ -844,7 +696,6 @@
       "title": "CHEESEBURGER MENU",
       "price": 9.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/cheeseburger.webp",
       "available_in": [
         "FOODTRUCK"
@@ -854,7 +705,6 @@
       "title": "BACON CHEESEBURGER MENU",
       "price": 10.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
       "available_in": [
         "FOODTRUCK"
@@ -864,7 +714,6 @@
       "title": "AMERICAN BACONCHEESE MENU",
       "price": 10.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
       "available_in": [
         "FOODTRUCK"
@@ -874,7 +723,6 @@
       "title": "BRIE MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
         "FOODTRUCK"
@@ -884,7 +732,6 @@
       "title": "CHICKEN CBT MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/chickencbt.webp",
       "available_in": [
         "FOODTRUCK"
@@ -894,7 +741,6 @@
       "title": "CRISPY GOAT MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/crispygoat.webp",
       "available_in": [
         "FOODTRUCK"
@@ -904,7 +750,6 @@
       "title": "DOUBLE TRIPLE MENU",
       "price": 13.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/doubletriple.webp",
       "available_in": [
         "FOODTRUCK"
@@ -914,7 +759,6 @@
       "title": "EGG MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/egg.webp",
       "available_in": [
         "FOODTRUCK"
@@ -924,7 +768,6 @@
       "title": "GREEN MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
         "FOODTRUCK"
@@ -934,7 +777,6 @@
       "title": "OLD SCHOOL MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/oldschool.webp",
       "available_in": [
         "FOODTRUCK"
@@ -944,7 +786,6 @@
       "title": "PANCETTA MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/pancetta.webp",
       "available_in": [
         "FOODTRUCK"
@@ -954,7 +795,6 @@
       "title": "PORCHETTA MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
         "FOODTRUCK"
@@ -964,7 +804,6 @@
       "title": "SUPER CRISPY MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/supercrispy.webp",
       "available_in": [
         "FOODTRUCK"
@@ -974,7 +813,6 @@
       "title": "TALE' MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/tale.webp",
       "available_in": [
         "FOODTRUCK"
@@ -984,7 +822,6 @@
       "title": "TUMA MENU",
       "price": 11.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
         "FOODTRUCK"
@@ -996,7 +833,6 @@
       "title": "ACQUA NATURALE 50CL",
       "price": 1.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/acquanaturale.webp",
       "available_in": [
         "LUMIA",
@@ -1010,7 +846,6 @@
       "title": "ACQUA FRIZZANTE 50CL",
       "price": 1.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/acquafrizzante.webp",
       "available_in": [
         "LUMIA",
@@ -1024,7 +859,6 @@
       "title": "FUZE TEA PESCA 33CL",
       "price": 2.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/tepesca.webp",
       "available_in": [
         "LUMIA",
@@ -1038,7 +872,6 @@
       "title": "FUZE TEA LIMONE 33CL",
       "price": 2.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/telimone.webp",
       "available_in": [
         "LUMIA",
@@ -1052,7 +885,6 @@
       "title": "SPRITE 33CL",
       "price": 2.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/sprite.webp",
       "available_in": [
         "LUMIA",
@@ -1066,7 +898,6 @@
       "title": "FANTA 33CL",
       "price": 2.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/fanta.webp",
       "available_in": [
         "LUMIA",
@@ -1080,7 +911,6 @@
       "title": "COCA COLA 33CL",
       "price": 2.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/cocanormale.webp",
       "available_in": [
         "LUMIA",
@@ -1094,7 +924,6 @@
       "title": "COCA COLA ZERO 33CL",
       "price": 2.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/cocazero.webp",
       "available_in": [
         "LUMIA",
@@ -1108,7 +937,6 @@
       "title": "CHINOTTO SAN PELLEGRINO 20CL",
       "price": 2.5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/chinotto.webp",
       "available_in": [
         "LUMIA",
@@ -1122,7 +950,6 @@
       "title": "HEINEKEN 33CL",
       "price": 3.9,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/heineken.webp",
       "available_in": [
         "LUMIA",
@@ -1136,7 +963,6 @@
       "title": "HIPPANA BIANCA 33CL",
       "price": 5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/hippanabianca.webp",
       "available_in": [
         "LUMIA",
@@ -1150,7 +976,6 @@
       "title": "HIPPANA BIONDA 33CL",
       "price": 5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/hippanabionda.webp",
       "available_in": [
         "LUMIA",
@@ -1164,7 +989,6 @@
       "title": "HIPPANA ROSSA 33CL",
       "price": 5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/hippanarossa.webp",
       "available_in": [
         "LUMIA",
@@ -1178,7 +1002,6 @@
       "title": "HIPPANA AMBRATA 33CL",
       "price": 5,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/bibite/hippanaambrata.webp",
       "available_in": [
         "LUMIA",
@@ -1194,7 +1017,6 @@
       "title": "MAIONESE CICCIO'S 25gr",
       "price": 0.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/salse/maioneseciccios.webp",
       "available_in": [
         "LUMIA",
@@ -1208,49 +1030,42 @@
       "title": "SALSA CHEDDAR CALDA 170ML",
       "price": 2.5,
       "ingredients": "salsa cheddar calda da 170ml",
-      "allergens": {
-        "Allergeni": "Glutine, Latte"
-      },
       "thumb": "./img/menu/salse/salsacheddar170.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      ]
+        "MONDELLO"
+      ]
     },
     {
       "title": "THAI 60ML",
       "price": 1.2,
       "ingredients": "salsa thai 60ml",
-      "allergens": {
-        "Allergeni": "Senape, Uova, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/salse/thai.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      ]
+        "MONDELLO"
+      ]
     },
     {
       "title": "HOT THAI 60ML",
       "price": 1.2,
       "ingredients": "salsa hot thai 60ml",
-      "allergens": {
-        "Allergeni": "Senape, Uova, Arachidi, Pesce"
-      },
       "thumb": "./img/menu/salse/hotthai.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"      ]
+        "MONDELLO"
+      ]
     },
     {
       "title": "SALSA CICCIO'S 25gr",
       "price": 0.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/salse/salsaciccios.webp",
       "available_in": [
         "LUMIA",
@@ -1264,7 +1079,6 @@
       "title": "BBQ CICCIO'S 25gr",
       "price": 0.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/salse/bbqciccios.webp",
       "available_in": [
         "LUMIA",
@@ -1278,7 +1092,6 @@
       "title": "KETCHUP CICCIO'S 25gr",
       "price": 0.4,
       "ingredients": null,
-      "allergens": null,
       "thumb": "./img/menu/salse/ketchupciccios.webp",
       "available_in": [
         "LUMIA",
@@ -1294,9 +1107,6 @@
       "title": "KISS",
       "price": 3.5,
       "ingredients": "bun, nutella, bacon",
-      "allergens": {
-        "Allergeni": "Glutine, Frutta a guscio, Soia, Uova, Latte"
-      },
       "thumb": "./img/menu/dolci/kiss.webp",
       "available_in": [
         "STADIO",
@@ -1307,23 +1117,15 @@
       "title": "TIRAMICICCIO'S",
       "price": 4.5,
       "ingredients": "tiramisù",
-      "allergens": {
-        "Allergeni": "Glutine, Latte, Uova"
-      },
       "thumb": "./img/menu/dolci/tiramiciccios.webp",
-      "available_in": [
-      ]
+      "available_in": []
     },
     {
       "title": "BROOKIES",
       "price": 4.5,
       "ingredients": "brookies",
-      "allergens": {
-        "Allergeni": "Glutine, Latte, Uova"
-      },
       "thumb": "./img/menu/dolci/brookies.webp",
-      "available_in": [
-      ]
+      "available_in": []
     }
   ]
 }

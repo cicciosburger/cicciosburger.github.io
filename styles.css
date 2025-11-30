@@ -314,29 +314,40 @@
 
 
   /* PUNTI VENDITA ORARI */
+  .locations-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 2rem;
+      text-align: center;
+  }
 
   .location-grid {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       justify-content: center;
+      gap: 16px;
   }
 
   .location {
-      margin-bottom: 30px;
+      border: 2px solid #0e0e0e;
+      border-radius: 16px;
+      margin-bottom: 10px;
       text-align: center;
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 8px;
+      padding: 15px;
   }
 
   @media (max-width: 768px) {
 
       /*hours display horizon*/
       .location-grid {
-          flex-direction: column;
+          grid-template-columns: 1fr;
+          gap: 2px;
       }
-      
+
   }
 
   .slot {
@@ -352,13 +363,14 @@
   }
 
   .box-orari {
-      border: 1px solid black;
-      border-radius: 8px;
+      border-radius: px;
       padding: 10px;
       margin-bottom: 20px;
   }
 
   .loc-pic {
+      padding: 4px;
+      border-radius: 16px;
       width: 100%;
   }
 
@@ -435,6 +447,7 @@
       margin-right: 8px;
   }
 
+
   .label {
       display: inline;
       font-weight: bold;
@@ -461,17 +474,18 @@
   }
 
   @media (max-width:800px) {
-    .close-modal {
-      color: #ccc;
-      font-size: 36px;
-      font-weight: bold;
-      position: absolute;
-        right: 10px;
-      top: 10px;
-      cursor: pointer;
+      .close-modal {
+          color: #ccc;
+          font-size: 36px;
+          font-weight: bold;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          cursor: pointer;
+      }
+
   }
-    
-  }
+
   /* ---- MEMBERSHIP ---- */
 
   #cookieMsg {
@@ -686,13 +700,14 @@
   .svgiconLarge {
       width: 7.5rem;
       height: 5rem;
-      margin:0px;
+      margin: 0px;
   }
 
   /* ORDER FORM */
 
   /* Primary Button */
-  .orderModal button, .orderModal button {
+  .orderModal button,
+  .orderModal button {
       color: white;
       padding: 12px 20px;
       border: none;
@@ -703,13 +718,15 @@
   }
 
   /* Modal Background */
-  .orderModal, .orderModal  {
+  .orderModal,
+  .orderModal {
       z-index: 10;
   }
 
 
   /* Form Container */
-  .orderModal .order-container, .orderModal .order-container{
+  .orderModal .order-container,
+  .orderModal .order-container {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -717,7 +734,8 @@
   }
 
   /* Form */
-  .orderModal #orderForm, .orderModal #happyOrderForm{
+  .orderModal #orderForm,
+  .orderModal #happyOrderForm {
       width: 95%;
       display: flex;
       flex-direction: column;
@@ -725,7 +743,8 @@
   }
 
   /* Labels */
-  .orderModal label, .orderModal label {
+  .orderModal label,
+  .orderModal label {
       font-weight: bold;
       color: #333;
       font-size: 0.95rem;
@@ -734,20 +753,23 @@
       display: block;
   }
 
-  .orderModal .selector, .orderModal .selector {
+  .orderModal .selector,
+  .orderModal .selector {
       border: 1px solid #ccc;
       border-radius: 6px;
       padding: 5px;
   }
 
-  .orderModal .selector label, .orderModal .selector label {
+  .orderModal .selector label,
+  .orderModal .selector label {
       margin-bottom: 5px;
       margin-top: 5px;
   }
 
   /* Input Fields */
   .orderModal input,
-  select , .orderModal input{
+  select,
+  .orderModal input {
       width: 100%;
       padding: 10px;
       border: 1px solid #ddd;
@@ -768,7 +790,8 @@
   }
 
   /* Add to Cart Button */
-  .orderModal #addToCart, .orderModal #happy-addToCart{
+  .orderModal #addToCart,
+  .orderModal #happy-addToCart {
       margin-top: 20px;
       background-color: #28a745;
       width: 100%;
@@ -776,12 +799,14 @@
       padding-bottom: 6px;
   }
 
-  .orderModal #addToCart:hover, .orderModal #happy-addToCart:hover {
+  .orderModal #addToCart:hover,
+  .orderModal #happy-addToCart:hover {
       background-color: #218838;
   }
 
   /* Cart Section */
-  .orderModal #cart, .orderModal #happy-cart {
+  .orderModal #cart,
+  .orderModal #happy-cart {
       width: 95%;
       list-style-type: none;
       padding: 0px;
@@ -793,7 +818,8 @@
   }
 
   /* Cart Items */
-  .orderModal .itemDiv, .orderModal .itemDiv {
+  .orderModal .itemDiv,
+  .orderModal .itemDiv {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -807,7 +833,8 @@
   }
 
   /* Cart Item Details */
-  .orderModal .itemQuantity, .orderModal .itemQuantity {
+  .orderModal .itemQuantity,
+  .orderModal .itemQuantity {
       font-weight: bold;
       color: #333;
       padding: 5px 10px;
@@ -818,7 +845,8 @@
       background-color: #e1e1e1;
   }
 
-  .orderModal .itemInternalDiv, .orderModal .itemInternalDiv {
+  .orderModal .itemInternalDiv,
+  .orderModal .itemInternalDiv {
       margin-top: 10px;
       align-self: self-start;
       flex-grow: 1;
@@ -826,19 +854,22 @@
       padding: 0 10px;
   }
 
-  .orderModal .itemTitle, .orderModal .itemTitle {
+  .orderModal .itemTitle,
+  .orderModal .itemTitle {
       font-size: 1rem;
       font-weight: bold;
       color: #444;
   }
 
-  .orderModal .itemSize, .orderModal .itemSize {
+  .orderModal .itemSize,
+  .orderModal .itemSize {
       font-size: 0.9rem;
       color: #666;
   }
 
   /* Remove Button */
-  .orderModal .remove, .orderModal .remove {
+  .orderModal .remove,
+  .orderModal .remove {
       background-color: #ff4d4d;
       color: white;
       border: none;
@@ -852,34 +883,42 @@
       transition: 0.3s ease-in-out;
   }
 
-  .orderModal .remove:hover, .orderModal  .remove:hover {
+  .orderModal .remove:hover,
+  .orderModal .remove:hover {
       background-color: #cc0000;
   }
 
   /* Submit Button */
   #sendOrder,
-  #newOrderButton, #happy-sendOrder, #happy-newOrderButton {
+  #newOrderButton,
+  #happy-sendOrder,
+  #happy-newOrderButton {
       margin-top: 20px;
       background-color: black;
       width: 95%;
   }
 
   #sendOrder:hover,
-  #newOrderButton, #happy-sendOrder:hover, #happy-newOrderButton {
+  #newOrderButton,
+  #happy-sendOrder:hover,
+  #happy-newOrderButton {
       background-color: black;
   }
 
-  .orderModal .itemTitle, .orderModal .itemTitle {
+  .orderModal .itemTitle,
+  .orderModal .itemTitle {
       margin-top: 0px;
       margin-bottom: 0px;
   }
 
-  .orderModal .itemSize, .orderModal .itemSize {
+  .orderModal .itemSize,
+  .orderModal .itemSize {
       margin-top: 0px;
       margin-bottom: 0px;
   }
 
-  #recaptcha-container-order, #happy-recaptcha-container-order {
+  #recaptcha-container-order,
+  #happy-recaptcha-container-order {
       margin-top: 20px;
   }
 
@@ -890,7 +929,8 @@
       /* Ensure it is not transparent */
   }
 
-  #confirmationMessage, #happy-confirmationMessage {
+  #confirmationMessage,
+  #happy-confirmationMessage {
       display: none;
       /* Hidden by default */
   }
@@ -1139,277 +1179,384 @@
 
 
   .marker-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
 
-.marker-label {
-  /* background: black; */
-  color: black;
-  /* padding: 2px 6px; */
-  /* border-radius: 4px; */
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 0px;
-  /* box-shadow: 0 1px 3px rgba(0,0,0,0.2); */
-}
+  .marker-label {
+      /* background: black; */
+      color: black;
+      /* padding: 2px 6px; */
+      /* border-radius: 4px; */
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 0px;
+      /* box-shadow: 0 1px 3px rgba(0,0,0,0.2); */
+  }
 
-.marker-img {
-  width: 80px;
-  height: 40px;
-}
-
-
-/* switch store */
-.store-switcher {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: nowrap;
-  width: 100%;
-  max-width: 100%;
-}
-
-.store-button {
-  flex: 1 1 0;
-  padding: 10px;
-  border-radius: 999px;
-  background-color: transparent;
-  border: 1px solid black;
-  color: black;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  white-space: nowrap;
-  font-size: 0.95rem;
-  z-index: 2;
-  text-align: center;
-}
-
-.store-indicator {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  border-radius: 999px;
-  background-color: black;
-  z-index: 1;
-  width: 0;
-  transform: translateX(0);
-  transition:
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    width 0.3s ease-in-out;
-}
-.store-switcher-wrapper {
-  overflow-x: auto;
-  padding: 10px;
-}
-.store-switcher {
-  display: flex;
-  justify-content: space-between;
-  gap: 5px;
-  margin-bottom: 20px;
-  flex-wrap: nowrap;
-  width: 100%;
-}
-
-.store-button {
-  flex: 1 1 0;
-  padding: clamp(6px, 2vw, 10px);
-  border-radius: 999px;
-  background-color: transparent;
-  border: 1px solid black;
-  color: black;
-  font-weight: bold;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  white-space: nowrap;
-  text-align: center;
-  z-index: 2;
-  overflow: hidden;
-  min-width: 0; /* Allows shrinking */
-}
-
-.store-button.active {
-  background-color: black;
-  color: white;
-  /* transform: scale(1.03); */
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
+  .marker-img {
+      width: 80px;
+      height: 40px;
+  }
 
 
+  /* switch store */
+  .store-switcher {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: nowrap;
+      width: 100%;
+      max-width: 100%;
+  }
 
-.merch-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: system-ui, sans-serif;
-  background-color: #f3f4f6;
-  color: #1f2937;
-}
+  .store-button {
+      flex: 1 1 0;
+      padding: 10px;
+      border-radius: 999px;
+      background-color: transparent;
+      border: 1px solid black;
+      color: black;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: 0.95rem;
+      z-index: 2;
+      text-align: center;
+  }
 
-.merch-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2rem;
-}
+  .store-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-radius: 999px;
+      background-color: black;
+      z-index: 1;
+      width: 0;
+      transform: translateX(0);
+      transition:
+          transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+          width 0.3s ease-in-out;
+  }
 
-.merch-subtitle {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
+  .store-switcher-wrapper {
+      overflow-x: auto;
+      padding: 10px;
+  }
 
-.merch-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-bottom: 3rem;
-}
+  .store-switcher {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+      margin-bottom: 20px;
+      flex-wrap: nowrap;
+      width: 100%;
+  }
 
-.merch-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  text-align: center;
-}
+  .store-button {
+      flex: 1 1 0;
+      padding: clamp(6px, 2vw, 10px);
+      border-radius: 999px;
+      background-color: transparent;
+      border: 1px solid black;
+      color: black;
+      font-weight: bold;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      white-space: nowrap;
+      text-align: center;
+      z-index: 2;
+      overflow: hidden;
+      min-width: 0;
+      /* Allows shrinking */
+  }
 
-.merch-product-img {
-  width: 100%;
-  max-width: 150px;
-  max-height: 150px;
-  height: 150px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 1rem auto;
-  border-radius: 0.5rem;
-  background: #fff;
-}
+  .store-button.active {
+      background-color: black;
+      color: white;
+      /* transform: scale(1.03); */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
 
-.merch-input,
-.merch-select,
-.merch-phone-field {
-  width: 100%;
-  padding: 0.6rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
 
-.merch-button {
-  width: 100%;
-  background: #2563eb;
-  color: white;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 0.375rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
 
-.merch-button:hover {
-  background: #1e40af;
-}
+  .merch-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-family: system-ui, sans-serif;
+      background-color: #f3f4f6;
+      color: #1f2937;
+  }
 
-.merch-form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
+  .merch-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2rem;
+  }
 
-.merch-phone-input {
-  display: flex;
-  align-items: stretch;
-}
+  .merch-subtitle {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+  }
 
-.merch-phone-prefix {
-  display: flex;
-  align-items: center;
-  padding: 0 0.75rem;
-  background: #e5e7eb;
-  border: 1px solid #d1d5db;
-  border-right: none;
-  border-radius: 0.375rem 0 0 0.375rem;
-}
+  .merch-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin-bottom: 3rem;
+  }
 
-.merch-phone-field {
-  flex: 1;
-  border: 1px solid #d1d5db;
-  border-left: none;
-  border-radius: 0 0.375rem 0.375rem 0;
-  padding: 0.6rem;
-  font-size: 1rem;
-}
+  .merch-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: center;
+  }
 
-.merch-cart-item {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 0.75rem 0;
-  font-size: 1rem;
-}
+  .merch-product-img {
+      width: 100%;
+      max-width: 150px;
+      max-height: 150px;
+      height: 150px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 1rem auto;
+      border-radius: 0.5rem;
+      background: #fff;
+  }
 
-.merch-remove {
-  color: #dc2626 !important;
-  background: none !important;
-  border: none !important;
-  cursor: pointer !important;
-}
+  .merch-input,
+  .merch-select,
+  .merch-phone-field {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      box-sizing: border-box;
+  }
 
-.merch-remove:hover {
-  text-decoration: underline;
-}
+  .merch-button {
+      width: 100%;
+      background: #2563eb;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+  }
 
-.merch-empty {
-  color: #374151;
-  font-style: italic;
-  margin-top: 0.5rem;
-}
+  .merch-button:hover {
+      background: #1e40af;
+  }
 
-.merch-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Spinge il bottone in basso */
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  height: 100%; /* oppure min-height: 400px; */
-}
+  .merch-form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+  }
 
-.merch-card h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  flex-shrink: 0;
-}
+  .merch-phone-input {
+      display: flex;
+      align-items: stretch;
+  }
 
-.merch-card p {
-  margin-bottom: 10px;
-  flex-shrink: 0;
-}
+  .merch-phone-prefix {
+      display: flex;
+      align-items: center;
+      padding: 0 0.75rem;
+      background: #e5e7eb;
+      border: 1px solid #d1d5db;
+      border-right: none;
+      border-radius: 0.375rem 0 0 0.375rem;
+  }
 
-.merch-card select {
-  margin-bottom: 10px;
-}
+  .merch-phone-field {
+      flex: 1;
+      border: 1px solid #d1d5db;
+      border-left: none;
+      border-radius: 0 0.375rem 0.375rem 0;
+      padding: 0.6rem;
+      font-size: 1rem;
+  }
 
-.merch-button {
-  margin-top: auto; /* Spinge verso il basso se preceduto da contenuto */
-}
-.merch-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+  .merch-cart-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.75rem 0;
+      font-size: 1rem;
+  }
+
+  .merch-remove {
+      color: #dc2626 !important;
+      background: none !important;
+      border: none !important;
+      cursor: pointer !important;
+  }
+
+  .merch-remove:hover {
+      text-decoration: underline;
+  }
+
+  .merch-empty {
+      color: #374151;
+      font-style: italic;
+      margin-top: 0.5rem;
+  }
+
+  .merch-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      /* Spinge il bottone in basso */
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      /* oppure min-height: 400px; */
+  }
+
+  .merch-card h3 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+  }
+
+  .merch-card p {
+      margin-bottom: 10px;
+      flex-shrink: 0;
+  }
+
+  .merch-card select {
+      margin-bottom: 10px;
+  }
+
+  .merch-button {
+      margin-top: auto;
+      /* Spinge verso il basso se preceduto da contenuto */
+  }
+
+  .merch-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .otp-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px auto;
+      max-width: 400px;
+  }
+
+  .otp-input {
+      width: 10vw !important;
+      max-width: 50px !important;
+      height: 70px !important;
+      text-align: center !important;
+      font-size: 24px !important;
+      font-weight: bold !important;
+      border: 1px solid #333 !important;
+      border-radius: 15px !important;
+      outline: none !important;
+      transition: all 0.3s ease !important;
+      background: white !important;
+      color: #333 !important;
+      font-family: 'Courier New', monospace !important;
+  }
+
+  .otp-input:focus {
+      border-color: #667eea !important;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+      transform: scale(1.05) !important;
+  }
+
+  .otp-input:valid {
+      border-color: #48bb78 !important;
+  }
+
+  .otp-input.error {
+      border-color: #f56565 !important;
+      animation: shake 0.3s !important;
+  }
+
+  @keyframes shake {
+
+      0%,
+      100% {
+          transform: translateX(0) !important;
+      }
+
+      25% {
+          transform: translateX(-5px) !important;
+      }
+
+      75% {
+          transform: translateX(5px) !important;
+      }
+  }
+
+  .verify-btn {
+      display: block !important;
+      width: 100% !important;
+      max-width: 300px !important;
+      margin: 20px auto !important;
+      padding: 15px 30px !important;
+      background: #009816 !important;
+      color: white !important;
+      border: none !important;
+      border-radius: 12px !important;
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+  }
+
+  .verify-btn:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+  }
+
+  .verify-btn:active {
+      transform: translateY(0) !important;
+  }
+
+  .verify-btn:disabled {
+      opacity: 0.6 !important;
+      cursor: not-allowed !important;
+      transform: none !important;
+  }
+
+  /* Responsive per mobile */
+  @media (max-width: 480px) {
+      .otp-container {
+          gap: 8px !important;
+      }
+
+      .otp-input {
+          width: 40px !important;
+          height: 50px !important;
+          font-size: 20px !important;
+      }
+  }
