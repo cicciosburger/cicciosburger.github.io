@@ -469,7 +469,6 @@
                         Inserisci il codice di verifica inviato alla tua email.
                     </p>
                     
-                    <!-- Container delle 6 caselle OTP -->
                     <div class="otp-container">
                         <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="0">
                         <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="1">
@@ -481,6 +480,19 @@
                     
                     <button type="button" id="verify-otp-btn" class="verify-btn">
                         Verifica e Registrati
+                    </button>
+
+                    <button type="button" id="back-to-register-btn" style="
+                        width: 100%;
+                        padding: 10px;
+                        margin-top: 10px;
+                        background-color: transparent;
+                        border: 1px solid #ccc;
+                        color: #555;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-size: 0.9em;">
+                        &larr; Indietro / Modifica dati
                     </button>
                 </div>
                 <div id="result" style="display: none;">
