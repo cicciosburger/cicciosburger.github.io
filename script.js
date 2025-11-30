@@ -789,6 +789,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 else {
                     showError(errorData.error || "Errore sconosciuto durante la richiesta.");
+                    if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
+                        try {
+                            grecaptcha.reset(recaptchaWidgetId);
+                        } catch (e) {
+                            console.warn("Recaptcha reset failed", e);
+                        }
+                    }
                 }
                 submitButton.disabled = false;
                 submitButton.textContent = "Richiedi tessera";
@@ -849,6 +856,32 @@ document.addEventListener("DOMContentLoaded", function () {
                     showOTPError();
                     showError(errorData.error || "Codice OTP non valido.");
                     resetOTP();
+                    if (errorData.error === "Sessione scaduta o non valida. Ricomincia la registrazione." || errorData.error === "Troppi tentativi falliti. Ricomincia la registrazione.") {
+                        // 1. Hide OTP section
+                        document.getElementById('otp-section').style.display = 'none';
+
+                        // 2. Show the Registration Form
+                        // We use 'flex' because your enableForm() function uses 'flex'
+                        document.getElementById('data-form').style.display = 'flex';
+
+                        // 3. CRITICAL: Re-enable the submit button and reset text
+                        const submitBtn = document.getElementById('submit-button');
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = "Richiedi tessera";
+                        }
+
+                        // 4. CRITICAL: Reset reCAPTCHA so the user can verify again
+                        if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
+                            try {
+                                grecaptcha.reset(recaptchaWidgetId);
+                            } catch (e) {
+                                console.warn("Recaptcha reset failed", e);
+                            }
+                        }
+
+                        // 5. Reset OTP inputs for next time
+                    }
                     verifyOtpBtn.disabled = false;
                     verifyOtpBtn.textContent = "Verifica e Registrati";
                     return;
