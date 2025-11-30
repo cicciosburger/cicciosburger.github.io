@@ -784,7 +784,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                showError(errorData.error || "Errore sconosciuto durante la richiesta.");
+                if (response.status === 503) {
+                    showError("Hai effettuato troppi tentativi. Riprova tra qualche minuto.");
+                }
+                else {
+                    showError(errorData.error || "Errore sconosciuto durante la richiesta.");
+                }
                 submitButton.disabled = false;
                 submitButton.textContent = "Richiedi tessera";
                 return;
