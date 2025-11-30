@@ -670,6 +670,34 @@ document.addEventListener("DOMContentLoaded", function () {
         if (otpInputs[0]) otpInputs[0].focus();
     }
 
+    document.getElementById('back-to-register-btn').addEventListener('click', function () {
+        // 1. Hide OTP section
+        document.getElementById('otp-section').style.display = 'none';
+
+        // 2. Show the Registration Form
+        // We use 'flex' because your enableForm() function uses 'flex'
+        document.getElementById('data-form').style.display = 'flex';
+
+        // 3. CRITICAL: Re-enable the submit button and reset text
+        const submitBtn = document.getElementById('submit-button');
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Richiedi tessera";
+        }
+
+        // 4. CRITICAL: Reset reCAPTCHA so the user can verify again
+        if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
+            try {
+                grecaptcha.reset(recaptchaWidgetId);
+            } catch (e) {
+                console.warn("Recaptcha reset failed", e);
+            }
+        }
+
+        // 5. Reset OTP inputs for next time
+        resetOTP();
+    });
+
     // Funzione per mostrare errore OTP
     function showOTPError() {
         otpInputs.forEach(input => {
