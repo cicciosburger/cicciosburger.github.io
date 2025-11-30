@@ -794,6 +794,7 @@ document.addEventListener("DOMContentLoaded", function () {
             registrationToken = result.registration_token;
 
             showSuccess(result.message || "Codice di verifica inviato alla tua email!");
+            document.getElementById("user-email-display").textContent = formData.get("email");
 
             // Switch UI to OTP mode
             setTimeout(() => {
