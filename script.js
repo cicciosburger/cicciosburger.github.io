@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 const allowed_domains = new Set([
-    "gmail.com", "outlook.com", "hotmail.com", "live.com",
+    "gmail.com", "outlook.com", "outlook.it","hotmail.com", "live.com",
     "icloud.com", "me.com", "mac.com", "yahoo.com",
     "hotmail.it",
     "live.it",
