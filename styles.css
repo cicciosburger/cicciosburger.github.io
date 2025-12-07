@@ -1,1562 +1,1124 @@
-  /* Poppins Bold */
-  @font-face {
-      font-family: 'Poppins';
-      src: url('/fonts/Poppins-Bold.ttf') format('truetype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-  }
-
-
-  /* General Reset */
-  body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: black;
-      text-align: center;
-      padding: 20px;
-  }
-
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
-
-
-  /* Body and Container */
-
-  .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 40px;
-      background-color: #0e0e0e;
-      border-radius: 12px;
-      border: 1px solid gray;
-  }
-
-  /* Header */
-  header img {
-      width: 100%;
-      margin-bottom: 20px;
-      object-fit: cover;
-  }
-
-  /* Buttons */
-  .button-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      justify-content: center;
-  }
-
-  .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.2rem;
-      padding: 16px 24px;
-      text-decoration: none;
-      width: 100%;
-      text-align: center;
-      font-weight: bold;
-      border: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      background: transparent;
-      box-shadow: none;
-      padding-bottom: 0px;
-  }
-
-  .button-container>a,
-  .button-container>div {
-      transition: all 0.3s ease;
-
-  }
-
-  .button-container>a:hover,
-  .button-container>div:hover {
-      opacity: 0.7;
-      transform: translateY(-4px);
-  }
-
-  /* Footer */
-  footer {
-      padding-top: 40px;
-      color: white;
-  }
-
-  /* Modal */
-  .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      overflow: auto;
-      padding-top: 60px;
-  }
-
-  .modal-content {
-      background-color: #fff;
-      margin: 2% auto;
-      padding: 10px;
-      border-radius: 10px;
-      width: 95%;
-      max-width: 1000px;
-  }
-
-  /* Menu Grid */
-  .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding: 15px;
-  }
-
-  /* Default layout for larger screens */
-  .menu-item {
-      display: flex;
-      flex-direction: row;
-      /* Align items horizontally */
-      align-items: flex-start;
-      text-align: left;
-      /* Align text to the left */
-      padding: 0px;
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border: 1px solid black;
-      transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
-
-  .product-img {
-      display: block;
-      -webkit-mask-image: linear-gradient(to bottom, black 94%, transparent 100%);
-      mask-image: linear-gradient(to bottom, black 94%, transparent 100%);
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 0px;
-  }
-
-  .menu-item-info {
-      width: 100%;
-      display: grid;
-      grid-template-areas:
-          "product-title product-title product-price"
-          "product-description product-description product-description"
-          "allergeni-container allergeni-container allergeni-container";
-      /* space between rows */
-      padding: 20px;
-      text-align: left;
-  }
-
-  /* Collapsible Buttons */
-  .product-title {
-      /* margin-left: 10px; */
-      font-size: 1.4rem;
-      color: #333;
-      grid-area: product-title;
-      place-self: center start;
-      text-align: left;
-  }
-
-  .product-price {
-      grid-area: product-price;
-      place-self: center end;
-      /* padding-right: 20px; */
-
-  }
-
-  .product-description {
-      font-size: 0.85rem;
-      color: #555;
-      grid-area: product-description;
-      margin-bottom: 10px;
-  }
-
-  .allergeni-container {
-      font-size: 0.8rem;
-      grid-area: allergeni-container;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-  }
-
-  .allergeni-inner-container {
-      display: flex;
-  }
-
-  .allergeni-text {
-      margin-right: 5px;
-      margin-bottom: 2px;
-      font-weight: 500;
-      color: grey;
-      align-self: center;
-      display: block;
-  }
-
-  .content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-      margin: 0px;
-      padding: 0px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-      /* Smooth expansion */
-      padding: 0 20px;
-      /* Padding for content */
-      background-color: #ffffff;
-      /* White background */
-      border: 1px solid #e0e0e0;
-      /* Subtle border */
-      border-top: none;
-      /* Remove top border to blend with button */
-      border-radius: 0 0 8px 8px;
-      /* Rounded bottom corners */
-  }
-
-  .content.open {
-      padding: 15px;
-      /* Add padding when expanded */
-  }
-
-  /* Default layout for larger screens */
-
-  /* Collapsible Button */
-  .collapsible {
-      background-color: black;
-      /* White background */
-      color: white;
-      /* Dark text color */
-      font-size: 1.1rem;
-      font-weight: 600;
-      /* Semi-bold text */
-      padding: 12px 20px;
-      /* Comfortable padding */
-      /* Subtle border */
-      border-radius: 8px;
-      /* Rounded corners */
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      /* Smooth transitions */
-      /* Subtle shadow */
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-  }
-
-  /* Active State (When Button is Open) */
-  .collapsible.active {
-      background-color: #404040;
-  }
-
-  /* Icon for Collapsible Button */
-  .collapsible::after {
-      content: '\25BC';
-      /* Unicode for down arrow (▼) */
-      font-size: 1.3rem;
-      color: #666;
-      /* Subtle icon color */
-      transition: transform 0.3s ease;
-      /* Smooth rotation */
-  }
-
-  /* Rotate Icon When Button is Active */
-  .collapsible.active::after {
-      transform: rotate(180deg);
-      /* Rotate arrow when open */
-  }
-
-  /* Expanded Content */
-
-  /* Default layout for larger screens */
-
-  /* MENU */
-
-  .legenda-container {
-      margin-top: 5px;
-      display: flex;
-      flex-wrap: wrap;
-      /* Permette agli elementi di andare a capo */
-      gap: 10px;
-      /* Spazio tra gli elementi */
-      margin-bottom: 30px;
-  }
-
-  .legenda-item {
-      display: flex;
-      align-items: center;
-      /* Allinea icona e testo verticalmente */
-      gap: 5px;
-      /* Spazio tra icona e testo */
-      white-space: nowrap;
-      /* Impedisce al testo di andare a capo */
-  }
-
-
-  /* PUNTI VENDITA ORARI */
-  .locations-title {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      margin-bottom: 10px;
-      font-size: 2rem;
-      text-align: center;
-  }
-
-  .location-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-content: center;
-      gap: 16px;
-  }
-
-  .location {
-      border: 2px solid #0e0e0e;
-      border-radius: 16px;
-      margin-bottom: 10px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      padding: 15px;
-  }
-
-  @media (max-width: 768px) {
-
-      /*hours display horizon*/
-      .location-grid {
-          grid-template-columns: 1fr;
-          gap: 2px;
-      }
-
-  }
-
-  .slot {
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 14px;
-      color: black;
-      font-weight: bold;
-      text-align: center;
-      flex: 1;
-      background-color: #f0f0f0;
-      border: 1px solid black;
-  }
-
-  .box-orari {
-      border-radius: px;
-      padding: 10px;
-      margin-bottom: 20px;
-  }
-
-  .loc-pic {
-      padding: 4px;
-      border-radius: 16px;
-      width: 100%;
-  }
-
-
-  .day {
-      margin-bottom: 15px;
-  }
-
-  .time-bar {
-      display: flex;
-      gap: 5px;
-  }
-
-  .morning {
-      color: whitesmoke;
-      background: linear-gradient(to right,
-              gray,
-              rgb(73, 73, 73));
-  }
-
-  .evening {
-      color: whitesmoke;
-      background: #4b79a1;
-      /* fallback for old browsers */
-      background: linear-gradient(to right,
-              rgb(73, 73, 73),
-              rgb(60, 60, 60));
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-
-
-  .delivery {
-      color: white;
-      background: darkgoldenrod;
-  }
-
-  .open-google-maps-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: black;
-      font-size: 1.2rem;
-      padding: 16px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      width: auto;
-      /* Larghezza automatica (non al 100%) */
-      text-align: center;
-      font-weight: bold;
-      border: none;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: 1px solid black;
-      background: white;
-      /* Gradiente ispirato a Google */
-      margin-top: auto;
-      margin-left: 15px;
-      margin-right: 15px;
-  }
-
-  .open-google-maps-button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  }
-
-  .open-google-maps-button:active {
-      transform: scale(0.98);
-  }
-
-  .maps-img {
-      /*GOOGLE MAPS ICON*/
-      height: 3.5vh;
-      margin-right: 8px;
-  }
-
-
-  .label {
-      display: inline;
-      font-weight: bold;
-      color: black;
-      margin-bottom: 8px;
-  }
-
-  /* Modal Styles */
-  .close-modal {
-      color: #aaa;
-      font-size: 36px;
-      font-weight: bold;
-      position: absolute;
-      right: 60px;
-      top: 30px;
-      cursor: pointer;
-  }
-
-  .close-modal:hover,
-  .close-modal:focus {
-      color: grey;
-      text-decoration: none;
-      cursor: pointer;
-  }
-
-  @media (max-width:800px) {
-      .close-modal {
-          color: #ccc;
-          font-size: 36px;
-          font-weight: bold;
-          position: absolute;
-          right: 10px;
-          top: 10px;
-          cursor: pointer;
-      }
-
-  }
-
-  /* ---- MEMBERSHIP ---- */
-
-  #cookieMsg {
-      /*COOKIE MESSAGE ON REGISTRATION FORM*/
-      display: none;
-      /* Hidden by default */
-      color: red;
-      margin-bottom: 20px;
-  }
-
-  /*MEMBERSHIP FORM CONTAINER*/
-  #membershipModal .modalForm-content {
-      text-align: center;
-  }
-
-  /*ISCRIZIONE MEMBERSHIP CARD TITLE*/
-  #membershipModal .modalForm-content h1 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-  }
-
-  #membershipModal .modalForm-content form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
-
-  #membershipModal .modalForm-content label {
-      margin-top: 10px;
-      font-weight: bold;
-  }
-
-  #membershipModal .modalForm-content input {
-      margin-bottom: 10px;
-      padding: 8px;
-      width: 100%;
-      max-width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      height: 33.6px;
-      -webkit-appearance: none;
-  }
-
-  /*RICHIEDI TESSERA/SCARICA CODICE A BARRE*/
-  #membershipModal .modalForm-content button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-  }
-
-  #membershipModal .modalForm-content button:disabled {
-      /*DISABLE BUTTON FORM*/
-      background-color: #aaa;
-      cursor: not-allowed;
-  }
-
-
-  /* PHONE CONTAINER */
-  .phone-container,
-  .order-phone-container {
-      display: flex;
-      align-items: center;
-      /* Align items vertically */
-      width: 100%;
-      max-width: 300px;
-      margin-bottom: 10px;
-  }
-
-  .phone-container .phone-prefix,
-  .order-phone-container .order-phone-prefix {
-      /*PHONE +39*/
-      border: 1px solid #ccc;
-      background-color: #f0f0f0;
-      padding: 8px;
-      border-radius: 4px !important;
-      font-size: 14px;
-      height: 33.6px;
-      /* Match the height of the input field */
-      display: flex;
-      align-items: center;
-      /* Center the text vertically */
-  }
-
-  .phone-container input#phone,
-  .order-phone-container input#order-phone {
-      /*PHONE NUMBER*/
-      margin: 0px !important;
-      padding: auto !important;
-      border: 1px solid #ccc !important;
-      border-radius: 4px !important;
-      margin-left: 5px !important;
-      height: 33.6px;
-  }
-
-  .terms-container {
-      display: flex;
-      align-items: start;
-      max-width: 300px;
-      margin-bottom: 10px;
-  }
-
-  .terms-container input {
-      height: 25px !important;
-      width: 25px !important;
-      align-self: center;
-      margin: 0px !important;
-      pointer-events: auto;
-      /* Ensure the checkbox is clickable */
-      z-index: 10000 !important;
-      /* Ensure it's above other elements */
-  }
-
-  .terms-container label {
-      margin: 0px !important;
-      text-align: left;
-      margin-left: 10px !important;
-      font-size: 11px;
-  }
-
-  #submit-button {
-      /*RICHIEDI TESSERA*/
-      color: white !important;
-      background-color: black !important;
-      z-index: 10 !important;
-      position: relative !important;
-      width: 100%;
-  }
-
-  /* FORM RESULT */
-  #result {
-      margin-top: 20px;
-      display: none;
-  }
-
-  #result #downloadBarcodeButton {
-      color: white !important;
-      background-color: rgb(17, 168, 0) !important;
-      z-index: 10 !important;
-      position: relative !important;
-      width: 100%;
-  }
-
-  /* -------- COOKIE BANNER -------- */
-  #cookieConsent {
-      background-color: #333;
-      color: white;
-      padding: 15px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100svw;
-      max-height: 35svh;
-      z-index: 9999;
-      text-align: center;
-      display: none;
-  }
-
-  #cookieConsent p {
-      font-size: 0.75rem;
-  }
-
-  #cookieConsent a {
-      color: #ffcc00;
-      text-decoration: none;
-  }
-
-  #cookieConsent button {
-      font-size: 1.5svh;
-      width: 30%;
-      padding: 10px 10px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      margin: 10px;
-  }
-
-  #cookieConsent .accept-btn {
-      background-color: #00D123;
-      /* Verde */
-      color: black;
-  }
-
-  #cookieConsent .accept-btn:hover {
-      background-color: #009816;
-  }
-
-  #cookieConsent .reject-btn {
-      background-color: #FAE5E7;
-      /* Rosso chiaro */
-      color: #671921;
-  }
-
-  #cookieConsent .reject-btn:hover {
-      background-color: #f5c6cb;
-  }
-
-  /* -------- COOKIE BANNER -------- */
-
-
-  .button {
-      padding-top: 3px;
-  }
-
-  .svgicon {
-      width: 3.5rem;
-      height: 3.5rem;
-  }
-
-  .svgiconLarge {
-      width: 7.5rem;
-      height: 5rem;
-      margin: 0px;
-  }
-
-  /* ORDER FORM */
-
-  /* Primary Button */
-  .orderModal button,
-  .orderModal button {
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s ease-in-out;
-  }
-
-  /* Modal Background */
-  .orderModal,
-  .orderModal {
-      z-index: 10;
-  }
-
-
-  /* Form Container */
-  .orderModal .order-container,
-  .orderModal .order-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-  }
-
-  /* Form */
-  .orderModal #orderForm,
-  .orderModal #happyOrderForm {
-      width: 95%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-  }
-
-  /* Labels */
-  .orderModal label,
-  .orderModal label {
-      font-weight: bold;
-      color: #333;
-      font-size: 0.95rem;
-      text-align: left;
-      width: 100%;
-      display: block;
-  }
-
-  .orderModal .selector,
-  .orderModal .selector {
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 5px;
-  }
-
-  .orderModal .selector label,
-  .orderModal .selector label {
-      margin-bottom: 5px;
-      margin-top: 5px;
-  }
-
-  /* Input Fields */
-  .orderModal input,
-  select,
-  .orderModal input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 1rem;
-      outline: none;
-      transition: 0.2s ease-in-out;
-      box-sizing: border-box;
-      /* Ensures padding/border don't affect width */
-  }
-
-  .orderModal input:focus,
-  .orderModal select:focus,
-  .orderModal input:focus,
-  .orderModal select:focus {
-      border-color: #007bff;
-      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-  }
-
-  /* Add to Cart Button */
-  .orderModal #addToCart,
-  .orderModal #happy-addToCart {
-      margin-top: 20px;
-      background-color: #28a745;
-      width: 100%;
-      padding-top: 6px;
-      padding-bottom: 6px;
-  }
-
-  .orderModal #addToCart:hover,
-  .orderModal #happy-addToCart:hover {
-      background-color: #218838;
-  }
-
-  /* Cart Section */
-  .orderModal #cart,
-  .orderModal #happy-cart {
-      width: 95%;
-      list-style-type: none;
-      padding: 0px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background-color: white;
-      margin-top: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Cart Items */
-  .orderModal .itemDiv,
-  .orderModal .itemDiv {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      margin: 5px;
-      margin-bottom: 10px;
-      /* margin: 5px 0; */
-      border-radius: 8px;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Cart Item Details */
-  .orderModal .itemQuantity,
-  .orderModal .itemQuantity {
-      font-weight: bold;
-      color: #333;
-      padding: 5px 10px;
-      width: 40px;
-      text-align: center;
-      /* margin-left: 15px; */
-      border-radius: 5px;
-      background-color: #e1e1e1;
-  }
-
-  .orderModal .itemInternalDiv,
-  .orderModal .itemInternalDiv {
-      margin-top: 10px;
-      align-self: self-start;
-      flex-grow: 1;
-      text-align: left;
-      padding: 0 10px;
-  }
-
-  .orderModal .itemTitle,
-  .orderModal .itemTitle {
-      font-size: 1rem;
-      font-weight: bold;
-      color: #444;
-  }
-
-  .orderModal .itemSize,
-  .orderModal .itemSize {
-      font-size: 0.9rem;
-      color: #666;
-  }
-
-  /* Remove Button */
-  .orderModal .remove,
-  .orderModal .remove {
-      background-color: #ff4d4d;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      cursor: pointer;
-      margin-right: 15px;
-      margin-bottom: 10px;
-      transition: 0.3s ease-in-out;
-  }
-
-  .orderModal .remove:hover,
-  .orderModal .remove:hover {
-      background-color: #cc0000;
-  }
-
-  /* Submit Button */
-  #sendOrder,
-  #newOrderButton,
-  #happy-sendOrder,
-  #happy-newOrderButton {
-      margin-top: 20px;
-      background-color: black;
-      width: 95%;
-  }
-
-  #sendOrder:hover,
-  #newOrderButton,
-  #happy-sendOrder:hover,
-  #happy-newOrderButton {
-      background-color: black;
-  }
-
-  .orderModal .itemTitle,
-  .orderModal .itemTitle {
-      margin-top: 0px;
-      margin-bottom: 0px;
-  }
-
-  .orderModal .itemSize,
-  .orderModal .itemSize {
-      margin-top: 0px;
-      margin-bottom: 0px;
-  }
-
-  #recaptcha-container-order,
-  #happy-recaptcha-container-order {
-      margin-top: 20px;
-  }
-
-  .terms-container input[type="checkbox"] {
-      appearance: checkbox !important;
-      /* Ensure the default checkbox appearance is used */
-      opacity: 1 !important;
-      /* Ensure it is not transparent */
-  }
-
-  #confirmationMessage,
-  #happy-confirmationMessage {
-      display: none;
-      /* Hidden by default */
-  }
-
-  #checkmark {
-      font-size: 4rem;
-      /* Make the checkmark big */
-      color: green;
-      /* Make the checkmark white */
-      display: block;
-      /* Ensure it's on its own line */
-      margin-bottom: 10px;
-      /* Add space below the checkmark */
-  }
-
-  .order-phone-container {
-      max-width: 100%;
-  }
-
-  .switch-container {
-      display: flex;
-      align-items: center center;
-      gap: 10px;
-      margin: 10px;
-      margin-left: 2px;
-      font-family: 'Segoe UI', sans-serif;
-  }
-
-  .switch {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 28px;
-  }
-
-  .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-  }
-
-  .slider {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      border-radius: 34px;
-      transition: background-color 0.4s;
-  }
-
-  .slider:before {
-      content: "";
-      position: absolute;
-      height: 22px;
-      width: 22px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      border-radius: 50%;
-      transition: transform 0.4s;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  }
-
-  .switch input:checked+.slider {
-      background-color: #4cd964;
-  }
-
-  .switch input:checked+.slider:before {
-      transform: translateX(22px);
-  }
-
-  .ingredient-detail {
-      opacity: 0;
-      height: 0;
-      width: 100%;
-      grid-area: product-description;
-      overflow: hidden;
-      transition: opacity 0.4s ease, height 0.4s ease;
-  }
-
-  .ingredient-detail.show {
-      opacity: 1;
-      height: auto;
-  }
-
-  .ingredient-row {
-      /* background: white; */
-      border: 1px solid grey;
-      padding: 4px 4px;
-      border-radius: 8px;
-      margin: 4px 0;
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-  }
-
-  .ingredient-row span {
-      font-size: 0.85rem;
-      color: #555;
-      margin-left: 2px;
-  }
-
-  .ingredient-row .allergens {
-      color: #666;
-      font-size: 12px;
-      text-align: right;
-      margin-right: 2px;
-  }
-
-  /* new code image on form */
-
-  /* Mantiene lo stile coerente con gli altri campi */
-  .custom-select {
-      position: relative;
-      width: 100%;
-      padding: 10px;
-      /* come gli input */
-      border: 1px solid #ddd;
-      /* come .orderModal */
-      border-radius: 6px;
-      font-size: 1rem;
-      outline: none;
-      transition: 0.2s ease-in-out;
-      box-sizing: border-box;
-      background-color: #fff;
-      cursor: pointer;
-  }
-
-  /* Elemento selezionato */
-  .custom-select .selected {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-  }
-
-  /* Dropdown */
-  .custom-select .dropdown {
-      display: none;
-      position: absolute;
-      top: calc(100% + 2px);
-      /* piccola distanza dal campo */
-      left: 0;
-      width: 100%;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      z-index: 1000;
-      max-height: 300px;
-      overflow-y: auto;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Dropdown visibile */
-  .custom-select .dropdown.show {
-      display: block;
-  }
-
-  /* Oggetto del dropdown */
-  .dropdown-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px;
-      transition: background 0.2s ease-in-out;
-      font-size: 1rem;
-      cursor: pointer;
-  }
-
-  .dropdown-item:hover {
-      background: #f5f5f5;
-  }
-
-  /* Immagini nei dropdown */
-  .dropdown-item img,
-  .custom-select .selected img {
-      width: 100px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 6px;
-      flex-shrink: 0;
-  }
-
-  .itemImage {
-      width: 200px;
-      height: auto;
-      margin: 0 10px;
-      margin-left: 10px;
-      border-radius: 8px;
-      object-fit: cover;
-      -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
-      mask-image: linear-gradient(to right, black 90%, transparent 100%);
-      -webkit-mask-size: 100% 100%;
-      mask-size: 100% 100%;
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-  }
-
-  .collapsible.active::after {
-      content: '-';
-  }
-
-  .menu-grid.content.expanded {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      max-height: 2000px;
-      /* Arbitrary large value */
-      opacity: 1;
-  }
-
-
-  .collapsible {
-      cursor: pointer;
-      width: 100%;
-      transition: 0.4s;
-      margin-top: 2px;
-  }
-
-  .collapsible {
-      /* Your existing collapsible styles */
-      transition: all 0.3s ease;
-      margin-bottom: 0;
-      /* Remove any bottom margin */
-  }
-
-  .menu-grid.content {
-      padding: 0 5px;
-      box-sizing: border-box;
-      overflow: hidden;
-      transition:
-          max-height 0.3s ease,
-          opacity 0.2s ease,
-          padding-top 0.3s ease,
-          padding-bottom 0.3s ease;
-  }
-
-  #map {
-      margin: 0 auto;
-      height: 400px;
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-
-
-
-  .marker-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .marker-label {
-      /* background: black; */
-      color: black;
-      /* padding: 2px 6px; */
-      /* border-radius: 4px; */
-      font-size: 15px;
-      font-weight: bold;
-      margin-bottom: 0px;
-      /* box-shadow: 0 1px 3px rgba(0,0,0,0.2); */
-  }
-
-  .marker-img {
-      width: 80px;
-      height: 40px;
-  }
-
-
-  /* switch store */
-  .store-switcher {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 20px;
-      flex-wrap: nowrap;
-      width: 100%;
-      max-width: 100%;
-  }
-
-  .store-button {
-      flex: 1 1 0;
-      padding: 10px;
-      border-radius: 999px;
-      background-color: transparent;
-      border: 1px solid black;
-      color: black;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      white-space: nowrap;
-      font-size: 0.95rem;
-      z-index: 2;
-      text-align: center;
-  }
-
-  .store-indicator {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      border-radius: 999px;
-      background-color: black;
-      z-index: 1;
-      width: 0;
-      transform: translateX(0);
-      transition:
-          transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-          width 0.3s ease-in-out;
-  }
-
-  .store-switcher-wrapper {
-      overflow-x: auto;
-      padding: 10px;
-  }
-
-  .store-switcher {
-      display: flex;
-      justify-content: space-between;
-      gap: 5px;
-      margin-bottom: 20px;
-      flex-wrap: nowrap;
-      width: 100%;
-  }
-
-  .store-button {
-      flex: 1 1 0;
-      padding: clamp(6px, 2vw, 10px);
-      border-radius: 999px;
-      background-color: transparent;
-      border: 1px solid black;
-      color: black;
-      font-weight: bold;
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      white-space: nowrap;
-      text-align: center;
-      z-index: 2;
-      overflow: hidden;
-      min-width: 0;
-      /* Allows shrinking */
-  }
-
-  .store-button.active {
-      background-color: black;
-      color: white;
-      /* transform: scale(1.03); */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-
-
-
-  .merch-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      font-family: system-ui, sans-serif;
-      background-color: #f3f4f6;
-      color: #1f2937;
-  }
-
-  .merch-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 2rem;
-  }
-
-  .merch-subtitle {
-      font-size: 1.75rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-  }
-
-  .merch-grid {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      margin-bottom: 3rem;
-  }
-
-  .merch-card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      text-align: center;
-  }
-
-  .merch-product-img {
-      width: 100%;
-      max-width: 150px;
-      max-height: 150px;
-      height: 150px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 1rem auto;
-      border-radius: 0.5rem;
-      background: #fff;
-  }
-
-  .merch-input,
-  .merch-select,
-  .merch-phone-field {
-      width: 100%;
-      padding: 0.6rem;
-      border: 1px solid #d1d5db;
-      border-radius: 0.375rem;
-      font-size: 1rem;
-      box-sizing: border-box;
-  }
-
-  .merch-button {
-      width: 100%;
-      background: #2563eb;
-      color: white;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 0.375rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-  }
-
-  .merch-button:hover {
-      background: #1e40af;
-  }
-
-  .merch-form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1rem;
-  }
-
-  .merch-phone-input {
-      display: flex;
-      align-items: stretch;
-  }
-
-  .merch-phone-prefix {
-      display: flex;
-      align-items: center;
-      padding: 0 0.75rem;
-      background: #e5e7eb;
-      border: 1px solid #d1d5db;
-      border-right: none;
-      border-radius: 0.375rem 0 0 0.375rem;
-  }
-
-  .merch-phone-field {
-      flex: 1;
-      border: 1px solid #d1d5db;
-      border-left: none;
-      border-radius: 0 0.375rem 0.375rem 0;
-      padding: 0.6rem;
-      font-size: 1rem;
-  }
-
-  .merch-cart-item {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 0.75rem 0;
-      font-size: 1rem;
-  }
-
-  .merch-remove {
-      color: #dc2626 !important;
-      background: none !important;
-      border: none !important;
-      cursor: pointer !important;
-  }
-
-  .merch-remove:hover {
-      text-decoration: underline;
-  }
-
-  .merch-empty {
-      color: #374151;
-      font-style: italic;
-      margin-top: 0.5rem;
-  }
-
-  .merch-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      /* Spinge il bottone in basso */
-      padding: 10px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      height: 100%;
-      /* oppure min-height: 400px; */
-  }
-
-  .merch-card h3 {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      flex-shrink: 0;
-  }
-
-  .merch-card p {
-      margin-bottom: 10px;
-      flex-shrink: 0;
-  }
-
-  .merch-card select {
-      margin-bottom: 10px;
-  }
-
-  .merch-button {
-      margin-top: auto;
-      /* Spinge verso il basso se preceduto da contenuto */
-  }
-
-  .merch-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      padding: 10px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .otp-container {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin: 30px auto;
-      max-width: 400px;
-  }
-
-  .otp-input {
-      width: 10vw !important;
-      max-width: 50px !important;
-      height: 70px !important;
-      text-align: center !important;
-      font-size: 24px !important;
-      font-weight: bold !important;
-      border: 1px solid #333 !important;
-      border-radius: 15px !important;
-      outline: none !important;
-      transition: all 0.3s ease !important;
-      background: white !important;
-      color: #333 !important;
-      font-family: 'Courier New', monospace !important;
-  }
-
-  .otp-input:focus {
-      border-color: #667eea !important;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
-      transform: scale(1.05) !important;
-  }
-
-  .otp-input:valid {
-      border-color: #48bb78 !important;
-  }
-
-  .otp-input.error {
-      border-color: #f56565 !important;
-      animation: shake 0.3s !important;
-  }
-
-  @keyframes shake {
-
-      0%,
-      100% {
-          transform: translateX(0) !important;
-      }
-
-      25% {
-          transform: translateX(-5px) !important;
-      }
-
-      75% {
-          transform: translateX(5px) !important;
-      }
-  }
-
-  .verify-btn {
-      display: block !important;
-      width: 100% !important;
-      max-width: 300px !important;
-      margin: 20px auto !important;
-      padding: 15px 30px !important;
-      background: #009816 !important;
-      color: white !important;
-      border: none !important;
-      border-radius: 12px !important;
-      font-size: 16px !important;
-      font-weight: 600 !important;
-      cursor: pointer !important;
-      transition: all 0.3s ease !important;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
-  }
-
-  .verify-btn:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
-  }
-
-  .verify-btn:active {
-      transform: translateY(0) !important;
-  }
-
-  .verify-btn:disabled {
-      opacity: 0.6 !important;
-      cursor: not-allowed !important;
-      transform: none !important;
-  }
-
-  /* Responsive per mobile */
-  @media (max-width: 480px) {
-      .otp-container {
-          gap: 8px !important;
-      }
-
-      .otp-input {
-          width: 40px !important;
-          height: 50px !important;
-          font-size: 20px !important;
-      }
-  }
+/* Poppins Bold */
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* General Reset */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Container */
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #0e0e0e;
+    border-radius: 12px;
+    border: 1px solid gray;
+}
+
+/* Header */
+header img {
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    padding: 3px 24px 0px 24px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: transparent;
+    box-shadow: none;
+}
+
+.button-container>a,
+.button-container>div {
+    transition: all 0.3s ease;
+}
+
+.button-container>a:hover,
+.button-container>div:hover {
+    opacity: 0.7;
+    transform: translateY(-4px);
+}
+
+/* Footer */
+footer {
+    padding-top: 40px;
+    color: white;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 2% auto;
+    padding: 10px;
+    border-radius: 10px;
+    width: 95%;
+    max-width: 1000px;
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+/* Default layout for larger screens */
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    /* Align items horizontally */
+    align-items: flex-start;
+    text-align: left;
+    /* Align text to the left */
+    padding: 0px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-img {
+    display: block;
+    -webkit-mask-image: linear-gradient(to bottom, black 94%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 94%, transparent 100%);
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0px;
+}
+
+.menu-item-info {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "product-title product-title product-price"
+        "product-description product-description product-description"
+        "allergeni-container allergeni-container allergeni-container";
+    /* space between rows */
+    padding: 20px;
+    text-align: left;
+}
+
+/* Collapsible Buttons */
+.product-title {
+    /* margin-left: 10px; */
+    font-size: 1.4rem;
+    color: #333;
+    grid-area: product-title;
+    place-self: center start;
+    text-align: left;
+}
+
+.product-price {
+    grid-area: product-price;
+    place-self: center end;
+    /* padding-right: 20px; */
+}
+
+.product-description {
+    font-size: 0.85rem;
+    color: #555;
+    grid-area: product-description;
+    margin-bottom: 10px;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin: 0px;
+    padding: 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    /* Smooth expansion */
+    padding: 0 20px;
+    /* Padding for content */
+    background-color: #ffffff;
+    /* White background */
+    border: 1px solid #e0e0e0;
+    /* Subtle border */
+    border-top: none;
+    /* Remove top border to blend with button */
+    border-radius: 0 0 8px 8px;
+    /* Rounded bottom corners */
+}
+
+/* Default layout for larger screens */
+
+/* Collapsible Button */
+.collapsible {
+    background-color: black;
+    /* White background */
+    color: white;
+    /* Dark text color */
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* Semi-bold text */
+    padding: 12px 20px;
+    /* Comfortable padding */
+    /* Subtle border */
+    border-radius: 8px;
+    /* Rounded corners */
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Smooth transitions */
+    /* Subtle shadow */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+/* Active State (When Button is Open) */
+.collapsible.active {
+    background-color: #404040;
+}
+
+/* Icon for Collapsible Button */
+.collapsible::after {
+    content: "\25BC";
+    /* Unicode for down arrow (▼) */
+    font-size: 1.3rem;
+    color: #666;
+    /* Subtle icon color */
+    transition: transform 0.3s ease;
+    /* Smooth rotation */
+}
+
+/* Rotate Icon When Button is Active */
+.collapsible.active::after {
+    transform: rotate(180deg);
+    /* Rotate arrow when open */
+    content: "-";
+}
+
+/* Expanded Content */
+
+/* Default layout for larger screens */
+
+/* MENU */
+/* PUNTI VENDITA ORARI */
+.locations-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 16px;
+}
+
+.location {
+    border: 2px solid #0e0e0e;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+
+    /*hours display horizon*/
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+}
+
+.slot {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    background-color: #f0f0f0;
+    border: 1px solid black;
+}
+
+.box-orari {
+    border-radius: px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.loc-pic {
+    padding: 4px;
+    border-radius: 16px;
+    width: 100%;
+}
+
+.day {
+    margin-bottom: 15px;
+}
+
+.time-bar {
+    display: flex;
+    gap: 5px;
+}
+
+.morning {
+    color: whitesmoke;
+    background: linear-gradient(to right, gray, rgb(73, 73, 73));
+}
+
+.evening {
+    color: whitesmoke;
+    background: #4b79a1;
+    /* fallback for old browsers */
+    background: linear-gradient(to right, rgb(73, 73, 73), rgb(60, 60, 60));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.delivery {
+    color: white;
+    background: darkgoldenrod;
+}
+
+.open-google-maps-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 1.2rem;
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: auto;
+    /* Larghezza automatica (non al 100%) */
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid black;
+    background: white;
+    /* Gradiente ispirato a Google */
+    margin-top: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.open-google-maps-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.open-google-maps-button:active {
+    transform: scale(0.98);
+}
+
+.maps-img {
+    /*GOOGLE MAPS ICON*/
+    height: 3.5vh;
+    margin-right: 8px;
+}
+
+.label {
+    display: inline;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 8px;
+}
+
+/* Modal Styles */
+.close-modal {
+    color: #aaa;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    right: 60px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .close-modal {
+        color: #ccc;
+        font-size: 36px;
+        font-weight: bold;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+}
+
+/* ---- MEMBERSHIP ---- */
+
+#cookieMsg {
+    /*COOKIE MESSAGE ON REGISTRATION FORM*/
+    display: none;
+    /* Hidden by default */
+    color: red;
+    margin-bottom: 20px;
+}
+
+/*MEMBERSHIP FORM CONTAINER*/
+#membershipModal .modalForm-content {
+    text-align: center;
+}
+
+/*ISCRIZIONE MEMBERSHIP CARD TITLE*/
+#membershipModal .modalForm-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#membershipModal .modalForm-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#membershipModal .modalForm-content label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#membershipModal .modalForm-content input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 33.6px;
+    -webkit-appearance: none;
+}
+
+/*RICHIEDI TESSERA/SCARICA CODICE A BARRE*/
+#membershipModal .modalForm-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#membershipModal .modalForm-content button:disabled {
+    /*DISABLE BUTTON FORM*/
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* PHONE CONTAINER */
+.phone-container {
+    display: flex;
+    align-items: center;
+    /* Align items vertically */
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+.phone-container .phone-prefix {
+    /*PHONE +39*/
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    padding: 8px;
+    border-radius: 4px !important;
+    font-size: 14px;
+    height: 33.6px;
+    /* Match the height of the input field */
+    display: flex;
+    align-items: center;
+    /* Center the text vertically */
+}
+
+.phone-container input#phone {
+    /*PHONE NUMBER*/
+    margin: 0px !important;
+    padding: auto !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    margin-left: 5px !important;
+    height: 33.6px;
+}
+
+.terms-container {
+    display: flex;
+    align-items: start;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+.terms-container input {
+    height: 25px !important;
+    width: 25px !important;
+    align-self: center;
+    margin: 0px !important;
+    pointer-events: auto;
+    /* Ensure the checkbox is clickable */
+    z-index: 10000 !important;
+    /* Ensure it's above other elements */
+}
+
+.terms-container label {
+    margin: 0px !important;
+    text-align: left;
+    margin-left: 10px !important;
+    font-size: 11px;
+}
+
+#submit-button {
+    /*RICHIEDI TESSERA*/
+    color: white !important;
+    background-color: black !important;
+    z-index: 10 !important;
+    position: relative !important;
+    width: 100%;
+}
+
+/* FORM RESULT */
+#result {
+    margin-top: 20px;
+    display: none;
+}
+
+/* -------- COOKIE BANNER -------- */
+#cookieConsent {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100svw;
+    max-height: 35svh;
+    z-index: 9999;
+    text-align: center;
+    display: none;
+}
+
+#cookieConsent p {
+    font-size: 0.75rem;
+}
+
+#cookieConsent a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+#cookieConsent button {
+    font-size: 1.5svh;
+    width: 30%;
+    padding: 10px 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#cookieConsent .accept-btn {
+    background-color: #00d123;
+    /* Verde */
+    color: black;
+}
+
+#cookieConsent .accept-btn:hover {
+    background-color: #009816;
+}
+
+#cookieConsent .reject-btn {
+    background-color: #fae5e7;
+    /* Rosso chiaro */
+    color: #671921;
+}
+
+#cookieConsent .reject-btn:hover {
+    background-color: #f5c6cb;
+}
+
+/* -------- COOKIE BANNER -------- */
+.svgicon {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.svgiconLarge {
+    width: 7.5rem;
+    height: 5rem;
+    margin: 0px;
+}
+
+/* ORDER FORM */
+
+/* Primary Button */
+.orderModal button,
+.orderModal button {
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Modal Background */
+.orderModal,
+.orderModal {
+    z-index: 10;
+}
+
+/* Form Container */
+/* Form */
+/* Labels */
+.orderModal label,
+.orderModal label {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95rem;
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+
+/* Input Fields */
+/* Add to Cart Button */
+/* Cart Section */
+/* Submit Button */
+/* Submit Button */
+#newOrderButton {
+    margin-top: 20px;
+    background-color: black;
+    width: 95%;
+}
+
+#newOrderButton {
+    background-color: black;
+}
+
+#recaptcha-container-order {
+    margin-top: 20px;
+}
+
+.terms-container input[type="checkbox"] {
+    appearance: checkbox !important;
+    /* Ensure the default checkbox appearance is used */
+    opacity: 1 !important;
+    /* Ensure it is not transparent */
+}
+
+#confirmationMessage {
+    display: none;
+    /* Hidden by default */
+}
+
+#checkmark {
+    font-size: 4rem;
+    /* Make the checkmark big */
+    color: green;
+    /* Make the checkmark white */
+    display: block;
+    /* Ensure it's on its own line */
+    margin-bottom: 10px;
+    /* Add space below the checkmark */
+}
+
+
+
+.switch-container {
+    display: flex;
+    align-items: center center;
+    gap: 10px;
+    margin: 10px;
+    margin-left: 2px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.4s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.switch input:checked+.slider {
+    background-color: #4cd964;
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(22px);
+}
+
+.ingredient-detail {
+    opacity: 0;
+    height: 0;
+    width: 100%;
+    grid-area: product-description;
+    overflow: hidden;
+    transition: opacity 0.4s ease, height 0.4s ease;
+}
+
+.ingredient-detail.show {
+    opacity: 1;
+    height: auto;
+}
+
+.ingredient-row {
+    /* background: white; */
+    border: 1px solid grey;
+    padding: 4px 4px;
+    border-radius: 8px;
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.ingredient-row span {
+    font-size: 0.85rem;
+    color: #555;
+    margin-left: 2px;
+}
+
+.ingredient-row .allergens {
+    color: #666;
+    font-size: 12px;
+    text-align: right;
+    margin-right: 2px;
+}
+
+/* new code image on form */
+
+/* Mantiene lo stile coerente con gli altri campi */
+
+.menu-grid.content {
+    padding: 0 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding-top 0.3s ease,
+        padding-bottom 0.3s ease;
+}
+
+#map {
+    margin: 0 auto;
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.marker-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marker-label {
+    /* background: black; */
+    color: black;
+    /* padding: 2px 6px; */
+    /* border-radius: 4px; */
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.2); */
+}
+
+.marker-img {
+    width: 80px;
+    height: 40px;
+}
+
+.store-switcher {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.store-button {
+    flex: 1 1 0;
+    padding: clamp(6px, 2vw, 10px);
+    border-radius: 999px;
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+    z-index: 2;
+    overflow: hidden;
+    min-width: 0;
+    /* Allows shrinking */
+}
+
+.store-button.active {
+    background-color: black;
+    color: white;
+    /* transform: scale(1.03); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.merch-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: system-ui, sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+.merch-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.merch-subtitle {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.merch-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 3rem;
+}
+
+.merch-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.merch-product-img {
+    width: 100%;
+    max-width: 150px;
+    max-height: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.merch-input,
+.merch-phone-field {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.merch-button {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: auto;
+}
+
+.merch-button:hover {
+    background: #1e40af;
+}
+
+.merch-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.merch-phone-input {
+    display: flex;
+    align-items: stretch;
+}
+
+.merch-phone-prefix {
+    display: flex;
+    align-items: center;
+    padding: 0 0.75rem;
+    background: #e5e7eb;
+    border: 1px solid #d1d5db;
+    border-right: none;
+    border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.merch-phone-field {
+    flex: 1;
+    border: 1px solid #d1d5db;
+    border-left: none;
+    border-radius: 0 0.375rem 0.375rem 0;
+    padding: 0.6rem;
+    font-size: 1rem;
+}
+
+.merch-cart-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+}
+
+.merch-remove {
+    color: #dc2626 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+.merch-remove:hover {
+    text-decoration: underline;
+}
+
+.merch-empty {
+    color: #374151;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.merch-card h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.merch-card p {
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.merch-card select {
+    margin-bottom: 10px;
+}
+
+.otp-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 30px auto;
+    max-width: 400px;
+}
+
+.otp-input {
+    width: 10vw !important;
+    max-width: 50px !important;
+    height: 70px !important;
+    text-align: center !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    border: 1px solid #333 !important;
+    border-radius: 15px !important;
+    outline: none !important;
+    transition: all 0.3s ease !important;
+    background: white !important;
+    color: #333 !important;
+    font-family: "Courier New", monospace !important;
+}
+
+.otp-input:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+    transform: scale(1.05) !important;
+}
+
+.otp-input:valid {
+    border-color: #48bb78 !important;
+}
+
+.otp-input.error {
+    border-color: #f56565 !important;
+    animation: shake 0.3s !important;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0) !important;
+    }
+
+    25% {
+        transform: translateX(-5px) !important;
+    }
+
+    75% {
+        transform: translateX(5px) !important;
+    }
+}
+
+.verify-btn {
+    display: block !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 20px auto !important;
+    padding: 15px 30px !important;
+    background: #009816 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+}
+
+.verify-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+.verify-btn:active {
+    transform: translateY(0) !important;
+}
+
+.verify-btn:disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+/* Responsive per mobile */
+@media (max-width: 480px) {
+    .otp-container {
+        gap: 8px !important;
+    }
+
+    .otp-input {
+        width: 40px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+    }
+}
