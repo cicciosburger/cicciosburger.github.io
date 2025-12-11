@@ -1,20 +1,26 @@
-/* Poppins Bold */
 @font-face {
-    font-family: "Poppins";
-    src: url("/fonts/Poppins-Bold.ttf") format("truetype");
-    font-weight: 700;
+    font-family: "CiccioCustom";
+    src: url("/fonts/font_personalizzato.woff2") format("woff2");
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
+    ascent-override: 90%;
+    descent-override: 20%;
 }
 
-/* General Reset */
+.custom-font {
+    font-family: "CiccioCustom", sans-serif;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "CiccioCustom", sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: black;
+    padding: 10px;
+    background-color: #0e0e0e;
     text-align: center;
-    padding: 20px;
+    height: 100svh;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 * {
@@ -23,53 +29,138 @@ body {
     box-sizing: border-box;
 }
 
-/* Body and Container */
-
 .container {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
     background-color: #0e0e0e;
-    border-radius: 12px;
-    border: 1px solid gray;
-}
-
-/* Header */
-header img {
-    width: 100%;
-    margin-bottom: 20px;
-    object-fit: cover;
-}
-
-/* Buttons */
-.button-container {
+    border-radius: 25px;
+    border: 1px solid #444;
+    height: 100%;
+    overflow: visible;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    position: relative;
+}
+
+footer {
+    padding: 5px 5px;
+    color: white;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    z-index: 999;
+    background-color: #0e0e0e;
+    white-space: nowrap;
+}
+
+#landing-page {
+    overflow-y: auto;
+    flex: 1;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #444 #0e0e0e;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+}
+
+main {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+header {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 10px;
+    width: 100%;
+}
+
+header img,
+header object {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
+.button-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    justify-content: center;
+}
+
+.button-container>div,
+.button-container>a {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-container>div:hover,
+.button-container>a:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button-container .svgicon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.button-container>div:hover .svgicon,
+.button-container>a:hover .svgicon {
+    transform: scale(1.1);
 }
 
 .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     color: white;
     font-size: 1.2rem;
-    padding: 3px 24px 0px 24px;
+    padding: 0;
     text-decoration: none;
-    width: 100%;
+    width: auto;
     text-align: center;
-    font-weight: bold;
+    font-weight: 600;
     border: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
     background: transparent;
     box-shadow: none;
-}
-
-.button-container>a,
-.button-container>div {
-    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 .button-container>a:hover,
@@ -78,75 +169,126 @@ header img {
     transform: translateY(-4px);
 }
 
-/* Footer */
-footer {
-    padding-top: 40px;
-    color: white;
+.store-select-btn {
+    transition: all 0.3s ease;
 }
 
-/* Modal */
+.store-select-btn:hover {
+    opacity: 0.7;
+    transform: translateY(-4px);
+}
+
+.social-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    padding-bottom: 2px;
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+}
+
+.social-footer .svgicon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.8rem;
+    padding-bottom: 2px;
+}
+
 .modal {
     display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
     width: 100%;
+    animation: fadeIn 0.3s;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    overflow: auto;
-    padding-top: 60px;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.modal-content>h1 {
+    font-size: 2.5rem;
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 2% auto;
-    padding: 10px;
-    border-radius: 10px;
-    width: 95%;
-    max-width: 1000px;
+    background-color: transparent;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Menu Grid */
+#menuModal,
+#productListingPage {
+    overflow: hidden;
+}
+
+#menuModal .modal-content,
+#productListingPage .modal-content {
+    height: 100%;
+    overflow: hidden;
+}
+
+#menuModal .location-grid {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    min-height: 0;
+}
+
+#menu-scroll-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #444 #0e0e0e;
+    scrollbar-width: thin;
+    scrollbar-color: #444 #0e0e0e;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 2px;
+    border-radius: 16px;
 }
 
-/* Default layout for larger screens */
 .menu-item {
     display: flex;
     flex-direction: row;
-    /* Align items horizontally */
     align-items: flex-start;
     text-align: left;
-    /* Align text to the left */
     padding: 0px;
-    background-color: #f9f9f9;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid black;
-    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-
-.product-img {
-    display: block;
-    -webkit-mask-image: linear-gradient(to bottom, black 94%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 94%, transparent 100%);
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 0px;
 }
 
 .menu-item-info {
@@ -156,283 +298,138 @@ footer {
         "product-title product-title product-price"
         "product-description product-description product-description"
         "allergeni-container allergeni-container allergeni-container";
-    /* space between rows */
-    padding: 20px;
+    padding: 15px;
+    padding-bottom: 5px;
     text-align: left;
 }
 
-/* Collapsible Buttons */
+.product-img {
+    margin: 10px;
+    border-radius: 16px;
+    width: 95%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 0px;
+    background-color: white;
+}
+
 .product-title {
-    /* margin-left: 10px; */
-    font-size: 1.4rem;
-    color: #333;
+    font-size: 2rem;
+    color: orange;
     grid-area: product-title;
     place-self: center start;
     text-align: left;
+    font-family: "CiccioCustom";
 }
 
 .product-price {
     grid-area: product-price;
     place-self: center end;
-    /* padding-right: 20px; */
+    color: white;
+    font-size: 1.2rem;
 }
 
 .product-description {
-    font-size: 0.85rem;
-    color: #555;
+    font-size: rem;
+    color: white;
     grid-area: product-description;
     margin-bottom: 10px;
+    font-family: "CiccioCustom";
 }
 
-.content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    margin: 0px;
-    padding: 0px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    /* Smooth expansion */
-    padding: 0 20px;
-    /* Padding for content */
-    background-color: #ffffff;
-    /* White background */
-    border: 1px solid #e0e0e0;
-    /* Subtle border */
-    border-top: none;
-    /* Remove top border to blend with button */
-    border-radius: 0 0 8px 8px;
-    /* Rounded bottom corners */
-}
-
-/* Default layout for larger screens */
-
-/* Collapsible Button */
-.collapsible {
-    background-color: black;
-    /* White background */
+h1,
+h2,
+h3,
+h4,
+p {
     color: white;
-    /* Dark text color */
-    font-size: 1.1rem;
-    font-weight: 600;
-    /* Semi-bold text */
-    padding: 12px 20px;
-    /* Comfortable padding */
-    /* Subtle border */
-    border-radius: 8px;
-    /* Rounded corners */
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    /* Smooth transitions */
-    /* Subtle shadow */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2px;
-    margin-bottom: 0;
+    font-family: "CiccioCustom";
 }
 
-/* Active State (When Button is Open) */
-.collapsible.active {
-    background-color: #404040;
-}
-
-/* Icon for Collapsible Button */
-.collapsible::after {
-    content: "\25BC";
-    /* Unicode for down arrow (▼) */
-    font-size: 1.3rem;
-    color: #666;
-    /* Subtle icon color */
-    transition: transform 0.3s ease;
-    /* Smooth rotation */
-}
-
-/* Rotate Icon When Button is Active */
-.collapsible.active::after {
-    transform: rotate(180deg);
-    /* Rotate arrow when open */
-    content: "-";
-}
-
-/* Expanded Content */
-
-/* Default layout for larger screens */
-
-/* MENU */
-/* PUNTI VENDITA ORARI */
-.locations-title {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    margin-bottom: 10px;
+.modal-content>h2 {
+    color: orange;
     font-size: 2rem;
+}
+
+.spiegazione {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    border-radius: 16px;
+    border: 2px dashed white;
+}
+
+.spiegazione-title {
+    font-size: 2rem;
+    color: orange;
     text-align: center;
 }
 
-.location-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    gap: 16px;
-}
-
-.location {
-    border: 2px solid #0e0e0e;
-    border-radius: 16px;
+.spiegazione-text {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    color: white;
     margin-bottom: 10px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 15px;
 }
 
-@media (max-width: 768px) {
-
-    /*hours display horizon*/
-    .location-grid {
-        grid-template-columns: 1fr;
-        gap: 2px;
-    }
-}
-
-.slot {
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    flex: 1;
-    background-color: #f0f0f0;
-    border: 1px solid black;
-}
-
-.box-orari {
-    border-radius: px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.loc-pic {
-    padding: 4px;
-    border-radius: 16px;
-    width: 100%;
-}
-
-.day {
-    margin-bottom: 15px;
-}
-
-.time-bar {
-    display: flex;
-    gap: 5px;
-}
-
-.morning {
-    color: whitesmoke;
-    background: linear-gradient(to right, gray, rgb(73, 73, 73));
-}
-
-.evening {
-    color: whitesmoke;
-    background: #4b79a1;
-    /* fallback for old browsers */
-    background: linear-gradient(to right, rgb(73, 73, 73), rgb(60, 60, 60));
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.delivery {
+.spiegazione-text-bold {
+    font-size: 1.6rem;
+    font-weight: 700;
     color: white;
-    background: darkgoldenrod;
-}
-
-.open-google-maps-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    font-size: 1.2rem;
-    padding: 16px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    width: auto;
-    /* Larghezza automatica (non al 100%) */
+    margin-bottom: 10px;
     text-align: center;
-    font-weight: bold;
-    border: none;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 1px solid black;
-    background: white;
-    /* Gradiente ispirato a Google */
-    margin-top: auto;
-    margin-left: 15px;
-    margin-right: 15px;
 }
 
-.open-google-maps-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+.collapsible {
+    color: white;
+    font-size: 2rem;
+    padding: 4px 12px;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-align: left;
+    border-left: 2px solid orange;
 }
 
-.open-google-maps-button:active {
-    transform: scale(0.98);
-}
-
-.maps-img {
-    /*GOOGLE MAPS ICON*/
-    height: 3.5vh;
-    margin-right: 8px;
-}
-
-.label {
-    display: inline;
-    font-weight: bold;
-    color: black;
-    margin-bottom: 8px;
-}
-
-/* Modal Styles */
 .close-modal {
-    color: #aaa;
-    font-size: 36px;
+    color: white;
     font-weight: bold;
-    position: absolute;
-    right: 60px;
-    top: 30px;
-    cursor: pointer;
+    position: sticky;
+    top: 5px;
+    align-self: flex-start;
+    background-color: rgba(26, 26, 26, 0.8);
+    margin-left: 4px;
+    margin-top: 0px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-modal svg {
+    font-size: 1.8rem;
+    padding-top: 5px;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+.close-modal span {
+    padding-bottom: 0px;
+    font-size: 1.2rem;
 }
 
 .close-modal:hover,
 .close-modal:focus {
-    color: grey;
+    background-color: rgba(60, 60, 60, 0.9);
+    transform: scale(1.02);
     text-decoration: none;
     cursor: pointer;
 }
 
-@media (max-width: 800px) {
-    .close-modal {
-        color: #ccc;
-        font-size: 36px;
-        font-weight: bold;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        cursor: pointer;
-    }
-}
-
-/* ---- MEMBERSHIP ---- */
-
 #cookieMsg {
     /*COOKIE MESSAGE ON REGISTRATION FORM*/
     display: none;
-    /* Hidden by default */
     color: red;
     margin-bottom: 20px;
 }
@@ -440,6 +437,13 @@ footer {
 /*MEMBERSHIP FORM CONTAINER*/
 #membershipModal .modalForm-content {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /*ISCRIZIONE MEMBERSHIP CARD TITLE*/
@@ -452,22 +456,40 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 #membershipModal .modalForm-content label {
-    margin-top: 10px;
+    margin-top: 5px;
     font-weight: bold;
+    color: white;
+    text-align: left !important;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1.4rem;
+}
+
+a {
+    color: whitesmoke;
 }
 
 #membershipModal .modalForm-content input {
+    font-family: "CiccioCustom";
+    font-size: 16px;
     margin-bottom: 10px;
     padding: 8px;
     width: 100%;
     max-width: 300px;
-    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border: 2px solid #333;
+    color: grey;
+    background-color: #333;
     border-radius: 4px;
     height: 33.6px;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 /*RICHIEDI TESSERA/SCARICA CODICE A BARRE*/
@@ -486,11 +508,10 @@ footer {
     cursor: not-allowed;
 }
 
-/* PHONE CONTAINER */
 .phone-container {
     display: flex;
     align-items: center;
-    /* Align items vertically */
+    justify-content: center;
     width: 100%;
     max-width: 300px;
     margin-bottom: 10px;
@@ -498,33 +519,35 @@ footer {
 
 .phone-container .phone-prefix {
     /*PHONE +39*/
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
+    border: 1px solid #333;
+    background-color: #333;
     padding: 8px;
     border-radius: 4px !important;
     font-size: 14px;
     height: 33.6px;
-    /* Match the height of the input field */
+    color: gainsboro;
     display: flex;
     align-items: center;
-    /* Center the text vertically */
 }
 
 .phone-container input#phone {
     /*PHONE NUMBER*/
     margin: 0px !important;
     padding: auto !important;
-    border: 1px solid #ccc !important;
+    border: 1px solid #333 !important;
     border-radius: 4px !important;
     margin-left: 5px !important;
     height: 33.6px;
+    max-width: 260px;
 }
 
 .terms-container {
     display: flex;
     align-items: start;
-    max-width: 300px;
     margin-bottom: 10px;
+    max-width: 300px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .terms-container input {
@@ -533,34 +556,34 @@ footer {
     align-self: center;
     margin: 0px !important;
     pointer-events: auto;
-    /* Ensure the checkbox is clickable */
     z-index: 10000 !important;
-    /* Ensure it's above other elements */
 }
 
 .terms-container label {
     margin: 0px !important;
     text-align: left;
     margin-left: 10px !important;
-    font-size: 11px;
+    font-size: 1rem !important;
 }
 
 #submit-button {
     /*RICHIEDI TESSERA*/
-    color: white !important;
-    background-color: black !important;
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+    color: black !important;
+    background-color: white !important;
     z-index: 10 !important;
     position: relative !important;
     width: 100%;
+    max-width: 300px;
+    font-family: inherit;
 }
 
-/* FORM RESULT */
 #result {
     margin-top: 20px;
     display: none;
 }
 
-/* -------- COOKIE BANNER -------- */
 #cookieConsent {
     background-color: #333;
     color: white;
@@ -576,7 +599,7 @@ footer {
 }
 
 #cookieConsent p {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
 }
 
 #cookieConsent a {
@@ -585,7 +608,7 @@ footer {
 }
 
 #cookieConsent button {
-    font-size: 1.5svh;
+    font-size: 1.8svh;
     width: 30%;
     padding: 10px 10px;
     font-weight: bold;
@@ -596,7 +619,7 @@ footer {
 
 #cookieConsent .accept-btn {
     background-color: #00d123;
-    /* Verde */
+    font-family: inherit;
     color: black;
 }
 
@@ -606,7 +629,7 @@ footer {
 
 #cookieConsent .reject-btn {
     background-color: #fae5e7;
-    /* Rosso chiaro */
+    font-family: inherit;
     color: #671921;
 }
 
@@ -614,7 +637,6 @@ footer {
     background-color: #f5c6cb;
 }
 
-/* -------- COOKIE BANNER -------- */
 .svgicon {
     width: 3.5rem;
     height: 3.5rem;
@@ -626,9 +648,6 @@ footer {
     margin: 0px;
 }
 
-/* ORDER FORM */
-
-/* Primary Button */
 .orderModal button,
 .orderModal button {
     color: white;
@@ -640,15 +659,21 @@ footer {
     transition: 0.3s ease-in-out;
 }
 
-/* Modal Background */
 .orderModal,
 .orderModal {
     z-index: 10;
 }
 
-/* Form Container */
-/* Form */
-/* Labels */
+.order-modal-content .close-modal {
+    align-self: flex-start;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
 .orderModal label,
 .orderModal label {
     font-weight: bold;
@@ -659,11 +684,6 @@ footer {
     display: block;
 }
 
-/* Input Fields */
-/* Add to Cart Button */
-/* Cart Section */
-/* Submit Button */
-/* Submit Button */
 #newOrderButton {
     margin-top: 20px;
     background-color: black;
@@ -680,36 +700,26 @@ footer {
 
 .terms-container input[type="checkbox"] {
     appearance: checkbox !important;
-    /* Ensure the default checkbox appearance is used */
     opacity: 1 !important;
-    /* Ensure it is not transparent */
 }
 
 #confirmationMessage {
     display: none;
-    /* Hidden by default */
 }
 
 #checkmark {
     font-size: 4rem;
-    /* Make the checkmark big */
     color: green;
-    /* Make the checkmark white */
     display: block;
-    /* Ensure it's on its own line */
     margin-bottom: 10px;
-    /* Add space below the checkmark */
 }
-
-
 
 .switch-container {
     display: flex;
-    align-items: center center;
     gap: 10px;
     margin: 10px;
     margin-left: 2px;
-    font-family: "Segoe UI", sans-serif;
+    color: white;
 }
 
 .switch {
@@ -725,13 +735,18 @@ footer {
     height: 0;
 }
 
+.switch-container label {
+    font-size: 1.2rem;
+    align-self: center;
+}
+
 .slider {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #333;
     border-radius: 34px;
     transition: background-color 0.4s;
 }
@@ -750,7 +765,7 @@ footer {
 }
 
 .switch input:checked+.slider {
-    background-color: #4cd964;
+    background-color: orange;
 }
 
 .switch input:checked+.slider:before {
@@ -772,39 +787,28 @@ footer {
 }
 
 .ingredient-row {
-    /* background: white; */
-    border: 1px solid grey;
+    border: 2px dashed grey;
+    color: white;
     padding: 4px 4px;
     border-radius: 8px;
     margin: 4px 0;
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
 }
 
 .ingredient-row span {
-    font-size: 0.85rem;
-    color: #555;
-    margin-left: 2px;
+    font-size: 1rem;
+    color: whitesmoke;
+    margin-left: 4px;
+    padding-bottom: 4px;
 }
 
 .ingredient-row .allergens {
-    color: #666;
-    font-size: 12px;
+    color: whitesmoke;
+    font-size: 1rem;
     text-align: right;
     margin-right: 2px;
-}
-
-/* new code image on form */
-
-/* Mantiene lo stile coerente con gli altri campi */
-
-.menu-grid.content {
-    padding: 0 5px;
-    box-sizing: border-box;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.2s ease, padding-top 0.3s ease,
-        padding-bottom 0.3s ease;
+    padding-bottom: 4px;
 }
 
 #map {
@@ -822,14 +826,10 @@ footer {
 }
 
 .marker-label {
-    /* background: black; */
     color: black;
-    /* padding: 2px 6px; */
-    /* border-radius: 4px; */
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 0px;
-    /* box-shadow: 0 1px 3px rgba(0,0,0,0.2); */
 }
 
 .marker-img {
@@ -844,6 +844,7 @@ footer {
     margin-bottom: 20px;
     flex-wrap: nowrap;
     width: 100%;
+    color: white;
 }
 
 .store-button {
@@ -851,8 +852,8 @@ footer {
     padding: clamp(6px, 2vw, 10px);
     border-radius: 999px;
     background-color: transparent;
-    border: 1px solid black;
-    color: black;
+    border: 1px solid white;
+    color: white;
     font-weight: bold;
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     transition: all 0.3s ease;
@@ -862,36 +863,28 @@ footer {
     z-index: 2;
     overflow: hidden;
     min-width: 0;
-    /* Allows shrinking */
 }
 
 .store-button.active {
-    background-color: black;
-    color: white;
-    /* transform: scale(1.03); */
+    background-color: whitesmoke;
+    color: black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.merch-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: system-ui, sans-serif;
-    background-color: #f3f4f6;
-    color: #1f2937;
-}
-
 .merch-title {
+    margin-top: 20px;
     font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
     margin-bottom: 2rem;
+    color: white;
 }
 
 .merch-subtitle {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    color: white;
 }
 
 .merch-grid {
@@ -902,7 +895,7 @@ footer {
 }
 
 .merch-card {
-    background: #fff;
+    background: #0e0e0e;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -915,9 +908,9 @@ footer {
 
 .merch-product-img {
     width: 100%;
-    max-width: 150px;
-    max-height: 150px;
-    height: 150px;
+    max-width: 300px;
+    max-height: 300px;
+    height: 300px;
     object-fit: contain;
     display: block;
     margin: 0 auto 1rem auto;
@@ -929,10 +922,13 @@ footer {
 .merch-phone-field {
     width: 100%;
     padding: 0.6rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid #333;
+    background: #333;
+    color: white;
     border-radius: 0.375rem;
     font-size: 1rem;
     box-sizing: border-box;
+    font-family: inherit;
 }
 
 .merch-button {
@@ -946,6 +942,7 @@ footer {
     cursor: pointer;
     transition: background 0.2s;
     margin-top: auto;
+    font-family: inherit;
 }
 
 .merch-button:hover {
@@ -969,14 +966,14 @@ footer {
     align-items: center;
     padding: 0 0.75rem;
     background: #e5e7eb;
-    border: 1px solid #d1d5db;
+    border: 1px solid #333;
     border-right: none;
     border-radius: 0.375rem 0 0 0.375rem;
 }
 
 .merch-phone-field {
     flex: 1;
-    border: 1px solid #d1d5db;
+    border: 1px solid #333;
     border-left: none;
     border-radius: 0 0.375rem 0.375rem 0;
     padding: 0.6rem;
@@ -989,6 +986,7 @@ footer {
     border-bottom: 1px solid #e5e7eb;
     padding: 0.75rem 0;
     font-size: 1rem;
+    color: white;
 }
 
 .merch-remove {
@@ -1023,28 +1021,52 @@ footer {
     margin-bottom: 10px;
 }
 
+#otp-section {
+    display: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.otp-section>p {
+    max-width: 300px !important;
+}
+
 .otp-container {
     display: flex;
-    gap: 10px;
-    justify-content: center;
+    gap: 5px;
+    justify-content: space-between;
     margin: 30px auto;
-    max-width: 400px;
+    width: 100%;
+    max-width: 300px !important;
 }
 
 .otp-input {
-    width: 10vw !important;
+    width: 100% !important;
+    flex: 1;
     max-width: 50px !important;
-    height: 70px !important;
+    height: 60px !important;
     text-align: center !important;
-    font-size: 24px !important;
-    font-weight: bold !important;
-    border: 1px solid #333 !important;
+    font-size: 2rem !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    min-width: 0;
     border-radius: 15px !important;
-    outline: none !important;
-    transition: all 0.3s ease !important;
-    background: white !important;
-    color: #333 !important;
-    font-family: "Courier New", monospace !important;
+    color: white !important;
+}
+
+@media (max-width: 350px) {
+    .otp-container {
+        gap: 2px;
+        margin: 20px auto;
+        padding: 0 5px;
+    }
+
+    .otp-input {
+        font-size: 1.4rem !important;
+        height: 50px !important;
+    }
 }
 
 .otp-input:focus {
@@ -1082,17 +1104,18 @@ footer {
     display: block !important;
     width: 100% !important;
     max-width: 300px !important;
-    margin: 20px auto !important;
+    margin: 20px auto;
     padding: 15px 30px !important;
     background: #009816 !important;
     color: white !important;
     border: none !important;
     border-radius: 12px !important;
-    font-size: 16px !important;
+    font-size: 1.4rem !important;
     font-weight: 600 !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+    font-family: inherit;
 }
 
 .verify-btn:hover {
@@ -1110,7 +1133,6 @@ footer {
     transform: none !important;
 }
 
-/* Responsive per mobile */
 @media (max-width: 480px) {
     .otp-container {
         gap: 8px !important;
@@ -1121,4 +1143,279 @@ footer {
         height: 50px !important;
         font-size: 20px !important;
     }
+}
+
+#category-nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-shrink: 0;
+}
+
+#category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-nav-btn {
+    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    line-height: 0.8;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.category-nav-btn:focus {
+    outline: none;
+}
+
+.category-nav-btn:hover {
+    background-color: #333;
+    border-color: #777;
+    transform: translateY(-2px);
+}
+
+.category-nav-btn.active {
+    background-color: #222;
+    border-color: orange;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 8px;
+    padding: 10px;
+}
+
+.location {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform 0.2s;
+}
+
+.location:hover {
+    transform: translateY(-2px);
+    border-color: #555;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.location>h3 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+.loc-pic {
+    width: 100%;
+    height: 30svw;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+
+/* @media (min-width: 400px) {
+    .loc-pic {
+        height: 120px;
+    }
+}
+@media (min-width: 426px) {
+    .loc-pic {
+        height: 140px;
+    }
+}
+@media (min-width: 450px) {
+    .loc-pic {
+        height: 160px;
+    }
+}
+@media (min-width: 4600px) {
+    .loc-pic {
+        height: 160px;
+    }
+} */
+.box-orari {
+    margin-top: 4px;
+    font-size: 0.9em;
+    color: #e5e7eb;
+    width: 100%;
+}
+
+.day .label {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.time-bar {
+    font-size: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.slot {
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    text-align: center;
+    flex: 1;
+    white-space: nowrap;
+}
+
+.slot.morning {
+    background: #333;
+    color: white;
+}
+
+.slot.evening {
+    background: #333;
+    color: white;
+}
+
+.slot.delivery {
+    background: #333;
+    color: white;
+}
+
+.slot.closed {
+    background: #374151;
+    color: #d1d5db;
+    border: 1px solid #4b5563;
+}
+
+.location-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.open-google-maps-button {
+    text-decoration: none;
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    flex: 1;
+    font-size: 1.4rem;
+}
+
+.open-google-maps-button:hover {
+    background: #444;
+    border-color: #666;
+}
+
+.maps-img {
+    width: 20px;
+    height: 25px;
+}
+
+.store-select-btn {
+    flex: 1;
+    padding: 6px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-family: inherit;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    transition: all 0.2s;
+}
+
+.store-select-btn:hover {
+    background: #222;
+    border-color: #fff;
+    transform: none;
+}
+
+@media (max-width: 600px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#map {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.foodtruck-closed-container {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #111 0%, #000 100%);
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.foodtruck-closed-decoration {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.foodtruck-closed-icon {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.foodtruck-closed-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    letter-spacing: -0.5px;
+}
+
+.foodtruck-closed-text {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.8;
+    line-height: 1.3;
 }
