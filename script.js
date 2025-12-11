@@ -4,18 +4,15 @@ let recaptchaOrderWidgetId;
 let foodtruckMap;
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // Default coordinates
     let lat = 38.2064711;
     let lng = 13.3252011;
     let validCoordinates = true;
 
-    // Try to fetch coords.json from remote API
     try {
         const res = await fetch(mainUrl + '/menu/static/coords.json');
         if (!res.ok) throw new Error("Non disponibile");
         const data = await res.json();
 
-        // Check if coordinates are valid numbers
         if (typeof data.lat === "number" && typeof data.lng === "number" &&
             !isNaN(data.lat) && !isNaN(data.lng) &&
             data.lat !== null && data.lng !== null) {
@@ -33,30 +30,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     const mapContainer = document.getElementById('map');
 
     if (!validCoordinates) {
-        // Hide map and show closed message
         mapContainer.innerHTML = `
-            <div style="height: 100%; width: 100%; padding: 30px 0px; text-align: center; background: linear-gradient(135deg, #000000ff 0%, #000000ff 100%); border-radius: 16px; color: white; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); margin: 0px 0px; position: relative; overflow: hidden;
-            ">
-                <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
-                <div style="font-size: clamp(4rem, 25vw, 6rem); margin-bottom: 20px; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));">🚚💤</div>
-                <h2 style="font-size: clamp(1.5rem, 5vw, 3rem); font-weight: 700; margin: 0 0 12px 0; letter-spacing: -0.5px;">Temporaneamente chiuso</h2>
-                <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 400; margin: 0 0 24px 0; opacity: 0.95; line-height: 1.6;">Ti aspettiamo per il prossimo evento!</p>
+            <div class="foodtruck-closed-container">
+                <div class="foodtruck-closed-decoration"></div>
+                <div class="foodtruck-closed-icon">🚚💤</div>
+                <h2 class="foodtruck-closed-title">Temporaneamente chiuso</h2>
+                <p class="foodtruck-closed-text">Ti aspettiamo per il prossimo evento!</p>
             </div>
         `;
-        return; // Exit early - don't initialize map
+        return;
     }
 
-    // If coordinates are valid, initialize the map
     foodtruckMap = L.map('map').setView([lat, lng], 18);
 
-    // Tiles
     L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; <a href="https://carto.com/">CARTO</a> | © OpenStreetMap',
         subdomains: "abcd",
         maxZoom: 19
     }).addTo(foodtruckMap);
 
-    // Custom icon
     const customDivIcon = L.divIcon({
         html: `
       <div class="marker-wrapper">
@@ -69,25 +61,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         iconAnchor: [16, 64]
     });
 
-    // Add marker
-    const marker = L.marker([lat, lng], { icon: customDivIcon }).addTo(foodtruckMap);
+    const marker = L.marker([lat, lng], {
+        icon: customDivIcon
+    }).addTo(foodtruckMap);
     marker.on('click', () => {
         const url = `https://www.google.com/maps?q=${lat},${lng}`;
         window.open(url, '_blank');
     });
 
-    // Fix map sizing when page loads
     window.addEventListener('load', () => {
         if (foodtruckMap) {
             foodtruckMap.invalidateSize();
         }
     });
 
-    // Fix map sizing when foodtruck modal opens
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
-            const foodtruckModal = document.getElementById('foodtruck');
-            if (foodtruckModal && foodtruckModal.style.display === 'block') {
+            const menuModal = document.getElementById('menuModal');
+            if (menuModal && menuModal.style.display === 'block') {
                 setTimeout(() => {
                     if (foodtruckMap) {
                         foodtruckMap.invalidateSize();
@@ -97,175 +88,176 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
-    // Observe the foodtruck modal for style changes
-    const foodtruckModal = document.getElementById('foodtruck');
-    if (foodtruckModal) {
-        observer.observe(foodtruckModal, {
+    const menuModal = document.getElementById('menuModal');
+    if (menuModal) {
+        observer.observe(menuModal, {
             attributes: true,
             attributeFilter: ['style']
         });
     }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
-    // Allergeni map (keep your existing one)
-    const allergeniIngredientiMap = {
-        "bun": "Glutine",
-        "nutella": "Frutta a guscio, Soia, Latte",
-        "tiramisù": "Glutine, Latte, Uova",
-        "brookies": "Glutine, Latte, Uova",
-        "bocconcini di pollo tritato pastellati fatti a mano*": "Glutine, Latte",
-        "polpettine di pollo fatte a mano con speciale panatura super croccante*": "Glutine, Latte",
-        "polpettine di carne fatte a mano con speciale panatura al formaggio*": "Glutine, Uova, Latte",
-        "provola dolce con tripla pastellatura a mano*": "Glutine, Latte",
-        "nuggets vegetali": "Uova, Soia, Latte, Sedano, Senape, Glutine",
-        "Alette di pollo pastellate e fritte laccate con salsa thai": "Uova, Senape",
-        "Maxi nuggets di pollo con panatura super croccante* accompagnato con cheddar calda": "Glutine, Latte",
-        "polpettine vegetali*": "Uova, Soia, Latte, Anidride solforosa e solfiti, Glutine",
-        "burger di manzo 170g": "Latte(Senza lattosio), Glutine, Uova",
-        "burger di salsiccia 170g": null,
-        "burger di manzo": "Latte(Senza lattosio), Glutine, Uova",
-        "doppio burger di manzo 170g": "Latte(Senza lattosio), Glutine, Uova",
-        "burger di pollo pastellato e fritto*": "Latte(Senza lattosio), Glutine",
-        "burger di pollo fritto con panatura super croccante*": "Latte(Senza lattosio), Glutine",
-        "burger di suino": null,
-        "sovracoscia di pollo alla piastra": null,
-        "burger vegetale": "Latte, Uova",
-        "cheddar": "Latte",
-        "doppio cheddar": "Latte",
-        "triplo cheddar": "Latte",
-        "brie": "Latte",
-        "tuma caramellata al miele": "Latte",
-        "tuma": "Latte",
-        "gran P&V al tartufo": "Latte",
-        "taleggio": "Latte",
-        "scamorza": "Latte",
-        "uovo fritto": "Uova",
-        "guanciale croccante": null,
-        "guanciale": null,
-        "bacon": null,
-        "doppio bacon": null,
-        "bacon croccante": null,
-        "pancetta dolce": null,
-        "porchetta": null,
-        "mortadella": "Frutta a guscio",
-        "lattuga": null,
-        "pomodoro": null,
-        "cipolla": null,
-        "cipolla caramellata": null,
-        "cipolla croccante": null,
-        "songino": null,
-        "pere caramellate": null,
-        "rosti di patate": null,
-        "confettura di fichi": "Anidride solforosa",
-        "nocciole": "Frutta a guscio",
-        "miele": null,
-        "salsa cheddar calda da 170ml": "Glutine, Latte",
-        "patate con buccia**": null,
-        "crema cheddar home made": "Glutine, Latte",
-        "salsa Ciccio's": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "salsa white Ciccio's": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "maionese al tartufo": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "maionese senapata al miele": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "maionese al basilico": "Senape, Soia, Semi di sesamo",
-        "maionese": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "salsa bbq": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "salsa thai 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "salsa hot thai 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "salsa ciccio's 60ml": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "robiolina con pomodoro semi-dry": "Latte, Solfiti, può contenere tracce di Frutta a guscio e Pesce",
-        "tzatziki": "Latte",
-        "grana": "Latte",
-        "roast beef": null,
-        "pecorino al peperoncino": "Latte",
-        "cipolla caramellata alla birra": "Glutine",
-        "nduja": null,
-        "giri saltati": null,
-        "olio al limone": null,
-        "scaglie di parmigiano reggiano": "Latte(Senza lattosio)",
-        "primo sale di pecora fresco": "Latte",
-        "salsa al guanciale": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-        "gocce di peperoncino": null
-    };
-    // Global menu data
+    let allergeniIngredientiMap = {};
     let menuData = null;
+    let scrollTargetId = null;
 
-    fetch(mainUrl + '/menu/static/menu.json')
-        .then(response => {
-            if (!response.ok) throw new Error('Remote menu not available');
-            return response.json();
-        })
-        .catch(() => {
-            // Se il fetch remoto fallisce, tenta il locale
-            return fetch('menu.json').then(localRes => {
-                if (!localRes.ok) throw new Error('Fallback menu.json non trovato');
-                return localRes.json();
-            });
-        })
-        .then(data => {
-            menuData = data;
-            // Generate both menus immediately
+    Promise.all([
+        fetch('allergeni.json').then(res => {
+            if (!res.ok) throw new Error('Allergeni non trovati');
+            return res.json();
+        }),
+        fetch(mainUrl + '/menu/static/menu.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Remote menu not available');
+                return response.json();
+            })
+            .catch(() => {
+                return fetch('menu.json').then(localRes => {
+                    if (!localRes.ok) throw new Error('Fallback menu.json non trovato');
+                    return localRes.json();
+                });
+            })
+    ]).then(([allergeniData, data]) => {
+        allergeniIngredientiMap = allergeniData;
+        menuData = data;
             let currentStore = "LUMIA";
-            generateMenu('menuModal', currentStore);
 
-            // Gestione click su bottoni
-            const storeButtons = document.querySelectorAll('.store-button');
+            if (window.location.hash === '#foodtruck') {
+                currentStore = "FOODTRUCK";
+
+                const productPage = document.getElementById('productListingPage');
+                if (productPage) {
+                    const landing = document.getElementById('landing-page');
+                    if (landing) landing.style.display = 'none';
+                    productPage.style.display = 'block';
+                    window.scrollTo(0, 0);
+                }
+                history.replaceState(null, '', '#productListingPage');
+            }
+
+            generateMenu('productListingPage', currentStore);
+
+            const storeButtons = document.querySelectorAll('.store-select-btn');
             storeButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const selectedStore = button.getAttribute('data-store');
-                    currentStore = selectedStore;
+                    generateMenu('productListingPage', selectedStore);
 
-                    // Rimuove "active" da tutti
-                    storeButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
+                    document.getElementById('menuModal').style.display = 'none';
 
-                    // Rigenera il menu
-                    generateMenu('menuModal', currentStore);
+                    const productPage = document.getElementById('productListingPage');
+                    productPage.style.display = 'block';
+                    const scrollWrapper = document.getElementById('menu-scroll-wrapper');
+                    if (scrollWrapper) {
+                        scrollWrapper.scrollTop = 0;
+                    }
+                    window.scrollTo(0, 0);
+
+                    history.pushState(null, '', '#productListingPage');
                 });
             });
-            ;
-            generateMenu('foodtruck', 'FOODTRUCK');
-            generateMenu('ghiotto', 'GHIOTTO');
-            generateMenu('menuSpeciale', 'SPECIALE');
         })
         .catch(error => console.error('Error loading menu:', error));
 
-    // Main menu generation function
     function generateMenu(modalId, menuType) {
         let contentId
-        if (modalId == 'menuModal') {
+        if (modalId == 'menuModal' || modalId == 'productListingPage') {
             contentId = 'generatedContentLocale'
         }
-        else if (modalId == 'foodtruck') {
-            contentId = 'generatedContentFoodtruck'
-        }
-        else if (modalId == 'menuSpeciale') {
-            contentId = 'generatedContentMenuSpeciale'
-        }
-        else {
-            contentId = 'generatedContentGhiotto'
-        }
+
         const container = document.getElementById(contentId);
         container.innerHTML = '';
 
         if (!menuData) return;
 
+        const navContainer = document.getElementById('category-nav');
+        if (navContainer && (modalId == 'menuModal' || modalId == 'productListingPage')) {
+            navContainer.innerHTML = '';
+        }
+
+        const menuExplanations = {
+            "MENU(Panino + Patatine + Starter a scelta*** + Bibita)": {
+                text: "BURGER + PATATINE + STARTER*** + BIBITA",
+                bold: "+3,50€ al costo del panino"
+            },
+            "MENU(PANINO + PATATINE + BIBITA)": {
+                text: "BURGER + PATATINE + BIBITA",
+                bold: "+2,50€ al costo del panino"
+            },
+            "MENU(PANINO + PATATINE)": {
+                text: "BURGER + PATATINE",
+                bold: "+2,00€ al costo del panino"
+            }
+        };
+
         for (const [categoryName, products] of Object.entries(menuData)) {
             const filteredProducts = products.filter(p => p.available_in.includes(menuType));
 
             if (filteredProducts.length > 0) {
-                // Create category header
-                const categoryTitle = document.createElement('button');
+                if (menuExplanations[categoryName] && (modalId == 'menuModal' || modalId == 'productListingPage')) {
+                    const expText = document.querySelector('#menu-scroll-wrapper .spiegazione-text');
+                    const expBold = document.querySelector('#menu-scroll-wrapper .spiegazione-text-bold');
+
+                    if (expText && expBold) {
+                        expText.textContent = menuExplanations[categoryName].text;
+                        expBold.textContent = menuExplanations[categoryName].bold;
+                    }
+                }
+
+                const categoryTitle = document.createElement('h1');
                 categoryTitle.classList.add('collapsible');
-                categoryTitle.textContent = categoryName;
-                container.appendChild(categoryTitle);
+
+                const safeId = categoryName.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+                categoryTitle.id = safeId;
+
+                if (categoryName.includes('(')) {
+                    const parts = categoryName.split('(');
+                    categoryTitle.textContent = parts[0].trim();
+
+                    container.appendChild(categoryTitle);
+
+                    const subtitle = document.createElement('p');
+                    subtitle.className = 'category-subtitle';
+                    subtitle.style.fontSize = "1.2rem";
+                    subtitle.style.color = "#aaa";
+                    subtitle.style.marginBottom = "15px";
+                    subtitle.textContent = parts[1].replace(')', '').trim();
+                    container.appendChild(subtitle);
+                } else {
+                    categoryTitle.textContent = categoryName;
+                    container.appendChild(categoryTitle);
+                }
+
+                if (navContainer && (modalId == 'menuModal' || modalId == 'productListingPage')) {
+                    const btn = document.createElement('button');
+                    btn.className = 'category-nav-btn';
+                    btn.setAttribute('data-target', safeId);
+                    btn.textContent = categoryName.split('(')[0].trim();
+                    btn.onclick = () => {
+                        scrollTargetId = safeId;
+
+                        document.querySelectorAll('.category-nav-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        categoryTitle.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        btn.scrollIntoView({
+                            behavior: 'smooth',
+                            inline: 'center',
+                            block: 'nearest'
+                        });
+                    };
+                    navContainer.appendChild(btn);
+                }
 
                 const categoryDiv = document.createElement('div');
                 categoryDiv.classList.add('menu-grid', 'content');
                 container.appendChild(categoryDiv);
 
-                // Add products
                 filteredProducts.forEach(product => {
                     const productDiv = createProductElement(product);
                     categoryDiv.appendChild(productDiv);
@@ -273,16 +265,76 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        initCollapsibles(container);
+        if (navContainer && (modalId == 'menuModal' || modalId == 'productListingPage')) {
+            const scrollWrapper = document.getElementById('menu-scroll-wrapper');
+            if (scrollWrapper) {
+                setupScrollSpy(scrollWrapper, navContainer);
+            }
+        }
+
         setupIngredientToggle(modalId, container);
     }
 
-    // Create individual product element
+    function setupScrollSpy(scrollContainer, navContainer) {
+        if (scrollContainer._scrollHandler) {
+            scrollContainer.removeEventListener('scroll', scrollContainer._scrollHandler);
+        }
+
+        const scrollHandler = () => {
+            const containerRect = scrollContainer.getBoundingClientRect();
+            const headers = Array.from(scrollContainer.querySelectorAll('h1.collapsible'));
+
+            const threshold = containerRect.top + 150;
+
+            let activeHeader = null;
+
+            for (const header of headers) {
+                const headerRect = header.getBoundingClientRect();
+                if (headerRect.top <= threshold) {
+                    activeHeader = header;
+                } else {
+                    break;
+                }
+            }
+
+            if (activeHeader) {
+                if (scrollTargetId) {
+                    if (activeHeader.id === scrollTargetId) {
+                        scrollTargetId = null;
+                    } else {
+                        return;
+                    }
+                }
+
+                const id = activeHeader.id;
+                const activeBtn = navContainer.querySelector(`.category-nav-btn[data-target="${id}"]`);
+
+                const currentlyActive = document.querySelectorAll('.category-nav-btn.active');
+                const shouldUpdate = !activeBtn.classList.contains('active') || currentlyActive.length !== 1 || currentlyActive[0] !== activeBtn;
+
+                if (shouldUpdate) {
+                    document.querySelectorAll('.category-nav-btn').forEach(b => b.classList.remove('active'));
+                    activeBtn.classList.add('active');
+                    activeBtn.scrollIntoView({
+                        behavior: 'smooth',
+                        inline: 'center',
+                        block: 'nearest'
+                    });
+                }
+            }
+        };
+
+        scrollContainer.addEventListener('scroll', scrollHandler);
+        scrollContainer._scrollHandler = scrollHandler;
+
+        scrollHandler();
+    }
+
+
     function createProductElement(product) {
         const productDiv = document.createElement('div');
         productDiv.classList.add('menu-item');
 
-        // Process ingredients and allergens
         product.allergeniIngredientiMap = {};
         const ingredienti = product.ingredients?.split(",").map(i => i.trim()) || [];
 
@@ -293,23 +345,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Product image
         const image = document.createElement('img');
         image.classList.add('product-img');
         image.src = product.thumb;
         image.loading = "lazy";
         productDiv.appendChild(image);
 
-        // Product info container
         const productInfoDiv = document.createElement('div');
         productInfoDiv.classList.add('menu-item-info');
 
-        // Product title
         const title = document.createElement('h1');
         title.classList.add('product-title');
         title.textContent = product.title;
 
-        // Add leaf icon for green items
         if (product.title.toLowerCase().includes("green")) {
             const leafIcon = document.createElement('i');
             leafIcon.classList.add("fas", "fa-leaf");
@@ -318,24 +366,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         productInfoDiv.appendChild(title);
 
-        // Product price
         const price = document.createElement('p');
         price.classList.add('product-price');
-        price.textContent = typeof product.price === 'number'
-            ? `${product.price.toFixed(2).toString().replace(".", ",")}€`
-            : product.price;
+        price.textContent = typeof product.price === 'number' ?
+            `${product.price.toFixed(2).toString().replace(".", ",")}€` :
+            product.price;
         productInfoDiv.appendChild(price);
 
-        // Ingredients
         const ingredients = product.ingredients?.split(",").map(i => i.trim()) || [];
 
-        // Short description
         const inlineText = document.createElement('p');
         inlineText.classList.add('product-description');
         inlineText.textContent = ingredients.join(", ");
         productInfoDiv.appendChild(inlineText);
 
-        // Detailed ingredients
         const detailedContainer = document.createElement('div');
         detailedContainer.classList.add('ingredient-detail');
 
@@ -364,57 +408,20 @@ document.addEventListener('DOMContentLoaded', function () {
         return productDiv;
     }
 
-    // Initialize collapsible sections
-    function initCollapsibles(container) {
-        container.querySelectorAll('.collapsible').forEach(coll => {
-            const content = coll.nextElementSibling;
-
-            // Initialize all categories as COLLAPSED by default
-            coll.classList.remove('active');
-            content.style.maxHeight = '0';
-            content.style.opacity = '0';
-            content.style.paddingTop = '0';
-            content.style.paddingBottom = '0';
-
-            coll.addEventListener('click', function () {
-                this.classList.toggle('active');
-                if (this.classList.contains('active')) {
-                    // Expand - show content with padding
-                    content.style.maxHeight = content.scrollHeight + 50 + 'px';
-                    content.style.opacity = '1';
-                    content.style.paddingTop = '10px';
-                    content.style.paddingBottom = '10px';
-                } else {
-                    // Collapse - hide everything including padding
-                    content.style.maxHeight = '0';
-                    content.style.opacity = '0';
-                    content.style.paddingTop = '0';
-                    content.style.paddingBottom = '0';
-                }
-            });
-        });
-    }
-
-    // Setup ingredient toggle for a specific modal
     function setupIngredientToggle(modalId, container) {
         let toggleId
-        if (modalId == 'menuModal') {
+        if (modalId == 'menuModal' || modalId == 'productListingPage') {
             toggleId = 'toggleIngredientsLocale'
-        }
-        else if (modalId == 'foodtruck') {
+        } else if (modalId == 'foodtruck') {
             toggleId = 'toggleIngredientsFoodtruck'
         }
-        else if (modalId == 'menuSpeciale') {
-            toggleId = 'toggleIngredientsMenuSpeciale'
-        }
-        else {
-            toggleId = 'toggleIngredientsGhiotto'
-        }
+
+
         const toggle = document.getElementById(toggleId);
 
         if (!toggle) return;
 
-        toggle.addEventListener('change', function () {
+        toggle.addEventListener('change', function() {
             const show = this.checked;
 
             container.querySelectorAll('.product-description').forEach(p => {
@@ -425,7 +432,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 div.classList.toggle('show', show);
             });
 
-            // Recalculate maxHeight for open collapsibles
             container.querySelectorAll('.collapsible.active').forEach(button => {
                 const content = button.nextElementSibling;
                 content.style.maxHeight = content.scrollHeight + 50 + 'px';
@@ -434,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 const allowed_domains = new Set([
-    "gmail.com", "outlook.com", "outlook.it","hotmail.com", "live.com",
+    "gmail.com", "outlook.com", "outlook.it", "hotmail.com", "live.com",
     "icloud.com", "me.com", "mac.com", "yahoo.com",
     "hotmail.it",
     "live.it",
@@ -463,7 +469,6 @@ function validateEmailDomain(input) {
         return;
     }
 
-    // Check if domainPart starts any allowed domain
     const match = Array.from(allowed_domains).some(d => d.startsWith(domainPart));
 
     if (match) {
@@ -501,9 +506,8 @@ function validateEmailComplete(input) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
 
-    // Function to load SVG from external file
     function loadSVG(url, containerId) {
         fetch(url)
             .then(response => response.text())
@@ -515,7 +519,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
-    // Funzione per mostrare messaggi di errore eleganti
     function showError(message, containerId = 'error-message-container') {
         const container = document.getElementById(containerId) || createErrorContainer(containerId);
         container.innerHTML = `
@@ -535,13 +538,11 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-        // Auto-hide dopo 5 secondi
         setTimeout(() => {
             container.innerHTML = '';
         }, 5000);
     }
 
-    // Funzione per mostrare messaggi di successo
     function showSuccess(message, containerId = 'error-message-container') {
         const container = document.getElementById(containerId) || createErrorContainer(containerId);
         container.innerHTML = `
@@ -562,7 +563,6 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
     }
 
-    // Crea container per messaggi se non esiste
     function createErrorContainer(containerId) {
         const container = document.createElement('div');
         container.id = containerId;
@@ -573,7 +573,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return container;
     }
 
-    // Aggiungi animazione CSS
     if (!document.getElementById('otp-animations')) {
         const style = document.createElement('style');
         style.id = 'otp-animations';
@@ -592,36 +591,28 @@ document.addEventListener("DOMContentLoaded", function () {
         document.head.appendChild(style);
     }
 
-    // ============================================
-    // GESTIONE OTP CON 6 CASELLE
-    // ============================================
     const otpInputs = document.querySelectorAll('.otp-input');
 
     if (otpInputs.length > 0) {
         otpInputs.forEach((input, index) => {
-            // Auto-focus sulla prossima casella quando digiti
             input.addEventListener('input', (e) => {
                 const value = e.target.value;
 
-                // Accetta solo numeri
                 if (!/^\d$/.test(value)) {
                     e.target.value = '';
                     return;
                 }
 
-                // Vai alla prossima casella se esiste
                 if (value && index < otpInputs.length - 1) {
                     otpInputs[index + 1].focus();
                 }
             });
 
-            // Gestione backspace
             input.addEventListener('keydown', (e) => {
                 if (e.key === 'Backspace' && !e.target.value && index > 0) {
                     otpInputs[index - 1].focus();
                 }
 
-                // Gestione frecce sinistra/destra
                 if (e.key === 'ArrowLeft' && index > 0) {
                     otpInputs[index - 1].focus();
                 }
@@ -630,38 +621,32 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // Gestione paste (incolla)
             input.addEventListener('paste', (e) => {
                 e.preventDefault();
                 const pastedData = e.clipboardData.getData('text').trim();
 
-                // Verifica che siano 6 cifre
                 if (/^\d{6}$/.test(pastedData)) {
                     pastedData.split('').forEach((char, i) => {
                         if (otpInputs[i]) {
                             otpInputs[i].value = char;
                         }
                     });
-                    // Focus sull'ultima casella
                     otpInputs[5].focus();
                 }
             });
 
-            // Seleziona tutto il contenuto quando clicchi
             input.addEventListener('click', (e) => {
                 e.target.select();
             });
         });
     }
 
-    // Funzione per ottenere il codice OTP completo
     function getOTPValue() {
         return Array.from(otpInputs)
             .map(input => input.value)
             .join('');
     }
 
-    // Funzione per resettare il campo OTP
     function resetOTP() {
         otpInputs.forEach(input => {
             input.value = '';
@@ -670,22 +655,17 @@ document.addEventListener("DOMContentLoaded", function () {
         if (otpInputs[0]) otpInputs[0].focus();
     }
 
-    document.getElementById('back-to-register-btn').addEventListener('click', function () {
-        // 1. Hide OTP section
+    document.getElementById('back-to-register-btn').addEventListener('click', function() {
         document.getElementById('otp-section').style.display = 'none';
 
-        // 2. Show the Registration Form
-        // We use 'flex' because your enableForm() function uses 'flex'
         document.getElementById('data-form').style.display = 'flex';
 
-        // 3. CRITICAL: Re-enable the submit button and reset text
         const submitBtn = document.getElementById('submit-button');
         if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.textContent = "Richiedi tessera";
         }
 
-        // 4. CRITICAL: Reset reCAPTCHA so the user can verify again
         if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
             try {
                 grecaptcha.reset(recaptchaWidgetId);
@@ -694,11 +674,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        // 5. Reset OTP inputs for next time
         resetOTP();
     });
 
-    // Funzione per mostrare errore OTP
     function showOTPError() {
         otpInputs.forEach(input => {
             input.classList.add('error');
@@ -710,11 +688,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 300);
     }
 
-    // ============================================
-    // LOGICA PRINCIPALE REGISTRAZIONE
-    // ============================================
 
-    // Check if wallet URLs are stored in cookies
     const appleWalletURL = getCookie("appleWalletURL");
     const googleWalletURL = getCookie("googleWalletURL");
 
@@ -725,7 +699,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let registrationToken = null;
 
     if (appleWalletURL && googleWalletURL) {
-        // User has already registered - show only download buttons
         loadSVG('./img/add_to_apple_wallet.svg', 'appleSvgContainer');
         loadSVG('./img/add_to_google_wallet.svg', 'googleSvgContainer');
 
@@ -735,10 +708,9 @@ document.addEventListener("DOMContentLoaded", function () {
         form.style.display = "none";
         if (otpSection) otpSection.style.display = "none";
         resultSection.style.display = "block";
-        return; // Exit early - don't set up form submission
+        return;
     }
 
-    // If no cookies found, set up form submission normally
     const submitButton = document.getElementById("submit-button");
 
     form.addEventListener("submit", async (event) => {
@@ -773,7 +745,6 @@ document.addEventListener("DOMContentLoaded", function () {
         data.phone = fullPhone;
 
         try {
-            // Step 1: Request OTP
             const response = await fetch(mainUrl + "/api/request-otp", {
                 method: "POST",
                 headers: {
@@ -786,8 +757,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const errorData = await response.json();
                 if (response.status === 503) {
                     showError("Hai effettuato troppi tentativi. Riprova tra qualche minuto.");
-                }
-                else {
+                } else {
                     showError(errorData.error || "Errore sconosciuto durante la richiesta.");
                     if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
                         try {
@@ -808,12 +778,12 @@ document.addEventListener("DOMContentLoaded", function () {
             showSuccess(result.message || "Codice di verifica inviato alla tua email!");
             document.getElementById("user-email-display").textContent = formData.get("email");
 
-            // Switch UI to OTP mode
             setTimeout(() => {
                 form.style.display = "none";
                 if (otpSection) {
-                    otpSection.style.display = "block";
-                    // Focus sulla prima casella OTP
+                    otpSection.style.display = "flex";
+                    otpSection.style.flexDirection = "column";
+                    otpSection.style.alignItems = "center";
                     if (otpInputs[0]) otpInputs[0].focus();
                 }
             }, 1000);
@@ -825,7 +795,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Step 2: Verify OTP Handler
     if (verifyOtpBtn) {
         verifyOtpBtn.addEventListener("click", async () => {
             const otp = getOTPValue();
@@ -857,21 +826,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     showError(errorData.error || "Codice OTP non valido.");
                     resetOTP();
                     if (errorData.error === "Sessione scaduta o non valida. Ricomincia la registrazione." || errorData.error === "Troppi tentativi falliti. Ricomincia la registrazione.") {
-                        // 1. Hide OTP section
                         document.getElementById('otp-section').style.display = 'none';
 
-                        // 2. Show the Registration Form
-                        // We use 'flex' because your enableForm() function uses 'flex'
                         document.getElementById('data-form').style.display = 'flex';
 
-                        // 3. CRITICAL: Re-enable the submit button and reset text
                         const submitBtn = document.getElementById('submit-button');
                         if (submitBtn) {
                             submitBtn.disabled = false;
                             submitBtn.textContent = "Richiedi tessera";
                         }
 
-                        // 4. CRITICAL: Reset reCAPTCHA so the user can verify again
                         if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
                             try {
                                 grecaptcha.reset(recaptchaWidgetId);
@@ -880,7 +844,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             }
                         }
 
-                        // 5. Reset OTP inputs for next time
                     }
                     verifyOtpBtn.disabled = false;
                     verifyOtpBtn.textContent = "Verifica e Registrati";
@@ -889,7 +852,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const verifyResult = await verifyResponse.json();
 
-                // Success!
                 const appleURL = mainUrl + verifyResult.apple_url;
                 const googleURL = mainUrl + verifyResult.google_url;
 
@@ -898,7 +860,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 showSuccess("✅ Registrazione completata con successo!");
 
-                // Load SVG buttons
                 loadSVG('./img/add_to_apple_wallet.svg', 'appleSvgContainer');
                 loadSVG('./img/add_to_google_wallet.svg', 'googleSvgContainer');
 
@@ -918,13 +879,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Esponi funzioni globalmente se necessario
     window.getOTPValue = getOTPValue;
     window.resetOTP = resetOTP;
     window.showOTPError = showOTPError;
 });
 
-// Cookie Functions
 function setCookie(name, value, days) {
     const date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -945,12 +904,10 @@ function getCookie(name) {
 }
 
 
-// ORDER FORM
 document.addEventListener("DOMContentLoaded", async () => {
     let merch = [];
     let cart = [];
 
-    // Caricamento prodotti
     async function fetchMerch() {
         try {
             const response = await fetch("data.json");
@@ -995,7 +952,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    window.addToCart = function (productId) {
+    window.addToCart = function(productId) {
         const size = document.getElementById(`merch-size-${productId}`).value;
         const existingIndex = cart.findIndex(item => item.id === productId && item.size === size);
 
@@ -1007,7 +964,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return;
             }
         } else {
-            cart.push({ id: productId, size, qty: 1 });
+            cart.push({
+                id: productId,
+                size,
+                qty: 1
+            });
         }
 
         renderCart();
@@ -1033,12 +994,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    window.removeCartItem = function (index) {
+    window.removeCartItem = function(index) {
         cart.splice(index, 1);
         renderCart();
     };
 
-    window.handleSubmit = async function (e) {
+    window.handleSubmit = async function(e) {
         e.preventDefault();
         if (cart.length === 0) {
             alert("Aggiungi almeno un articolo al carrello.");
@@ -1107,7 +1068,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     };
 
-    // Pulsante "Fai un nuovo ordine"
     const newOrderBtn = document.getElementById("newOrderButton");
     if (newOrderBtn) {
         newOrderBtn.addEventListener("click", () => {
@@ -1117,20 +1077,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // Inizio
     await fetchMerch();
-});
-
-
-
-window.addEventListener('DOMContentLoaded', () => {
-    const hash = window.location.hash.substring(1); // es. "menuModal"
-    if (hash) {
-        const modal = document.getElementById(hash);
-        if (modal) {
-            modal.style.display = 'block';
-        }
-    }
 });
 
 
@@ -1143,41 +1090,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const cookieWarning = document.getElementById("cookieMsg");
     const cookieOrderWarning = document.getElementById("cookieOrderMsg");
     const dataForm = document.getElementById("data-form");
-    const orderForm = document.getElementById("merch-box");
+    const orderForm = document.getElementById("merch-active-content");
 
     let recaptchaLoaded = false;
 
-    // Check if the user has already accepted cookies
+
     function checkCookieConsent() {
         if (!localStorage.getItem("cookieConsent")) {
-            cookieConsentBanner.style.display = "block"; // Show the banner
-            disableForm(); // Ensure the form is disabled initially
+            cookieConsentBanner.style.display = "block";
+            disableForm();
         } else {
-            enableForm(); // Enable the form
-            loadRecaptcha(); // Load reCAPTCHA
+            enableForm();
+            loadRecaptcha();
         }
     }
 
-    // Enable the registration form
     const appleWalletURL = getCookie("appleWalletURL");
     const googleWalletURL = getCookie("googleWalletURL");
+
     function enableForm() {
         if (!appleWalletURL && !googleWalletURL) {
             dataForm.style.display = "flex";
         }
         orderForm.style.display = "block";
-        cookieWarning.style.display = "none"; // Hide the cookie warning
-        cookieOrderWarning.style.display = "none"; // Hide the cookie warning
+        cookieWarning.style.display = "none";
+        cookieOrderWarning.style.display = "none";
     }
 
-    // Disable the registration form
     function disableForm() {
         dataForm.style.display = "none";
         orderForm.style.display = "none";
-        cookieWarning.style.display = "block"; // Show the cookie warning
-        cookieOrderWarning.style.display = "block"; // Show the cookie order warning
+        cookieWarning.style.display = "block";
+        cookieOrderWarning.style.display = "block";
     }
-
 
     function loadRecaptcha() {
         if (!recaptchaLoaded) {
@@ -1190,79 +1135,90 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Callback when reCAPTCHA is loaded
-    window.onRecaptchaLoad = function () {
+    window.onRecaptchaLoad = function() {
         const recaptchaContainer = document.getElementById("recaptcha-container");
         const recaptchaContainerOrder = document.getElementById("recaptcha-container-order");
         if (recaptchaContainer) {
             recaptchaWidgetId = grecaptcha.render(recaptchaContainer, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
             });
         }
         if (recaptchaContainerOrder) {
             recaptchaOrderWidgetId = grecaptcha.render(recaptchaContainerOrder, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_", // Replace with your reCAPTCHA key
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
             });
         }
     };
 
-    // Handle click on "Accept"
-    acceptCookiesBtn.addEventListener("click", function () {
+
+    window.handleRouting = function() {
+        const hash = window.location.hash.substring(1);
+        const landing = document.getElementById('landing-page');
+
+        document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+
+        if (hash) {
+            const modal = document.getElementById(hash);
+            if (modal) {
+                if (landing) landing.style.display = 'none';
+                modal.style.display = 'block';
+
+                if (hash === "membershipModal") {
+                    if (!localStorage.getItem("cookieConsent")) {
+                        disableForm();
+                    } else {
+                        enableForm();
+                    }
+                }
+            } else {
+                if (landing) landing.style.display = 'flex';
+            }
+        } else {
+            if (landing) landing.style.display = 'flex';
+        }
+        window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('popstate', window.handleRouting);
+
+    window.handleRouting();
+
+
+
+    acceptCookiesBtn.addEventListener("click", function() {
         localStorage.setItem("cookieConsent", "accepted");
         cookieConsentBanner.style.display = "none";
         enableForm();
-        loadRecaptcha(); // Load reCAPTCHA after acceptance
+        loadRecaptcha();
     });
 
-    // Handle click on "Reject"
-    rejectCookiesBtn.addEventListener("click", function () {
+    rejectCookiesBtn.addEventListener("click", function() {
         localStorage.removeItem("cookieConsent");
         cookieConsentBanner.style.display = "none";
         disableForm();
     });
+
     checkCookieConsent();
-    const modals = document.querySelectorAll('.modal');
 
     document.querySelectorAll('.open-modal').forEach(button => {
         button.addEventListener('click', (event) => {
             const modalId = button.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
 
-            if (modalId == "membershipModal") {
-                modal.style.display = 'block';
-                if (!localStorage.getItem("cookieConsent")) {
-                    disableForm();
-                } else {
-                    enableForm();
-                }
-            }
-            else {
-                if (modal) {
-                    modal.style.display = 'block';
-                    history.replaceState(null, '', `#${modalId}`); // <-- aggiorna hash URL
-                }
-            }
+            history.pushState(null, '', `#${modalId}`);
+            window.handleRouting();
         });
     });
 
-    // Close modal
     document.querySelectorAll('.close-modal').forEach(closeBtn => {
         closeBtn.addEventListener('click', () => {
-            const modal = closeBtn.closest('.modal');
-            if (modal) {
-                modal.style.display = 'none';
-                history.replaceState(null, '', window.location.pathname); // ← rimuove l'hash
-            }
-        });
-    });
+            const targetId = closeBtn.getAttribute('data-target');
 
-
-    // Close modal when clicking outside the modal content
-    modals.forEach(modal => {
-        modal.addEventListener('click', e => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                history.replaceState(null, '', window.location.pathname); // rimuove l'hash
+            if (targetId && targetId !== 'home') {
+                history.replaceState(null, '', `#${targetId}`);
+                window.handleRouting();
+            } else {
+                history.replaceState(null, '', window.location.pathname);
+                window.handleRouting();
             }
         });
     });
