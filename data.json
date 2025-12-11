@@ -1,94 +1,154 @@
 {
   "Cappello Vai in buca": {
-    "sizes": ["unica"],
+    "sizes": [
+      "unica"
+    ],
     "price": 15.00,
-    "image": "img/shop/cappello_bianco.png"
+    "image": "img/shop/cappello_bianco.webp"
   },
   "Cappello Ciccio's": {
-    "sizes": ["unica"],
+    "sizes": [
+      "unica"
+    ],
     "price": 15.00,
-    "image": "img/shop/cappello_nero.png"
+    "image": "img/shop/cappello_nero.webp"
   },
   "Cappello Ciccio's Burger Truck": {
-    "sizes": ["unica"],
+    "sizes": [
+      "unica"
+    ],
     "price": 15.00,
-    "image": "img/shop/cappello_rosso.png"
+    "image": "img/shop/cappello_rosso.webp"
   },
   "Cappello Ciccio's Fottuto Vizio": {
-    "sizes": ["unica"],
+    "sizes": [
+      "unica"
+    ],
     "price": 15.00,
-    "image": "img/shop/cappello_vizio.png"
+    "image": "img/shop/cappello_vizio.webp"
   },
   "Tshirt Ciccio's Spacca": {
-    "sizes": ["S", "M", "L", "XL","XXL"],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
     "price": 14.90,
-    "image": "img/shop/cicciosSpacca.png"
+    "image": "img/shop/cicciosSpacca.webp"
   },
   "Tshirt Menu Bianca": {
-    "sizes": ["M", "L"],
+    "sizes": [
+      "M",
+      "L"
+    ],
     "price": 14.90,
-    "image": "img/shop/cicciosMenuBianco.png"
+    "image": "img/shop/cicciosMenuBianco.webp"
   },
   "Tshirt Menu Nera": {
-    "sizes": ["S"],
+    "sizes": [
+      "S"
+    ],
     "price": 14.90,
-    "image": "img/shop/cicciosMenuNero.png"
+    "image": "img/shop/cicciosMenuNero.webp"
   },
   "Tshirt Ciccio's Foodtruck": {
-    "sizes": ["M", "L"],
+    "sizes": [
+      "M",
+      "L"
+    ],
     "price": 14.90,
-    "image": "img/shop/cicciosFoodtruck.png"
+    "image": "img/shop/cicciosFoodtruck.webp"
   },
   "Tshirt Ciccio's Crafting Burgers": {
-    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
     "price": 14.90,
-    "image": "img/shop/cicciosCraftingBurgers.png"
+    "image": "img/shop/cicciosCraftingBurgers.webp"
   },
   "Tshirt Bambini Ciccio's Spacca": {
-    "sizes": ["5-6 anni (S)", "7-8 anni (M)", "9-10 anni (L)"],
+    "sizes": [
+      "5-6 anni (S)",
+      "7-8 anni (M)",
+      "9-10 anni (L)"
+    ],
     "price": 9.90,
-    "image": "img/shop/cicciosSpaccaBaby.png"
+    "image": "img/shop/cicciosSpaccaBaby.webp"
   },
   "Tshirt Bambini Ciccio's Crafting Burgers": {
-    "sizes": ["5-6 anni (S)", "7-8 anni (M)", "9-10 anni (L)"],
+    "sizes": [
+      "5-6 anni (S)",
+      "7-8 anni (M)",
+      "9-10 anni (L)"
+    ],
     "price": 9.90,
-    "image": "img/shop/cicciosCraftingBurgersBaby.png"
+    "image": "img/shop/cicciosCraftingBurgersBaby.webp"
   },
   "Tshirt Bambini AstroCiccio's": {
-    "sizes": ["5-6 anni (S)", "7-8 anni (M)"],
+    "sizes": [
+      "5-6 anni (S)",
+      "7-8 anni (M)"
+    ],
     "price": 9.90,
-    "image": "img/shop/astroCicciosBaby.png"
+    "image": "img/shop/astroCicciosBaby.webp"
   },
   "Tshirt Manica Lunga Nera": {
-    "sizes": ["XS", "S", "M", "L", "XL"],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "price": 29.90,
-    "image": "img/shop/manichelungheciccios.png"
+    "image": "img/shop/manichelungheciccios.webp"
   },
   "Felpa Nera": {
-    "sizes": ["S", "M", "L", "XL"],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "price": 43.90,
-    "image": "img/shop/felpaneraciccios.png"
+    "image": "img/shop/felpaneraciccios.webp"
   },
   "Felpa Bambini Blu": {
     "sizes": [
-      "3-4 anni (XS)", "5-6 anni (S)", "7-8 anni (M)", "9-10 anni (L)", "11-12 anni (XL)"
+      "3-4 anni (XS)",
+      "5-6 anni (S)",
+      "7-8 anni (M)",
+      "9-10 anni (L)",
+      "11-12 anni (XL)"
     ],
     "price": 27.90,
-    "image": "img/shop/felpacicciosbaby.png"
+    "image": "img/shop/felpacicciosbaby.webp"
   },
   "Telo Mare": {
-    "sizes": ["unica"],
+    "sizes": [
+      "unica"
+    ],
     "price": 15.00,
-    "image": "img/shop/telomare.png"
+    "image": "img/shop/telomare.webp"
   },
   "Shopper": {
-    "sizes": ["unica"],
+    "sizes": [
+      "unica"
+    ],
     "price": 9.90,
     "image": "img/logo.webp"
   },
   "Pastelli": {
-    "sizes": ["unica"],
+    "sizes": [
+      "unica"
+    ],
     "price": 4.90,
-    "image": "img/shop/pastelli.png"
+    "image": "img/shop/pastelli.webp"
   }
 }

@@ -13,11 +13,13 @@
     <meta property="og:locale" content="it_IT">
     <link rel="shortcut icon" type="image/x-icon" href="./img/icon_bg.ico">
     <title>Ciccio's Burger</title>
+    <link rel="preconnect" href="https://api.cicciosburger.it">
+    <link rel="dns-prefetch" href="https://api.cicciosburger.it">
     <link rel="preload" href="./img/logocleanbigsmaller.svg" as="image" type="image/svg+xml" fetchpriority="high">
     <link rel="preload" href="fonts/font_personalizzato.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+    <link rel="stylesheet" href="leaflet.css" />
+    <script src="leaflet.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 
@@ -87,10 +89,10 @@
 
         <div id="cookieConsent">
             <p>
-                Questo sito utilizza i cookie per far funzionare correttamente il modulo di registrazione e per gestire
-                la tua tessera di abbonamento.
+                Questo sito utilizza i cookie per far funzionare correttamente il modulo di registrazione The Burger
+                Club e per effettuare preordini del merchandising.
                 <a href="https://docs.google.com/document/d/1o8UFtBidB7byuDC3pKfCx51jGqWfSmiIMISWkTY9FMc/edit?usp=sharing"
-                    target="_blank">Scopri di più sulla nostra politica sui cookie</a>.
+                    target="_blank">Politica sui cookie</a>.
             </p>
             <div>
                 <button id="rejectCookiesBtn" class="reject-btn">Rifiuta</button>
@@ -271,9 +273,9 @@
                     <span>Torna Indietro</span>
                 </span>
                 <!-- <h1 style="margin-top: 20px; margin-bottom: 0px;">Iscrizione The Burger Club</h1> -->
-                <img src="./img/BURGER_CLUB.png" alt="Logo The Burger Club"
+                <img src="./img/BURGER_CLUB.webp" alt="Logo The Burger Club"
                     style="width: 100%; margin-top:40px; max-width: 300px; margin-bottom:20px; transform: scale(1.5);">
-                <div id="cookieMsg" style="display: none; color: red; margin-bottom: 0px;">
+                <div id="cookieMsg" style="color: red; margin-bottom: 0px;">
                     I cookie sono necessari per completare la registrazione. Accettali e ricarica la pagina per
                     continuare.
                 </div>
