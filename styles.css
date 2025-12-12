@@ -4,8 +4,9 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-    ascent-override: 90%;
+    ascent-override: 80%;
     descent-override: 20%;
+    line-gap-override: 0%;
 }
 
 .custom-font {
@@ -55,7 +56,7 @@ footer {
     gap: 15px;
     flex-wrap: wrap;
     position: absolute;
-    bottom: -32px;
+    bottom: -19px;
     left: 50%;
     transform: translateX(-50%);
     width: auto;
@@ -191,7 +192,6 @@ header object {
     justify-content: center;
     transition: transform 0.2s ease;
     text-decoration: none;
-    padding-bottom: 4px;
 }
 
 .social-btn:hover {
@@ -205,8 +205,16 @@ header object {
 
 footer p {
     margin: 0;
-    font-size: 1.8rem;
-    padding-bottom: 10px;
+    font-size: 2rem;
+    padding-bottom: 0px;
+    line-height: 1;
+    transform: translateY(1px);
+}
+
+@media (max-width: 450px) {
+    footer p {
+        transform: translateY(-2.5px);
+    }
 }
 
 .modal {
