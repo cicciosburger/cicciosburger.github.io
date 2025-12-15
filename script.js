@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
         productDiv.classList.add('menu-item');
 
         product.allergeniIngredientiMap = {};
-        const ingredienti = product.ingredients ? .split(",").map(i => i.trim()) || [];
+        const ingredienti = product.ingredients?.split(",").map(i => i.trim()) || [];
 
         ingredienti.forEach(ingrediente => {
             const nomeIngrediente = ingrediente.split(":")[0].trim();
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function () {
             product.price;
         productInfoDiv.appendChild(price);
 
-        const ingredients = product.ingredients ? .split(",").map(i => i.trim()) || [];
+        const ingredients = product.ingredients?.split(",").map(i => i.trim()) || [];
 
         const inlineText = document.createElement('p');
         inlineText.classList.add('product-description');
