@@ -97,18 +97,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     let allergeniIngredientiMap = {};
     let menuData = null;
     let scrollTargetId = null;
 
     Promise.all([
-        fetch('allergeni.json').then(res => {
-            if (!res.ok) throw new Error('Allergeni non trovati');
-            return res.json();
-        }),
-        fetch(mainUrl + '/menu/static/menu.json')
+            fetch('allergeni.json').then(res => {
+                if (!res.ok) throw new Error('Allergeni non trovati');
+                return res.json();
+            }),
+            fetch(mainUrl + '/menu/static/menu.json')
             .then(response => {
                 if (!response.ok) throw new Error('Remote menu not available');
                 return response.json();
@@ -119,9 +119,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     return localRes.json();
                 });
             })
-    ]).then(([allergeniData, data]) => {
-        allergeniIngredientiMap = allergeniData;
-        menuData = data;
+        ]).then(([allergeniData, data]) => {
+            allergeniIngredientiMap = allergeniData;
+            menuData = data;
             let currentStore = "LUMIA";
 
             if (window.location.hash === '#foodtruck') {
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
         productDiv.classList.add('menu-item');
 
         product.allergeniIngredientiMap = {};
-        const ingredienti = product.ingredients?.split(",").map(i => i.trim()) || [];
+        const ingredienti = product.ingredients ? .split(",").map(i => i.trim()) || [];
 
         ingredienti.forEach(ingrediente => {
             const nomeIngrediente = ingrediente.split(":")[0].trim();
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
             product.price;
         productInfoDiv.appendChild(price);
 
-        const ingredients = product.ingredients?.split(",").map(i => i.trim()) || [];
+        const ingredients = product.ingredients ? .split(",").map(i => i.trim()) || [];
 
         const inlineText = document.createElement('p');
         inlineText.classList.add('product-description');
@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!toggle) return;
 
-        toggle.addEventListener('change', function() {
+        toggle.addEventListener('change', function () {
             const show = this.checked;
 
             container.querySelectorAll('.product-description').forEach(p => {
@@ -506,7 +506,7 @@ function validateEmailComplete(input) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     function loadSVG(url, containerId) {
         fetch(url)
@@ -655,7 +655,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (otpInputs[0]) otpInputs[0].focus();
     }
 
-    document.getElementById('back-to-register-btn').addEventListener('click', function() {
+    document.getElementById('back-to-register-btn').addEventListener('click', function () {
         document.getElementById('otp-section').style.display = 'none';
 
         document.getElementById('data-form').style.display = 'flex';
@@ -952,7 +952,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    window.addToCart = function(productId) {
+    window.addToCart = function (productId) {
         const size = document.getElementById(`merch-size-${productId}`).value;
         const existingIndex = cart.findIndex(item => item.id === productId && item.size === size);
 
@@ -994,12 +994,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    window.removeCartItem = function(index) {
+    window.removeCartItem = function (index) {
         cart.splice(index, 1);
         renderCart();
     };
 
-    window.handleSubmit = async function(e) {
+    window.handleSubmit = async function (e) {
         e.preventDefault();
         if (cart.length === 0) {
             alert("Aggiungi almeno un articolo al carrello.");
@@ -1056,6 +1056,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             form.style.display = "none";
+            document.getElementById("merch-products").style.display = "none";
+            document.querySelector("#merch-active-content .merch-card").style.display = "none";
             document.getElementById("confirmationMessage").style.display = "block";
             document.getElementById("orderNumberDisplay").textContent = resultText;
 
@@ -1072,6 +1074,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (newOrderBtn) {
         newOrderBtn.addEventListener("click", () => {
             document.querySelector("form").style.display = "block";
+            document.getElementById("merch-products").style.display = "";
+            document.querySelector("#merch-active-content .merch-card").style.display = "";
             document.getElementById("confirmationMessage").style.display = "none";
             document.querySelector("form").reset();
         });
@@ -1135,7 +1139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.onRecaptchaLoad = function() {
+    window.onRecaptchaLoad = function () {
         const recaptchaContainer = document.getElementById("recaptcha-container");
         const recaptchaContainerOrder = document.getElementById("recaptcha-container-order");
         if (recaptchaContainer) {
@@ -1151,7 +1155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    window.handleRouting = function() {
+    window.handleRouting = function () {
         const hash = window.location.hash.substring(1);
         const landing = document.getElementById('landing-page');
 
@@ -1185,14 +1189,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    acceptCookiesBtn.addEventListener("click", function() {
+    acceptCookiesBtn.addEventListener("click", function () {
         localStorage.setItem("cookieConsent", "accepted");
         cookieConsentBanner.style.display = "none";
         enableForm();
         loadRecaptcha();
     });
 
-    rejectCookiesBtn.addEventListener("click", function() {
+    rejectCookiesBtn.addEventListener("click", function () {
         localStorage.removeItem("cookieConsent");
         cookieConsentBanner.style.display = "none";
         disableForm();
