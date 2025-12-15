@@ -715,6 +715,15 @@ a {
     display: none;
 }
 
+#confirmationMessage>p {
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
+#orderNumberDisplay {
+    font-size: 2rem;
+}
+
 #checkmark {
     font-size: 4rem;
     color: green;
