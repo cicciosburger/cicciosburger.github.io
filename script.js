@@ -451,9 +451,9 @@ const allowed_domains = new Set([
     "proton.me", "protonmail.com", "fastmail.com"
 ]);
 
-function validateEmailDomain(input) {
+function validateEmailDomain(input, errorSpanId = 'email-error') {
     const email = input.value.trim();
-    const errorSpan = document.getElementById('email-error');
+    const errorSpan = document.getElementById(errorSpanId);
 
     if (!email.includes('@')) {
         errorSpan.style.display = 'none';
@@ -481,9 +481,9 @@ function validateEmailDomain(input) {
     }
 }
 
-function validateEmailComplete(input) {
+function validateEmailComplete(input, errorSpanId = 'email-error') {
     const email = input.value.trim();
-    const errorSpan = document.getElementById('email-error');
+    const errorSpan = document.getElementById(errorSpanId);
 
     const emailRegex = /^[a-zA-Z0-9._%+\-]+@([a-zA-Z0-9.\-]+\.)?(com|net|me|it)$/i;
 
