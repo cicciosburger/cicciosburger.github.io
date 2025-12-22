@@ -192,11 +192,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         };
 
+        let hasMenuCategory = false;
+
         for (const [categoryName, products] of Object.entries(menuData)) {
             const filteredProducts = products.filter(p => p.available_in.includes(menuType));
 
             if (filteredProducts.length > 0) {
                 if (menuExplanations[categoryName] && (modalId == 'menuModal' || modalId == 'productListingPage')) {
+                    hasMenuCategory = true;
                     const expText = document.querySelector('#menu-scroll-wrapper .spiegazione-text');
                     const expBold = document.querySelector('#menu-scroll-wrapper .spiegazione-text-bold');
 
@@ -262,6 +265,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     const productDiv = createProductElement(product);
                     categoryDiv.appendChild(productDiv);
                 });
+            }
+        }
+
+        // Hide spiegazione div if no MENU category is present
+        const spiegazioneDiv = document.querySelector('#menu-scroll-wrapper .spiegazione');
+        if (spiegazioneDiv) {
+            if (hasMenuCategory) {
+                spiegazioneDiv.style.display = '';
+            } else {
+                spiegazioneDiv.style.display = 'none';
             }
         }
 
@@ -336,7 +349,10 @@ document.addEventListener('DOMContentLoaded', function () {
         productDiv.classList.add('menu-item');
 
         product.allergeniIngredientiMap = {};
-        const ingredienti = product.ingredients?.split(",").map(i => i.trim()) || [];
+        let ingredienti = [];
+        if (product.ingredients) {
+            ingredienti = product.ingredients.split(",").map(i => i.trim());
+        }
 
         ingredienti.forEach(ingrediente => {
             const nomeIngrediente = ingrediente.split(":")[0].trim();
@@ -373,7 +389,10 @@ document.addEventListener('DOMContentLoaded', function () {
             product.price;
         productInfoDiv.appendChild(price);
 
-        const ingredients = product.ingredients?.split(",").map(i => i.trim()) || [];
+        let ingredients = [];
+        if (product.ingredients) {
+            ingredients = product.ingredients.split(",").map(i => i.trim());
+        }
 
         const inlineText = document.createElement('p');
         inlineText.classList.add('product-description');

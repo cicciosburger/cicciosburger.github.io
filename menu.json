@@ -280,15 +280,16 @@
       ]
     },
     {
-      "title": "TUMAZZO E SALSICCIA",
-      "price": 9.9,
-      "ingredients": "bun, burger di salsiccia 170g, tuma, maionese al basilico, pomodoro, lattuga, bacon",
-      "thumb": "",
+      "title": "BIG",
+      "price": 11.90,
+      "ingredients": "bun, doppio burger di manzo 170g, pomodoro, lattuga, cheddar, scamorza, bacon, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/BIG.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "FOODTRUCK"
       ]
     }
   ],
@@ -550,281 +551,17 @@
         "SPERLINGA",
         "MONDELLO"
       ]
-    }
-  ],
-  "MENU(PANINO + PATATINE + BIBITA)": [
-    {
-      "title": "HAPPY CICCIO'S",
-      "price": 6.9,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/happc-1.png",
-      "available_in": []
     },
     {
-      "title": "HAMBURGER MENU",
-      "price": 9,
+      "title": "BIG MENU",
+      "price": 15.4,
       "ingredients": null,
-      "thumb": "./img/menu/classic/hamburger.webp",
-      "available_in": []
-    },
-    {
-      "title": "CHEESEBURGER MENU",
-      "price": 10.4,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/cheeseburger.webp",
-      "available_in": []
-    },
-    {
-      "title": "BACON CHEESEBURGER MENU",
-      "price": 11.4,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/baconcheeseburger.webp",
-      "available_in": []
-    },
-    {
-      "title": "AMERICAN BACONCHEESE MENU",
-      "price": 11.4,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/americanbaconcheese.webp",
-      "available_in": []
-    },
-    {
-      "title": "BRIE MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/brie.webp",
-      "available_in": []
-    },
-    {
-      "title": "CHICKEN CBT MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/chickencbt.webp",
-      "available_in": []
-    },
-    {
-      "title": "CRISPY GOAT MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/crispygoat.webp",
-      "available_in": []
-    },
-    {
-      "title": "DOUBLE TRIPLE MENU",
-      "price": 14.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/doubletriple.webp",
-      "available_in": []
-    },
-    {
-      "title": "EGG MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/egg.webp",
-      "available_in": []
-    },
-    {
-      "title": "GREEN MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/brie.webp",
-      "available_in": []
-    },
-    {
-      "title": "OLD SCHOOL MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/oldschool.webp",
-      "available_in": []
-    },
-    {
-      "title": "PANCETTA MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/pancetta.webp",
-      "available_in": []
-    },
-    {
-      "title": "PORCHETTA MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/porchetta.webp",
-      "available_in": []
-    },
-    {
-      "title": "SUPER CRISPY MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/supercrispy.webp",
-      "available_in": []
-    },
-    {
-      "title": "TALE' MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/tale.webp",
-      "available_in": []
-    },
-    {
-      "title": "TUMA MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/tuma.webp",
-      "available_in": []
-    }
-  ],
-  "MENU(PANINO + PATATINE)": [
-    {
-      "title": "HAPPY CICCIO'S",
-      "price": 6.5,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/happc-1.png",
+      "thumb": "./img/menu/ciccios/BIG.webp",
       "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "HAMBURGER MENU",
-      "price": 8.5,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/hamburger.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "CHEESEBURGER MENU",
-      "price": 9.9,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/cheeseburger.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "BACON CHEESEBURGER MENU",
-      "price": 10.9,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/baconcheeseburger.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "AMERICAN BACONCHEESE MENU",
-      "price": 10.9,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/americanbaconcheese.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "BRIE MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/brie.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "CHICKEN CBT MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/chickencbt.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "CRISPY GOAT MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/crispygoat.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "DOUBLE TRIPLE MENU",
-      "price": 13.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/doubletriple.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "EGG MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/egg.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "GREEN MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/brie.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "OLD SCHOOL MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/oldschool.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "PANCETTA MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/pancetta.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "PORCHETTA MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/porchetta.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "SUPER CRISPY MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/supercrispy.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "TALE' MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/tale.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "TUMA MENU",
-      "price": 11.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/tuma.webp",
-      "available_in": [
-        "FOODTRUCK"
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"
       ]
     }
   ],
