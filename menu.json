@@ -1,6 +1,5 @@
 {
-  "STARTERS": [
-    {
+  "STARTERS": [{
       "title": "FRIES",
       "price": 3.5,
       "ingredients": "patate con buccia**",
@@ -122,8 +121,7 @@
       ]
     }
   ],
-  "CICCIO'S BURGER": [
-    {
+  "CICCIO'S BURGER": [{
       "title": "CRISPY GOAT",
       "price": 9.9,
       "ingredients": "bun, burger di pollo pastellato e fritto*, cheddar, bacon, lattuga, salsa Ciccio's",
@@ -293,8 +291,7 @@
       ]
     }
   ],
-  "CLASSIC BURGER": [
-    {
+  "CLASSIC BURGER": [{
       "title": "HAMBURGER",
       "price": 6.5,
       "ingredients": "bun, burger di manzo 170g, salsa Ciccio's",
@@ -347,10 +344,9 @@
       ]
     }
   ],
-  "MENU(Panino + Patatine + Starter a scelta*** + Bibita)": [
-    {
+  "MENU(Panino + Patatine + Starter a scelta*** + Bibita)": [{
       "title": "HAPPY CICCIO'S",
-      "price": 7.9,
+      "price": 8.9,
       "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + 2 Nuggets + Acqua 25ml / Coca Cola 15cl",
       "thumb": "./img/menu/classic/happc-1.png",
       "available_in": [
@@ -361,10 +357,10 @@
       ]
     },
     {
-      "title": "HAMBURGER MENU",
-      "price": 10,
+      "title": "BIG MENU",
+      "price": 16.9,
       "ingredients": null,
-      "thumb": "./img/menu/classic/hamburger.webp",
+      "thumb": "./img/menu/ciccios/BIG.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -373,34 +369,10 @@
       ]
     },
     {
-      "title": "CHEESEBURGER MENU ",
-      "price": 11.4,
+      "title": "DOUBLE TRIPLE MENU",
+      "price": 16.9,
       "ingredients": null,
-      "thumb": "./img/menu/classic/cheeseburger.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
-    },
-    {
-      "title": "BACON CHEESEBURGER MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/baconcheeseburger.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
-    },
-    {
-      "title": "AMERICAN BACONCHEESE MENU",
-      "price": 12.4,
-      "ingredients": null,
-      "thumb": "./img/menu/classic/americanbaconcheese.webp",
+      "thumb": "./img/menu/ciccios/doubletriple.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -410,7 +382,7 @@
     },
     {
       "title": "BRIE MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
@@ -422,7 +394,7 @@
     },
     {
       "title": "CHICKEN CBT MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/chickencbt.webp",
       "available_in": [
@@ -434,7 +406,7 @@
     },
     {
       "title": "CRISPY GOAT MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/crispygoat.webp",
       "available_in": [
@@ -445,20 +417,8 @@
       ]
     },
     {
-      "title": "DOUBLE TRIPLE MENU",
-      "price": 15.4,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/doubletriple.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
-    },
-    {
       "title": "EGG MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/egg.webp",
       "available_in": [
@@ -470,7 +430,7 @@
     },
     {
       "title": "GREEN MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/brie.webp",
       "available_in": [
@@ -482,7 +442,7 @@
     },
     {
       "title": "OLD SCHOOL MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/oldschool.webp",
       "available_in": [
@@ -494,7 +454,7 @@
     },
     {
       "title": "PANCETTA MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/pancetta.webp",
       "available_in": [
@@ -506,7 +466,7 @@
     },
     {
       "title": "PORCHETTA MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
@@ -518,7 +478,7 @@
     },
     {
       "title": "SUPER CRISPY MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/supercrispy.webp",
       "available_in": [
@@ -530,7 +490,7 @@
     },
     {
       "title": "TALE' MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/tale.webp",
       "available_in": [
@@ -542,7 +502,7 @@
     },
     {
       "title": "TUMA MENU",
-      "price": 13.4,
+      "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
@@ -553,10 +513,46 @@
       ]
     },
     {
-      "title": "BIG MENU",
-      "price": 15.4,
+      "title": "AMERICAN BACONCHEESE MENU",
+      "price": 13.9,
       "ingredients": null,
-      "thumb": "./img/menu/ciccios/BIG.webp",
+      "thumb": "./img/menu/classic/americanbaconcheese.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"
+      ]
+    },
+    {
+      "title": "BACON CHEESEBURGER MENU",
+      "price": 13.9,
+      "ingredients": null,
+      "thumb": "./img/menu/classic/baconcheeseburger.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"
+      ]
+    },
+    {
+      "title": "CHEESEBURGER MENU ",
+      "price": 12.9,
+      "ingredients": null,
+      "thumb": "./img/menu/classic/cheeseburger.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"
+      ]
+    },
+    {
+      "title": "HAMBURGER MENU",
+      "price": 11.5,
+      "ingredients": null,
+      "thumb": "./img/menu/classic/hamburger.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -565,8 +561,7 @@
       ]
     }
   ],
-  "BEVANDE": [
-    {
+  "BEVANDE": [{
       "title": "ACQUA NATURALE 50CL",
       "price": 1.5,
       "ingredients": null,
@@ -749,8 +744,7 @@
       ]
     }
   ],
-  "SALSE": [
-    {
+  "SALSE": [{
       "title": "MAIONESE CICCIO'S 25gr",
       "price": 0.4,
       "ingredients": null,
@@ -839,8 +833,7 @@
       ]
     }
   ],
-  "SWEETS": [
-    {
+  "SWEETS": [{
       "title": "KISS",
       "price": 3.5,
       "ingredients": "bun, nutella, bacon",
