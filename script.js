@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const menuExplanations = {
             "MENU(Panino + Patatine + Starter a scelta*** + Bibita)": {
                 text: "BURGER + PATATINE + STARTER*** + BIBITA",
-                bold: "+3,50€ al costo del panino"
+                bold: "+5,00€ al costo del panino"
             },
             "MENU(PANINO + PATATINE + BIBITA)": {
                 text: "BURGER + PATATINE + BIBITA",
