@@ -289,6 +289,19 @@
         "MONDELLO",
         "FOODTRUCK"
       ]
+    },
+    {
+      "title": "ZOLA",
+      "price": 9.90,
+      "ingredients": "bun, burger di manzo 170g, songino, gorgonzola leggermente piccante, pere caramellate, noci",
+      "thumb": "./img/menu/ciccios/zola.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "FOODTRUCK"
+      ]
     }
   ],
   "CLASSIC BURGER": [{
@@ -373,6 +386,18 @@
       "price": 16.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/doubletriple.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO"
+      ]
+    },
+    {
+      "title": "ZOLA MENU",
+      "price": 14.9,
+      "ingredients": null,
+      "thumb": "./img/menu/ciccios/zola.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
