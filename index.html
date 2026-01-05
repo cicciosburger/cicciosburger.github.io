@@ -13,7 +13,7 @@
     <meta property="og:locale" content="it_IT">
     <link rel="shortcut icon" type="image/x-icon" href="./img/icon_bg.ico">
     <title>Ciccio's Burger</title>
-    <link rel="preconnect" href="https://api.cicciosburger.it">
+    <link rel="preconnect" href="https://api.cicciosburger.it" crossorigin>
     <link rel="dns-prefetch" href="https://api.cicciosburger.it">
     <link rel="preload" href="./img/logocleanbigsmaller.svg" as="image" type="image/svg+xml" fetchpriority="high">
     <link rel="preload" href="fonts/font_personalizzato.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -428,7 +428,7 @@
                                         required>
                                 </div>
                                 <input type="email" placeholder="Email" class="merch-input" required
-                                    oninput="validateEmailDomain(this, 'order-email-error')" 
+                                    oninput="validateEmailDomain(this, 'order-email-error')"
                                     onblur="validateEmailComplete(this, 'order-email-error')">
                             </div>
                             <span id="order-email-error" style="
@@ -442,7 +442,8 @@
                                 margin-top: 4px;
                                 margin-bottom: 10px;
                             ">
-                                Indirizzo email non consentito. Usa un indirizzo email comune, ad esempio @gmail.com o @libero.it.
+                                Indirizzo email non consentito. Usa un indirizzo email comune, ad esempio @gmail.com o
+                                @libero.it.
                             </span>
                             <select class="merch-input" required>
                                 <option value="">Seleziona punto di ritiro</option>
