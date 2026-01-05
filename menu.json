@@ -293,7 +293,7 @@
     {
       "title": "ZOLA",
       "price": 9.90,
-      "ingredients": "bun, burger di manzo 170g, songino, gorgonzola leggermente piccante, pere caramellate, noci",
+      "ingredients": "bun, burger di manzo 170g, songino, gorgonzola, pere caramellate, noci",
       "thumb": "./img/menu/ciccios/zola.webp",
       "available_in": [
         "LUMIA",
