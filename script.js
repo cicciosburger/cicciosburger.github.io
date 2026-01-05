@@ -21,6 +21,7 @@ async function loadLeaflet() {
     }
 
     leafletLoading = true;
+    console.log('🗺️ Starting to load Leaflet...');
 
     return new Promise((resolve, reject) => {
         // Load CSS
@@ -35,10 +36,12 @@ async function loadLeaflet() {
         script.onload = () => {
             leafletLoaded = true;
             leafletLoading = false;
+            console.log('✅ Leaflet loaded successfully!');
             resolve();
         };
         script.onerror = () => {
             leafletLoading = false;
+            console.error('❌ Failed to load Leaflet');
             reject(new Error('Failed to load Leaflet'));
         };
         document.head.appendChild(script);
