@@ -641,10 +641,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             input.addEventListener('paste', (e) => {
-                e.preventDefault();
-                const pastedData = e.clipboardData.getData('text').trim();
+                const pastedData = (e.clipboardData || window.clipboardData).getData('text').trim();
 
                 if (/^\d{6}$/.test(pastedData)) {
+                    e.preventDefault();
                     pastedData.split('').forEach((char, i) => {
                         if (otpInputs[i]) {
                             otpInputs[i].value = char;
