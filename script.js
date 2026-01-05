@@ -2,8 +2,59 @@ let mainUrl = 'https://api.cicciosburger.it'
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
 let foodtruckMap;
+let leafletLoaded = false;
+let leafletLoading = false;
 
-document.addEventListener("DOMContentLoaded", async () => {
+// Function to dynamically load Leaflet
+async function loadLeaflet() {
+    if (leafletLoaded) return Promise.resolve();
+    if (leafletLoading) {
+        // Wait for the existing load to complete
+        return new Promise((resolve) => {
+            const checkInterval = setInterval(() => {
+                if (leafletLoaded) {
+                    clearInterval(checkInterval);
+                    resolve();
+                }
+            }, 100);
+        });
+    }
+
+    leafletLoading = true;
+
+    return new Promise((resolve, reject) => {
+        // Load CSS
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'leaflet.css';
+        document.head.appendChild(link);
+
+        // Load JS
+        const script = document.createElement('script');
+        script.src = 'leaflet.js';
+        script.onload = () => {
+            leafletLoaded = true;
+            leafletLoading = false;
+            resolve();
+        };
+        script.onerror = () => {
+            leafletLoading = false;
+            reject(new Error('Failed to load Leaflet'));
+        };
+        document.head.appendChild(script);
+    });
+}
+
+// Initialize the food truck map
+async function initializeFoodTruckMap() {
+    // Load Leaflet first
+    try {
+        await loadLeaflet();
+    } catch (error) {
+        console.error('Failed to load Leaflet:', error);
+        return;
+    }
+
     let lat = 38.2064711;
     let lng = 13.3252011;
     let validCoordinates = true;
@@ -38,6 +89,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p class="foodtruck-closed-text">Ti aspettiamo per il prossimo evento!</p>
             </div>
         `;
+        return;
+    }
+
+    // Only initialize if not already initialized
+    if (foodtruckMap) {
+        foodtruckMap.invalidateSize();
         return;
     }
 
@@ -95,7 +152,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             attributeFilter: ['style']
         });
     }
-});
+}
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -1192,6 +1249,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         enableForm();
                     }
+                }
+
+                // Lazy load Leaflet when menu modal is opened
+                if (hash === "menuModal") {
+                    initializeFoodTruckMap();
                 }
             } else {
                 if (landing) landing.style.display = 'flex';
