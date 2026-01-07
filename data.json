@@ -100,24 +100,10 @@
   },
   "Tshirt Manica Lunga Nera": {
     "sizes": [
-      "XS",
-      "S",
-      "M",
-      "L",
-      "XL"
+      "L"
     ],
     "price": 29.90,
     "image": "img/shop/manichelungheciccios.webp"
-  },
-  "Felpa Nera": {
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "price": 43.90,
-    "image": "img/shop/felpaneraciccios.webp"
   },
   "Felpa Bambini Blu": {
     "sizes": [
