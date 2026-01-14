@@ -161,19 +161,6 @@
       ]
     },
     {
-      "title": "EGG",
-      "price": 9.9,
-      "ingredients": "bun, burger di manzo 170g, songino, cheddar, uovo fritto, guanciale croccante, maionese al tartufo",
-      "thumb": "./img/menu/ciccios/egg.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
-      ]
-    },
-    {
       "title": "TUMA",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
@@ -226,19 +213,6 @@
       ]
     },
     {
-      "title": "CHICKEN CBT",
-      "price": 9.9,
-      "ingredients": "bun, sovracoscia di pollo alla piastra, scamorza, lattuga, pomodoro, salsa white Ciccio's",
-      "thumb": "./img/menu/ciccios/chickencbt.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
-      ]
-    },
-    {
       "title": "GREEN",
       "price": 9.9,
       "ingredients": "bun, burger vegetale, lattuga, cheddar, cipolla caramellata, salsa Ciccio's",
@@ -256,19 +230,6 @@
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
       "thumb": "./img/menu/ciccios/oldschool.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "PORCHETTA",
-      "price": 9.9,
-      "ingredients": "bun, burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's",
-      "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -418,34 +379,10 @@
       ]
     },
     {
-      "title": "CHICKEN CBT MENU",
-      "price": 14.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/chickencbt.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
-    },
-    {
       "title": "CRISPY GOAT MENU",
       "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/crispygoat.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
-    },
-    {
-      "title": "EGG MENU",
-      "price": 14.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/egg.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -482,18 +419,6 @@
       "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/pancetta.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
-    },
-    {
-      "title": "PORCHETTA MENU",
-      "price": 14.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/porchetta.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
