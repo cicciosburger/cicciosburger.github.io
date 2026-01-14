@@ -789,6 +789,7 @@
       "ingredients": "bun, nutella, bacon",
       "thumb": "./img/menu/dolci/kiss.webp",
       "available_in": [
+        "LUMIA",
         "STADIO",
         "MONDELLO"
       ]
@@ -798,14 +799,21 @@
       "price": 4.5,
       "ingredients": "tiramisù",
       "thumb": "./img/menu/dolci/tiramiciccios.webp",
-      "available_in": []
+      "available_in": [
+        "STADIO",
+        "MONDELLO"
+      ]
     },
     {
       "title": "BROOKIES",
       "price": 4.5,
       "ingredients": "brookies",
       "thumb": "./img/menu/dolci/brookies.webp",
-      "available_in": []
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "MONDELLO"
+      ]
     }
   ]
 }
