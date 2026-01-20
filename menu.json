@@ -268,7 +268,7 @@
       "title": "CAPRESE",
       "price": 9.90,
       "ingredients": "bun, burger di manzo 170g, medaglione di mozzarella, bacon, pomodoro, salsa Ciccio's",
-      "thumb": "./img/logo.webp",
+      "thumb": "./img/menu/ciccios/caprese.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -383,7 +383,7 @@
       "title": "CAPRESE MENU",
       "price": 14.9,
       "ingredients": null,
-      "thumb": "./img/logo.webp",
+      "thumb": "./img/menu/ciccios/caprese.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
