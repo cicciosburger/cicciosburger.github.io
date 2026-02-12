@@ -97,18 +97,6 @@
       ]
     },
     {
-      "title": "GREEN BALL VEGGIE",
-      "price": "da 2,70€",
-      "ingredients": "polpettine vegetali*",
-      "thumb": "./img/menu/starters/greenball.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
-    },
-    {
       "title": "LINGOTTI 2PZ",
       "price": 4.5,
       "ingredients": "Maxi nuggets di pollo con panatura super croccante* accompagnato con cheddar calda",
