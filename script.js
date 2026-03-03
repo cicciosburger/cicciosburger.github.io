@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Hide spiegazione div if no MENU category is present
-        const spiegazioneDiv = document.querySelector('#menu-scroll-wrapper .spiegazione');
+        const spiegazioneDiv = document.querySelector('#menu-scroll-wrapper .spiegazione:not(.ft-banner)');
         if (spiegazioneDiv) {
             if (hasMenuCategory) {
                 spiegazioneDiv.style.display = '';
