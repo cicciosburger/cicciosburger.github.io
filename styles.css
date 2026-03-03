@@ -389,6 +389,33 @@ p {
     text-align: center;
 }
 
+/* Foodtruck Event Banner */
+.ft-banner {
+    margin-top: 15px;
+}
+
+.ft-banner-title {
+    font-size: 2rem;
+    color: orange;
+    text-align: center;
+}
+
+.ft-banner-text {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ft-banner-bold {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 .collapsible {
     color: white;
     font-size: 2rem;

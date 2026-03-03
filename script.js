@@ -230,6 +230,43 @@ document.addEventListener('DOMContentLoaded', function () {
         const container = document.getElementById(contentId);
         container.innerHTML = '';
 
+        // Foodtruck event banner: inject/remove inside scroll wrapper
+        const scrollWrapper = document.getElementById('menu-scroll-wrapper');
+        const existingBanner = document.getElementById('foodtruck-event-banner');
+        if (existingBanner) existingBanner.remove();
+        if (menuType === 'FOODTRUCK' && scrollWrapper) {
+            const banner = document.createElement('div');
+            banner.id = 'foodtruck-event-banner';
+            banner.className = 'spiegazione ft-banner';
+            const u = 'eventi';
+            const d = 'cicciosburger.it';
+            const title = document.createElement('h2');
+            title.className = 'ft-banner-title';
+            title.textContent = '🚚 BURGER TRUCK';
+            const text = document.createElement('p');
+            text.className = 'ft-banner-text';
+            text.textContent = 'Vuoi il nostro furgone al tuo evento?';
+            const bold = document.createElement('p');
+            bold.className = 'ft-banner-bold';
+            const a = document.createElement('a');
+            a.href = 'mai' + 'lto:' + u + '@' + d;
+            a.textContent = u + '@' + d;
+            a.style.color = 'orange';
+            a.style.textDecoration = 'underline';
+            bold.textContent = 'Scrivici a ';
+            bold.appendChild(a);
+            banner.appendChild(title);
+            banner.appendChild(text);
+            banner.appendChild(bold);
+            // Insert after the spiegazione div (menu explanation), not before
+            const spiegazioneDiv = scrollWrapper.querySelector('.spiegazione:not(.ft-banner)');
+            if (spiegazioneDiv && spiegazioneDiv.nextSibling) {
+                scrollWrapper.insertBefore(banner, spiegazioneDiv.nextSibling);
+            } else {
+                scrollWrapper.insertBefore(banner, scrollWrapper.firstChild);
+            }
+        }
+
         if (!menuData) return;
 
         const navContainer = document.getElementById('category-nav');
