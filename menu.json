@@ -27,15 +27,6 @@
       ]
     },
     {
-      "title": "BACON CHEDDAR FRIES",
-      "price": 6.5,
-      "ingredients": "patate con buccia**, crema cheddar home made sg, bacon croccante",
-      "thumb": "./img/menu/starters/baconcheesefries.webp",
-      "available_in": [
-        "GLUTENFREE"
-      ]
-    },
-    {
       "title": "NUGGETS",
       "price": "da 2,70€",
       "ingredients": "bocconcini di pollo tritato pastellati fatti a mano*",
@@ -45,14 +36,6 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO"
-      ]
-    },
-    {
-      "title": "NUGGETS",
-      "price": "da 2,70€",
-      "ingredients": "bocconcini di pollo tritato pastellati fatti a mano* sg",
-      "thumb": "./img/menu/starters/nuggets.webp",
-      "available_in": [
       ]
     },
     {
@@ -68,14 +51,6 @@
       ]
     },
     {
-      "title": "CHICKEN POP CORN",
-      "price": "da 2,70€",
-      "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante* sg",
-      "thumb": "./img/menu/starters/chickenpopcorn.webp",
-      "available_in": [
-      ]
-    },
-    {
       "title": "MEAT BALLS",
       "price": "da 2,70€",
       "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio*",
@@ -88,8 +63,8 @@
       ]
     },
     {
-      "title": "MEAT BALLS",
-      "price": "da 2,70€",
+      "title": "MEAT BALLS 8PZ",
+      "price": "4,50€",
       "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio* sg",
       "thumb": "./img/menu/starters/meatball.webp",
       "available_in": [
@@ -151,6 +126,24 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO"
+      ]
+    },
+    {
+      "title": "STRIPE DI POLLO",
+      "price": "5,90€",
+      "ingredients": "stripe di pollo",
+      "thumb": "./img/logo.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "ANELLI DI CIPOLLA",
+      "price": "4,00€",
+      "ingredients": "anelli di cipolla",
+      "thumb": "./img/logo.webp",
+      "available_in": [
+        "GLUTENFREE"
       ]
     }
   ],
@@ -939,9 +932,7 @@
       "price": 2.5,
       "ingredients": "salsa cheddar calda da 170ml sg",
       "thumb": "./img/menu/salse/salsacheddar170.webp",
-      "available_in": [
-        "GLUTENFREE"
-      ]
+      "available_in": []
     },
     {
       "title": "THAI 60ML",
