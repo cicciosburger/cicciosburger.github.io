@@ -184,8 +184,8 @@ document.addEventListener('DOMContentLoaded', function () {
             menuData = data;
             let currentStore = "LUMIA";
 
-            if (window.location.hash === '#foodtruck') {
-                currentStore = "FOODTRUCK";
+            if (window.location.hash === '#foodtruck' || window.location.hash === '#noglutine') {
+                currentStore = window.location.hash === '#foodtruck' ? "FOODTRUCK" : "GLUTENFREE";
 
                 const productPage = document.getElementById('productListingPage');
                 if (productPage) {

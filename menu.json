@@ -1,5 +1,6 @@
 {
-  "STARTERS": [{
+  "STARTERS": [
+    {
       "title": "FRIES",
       "price": 3.5,
       "ingredients": "patate con buccia**",
@@ -9,7 +10,8 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
-        "FOODTRUCK"
+        "FOODTRUCK",
+        "GLUTENFREE"
       ]
     },
     {
@@ -25,6 +27,15 @@
       ]
     },
     {
+      "title": "BACON CHEDDAR FRIES",
+      "price": 6.5,
+      "ingredients": "patate con buccia**, crema cheddar home made sg, bacon croccante",
+      "thumb": "./img/menu/starters/baconcheesefries.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
       "title": "NUGGETS",
       "price": "da 2,70€",
       "ingredients": "bocconcini di pollo tritato pastellati fatti a mano*",
@@ -34,6 +45,15 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO"
+      ]
+    },
+    {
+      "title": "NUGGETS",
+      "price": "da 2,70€",
+      "ingredients": "bocconcini di pollo tritato pastellati fatti a mano* sg",
+      "thumb": "./img/menu/starters/nuggets.webp",
+      "available_in": [
+        "GLUTENFREE"
       ]
     },
     {
@@ -49,6 +69,15 @@
       ]
     },
     {
+      "title": "CHICKEN POP CORN",
+      "price": "da 2,70€",
+      "ingredients": "polpettine di pollo fatte a mano con speciale panatura super croccante* sg",
+      "thumb": "./img/menu/starters/chickenpopcorn.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
       "title": "MEAT BALLS",
       "price": "da 2,70€",
       "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio*",
@@ -61,6 +90,15 @@
       ]
     },
     {
+      "title": "MEAT BALLS",
+      "price": "da 2,70€",
+      "ingredients": "polpettine di carne fatte a mano con speciale panatura al formaggio* sg",
+      "thumb": "./img/menu/starters/meatball.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
       "title": "PROVOLA GOAT",
       "price": 4.5,
       "ingredients": "provola dolce con tripla pastellatura a mano*",
@@ -70,6 +108,15 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO"
+      ]
+    },
+    {
+      "title": "PROVOLA GOAT",
+      "price": 4.5,
+      "ingredients": "provola dolce con tripla pastellatura a mano* sg",
+      "thumb": "./img/menu/starters/provolagoat.webp",
+      "available_in": [
+        "GLUTENFREE"
       ]
     },
     {
@@ -109,7 +156,8 @@
       ]
     }
   ],
-  "CICCIO'S BURGER": [{
+  "CICCIO'S BURGER": [
+    {
       "title": "CRISPY GOAT",
       "price": 9.9,
       "ingredients": "bun, burger di pollo pastellato e fritto*, cheddar, bacon, lattuga, salsa Ciccio's",
@@ -264,9 +312,116 @@
         "MONDELLO",
         "FOODTRUCK"
       ]
+    },
+    {
+      "title": "CRISPY GOAT ",
+      "price": 9.9,
+      "ingredients": "bun sg, burger di pollo pastellato e fritto* sg, cheddar, bacon, lattuga, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/crispygoat.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "BRIE ",
+      "price": 9.9,
+      "ingredients": "bun sg, burger di manzo 170g sg, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/brie.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "TALÈ ",
+      "price": 9.9,
+      "ingredients": "bun sg, burger di manzo 170g sg, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/tale.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "TUMA ",
+      "price": 9.9,
+      "ingredients": "bun sg, burger di manzo 170g sg, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/tuma.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "PANCETTA ",
+      "price": 9.9,
+      "ingredients": "bun sg, burger di manzo 170g sg, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/pancetta.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "DOUBLE TRIPLE ",
+      "price": 11.9,
+      "ingredients": "bun sg, doppio burger di manzo 170g sg, triplo cheddar, doppio bacon, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/doubletriple.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "SUPER CRISPY ",
+      "price": 9.9,
+      "ingredients": "bun sg, burger di pollo fritto con panatura super croccante* sg, lattuga, pomodoro, maionese",
+      "thumb": "./img/menu/ciccios/supercrispy.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "GREEN ",
+      "price": 9.9,
+      "ingredients": "bun sg, burger vegetale, lattuga, cheddar, cipolla caramellata, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/green.webp",
+      "available_in": []
+    },
+    {
+      "title": "OLD SCHOOL ",
+      "price": 9.9,
+      "ingredients": "bun sg, burger di manzo 170g sg, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq",
+      "thumb": "./img/menu/ciccios/oldschool.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "BIG ",
+      "price": 11.90,
+      "ingredients": "bun sg, doppio burger di manzo 170g sg, pomodoro, lattuga, cheddar, scamorza, bacon, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/BIG.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "ZOLA ",
+      "price": 9.90,
+      "ingredients": "bun sg, burger di manzo 170g sg, songino, gorgonzola, pere caramellate, noci",
+      "thumb": "./img/menu/ciccios/zola.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "CAPRESE ",
+      "price": 9.90,
+      "ingredients": "bun sg, burger di manzo 170g sg, medaglione di mozzarella, bacon, pomodoro, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/caprese.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
     }
   ],
-  "CLASSIC BURGER": [{
+  "CLASSIC BURGER": [
+    {
       "title": "HAMBURGER",
       "price": 6.5,
       "ingredients": "bun, burger di manzo 170g, salsa Ciccio's",
@@ -317,9 +472,46 @@
         "MONDELLO",
         "FOODTRUCK"
       ]
+    },
+    {
+      "title": "HAMBURGER ",
+      "price": 6.5,
+      "ingredients": "bun sg, burger di manzo 170g sg, salsa Ciccio's",
+      "thumb": "./img/menu/classic/hamburger.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "CHEESEBURGER ",
+      "price": 7.9,
+      "ingredients": "bun sg, burger di manzo 170g sg, cheddar, salsa Ciccio's",
+      "thumb": "./img/menu/classic/cheeseburger.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "BACON CHEESEBURGER ",
+      "price": 8.9,
+      "ingredients": "bun sg, burger di manzo 170g sg, cheddar, bacon, salsa Ciccio's",
+      "thumb": "./img/menu/classic/baconcheeseburger.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "AMERICAN BACONCHEESE ",
+      "price": 8.9,
+      "ingredients": "bun sg, burger di manzo 170g sg, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
+      "thumb": "./img/menu/classic/americanbaconcheese.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
     }
   ],
-  "MENU(Panino + Patatine + Starter a scelta*** + Bibita)": [{
+  "MENU(Panino + Patatine + Starter a scelta*** + Bibita)": [
+    {
       "title": "HAPPY CICCIO'S",
       "price": 8.9,
       "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + 2 Nuggets + Acqua 25ml / Coca Cola 15cl",
@@ -328,7 +520,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -340,7 +533,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -352,7 +546,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -364,7 +559,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -376,7 +572,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -388,7 +585,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -400,7 +598,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -424,7 +623,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -436,7 +636,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -448,7 +649,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -460,7 +662,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -472,7 +675,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -484,7 +688,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -496,7 +701,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -508,7 +714,8 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     },
     {
@@ -520,11 +727,13 @@
         "LUMIA",
         "STADIO",
         "SPERLINGA",
-        "MONDELLO"
+        "MONDELLO",
+        "GLUTENFREE"
       ]
     }
   ],
-  "BEVANDE": [{
+  "BEVANDE": [
+    {
       "title": "ACQUA NATURALE 50CL",
       "price": 1.5,
       "ingredients": null,
@@ -534,6 +743,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -547,6 +757,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -560,6 +771,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -573,6 +785,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -586,6 +799,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -599,6 +813,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -612,6 +827,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -625,6 +841,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -638,6 +855,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -651,6 +869,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -664,6 +883,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -677,6 +897,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -690,6 +911,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -703,11 +925,13 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     }
   ],
-  "SALSE": [{
+  "SALSE": [
+    {
       "title": "MAIONESE CICCIO'S 25gr",
       "price": 0.4,
       "ingredients": null,
@@ -717,6 +941,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -730,6 +955,15 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO"
+      ]
+    },
+    {
+      "title": "SALSA CHEDDAR CALDA 170ML",
+      "price": 2.5,
+      "ingredients": "salsa cheddar calda da 170ml sg",
+      "thumb": "./img/menu/salse/salsacheddar170.webp",
+      "available_in": [
+        "GLUTENFREE"
       ]
     },
     {
@@ -766,6 +1000,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -779,6 +1014,7 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     },
@@ -792,11 +1028,13 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO",
+        "GLUTENFREE",
         "FOODTRUCK"
       ]
     }
   ],
-  "SWEETS": [{
+  "SWEETS": [
+    {
       "title": "KISS",
       "price": 3.5,
       "ingredients": "bun, nutella, bacon",
@@ -812,8 +1050,7 @@
       "price": 4.5,
       "ingredients": "tiramisù",
       "thumb": "./img/menu/dolci/tiramiciccios.webp",
-      "available_in": [
-      ]
+      "available_in": []
     },
     {
       "title": "BROOKIES",
