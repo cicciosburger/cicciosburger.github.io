@@ -334,7 +334,7 @@
     {
       "title": "TUMA ",
       "price": 13.9,
-      "ingredients": "bun sg, burger di manzo sg, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
+      "ingredients": "bun sg, burger di manzo sg, songino, cipolla caramellata, tuma caramellata al miele, salsa Ciccio's",
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
         "GLUTENFREE"
@@ -343,7 +343,7 @@
     {
       "title": "PANCETTA ",
       "price": 13.9,
-      "ingredients": "bun sg, burger di manzo sg, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
+      "ingredients": "bun sg, burger di manzo sg, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, salsa Ciccio's",
       "thumb": "./img/menu/ciccios/pancetta.webp",
       "available_in": [
         "GLUTENFREE"
