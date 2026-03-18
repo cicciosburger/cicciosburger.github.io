@@ -158,6 +158,7 @@ async function initializeFoodTruckMap() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    const initialHash = window.location.hash;
 
     let allergeniIngredientiMap = {};
     let menuData = null;
@@ -184,8 +185,8 @@ document.addEventListener('DOMContentLoaded', function () {
             menuData = data;
             let currentStore = "LUMIA";
 
-            if (window.location.hash === '#foodtruck' || window.location.hash === '#noglutine') {
-                currentStore = window.location.hash === '#foodtruck' ? "FOODTRUCK" : "GLUTENFREE";
+            if (initialHash === '#foodtruck' || initialHash === '#noglutine') {
+                currentStore = initialHash === '#foodtruck' ? "FOODTRUCK" : "GLUTENFREE";
 
                 const productPage = document.getElementById('productListingPage');
                 if (productPage) {
@@ -194,7 +195,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     productPage.style.display = 'block';
                     window.scrollTo(0, 0);
                 }
-                history.replaceState(null, '', '#productListingPage');
+                history.replaceState(null, '', '#menu-' + currentStore.toLowerCase());
+            } else if (initialHash.toLowerCase().startsWith('#menu-')) {
+                currentStore = initialHash.substring(6).toUpperCase();
+
+                const productPage = document.getElementById('productListingPage');
+                if (productPage) {
+                    const landing = document.getElementById('landing-page');
+                    if (landing) landing.style.display = 'none';
+                    productPage.style.display = 'block';
+                    window.scrollTo(0, 0);
+                }
             }
 
             generateMenu('productListingPage', currentStore);
@@ -215,13 +226,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     window.scrollTo(0, 0);
 
-                    history.pushState(null, '', '#productListingPage');
+                    history.pushState(null, '', '#menu-' + selectedStore.toLowerCase());
                 });
             });
         })
         .catch(error => console.error('Error loading menu:', error));
 
-    function generateMenu(modalId, menuType) {
+    window.generateMenu = function generateMenu(modalId, menuType) {
         let contentId
         if (modalId == 'menuModal' || modalId == 'productListingPage') {
             contentId = 'generatedContentLocale'
@@ -1278,12 +1289,33 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
 
         if (hash) {
-            const modal = document.getElementById(hash);
+            let modalId = hash;
+            let doSpecialRoute = false;
+            let newStore = null;
+
+            if (hash === 'foodtruck' || hash === 'noglutine') {
+                modalId = 'productListingPage';
+                doSpecialRoute = true;
+                newStore = hash === 'foodtruck' ? "FOODTRUCK" : "GLUTENFREE";
+                history.replaceState(null, '', '#menu-' + newStore.toLowerCase());
+            } else if (hash.startsWith('menu-')) {
+                modalId = 'productListingPage';
+                doSpecialRoute = true;
+                newStore = hash.substring(5).toUpperCase();
+            }
+
+            const modal = document.getElementById(modalId);
             if (modal) {
                 if (landing) landing.style.display = 'none';
                 modal.style.display = 'block';
 
-                if (hash === "membershipModal") {
+                if (doSpecialRoute) {
+                    if (typeof window.generateMenu === 'function') {
+                        window.generateMenu('productListingPage', newStore);
+                    }
+                }
+
+                if (modalId === "membershipModal") {
                     if (!localStorage.getItem("cookieConsent")) {
                         disableForm();
                     } else {
@@ -1292,7 +1324,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Lazy load Leaflet when menu modal is opened
-                if (hash === "menuModal") {
+                if (modalId === "menuModal") {
                     initializeFoodTruckMap();
                 }
             } else {
