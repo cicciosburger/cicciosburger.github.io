@@ -501,6 +501,17 @@
       ]
     }
   ],
+  "HAPPY CICCIO'S":[
+      {
+      "title": "HAPPY CICCIO'S",
+      "price": 10.9,
+      "ingredients": "Hamburger + Patatine + Acqua 25ml / Coca Cola 15cl + Salsa Ciccio's a scelta",
+      "thumb": "./img/menu/classic/happc-1.png",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    }
+  ],
   "MENU(Panino + Patatine + Starter a scelta*** + Bibita)": [
     {
       "title": "HAPPY CICCIO'S",
