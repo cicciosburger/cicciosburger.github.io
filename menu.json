@@ -132,7 +132,7 @@
       "title": "STRIPE DI POLLO",
       "price": "5,90€",
       "ingredients": "stripe di pollo",
-      "thumb": "./img/logo.webp",
+      "thumb": "./img/menu/starters/stripe_pollo.webp",
       "available_in": [
         "GLUTENFREE"
       ]
@@ -141,7 +141,7 @@
       "title": "ANELLI DI CIPOLLA",
       "price": "4,00€",
       "ingredients": "anelli di cipolla",
-      "thumb": "./img/logo.webp",
+      "thumb": "./img/menu/starters/anelli_cipolla.webp",
       "available_in": [
         "GLUTENFREE"
       ]
@@ -501,8 +501,8 @@
       ]
     }
   ],
-  "HAPPY CICCIO'S":[
-      {
+  "HAPPY CICCIO'S": [
+    {
       "title": "HAPPY CICCIO'S",
       "price": 10.9,
       "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + Acqua 25ml / Coca Cola 15cl",
@@ -908,6 +908,24 @@
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "PERONI SENZA GLUTINE 33CL",
+      "price": 3.5,
+      "ingredients": null,
+      "thumb": "./img/menu/bibite/peroni-senza-glutine.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "DAMM DAURA SENZA GLUTINE 33CL",
+      "price": 4.5,
+      "ingredients": null,
+      "thumb": "./img/menu/bibite/daura_damm.webp",
+      "available_in": [
+        "GLUTENFREE"
       ]
     }
   ],
