@@ -372,7 +372,9 @@
       "price": 13.9,
       "ingredients": "bun sg, burger vegetale, lattuga, cheddar, cipolla caramellata, salsa Ciccio's",
       "thumb": "./img/menu/ciccios/green.webp",
-      "available_in": []
+      "available_in": [
+        "GLUTENFREE"
+      ]
     },
     {
       "title": "OLD SCHOOL ",
