@@ -292,19 +292,6 @@
       ]
     },
     {
-      "title": "CAPRESE",
-      "price": 9.90,
-      "ingredients": "bun, burger di manzo 170g, medaglione di mozzarella, bacon, pomodoro, salsa Ciccio's",
-      "thumb": "./img/menu/ciccios/caprese.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
-      ]
-    },
-    {
       "title": "CRISPY GOAT ",
       "price": 13.9,
       "ingredients": "bun sg, burger di pollo pastellato e fritto* sg, cheddar, bacon, lattuga, salsa Ciccio's",
@@ -403,15 +390,6 @@
         "GLUTENFREE"
       ]
     },
-    {
-      "title": "CAPRESE ",
-      "price": 13.90,
-      "ingredients": "bun sg, burger di manzo sg, medaglione di mozzarella, bacon, pomodoro, salsa Ciccio's",
-      "thumb": "./img/menu/ciccios/caprese.webp",
-      "available_in": [
-        "GLUTENFREE"
-      ]
-    }
   ],
   "CLASSIC BURGER": [
     {
@@ -556,18 +534,6 @@
       "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/zola.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
-    },
-    {
-      "title": "CAPRESE MENU",
-      "price": 14.9,
-      "ingredients": null,
-      "thumb": "./img/menu/ciccios/caprese.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
