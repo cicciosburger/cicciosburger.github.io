@@ -997,6 +997,7 @@
       "thumb": "./img/menu/dolci/kiss.webp",
       "available_in": [
         "LUMIA",
+        "SPERLINGA",
         "STADIO",
         "MONDELLO"
       ]
@@ -1015,6 +1016,7 @@
       "thumb": "./img/menu/dolci/brookies.webp",
       "available_in": [
         "LUMIA",
+        "SPERLINGA",
         "STADIO",
         "MONDELLO"
       ]
