@@ -879,19 +879,10 @@
       ]
     },
     {
-      "title": "PERONI SENZA GLUTINE 33CL",
+      "title": "ANGELO PORETTI SENZA GLUTINE 33CL",
       "price": 3.5,
       "ingredients": null,
-      "thumb": "./img/menu/bibite/peroni-senza-glutine.webp",
-      "available_in": [
-        "GLUTENFREE"
-      ]
-    },
-    {
-      "title": "DAMM DAURA SENZA GLUTINE 33CL",
-      "price": 4.5,
-      "ingredients": null,
-      "thumb": "./img/menu/bibite/daura_damm.webp",
+      "thumb": "./img/menu/bibite/poretti.webp",
       "available_in": [
         "GLUTENFREE"
       ]
