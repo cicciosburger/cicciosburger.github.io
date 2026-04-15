@@ -485,7 +485,7 @@
     {
       "title": "HAPPY CICCIO'S",
       "price": 10.9,
-      "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + Acqua 25ml / Coca Cola 15cl",
+      "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + Acqua 25cl / Coca Cola 15cl",
       "thumb": "./img/menu/classic/happc-1.png",
       "available_in": [
         "GLUTENFREE"
@@ -496,7 +496,7 @@
     {
       "title": "HAPPY CICCIO'S",
       "price": 8.9,
-      "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + 2 Nuggets + Acqua 25ml / Coca Cola 15cl",
+      "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + 2 Nuggets + Acqua 25cl / Coca Cola 15cl",
       "thumb": "./img/menu/classic/happc-1.png",
       "available_in": [
         "LUMIA",
