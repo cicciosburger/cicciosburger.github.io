@@ -27,6 +27,15 @@
       ]
     },
     {
+      "title": "BACON CHEDDAR FRIES ",
+      "price": 6.5,
+      "ingredients": "patate con buccia**, crema cheddar home made sg, bacon croccante",
+      "thumb": "./img/menu/starters/baconcheesefries.webp",
+      "available_in": [
+        "GLUTENFREE"
+      ]
+    },
+    {
       "title": "NUGGETS",
       "price": "da 2,70€",
       "ingredients": "bocconcini di pollo tritato pastellati fatti a mano*",
@@ -929,7 +938,9 @@
       "price": 2.5,
       "ingredients": "salsa cheddar calda da 170ml sg",
       "thumb": "./img/menu/salse/salsacheddar170.webp",
-      "available_in": []
+      "available_in": [
+        "GLUTENFREE"
+      ]
     },
     {
       "title": "THAI 60ML",
