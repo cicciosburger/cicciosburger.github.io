@@ -1232,7 +1232,6 @@ document.addEventListener('DOMContentLoaded', () => {
             disableForm();
         } else {
             enableForm();
-            loadRecaptcha();
         }
     }
 
@@ -1315,11 +1314,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                if (modalId === "membershipModal") {
+                if (modalId === "membershipModal" || modalId === "orderModal") {
                     if (!localStorage.getItem("cookieConsent")) {
                         disableForm();
                     } else {
                         enableForm();
+                        loadRecaptcha();
                     }
                 }
 
@@ -1346,7 +1346,10 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem("cookieConsent", "accepted");
         cookieConsentBanner.style.display = "none";
         enableForm();
-        loadRecaptcha();
+        const hash = window.location.hash.substring(1);
+        if (hash === "membershipModal" || hash === "orderModal") {
+            loadRecaptcha();
+        }
     });
 
     rejectCookiesBtn.addEventListener("click", function () {
