@@ -1015,12 +1015,7 @@
       "price": 3.5,
       "ingredients": "bun, nutella, bacon",
       "thumb": "./img/menu/dolci/kiss.webp",
-      "available_in": [
-        "LUMIA",
-        "SPERLINGA",
-        "STADIO",
-        "MONDELLO"
-      ]
+      "available_in": []
     },
     {
       "title": "TIRAMICICCIO'S",
@@ -1034,12 +1029,7 @@
       "price": 4.5,
       "ingredients": "brookies",
       "thumb": "./img/menu/dolci/brookies.webp",
-      "available_in": [
-        "LUMIA",
-        "SPERLINGA",
-        "STADIO",
-        "MONDELLO"
-      ]
+      "available_in": []
     }
   ]
 }
