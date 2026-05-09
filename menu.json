@@ -16,7 +16,7 @@
     },
     {
       "title": "BACON CHEDDAR FRIES",
-      "price": 6.5,
+      "price": 7.0,
       "ingredients": "patate con buccia**, crema cheddar home made, bacon croccante",
       "thumb": "./img/menu/starters/baconcheesefries.webp",
       "available_in": [
@@ -28,7 +28,7 @@
     },
     {
       "title": "BACON CHEDDAR FRIES ",
-      "price": 6.5,
+      "price": 7.0,
       "ingredients": "patate con buccia**, crema cheddar home made sg, bacon croccante",
       "thumb": "./img/menu/starters/baconcheesefries.webp",
       "available_in": [
@@ -922,9 +922,9 @@
       ]
     },
     {
-      "title": "SALSA CHEDDAR CALDA 170ML",
-      "price": 2.5,
-      "ingredients": "salsa cheddar calda da 170ml",
+      "title": "SALSA CHEDDAR E BACON",
+      "price": 7,
+      "ingredients": "salsa cheddar calda e bacon",
       "thumb": "./img/menu/salse/salsacheddar170.webp",
       "available_in": [
         "LUMIA",
@@ -934,9 +934,9 @@
       ]
     },
     {
-      "title": "SALSA CHEDDAR CALDA 170ML",
-      "price": 2.5,
-      "ingredients": "salsa cheddar calda da 170ml sg",
+      "title": "SALSA CHEDDAR E BACON",
+      "price": 7,
+      "ingredients": "salsa cheddar calda e bacon sg",
       "thumb": "./img/menu/salse/salsacheddar170.webp",
       "available_in": [
         "GLUTENFREE"
