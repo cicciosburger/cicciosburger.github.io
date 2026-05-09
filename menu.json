@@ -128,8 +128,8 @@
     {
       "title": "LINGOTTI 2PZ",
       "price": 4.5,
-      "ingredients": "Maxi nuggets di pollo con panatura super croccante* accompagnato con cheddar calda",
-      "thumb": "./img/menu/starters/lingotti.webp",
+      "ingredients": "Maxi nuggets di pollo con panatura super croccante*",
+      "thumb": "./img/menu/starters/lingottinocheddar.png",
       "available_in": [
         "LUMIA",
         "STADIO",
