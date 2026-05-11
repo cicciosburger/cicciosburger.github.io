@@ -69,6 +69,103 @@ jobs:
               sys.exit(1)
           "
 
+      - name: Validate missing images
+        run: |
+          echo "🔍 Checking for missing images..."
+          python3 -c "
+          import json, os, sys
+          error = False
+
+          print('Checking menu.json images...')
+          with open('menu.json', 'r', encoding='utf-8') as f:
+              menu = json.load(f)
+              for category, items in menu.items():
+                  for item in items:
+                      if 'thumb' in item and item['thumb']:
+                          path = item['thumb'].lstrip('./')
+                          if not os.path.exists(path):
+                              print(f\"❌ Missing image: {path} (Item: {item.get('title', 'Unknown')})\")
+                              error = True
+
+          print('Checking data.json images...')
+          with open('data.json', 'r', encoding='utf-8') as f:
+              data = json.load(f)
+              for name, item in data.items():
+                  if 'image' in item and item['image']:
+                      path = item['image'].lstrip('./')
+                      if not os.path.exists(path):
+                          print(f\"❌ Missing image: {path} (Item: {name})\")
+                          error = True
+
+          if error:
+              sys.exit(1)
+          else:
+              print('✅ All images found!')
+          "
+
+      - name: Validate menu.json schema
+        run: |
+          echo "🔍 Checking menu.json schema..."
+          python3 -c "
+          import json, sys
+          error = False
+          
+          with open('menu.json', 'r', encoding='utf-8') as f:
+              menu = json.load(f)
+              for category, items in menu.items():
+                  for i, item in enumerate(items):
+                      title = item.get('title', f'Item #{i} in {category}')
+                      if 'title' not in item or not str(item['title']).strip():
+                          print(f\"❌ Missing 'title' in {category} item #{i}\")
+                          error = True
+                      if 'price' not in item or str(item['price']).strip() == '':
+                          print(f\"❌ Missing 'price' in: {title}\")
+                          error = True
+                      if 'available_in' not in item or not isinstance(item['available_in'], list):
+                          print(f\"❌ Missing or invalid 'available_in' array in: {title}\")
+                          error = True
+
+          if error:
+              sys.exit(1)
+          else:
+              print('✅ menu.json schema is valid!')
+          "
+
+      - name: Validate missing allergens
+        run: |
+          echo "🔍 Checking for missing allergens..."
+          python3 -c "
+          import json, sys
+          error = False
+          
+          with open('allergeni.json', 'r', encoding='utf-8') as f:
+              allergeni = json.load(f)
+              
+          with open('menu.json', 'r', encoding='utf-8') as f:
+              menu = json.load(f)
+              
+          print('Matching menu ingredients with allergeni.json...')
+          for category, items in menu.items():
+              for item in items:
+                  if 'ingredients' in item and item['ingredients']:
+                      # Ignore combo descriptions containing '+'
+                      if '+' in item['ingredients']:
+                          continue
+                          
+                      ingredients = [i.strip() for i in str(item['ingredients']).split(',')]
+                      for ing in ingredients:
+                          name = ing.split(':')[0].strip()
+                          if name not in allergeni:
+                              print(f\"❌ Missing allergen for ingredient: '{name}' (in product '{item.get('title')}')\")
+                              error = True
+
+          if error:
+              print('\n❌ Please add the missing ingredients to allergeni.json (even as null if no allergens)')
+              sys.exit(1)
+          else:
+              print('✅ All ingredients have mapped allergens!')
+          "
+
       - name: All JSON valid
         run: echo "🎉 All JSON files passed validation!"
 
