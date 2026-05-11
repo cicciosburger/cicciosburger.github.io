@@ -1,0 +1,97 @@
+name: Validate JSON & Deploy
+
+on:
+  push:
+    branches: ["main"]
+
+# Sets permissions of the GITHUB_TOKEN
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Job 1: Validate JSON files
+  validate-json:
+    runs-on: ubuntu-latest
+    name: ✅ Validate JSON syntax
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate menu.json
+        run: |
+          echo "🔍 Validating menu.json..."
+          python3 -c "
+          import json, sys
+          try:
+              with open('menu.json', 'r', encoding='utf-8') as f:
+                  json.load(f)
+              print('✅ menu.json is valid')
+          except json.JSONDecodeError as e:
+              print(f'❌ menu.json has a syntax error at line {e.lineno}, column {e.colno}:')
+              print(f'   {e.msg}')
+              sys.exit(1)
+          "
+
+      - name: Validate allergeni.json
+        run: |
+          echo "🔍 Validating allergeni.json..."
+          python3 -c "
+          import json, sys
+          try:
+              with open('allergeni.json', 'r', encoding='utf-8') as f:
+                  json.load(f)
+              print('✅ allergeni.json is valid')
+          except json.JSONDecodeError as e:
+              print(f'❌ allergeni.json has a syntax error at line {e.lineno}, column {e.colno}:')
+              print(f'   {e.msg}')
+              sys.exit(1)
+          "
+
+      - name: Validate data.json
+        run: |
+          echo "🔍 Validating data.json..."
+          python3 -c "
+          import json, sys
+          try:
+              with open('data.json', 'r', encoding='utf-8') as f:
+                  json.load(f)
+              print('✅ data.json is valid')
+          except json.JSONDecodeError as e:
+              print(f'❌ data.json has a syntax error at line {e.lineno}, column {e.colno}:')
+              print(f'   {e.msg}')
+              sys.exit(1)
+          "
+
+      - name: All JSON valid
+        run: echo "🎉 All JSON files passed validation!"
+
+  # Job 2: Deploy to GitHub Pages (runs ONLY if validation passes)
+  deploy:
+    needs: validate-json
+    runs-on: ubuntu-latest
+    name: 🚀 Deploy to GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
