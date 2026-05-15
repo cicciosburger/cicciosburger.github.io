@@ -753,6 +753,48 @@
       ]
     },
     {
+      "title": "LEMON SODA 33CL",
+      "price": 2.5,
+      "ingredients": null,
+      "thumb": "./img/menu/bibite/lemonsoda.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "GLUTENFREE",
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "LEMON SODA MOJITO 33CL",
+      "price": 2.5,
+      "ingredients": null,
+      "thumb": "./img/menu/bibite/lemonsodamojito.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "GLUTENFREE",
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "LEMON SODA SPRITZ 33CL",
+      "price": 2.5,
+      "ingredients": null,
+      "thumb": "./img/menu/bibite/lemonsodaspritz.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "GLUTENFREE",
+        "FOODTRUCK"
+      ]
+    },
+    {
       "title": "SPRITE 33CL",
       "price": 2.5,
       "ingredients": null,
@@ -823,10 +865,23 @@
       ]
     },
     {
-      "title": "HEINEKEN 33CL",
-      "price": 3.9,
+      "title": "CERES LAGER 33CL",
+      "price": 3.50,
       "ingredients": null,
-      "thumb": "./img/menu/bibite/heineken.webp",
+      "thumb": "./img/menu/bibite/cereslager.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "CERES STRONG 33CL",
+      "price": 5,
+      "ingredients": null,
+      "thumb": "./img/menu/bibite/ceresstrong.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
