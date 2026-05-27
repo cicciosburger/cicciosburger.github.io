@@ -1223,6 +1223,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         window.addEventListener("popstate", updateFloatingCartButtonVisibility);
         window.addEventListener("hashchange", updateFloatingCartButtonVisibility);
+        window.updateFloatingCartButtonVisibility = updateFloatingCartButtonVisibility;
     }
 
     window.removeCartItem = function (index) {
@@ -1436,6 +1437,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else {
             if (landing) landing.style.display = 'flex';
+        }
+        if (typeof window.updateFloatingCartButtonVisibility === 'function') {
+            window.updateFloatingCartButtonVisibility();
         }
         window.scrollTo(0, 0);
     };
