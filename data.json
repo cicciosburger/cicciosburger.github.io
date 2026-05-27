@@ -1,4 +1,54 @@
 {
+  "Tshirt Brie": {
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 20.00,
+    "image": "img/shop/tshirtBrie.webp"
+  },
+  "Tshirt Double Triple": {
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 20.00,
+    "image": "img/shop/tshirtDoubleTriple.webp"
+  },
+  "Tshirt Old School": {
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 20.00,
+    "image": "img/shop/tshirtOldSchool.webp"
+  },
+  "Tshirt Pancetta": {
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 20.00,
+    "image": "img/shop/tshirtPancetta.webp"
+  },
+  "Tshirt Tuma": {
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 20.00,
+    "image": "img/shop/tshirtTuma.webp"
+  },
   "Cappello Vai in buca": {
     "sizes": [
       "unica"
