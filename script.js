@@ -1071,7 +1071,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <p><strong>€${product.price.toFixed(2)}</strong></p>
         <div class="merch-card-bottom">
             <select id="merch-size-${product.id}" class="merch-input">${sizeOptions}</select>
-            <button onclick="addToCart(${product.id})" class="merch-button">Aggiungi al carrello</button>
+            <button onclick="addToCart(${product.id}, this)" class="merch-button">Aggiungi al carrello</button>
         </div>
         `;
 
@@ -1079,7 +1079,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    window.addToCart = function (productId) {
+    window.addToCart = function (productId, btn) {
         const size = document.getElementById(`merch-size-${productId}`).value;
         const existingIndex = cart.findIndex(item => item.id === productId && item.size === size);
 
@@ -1098,6 +1098,20 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         }
 
+        // Feedback animation for the clicked button
+        if (btn) {
+            const originalText = btn.textContent;
+            btn.textContent = "Aggiunto! ✓";
+            btn.classList.add("clicked");
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.classList.remove("clicked");
+                btn.disabled = false;
+            }, 1000);
+        }
+
         renderCart();
     };
 
@@ -1105,20 +1119,110 @@ document.addEventListener("DOMContentLoaded", async () => {
         const container = document.getElementById("merch-cart-items");
         container.innerHTML = "";
         if (cart.length === 0) {
-            container.innerHTML = "<p class='merch-empty'>Il carrello è vuoto.</p>";
+            container.innerHTML = `
+                <div class="merch-cart-empty-container">
+                    <svg style="width: 40px; height: 40px; color: #555; margin-bottom: 12px;" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                    </svg>
+                    <p class="merch-empty">Il tuo carrello è vuoto.</p>
+                    <p class="merch-empty-sub">Aggiungi qualche prodotto del nostro Merch per iniziare!</p>
+                </div>
+            `;
+            updateFloatingCartButton();
             return;
         }
 
+        let total = 0;
         cart.forEach((item, index) => {
             const product = merch.find(p => p.id === item.id);
+            total += product.price * item.qty;
+
             const row = document.createElement("div");
             row.className = "merch-cart-item";
             row.innerHTML = `
-        <div><strong>${product.name}</strong> (${item.size}) x ${item.qty} - €${(product.price * item.qty).toFixed(2)}</div>
-        <button onclick="removeCartItem(${index})" class="merch-remove">Rimuovi</button>
-      `;
+                <div class="merch-cart-item-details">
+                    <span class="merch-cart-item-qty">${item.qty}x</span>
+                    <div class="merch-cart-item-info">
+                        <span class="merch-cart-item-name">${product.name}</span>
+                        <span class="merch-cart-item-size">Taglia: ${item.size}</span>
+                    </div>
+                </div>
+                <div class="merch-cart-item-actions">
+                    <span class="merch-cart-item-price">€${(product.price * item.qty).toFixed(2)}</span>
+                    <button onclick="removeCartItem(${index})" class="merch-remove" aria-label="Rimuovi prodotto">
+                        <svg style="width: 16px; height: 16px;" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/>
+                        </svg>
+                    </button>
+                </div>
+            `;
             container.appendChild(row);
         });
+
+        const totalRow = document.createElement("div");
+        totalRow.className = "merch-cart-total";
+        totalRow.innerHTML = `
+            <span>Totale ordine:</span>
+            <strong>€${total.toFixed(2)}</strong>
+        `;
+        container.appendChild(totalRow);
+
+        updateFloatingCartButton();
+    }
+
+    // Floating cart button logic
+    const floatBtn = document.getElementById("floating-cart-btn");
+    const orderModal = document.getElementById("orderModal");
+    const cartContainer = document.getElementById("merch-cart-items") ? document.getElementById("merch-cart-items").closest(".merch-card") : null;
+    let isCartIntersecting = false;
+
+    function updateFloatingCartButtonVisibility() {
+        if (!floatBtn) return;
+        const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+        const isOrderModalOpen = window.location.hash === "#orderModal";
+        if (totalItems > 0 && !isCartIntersecting && isOrderModalOpen) {
+            floatBtn.classList.add("visible");
+        } else {
+            floatBtn.classList.remove("visible");
+        }
+    }
+
+    function updateFloatingCartButton() {
+        if (!floatBtn) return;
+        const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+        const countSpan = floatBtn.querySelector(".floating-cart-count");
+        if (countSpan) {
+            countSpan.textContent = totalItems;
+        }
+        
+        updateFloatingCartButtonVisibility();
+
+        if (totalItems > 0) {
+            // Pulse animation
+            floatBtn.classList.remove("pulse");
+            void floatBtn.offsetWidth; // trigger reflow
+            floatBtn.classList.add("pulse");
+        }
+    }
+
+    if (floatBtn && orderModal && cartContainer) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isCartIntersecting = entry.isIntersecting;
+                updateFloatingCartButtonVisibility();
+            });
+        }, {
+            root: orderModal,
+            threshold: 0.1
+        });
+        observer.observe(cartContainer);
+
+        floatBtn.addEventListener("click", () => {
+            cartContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        window.addEventListener("popstate", updateFloatingCartButtonVisibility);
+        window.addEventListener("hashchange", updateFloatingCartButtonVisibility);
     }
 
     window.removeCartItem = function (index) {
