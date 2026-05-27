@@ -1040,23 +1040,25 @@ a {
 
 .merch-button {
     width: 100%;
-    background: linear-gradient(135deg, #ff9f0a 0%, #f7630c 100%);
-    color: black;
+    background-color: #222222;
+    border: 1px solid #f5a623;
+    color: white !important;
     font-weight: bold;
-    padding: 0.85rem;
-    border: none;
+    padding: 0.9rem;
     border-radius: 8px;
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin-top: 10px;
     font-family: inherit;
-    box-shadow: 0 4px 12px rgba(247, 99, 12, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .merch-button:hover {
+    background-color: #444444;
+    border-color: #f5a623;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(247, 99, 12, 0.4);
+    box-shadow: 0 6px 16px rgba(245, 166, 35, 0.15);
 }
 
 .merch-button:active {
