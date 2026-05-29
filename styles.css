@@ -1011,6 +1011,19 @@ a {
     background: #fff;
 }
 
+@media (max-width: 768px) {
+    .merch-product-img {
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+        height: auto;
+        display: block;
+        margin: 0 auto 1rem auto;
+        border-radius: 0.5rem;
+        background: #fff;
+    }
+}
+
 .merch-input,
 .merch-phone-field {
     width: 100%;
