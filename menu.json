@@ -980,7 +980,7 @@
       "title": "SALSA CHEDDAR E BACON",
       "price": 7,
       "ingredients": "salsa cheddar calda e bacon",
-      "thumb": "./img/menu/salse/salsacheddar170.webp",
+      "thumb": "./img/menu/salse/salsaCheddarBacon.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -992,7 +992,7 @@
       "title": "SALSA CHEDDAR E BACON",
       "price": 7,
       "ingredients": "salsa cheddar calda e bacon sg",
-      "thumb": "./img/menu/salse/salsacheddar170.webp",
+      "thumb": "./img/menu/salse/salsaCheddarBacon.webp",
       "available_in": [
         "GLUTENFREE"
       ]
