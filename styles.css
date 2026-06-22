@@ -1051,6 +1051,11 @@ a {
     box-shadow: 0 0 0 3px rgba(255, 159, 10, 0.15);
 }
 
+.merch-input option {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
 .merch-button {
     width: 100%;
     background-color: #222222;
