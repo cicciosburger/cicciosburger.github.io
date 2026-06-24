@@ -12,9 +12,7 @@
   "Tshirt Double Triple": {
     "sizes": [
       "S",
-      "M",
-      "L",
-      "XL"
+      "M"
     ],
     "price": 20.00,
     "image": "img/shop/tshirtDoubleTriple.webp"
