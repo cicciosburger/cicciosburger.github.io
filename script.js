@@ -1,6 +1,7 @@
 let mainUrl = 'https://api.cicciosburger.it'
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
+let recaptchaCopWidgetId;
 let foodtruckMap;
 let leafletLoaded = false;
 let leafletLoading = false;
@@ -718,81 +719,90 @@ document.addEventListener("DOMContentLoaded", function () {
         document.head.appendChild(style);
     }
 
-    const otpInputs = document.querySelectorAll('.otp-input');
+    function setupOTPFocus(selector) {
+        const inputs = document.querySelectorAll(selector);
+        if (inputs.length > 0) {
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', (e) => {
+                    const value = e.target.value;
+                    if (!/^\d$/.test(value)) {
+                        e.target.value = '';
+                        return;
+                    }
+                    if (value && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
 
-    if (otpInputs.length > 0) {
-        otpInputs.forEach((input, index) => {
-            input.addEventListener('input', (e) => {
-                const value = e.target.value;
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                    if (e.key === 'ArrowLeft' && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                    if (e.key === 'ArrowRight' && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
 
-                if (!/^\d$/.test(value)) {
-                    e.target.value = '';
-                    return;
-                }
+                input.addEventListener('paste', (e) => {
+                    const pastedData = (e.clipboardData || window.clipboardData).getData('text').trim();
+                    if (/^\d{6}$/.test(pastedData)) {
+                        e.preventDefault();
+                        pastedData.split('').forEach((char, i) => {
+                            if (inputs[i]) {
+                                inputs[i].value = char;
+                            }
+                        });
+                        inputs[5].focus();
+                    }
+                });
 
-                if (value && index < otpInputs.length - 1) {
-                    otpInputs[index + 1].focus();
-                }
+                input.addEventListener('click', (e) => {
+                    e.target.select();
+                });
             });
-
-            input.addEventListener('keydown', (e) => {
-                if (e.key === 'Backspace' && !e.target.value && index > 0) {
-                    otpInputs[index - 1].focus();
-                }
-
-                if (e.key === 'ArrowLeft' && index > 0) {
-                    otpInputs[index - 1].focus();
-                }
-                if (e.key === 'ArrowRight' && index < otpInputs.length - 1) {
-                    otpInputs[index + 1].focus();
-                }
-            });
-
-            input.addEventListener('paste', (e) => {
-                const pastedData = (e.clipboardData || window.clipboardData).getData('text').trim();
-
-                if (/^\d{6}$/.test(pastedData)) {
-                    e.preventDefault();
-                    pastedData.split('').forEach((char, i) => {
-                        if (otpInputs[i]) {
-                            otpInputs[i].value = char;
-                        }
-                    });
-                    otpInputs[5].focus();
-                }
-            });
-
-            input.addEventListener('click', (e) => {
-                e.target.select();
-            });
-        });
+        }
+        return inputs;
     }
 
-    function getOTPValue() {
-        return Array.from(otpInputs)
+    const otpInputs = setupOTPFocus('.otp-input');
+    const copOtpInputs = setupOTPFocus('.cop-otp-input');
+
+    function getOTPValue(inputs) {
+        return Array.from(inputs)
             .map(input => input.value)
             .join('');
     }
 
-    function resetOTP() {
-        otpInputs.forEach(input => {
+    function resetOTP(inputs) {
+        inputs.forEach(input => {
             input.value = '';
             input.classList.remove('error');
         });
-        if (otpInputs[0]) otpInputs[0].focus();
+        if (inputs[0]) inputs[0].focus();
+    }
+
+    function showOTPError(inputs) {
+        inputs.forEach(input => {
+            input.classList.add('error');
+        });
+        setTimeout(() => {
+            inputs.forEach(input => {
+                input.classList.remove('error');
+            });
+        }, 300);
     }
 
     document.getElementById('back-to-register-btn').addEventListener('click', function () {
         document.getElementById('otp-section').style.display = 'none';
-
         document.getElementById('data-form').style.display = 'flex';
-
         const submitBtn = document.getElementById('submit-button');
         if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.textContent = "Richiedi tessera";
         }
-
         if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
             try {
                 grecaptcha.reset(recaptchaWidgetId);
@@ -800,30 +810,46 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.warn("Recaptcha reset failed", e);
             }
         }
-
-        resetOTP();
+        resetOTP(otpInputs);
     });
 
-    function showOTPError() {
-        otpInputs.forEach(input => {
-            input.classList.add('error');
+    const copBackBtn = document.getElementById('cop-back-to-register-btn');
+    if (copBackBtn) {
+        copBackBtn.addEventListener('click', function () {
+            document.getElementById('cop-otp-section').style.display = 'none';
+            document.getElementById('cop-data-form').style.display = 'flex';
+            const submitBtn = document.getElementById('cop-submit-button');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Richiedi tessera";
+            }
+            if (typeof grecaptcha !== 'undefined' && typeof recaptchaCopWidgetId !== 'undefined') {
+                try {
+                    grecaptcha.reset(recaptchaCopWidgetId);
+                } catch (e) {
+                    console.warn("Recaptcha reset failed", e);
+                }
+            }
+            resetOTP(copOtpInputs);
         });
-        setTimeout(() => {
-            otpInputs.forEach(input => {
-                input.classList.remove('error');
-            });
-        }, 300);
     }
-
 
     const appleWalletURL = getCookie("appleWalletURL");
     const googleWalletURL = getCookie("googleWalletURL");
+    const appleWalletCopURL = getCookie("appleWalletCopURL");
+    const googleWalletCopURL = getCookie("googleWalletCopURL");
 
     const form = document.getElementById("data-form");
     const resultSection = document.getElementById("result");
     const otpSection = document.getElementById("otp-section");
     const verifyOtpBtn = document.getElementById("verify-otp-btn");
     let registrationToken = null;
+
+    const copForm = document.getElementById("cop-data-form");
+    const copResultSection = document.getElementById("cop-result");
+    const copOtpSection = document.getElementById("cop-otp-section");
+    const copVerifyOtpBtn = document.getElementById("cop-verify-otp-btn");
+    let copRegistrationToken = null;
 
     if (appleWalletURL && googleWalletURL) {
         loadSVG('./img/add_to_apple_wallet.svg', 'appleSvgContainer');
@@ -832,102 +858,113 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("appleWalletButton").href = appleWalletURL;
         document.getElementById("googleWalletButton").href = googleWalletURL;
 
-        form.style.display = "none";
+        if (form) form.style.display = "none";
         if (otpSection) otpSection.style.display = "none";
-        resultSection.style.display = "block";
-        return;
+        if (resultSection) resultSection.style.display = "block";
+    }
+
+    if (appleWalletCopURL && googleWalletCopURL) {
+        loadSVG('./img/add_to_apple_wallet.svg', 'cop-appleSvgContainer');
+        loadSVG('./img/add_to_google_wallet.svg', 'cop-googleSvgContainer');
+
+        const appleBtn = document.getElementById("cop-appleWalletButton");
+        const googleBtn = document.getElementById("cop-googleWalletButton");
+        if (appleBtn) appleBtn.href = appleWalletCopURL;
+        if (googleBtn) googleBtn.href = googleWalletCopURL;
+
+        if (copForm) copForm.style.display = "none";
+        if (copOtpSection) copOtpSection.style.display = "none";
+        if (copResultSection) copResultSection.style.display = "block";
     }
 
     const submitButton = document.getElementById("submit-button");
+    if (form) {
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const recaptchaResponse = grecaptcha.getResponse(recaptchaWidgetId);
+            if (!recaptchaResponse) {
+                showError("⚠️ Completa il reCAPTCHA prima di continuare.");
+                return;
+            }
 
-    form.addEventListener("submit", async (event) => {
-        event.preventDefault();
+            submitButton.disabled = true;
+            submitButton.textContent = "Invio in corso...";
 
-        const recaptchaResponse = grecaptcha.getResponse(recaptchaWidgetId);
-        if (!recaptchaResponse) {
-            showError("⚠️ Completa il reCAPTCHA prima di continuare.");
-            return;
-        }
+            const formData = new FormData(form);
+            formData.set("email", formData.get("email").toLowerCase());
 
-        submitButton.disabled = true;
-        submitButton.textContent = "Invio in corso...";
-
-        const formData = new FormData(form);
-        formData.set("email", formData.get("email").toLowerCase());
-
-        const dob = new Date(formData.get("dob"));
-        const today = new Date();
-        const age = today.getFullYear() - dob.getFullYear();
-        if (age < 16 || (age === 16 && today < new Date(dob.setFullYear(dob.getFullYear() + 16))) || age > 100) {
-            showError("Devi avere almeno 16 anni per iscriverti.");
-            submitButton.disabled = false;
-            submitButton.textContent = "Richiedi tessera";
-            return;
-        }
-
-        const phone = formData.get("phone");
-        const fullPhone = `+39${phone}`;
-
-        const data = Object.fromEntries(formData.entries());
-        data.phone = fullPhone;
-
-        try {
-            const response = await fetch(mainUrl + "/api/request-otp", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data)
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                if (response.status === 503) {
-                    showError("Hai effettuato troppi tentativi. Riprova tra qualche minuto.");
-                } else {
-                    showError(errorData.error || "Errore sconosciuto durante la richiesta.");
-                    if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
-                        try {
-                            grecaptcha.reset(recaptchaWidgetId);
-                        } catch (e) {
-                            console.warn("Recaptcha reset failed", e);
-                        }
-                    }
-                }
+            const dob = new Date(formData.get("dob"));
+            const today = new Date();
+            const age = today.getFullYear() - dob.getFullYear();
+            if (age < 16 || (age === 16 && today < new Date(dob.setFullYear(dob.getFullYear() + 16))) || age > 100) {
+                showError("Devi avere almeno 16 anni per iscriverti.");
                 submitButton.disabled = false;
                 submitButton.textContent = "Richiedi tessera";
                 return;
             }
 
-            const result = await response.json();
-            registrationToken = result.registration_token;
+            const phone = formData.get("phone");
+            const fullPhone = `+39${phone}`;
+            const data = Object.fromEntries(formData.entries());
+            data.phone = fullPhone;
 
-            showSuccess(result.message || "Codice di verifica inviato alla tua email!");
-            document.getElementById("user-email-display").textContent = formData.get("email");
+            try {
+                const response = await fetch(mainUrl + "/api/request-otp", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data)
+                });
 
-            setTimeout(() => {
-                form.style.display = "none";
-                if (otpSection) {
-                    otpSection.style.display = "flex";
-                    otpSection.style.flexDirection = "column";
-                    otpSection.style.alignItems = "center";
-                    if (otpInputs[0]) otpInputs[0].focus();
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    if (response.status === 503) {
+                        showError("Hai effettuato troppi tentativi. Riprova tra qualche minuto.");
+                    } else {
+                        showError(errorData.error || "Errore sconosciuto durante la richiesta.");
+                        if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
+                            try {
+                                grecaptcha.reset(recaptchaWidgetId);
+                            } catch (e) {
+                                console.warn("Recaptcha reset failed", e);
+                            }
+                        }
+                    }
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Richiedi tessera";
+                    return;
                 }
-            }, 1000);
 
-        } catch (error) {
-            showError("Errore di connessione: " + error.message);
-            submitButton.disabled = false;
-            submitButton.textContent = "Richiedi tessera";
-        }
-    });
+                const result = await response.json();
+                registrationToken = result.registration_token;
+
+                showSuccess(result.message || "Codice di verifica inviato alla tua email!");
+                document.getElementById("user-email-display").textContent = formData.get("email");
+
+                setTimeout(() => {
+                    form.style.display = "none";
+                    if (otpSection) {
+                        otpSection.style.display = "flex";
+                        otpSection.style.flexDirection = "column";
+                        otpSection.style.alignItems = "center";
+                        resetOTP(otpInputs);
+                    }
+                }, 1000);
+
+            } catch (error) {
+                showError("Errore di connessione: " + error.message);
+                submitButton.disabled = false;
+                submitButton.textContent = "Richiedi tessera";
+            }
+        });
+    }
 
     if (verifyOtpBtn) {
         verifyOtpBtn.addEventListener("click", async () => {
-            const otp = getOTPValue();
-
+            const otp = getOTPValue(otpInputs);
             if (otp.length !== 6) {
-                showOTPError();
+                showOTPError(otpInputs);
                 showError("Inserisci tutte le 6 cifre del codice OTP.");
                 return;
             }
@@ -949,20 +986,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (!verifyResponse.ok) {
                     const errorData = await verifyResponse.json();
-                    showOTPError();
+                    showOTPError(otpInputs);
                     showError(errorData.error || "Codice OTP non valido.");
-                    resetOTP();
+                    resetOTP(otpInputs);
                     if (errorData.error === "Sessione scaduta o non valida. Ricomincia la registrazione." || errorData.error === "Troppi tentativi falliti. Ricomincia la registrazione.") {
                         document.getElementById('otp-section').style.display = 'none';
-
                         document.getElementById('data-form').style.display = 'flex';
-
-                        const submitBtn = document.getElementById('submit-button');
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = "Richiedi tessera";
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                            submitButton.textContent = "Richiedi tessera";
                         }
-
                         if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
                             try {
                                 grecaptcha.reset(recaptchaWidgetId);
@@ -970,7 +1003,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                 console.warn("Recaptcha reset failed", e);
                             }
                         }
-
                     }
                     verifyOtpBtn.disabled = false;
                     verifyOtpBtn.textContent = "Verifica e Registrati";
@@ -978,7 +1010,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 const verifyResult = await verifyResponse.json();
-
                 const appleURL = mainUrl + verifyResult.apple_url;
                 const googleURL = mainUrl + verifyResult.google_url;
 
@@ -986,7 +1017,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 setCookie("googleWalletURL", googleURL, 30);
 
                 showSuccess("✅ Registrazione completata con successo!");
-
                 loadSVG('./img/add_to_apple_wallet.svg', 'appleSvgContainer');
                 loadSVG('./img/add_to_google_wallet.svg', 'googleSvgContainer');
 
@@ -1002,6 +1032,168 @@ document.addEventListener("DOMContentLoaded", function () {
                 showError("Errore durante la verifica: " + error.message);
                 verifyOtpBtn.disabled = false;
                 verifyOtpBtn.textContent = "Verifica e Registrati";
+            }
+        });
+    }
+
+    // Cop Card Form Submit Listener
+    const copSubmitButton = document.getElementById("cop-submit-button");
+    if (copForm) {
+        copForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const recaptchaResponse = grecaptcha.getResponse(recaptchaCopWidgetId);
+            if (!recaptchaResponse) {
+                showError("⚠️ Completa il reCAPTCHA prima di continuare.");
+                return;
+            }
+
+            copSubmitButton.disabled = true;
+            copSubmitButton.textContent = "Invio in corso...";
+
+            const formData = new FormData(copForm);
+            formData.set("email", formData.get("email").toLowerCase());
+
+            const dob = new Date(formData.get("dob"));
+            const today = new Date();
+            const age = today.getFullYear() - dob.getFullYear();
+            if (age < 16 || (age === 16 && today < new Date(dob.setFullYear(dob.getFullYear() + 16))) || age > 100) {
+                showError("Devi avere almeno 16 anni per iscriverti.");
+                copSubmitButton.disabled = false;
+                copSubmitButton.textContent = "Richiedi tessera";
+                return;
+            }
+
+            const phone = formData.get("phone");
+            const fullPhone = `+39${phone}`;
+            const data = Object.fromEntries(formData.entries());
+            data.phone = fullPhone;
+            data.fdo = true; // Flag for Cop Card!
+
+            try {
+                const response = await fetch(mainUrl + "/api/request-otp", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    if (response.status === 503) {
+                        showError("Hai effettuato troppi tentativi. Riprova tra qualche minuto.");
+                    } else {
+                        showError(errorData.error || "Errore sconosciuto durante la richiesta.");
+                        if (typeof grecaptcha !== 'undefined' && typeof recaptchaCopWidgetId !== 'undefined') {
+                            try {
+                                grecaptcha.reset(recaptchaCopWidgetId);
+                            } catch (e) {
+                                console.warn("Recaptcha reset failed", e);
+                            }
+                        }
+                    }
+                    copSubmitButton.disabled = false;
+                    copSubmitButton.textContent = "Richiedi tessera";
+                    return;
+                }
+
+                const result = await response.json();
+                copRegistrationToken = result.registration_token;
+
+                showSuccess(result.message || "Codice di verifica inviato alla tua email!");
+                document.getElementById("cop-user-email-display").textContent = formData.get("email");
+
+                setTimeout(() => {
+                    copForm.style.display = "none";
+                    if (copOtpSection) {
+                        copOtpSection.style.display = "flex";
+                        copOtpSection.style.flexDirection = "column";
+                        copOtpSection.style.alignItems = "center";
+                        resetOTP(copOtpInputs);
+                    }
+                }, 1000);
+
+            } catch (error) {
+                showError("Errore di connessione: " + error.message);
+                copSubmitButton.disabled = false;
+                copSubmitButton.textContent = "Richiedi tessera";
+            }
+        });
+    }
+
+    // Cop Card OTP Verify listener
+    if (copVerifyOtpBtn) {
+        copVerifyOtpBtn.addEventListener("click", async () => {
+            const otp = getOTPValue(copOtpInputs);
+            if (otp.length !== 6) {
+                showOTPError(copOtpInputs);
+                showError("Inserisci tutte le 6 cifre del codice OTP.");
+                return;
+            }
+
+            copVerifyOtpBtn.disabled = true;
+            copVerifyOtpBtn.textContent = "Verifica in corso...";
+
+            try {
+                const verifyResponse = await fetch(mainUrl + "/api/verify-otp-register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        registration_token: copRegistrationToken,
+                        otp: otp
+                    })
+                });
+
+                if (!verifyResponse.ok) {
+                    const errorData = await verifyResponse.json();
+                    showOTPError(copOtpInputs);
+                    showError(errorData.error || "Codice OTP non valido.");
+                    resetOTP(copOtpInputs);
+                    if (errorData.error === "Sessione scaduta o non valida. Ricomincia la registrazione." || errorData.error === "Troppi tentativi falliti. Ricomincia la registrazione.") {
+                        document.getElementById('cop-otp-section').style.display = 'none';
+                        document.getElementById('cop-data-form').style.display = 'flex';
+                        if (copSubmitButton) {
+                            copSubmitButton.disabled = false;
+                            copSubmitButton.textContent = "Richiedi tessera";
+                        }
+                        if (typeof grecaptcha !== 'undefined' && typeof recaptchaCopWidgetId !== 'undefined') {
+                            try {
+                                grecaptcha.reset(recaptchaCopWidgetId);
+                            } catch (e) {
+                                console.warn("Recaptcha reset failed", e);
+                            }
+                        }
+                    }
+                    copVerifyOtpBtn.disabled = false;
+                    copVerifyOtpBtn.textContent = "Verifica e Registrati";
+                    return;
+                }
+
+                const verifyResult = await verifyResponse.json();
+                const appleURL = mainUrl + verifyResult.apple_url;
+                const googleURL = mainUrl + verifyResult.google_url;
+
+                setCookie("appleWalletCopURL", appleURL, 30);
+                setCookie("googleWalletCopURL", googleURL, 30);
+
+                showSuccess("✅ Registrazione completata con successo!");
+                loadSVG('./img/add_to_apple_wallet.svg', 'cop-appleSvgContainer');
+                loadSVG('./img/add_to_google_wallet.svg', 'cop-googleSvgContainer');
+
+                document.getElementById("cop-appleWalletButton").href = appleURL;
+                document.getElementById("cop-googleWalletButton").href = googleURL;
+
+                setTimeout(() => {
+                    if (copOtpSection) copOtpSection.style.display = "none";
+                    copResultSection.style.display = "block";
+                }, 1500);
+
+            } catch (error) {
+                showError("Errore durante la verifica: " + error.message);
+                copVerifyOtpBtn.disabled = false;
+                copVerifyOtpBtn.textContent = "Verifica e Registrati";
             }
         });
     }
@@ -1324,16 +1516,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const acceptCookiesBtn = document.getElementById("acceptCookiesBtn");
     const rejectCookiesBtn = document.getElementById("rejectCookiesBtn");
     const cookieWarning = document.getElementById("cookieMsg");
+    const copCookieWarning = document.getElementById("copCookieMsg");
     const cookieOrderWarning = document.getElementById("cookieOrderMsg");
     const dataForm = document.getElementById("data-form");
+    const copDataForm = document.getElementById("cop-data-form");
     const orderForm = document.getElementById("merch-active-content");
 
     let recaptchaLoaded = false;
 
-
     function checkCookieConsent() {
         if (!localStorage.getItem("cookieConsent")) {
-            cookieConsentBanner.style.display = "block";
+            if (cookieConsentBanner) cookieConsentBanner.style.display = "block";
             disableForm();
         } else {
             enableForm();
@@ -1342,21 +1535,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const appleWalletURL = getCookie("appleWalletURL");
     const googleWalletURL = getCookie("googleWalletURL");
+    const appleWalletCopURL = getCookie("appleWalletCopURL");
+    const googleWalletCopURL = getCookie("googleWalletCopURL");
 
     function enableForm() {
         if (!appleWalletURL && !googleWalletURL) {
-            dataForm.style.display = "flex";
+            if (dataForm) dataForm.style.display = "flex";
         }
-        orderForm.style.display = "block";
-        cookieWarning.style.display = "none";
-        cookieOrderWarning.style.display = "none";
+        if (!appleWalletCopURL && !googleWalletCopURL) {
+            if (copDataForm) copDataForm.style.display = "flex";
+        }
+        if (orderForm) orderForm.style.display = "block";
+        if (cookieWarning) cookieWarning.style.display = "none";
+        if (copCookieWarning) copCookieWarning.style.display = "none";
+        if (cookieOrderWarning) cookieOrderWarning.style.display = "none";
     }
 
     function disableForm() {
-        dataForm.style.display = "none";
-        orderForm.style.display = "none";
-        cookieWarning.style.display = "block";
-        cookieOrderWarning.style.display = "block";
+        if (dataForm) dataForm.style.display = "none";
+        if (copDataForm) copDataForm.style.display = "none";
+        if (orderForm) orderForm.style.display = "none";
+        if (cookieWarning) cookieWarning.style.display = "block";
+        if (copCookieWarning) copCookieWarning.style.display = "block";
+        if (cookieOrderWarning) cookieOrderWarning.style.display = "block";
     }
 
     function loadRecaptcha() {
@@ -1373,6 +1574,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.onRecaptchaLoad = function () {
         const recaptchaContainer = document.getElementById("recaptcha-container");
         const recaptchaContainerOrder = document.getElementById("recaptcha-container-order");
+        const recaptchaContainerCop = document.getElementById("recaptcha-container-cop");
         if (recaptchaContainer) {
             recaptchaWidgetId = grecaptcha.render(recaptchaContainer, {
                 sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
@@ -1380,6 +1582,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (recaptchaContainerOrder) {
             recaptchaOrderWidgetId = grecaptcha.render(recaptchaContainerOrder, {
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
+            });
+        }
+        if (recaptchaContainerCop) {
+            recaptchaCopWidgetId = grecaptcha.render(recaptchaContainerCop, {
                 sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
             });
         }
@@ -1419,7 +1626,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                if (modalId === "membershipModal" || modalId === "orderModal") {
+                if (modalId === "membershipModal" || modalId === "copCardModal" || modalId === "orderModal") {
                     if (!localStorage.getItem("cookieConsent")) {
                         disableForm();
                     } else {
@@ -1455,7 +1662,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cookieConsentBanner.style.display = "none";
         enableForm();
         const hash = window.location.hash.substring(1);
-        if (hash === "membershipModal" || hash === "orderModal") {
+        if (hash === "membershipModal" || hash === "copCardModal" || hash === "orderModal") {
             loadRecaptcha();
         }
     });
