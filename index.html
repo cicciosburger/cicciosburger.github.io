@@ -488,6 +488,142 @@
                 </div>
             </div>
         </div>
+
+        <!-- Feedback Modal -->
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content" style="max-width: 600px; margin: 0 auto; padding: 20px; text-align: left;">
+                <span class="close-modal" data-target="home">
+                    <svg style="width: 24px; height: 18px;" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" />
+                    </svg>
+                    <span>Torna Indietro</span>
+                </span>
+
+                <!-- Contenitore di Stato/Errore Scontrino (Interno al Box) -->
+                <div id="receiptStatusContainer" style="display: none; text-align: center; padding: 40px 10px;">
+                    <h2 id="receiptStatusTitle" style="color: var(--primary-color); margin-bottom: 15px; font-size: 2rem;">Verifica Scontrino...</h2>
+                    <p id="receiptStatusMessage" style="color: var(--text-muted); font-size: 1.25rem; line-height: 1.5;">Attendere prego.</p>
+                </div>
+                
+                <!-- Wrapper per il form di feedback vero e proprio -->
+                <div id="feedbackFormWrapper" style="display: none;">
+                    <h1 style="margin-top: 20px; margin-bottom: 5px; font-size: clamp(2.2rem, 6vw, 3.5rem); white-space: nowrap; color: var(--primary-color); text-align: center;">Lascia un Feedback</h1>
+                    <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 1.2rem; line-height: 1.5; text-align: center;">Grazie per aver mangiato con noi, aiutaci a migliorare scrivendo come è andata la tua esperienza.</p>
+                    <div id="loyaltyBanner" class="loyalty-banner"></div>
+                    
+                    <form id="feedbackForm" style="margin-top: 20px;">
+                        <div class="form-group">
+                            <label for="order_type">Tipo di ordine</label>
+                            <select id="order_type" name="order_type" required>
+                                <option value="" disabled selected>Come hai ordinato?</option>
+                                <option value="Al banco">Al banco</option>
+                                <option value="Asporto(Takeaway)">Asporto(Takeaway)</option>
+                                <option value="Consegna a domicilio(Foodlab)">Consegna a domicilio(Foodlab)</option>
+                                <option value="Glovo">Glovo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Qualità del cibo</label>
+                            <div class="star-rating small-stars" id="foodRating">
+                                <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+                            </div>
+                            <input type="hidden" name="food_quality" id="food_quality" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Servizio e cortesia</label>
+                            <div class="star-rating small-stars" id="serviceRating">
+                                <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+                            </div>
+                            <input type="hidden" name="service_quality" id="service_quality" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Velocità</label>
+                            <div class="star-rating small-stars" id="speedRating">
+                                <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+                            </div>
+                            <input type="hidden" name="speed_quality" id="speed_quality" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Pulizia</label>
+                            <div class="star-rating small-stars" id="cleanlinessRating">
+                                <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+                            </div>
+                            <input type="hidden" name="cleanliness" id="cleanliness" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Voto Generale</label>
+                            <div class="star-rating" id="starsRating">
+                                <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+                            </div>
+                            <input type="hidden" name="stars" id="stars" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="review">Dicci di più sulla tua esperienza (Obbligatorio, min. 15 caratteri)</label>
+                            <textarea id="review" name="review" rows="4" placeholder="Cosa ti è piaciuto di più? Cosa possiamo migliorare? (Almeno 15 caratteri)" required minlength="15"></textarea>
+                            <div class="char-counter"><span id="charCount">0</span>/500</div>
+                        </div>
+
+                        <!-- Email di contatto opzionale (mostrato solo se non c'è tessera) -->
+                        <div class="form-group" id="emailContactGroup" style="display: none;">
+                            <label for="contact_email">Email per essere ricontattato (Opzionale)</label>
+                            <input type="email" id="contact_email" name="contact_email" placeholder="Inserisci la tua email (es. nome@esempio.com)">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Allega Foto (Opzionale, max 3 foto da 5MB)</label>
+                            <div class="file-dropzone" id="dropzone">
+                                <input type="file" id="photos" name="photos" accept=".png, .jpg, .jpeg, .heif" multiple style="display: none;">
+                                <div class="dropzone-prompt" id="dropzonePrompt">
+                                    <span class="upload-icon">📸</span>
+                                    <span>Premi per allegare foto <br><small style="font-size: 0.8rem; opacity: 0.7;">(o trascinale qui)</small></span>
+                                </div>
+                                <div id="photoPreviewContainer" class="photo-grid-preview"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group checkbox-group" style="display: flex; align-items: start; gap: 10px; margin-bottom: 10px; text-align: left;">
+                            <input type="checkbox" id="privacyAccepted" name="privacyAccepted" required style="margin-top: 4px; width: auto;">
+                            <label for="privacyAccepted" style="font-weight: 300; font-size: 0.9rem; color: #aaaaaa;">Ho letto e accetto la <a href="https://docs.google.com/document/d/17I3MrwbmTbzxU1T4VLjU-m9LI5aEyYDeWKVzKXiCTdg/preview" target="_blank" style="color: #ff9f0a; text-decoration: underline;">Privacy Policy</a> *</label>
+                        </div>
+
+                        <div class="form-group checkbox-group" style="display: flex; align-items: start; gap: 10px; margin-bottom: 20px; text-align: left;">
+                            <input type="checkbox" id="consentContact" name="consentContact" style="margin-top: 4px; width: auto;">
+                            <label for="consentContact" style="font-weight: 300; font-size: 0.9rem; color: #aaaaaa;">Acconsento a essere ricontattato via email o telefono per chiarimenti sul mio feedback (Opzionale)</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Invia Feedback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for 5 Stars -->
+        <div id="googleMapsModal" class="modal-overlay">
+            <div class="modal-content glass-container" style="max-width: 500px; margin: 0 auto; text-align: center;">
+                <h2>Grazie per la recensione! 🎉</h2>
+                <p id="earnedPointsMessage" style="color: #2ecc71; font-weight: bold; margin-bottom: 10px; font-size: 1.15rem;"></p>
+                <p>Saremo molto felici se potessi aggiungere una recensione sulla nostra pagina di Google Maps. Ci aiuterebbe tantissimo!</p>
+                <div class="review-preview">
+                    <p id="reviewTextPreview"></p>
+                    <button type="button" id="copyReviewBtn" class="btn btn-secondary">Copia Recensione</button>
+                </div>
+                <a href="https://g.page/r/your-google-link" target="_blank" class="btn btn-secondary mt-1" id="leaveGoogleReviewBtn" style="display: block; text-align: center;">Lascia recensione su Google (+5 Punti)</a>
+                <button class="close-modal" id="closeModalBtn">&times;</button>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay">
+            <div class="spinner"></div>
+        </div>
+
         <div style='padding:10px;'></div>
 
 

@@ -1,4 +1,6 @@
-let mainUrl = 'https://api.cicciosburger.it'
+let mainUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:'
+    ? 'http://127.0.0.1:8001' 
+    : 'https://api.cicciosburger.it';
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
 let foodtruckMap;
@@ -1391,13 +1393,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const landing = document.getElementById('landing-page');
 
         document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+        
+        // Pulisci gli overlay del feedback se usciamo dalla rotta di feedback
+        if (!hash.startsWith('feedback')) {
+            const lOverlay = document.getElementById('loadingOverlay');
+            const gOverlay = document.getElementById('googleMapsModal');
+            if (lOverlay) lOverlay.classList.remove('active');
+            if (gOverlay) gOverlay.classList.remove('active');
+        }
 
         if (hash) {
             let modalId = hash;
             let doSpecialRoute = false;
             let newStore = null;
 
-            if (hash === 'foodtruck' || hash === 'noglutine') {
+            // Integrazione Gestione Feedback Modal
+            let idScontrino = null;
+            if (hash.startsWith('feedback')) {
+                modalId = 'feedbackModal';
+                const paramIndex = hash.indexOf('?');
+                if (paramIndex !== -1) {
+                    const params = new URLSearchParams(hash.substring(paramIndex + 1));
+                    idScontrino = params.get('id_scontrino');
+                }
+            } else if (hash === 'foodtruck' || hash === 'noglutine') {
                 modalId = 'productListingPage';
                 doSpecialRoute = true;
                 newStore = hash === 'foodtruck' ? "FOODTRUCK" : "GLUTENFREE";
@@ -1412,6 +1431,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modal) {
                 if (landing) landing.style.display = 'none';
                 modal.style.display = 'block';
+
+                if (modalId === 'feedbackModal') {
+                    if (idScontrino) {
+                        verifyReceipt(idScontrino);
+                    } else {
+                        showReceiptError("Scontrino Mancante", "Per favore, inquadra il QR Code sullo scontrino per lasciare un feedback.");
+                    }
+                }
 
                 if (doSpecialRoute) {
                     if (typeof window.generateMenu === 'function') {
@@ -1444,9 +1471,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0);
     };
 
-    window.addEventListener('popstate', window.handleRouting);
 
-    window.handleRouting();
 
 
 
@@ -1490,5 +1515,555 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- INTEGRATO DA FEEDBACK PROJECT ---
+    const feedbackFormEl = document.getElementById('feedbackForm');
+    const reviewInputEl = document.getElementById('review');
+    const charCountEl = document.getElementById('charCount');
+    const loadingOverlayEl = document.getElementById('loadingOverlay');
+    const googleMapsModalEl = document.getElementById('googleMapsModal');
+    const closeModalBtnEl = document.getElementById('closeModalBtn');
+    const copyReviewBtnEl = document.getElementById('copyReviewBtn');
+    const reviewTextPreviewEl = document.getElementById('reviewTextPreview');
+    const leaveGoogleReviewBtnEl = document.getElementById('leaveGoogleReviewBtn');
+    
+    const photosInputEl = document.getElementById('photos');
+    const photoPreviewContainerEl = document.getElementById('photoPreviewContainer');
+    const dropzoneEl = document.getElementById('dropzone');
+    const dropzonePromptEl = document.getElementById('dropzonePrompt');
+
+    const receiptStatusContainerEl = document.getElementById('receiptStatusContainer');
+    const feedbackFormWrapperEl = document.getElementById('feedbackFormWrapper');
+    const receiptStatusTitleEl = document.getElementById('receiptStatusTitle');
+    const receiptStatusMessageEl = document.getElementById('receiptStatusMessage');
+
+    let validFilesToUpload = [];
+    let currentReceiptId = null;
+    let currentBonusToken = null;
+    let currentUploadToken = null;
+    let currentShopId = null;
+
+    function showReceiptError(title, message) {
+        if (receiptStatusTitleEl) {
+            receiptStatusTitleEl.textContent = title;
+            receiptStatusTitleEl.style.color = '#ef4444';
+        }
+        if (receiptStatusMessageEl) receiptStatusMessageEl.textContent = message;
+        if (receiptStatusContainerEl) receiptStatusContainerEl.style.display = 'block';
+        if (feedbackFormWrapperEl) feedbackFormWrapperEl.style.display = 'none';
+    }
+
+    async function verifyReceipt(id) {
+        if (!receiptStatusTitleEl || !receiptStatusMessageEl || !receiptStatusContainerEl || !feedbackFormWrapperEl) return;
+        
+        receiptStatusTitleEl.textContent = "Verifica Scontrino...";
+        receiptStatusTitleEl.style.color = 'white'; // reset color
+        receiptStatusMessageEl.textContent = "Controllo validità e data...";
+        receiptStatusContainerEl.style.display = 'block';
+        feedbackFormWrapperEl.style.display = 'none';
+        
+        // 1. Pre-validazione Front-end Data
+        try {
+            if (id.length < 62) throw new Error("ID Scontrino troppo corto o malformato");
+            
+            const dateStr = id.substring(43, 51);
+            const dd = parseInt(dateStr.substring(0, 2), 10);
+            const mm = parseInt(dateStr.substring(2, 4), 10);
+            const yyyy = parseInt(dateStr.substring(4, 8), 10);
+            
+            const timeStr = id.substring(51, 57);
+            const hh = parseInt(timeStr.substring(0, 2), 10);
+            const mi = parseInt(timeStr.substring(2, 4), 10);
+            const ss = parseInt(timeStr.substring(4, 6), 10);
+            
+            const receiptDateTime = new Date(yyyy, mm - 1, dd, hh, mi, ss);
+            const now = new Date();
+            
+            const diffMs = now - receiptDateTime;
+            const diffHours = diffMs / (1000 * 60 * 60);
+            
+            if (diffHours > 24 || diffHours < -0.25) { // 24 ore max, tolleranza di 15 minuti per disallineamenti di orologio
+                showReceiptError("Scontrino Scaduto", "I feedback possono essere inviati solo entro 24 ore dall'emissione dello scontrino.");
+                return;
+            }
+        } catch (e) {
+            showReceiptError("Errore", "Scontrino malformato.");
+            return;
+        }
+
+        // 2. Validazione Server / ZMENU
+        try {
+            const response = await fetch(`${mainUrl}/v1/feedback/verify-receipt/${id}`);
+            const data = await response.json();
+
+            if (!response.ok) {
+                showReceiptError("Errore Scontrino", data.detail || "Impossibile verificare lo scontrino.");
+                return;
+            }
+
+            // Scontrino Valido
+            currentReceiptId = id;
+            currentUploadToken = data.upload_token; // Salva token di caricamento foto
+            currentShopId = data.shop_id; // Salva lo shop_id dello scontrino
+            
+            receiptStatusContainerEl.style.display = 'none';
+            feedbackFormWrapperEl.style.display = 'block';
+            
+            const emailContactGroup = document.getElementById('emailContactGroup');
+            if (emailContactGroup) {
+                emailContactGroup.style.display = data.has_loyalty_card ? 'none' : 'block';
+            }
+            
+            const loyaltyBanner = document.getElementById('loyaltyBanner');
+            if (loyaltyBanner) {
+                if (data.has_loyalty_card) {
+                    if (!data.min_amount_reached) {
+                        loyaltyBanner.innerHTML = "ℹ️ Non hai raggiunto l'ordine minimo (10€) per ricevere punti bonus per il feedback, ma siamo grati per la tua recensione! ❤️";
+                        loyaltyBanner.style.backgroundColor = "rgba(52, 152, 219, 0.12)";
+                        loyaltyBanner.style.color = "#2980b9";
+                        loyaltyBanner.style.border = "1px solid rgba(52, 152, 219, 0.25)";
+                    } else if (data.eligible_for_points) {
+                        loyaltyBanner.innerHTML = "🎁 Riceverai <strong>10 Punti Fedeltà</strong> per la tua prima recensione di oggi!";
+                        loyaltyBanner.style.backgroundColor = "rgba(46, 204, 113, 0.15)";
+                        loyaltyBanner.style.color = "#27ae60";
+                        loyaltyBanner.style.border = "1px solid rgba(46, 204, 113, 0.3)";
+                    } else {
+                        loyaltyBanner.innerHTML = "Hai già inviato un feedback oggi. Non riceverai punti aggiuntivi, ma siamo grati della tua preziosa recensione! ❤️";
+                        loyaltyBanner.style.backgroundColor = "rgba(243, 156, 18, 0.15)";
+                        loyaltyBanner.style.color = "#d35400";
+                        loyaltyBanner.style.border = "1px solid rgba(243, 156, 18, 0.3)";
+                    }
+                    loyaltyBanner.style.display = 'block';
+                } else {
+                    loyaltyBanner.innerHTML = "ℹ️ Non abbiamo rilevato una tessera valida per questo ordine. Ti ricordiamo che puoi creare una tessera su <a href='https://cicciosburger.it' target='_blank' style='color: inherit; text-decoration: underline; font-weight: bold;'>cicciosburger.it</a>";
+                    loyaltyBanner.style.backgroundColor = "rgba(52, 152, 219, 0.12)";
+                    loyaltyBanner.style.color = "#2980b9";
+                    loyaltyBanner.style.border = "1px solid rgba(52, 152, 219, 0.25)";
+                    loyaltyBanner.style.display = 'block';
+                } 
+            }
+
+        } catch (error) {
+            showReceiptError("Errore di Connessione", "Impossibile collegarsi al server.");
+        }
+    }
+
+    function setupStarRating(containerId, inputId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const input = document.getElementById(inputId);
+        const stars = container.querySelectorAll('.star');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const value = star.getAttribute('data-value');
+                input.value = value;
+                updateStars(stars, value);
+                const groupEl = container.closest('.form-group');
+                if (groupEl) {
+                    groupEl.classList.remove('invalid-rating');
+                }
+            });
+
+            star.addEventListener('mouseover', () => {
+                const value = star.getAttribute('data-value');
+                updateStars(stars, value, true);
+            });
+
+            star.addEventListener('mouseout', () => {
+                updateStars(stars, input.value);
+            });
+        });
+    }
+
+    function updateStars(starsNodeList, value, hover = false) {
+        starsNodeList.forEach(star => {
+            const starValue = star.getAttribute('data-value');
+            if (starValue <= value) {
+                star.classList.add(hover ? 'hover' : 'active');
+            } else {
+                star.classList.remove('hover', 'active');
+            }
+        });
+        if (!hover) {
+            starsNodeList.forEach(star => star.classList.remove('hover'));
+        }
+    }
+
+    if (feedbackFormEl) {
+        setupStarRating('starsRating', 'stars');
+        setupStarRating('foodRating', 'food_quality');
+        setupStarRating('serviceRating', 'service_quality');
+        setupStarRating('speedRating', 'speed_quality');
+        setupStarRating('cleanlinessRating', 'cleanliness');
+
+        if (reviewInputEl && charCountEl) {
+            reviewInputEl.addEventListener('input', () => {
+                charCountEl.textContent = reviewInputEl.value.length;
+            });
+        }
+
+        if (dropzoneEl && photosInputEl && photoPreviewContainerEl) {
+            dropzoneEl.addEventListener('click', (e) => {
+                if (!photoPreviewContainerEl.contains(e.target)) {
+                    photosInputEl.click();
+                }
+            });
+
+            photoPreviewContainerEl.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            dropzoneEl.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropzoneEl.classList.add('dragover');
+            });
+
+            ['dragleave', 'dragend', 'drop'].forEach(type => {
+                dropzoneEl.addEventListener(type, () => {
+                    dropzoneEl.classList.remove('dragover');
+                });
+            });
+
+            dropzoneEl.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const files = Array.from(e.dataTransfer.files);
+                handleFilesSelection(files);
+            });
+
+            photosInputEl.addEventListener('change', () => {
+                const files = Array.from(photosInputEl.files);
+                handleFilesSelection(files);
+            });
+        }
+    }
+
+    function handleFilesSelection(files) {
+        let errorMsg = "";
+        if (validFilesToUpload.length + files.length > 3) {
+            errorMsg = "⚠️ Puoi caricare al massimo 3 foto complessive.";
+            renderPhotoGrid(errorMsg);
+            return;
+        }
+
+        files.forEach(file => {
+            const sizeMB = file.size / (1024 * 1024);
+            if (sizeMB > 5) {
+                errorMsg = `❌ "${file.name}" supera il limite consentito di 5MB.`;
+            } else if (!validFilesToUpload.some(f => f.name === file.name && f.size === file.size)) {
+                validFilesToUpload.push(file);
+            }
+        });
+
+        renderPhotoGrid(errorMsg);
+    }
+
+    function renderPhotoGrid(errorMsg = "") {
+        if (!photoPreviewContainerEl) return;
+        photoPreviewContainerEl.innerHTML = '';
+        
+        validFilesToUpload.forEach((file, index) => {
+            const card = document.createElement('div');
+            card.className = 'photo-card';
+            
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(file);
+            img.onload = () => URL.revokeObjectURL(img.src);
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.type = 'button';
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.innerHTML = '&times;';
+            deleteBtn.onclick = (e) => {
+                e.stopPropagation();
+                removeFile(index);
+            };
+            
+            card.appendChild(img);
+            card.appendChild(deleteBtn);
+            photoPreviewContainerEl.appendChild(card);
+        });
+
+        if (dropzonePromptEl) {
+            if (validFilesToUpload.length >= 3) {
+                dropzonePromptEl.style.display = 'none';
+            } else {
+                dropzonePromptEl.style.display = 'flex';
+            }
+        }
+
+        if (errorMsg) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'photo-error-message';
+            errorDiv.textContent = errorMsg;
+            photoPreviewContainerEl.appendChild(errorDiv);
+        }
+    }
+
+    function removeFile(index) {
+        validFilesToUpload.splice(index, 1);
+        renderPhotoGrid();
+    }
+    
+    async function uploadImages() {
+        if (validFilesToUpload.length === 0) return [];
+        
+        const imageIds = [];
+        for (const file of validFilesToUpload) {
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            try {
+                const response = await fetch(`${mainUrl}/v1/feedback/upload-image`, {
+                    method: 'POST',
+                    headers: {
+                        'X-Upload-Token': currentUploadToken
+                    },
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    imageIds.push(data.id);
+                } else {
+                    const errData = await response.json();
+                    alert(errData.detail || `Errore nel caricamento di ${file.name}`);
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        return imageIds;
+    }
+
+    if (feedbackFormEl) {
+        feedbackFormEl.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Resetta stili di errore precedenti
+            document.querySelectorAll('#feedbackModal .form-group').forEach(grp => {
+                grp.classList.remove('invalid-rating');
+            });
+
+            const ratings = [
+                { id: 'food_quality', name: 'Qualità del cibo' },
+                { id: 'service_quality', name: 'Servizio e cortesia' },
+                { id: 'speed_quality', name: 'Velocità' },
+                { id: 'cleanliness', name: 'Pulizia' },
+                { id: 'stars', name: 'Voto Generale' }
+            ];
+
+            let firstInvalidGroup = null;
+            let hasError = false;
+
+            for (const item of ratings) {
+                const val = parseInt(document.getElementById(item.id).value);
+                if (isNaN(val)) {
+                    hasError = true;
+                    const inputEl = document.getElementById(item.id);
+                    const groupEl = inputEl.closest('.form-group');
+                    if (groupEl) {
+                        groupEl.classList.add('invalid-rating');
+                        if (!firstInvalidGroup) {
+                            firstInvalidGroup = groupEl;
+                        }
+                    }
+                }
+            }
+
+            if (hasError) {
+                if (firstInvalidGroup) {
+                    firstInvalidGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            // Validazione formato email di contatto tramite Regex (se visibile ed inserita)
+            const emailContactGroup = document.getElementById('emailContactGroup');
+            const contactEmailEl = document.getElementById('contact_email');
+            if (emailContactGroup && emailContactGroup.style.display !== 'none' && contactEmailEl) {
+                const contactEmail = contactEmailEl.value.trim();
+                const groupEl = contactEmailEl.closest('.form-group');
+                if (groupEl) groupEl.classList.remove('invalid-email');
+                
+                if (contactEmail) {
+                    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    if (!emailRegex.test(contactEmail)) {
+                        if (groupEl) {
+                            groupEl.classList.add('invalid-email');
+                            groupEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                        return;
+                    }
+                }
+            }
+
+            const stars = parseInt(document.getElementById('stars').value);
+            const food = parseInt(document.getElementById('food_quality').value);
+            const service = parseInt(document.getElementById('service_quality').value);
+            const speed = parseInt(document.getElementById('speed_quality').value);
+            const clean = parseInt(document.getElementById('cleanliness').value);
+
+            if (loadingOverlayEl) loadingOverlayEl.classList.add('active');
+            
+            const imageIds = await uploadImages();
+
+            const contactEmail = contactEmailEl ? contactEmailEl.value.trim() : null;
+            
+            const payload = {
+                id_scontrino: currentReceiptId,
+                stars: stars,
+                food_quality: food,
+                service_quality: service,
+                speed_quality: speed,
+                cleanliness: clean,
+                order_type: document.getElementById('order_type').value,
+                review: reviewInputEl.value.trim(),
+                contact_email: contactEmail || null,
+                consent_contact: document.getElementById('consentContact').checked,
+                image_ids: imageIds
+            };
+
+            try {
+                const response = await fetch(`${mainUrl}/v1/feedback/`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+                if (loadingOverlayEl) loadingOverlayEl.classList.remove('active');
+
+                if (!response.ok) {
+                    alert(data.detail ? JSON.stringify(data.detail) : "Errore durante l'invio del feedback.");
+                    return;
+                }
+
+                currentBonusToken = data.bonus_token;
+
+                if (payload.stars === 5 && googleMapsModalEl && reviewTextPreviewEl) {
+                    reviewTextPreviewEl.textContent = payload.review || "Grazie per il servizio fantastico!";
+                    
+                    const earnedPointsMessage = document.getElementById('earnedPointsMessage');
+                    if (earnedPointsMessage) {
+                        if (data.points_awarded > 0) {
+                            earnedPointsMessage.textContent = `Hai appena ricevuto ${data.points_awarded} Punti Fedeltà! 🎁`;
+                        } else {
+                            earnedPointsMessage.textContent = "";
+                        }
+                    }
+                    
+                    // Associa il link Google Maps corretto allo shop_id del locale dello scontrino
+                    const googleLinks = {
+                        1: "https://g.page/r/CbsPCzOzinijEBM/review",
+                        2: "https://g.page/r/CZUYaLApJkg6EBM/review",
+                        3: "https://g.page/r/CWi3u76szxXbEBM/review",
+                        5: "https://g.page/r/CfxNiBYtEtLjEBM/review",
+                        7: "https://g.page/r/CarxQuOMfjwYEBM/review"
+                    };
+                    const defaultLink = "https://g.page/r/CbsPCzOzinijEBM/review";
+                    if (leaveGoogleReviewBtnEl) {
+                        leaveGoogleReviewBtnEl.href = googleLinks[currentShopId] || defaultLink;
+                    }
+                    
+                    googleMapsModalEl.classList.add('active');
+                } else {
+                    resetFormState();
+                    const title = "Feedback Inviato!";
+                    const message = data.points_awarded > 0 
+                        ? `Grazie mille! Ti sono stati accreditati ${data.points_awarded} Punti Fedeltà. Puoi chiudere questa pagina.`
+                        : "Grazie per il tuo feedback! Puoi chiudere questa pagina.";
+                    showReceiptError(title, message);
+                    if (receiptStatusTitleEl) receiptStatusTitleEl.style.color = '#2ecc71'; // Verde successo
+                }
+
+            } catch (error) {
+                if (loadingOverlayEl) loadingOverlayEl.classList.remove('active');
+                alert("Errore di connessione. Riprova più tardi.");
+                console.error(error);
+            }
+        });
+    }
+
+    if (leaveGoogleReviewBtnEl) {
+        leaveGoogleReviewBtnEl.addEventListener('click', async (e) => {
+            if (currentBonusToken) {
+                try {
+                    await fetch(`${mainUrl}/v1/feedback/bonus-points`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ bonus_token: currentBonusToken })
+                    });
+                    currentBonusToken = null;
+                } catch (e) {
+                    console.error("Failed to assign bonus points", e);
+                }
+            }
+        });
+    }
+
+    function resetAllStars() {
+        const categories = ['starsRating', 'foodRating', 'serviceRating', 'speedRating', 'cleanlinessRating'];
+        categories.forEach(cat => {
+            const container = document.getElementById(cat);
+            if (container) {
+                const stars = container.querySelectorAll('.star');
+                updateStars(stars, 0);
+            }
+        });
+    }
+
+    function resetFormState() {
+        if (feedbackFormEl) feedbackFormEl.reset();
+        resetAllStars();
+        if (charCountEl) charCountEl.textContent = '0';
+        validFilesToUpload = [];
+        if (photoPreviewContainerEl) photoPreviewContainerEl.innerHTML = '';
+        if (dropzonePromptEl) dropzonePromptEl.style.display = 'flex';
+        currentBonusToken = null;
+        currentUploadToken = null;
+        const emailContactGroup = document.getElementById('emailContactGroup');
+        if (emailContactGroup) emailContactGroup.style.display = 'none';
+    }
+
+    if (closeModalBtnEl) {
+        closeModalBtnEl.addEventListener('click', () => {
+            if (googleMapsModalEl) googleMapsModalEl.classList.remove('active');
+            resetFormState();
+            showReceiptError("Feedback Inviato", "Grazie mille! Puoi chiudere questa pagina.");
+        });
+    }
+
+    if (copyReviewBtnEl) {
+        copyReviewBtnEl.addEventListener('click', () => {
+            if (reviewTextPreviewEl) {
+                navigator.clipboard.writeText(reviewTextPreviewEl.textContent).then(() => {
+                    const originalText = copyReviewBtnEl.textContent;
+                    copyReviewBtnEl.textContent = "Copiato!";
+                    setTimeout(() => {
+                        copyReviewBtnEl.textContent = originalText;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                    alert("Impossibile copiare il testo.");
+                });
+            }
+        });
+    }
+
+    // Rimuove l'errore email durante la digitazione
+    const contactEmailInput = document.getElementById('contact_email');
+    if (contactEmailInput) {
+        contactEmailInput.addEventListener('input', () => {
+            const groupEl = contactEmailInput.closest('.form-group');
+            if (groupEl) {
+                groupEl.classList.remove('invalid-email');
+            }
+        });
+    }
+
+    // Inizializza il routing a caricamento completo
+    window.addEventListener('popstate', window.handleRouting);
+    window.handleRouting();
 
 });
