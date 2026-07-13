@@ -1917,11 +1917,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 service_quality: service,
                 speed_quality: speed,
                 cleanliness: clean,
-                order_type: document.getElementById('order_type').value,
                 review: reviewInputEl.value.trim(),
                 contact_email: contactEmail || null,
                 consent_contact: document.getElementById('consentContact').checked,
-                image_ids: imageIds
+                image_ids: imageIds.length > 0 ? imageIds : null
             };
 
             try {
@@ -2022,6 +2021,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (dropzonePromptEl) dropzonePromptEl.style.display = 'flex';
         currentBonusToken = null;
         currentUploadToken = null;
+        currentReceiptId = null;
+        currentShopId = null;
         const emailContactGroup = document.getElementById('emailContactGroup');
         if (emailContactGroup) emailContactGroup.style.display = 'none';
     }
