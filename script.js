@@ -1542,6 +1542,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentBonusToken = null;
     let currentUploadToken = null;
     let currentShopId = null;
+    let currentHasLoyaltyCard = false;
 
     function showReceiptError(title, message) {
         if (receiptStatusTitleEl) {
@@ -1605,6 +1606,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentReceiptId = id;
             currentUploadToken = data.upload_token; // Salva token di caricamento foto
             currentShopId = data.shop_id; // Salva lo shop_id dello scontrino
+            currentHasLoyaltyCard = !!data.has_loyalty_card; // Salva se l'utente ha la tessera fedeltà
             
             receiptStatusContainerEl.style.display = 'none';
             feedbackFormWrapperEl.style.display = 'block';
@@ -1963,6 +1965,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const defaultLink = "https://g.page/r/CbsPCzOzinijEBM/review";
                     if (leaveGoogleReviewBtnEl) {
                         leaveGoogleReviewBtnEl.href = googleLinks[currentShopId] || defaultLink;
+                        if (currentHasLoyaltyCard) {
+                            leaveGoogleReviewBtnEl.textContent = "Lascia recensione su Google (+5 Punti)";
+                        } else {
+                            leaveGoogleReviewBtnEl.textContent = "Lascia recensione su Google";
+                        }
                     }
                     
                     googleMapsModalEl.classList.add('active');
@@ -2023,6 +2030,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentUploadToken = null;
         currentReceiptId = null;
         currentShopId = null;
+        currentHasLoyaltyCard = false;
         const emailContactGroup = document.getElementById('emailContactGroup');
         if (emailContactGroup) emailContactGroup.style.display = 'none';
     }
