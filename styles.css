@@ -2020,6 +2020,13 @@ a {
 }
 
 .modal-overlay .modal-content {
+    background: rgba(22, 22, 22, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 35px 20px 25px 20px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     text-align: center;
     position: relative;
     transform: scale(0.9);
@@ -2031,22 +2038,79 @@ a {
 }
 
 .modal-overlay .modal-content h2 {
-    color: orange;
+    color: var(--primary-color, orange);
     margin-bottom: 1rem;
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+}
+
+.modal-overlay .modal-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #dddddd;
+    margin-bottom: 1.25rem;
+}
+
+#earnedPointsMessage {
+    color: #2ecc71;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: clamp(1.1rem, 4vw, 1.25rem);
 }
 
 .review-preview {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 1rem;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 1.25rem;
     border-radius: 12px;
     margin: 1.5rem 0;
     font-style: italic;
-    color: #aaaaaa;
+    color: #cccccc;
     text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .review-preview p {
     margin-bottom: 1rem;
+    word-break: break-word;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+#copyReviewBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+#googleMapsModal .close-modal {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #aaaaaa;
+    font-size: 1.8rem;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    margin: 0;
+    align-self: auto;
+}
+
+#googleMapsModal .close-modal:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: scale(1.08);
 }
 
 /* Loading Overlay */
