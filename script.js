@@ -1696,7 +1696,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setupStarRating('starsRating', 'stars');
         setupStarRating('foodRating', 'food_quality');
         setupStarRating('serviceRating', 'service_quality');
-        setupStarRating('speedRating', 'speed_quality');
         setupStarRating('cleanlinessRating', 'cleanliness');
 
         if (reviewInputEl && charCountEl) {
@@ -1850,7 +1849,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const ratings = [
                 { id: 'food_quality', name: 'Qualità del cibo' },
                 { id: 'service_quality', name: 'Servizio e cortesia' },
-                { id: 'speed_quality', name: 'Velocità' },
                 { id: 'cleanliness', name: 'Pulizia' },
                 { id: 'stars', name: 'Voto Generale' }
             ];
@@ -1903,7 +1901,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const stars = parseInt(document.getElementById('stars').value);
             const food = parseInt(document.getElementById('food_quality').value);
             const service = parseInt(document.getElementById('service_quality').value);
-            const speed = parseInt(document.getElementById('speed_quality').value);
             const clean = parseInt(document.getElementById('cleanliness').value);
 
             if (loadingOverlayEl) loadingOverlayEl.classList.add('active');
@@ -1917,7 +1914,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 stars: stars,
                 food_quality: food,
                 service_quality: service,
-                speed_quality: speed,
                 cleanliness: clean,
                 review: reviewInputEl.value.trim(),
                 contact_email: contactEmail || null,
@@ -2009,7 +2005,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetAllStars() {
-        const categories = ['starsRating', 'foodRating', 'serviceRating', 'speedRating', 'cleanlinessRating'];
+        const categories = ['starsRating', 'foodRating', 'serviceRating', 'cleanlinessRating'];
         categories.forEach(cat => {
             const container = document.getElementById(cat);
             if (container) {
