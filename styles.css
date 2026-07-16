@@ -470,7 +470,8 @@ p {
 }
 
 /*MEMBERSHIP FORM CONTAINER*/
-#membershipModal .modalForm-content {
+#membershipModal .modalForm-content,
+#copCardModal .modalForm-content {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -482,12 +483,14 @@ p {
 }
 
 /*ISCRIZIONE MEMBERSHIP CARD TITLE*/
-#membershipModal .modalForm-content h1 {
+#membershipModal .modalForm-content h1,
+#copCardModal .modalForm-content h1 {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-#membershipModal .modalForm-content form {
+#membershipModal .modalForm-content form,
+#copCardModal .modalForm-content form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -496,7 +499,8 @@ p {
     width: 100%;
 }
 
-#membershipModal .modalForm-content label {
+#membershipModal .modalForm-content label,
+#copCardModal .modalForm-content label {
     margin-top: 12px;
     margin-bottom: 4px;
     font-weight: bold;
@@ -511,7 +515,8 @@ a {
     color: whitesmoke;
 }
 
-#membershipModal .modalForm-content input {
+#membershipModal .modalForm-content input,
+#copCardModal .modalForm-content input {
     font-family: "CiccioCustom";
     font-size: 16px;
     margin-bottom: 12px;
@@ -530,22 +535,26 @@ a {
     appearance: none;
 }
 
-#membershipModal .modalForm-content input::placeholder {
+#membershipModal .modalForm-content input::placeholder,
+#copCardModal .modalForm-content input::placeholder {
     color: rgba(255, 255, 255, 0.4);
 }
 
-#membershipModal .modalForm-content input:focus {
+#membershipModal .modalForm-content input:focus,
+#copCardModal .modalForm-content input:focus {
     border-color: #ff9f0a;
     background-color: rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 0 3px rgba(255, 159, 10, 0.15);
 }
 
-#membershipModal .modalForm-content input[type="date"] {
+#membershipModal .modalForm-content input[type="date"],
+#copCardModal .modalForm-content input[type="date"] {
     color-scheme: dark;
 }
 
 /*RICHIEDI TESSERA/SCARICA CODICE A BARRE*/
-#membershipModal .modalForm-content button {
+#membershipModal .modalForm-content button,
+#copCardModal .modalForm-content button {
     margin-top: 20px;
     padding: 10px 20px;
     color: white;
@@ -555,7 +564,8 @@ a {
     transition: all 0.25s ease;
 }
 
-#membershipModal .modalForm-content button:disabled {
+#membershipModal .modalForm-content button:disabled,
+#copCardModal .modalForm-content button:disabled {
     /*DISABLE BUTTON FORM*/
     background-color: #555;
     color: #888;
@@ -594,7 +604,8 @@ a {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.phone-container input#phone {
+.phone-container input#phone,
+.phone-container input#cop-phone {
     /*PHONE NUMBER*/
     margin: 0px !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -606,7 +617,8 @@ a {
     transition: all 0.25s ease;
 }
 
-.phone-container input#phone:focus {
+.phone-container input#phone:focus,
+.phone-container input#cop-phone:focus {
     border-color: #ff9f0a !important;
     background-color: rgba(255, 255, 255, 0.08) !important;
     box-shadow: 0 0 0 3px rgba(255, 159, 10, 0.15) !important;
@@ -637,7 +649,7 @@ a {
     font-size: 1rem !important;
 }
 
-#submit-button {
+#submit-button, #cop-submit-button {
     /*RICHIEDI TESSERA*/
     font-size: 1.2rem !important;
     font-weight: bold !important;
@@ -654,16 +666,16 @@ a {
     transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
-#submit-button:hover:not(:disabled) {
+#submit-button:hover:not(:disabled), #cop-submit-button:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
 }
 
-#submit-button:active:not(:disabled) {
+#submit-button:active:not(:disabled), #cop-submit-button:active:not(:disabled) {
     transform: translateY(0);
 }
 
-#result {
+#result, #cop-result {
     margin-top: 20px;
     display: none;
 }
@@ -1266,7 +1278,7 @@ a {
     margin-bottom: 10px;
 }
 
-#otp-section {
+#otp-section, #cop-otp-section {
     display: none;
     width: 100%;
     display: flex;
@@ -2214,4 +2226,15 @@ a {
     border-color: #ff453a !important;
     box-shadow: 0 0 0 3px rgba(255, 69, 58, 0.15) !important;
     transition: all 0.3s ease;
+}
+
+/* FAQ Collapsible Dropdown Styles */
+.faq-details summary::-webkit-details-marker {
+    display: none;
+}
+.faq-details summary {
+    list-style: none; /* Hide default list style in Firefox/others */
+}
+.faq-details[open] .faq-icon {
+    transform: rotate(180deg);
 }
