@@ -464,7 +464,7 @@
                     <input type="email" id="cop-email" name="email" required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                         title="Inserisci una email valida (es., esempio@dominio.com)" placeholder="esempio@dominio.com"
-                        oninput="validateEmailDomain(this)" onblur="validateEmailComplete(this)">
+                        oninput="validateEmailDomain(this, 'cop-email-error')" onblur="validateEmailComplete(this, 'cop-email-error')">
                     <span id="cop-email-error" style="
                     display:none;
                     color: #b00020; /* rosso scuro leggibile */
