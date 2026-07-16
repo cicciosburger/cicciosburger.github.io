@@ -1739,7 +1739,58 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function handleFilesSelection(files) {
+    function compressImage(file, maxWidth = 1920, maxHeight = 1080, quality = 0.7) {
+        return new Promise((resolve, reject) => {
+            if (!file.type.startsWith('image/')) {
+                resolve(file);
+                return;
+            }
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (event) => {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > height) {
+                        if (width > maxWidth) {
+                            height = Math.round((height * maxWidth) / width);
+                            width = maxWidth;
+                        }
+                    } else {
+                        if (height > maxHeight) {
+                            width = Math.round((width * maxHeight) / height);
+                            height = maxHeight;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            const compressedFile = new File([blob], file.name.replace(/\.[^/.]+$/, "") + ".jpg", {
+                                type: 'image/jpeg',
+                                lastModified: Date.now()
+                            });
+                            resolve(compressedFile);
+                        } else {
+                            resolve(file);
+                        }
+                    }, 'image/jpeg', quality);
+                };
+                img.onerror = () => resolve(file);
+            };
+            reader.onerror = () => resolve(file);
+        });
+    }
+
+    async function handleFilesSelection(files) {
         let errorMsg = "";
         if (validFilesToUpload.length + files.length > 3) {
             errorMsg = "⚠️ Puoi caricare al massimo 3 foto complessive.";
@@ -1747,15 +1798,37 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        files.forEach(file => {
-            const sizeMB = file.size / (1024 * 1024);
-            if (sizeMB > 5) {
-                errorMsg = `❌ "${file.name}" supera il limite consentito di 5MB.`;
-            } else if (!validFilesToUpload.some(f => f.name === file.name && f.size === file.size)) {
-                validFilesToUpload.push(file);
-            }
-        });
+        document.body.style.cursor = 'wait';
+        let originalText = "";
+        if (dropzonePromptEl) {
+            originalText = dropzonePromptEl.innerHTML;
+            dropzonePromptEl.innerHTML = '<span>⏳ Elaborazione immagini...</span>';
+        }
 
+        for (const file of files) {
+            const sizeMB = file.size / (1024 * 1024);
+            if (sizeMB > 25) {
+                errorMsg = `❌ "${file.name}" supera il limite consentito di 25MB.`;
+                continue;
+            }
+
+            try {
+                const compressed = await compressImage(file);
+                const origName = file.name.replace(/\.[^/.]+$/, "") + ".jpg";
+                if (!validFilesToUpload.some(f => f.name === origName)) {
+                    validFilesToUpload.push(compressed);
+                }
+            } catch (err) {
+                if (!validFilesToUpload.some(f => f.name === file.name)) {
+                    validFilesToUpload.push(file);
+                }
+            }
+        }
+
+        if (dropzonePromptEl) {
+            dropzonePromptEl.innerHTML = originalText;
+        }
+        document.body.style.cursor = 'default';
         renderPhotoGrid(errorMsg);
     }
 
