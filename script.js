@@ -1792,8 +1792,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function handleFilesSelection(files) {
         let errorMsg = "";
-        if (validFilesToUpload.length + files.length > 3) {
-            errorMsg = "⚠️ Puoi caricare al massimo 3 foto complessive.";
+        if (validFilesToUpload.length + files.length > 5) {
+            errorMsg = "⚠️ Puoi caricare al massimo 5 foto complessive.";
             renderPhotoGrid(errorMsg);
             return;
         }
@@ -1859,7 +1859,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (dropzonePromptEl) {
-            if (validFilesToUpload.length >= 3) {
+            if (validFilesToUpload.length >= 5) {
                 dropzonePromptEl.style.display = 'none';
             } else {
                 dropzonePromptEl.style.display = 'flex';
