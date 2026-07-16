@@ -296,6 +296,12 @@
                 <!-- <h1 style="margin-top: 20px; margin-bottom: 0px;">Iscrizione The Burger Club</h1> -->
                 <img src="./img/BURGER_CLUB.webp" alt="Logo The Burger Club"
                     style="width: 100%; margin-top:40px; max-width: 300px; margin-bottom:20px; transform: scale(1.5);">
+                <div style="margin: 20px auto 10px auto; padding: 10px 14px; background-color: rgba(52, 152, 219, 0.12); border: 1px solid rgba(52, 152, 219, 0.35); border-radius: 8px; width: 100%; max-width: 300px; box-sizing: border-box; text-align: center;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #ffffff; font-family: inherit; line-height: 1.4;">
+                        Appartieni alle Forze dell'Ordine? <br>
+                        <span class="open-modal" data-modal="copCardModal" style="color: #3498db; text-decoration: underline; cursor: pointer; font-weight: bold; display: inline-block; margin-top: 4px;">Registrati al Cop Club</span>
+                    </p>
+                </div>
                 <div id="cookieMsg" style="color: red; margin-bottom: 0px;">
                     I cookie sono necessari per completare la registrazione. Accettali e ricarica la pagina per
                     continuare.
@@ -396,13 +402,156 @@
                 </div>
                 <div id="result" style="display: none;">
                     <h2>La tua carta è pronta!</h2>
-                    <p>Aggiungi la tua Membership Card al wallet:</p>
+                    <p>Aggiungi la tua The Burger Club al wallet:</p>
                     <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
                         <a id="appleWalletButton" href="#" target="_blank" style="text-decoration: none;">
                             <div id="appleSvgContainer"></div>
                         </a>
                         <a id="googleWalletButton" href="#" target="_blank" style="text-decoration: none;">
                             <div id="googleSvgContainer"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Cop Card Modal -->
+        <div id="copCardModal" class="modal">
+            <div class="modal-content modalForm-content">
+                <span class="close-modal">
+                    <svg style="width: 24px; height: 18px;" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" />
+                    </svg>
+                    <span>Torna Indietro</span>
+                </span>
+                <img src="./img/THE_COP_CARD_2.webp" alt="Logo The Cop Card"
+                    style="width: 100%; margin-top:40px; max-width: 300px; margin-bottom:20px; border-radius: 8px;">
+                <div style="margin: 20px auto 10px auto; padding: 10px 14px; background-color: rgba(255, 159, 10, 0.1); border: 1px solid rgba(255, 159, 10, 0.35); border-radius: 8px; width: 100%; max-width: 300px; box-sizing: border-box; text-align: center;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #ffffff; font-family: inherit; line-height: 1.4;">
+                        Non fai parte delle Forze dell'Ordine? <br>
+                        <span class="open-modal" data-modal="membershipModal" style="color: #ff9f0a; text-decoration: underline; cursor: pointer; font-weight: bold; display: inline-block; margin-top: 4px;">Registrati alla The Burger Club</span>
+                    </p>
+                </div>
+                <!-- FAQ Box (Dropdown) -->
+                <div style="margin: 10px auto 20px auto; width: 100%; max-width: 300px; box-sizing: border-box; text-align: left;">
+                    <details class="faq-details" style="background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px;">
+                        <summary style="padding: 12px 14px; font-size: 0.95rem; color: #3498db; font-weight: bold; cursor: pointer; outline: none; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+                            <span>Sei già registrato alla The Burger Club?</span>
+                            <span class="faq-icon" style="font-size: 0.75rem; transition: transform 0.2s ease;">▼</span>
+                        </summary>
+                        <div style="padding: 10px 14px 14px 14px; font-size: 0.95rem; color: #e0e0e0; line-height: 1.5; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+                            Non c'è bisogno di registrarsi nuovamente! Presentati in cassa con la tua tessera The Burger Club (fisica o digitale) e un tesserino identificativo: provvederemo noi a convertirla nella nuova Cop Card.
+                        </div>
+                    </details>
+                </div>
+                <div id="copCookieMsg" style="color: red; margin-bottom: 0px; display: none;">
+                    I cookie sono necessari per completare la registrazione. Accettali e ricarica la pagina per
+                    continuare.
+                </div>
+                <form id="cop-data-form" action="#">
+                    <label for="cop-name">Nome</label>
+                    <input type="text" id="cop-name" name="name" required pattern="[A-Za-z ]+"
+                        title="Sono ammesse solo lettere" placeholder="Inserisci il tuo nome">
+
+                    <label for="cop-surname">Cognome</label>
+                    <input type="text" id="cop-surname" name="surname" required pattern="[A-Za-z ]+"
+                        title="Sono ammesse solo lettere" placeholder="Inserisci il tuo cognome">
+
+                    <label for="cop-dob">Data di Nascita</label>
+                    <input type="date" id="cop-dob" name="dob" required placeholder="Seleziona la tua data di nascita">
+
+                    <label for="cop-email">Email</label>
+                    <input type="email" id="cop-email" name="email" required
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        title="Inserisci una email valida (es., esempio@dominio.com)" placeholder="esempio@dominio.com"
+                        oninput="validateEmailDomain(this)" onblur="validateEmailComplete(this)">
+                    <span id="cop-email-error" style="
+                    display:none;
+                    color: #b00020; /* rosso scuro leggibile */
+                    background-color: #fddede; /* rosso molto chiaro di sfondo */
+                    border: 1px solid #b00020;
+                    border-radius: 4px;
+                    padding: 4px 4px;
+                    font-size: 0.8em;
+                    margin-top: 4px;
+                    max-width: 300px;
+                ">
+                        Indirizzo email non consentito. Usa un indirizzo email comune, ad esempio @gmail.com o
+                        @libero.it.
+                    </span>
+                    <label for="cop-phone">Numero di telefono</label>
+                    <div class="phone-container">
+                        <div class="phone-prefix">+39</div>
+                        <input type="tel" id="cop-phone" name="phone" class="phone-input" inputmode="tel" required pattern="^3[2-9]\d{8}$"
+                            title="Il numero deve contenere 10 numeri (es. 3281234567)" placeholder="3281234567">
+                    </div>
+
+                    <div class="terms-container">
+                        <input type="checkbox" id="cop-terms" name="terms" required>
+                        <label for="cop-terms">
+                            Ho letto e accetto il <a
+                                href="https://docs.google.com/document/d/1DxEG0XLhtiadWGXStfmxG6nEkFCjjuduKYPp3UZjNx4/preview"
+                                target="_blank">Regolamento</a> e dichiaro di aver preso visione dell'<a
+                                href="https://docs.google.com/document/d/17I3MrwbmTbzxU1T4VLjU-m9LI5aEyYDeWKVzKXiCTdg/preview"
+                                target="_blank">Informativa Privacy.</a>
+                        </label>
+                    </div>
+
+                    <div class="g-recaptcha" id="recaptcha-container-cop"></div>
+                    <button type="submit" id="cop-submit-button">Richiedi tessera</button>
+                </form>
+                <div id="cop-otp-section" class="otp-section" style="display: none;">
+                    <p
+                        style="text-align: center; margin-bottom: 20px; margin-top: 20px; color: white; font-size: 1.4rem;">
+                        Inserisci il codice di verifica inviato alla tua email <br>
+                        <strong id="cop-user-email-display" style="color: white;font-size: 1.4rem;"></strong>
+                    </p>
+                    <p style="text-align: center; margin-bottom: 20px; margin-top: 20px; color: white;font-size: 1rem;">
+                        Se non vedi il codice di verifica, controlla la cartella spam e clicca su "Questa email non è
+                        spam".</p>
+
+                    <div class="otp-container">
+                        <input type="text" class="otp-input cop-otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                            data-index="0">
+                        <input type="text" class="otp-input cop-otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                            data-index="1">
+                        <input type="text" class="otp-input cop-otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                            data-index="2">
+                        <input type="text" class="otp-input cop-otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                            data-index="3">
+                        <input type="text" class="otp-input cop-otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                            data-index="4">
+                        <input type="text" class="otp-input cop-otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                            data-index="5">
+                    </div>
+
+                    <button type="button" id="cop-verify-otp-btn" class="verify-btn">
+                        Verifica e Registrati
+                    </button>
+
+                    <button type="button" id="cop-back-to-register-btn" style="
+                    width: 100%;
+                    padding: 10px;
+                    margin-top: 10px;
+                    background-color: transparent;
+                    border: 2px solid #ccc;
+                    color: whitesmoke;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 0.9em; font-family: inherit;">
+                        &larr; Indietro / Modifica dati
+                    </button>
+                </div>
+                <div id="cop-result" style="display: none;">
+                    <h2>La tua carta è pronta!</h2>
+                    <p>Aggiungi la tua Membership Card al wallet:</p>
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                        <a id="cop-appleWalletButton" href="#" target="_blank" style="text-decoration: none;">
+                            <div id="cop-appleSvgContainer"></div>
+                        </a>
+                        <a id="cop-googleWalletButton" href="#" target="_blank" style="text-decoration: none;">
+                            <div id="cop-googleSvgContainer"></div>
                         </a>
                     </div>
                 </div>
