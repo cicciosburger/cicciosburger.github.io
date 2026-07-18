@@ -236,6 +236,19 @@
       ]
     },
     {
+      "title": "PORCHETTA 2.0",
+      "price": 9.9,
+      "ingredients": "pane, cipolla caramellata con aceto balsamico, porchetta, salsa chimichurri, maionese al pepe nero",
+      "thumb": "./img/logo_bg.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "FOODTRUCK"
+      ]
+    },
+    {
       "title": "DOUBLE TRIPLE",
       "price": 11.9,
       "ingredients": "bun, doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
