@@ -1832,12 +1832,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         loyaltyBanner.style.color = "#2980b9";
                         loyaltyBanner.style.border = "1px solid rgba(52, 152, 219, 0.25)";
                     } else if (data.eligible_for_points) {
-                        loyaltyBanner.innerHTML = "🎁 Riceverai <strong>10 Punti Fedeltà</strong> per la tua prima recensione di oggi!";
+                        loyaltyBanner.innerHTML = "🎁 Riceverai <strong>10 Punti Fedeltà</strong> per la tua prima recensione di questo mese!";
                         loyaltyBanner.style.backgroundColor = "rgba(46, 204, 113, 0.15)";
                         loyaltyBanner.style.color = "#27ae60";
                         loyaltyBanner.style.border = "1px solid rgba(46, 204, 113, 0.3)";
                     } else {
-                        loyaltyBanner.innerHTML = "Hai già inviato un feedback oggi. Non riceverai punti aggiuntivi, ma siamo grati della tua preziosa recensione! ❤️";
+                        loyaltyBanner.innerHTML = "Hai già inviato un feedback questo mese. Non riceverai punti aggiuntivi, ma siamo grati della tua preziosa recensione! ❤️";
                         loyaltyBanner.style.backgroundColor = "rgba(243, 156, 18, 0.15)";
                         loyaltyBanner.style.color = "#d35400";
                         loyaltyBanner.style.border = "1px solid rgba(243, 156, 18, 0.3)";
