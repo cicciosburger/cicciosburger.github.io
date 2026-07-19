@@ -1069,7 +1069,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const fullPhone = `+39${phone}`;
             const data = Object.fromEntries(formData.entries());
             data.phone = fullPhone;
-            data.fdo = true; // Flag for Cop Card!
+            const clubInputVal = document.getElementById('club-type-input') ? document.getElementById('club-type-input').value : 'cop';
+            data.club_type = clubInputVal;
+            data.fdo = (clubInputVal === 'cop'); // Flag for Cop Card!
 
             try {
                 const response = await fetch(mainUrl + "/api/request-otp", {
@@ -1614,6 +1616,15 @@ document.addEventListener('DOMContentLoaded', () => {
             let doSpecialRoute = false;
             let newStore = null;
 
+            // Club Card dynamics mapping
+            let club_type = null;
+            if (hash === 'copCardModal' || hash === 'gdfCardModal' || hash === 'firemanCardModal' || hash === 'armyCardModal') {
+                modalId = 'copCardModal';
+                club_type = hash === 'gdfCardModal' ? 'gdf' :
+                            hash === 'firemanCardModal' ? 'fireman' :
+                            hash === 'armyCardModal' ? 'army' : 'cop';
+            }
+
             // Integrazione Gestione Feedback Modal
             let idScontrino = null;
             if (hash.startsWith('feedback')) {
@@ -1662,6 +1673,73 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
+                if (modalId === 'copCardModal' && club_type) {
+                    // Set hidden input value
+                    let clubInput = document.getElementById('club-type-input');
+                    if (!clubInput) {
+                        clubInput = document.createElement('input');
+                        clubInput.type = 'hidden';
+                        clubInput.id = 'club-type-input';
+                        clubInput.name = 'club_type';
+                        const formContainer = document.getElementById('cop-data-form');
+                        if (formContainer) formContainer.appendChild(clubInput);
+                    }
+                    clubInput.value = club_type;
+
+                    // Update Image
+                    const clubImages = {
+                        'cop': './img/tessere/cop_logo_large.png',
+                        'gdf': './img/tessere/gdf_logo_large.png',
+                        'fireman': './img/tessere/fireman_logo_large.png',
+                        'army': './img/tessere/army_logo_large.png'
+                    };
+                    const modalImg = document.querySelector('#copCardModal .modal-content img');
+                    if (modalImg) {
+                        modalImg.src = clubImages[club_type] || './img/tessere/cop_logo_large.png';
+                    }
+
+                    // Update Info Prompt/Text
+                    const infoTextSpan = document.querySelector('#copCardModal .open-modal[data-modal="membershipModal"]');
+                    const infoBoxP = infoTextSpan ? infoTextSpan.parentElement : null;
+                    if (infoBoxP) {
+                        const clubNames = {
+                            'cop': "della Polizia o dei Carabinieri",
+                            'gdf': "della Guardia di Finanza",
+                            'fireman': "dei Vigili del Fuoco",
+                            'army': "delle Forze Armate o dei Militari"
+                        };
+                        const nameStr = clubNames[club_type] || "delle Forze dell'Ordine";
+                        infoBoxP.innerHTML = `Non fai parte ${nameStr}? <br>
+                            <span class="open-modal" data-modal="membershipModal" style="color: #ff9f0a; text-decoration: underline; cursor: pointer; font-weight: bold; display: inline-block; margin-top: 4px;">Registrati alla The Burger Club</span>`;
+                        
+                        // Re-bind click event to newly created open-modal span
+                        const newSpan = infoBoxP.querySelector('.open-modal');
+                        if (newSpan) {
+                            newSpan.addEventListener('click', () => {
+                                history.pushState(null, '', '#membershipModal');
+                                window.handleRouting();
+                            });
+                        }
+                    }
+
+                    // Update FAQ Text
+                    const faqDiv = document.querySelector('#copCardModal details div');
+                    const faqSummarySpan = document.querySelector('#copCardModal details summary span');
+                    const clubFullNames = {
+                        'cop': 'Cop Club',
+                        'gdf': 'Gdf Club',
+                        'fireman': 'Fireman Club',
+                        'army': 'Army Club'
+                    };
+                    const clubFullName = clubFullNames[club_type] || 'Cop Club';
+                    if (faqSummarySpan) {
+                        faqSummarySpan.textContent = `Sei già registrato alla The Burger Club?`;
+                    }
+                    if (faqDiv) {
+                        faqDiv.textContent = `Non c'è bisogno di registrarsi nuovamente! Presentati in cassa con la tua tessera The Burger Club (fisica o digitale) e un tesserino identificativo: provvederemo noi a convertirla nella nuova tessera ${clubFullName}.`;
+                    }
+                }
+
                 // Lazy load Leaflet when menu modal is opened
                 if (modalId === "menuModal") {
                     initializeFoodTruckMap();
@@ -1699,6 +1777,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     checkCookieConsent();
+
+    // Toggle for special clubs selector
+    const trigger = document.getElementById("club-selector-trigger");
+    const options = document.getElementById("club-selector-options");
+    if (trigger && options) {
+        trigger.addEventListener("click", () => {
+            if (options.style.display === "none" || !options.style.display) {
+                options.style.display = "block";
+                trigger.style.backgroundColor = "rgba(52, 152, 219, 0.22)";
+            } else {
+                options.style.display = "none";
+                trigger.style.backgroundColor = "rgba(52, 152, 219, 0.1)";
+            }
+        });
+    }
 
     document.querySelectorAll('.open-modal').forEach(button => {
         button.addEventListener('click', (event) => {
