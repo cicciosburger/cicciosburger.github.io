@@ -249,6 +249,19 @@
       ]
     },
     {
+      "title": "PUNTA RAISI",
+      "price": 9.9,
+      "ingredients": "pane, roast beef, crema di faggiolina, patate al forno, olio evo, pomodoro",
+      "thumb": "./img/logo_bg.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "FOODTRUCK"
+      ]
+    },
+    {
       "title": "DOUBLE TRIPLE",
       "price": 11.9,
       "ingredients": "bun, doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",
@@ -559,6 +572,32 @@
         "STADIO",
         "SPERLINGA",
         "MONDELLO"
+      ]
+    },
+    {
+      "title": "PORCHETTA 2.0 MENU",
+      "price": 14.9,
+      "ingredients": "pane, cipolla caramellata con aceto balsamico, porchetta, salsa chimichurri, maionese al pepe nero",
+      "thumb": "./img/menu/ciccios/porchetta2.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "FOODTRUCK"
+      ]
+    },
+    {
+      "title": "PUNTA RAISI MENU",
+      "price": 14.9,
+      "ingredients": "pane, roast beef, crema di faggiolina, patate al forno, olio evo, pomodoro",
+      "thumb": "./img/logo_bg.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "FOODTRUCK"
       ]
     },
     {
