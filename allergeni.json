@@ -13,7 +13,7 @@
     "provola dolce con tripla pastellatura a mano*": "Glutine, Latte",
     "provola dolce con tripla pastellatura a mano* sg": "Latte",
     "nuggets vegetali**": "Uova, Soia, Latte, Sedano, Senape, Glutine",
-    "Alette di pollo pastellate e fritte laccate con salsa thai": "Senape",
+    "Alette di pollo pastellate e fritte laccate con salsa thai": "Senape, Glutine",
     "Maxi nuggets di pollo con panatura super croccante*": "Glutine, Latte",
     "polpettine vegetali*": "Uova, Soia, Latte, Anidride solforosa e solfiti, Glutine",
     "burger di manzo 170g": "Latte(Senza lattosio), Glutine",
@@ -91,11 +91,11 @@
     "gocce di peperoncino": null,
     "anelli di cipolla": null,
     "stripe di pollo": null,
-    "pane":null,
-    "cipolla caramellata con aceto balsamico":null,
+    "pane":"Glutine",
+    "cipolla caramellata con aceto balsamico":"Anidride solforosa e solfiti",
     "salsa chimichurri":null,
-    "maionese al pepe nero":null,
     "crema di faggiolina":null,
     "patate al forno":null,
-    "olio evo":null
+    "olio evo":null,
+    "maionese al pepe nero":"Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce"
 }
