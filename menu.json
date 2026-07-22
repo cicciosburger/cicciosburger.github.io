@@ -251,7 +251,7 @@
     {
       "title": "PUNTA RAISI",
       "price": 9.9,
-      "ingredients": "pane, roast beef, crema di faggiolina, patate al forno, olio evo, pomodoro",
+      "ingredients": "pane, roast beef, crema di fagiolina, patate al forno, olio evo, pomodoro",
       "thumb": "./img/logo_bg.webp",
       "available_in": [
         "LUMIA",
@@ -590,7 +590,7 @@
     {
       "title": "PUNTA RAISI MENU",
       "price": 14.9,
-      "ingredients": "pane, roast beef, crema di faggiolina, patate al forno, olio evo, pomodoro",
+      "ingredients": "pane, roast beef, crema di fagiolina, patate al forno, olio evo, pomodoro",
       "thumb": "./img/logo_bg.webp",
       "available_in": [
         "LUMIA",
