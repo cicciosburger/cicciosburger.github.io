@@ -580,6 +580,8 @@ a {
     position: relative !important;
     width: 100%;
     max-width: 300px;
+    margin-left: auto !important;
+    margin-right: auto !important;
     font-family: inherit;
     border-radius: 8px !important;
     height: 46px;
