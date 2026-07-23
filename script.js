@@ -2612,11 +2612,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (custBtnSave) {
         custBtnSave.addEventListener("click", async () => {
-            if (!custSelectedImageId) return;
+            if (!custSelectedImageId || custBtnSave.disabled) return;
 
             custMsgSave.textContent = "";
             custBtnSave.disabled = true;
             custBtnSave.textContent = "Salvataggio e aggiornamento...";
+            custBtnSave.style.opacity = "0.5";
+            custBtnSave.style.cursor = "not-allowed";
 
             try {
                 const response = await fetch(mainUrl + "/api/customize/save", {
@@ -2629,17 +2631,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok && data.success) {
-                    custMsgSave.textContent = "✅ Stile carta aggiornato con successo!";
+                    custMsgSave.innerHTML = "✅ Stile carta aggiornato con successo!<br><br><span style='font-size: 0.85em; color: #ccc;'>Potrebbero volerci alcuni minuti prima che Apple/Google Wallet mostri la nuova grafica.</span>";
                     custMsgSave.style.color = "#4ade80";
-                    setTimeout(() => {
-                        custBtnSave.disabled = false;
-                        custBtnSave.textContent = "Salva Stile Carta";
-                    }, 1500);
+                    
+                    let countdown = 30;
+                    custBtnSave.textContent = `Attendi ${countdown}s per cambiare ancora`;
+                    
+                    const interval = setInterval(() => {
+                        countdown--;
+                        if (countdown > 0) {
+                            custBtnSave.textContent = `Attendi ${countdown}s per cambiare ancora`;
+                        } else {
+                            clearInterval(interval);
+                            custBtnSave.disabled = false;
+                            custBtnSave.textContent = "Salva Stile Carta";
+                            custBtnSave.style.opacity = "1";
+                            custBtnSave.style.cursor = "pointer";
+                        }
+                    }, 1000);
+                    
                 } else {
                     custMsgSave.textContent = data.error || "Errore durante il salvataggio.";
                     custMsgSave.style.color = "#f87171";
                     custBtnSave.disabled = false;
                     custBtnSave.textContent = "Salva Stile Carta";
+                    custBtnSave.style.opacity = "1";
+                    custBtnSave.style.cursor = "pointer";
                 }
             } catch (err) {
                 console.error("Error saving custom card style:", err);
@@ -2647,6 +2664,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 custMsgSave.style.color = "#f87171";
                 custBtnSave.disabled = false;
                 custBtnSave.textContent = "Salva Stile Carta";
+                custBtnSave.style.opacity = "1";
+                custBtnSave.style.cursor = "pointer";
             }
         });
     }
