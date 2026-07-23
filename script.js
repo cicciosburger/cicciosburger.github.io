@@ -1,6 +1,4 @@
-let mainUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:'
-    ? 'http://127.0.0.1:8001' 
-    : 'https://api.cicciosburger.it';
+const mainUrl = 'https://api.cicciosburger.it';
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
 let recaptchaCopWidgetId;
@@ -2436,6 +2434,219 @@ document.addEventListener('DOMContentLoaded', () => {
             const groupEl = contactEmailInput.closest('.form-group');
             if (groupEl) {
                 groupEl.classList.remove('invalid-email');
+            }
+        });
+    }
+
+    // ==========================================
+    // CARD CUSTOMIZATION LOGIC
+    // ==========================================
+    let custCurrentEmail = "";
+    let custSelectedImageId = null;
+
+    const custEmailInput = document.getElementById("cust-email");
+    const custBtnEmail = document.getElementById("cust-btn-email");
+    const custMsgEmail = document.getElementById("cust-msg-email");
+
+    const custStepEmail = document.getElementById("cust-step-email");
+    const custStepOtp = document.getElementById("cust-step-otp");
+    const custStepGrid = document.getElementById("cust-step-grid");
+
+    const custOtpInputs = document.querySelectorAll(".cust-otp-input");
+    const custBtnOtp = document.getElementById("cust-btn-otp");
+    const custMsgOtp = document.getElementById("cust-msg-otp");
+    const custBtnBack = document.getElementById("cust-btn-back");
+
+    const custGridContainer = document.getElementById("cust-grid-container");
+    const custBtnSave = document.getElementById("cust-btn-save");
+    const custMsgSave = document.getElementById("cust-msg-save");
+
+    if (custOtpInputs && custOtpInputs.length > 0) {
+        custOtpInputs.forEach((input, index) => {
+            input.addEventListener("input", (e) => {
+                if (e.target.value.length === 1 && index < custOtpInputs.length - 1) {
+                    custOtpInputs[index + 1].focus();
+                }
+            });
+            input.addEventListener("keydown", (e) => {
+                if (e.key === "Backspace" && !e.target.value && index > 0) {
+                    custOtpInputs[index - 1].focus();
+                }
+            });
+        });
+    }
+
+    if (custBtnEmail) {
+        custBtnEmail.addEventListener("click", async () => {
+            custMsgEmail.textContent = "";
+            custMsgEmail.className = "";
+            const email = custEmailInput.value.trim().toLowerCase();
+
+            if (!email || !email.includes("@")) {
+                custMsgEmail.textContent = "Inserisci un'email valida";
+                custMsgEmail.style.color = "#f87171";
+                return;
+            }
+
+            custCurrentEmail = email;
+            custBtnEmail.disabled = true;
+            custBtnEmail.textContent = "Invio in corso...";
+
+            try {
+                const response = await fetch(mainUrl + "/api/customize/request-otp", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify({ email: custCurrentEmail })
+                });
+                
+                if (response.ok) {
+                    custStepEmail.style.display = "none";
+                    custStepOtp.style.display = "flex";
+                } else {
+                    custMsgEmail.textContent = "Servizio temporaneamente non disponibile, riprova più tardi.";
+                    custMsgEmail.style.color = "#f87171";
+                }
+            } catch (err) {
+                console.error("Error requesting customization OTP:", err);
+                custMsgEmail.textContent = "Servizio temporaneamente non disponibile, riprova più tardi.";
+                custMsgEmail.style.color = "#f87171";
+            } finally {
+                custBtnEmail.disabled = false;
+                custBtnEmail.textContent = "Continua";
+            }
+        });
+    }
+
+    if (custBtnBack) {
+        custBtnBack.addEventListener("click", () => {
+            custStepOtp.style.display = "none";
+            custStepEmail.style.display = "flex";
+            custMsgOtp.textContent = "";
+            custOtpInputs.forEach(i => i.value = "");
+        });
+    }
+
+    if (custBtnOtp) {
+        custBtnOtp.addEventListener("click", async () => {
+            custMsgOtp.textContent = "";
+            let otp = "";
+            custOtpInputs.forEach(input => otp += input.value.trim());
+
+            if (otp.length < 6) {
+                custMsgOtp.textContent = "Inserisci il codice di 6 cifre";
+                custMsgOtp.style.color = "#f87171";
+                return;
+            }
+
+            custBtnOtp.disabled = true;
+            custBtnOtp.textContent = "Verifica in corso...";
+
+            try {
+                const response = await fetch(mainUrl + "/api/customize/verify-otp", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify({ email: custCurrentEmail, otp: otp })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    custStepOtp.style.display = "none";
+                    loadCustomizationGrid();
+                    custStepGrid.style.display = "flex";
+                } else {
+                    custMsgOtp.textContent = data.error || "Codice non valido o scaduto";
+                    custMsgOtp.style.color = "#f87171";
+                }
+            } catch (err) {
+                console.error("Error verifying customization OTP:", err);
+                custMsgOtp.textContent = "Servizio temporaneamente non disponibile, riprova più tardi.";
+                custMsgOtp.style.color = "#f87171";
+            } finally {
+                custBtnOtp.disabled = false;
+                custBtnOtp.textContent = "Verifica Codice";
+            }
+        });
+    }
+
+    function loadCustomizationGrid() {
+        if (!custGridContainer) return;
+        custGridContainer.innerHTML = "";
+        custSelectedImageId = null;
+        if (custBtnSave) {
+            custBtnSave.disabled = true;
+            custBtnSave.style.opacity = "0.5";
+            custBtnSave.style.cursor = "not-allowed";
+        }
+
+        for (let i = 1; i <= 10; i++) {
+            const div = document.createElement("div");
+            div.className = "cust-card-option";
+            div.dataset.id = i;
+
+            const img = document.createElement("img");
+            img.src = `./img/tessere/strip_${i}.png`;
+            img.alt = `Design ${i}`;
+            img.onerror = function () {
+                this.onerror = null;
+                this.src = `https://cicciosburger.github.io/img/tessere/strip_${i}.png`;
+            };
+
+            div.appendChild(img);
+            div.addEventListener("click", () => {
+                document.querySelectorAll(".cust-card-option").forEach(el => el.classList.remove("selected"));
+                div.classList.add("selected");
+                custSelectedImageId = i;
+                if (custBtnSave) {
+                    custBtnSave.disabled = false;
+                    custBtnSave.style.opacity = "1";
+                    custBtnSave.style.cursor = "pointer";
+                }
+            });
+
+            custGridContainer.appendChild(div);
+        }
+    }
+
+    if (custBtnSave) {
+        custBtnSave.addEventListener("click", async () => {
+            if (!custSelectedImageId) return;
+
+            custMsgSave.textContent = "";
+            custBtnSave.disabled = true;
+            custBtnSave.textContent = "Salvataggio e aggiornamento...";
+
+            try {
+                const response = await fetch(mainUrl + "/api/customize/save", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify({ image_id: custSelectedImageId })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    custMsgSave.textContent = "✅ Stile carta aggiornato con successo!";
+                    custMsgSave.style.color = "#4ade80";
+                    setTimeout(() => {
+                        custBtnSave.disabled = false;
+                        custBtnSave.textContent = "Salva Stile Carta";
+                    }, 1500);
+                } else {
+                    custMsgSave.textContent = data.error || "Errore durante il salvataggio.";
+                    custMsgSave.style.color = "#f87171";
+                    custBtnSave.disabled = false;
+                    custBtnSave.textContent = "Salva Stile Carta";
+                }
+            } catch (err) {
+                console.error("Error saving custom card style:", err);
+                custMsgSave.textContent = "Servizio temporaneamente non disponibile, riprova più tardi.";
+                custMsgSave.style.color = "#f87171";
+                custBtnSave.disabled = false;
+                custBtnSave.textContent = "Salva Stile Carta";
             }
         });
     }

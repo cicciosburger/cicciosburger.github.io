@@ -327,6 +327,14 @@
                         </span>
                     </div>
                 </div>
+                
+                <!-- Customize card trigger (Hidden) -->
+                <div class="open-modal" data-modal="customizeModal" style="display: none; margin: 10px auto 15px auto; padding: 10px 12px; background: rgba(241, 196, 15, 0.12); border: 1px solid rgba(241, 196, 15, 0.4); border-radius: 8px; width: 100%; max-width: 320px; box-sizing: border-box; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(241, 196, 15, 0.15); white-space: nowrap;">
+                    <p style="margin: 0; font-size: 0.9rem; color: #f1c40f; font-family: inherit; font-weight: bold; line-height: 1.4; display: flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap;">
+                        <span>🎨</span> <span>Hai già una carta? Modifica lo stile</span>
+                    </p>
+                </div>
+
                 <div id="cookieMsg" style="color: red; margin-bottom: 0px;">
                     I cookie sono necessari per completare la registrazione. Accettali e ricarica la pagina per
                     continuare.
@@ -816,6 +824,63 @@
                 </a>
             </div>
         </footer>
+
+        <!-- Customize Card Modal -->
+        <div id="customizeModal" class="modal">
+            <div class="modal-content modalForm-content">
+                <span class="close-modal">
+                    <svg style="width: 24px; height: 18px;" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" />
+                    </svg>
+                    <span>Torna Indietro</span>
+                </span>
+                <img src="./img/BURGER_CLUB.webp" alt="Logo The Burger Club"
+                    style="display: block; width: 100%; margin: 40px auto 15px auto; max-width: 300px; transform: scale(1.3);">
+                <h2 style="margin-top: 10px; margin-bottom: 15px; color: white; font-family: inherit;">Modifica Stile Carta</h2>
+                
+                <!-- STEP 1: EMAIL -->
+                <div id="cust-step-email" class="cust-step" style="width: 100%; max-width: 300px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+                    <p style="color: #ccc; font-size: 0.95rem; margin-bottom: 15px; text-align: center;">
+                        Inserisci l'email usata in fase di registrazione per accedere alla scelta dello stile.
+                    </p>
+                    <label for="cust-email" style="margin-top: 10px; margin-bottom: 8px; display: block; text-align: left; width: 100%;">Email Registrata</label>
+                    <input type="email" id="cust-email" placeholder="latua@email.com" required style="margin-bottom: 0px;">
+                    <div id="cust-msg-email" style="margin-top: 6px; font-size: 0.9rem; text-align: center;"></div>
+                    <button type="button" id="cust-btn-email" class="cust-btn" style="margin-top: 14px;">Continua</button>
+                </div>
+
+                <!-- STEP 2: OTP -->
+                <div id="cust-step-otp" class="cust-step" style="display: none; width: 100%; max-width: 300px; margin: 0 auto;">
+                    <p style="color: #ccc; font-size: 0.95rem; margin-bottom: 15px; text-align: center;">
+                        Se la tua email è corretta riceverai un codice a breve.<br>Inserisci il codice di 6 cifre:
+                    </p>
+                    <div class="otp-container" style="justify-content: center; margin-bottom: 15px; display: flex; gap: 8px;">
+                        <input type="text" class="cust-otp-input otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="0">
+                        <input type="text" class="cust-otp-input otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="1">
+                        <input type="text" class="cust-otp-input otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="2">
+                        <input type="text" class="cust-otp-input otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="3">
+                        <input type="text" class="cust-otp-input otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="4">
+                        <input type="text" class="cust-otp-input otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" data-index="5">
+                    </div>
+                    <div id="cust-msg-otp" style="margin-bottom: 8px; font-size: 0.9rem; text-align: center;"></div>
+                    <button type="button" id="cust-btn-otp" class="cust-btn" style="margin-top: 10px;">Verifica Codice</button>
+                    <button type="button" id="cust-btn-back" style="width: 100%; max-width: 300px; padding: 10px; margin-top: 10px; background: transparent; border: 1px solid #666; color: #ccc; border-radius: 8px; cursor: pointer; font-family: inherit;">&larr; Indietro</button>
+                </div>
+
+                <!-- STEP 3: SELECT DESIGN -->
+                <div id="cust-step-grid" class="cust-step" style="display: none; width: 100%; max-width: 320px; margin: 0 auto;">
+                    <p style="color: #ccc; font-size: 0.95rem; margin-bottom: 15px; text-align: center;">
+                        Scegli la grafica personalizzata per la tua carta e premi Salva.
+                    </p>
+                    <div id="cust-grid-container" class="card-grid-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-height: 320px; overflow-y: auto; padding: 5px; margin-bottom: 15px; width: 100%;">
+                        <!-- Dynamically populated -->
+                    </div>
+                    <div id="cust-msg-save" style="margin-bottom: 10px; font-size: 0.9rem; text-align: center;"></div>
+                    <button type="button" id="cust-btn-save" class="cust-btn" style="opacity: 0.5; cursor: not-allowed; margin-top: 5px;" disabled>Salva Stile Carta</button>
+                </div>
+            </div>
+        </div>
 
         <!-- Tasto Fluttuante Carrello -->
         <div id="floating-cart-btn" class="floating-cart-btn">
