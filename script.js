@@ -2688,18 +2688,31 @@ document.addEventListener('DOMContentLoaded', () => {
             div.className = "cust-card-option";
             div.dataset.id = i;
 
+            const header = document.createElement("div");
+            header.className = "cust-card-header";
+            header.innerHTML = `<span>Stile ${i}</span><span class="cust-card-badge">Seleziona</span>`;
+
             const img = document.createElement("img");
             img.src = `./img/tessere/strip_${i}.png`;
-            img.alt = `Design ${i}`;
+            img.alt = `Stile ${i}`;
             img.onerror = function () {
                 this.onerror = null;
                 this.src = `https://cicciosburger.github.io/img/tessere/strip_${i}.png`;
             };
 
+            div.appendChild(header);
             div.appendChild(img);
+
             div.addEventListener("click", () => {
-                document.querySelectorAll(".cust-card-option").forEach(el => el.classList.remove("selected"));
+                document.querySelectorAll(".cust-card-option").forEach(el => {
+                    el.classList.remove("selected");
+                    const badge = el.querySelector(".cust-card-badge");
+                    if (badge) badge.textContent = "Seleziona";
+                });
                 div.classList.add("selected");
+                const badge = div.querySelector(".cust-card-badge");
+                if (badge) badge.textContent = "✓ Selezionato";
+
                 custSelectedImageId = i;
                 if (custBtnSave) {
                     custBtnSave.disabled = false;
