@@ -2352,6 +2352,7 @@ a {
 #customizeModal .modalForm-content {
     overflow: hidden !important;
     padding-bottom: 25px !important;
+    height: 85vh; /* Explicit height required by iOS Safari for flex containment */
     max-height: 90vh;
     display: flex;
     flex-direction: column;
@@ -2363,7 +2364,7 @@ a {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 0%; /* 0% flex basis is safer for Safari */
     min-height: 0;
     overflow: hidden;
 }
@@ -2372,10 +2373,11 @@ a {
     display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
-    flex: 1;
+    flex: 1 1 0%;
     min-height: 0;
     max-height: none !important;
     overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch; /* Crucial for smooth momentum scrolling on iOS */
     padding: 8px !important;
     width: 100% !important;
     box-sizing: border-box;
