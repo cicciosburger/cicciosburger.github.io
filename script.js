@@ -653,22 +653,31 @@ document.addEventListener("DOMContentLoaded", function () {
             <div style="
                 background: linear-gradient(135deg, #f56565 0%, #c53030 100%);
                 color: white;
-                padding: 15px 20px;
-                border-radius: 12px;
-                margin: 15px 0;
-                box-shadow: 0 4px 15px rgba(245, 101, 101, 0.3);
+                padding: 12px 16px;
+                border-radius: 10px;
+                margin: 10px auto;
+                box-shadow: 0 4px 15px rgba(245, 101, 101, 0.35);
                 animation: slideIn 0.3s ease-out;
                 text-align: center;
-                font-weight: 500;
+                font-weight: 600;
+                font-size: 0.95rem;
+                width: 100%;
+                max-width: 300px;
+                box-sizing: border-box;
+                line-height: 1.4;
             ">
-                <div style="font-size: 24px; margin-bottom: 8px;">⚠️</div>
+                <div style="font-size: 22px; margin-bottom: 4px;">⚠️</div>
                 ${message}
             </div>
         `;
 
+        try {
+            container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } catch (e) {}
+
         setTimeout(() => {
             container.innerHTML = '';
-        }, 5000);
+        }, 8000);
     }
 
     function showSuccess(message, containerId = 'error-message-container') {
@@ -677,26 +686,48 @@ document.addEventListener("DOMContentLoaded", function () {
             <div style="
                 background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
                 color: white;
-                padding: 15px 20px;
-                border-radius: 12px;
-                margin: 15px 0;
-                box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+                padding: 12px 16px;
+                border-radius: 10px;
+                margin: 10px auto;
+                box-shadow: 0 4px 15px rgba(72, 187, 120, 0.35);
                 animation: slideIn 0.3s ease-out;
                 text-align: center;
-                font-weight: 500;
+                font-weight: 600;
+                font-size: 0.95rem;
+                width: 100%;
+                max-width: 300px;
+                box-sizing: border-box;
+                line-height: 1.4;
             ">
-                <div style="font-size: 24px; margin-bottom: 8px;">✅</div>
+                <div style="font-size: 22px; margin-bottom: 4px;">✅</div>
                 ${message}
             </div>
         `;
+
+        try {
+            container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } catch (e) {}
     }
 
     function createErrorContainer(containerId) {
-        const container = document.createElement('div');
-        container.id = containerId;
-        const form = document.getElementById("data-form");
-        if (form && form.parentNode) {
-            form.parentNode.insertBefore(container, form);
+        let container = document.getElementById(containerId);
+        if (!container) {
+            container = document.createElement('div');
+            container.id = containerId;
+            let targetForm = document.getElementById("data-form");
+            if (containerId && containerId.includes('cop')) {
+                targetForm = document.getElementById("cop-data-form") || targetForm;
+            }
+            if (targetForm) {
+                const recaptcha = targetForm.querySelector('.g-recaptcha') || targetForm.querySelector('button[type="submit"]');
+                if (recaptcha) {
+                    targetForm.insertBefore(container, recaptcha);
+                } else {
+                    targetForm.appendChild(container);
+                }
+            } else if (document.body) {
+                document.body.appendChild(container);
+            }
         }
         return container;
     }
@@ -883,7 +914,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             const recaptchaResponse = grecaptcha.getResponse(recaptchaWidgetId);
             if (!recaptchaResponse) {
-                showError("⚠️ Completa il reCAPTCHA prima di continuare.");
+                showError("⚠️ Completa il reCAPTCHA prima di continuare.", "error-message-container");
                 return;
             }
 
@@ -897,7 +928,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const today = new Date();
             const age = today.getFullYear() - dob.getFullYear();
             if (age < 16 || (age === 16 && today < new Date(dob.setFullYear(dob.getFullYear() + 16))) || age > 100) {
-                showError("Devi avere almeno 16 anni per iscriverti.");
+                showError("Devi avere almeno 16 anni per iscriverti.", "error-message-container");
                 submitButton.disabled = false;
                 submitButton.textContent = "Richiedi tessera";
                 return;
@@ -917,18 +948,26 @@ document.addEventListener("DOMContentLoaded", function () {
                     body: JSON.stringify(data)
                 });
 
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    if (response.status === 503) {
-                        showError("Hai effettuato troppi tentativi. Riprova tra qualche minuto.");
-                    } else {
-                        showError(errorData.error || "Errore sconosciuto durante la richiesta.");
-                        if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
-                            try {
-                                grecaptcha.reset(recaptchaWidgetId);
-                            } catch (e) {
-                                console.warn("Recaptcha reset failed", e);
-                            }
+                let responseData = {};
+                try {
+                    responseData = await response.json();
+                } catch (e) {}
+
+                if (!response.ok || responseData.error || responseData.success === false) {
+                    let errorMsg = responseData.error || responseData.message;
+                    if (!errorMsg) {
+                        if (response.status === 503) {
+                            errorMsg = "Hai effettuato troppi tentativi. Riprova tra qualche minuto.";
+                        } else {
+                            errorMsg = "Errore durante la richiesta di iscrizione.";
+                        }
+                    }
+                    showError(errorMsg, "error-message-container");
+                    if (typeof grecaptcha !== 'undefined' && typeof recaptchaWidgetId !== 'undefined') {
+                        try {
+                            grecaptcha.reset(recaptchaWidgetId);
+                        } catch (e) {
+                            console.warn("Recaptcha reset failed", e);
                         }
                     }
                     submitButton.disabled = false;
@@ -936,10 +975,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     return;
                 }
 
-                const result = await response.json();
-                registrationToken = result.registration_token;
+                registrationToken = responseData.registration_token;
 
-                showSuccess(result.message || "Codice di verifica inviato alla tua email!");
+                showSuccess(responseData.message || "Codice di verifica inviato alla tua email!", "error-message-container");
                 document.getElementById("user-email-display").textContent = formData.get("email");
 
                 setTimeout(() => {
@@ -953,7 +991,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 1000);
 
             } catch (error) {
-                showError("Errore di connessione: " + error.message);
+                showError("Errore di connessione: " + error.message, "error-message-container");
                 submitButton.disabled = false;
                 submitButton.textContent = "Richiedi tessera";
             }
@@ -965,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const otp = getOTPValue(otpInputs);
             if (otp.length !== 6) {
                 showOTPError(otpInputs);
-                showError("Inserisci tutte le 6 cifre del codice OTP.");
+                showError("Inserisci tutte le 6 cifre del codice OTP.", "error-message-container");
                 return;
             }
 
@@ -987,7 +1025,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!verifyResponse.ok) {
                     const errorData = await verifyResponse.json();
                     showOTPError(otpInputs);
-                    showError(errorData.error || "Codice OTP non valido.");
+                    showError(errorData.error || "Codice OTP non valido.", "error-message-container");
                     resetOTP(otpInputs);
                     if (errorData.error === "Sessione scaduta o non valida. Ricomincia la registrazione." || errorData.error === "Troppi tentativi falliti. Ricomincia la registrazione.") {
                         document.getElementById('otp-section').style.display = 'none';
@@ -1016,7 +1054,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setCookie("appleWalletURL", appleURL, 30);
                 setCookie("googleWalletURL", googleURL, 30);
 
-                showSuccess("✅ Registrazione completata con successo!");
+                showSuccess("✅ Registrazione completata con successo!", "error-message-container");
                 loadSVG('./img/add_to_apple_wallet.svg', 'appleSvgContainer');
                 loadSVG('./img/add_to_google_wallet.svg', 'googleSvgContainer');
 
@@ -1029,7 +1067,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 1500);
 
             } catch (error) {
-                showError("Errore durante la verifica: " + error.message);
+                showError("Errore durante la verifica: " + error.message, "error-message-container");
                 verifyOtpBtn.disabled = false;
                 verifyOtpBtn.textContent = "Verifica e Registrati";
             }
@@ -1043,7 +1081,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             const recaptchaResponse = grecaptcha.getResponse(recaptchaCopWidgetId);
             if (!recaptchaResponse) {
-                showError("⚠️ Completa il reCAPTCHA prima di continuare.");
+                showError("⚠️ Completa il reCAPTCHA prima di continuare.", "cop-error-message-container");
                 return;
             }
 
@@ -1057,7 +1095,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const today = new Date();
             const age = today.getFullYear() - dob.getFullYear();
             if (age < 16 || (age === 16 && today < new Date(dob.setFullYear(dob.getFullYear() + 16))) || age > 100) {
-                showError("Devi avere almeno 16 anni per iscriverti.");
+                showError("Devi avere almeno 16 anni per iscriverti.", "cop-error-message-container");
                 copSubmitButton.disabled = false;
                 copSubmitButton.textContent = "Richiedi tessera";
                 return;
@@ -1080,18 +1118,26 @@ document.addEventListener("DOMContentLoaded", function () {
                     body: JSON.stringify(data)
                 });
 
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    if (response.status === 503) {
-                        showError("Hai effettuato troppi tentativi. Riprova tra qualche minuto.");
-                    } else {
-                        showError(errorData.error || "Errore sconosciuto durante la richiesta.");
-                        if (typeof grecaptcha !== 'undefined' && typeof recaptchaCopWidgetId !== 'undefined') {
-                            try {
-                                grecaptcha.reset(recaptchaCopWidgetId);
-                            } catch (e) {
-                                console.warn("Recaptcha reset failed", e);
-                            }
+                let responseData = {};
+                try {
+                    responseData = await response.json();
+                } catch (e) {}
+
+                if (!response.ok || responseData.error || responseData.success === false) {
+                    let errorMsg = responseData.error || responseData.message;
+                    if (!errorMsg) {
+                        if (response.status === 503) {
+                            errorMsg = "Hai effettuato troppi tentativi. Riprova tra qualche minuto.";
+                        } else {
+                            errorMsg = "Errore sconosciuto durante la richiesta di iscrizione.";
+                        }
+                    }
+                    showError(errorMsg, "cop-error-message-container");
+                    if (typeof grecaptcha !== 'undefined' && typeof recaptchaCopWidgetId !== 'undefined') {
+                        try {
+                            grecaptcha.reset(recaptchaCopWidgetId);
+                        } catch (e) {
+                            console.warn("Recaptcha reset failed", e);
                         }
                     }
                     copSubmitButton.disabled = false;
@@ -1099,10 +1145,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     return;
                 }
 
-                const result = await response.json();
-                copRegistrationToken = result.registration_token;
+                copRegistrationToken = responseData.registration_token;
 
-                showSuccess(result.message || "Codice di verifica inviato alla tua email!");
+                showSuccess(responseData.message || "Codice di verifica inviato alla tua email!", "cop-error-message-container");
                 document.getElementById("cop-user-email-display").textContent = formData.get("email");
 
                 setTimeout(() => {
@@ -1116,7 +1161,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 1000);
 
             } catch (error) {
-                showError("Errore di connessione: " + error.message);
+                showError("Errore di connessione: " + error.message, "cop-error-message-container");
                 copSubmitButton.disabled = false;
                 copSubmitButton.textContent = "Richiedi tessera";
             }
@@ -1129,7 +1174,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const otp = getOTPValue(copOtpInputs);
             if (otp.length !== 6) {
                 showOTPError(copOtpInputs);
-                showError("Inserisci tutte le 6 cifre del codice OTP.");
+                showError("Inserisci tutte le 6 cifre del codice OTP.", "cop-error-message-container");
                 return;
             }
 
@@ -1151,7 +1196,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!verifyResponse.ok) {
                     const errorData = await verifyResponse.json();
                     showOTPError(copOtpInputs);
-                    showError(errorData.error || "Codice OTP non valido.");
+                    showError(errorData.error || "Codice OTP non valido.", "cop-error-message-container");
                     resetOTP(copOtpInputs);
                     if (errorData.error === "Sessione scaduta o non valida. Ricomincia la registrazione." || errorData.error === "Troppi tentativi falliti. Ricomincia la registrazione.") {
                         document.getElementById('cop-otp-section').style.display = 'none';
@@ -1180,7 +1225,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setCookie("appleWalletCopURL", appleURL, 30);
                 setCookie("googleWalletCopURL", googleURL, 30);
 
-                showSuccess("✅ Registrazione completata con successo!");
+                showSuccess("✅ Registrazione completata con successo!", "cop-error-message-container");
                 loadSVG('./img/add_to_apple_wallet.svg', 'cop-appleSvgContainer');
                 loadSVG('./img/add_to_google_wallet.svg', 'cop-googleSvgContainer');
 
@@ -1193,7 +1238,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 1500);
 
             } catch (error) {
-                showError("Errore durante la verifica: " + error.message);
+                showError("Errore durante la verifica: " + error.message, "cop-error-message-container");
                 copVerifyOtpBtn.disabled = false;
                 copVerifyOtpBtn.textContent = "Verifica e Registrati";
             }
