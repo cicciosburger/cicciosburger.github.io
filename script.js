@@ -2689,10 +2689,10 @@ document.addEventListener('DOMContentLoaded', () => {
             div.dataset.id = i;
 
             const img = document.createElement("img");
-            img.src = `./img/tessere/strip_${i}.png`;
+            img.src = `./img/tessere/strip_${i}.webp`;
             img.onerror = function () {
                 this.onerror = null;
-                this.src = `https://cicciosburger.github.io/img/tessere/strip_${i}.png`;
+                this.src = `https://cicciosburger.github.io/img/tessere/strip_${i}.webp`;
             };
 
             div.appendChild(img);
