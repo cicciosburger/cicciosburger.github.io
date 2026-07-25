@@ -481,6 +481,7 @@ p {
     max-width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
+    padding-bottom: 75px;
 }
 
 /*ISCRIZIONE MEMBERSHIP CARD TITLE*/
@@ -638,9 +639,9 @@ a {
     border: 2px solid transparent;
     cursor: pointer;
     transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
     padding: 4px;
 }
 .cust-card-option:hover {
@@ -650,14 +651,16 @@ a {
 .cust-card-option.selected {
     border-color: #f1c40f;
     box-shadow: 0 0 12px rgba(241, 196, 15, 0.4);
-    transform: scale(1.03);
+    transform: scale(1.02);
     background-color: rgba(241, 196, 15, 0.1);
 }
 .cust-card-option img {
     width: 100%;
     height: auto;
+    aspect-ratio: 1125 / 369;
     border-radius: 6px;
     display: block;
+    object-fit: cover;
 }
 
 .phone-container:focus-within .phone-prefix {
@@ -2308,6 +2311,15 @@ a {
     flex-direction: column !important;
     align-items: center !important;
     box-sizing: border-box;
+}
+
+#cust-step-grid {
+    max-width: 400px !important;
+    width: 100% !important;
+}
+
+#cust-grid-container {
+    max-height: clamp(260px, 42vh, 380px) !important;
 }
 
 .cust-step p {
