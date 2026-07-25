@@ -691,9 +691,11 @@ a {
 .cust-card-option img {
     width: 100% !important;
     height: auto !important;
+    aspect-ratio: 1125 / 369 !important;
+    min-height: 90px !important;
     border-radius: 8px;
-    display: block;
-    object-fit: contain;
+    display: block !important;
+    object-fit: cover !important;
 }
 
 .phone-container:focus-within .phone-prefix {
@@ -2350,11 +2352,24 @@ a {
     max-width: 440px !important;
     width: 100% !important;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 #cust-grid-container {
-    max-height: clamp(380px, 60vh, 540px) !important;
-    padding: 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    max-height: clamp(230px, 38vh, 320px) !important;
+    overflow-y: auto !important;
+    padding: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.25);
+    scrollbar-width: thin;
+    scrollbar-color: #f1c40f #1a1a1a;
 }
 
 .cust-step p {
