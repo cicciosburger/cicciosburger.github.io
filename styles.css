@@ -2348,19 +2348,32 @@ a {
     box-sizing: border-box;
 }
 
+#customizeModal .modalForm-content {
+    overflow: hidden !important;
+    padding-bottom: 25px !important;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
 #cust-step-grid {
     max-width: 440px !important;
     width: 100% !important;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
 }
 
 #cust-grid-container {
     display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
-    max-height: clamp(230px, 38vh, 320px) !important;
+    flex: 1;
+    min-height: 0;
+    max-height: none !important;
     overflow-y: auto !important;
     padding: 8px !important;
     width: 100% !important;
