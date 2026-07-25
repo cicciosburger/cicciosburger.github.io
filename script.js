@@ -1716,6 +1716,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
+                if (modalId === "customizeModal") {
+                    if (typeof window.checkCustomizeAuth === 'function') {
+                        window.checkCustomizeAuth();
+                    }
+                }
+
                 if (modalId === 'copCardModal' && club_type) {
                     // Set hidden input value
                     let clubInput = document.getElementById('club-type-input');
@@ -2504,7 +2510,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const custGridContainer = document.getElementById("cust-grid-container");
     const custBtnSave = document.getElementById("cust-btn-save");
+    const custBtnLogout = document.getElementById("cust-btn-logout");
     const custMsgSave = document.getElementById("cust-msg-save");
+
+    function checkCustomizeAuth() {
+        const isAuth = getCookie("custAuth") === "true";
+        const storedEmail = getCookie("custUserEmail");
+        if (isAuth) {
+            if (storedEmail) custCurrentEmail = storedEmail;
+            if (custStepEmail) custStepEmail.style.display = "none";
+            if (custStepOtp) custStepOtp.style.display = "none";
+            if (custStepGrid) {
+                loadCustomizationGrid();
+                custStepGrid.style.display = "flex";
+            }
+        } else {
+            if (custStepGrid) custStepGrid.style.display = "none";
+            if (custStepOtp) custStepOtp.style.display = "none";
+            if (custStepEmail) custStepEmail.style.display = "flex";
+        }
+    }
+    window.checkCustomizeAuth = checkCustomizeAuth;
 
     if (custOtpInputs && custOtpInputs.length > 0) {
         custOtpInputs.forEach((input, index) => {
@@ -2598,6 +2624,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok && data.success) {
+                    setCookie("custAuth", "true", 30);
+                    if (custCurrentEmail) {
+                        setCookie("custUserEmail", custCurrentEmail, 30);
+                    }
                     custStepOtp.style.display = "none";
                     loadCustomizationGrid();
                     custStepGrid.style.display = "flex";
@@ -2613,6 +2643,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 custBtnOtp.disabled = false;
                 custBtnOtp.textContent = "Verifica Codice";
             }
+        });
+    }
+
+    if (custBtnLogout) {
+        custBtnLogout.addEventListener("click", async () => {
+            setCookie("custAuth", "", -1);
+            setCookie("custUserEmail", "", -1);
+            custCurrentEmail = "";
+            custSelectedImageId = null;
+
+            if (custMsgEmail) custMsgEmail.textContent = "";
+            if (custMsgOtp) custMsgOtp.textContent = "";
+            if (custMsgSave) custMsgSave.textContent = "";
+            if (custEmailInput) custEmailInput.value = "";
+            if (custOtpInputs) custOtpInputs.forEach(i => i.value = "");
+
+            try {
+                await fetch(mainUrl + "/api/customize/logout", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include"
+                });
+            } catch (e) {}
+
+            if (custStepGrid) custStepGrid.style.display = "none";
+            if (custStepOtp) custStepOtp.style.display = "none";
+            if (custStepEmail) custStepEmail.style.display = "flex";
         });
     }
 
@@ -2696,6 +2753,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 1000);
                     
                 } else {
+                    if (response.status === 401 || response.status === 403 || (data.error && (data.error.toLowerCase().includes("scadut") || data.error.toLowerCase().includes("autorizz") || data.error.toLowerCase().includes("accedi")))) {
+                        setCookie("custAuth", "", -1);
+                        setCookie("custUserEmail", "", -1);
+                        if (custStepGrid) custStepGrid.style.display = "none";
+                        if (custStepEmail) custStepEmail.style.display = "flex";
+                        if (custMsgEmail) {
+                            custMsgEmail.textContent = data.error || "Sessione scaduta. Effettua nuovamente l'accesso.";
+                            custMsgEmail.style.color = "#f87171";
+                        }
+                        return;
+                    }
                     custMsgSave.textContent = data.error || "Errore durante il salvataggio.";
                     custMsgSave.style.color = "#f87171";
                     custBtnSave.disabled = false;
