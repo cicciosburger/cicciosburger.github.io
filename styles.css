@@ -641,6 +641,7 @@ a {
     transition: all 0.25s ease;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     width: 100%;
     box-sizing: border-box;
     padding: 8px;
