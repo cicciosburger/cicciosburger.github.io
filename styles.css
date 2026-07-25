@@ -2321,7 +2321,7 @@ a {
 
 #customizeModal .modalForm-content {
     overflow: hidden !important;
-    padding-bottom: 30px !important;
+    padding-bottom: 15px !important;
     height: 85vh; /* Explicit height required by iOS Safari for flex containment */
     max-height: 90vh;
     display: flex;
