@@ -2690,7 +2690,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const img = document.createElement("img");
             img.src = `./img/tessere/strip_${i}.png`;
-            img.alt = `Stile ${i}`;
             img.onerror = function () {
                 this.onerror = null;
                 this.src = `https://cicciosburger.github.io/img/tessere/strip_${i}.png`;
