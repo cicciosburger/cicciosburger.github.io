@@ -1967,7 +1967,13 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const loyaltyBanner = document.getElementById('loyaltyBanner');
             if (loyaltyBanner) {
-                if (data.has_loyalty_card) {
+                if (data.is_delivery) {
+                    loyaltyBanner.innerHTML = "ℹ️ Gli ordini Delivery non consentono di ricevere punti bonus per il feedback, ma siamo grati per la tua recensione! ❤️";
+                    loyaltyBanner.style.backgroundColor = "rgba(52, 152, 219, 0.12)";
+                    loyaltyBanner.style.color = "#2980b9";
+                    loyaltyBanner.style.border = "1px solid rgba(52, 152, 219, 0.25)";
+                    loyaltyBanner.style.display = 'block';
+                } else if (data.has_loyalty_card) {
                     if (!data.min_amount_reached) {
                         loyaltyBanner.innerHTML = "ℹ️ Non hai raggiunto l'ordine minimo (10€) per ricevere punti bonus per il feedback, ma siamo grati per la tua recensione! ❤️";
                         loyaltyBanner.style.backgroundColor = "rgba(52, 152, 219, 0.12)";
