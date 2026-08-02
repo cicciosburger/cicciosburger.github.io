@@ -154,6 +154,19 @@
       "available_in": [
         "GLUTENFREE"
       ]
+    },
+    {
+      "title": "WAFFLE FRIES",
+      "price": 3.5,
+      "ingredients": "patatine waffle",
+      "thumb": "./img/logo_bg.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "FOODTRUCK"
+      ]
     }
   ],
   "CICCIO'S BURGER": [
