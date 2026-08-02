@@ -15,6 +15,19 @@
       ]
     },
     {
+      "title": "WAFFLE FRIES",
+      "price": 3.5,
+      "ingredients": "patatine waffle",
+      "thumb": "./img/logo_bg.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA",
+        "MONDELLO",
+        "FOODTRUCK"
+      ]
+    },
+    {
       "title": "BACON CHEDDAR FRIES",
       "price": 7.0,
       "ingredients": "patate con buccia**, crema cheddar home made, bacon croccante",
@@ -153,19 +166,6 @@
       "thumb": "./img/menu/starters/anelli_cipolla.webp",
       "available_in": [
         "GLUTENFREE"
-      ]
-    },
-    {
-      "title": "WAFFLE FRIES",
-      "price": 3.5,
-      "ingredients": "patatine waffle",
-      "thumb": "./img/logo_bg.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
       ]
     }
   ],
