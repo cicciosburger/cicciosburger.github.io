@@ -266,8 +266,10 @@ document.addEventListener('DOMContentLoaded', function () {
             allergeniIngredientiMap = allergeniData;
             menuData = data;
 
-            if (initialHash === '#foodtruck' || initialHash === '#noglutine') {
-                currentStore = initialHash === '#foodtruck' ? "FOODTRUCK" : "GLUTENFREE";
+            if (initialHash === '#foodtruck' || initialHash === '#noglutine' || initialHash === '#terrasini') {
+                if (initialHash === '#foodtruck') currentStore = "FOODTRUCK";
+                else if (initialHash === '#noglutine') currentStore = "GLUTENFREE";
+                else if (initialHash === '#terrasini') currentStore = "TERRASINI";
 
                 const productPage = document.getElementById('productListingPage');
                 if (productPage) {
