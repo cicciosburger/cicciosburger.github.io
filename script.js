@@ -164,6 +164,87 @@ document.addEventListener('DOMContentLoaded', function () {
     let allergeniIngredientiMap = {};
     let menuData = null;
     let scrollTargetId = null;
+    let currentStore = "LUMIA";
+
+    // --- Multilingual Language Management ---
+    function detectInitialLanguage() {
+        const saved = localStorage.getItem('site_lang');
+        if (saved) return saved;
+        
+        const navLang = (navigator.language || (navigator.languages && navigator.languages[0]) || '').toLowerCase();
+        if (navLang && !navLang.startsWith('it')) {
+            return 'en';
+        }
+        return 'it';
+    }
+
+    let currentLang = detectInitialLanguage();
+
+    const IT_FLAG_SVG = `<svg class="lang-flag-icon" width="20" height="14" viewBox="0 0 3 2" style="border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><rect width="1" height="2" x="0" fill="#009246"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>`;
+    const UK_FLAG_SVG = `<svg class="lang-flag-icon" width="20" height="14" viewBox="0 0 60 30" style="border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><clipPath id="uk-clip"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="uk-diag"><path d="M30,15 h30 v15 z v-30 h-30 z h-30 v-15 z v30 h30 z"/></clipPath><g clip-path="url(#uk-clip)"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#uk-diag)"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></g></svg>`;
+
+    function translateAllergenText(raw) {
+        if (!raw) return currentLang === 'en' ? "No known allergens" : "Nessun allergene noto";
+        if (currentLang !== 'en' || typeof TRANSLATIONS === 'undefined' || !TRANSLATIONS.allergens) {
+            return raw;
+        }
+        if (TRANSLATIONS.allergens[raw]) {
+            return TRANSLATIONS.allergens[raw];
+        }
+        const parts = raw.split(',').map(p => p.trim());
+        const translatedParts = parts.map(part => TRANSLATIONS.allergens[part] || part);
+        return translatedParts.join(', ');
+    }
+
+    function updateLanguageUI() {
+        const flagSvg = currentLang === 'en' ? UK_FLAG_SVG : IT_FLAG_SVG;
+        const label = currentLang === 'en' ? 'EN' : 'IT';
+
+        document.querySelectorAll('.lang-switch-btn').forEach(btn => {
+            const flagEl = btn.querySelector('.lang-flag');
+            const labelEl = btn.querySelector('.lang-label');
+            if (flagEl) flagEl.innerHTML = flagSvg;
+            if (labelEl) labelEl.textContent = label;
+        });
+
+        // Translate static UI elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS.ui[key]) {
+                el.textContent = TRANSLATIONS.ui[key][currentLang];
+            }
+        });
+
+        // Translate footer notes
+        const noteFresh = document.querySelector('#menu-scroll-wrapper h4:nth-of-type(1)');
+        const noteFrozen = document.querySelector('#menu-scroll-wrapper h4:nth-of-type(2)');
+        const noteStarters = document.querySelector('#menu-scroll-wrapper h4:nth-of-type(3)');
+        if (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS.ui) {
+            if (noteFresh) noteFresh.textContent = TRANSLATIONS.ui.noteFresh[currentLang];
+            if (noteFrozen) noteFrozen.textContent = TRANSLATIONS.ui.noteFrozen[currentLang];
+            if (noteStarters) noteStarters.textContent = TRANSLATIONS.ui.noteStarters[currentLang];
+        }
+    }
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'it' ? 'en' : 'it';
+        localStorage.setItem('site_lang', currentLang);
+        updateLanguageUI();
+        if (menuData) {
+            generateMenu('productListingPage', currentStore);
+        }
+    }
+
+    // Attach listener to language switcher buttons
+    document.querySelectorAll('.lang-switch-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleLanguage();
+        });
+    });
+
+    // Initialize UI language
+    updateLanguageUI();
 
     Promise.all([
             fetch('allergeni.json').then(res => {
@@ -184,7 +265,6 @@ document.addEventListener('DOMContentLoaded', function () {
         ]).then(([allergeniData, data]) => {
             allergeniIngredientiMap = allergeniData;
             menuData = data;
-            let currentStore = "LUMIA";
 
             if (initialHash === '#foodtruck' || initialHash === '#noglutine') {
                 currentStore = initialHash === '#foodtruck' ? "FOODTRUCK" : "GLUTENFREE";
@@ -214,8 +294,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const storeButtons = document.querySelectorAll('.store-select-btn');
             storeButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const selectedStore = button.getAttribute('data-store');
-                    generateMenu('productListingPage', selectedStore);
+                    currentStore = button.getAttribute('data-store');
+                    generateMenu('productListingPage', currentStore);
 
                     document.getElementById('menuModal').style.display = 'none';
 
@@ -227,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     window.scrollTo(0, 0);
 
-                    history.pushState(null, '', '#menu-' + selectedStore.toLowerCase());
+                    history.pushState(null, '', '#menu-' + currentStore.toLowerCase());
                 });
             });
         })
@@ -288,16 +368,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const menuExplanations = {
             "MENU(Panino + Patatine + Starter a scelta*** + Bibita)": {
-                text: "BURGER + PATATINE + STARTER*** + BIBITA",
-                bold: "+5,00€ al costo del panino"
+                text: currentLang === 'en' ? "BURGER + FRIES + STARTER*** + DRINK" : "BURGER + PATATINE + STARTER*** + BIBITA",
+                bold: currentLang === 'en' ? "+€5.00 to burger price" : "+5,00€ al costo del panino"
             },
             "MENU(PANINO + PATATINE + BIBITA)": {
-                text: "BURGER + PATATINE + BIBITA",
-                bold: "+2,50€ al costo del panino"
+                text: currentLang === 'en' ? "BURGER + FRIES + DRINK" : "BURGER + PATATINE + BIBITA",
+                bold: currentLang === 'en' ? "+€2.50 to burger price" : "+2,50€ al costo del panino"
             },
             "MENU(PANINO + PATATINE)": {
-                text: "BURGER + PATATINE",
-                bold: "+2,00€ al costo del panino"
+                text: currentLang === 'en' ? "BURGER + FRIES" : "BURGER + PATATINE",
+                bold: currentLang === 'en' ? "+€2.00 to burger price" : "+2,00€ al costo del panino"
             }
         };
 
@@ -324,8 +404,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 const safeId = categoryName.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
                 categoryTitle.id = safeId;
 
+                // Category display name (MUST remain in ALL CAPS as requested)
+                let displayCatName = categoryName;
+                if (currentLang === 'en' && typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS.categories[categoryName]) {
+                    displayCatName = TRANSLATIONS.categories[categoryName];
+                }
+                displayCatName = displayCatName.toUpperCase();
+
                 if (categoryName.includes('(')) {
-                    const parts = categoryName.split('(');
+                    const parts = displayCatName.split('(');
                     categoryTitle.textContent = parts[0].trim();
 
                     container.appendChild(categoryTitle);
@@ -338,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     subtitle.textContent = parts[1].replace(')', '').trim();
                     container.appendChild(subtitle);
                 } else {
-                    categoryTitle.textContent = categoryName;
+                    categoryTitle.textContent = displayCatName;
                     container.appendChild(categoryTitle);
                 }
 
@@ -346,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const btn = document.createElement('button');
                     btn.className = 'category-nav-btn';
                     btn.setAttribute('data-target', safeId);
-                    btn.textContent = categoryName.split('(')[0].trim();
+                    btn.textContent = displayCatName.split('(')[0].trim();
                     btn.onclick = () => {
                         scrollTargetId = safeId;
 
@@ -505,7 +592,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const inlineText = document.createElement('p');
         inlineText.classList.add('product-description');
-        inlineText.textContent = ingredients.join(", ");
+
+        const translatedIngredients = ingredients.map(ing => {
+            if (currentLang === 'en' && typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS.ingredients[ing]) {
+                return TRANSLATIONS.ingredients[ing];
+            }
+            return ing;
+        });
+        inlineText.textContent = translatedIngredients.join(", ");
         productInfoDiv.appendChild(inlineText);
 
         const detailedContainer = document.createElement('div');
@@ -516,7 +610,10 @@ document.addEventListener('DOMContentLoaded', function () {
             row.className = "ingredient-row";
 
             const nameSpan = document.createElement('span');
-            nameSpan.textContent = name;
+            const translatedName = (currentLang === 'en' && typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS.ingredients[name])
+                ? TRANSLATIONS.ingredients[name]
+                : name;
+            nameSpan.textContent = translatedName;
 
             const allergenSpan = document.createElement('span');
             allergenSpan.className = "allergens";
@@ -525,7 +622,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 key.toLowerCase().includes(name.toLowerCase()) || name.toLowerCase().includes(key.toLowerCase())
             );
 
-            allergenSpan.textContent = found ? found[1] : "Nessun allergene noto";
+            let rawAllergen = found ? found[1] : null;
+            let allergenDisplay = translateAllergenText(rawAllergen);
+
+            allergenSpan.textContent = allergenDisplay;
             row.appendChild(nameSpan);
             row.appendChild(allergenSpan);
             detailedContainer.appendChild(row);

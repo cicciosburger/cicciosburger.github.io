@@ -18,13 +18,18 @@
     <link rel="preload" href="./img/logocleanbigsmaller.svg" as="image" type="image/svg+xml" fetchpriority="high">
     <link rel="preload" href="fonts/font_personalizzato.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script src="translations.js" defer></script>
     <script src="script.js?v=3" defer></script>
 </head>
 
 
 <body>
     <div class="container">
-        <div id="landing-page">
+        <div id="landing-page" style="position: relative;">
+            <div class="lang-switch-btn" style="position: absolute; top: 15px; right: 15px; z-index: 100;">
+                <span class="lang-flag"></span>
+                <span class="lang-label">IT</span>
+            </div>
             <!-- Header -->
             <header>
                 <img src="./img/logocleanbigsmaller.svg" alt="Ciccio's Burger Logo">
@@ -257,13 +262,19 @@
                     <span>Torna Indietro</span>
                 </span>
                 <div id="container"></div>
-                <h2 style="margin-bottom: 10px; margin-top: 15px;">IL NOSTRO MENÙ</h2>
+                <div class="menu-top-header" style="display: flex; align-items: center; justify-content: center; position: relative; margin-top: 15px; margin-bottom: 10px; width: 100%;">
+                    <h2 id="menuHeaderTitle" style="margin: 0; font-size: 1.8rem;" data-i18n="ourMenu">IL NOSTRO MENÙ</h2>
+                    <div class="lang-switch-btn" style="position: absolute; right: 0;">
+                        <span class="lang-flag">🇮🇹</span>
+                        <span class="lang-label">IT</span>
+                    </div>
+                </div>
                 <div id="ingredientToggleContainer" class="switch-container">
                     <label class="switch">
                         <input type="checkbox" id="toggleIngredientsLocale" />
                         <span class="slider"></span>
                     </label>
-                    <label for="toggleIngredientsLocale">Mostra allergeni</label>
+                    <label for="toggleIngredientsLocale" data-i18n="showAllergens">Mostra allergeni</label>
                 </div>
                 <div id="category-nav"></div>
                 <div id="menu-scroll-wrapper">
@@ -279,6 +290,9 @@
                     <h4 style="text-align: left; font-size: 1.4rem;">*** Starters a scelta tra: nuggets, meatball,
                         chicken pop corn, green nuggets(la variante green è solo per il menu Green)
                     </h4>
+                    <div id="menuDisclaimerBanner" style="margin-top: 20px; padding: 12px 15px; background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 8px; font-size: 0.9rem; color: #e0e0e0; text-align: left; line-height: 1.4;" data-i18n="disclaimerTranslation">
+                        ⚠️ Le traduzioni in inglese sono a scopo informativo. Per informazioni ufficiali e per allergie o intolleranze alimentari, si prega di fare sempre riferimento al personale di cassa.
+                    </div>
                 </div>
             </div>
         </div>
