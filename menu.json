@@ -235,19 +235,7 @@
         "FOODTRUCK"
       ]
     },
-    {
-      "title": "PORCHETTA",
-      "price": 9.9,
-      "ingredients": "bun, burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's, maionese",
-      "thumb": "./img/menu/ciccios/porchetta.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
-      ]
-    },
+
     {
       "title": "PORCHETTA 2.0",
       "price": 9.9,
@@ -397,15 +385,7 @@
         "GLUTENFREE"
       ]
     },
-    {
-      "title": "PORCHETTA ",
-      "price": 13.9,
-      "ingredients": "bun sg, burger di manzo 170g, scamorza, lattuga, cipolla caramellata, porchetta, rosti di patate, salsa white Ciccio's, maionese",
-      "thumb": "./img/menu/ciccios/porchetta.webp",
-      "available_in": [
-        "GLUTENFREE"
-      ]
-    },
+
     {
       "title": "DOUBLE TRIPLE ",
       "price": 15.90,
