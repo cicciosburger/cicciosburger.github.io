@@ -8,6 +8,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK",
@@ -22,6 +23,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -35,6 +37,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -56,6 +59,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -68,6 +72,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -80,6 +85,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -101,6 +107,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -122,6 +129,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -134,6 +142,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -146,6 +155,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -178,6 +188,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -191,6 +202,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -204,6 +216,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -217,6 +230,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -230,12 +244,12 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
       ]
     },
-
     {
       "title": "PORCHETTA 2.0",
       "price": 9.9,
@@ -244,6 +258,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -257,6 +272,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -270,6 +286,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -283,6 +300,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -296,6 +314,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -309,6 +328,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -316,12 +336,13 @@
     },
     {
       "title": "BIG",
-      "price": 11.90,
+      "price": 11.9,
       "ingredients": "bun, doppio burger di manzo 170g, pomodoro, lattuga, cheddar, scamorza, bacon, salsa Ciccio's",
       "thumb": "./img/menu/ciccios/BIG.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -329,12 +350,13 @@
     },
     {
       "title": "ZOLA",
-      "price": 9.90,
+      "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, songino, gorgonzola, pere caramellate, noci",
       "thumb": "./img/menu/ciccios/zola.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -385,10 +407,9 @@
         "GLUTENFREE"
       ]
     },
-
     {
       "title": "DOUBLE TRIPLE ",
-      "price": 15.90,
+      "price": 15.9,
       "ingredients": "bun sg, doppio burger di manzo sg, triplo cheddar, doppio bacon, salsa Ciccio's",
       "thumb": "./img/menu/ciccios/doubletriple.webp",
       "available_in": [
@@ -424,7 +445,7 @@
     },
     {
       "title": "BIG ",
-      "price": 15.90,
+      "price": 15.9,
       "ingredients": "bun sg, doppio burger di manzo sg, pomodoro, lattuga, cheddar, scamorza, bacon, salsa Ciccio's",
       "thumb": "./img/menu/ciccios/BIG.webp",
       "available_in": [
@@ -433,7 +454,7 @@
     },
     {
       "title": "ZOLA ",
-      "price": 13.90,
+      "price": 13.9,
       "ingredients": "bun sg, burger di manzo sg, songino, gorgonzola, pere caramellate, noci",
       "thumb": "./img/menu/ciccios/zola.webp",
       "available_in": [
@@ -450,6 +471,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -463,6 +485,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -476,6 +499,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -489,6 +513,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -551,6 +576,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -563,6 +589,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -575,6 +602,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -588,6 +616,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -601,6 +630,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -613,6 +643,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -625,6 +656,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -637,6 +669,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -649,6 +682,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -661,6 +695,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -673,6 +708,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -685,6 +721,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -697,6 +734,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -709,6 +747,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -721,6 +760,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -733,6 +773,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -745,6 +786,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -757,6 +799,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -771,6 +814,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -785,6 +829,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -799,6 +844,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -813,6 +859,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -827,6 +874,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -841,6 +889,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -855,6 +904,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -869,6 +919,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -883,6 +934,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -897,6 +949,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -911,6 +964,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -925,6 +979,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -933,12 +988,13 @@
     },
     {
       "title": "CERES LAGER 33CL",
-      "price": 3.50,
+      "price": 3.5,
       "ingredients": null,
       "thumb": "./img/menu/bibite/cereslager.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -952,6 +1008,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -965,6 +1022,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -978,6 +1036,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -991,6 +1050,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -1004,6 +1064,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "FOODTRUCK"
@@ -1037,6 +1098,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -1051,6 +1113,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -1072,6 +1135,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -1084,6 +1148,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
       ]
@@ -1096,6 +1161,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -1110,6 +1176,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
@@ -1124,6 +1191,7 @@
       "available_in": [
         "LUMIA",
         "STADIO",
+        "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
         "GLUTENFREE",
