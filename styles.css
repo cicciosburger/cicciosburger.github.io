@@ -2400,3 +2400,36 @@ a {
         gap: 4px !important;
     }
 }
+
+/* Language Switcher Styling */
+.lang-switch-btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: white;
+    user-select: none;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(4px);
+}
+
+.lang-switch-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: orange;
+    transform: scale(1.04);
+}
+
+.lang-switch-btn .lang-flag {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.lang-switch-btn .lang-label {
+    letter-spacing: 0.5px;
+}
