@@ -1988,16 +1988,6 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = "⏳ Reindirizzamento al pagamento...";
 
             const emailVal = (document.getElementById('comicon-email').value || '').trim();
-            const emailConfirm = (document.getElementById('comicon-email-confirm').value || '').trim();
-            if (emailVal.toLowerCase() !== emailConfirm.toLowerCase()) {
-                if (errBox) {
-                    errBox.textContent = 'Le email non coincidono. Controlla e riprova.';
-                    errBox.style.display = 'block';
-                }
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Vai al pagamento";
-                return;
-            }
 
             const payload = {
                 nome: (document.getElementById('comicon-nome').value || '').trim(),
@@ -2031,16 +2021,6 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = "Vai al pagamento";
         });
     }
-
-    // --- Comicon: controllo email (evita refusi digitando) ---
-    window.comiconCheckEmailMatch = function () {
-        const email = (document.getElementById('comicon-email').value || '').trim().toLowerCase();
-        const confirmEmail = (document.getElementById('comicon-email-confirm').value || '').trim().toLowerCase();
-        const span = document.getElementById('comicon-email-mismatch');
-        if (!span) return;
-        if (confirmEmail === '') { span.style.display = 'none'; return; }
-        span.style.display = (email === confirmEmail) ? 'none' : 'block';
-    };
 
     // --- Comicon: carica e mostra i codici nella pagina di successo ---
     window.loadComiconCodes = function (sessionId) {        const box = document.getElementById('comicon-success-codes');
