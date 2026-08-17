@@ -1788,6 +1788,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalId = 'productListingPage';
                 doSpecialRoute = true;
                 newStore = hash.substring(5).toUpperCase();
+            } else if (hash.startsWith('comicon-success')) {
+                // Stripe redirect: #comicon-success?session_id=...
+                modalId = 'comicon-success';
+                const _pi = hash.indexOf('?');
+                if (_pi !== -1) {
+                    const _params = new URLSearchParams(hash.substring(_pi + 1));
+                    const _sid = _params.get('session_id');
+                    if (_sid && window.loadComiconCodes) window.loadComiconCodes(_sid);
+                }
             }
 
             const modal = document.getElementById(modalId);
@@ -1966,6 +1975,81 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- Comicon: crea il checkout Stripe e reindirizza ---
+    const comiconForm = document.getElementById('comicon-form');
+    if (comiconForm) {
+        comiconForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const errBox = document.getElementById('comicon-error');
+            const submitBtn = document.getElementById('comicon-submit');
+            if (errBox) { errBox.style.display = 'none'; errBox.textContent = ''; }
+            submitBtn.disabled = true;
+            submitBtn.textContent = "⏳ Reindirizzamento al pagamento...";
+
+            const payload = {
+                nome: (document.getElementById('comicon-nome').value || '').trim(),
+                cognome: (document.getElementById('comicon-cognome').value || '').trim(),
+                email: (document.getElementById('comicon-email').value || '').trim().toLowerCase(),
+                quantity: parseInt(document.getElementById('comicon-quantity').value, 10)
+            };
+
+            try {
+                const res = await fetch(mainUrl + '/api/code/checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json().catch(() => ({}));
+                if (res.ok && data.url) {
+                    window.location.href = data.url;
+                    return;
+                }
+                if (errBox) {
+                    errBox.textContent = data.error || data.message || 'Errore, riprova.';
+                    errBox.style.display = 'block';
+                }
+            } catch (err) {
+                if (errBox) {
+                    errBox.textContent = 'Errore di rete, riprova tra qualche secondo.';
+                    errBox.style.display = 'block';
+                }
+            }
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Vai al pagamento";
+        });
+    }
+
+    // --- Comicon: carica e mostra i codici nella pagina di successo ---
+    window.loadComiconCodes = function (sessionId) {
+        const box = document.getElementById('comicon-success-codes');
+        if (!box) return;
+        let attempts = 0;
+        async function poll() {
+            try {
+                const res = await fetch(mainUrl + '/api/code/checkout-codes?session_id=' + encodeURIComponent(sessionId));
+                const data = await res.json().catch(() => ({}));
+                if (res.ok && data.codes && data.codes.length) {
+                    box.innerHTML =
+                        '<div style="font-size:1rem; color:#fff;">I tuoi codici:</div>' +
+                        '<ul style="list-style:none; padding:0; margin:10px 0;">' +
+                        data.codes.map(function (c) {
+                            return '<li style="font-size:1.4rem; font-weight:bold; color:#ff9f0a; letter-spacing:1px; margin:6px 0;">' + c + '</li>';
+                        }).join('') +
+                        '</ul>';
+                    return;
+                }
+            } catch (e) { /* retry */ }
+            if (attempts < 40) {
+                attempts++;
+                setTimeout(poll, 3000);
+            } else {
+                box.innerHTML = '<p style="color:#ccc; font-size:0.9rem;">I codici sono stati inviati via email.</p>';
+            }
+        }
+        box.innerHTML = '<p style="color:#ccc; font-size:0.9rem;">Verifica del pagamento in corso...</p>';
+        poll();
+    };
 
     // --- INTEGRATO DA FEEDBACK PROJECT ---
     const feedbackFormEl = document.getElementById('feedbackForm');
