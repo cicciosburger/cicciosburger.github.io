@@ -1796,6 +1796,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     const _params = new URLSearchParams(hash.substring(_pi + 1));
                     const _sid = _params.get('session_id');
                     if (_sid && window.loadComiconCodes) window.loadComiconCodes(_sid);
+                    if (_sid) {
+                        const _rl = document.getElementById('comicon-receipt-link');
+                        if (_rl) {
+                            _rl.href = mainUrl + '/ricevute?session_id=' + encodeURIComponent(_sid);
+                            _rl.style.display = 'inline-block';
+                        }
+                    }
                 }
             }
 
