@@ -959,7 +959,14 @@
                     <label for="comicon-email">Email</label>
                     <input type="email" id="comicon-email" name="email" required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                        title="Inserisci una email valida" placeholder="esempio@dominio.com">
+                        title="Inserisci una email valida" placeholder="esempio@dominio.com"
+                        oninput="comiconCheckEmailMatch()">
+
+                    <label for="comicon-email-confirm">Conferma Email</label>
+                    <input type="email" id="comicon-email-confirm" name="email_confirm" required
+                        placeholder="Ripeti la tua email"
+                        oninput="comiconCheckEmailMatch()">
+                    <span id="comicon-email-mismatch" style="display:none; color:#ff6b6b; font-size:0.85rem; margin-top:2px; max-width:300px; text-align:left;">Le email non coincidono.</span>
 
                     <label for="comicon-quantity">Quantità di codici</label>
                     <select id="comicon-quantity" name="quantity" required
