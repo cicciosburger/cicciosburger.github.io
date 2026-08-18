@@ -2050,6 +2050,17 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.textContent = "⏳ Reindirizzamento al pagamento...";
 
+            const termsChecked = document.getElementById('comicon-terms');
+            if (termsChecked && !termsChecked.checked) {
+                if (errBox) {
+                    errBox.textContent = 'Devi accettare l\'Informativa Privacy e il Regolamento per proseguire.';
+                    errBox.style.display = 'block';
+                }
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Vai al pagamento";
+                return;
+            }
+
             const emailVal = (document.getElementById('comicon-email').value || '').trim();
 
             // reCAPTCHA anti-bot (required)
