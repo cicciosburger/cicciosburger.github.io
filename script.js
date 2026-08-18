@@ -1809,8 +1809,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (_sid) {
                     const _rl = document.getElementById('comicon-receipt-link');
                     if (_rl) {
+                        // Set the href now, but keep it hidden until the payment
+                        // is confirmed (loadComiconCodes reveals it when fulfilled).
                         _rl.href = mainUrl + '/ricevute?session_id=' + encodeURIComponent(_sid);
-                        _rl.style.display = 'inline-block';
                     }
                 }
             }
@@ -2072,6 +2073,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             return '<li style="font-size:1.4rem; font-weight:bold; color:#ff9f0a; letter-spacing:1px; margin:6px 0;">' + c + '</li>';
                         }).join('') +
                         '</ul>';
+                    // Payment confirmed -> reveal the receipts link.
+                    const _rl = document.getElementById('comicon-receipt-link');
+                    if (_rl) {
+                        _rl.href = mainUrl + '/ricevute?session_id=' + encodeURIComponent(sessionId);
+                        _rl.style.display = 'inline-block';
+                    }
                     return;
                 }
             } catch (e) { /* retry */ }
