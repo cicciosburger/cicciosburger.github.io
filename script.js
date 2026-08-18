@@ -1,3 +1,37 @@
+
+    window.updatePartecipantiFields = function(qty) {
+        const container = document.getElementById('comicon-partecipanti-container');
+        if (!container) return;
+        container.innerHTML = '';
+        const num = parseInt(qty, 10);
+
+        const mainNomeLabel = document.querySelector('label[for="comicon-nome"]');
+        if (mainNomeLabel) {
+            mainNomeLabel.textContent = num > 1 ? "Nome Partecipante 1 (Acquirente)" : "Nome";
+        }
+        const mainCognomeLabel = document.querySelector('label[for="comicon-cognome"]');
+        if (mainCognomeLabel) {
+            mainCognomeLabel.textContent = num > 1 ? "Cognome Partecipante 1 (Acquirente)" : "Cognome";
+        }
+
+        if (num > 1) {
+            for (let i = 2; i <= num; i++) {
+                const div = document.createElement('div');
+                div.style.marginTop = '12px';
+                div.style.paddingTop = '10px';
+                div.style.borderTop = '1px dashed rgba(255,255,255,0.2)';
+                div.innerHTML = `
+                    <label style="color:#ff9f0a; font-size:0.9rem; font-weight:bold; display:block; margin-bottom:4px;">Partecipante ${i}</label>
+                    <label for="comicon-nome-${i}" style="font-size:0.85rem; display:block; color:#ccc;">Nome Partecipante ${i}</label>
+                    <input type="text" id="comicon-nome-${i}" class="comicon-extra-nome" required pattern="[A-Za-z ]+" title="Sono ammesse solo lettere" placeholder="Inserisci nome" style="width:100%; max-width:300px; height:42px; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:white; padding:0 10px; box-sizing:border-box; margin-bottom:8px;">
+                    
+                    <label for="comicon-cognome-${i}" style="font-size:0.85rem; display:block; color:#ccc;">Cognome Partecipante ${i}</label>
+                    <input type="text" id="comicon-cognome-${i}" class="comicon-extra-cognome" required pattern="[A-Za-z ]+" title="Sono ammesse solo lettere" placeholder="Inserisci cognome" style="width:100%; max-width:300px; height:42px; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:white; padding:0 10px; box-sizing:border-box;">
+                `;
+                container.appendChild(div);
+            }
+        }
+    };
 const mainUrl = 'https://api.cicciosburger.it';
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
@@ -2023,11 +2057,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            const quantityVal = parseInt(document.getElementById('comicon-quantity').value, 10);
+            const nome1 = (document.getElementById('comicon-nome').value || '').trim();
+            const cognome1 = (document.getElementById('comicon-cognome').value || '').trim();
+
+            const partecipantiList = [{ nome: nome1, cognome: cognome1 }];
+            if (quantityVal > 1) {
+                for (let i = 2; i <= quantityVal; i++) {
+                    const fnEl = document.getElementById(`comicon-nome-${i}`);
+                    const lnEl = document.getElementById(`comicon-cognome-${i}`);
+                    const fn = fnEl ? fnEl.value.trim() : '';
+                    const ln = lnEl ? lnEl.value.trim() : '';
+                    if (fn && ln) {
+                        partecipantiList.push({ nome: fn, cognome: ln });
+                    } else {
+                        partecipantiList.push({ nome: nome1, cognome: cognome1 });
+                    }
+                }
+            }
+
             const payload = {
-                nome: (document.getElementById('comicon-nome').value || '').trim(),
-                cognome: (document.getElementById('comicon-cognome').value || '').trim(),
+                nome: nome1,
+                cognome: cognome1,
                 email: emailVal.toLowerCase(),
-                quantity: parseInt(document.getElementById('comicon-quantity').value, 10),
+                quantity: quantityVal,
+                partecipanti: partecipantiList,
                 recaptchaResponse: captchaToken
             };
 
