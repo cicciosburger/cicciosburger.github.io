@@ -1,12 +1,12 @@
 
-    <script>
 function updatePartecipantiFields(qty) {
     var num = parseInt(qty, 10) || 1;
     var mainNomeLabel = document.querySelector('label[for="comicon-nome"]');
     if (mainNomeLabel) mainNomeLabel.textContent = num > 1 ? "Nome Partecipante 1 (Acquirente)" : "Nome";
     var mainCognomeLabel = document.querySelector('label[for="comicon-cognome"]');
     if (mainCognomeLabel) mainCognomeLabel.textContent = num > 1 ? "Cognome Partecipante 1 (Acquirente)" : "Cognome";
-    
+
+    var firstShownBox = null;
     for (var i = 2; i <= 6; i++) {
         var box = document.getElementById('partecipante-box-' + i);
         var fn = document.getElementById('comicon-nome-' + i);
@@ -14,6 +14,7 @@ function updatePartecipantiFields(qty) {
         if (box) {
             if (i <= num) {
                 box.style.display = 'block';
+                if (!firstShownBox) firstShownBox = box;
                 if (fn) fn.required = true;
                 if (ln) ln.required = true;
             } else {
@@ -23,9 +24,13 @@ function updatePartecipantiFields(qty) {
             }
         }
     }
+    if (num > 1 && firstShownBox) {
+        setTimeout(function() {
+            firstShownBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
+    }
 }
 window.updatePartecipantiFields = updatePartecipantiFields;
-</script>
 const mainUrl = 'https://api.cicciosburger.it';
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
@@ -2027,11 +2032,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Comicon: crea il checkout Stripe e reindirizza ---
     const comiconQuantitySelect = document.getElementById('comicon-quantity');
     if (comiconQuantitySelect) {
-        comiconQuantitySelect.addEventListener('change', (e) => {
+        const handleQtyChange = () => {
             if (typeof window.updatePartecipantiFields === 'function') {
-                window.updatePartecipantiFields(e.target.value);
+                window.updatePartecipantiFields(comiconQuantitySelect.value);
             }
-        });
+        };
+        comiconQuantitySelect.addEventListener('change', handleQtyChange);
+        comiconQuantitySelect.addEventListener('input', handleQtyChange);
     }
 
     const comiconForm = document.getElementById('comicon-form');
