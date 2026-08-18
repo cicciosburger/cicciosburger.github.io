@@ -1811,7 +1811,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (_rl) {
                         // Set the href now, but keep it hidden until the payment
                         // is confirmed (loadComiconCodes reveals it when fulfilled).
-                        _rl.href = mainUrl + '/ricevute?session_id=' + encodeURIComponent(_sid);
+                        _rl.href = mainUrl + '/api/ricevute?session_id=' + encodeURIComponent(_sid);
                     }
                 }
             }
@@ -2076,7 +2076,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Payment confirmed -> reveal the receipts link.
                     const _rl = document.getElementById('comicon-receipt-link');
                     if (_rl) {
-                        _rl.href = mainUrl + '/ricevute?session_id=' + encodeURIComponent(sessionId);
+                        _rl.href = mainUrl + '/api/ricevute?session_id=' + encodeURIComponent(sessionId);
                         _rl.style.display = 'inline-block';
                     }
                     const _title = document.getElementById('comicon-success-title');
