@@ -2,6 +2,7 @@ const mainUrl = 'https://api.cicciosburger.it';
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
 let recaptchaCopWidgetId;
+let recaptchaComiconWidgetId;
 let foodtruckMap;
 let leafletLoaded = false;
 let leafletLoading = false;
@@ -1724,6 +1725,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const recaptchaContainer = document.getElementById("recaptcha-container");
         const recaptchaContainerOrder = document.getElementById("recaptcha-container-order");
         const recaptchaContainerCop = document.getElementById("recaptcha-container-cop");
+        const recaptchaContainerComicon = document.getElementById("recaptcha-container-comicon");
         if (recaptchaContainer) {
             recaptchaWidgetId = grecaptcha.render(recaptchaContainer, {
                 sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
@@ -1736,6 +1738,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (recaptchaContainerCop) {
             recaptchaCopWidgetId = grecaptcha.render(recaptchaContainerCop, {
+                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
+            });
+        }
+        if (recaptchaContainerComicon) {
+            recaptchaComiconWidgetId = grecaptcha.render(recaptchaContainerComicon, {
                 sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
             });
         }
@@ -1998,11 +2005,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const emailVal = (document.getElementById('comicon-email').value || '').trim();
 
+            // reCAPTCHA anti-bot (required)
+            const captchaToken = (typeof grecaptcha !== 'undefined' && typeof recaptchaComiconWidgetId !== 'undefined')
+                ? grecaptcha.getResponse(recaptchaComiconWidgetId)
+                : '';
+            if (!captchaToken) {
+                if (errBox) {
+                    errBox.textContent = 'Completa la verifica anti-bot (reCAPTCHA).';
+                    errBox.style.display = 'block';
+                }
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Vai al pagamento";
+                return;
+            }
+
             const payload = {
                 nome: (document.getElementById('comicon-nome').value || '').trim(),
                 cognome: (document.getElementById('comicon-cognome').value || '').trim(),
                 email: emailVal.toLowerCase(),
-                quantity: parseInt(document.getElementById('comicon-quantity').value, 10)
+                quantity: parseInt(document.getElementById('comicon-quantity').value, 10),
+                recaptchaResponse: captchaToken
             };
 
             try {
