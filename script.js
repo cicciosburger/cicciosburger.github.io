@@ -1797,6 +1797,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const _pi = hash.indexOf('?');
                     if (_pi !== -1) _sid = new URLSearchParams(hash.substring(_pi + 1)).get('session_id');
                 }
+                if (_sid) _sid = _sid.replace(/[{}]/g, '');
                 if (_sid && window.loadComiconCodes) window.loadComiconCodes(_sid);
                 if (_sid) {
                     const _rl = document.getElementById('comicon-receipt-link');
