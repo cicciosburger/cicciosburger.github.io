@@ -2081,6 +2081,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     const _title = document.getElementById('comicon-success-title');
                     if (_title) _title.textContent = 'Pagamento completato!';
+                    const _emoji = document.getElementById('comicon-success-emoji');
+                    if (_emoji) _emoji.style.display = 'block';
                     return;
                 }
             } catch (e) { /* retry */ }
@@ -2093,7 +2095,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const _title = document.getElementById('comicon-success-title');
         if (_title) _title.textContent = 'Verifica del pagamento in corso...';
-        box.innerHTML = '<p style="color:#ccc; font-size:0.9rem;">Verifica del pagamento in corso...</p>';
+        const _emoji = document.getElementById('comicon-success-emoji');
+        if (_emoji) _emoji.style.display = 'none';
+        box.innerHTML = '<div class="spinner"></div>';
         poll();
     };
 
