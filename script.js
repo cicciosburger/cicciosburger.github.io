@@ -2079,6 +2079,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         _rl.href = mainUrl + '/ricevute?session_id=' + encodeURIComponent(sessionId);
                         _rl.style.display = 'inline-block';
                     }
+                    const _title = document.getElementById('comicon-success-title');
+                    if (_title) _title.textContent = 'Pagamento completato!';
                     return;
                 }
             } catch (e) { /* retry */ }
@@ -2089,6 +2091,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 box.innerHTML = '<p style="color:#ccc; font-size:0.9rem;">I codici sono stati inviati via email.</p>';
             }
         }
+        const _title = document.getElementById('comicon-success-title');
+        if (_title) _title.textContent = 'Verifica del pagamento in corso...';
         box.innerHTML = '<p style="color:#ccc; font-size:0.9rem;">Verifica del pagamento in corso...</p>';
         poll();
     };
