@@ -568,6 +568,20 @@ a {
     background: #fff;
 }
 
+/* Loading spinner for the comicon success page */
+.spinner {
+    width: 26px;
+    height: 26px;
+    margin: 6px auto;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #ff9f0a;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 #membershipModal .modalForm-content input[type="date"],
 #copCardModal .modalForm-content input[type="date"],
 #customizeModal .modalForm-content input[type="date"] {
