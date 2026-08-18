@@ -1739,6 +1739,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadRecaptcha() {
+        if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.render === 'function') {
+            if (typeof window.onRecaptchaLoad === 'function') {
+                window.onRecaptchaLoad();
+            }
+            return;
+        }
         if (!recaptchaLoaded) {
             const script = document.createElement("script");
             script.src = "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit";
@@ -1750,30 +1756,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.onRecaptchaLoad = function () {
-        const recaptchaContainer = document.getElementById("recaptcha-container");
-        const recaptchaContainerOrder = document.getElementById("recaptcha-container-order");
-        const recaptchaContainerCop = document.getElementById("recaptcha-container-cop");
-        const recaptchaContainerComicon = document.getElementById("recaptcha-container-comicon");
-        if (recaptchaContainer) {
-            recaptchaWidgetId = grecaptcha.render(recaptchaContainer, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
-            });
-        }
-        if (recaptchaContainerOrder) {
-            recaptchaOrderWidgetId = grecaptcha.render(recaptchaContainerOrder, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
-            });
-        }
-        if (recaptchaContainerCop) {
-            recaptchaCopWidgetId = grecaptcha.render(recaptchaContainerCop, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
-            });
-        }
-        if (recaptchaContainerComicon) {
-            recaptchaComiconWidgetId = grecaptcha.render(recaptchaContainerComicon, {
-                sitekey: "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_",
-            });
-        }
+        if (typeof grecaptcha === 'undefined' || typeof grecaptcha.render !== 'function') return;
+
+        const sitekey = "6LeNBt0qAAAAAOkMEYknDVLtPCkhhSo7Fc4gh-r_";
+
+        const containers = [
+            { id: "recaptcha-container", get: () => recaptchaWidgetId, set: (v) => { recaptchaWidgetId = v; } },
+            { id: "recaptcha-container-order", get: () => recaptchaOrderWidgetId, set: (v) => { recaptchaOrderWidgetId = v; } },
+            { id: "recaptcha-container-cop", get: () => recaptchaCopWidgetId, set: (v) => { recaptchaCopWidgetId = v; } },
+            { id: "recaptcha-container-comicon", get: () => recaptchaComiconWidgetId, set: (v) => { recaptchaComiconWidgetId = v; } }
+        ];
+
+        containers.forEach(item => {
+            const el = document.getElementById(item.id);
+            if (el && (!el.children.length || typeof item.get() === 'undefined')) {
+                try {
+                    const wid = grecaptcha.render(el, { sitekey: sitekey });
+                    item.set(wid);
+                } catch (e) {
+                    // Container already rendered or pending
+                }
+            }
+        });
     };
 
 
