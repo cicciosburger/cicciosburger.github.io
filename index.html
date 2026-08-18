@@ -19,15 +19,17 @@
     <link rel="preload" href="fonts/font_personalizzato.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <script src="translations.js" defer></script>
-    <script src="script.js?v=4" defer></script>
+    <script src="script.js?v=5" defer></script>
 <script>
 function updatePartecipantiFields(qty) {
+    console.log("updatePartecipantiFields called with:", qty);
     var num = parseInt(qty, 10) || 1;
     var mainNomeLabel = document.querySelector('label[for="comicon-nome"]');
     if (mainNomeLabel) mainNomeLabel.textContent = num > 1 ? "Nome Partecipante 1 (Acquirente)" : "Nome";
     var mainCognomeLabel = document.querySelector('label[for="comicon-cognome"]');
     if (mainCognomeLabel) mainCognomeLabel.textContent = num > 1 ? "Cognome Partecipante 1 (Acquirente)" : "Cognome";
-    
+
+    var firstShownBox = null;
     for (var i = 2; i <= 6; i++) {
         var box = document.getElementById('partecipante-box-' + i);
         var fn = document.getElementById('comicon-nome-' + i);
@@ -35,6 +37,7 @@ function updatePartecipantiFields(qty) {
         if (box) {
             if (i <= num) {
                 box.style.display = 'block';
+                if (!firstShownBox) firstShownBox = box;
                 if (fn) fn.required = true;
                 if (ln) ln.required = true;
             } else {
@@ -44,9 +47,64 @@ function updatePartecipantiFields(qty) {
             }
         }
     }
+    // Scroll the modal to show the new participant fields
+    if (num > 1 && firstShownBox) {
+        setTimeout(function() {
+            firstShownBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
+    }
 }
 window.updatePartecipantiFields = updatePartecipantiFields;
 </script>
+<style>
+#comicon-partecipanti-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.partecipante-box {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(255,159,10,0.4);
+    text-align: left;
+    box-sizing: border-box;
+}
+.partecipante-box p {
+    color: #ff9f0a;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+    text-align: left;
+}
+.partecipante-box label {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: white;
+    text-align: left !important;
+    width: 100%;
+    font-size: 0.9rem;
+    max-width: 300px;
+}
+.partecipante-box input {
+    font-family: "CiccioCustom", Arial, sans-serif;
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    background-color: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    height: 42px;
+    outline: none;
+}
+</style>
 
 </head>
 
