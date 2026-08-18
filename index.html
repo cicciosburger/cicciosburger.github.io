@@ -695,6 +695,7 @@
                                 <option value="sperlinga">Sperlinga</option>
                                 <option value="mondello">Mondello</option>
                             </select>
+                    <div id="comicon-partecipanti-container" style="width:100%; max-width:300px; margin:10px auto;"></div>
                             <div class="g-recaptcha" id="recaptcha-container-order"></div>
                             <button type="submit" class="merch-button">Prenota</button>
                         </form>
@@ -967,7 +968,7 @@
                     <span id="comicon-email-error" style="display:none; color:#b00020; background-color:#fddede; border:1px solid #b00020; border-radius:4px; padding:4px; font-size:0.8em; margin-top:4px; max-width:300px;"></span>
 
                     <label for="comicon-quantity">Quantità di codici</label>
-                    <select id="comicon-quantity" name="quantity" required
+                    <select id="comicon-quantity" name="quantity" required onchange="updatePartecipantiFields(this.value)"
                         style="max-width:300px; height:42px; border-radius:8px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:white; font-family:'CiccioCustom',Arial,sans-serif; padding:0 10px;">
                         <option value="1" selected>1 codice — €15,00</option>
                         <option value="2">2 codici — €30,00</option>
@@ -976,6 +977,7 @@
                         <option value="5">5 codici — €75,00</option>
                         <option value="6">6 codici — €90,00</option>
                     </select>
+                    <div id="comicon-partecipanti-container" style="width:100%; max-width:300px; margin:10px auto;"></div>
 
                     <div class="g-recaptcha" id="recaptcha-container-comicon" style="margin: 14px auto 0 auto;"></div>
 
