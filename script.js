@@ -1789,19 +1789,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 doSpecialRoute = true;
                 newStore = hash.substring(5).toUpperCase();
             } else if (hash.startsWith('comicon-success')) {
-                // Stripe redirect: #comicon-success?session_id=...
+                // Stripe redirect: https://cicciosburger.it/?session_id=...#comicon-success
                 modalId = 'comicon-success';
-                const _pi = hash.indexOf('?');
-                if (_pi !== -1) {
-                    const _params = new URLSearchParams(hash.substring(_pi + 1));
-                    const _sid = _params.get('session_id');
-                    if (_sid && window.loadComiconCodes) window.loadComiconCodes(_sid);
-                    if (_sid) {
-                        const _rl = document.getElementById('comicon-receipt-link');
-                        if (_rl) {
-                            _rl.href = mainUrl + '/ricevute?session_id=' + encodeURIComponent(_sid);
-                            _rl.style.display = 'inline-block';
-                        }
+                let _sid = new URLSearchParams(window.location.search).get('session_id');
+                if (!_sid) {
+                    // Backward compat: session_id inside the hash query.
+                    const _pi = hash.indexOf('?');
+                    if (_pi !== -1) _sid = new URLSearchParams(hash.substring(_pi + 1)).get('session_id');
+                }
+                if (_sid && window.loadComiconCodes) window.loadComiconCodes(_sid);
+                if (_sid) {
+                    const _rl = document.getElementById('comicon-receipt-link');
+                    if (_rl) {
+                        _rl.href = mainUrl + '/ricevute?session_id=' + encodeURIComponent(_sid);
+                        _rl.style.display = 'inline-block';
                     }
                 }
             }
