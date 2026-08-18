@@ -2066,14 +2066,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const res = await fetch(mainUrl + '/api/code/checkout-codes?session_id=' + encodeURIComponent(sessionId));
                 const data = await res.json().catch(() => ({}));
                 if (res.ok && data.codes && data.codes.length) {
-                    box.innerHTML =
-                        '<div style="font-size:1rem; color:#fff;">La tua ricevuta:</div>' +
-                        '<ul style="list-style:none; padding:0; margin:10px 0;">' +
-                        data.codes.map(function (c) {
-                            return '<li style="font-size:1.4rem; font-weight:bold; color:#ff9f0a; letter-spacing:1px; margin:6px 0;">' + c + '</li>';
-                        }).join('') +
-                        '</ul>';
-                    // Payment confirmed -> reveal the receipts link.
+                    // Payment confirmed: do NOT list the codes (confusing).
+                    // Just reveal the receipts button.
+                    box.innerHTML = '';
                     const _rl = document.getElementById('comicon-receipt-link');
                     if (_rl) {
                         _rl.href = mainUrl + '/api/ricevute?session_id=' + encodeURIComponent(sessionId);
