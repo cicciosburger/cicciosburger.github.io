@@ -1,11 +1,6 @@
 
 function updatePartecipantiFields(qty) {
     var num = parseInt(qty, 10) || 1;
-    var mainNomeLabel = document.querySelector('label[for="comicon-nome"]');
-    if (mainNomeLabel) mainNomeLabel.textContent = num > 1 ? "Nome Partecipante 1 (Acquirente)" : "Nome";
-    var mainCognomeLabel = document.querySelector('label[for="comicon-cognome"]');
-    if (mainCognomeLabel) mainCognomeLabel.textContent = num > 1 ? "Cognome Partecipante 1 (Acquirente)" : "Cognome";
-
     var firstShownBox = null;
     for (var i = 2; i <= 6; i++) {
         var box = document.getElementById('partecipante-box-' + i);
