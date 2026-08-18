@@ -2031,6 +2031,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Comicon: crea il checkout Stripe e reindirizza ---
+    const comiconQuantitySelect = document.getElementById('comicon-quantity');
+    if (comiconQuantitySelect) {
+        comiconQuantitySelect.addEventListener('change', (e) => {
+            if (typeof window.updatePartecipantiFields === 'function') {
+                window.updatePartecipantiFields(e.target.value);
+            }
+        });
+    }
+
     const comiconForm = document.getElementById('comicon-form');
     if (comiconForm) {
         comiconForm.addEventListener('submit', async (e) => {
