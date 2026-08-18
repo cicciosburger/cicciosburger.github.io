@@ -1834,7 +1834,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                if (modalId === "membershipModal" || modalId === "copCardModal" || modalId === "orderModal") {
+                if (modalId === "comicon") {
+                    // Comicon checkout: load reCAPTCHA for the anti-spam check.
+                    loadRecaptcha();
+                } else if (modalId === "membershipModal" || modalId === "copCardModal" || modalId === "orderModal") {
                     if (!localStorage.getItem("cookieConsent")) {
                         disableForm();
                     } else {
@@ -1941,7 +1944,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cookieConsentBanner.style.display = "none";
         enableForm();
         const hash = window.location.hash.substring(1);
-        if (hash === "membershipModal" || hash === "copCardModal" || hash === "orderModal") {
+        if (hash === "membershipModal" || hash === "copCardModal" || hash === "orderModal" || hash === "comicon") {
             loadRecaptcha();
         }
     });
