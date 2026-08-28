@@ -472,8 +472,7 @@ p {
 /*MEMBERSHIP FORM CONTAINER*/
 #membershipModal .modalForm-content,
 #copCardModal .modalForm-content,
-#customizeModal .modalForm-content,
-#comicon .modalForm-content {
+#customizeModal .modalForm-content {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -487,16 +486,13 @@ p {
 
 /*ISCRIZIONE MEMBERSHIP CARD TITLE*/
 #membershipModal .modalForm-content h1,
-#copCardModal .modalForm-content h1,
-#comicon .modalForm-content h1,
-#comicon .modalForm-content h2 {
+#copCardModal .modalForm-content h1 {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
 #membershipModal .modalForm-content form,
-#copCardModal .modalForm-content form,
-#comicon .modalForm-content form {
+#copCardModal .modalForm-content form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -507,8 +503,7 @@ p {
 
 #membershipModal .modalForm-content label,
 #copCardModal .modalForm-content label,
-#customizeModal .modalForm-content label,
-#comicon .modalForm-content label {
+#customizeModal .modalForm-content label {
     margin-top: 12px;
     margin-bottom: 4px;
     font-weight: bold;
@@ -525,9 +520,7 @@ a {
 
 #membershipModal .modalForm-content input,
 #copCardModal .modalForm-content input,
-#customizeModal .modalForm-content input:not(.otp-input),
-#comicon .modalForm-content input,
-#comicon .modalForm-content select {
+#customizeModal .modalForm-content input:not(.otp-input) {
     font-family: "CiccioCustom";
     font-size: 16px;
     margin-bottom: 12px;
@@ -548,38 +541,16 @@ a {
 
 #membershipModal .modalForm-content input::placeholder,
 #copCardModal .modalForm-content input::placeholder,
-#customizeModal .modalForm-content input::placeholder,
-#comicon .modalForm-content input::placeholder {
+#customizeModal .modalForm-content input::placeholder {
     color: rgba(255, 255, 255, 0.4);
 }
 
 #membershipModal .modalForm-content input:focus,
 #copCardModal .modalForm-content input:focus,
-#customizeModal .modalForm-content input:focus,
-#comicon .modalForm-content input:focus,
-#comicon .modalForm-content select:focus {
+#customizeModal .modalForm-content input:focus {
     border-color: #ff9f0a;
     background-color: rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 0 3px rgba(255, 159, 10, 0.15);
-}
-
-#comicon .modalForm-content select option {
-    color: #000;
-    background: #fff;
-}
-
-/* Loading spinner for the comicon success page */
-.spinner {
-    width: 26px;
-    height: 26px;
-    margin: 6px auto;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-top-color: #ff9f0a;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
-@keyframes spin {
-    to { transform: rotate(360deg); }
 }
 
 #membershipModal .modalForm-content input[type="date"],
@@ -591,8 +562,7 @@ a {
 /*RICHIEDI TESSERA/SCARICA CODICE A BARRE*/
 #membershipModal .modalForm-content button,
 #copCardModal .modalForm-content button,
-#customizeModal .modalForm-content button,
-#comicon .modalForm-content button {
+#customizeModal .modalForm-content button {
     margin-top: 20px;
     padding: 10px 20px;
     color: white;

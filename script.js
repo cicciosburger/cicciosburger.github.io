@@ -1,36 +1,7 @@
-
-function updatePartecipantiFields(qty) {
-    var num = parseInt(qty, 10) || 1;
-    var firstShownBox = null;
-    for (var i = 2; i <= 6; i++) {
-        var box = document.getElementById('partecipante-box-' + i);
-        var fn = document.getElementById('comicon-nome-' + i);
-        var ln = document.getElementById('comicon-cognome-' + i);
-        if (box) {
-            if (i <= num) {
-                box.style.display = 'block';
-                if (!firstShownBox) firstShownBox = box;
-                if (fn) fn.required = true;
-                if (ln) ln.required = true;
-            } else {
-                box.style.display = 'none';
-                if (fn) { fn.required = false; fn.value = ''; }
-                if (ln) { ln.required = false; ln.value = ''; }
-            }
-        }
-    }
-    if (num > 1 && firstShownBox) {
-        setTimeout(function() {
-            firstShownBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 50);
-    }
-}
-window.updatePartecipantiFields = updatePartecipantiFields;
 const mainUrl = 'https://api.cicciosburger.it';
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
 let recaptchaCopWidgetId;
-let recaptchaComiconWidgetId;
 let foodtruckMap;
 let leafletLoaded = false;
 let leafletLoading = false;
@@ -1763,8 +1734,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const containers = [
             { id: "recaptcha-container", get: () => recaptchaWidgetId, set: (v) => { recaptchaWidgetId = v; } },
             { id: "recaptcha-container-order", get: () => recaptchaOrderWidgetId, set: (v) => { recaptchaOrderWidgetId = v; } },
-            { id: "recaptcha-container-cop", get: () => recaptchaCopWidgetId, set: (v) => { recaptchaCopWidgetId = v; } },
-            { id: "recaptcha-container-comicon", get: () => recaptchaComiconWidgetId, set: (v) => { recaptchaComiconWidgetId = v; } }
+            { id: "recaptcha-container-cop", get: () => recaptchaCopWidgetId, set: (v) => { recaptchaCopWidgetId = v; } }
         ];
 
         containers.forEach(item => {
@@ -1827,25 +1797,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalId = 'productListingPage';
                 doSpecialRoute = true;
                 newStore = hash.substring(5).toUpperCase();
-            } else if (hash.startsWith('comicon-success')) {
-                // Stripe redirect: https://cicciosburger.it/?session_id=...#comicon-success
-                modalId = 'comicon-success';
-                let _sid = new URLSearchParams(window.location.search).get('session_id');
-                if (!_sid) {
-                    // Backward compat: session_id inside the hash query.
-                    const _pi = hash.indexOf('?');
-                    if (_pi !== -1) _sid = new URLSearchParams(hash.substring(_pi + 1)).get('session_id');
-                }
-                if (_sid) _sid = _sid.replace(/[{}]/g, '');
-                if (_sid && window.loadComiconCodes) window.loadComiconCodes(_sid);
-                if (_sid) {
-                    const _rl = document.getElementById('comicon-receipt-link');
-                    if (_rl) {
-                        // Set the href now, but keep it hidden until the payment
-                        // is confirmed (loadComiconCodes reveals it when fulfilled).
-                        _rl.href = mainUrl + '/api/ricevute?session_id=' + encodeURIComponent(_sid);
-                    }
-                }
             }
 
             const modal = document.getElementById(modalId);
@@ -1867,10 +1818,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                if (modalId === "comicon") {
-                    // Comicon checkout: load reCAPTCHA for the anti-spam check.
-                    loadRecaptcha();
-                } else if (modalId === "membershipModal" || modalId === "copCardModal" || modalId === "orderModal") {
+                if (modalId === "membershipModal" || modalId === "copCardModal" || modalId === "orderModal") {
                     if (!localStorage.getItem("cookieConsent")) {
                         disableForm();
                     } else {
@@ -1977,7 +1925,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cookieConsentBanner.style.display = "none";
         enableForm();
         const hash = window.location.hash.substring(1);
-        if (hash === "membershipModal" || hash === "copCardModal" || hash === "orderModal" || hash === "comicon") {
+        if (hash === "membershipModal" || hash === "copCardModal" || hash === "orderModal") {
             loadRecaptcha();
         }
     });
@@ -2027,152 +1975,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // --- Comicon: crea il checkout Stripe e reindirizza ---
-    const comiconQuantitySelect = document.getElementById('comicon-quantity');
-    if (comiconQuantitySelect) {
-        const handleQtyChange = () => {
-            if (typeof window.updatePartecipantiFields === 'function') {
-                window.updatePartecipantiFields(comiconQuantitySelect.value);
-            }
-        };
-        comiconQuantitySelect.addEventListener('change', handleQtyChange);
-        comiconQuantitySelect.addEventListener('input', handleQtyChange);
-    }
-
-    const comiconForm = document.getElementById('comicon-form');
-    if (comiconForm) {
-        comiconForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const errBox = document.getElementById('comicon-error');
-            const submitBtn = document.getElementById('comicon-submit');
-            if (errBox) { errBox.style.display = 'none'; errBox.textContent = ''; }
-            submitBtn.disabled = true;
-            submitBtn.textContent = "⏳ Reindirizzamento al pagamento...";
-
-            const termsChecked = document.getElementById('comicon-terms');
-            if (termsChecked && !termsChecked.checked) {
-                if (errBox) {
-                    errBox.textContent = 'Devi accettare l\'Informativa Privacy e il Regolamento per proseguire.';
-                    errBox.style.display = 'block';
-                }
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Vai al pagamento";
-                return;
-            }
-
-            const emailVal = (document.getElementById('comicon-email').value || '').trim();
-
-            // reCAPTCHA anti-bot (required)
-            const captchaToken = (typeof grecaptcha !== 'undefined' && typeof recaptchaComiconWidgetId !== 'undefined')
-                ? grecaptcha.getResponse(recaptchaComiconWidgetId)
-                : '';
-            if (!captchaToken) {
-                if (errBox) {
-                    errBox.textContent = 'Completa la verifica anti-bot (reCAPTCHA).';
-                    errBox.style.display = 'block';
-                }
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Vai al pagamento";
-                return;
-            }
-
-            const quantityVal = parseInt(document.getElementById('comicon-quantity').value, 10);
-            const nome1 = (document.getElementById('comicon-nome').value || '').trim();
-            const cognome1 = (document.getElementById('comicon-cognome').value || '').trim();
-
-            const partecipantiList = [{ nome: nome1, cognome: cognome1 }];
-            if (quantityVal > 1) {
-                for (let i = 2; i <= quantityVal; i++) {
-                    const fnEl = document.getElementById(`comicon-nome-${i}`);
-                    const lnEl = document.getElementById(`comicon-cognome-${i}`);
-                    const fn = fnEl ? fnEl.value.trim() : '';
-                    const ln = lnEl ? lnEl.value.trim() : '';
-                    if (fn && ln) {
-                        partecipantiList.push({ nome: fn, cognome: ln });
-                    } else {
-                        partecipantiList.push({ nome: nome1, cognome: cognome1 });
-                    }
-                }
-            }
-
-            const payload = {
-                nome: nome1,
-                cognome: cognome1,
-                email: emailVal.toLowerCase(),
-                quantity: quantityVal,
-                partecipanti: partecipantiList,
-                recaptchaResponse: captchaToken
-            };
-
-            try {
-                const res = await fetch(mainUrl + '/api/code/checkout', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const data = await res.json().catch(() => ({}));
-                if (res.ok && data.url) {
-                    window.location.href = data.url;
-                    return;
-                }
-                if (errBox) {
-                    errBox.textContent = data.error || data.message || 'Errore, riprova.';
-                    errBox.style.display = 'block';
-                }
-            } catch (err) {
-                if (errBox) {
-                    errBox.textContent = 'Errore di rete, riprova tra qualche secondo.';
-                    errBox.style.display = 'block';
-                }
-            }
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Vai al pagamento";
-        });
-    }
-
-    // --- Comicon: carica e mostra i codici nella pagina di successo ---
-    window.loadComiconCodes = function (sessionId) {        const box = document.getElementById('comicon-success-codes');
-        if (!box) return;
-        let attempts = 0;
-        async function poll() {
-            try {
-                const res = await fetch(mainUrl + '/api/code/checkout-codes?session_id=' + encodeURIComponent(sessionId));
-                const data = await res.json().catch(() => ({}));
-                if (res.ok && data.codes && data.codes.length) {
-                    // Payment confirmed: do NOT list the codes (confusing).
-                    // Just reveal the receipts button.
-                    box.innerHTML = '';
-                    const _rl = document.getElementById('comicon-receipt-link');
-                    if (_rl) {
-                        _rl.href = mainUrl + '/api/ricevute?session_id=' + encodeURIComponent(sessionId);
-                        _rl.style.display = 'inline-block';
-                    }
-                    const _title = document.getElementById('comicon-success-title');
-                    if (_title) _title.textContent = 'Pagamento completato!';
-                    const _emoji = document.getElementById('comicon-success-emoji');
-                    if (_emoji) _emoji.style.display = 'block';
-                    const _note = document.getElementById('comicon-success-email-note');
-                    if (_note) _note.style.display = 'block';
-                    return;
-                }
-            } catch (e) { /* retry */ }
-            if (attempts < 40) {
-                attempts++;
-                setTimeout(poll, 3000);
-            } else {
-                box.innerHTML = '<p style="color:#ccc; font-size:0.9rem;">I codici sono stati inviati via email.</p>';
-            }
-        }
-        const _title = document.getElementById('comicon-success-title');
-        if (_title) _title.textContent = 'Verifica del pagamento in corso...';
-        const _emoji = document.getElementById('comicon-success-emoji');
-        if (_emoji) _emoji.style.display = 'none';
-        const _note = document.getElementById('comicon-success-email-note');
-        if (_note) _note.style.display = 'none';
-        box.innerHTML = '<div class="spinner"></div>';
-        poll();
-    };
 
     // --- INTEGRATO DA FEEDBACK PROJECT ---
     const feedbackFormEl = document.getElementById('feedbackForm');
