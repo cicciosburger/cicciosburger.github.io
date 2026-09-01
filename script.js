@@ -1991,11 +1991,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     initializeFoodTruckMap();
                 }
             } else {
-                if (landing) landing.style.display = 'flex';
+                if (landing) landing.style.display = 'block';
             }
-        } else {
-            if (landing) landing.style.display = 'flex';
-        }
+
         if (typeof window.updateFloatingCartButtonVisibility === 'function') {
             window.updateFloatingCartButtonVisibility();
         }
