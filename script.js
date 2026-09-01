@@ -2,163 +2,82 @@ const mainUrl = 'https://api.cicciosburger.it';
 let recaptchaWidgetId;
 let recaptchaOrderWidgetId;
 let recaptchaCopWidgetId;
-let foodtruckMap;
-let leafletLoaded = false;
-let leafletLoading = false;
 
-// Function to dynamically load Leaflet
-async function loadLeaflet() {
-    if (leafletLoaded) return Promise.resolve();
-    if (leafletLoading) {
-        // Wait for the existing load to complete
-        return new Promise((resolve) => {
-            const checkInterval = setInterval(() => {
-                if (leafletLoaded) {
-                    clearInterval(checkInterval);
-                    resolve();
-                }
-            }, 100);
+// Function to dynamically check store hours and order open stores first
+function updateStoreStatusAndOrder() {
+    try {
+        const now = new Date();
+        const formatter = new Intl.DateTimeFormat('it-IT', {
+            timeZone: 'Europe/Rome',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: false
         });
-    }
-
-    leafletLoading = true;
-    console.log('🗺️ Starting to load Leaflet...');
-
-    return new Promise((resolve, reject) => {
-        // Load CSS
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'leaflet.css';
-        document.head.appendChild(link);
-
-        // Load JS
-        const script = document.createElement('script');
-        script.src = 'leaflet.js';
-        script.onload = () => {
-            leafletLoaded = true;
-            leafletLoading = false;
-            console.log('✅ Leaflet loaded successfully!');
-            resolve();
-        };
-        script.onerror = () => {
-            leafletLoading = false;
-            console.error('❌ Failed to load Leaflet');
-            reject(new Error('Failed to load Leaflet'));
-        };
-        document.head.appendChild(script);
-    });
-}
-
-// Initialize the food truck map
-async function initializeFoodTruckMap() {
-    // Load Leaflet first
-    try {
-        await loadLeaflet();
-    } catch (error) {
-        console.error('Failed to load Leaflet:', error);
-        return;
-    }
-
-    let lat = 38.2064711;
-    let lng = 13.3252011;
-    let validCoordinates = true;
-
-    try {
-        const res = await fetch(mainUrl + '/menu/static/coords.json');
-        if (!res.ok) throw new Error("Non disponibile");
-        const data = await res.json();
-
-        if (typeof data.lat === "number" && typeof data.lng === "number" &&
-            !isNaN(data.lat) && !isNaN(data.lng) &&
-            data.lat !== null && data.lng !== null) {
-            lat = data.lat;
-            lng = data.lng;
-            validCoordinates = true;
-        } else {
-            validCoordinates = false;
+        const parts = formatter.formatToParts(now);
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+        for (const p of parts) {
+            if (p.type === 'hour') hour = parseInt(p.value, 10);
+            if (p.type === 'minute') minute = parseInt(p.value, 10);
         }
-    } catch (err) {
-        console.warn("Coordinate non disponibili, foodtruck chiuso:", err);
-        validCoordinates = false;
-    }
+        const currentMins = hour * 60 + minute;
 
-    const mapContainer = document.getElementById('map');
+        const storeSchedules = {
+            'LUMIA': [{ start: 12 * 60, end: 15 * 60 }, { start: 18 * 60 + 30, end: 23 * 60 }],
+            'MONDELLO': [{ start: 12 * 60, end: 24 * 60 }],
+            'STADIO': [{ start: 12 * 60, end: 15 * 60 }, { start: 18 * 60 + 30, end: 23 * 60 }],
+            'SPERLINGA': [{ start: 18 * 60 + 30, end: 23 * 60 }],
+            'GLUTENFREE': [{ start: 18 * 60 + 30, end: 23 * 60 }]
+        };
 
-    if (!validCoordinates) {
-        mapContainer.innerHTML = `
-            <div class="foodtruck-closed-container">
-                <div class="foodtruck-closed-decoration"></div>
-                <div class="foodtruck-closed-icon">🚚💤</div>
-                <h2 class="foodtruck-closed-title">Temporaneamente chiuso</h2>
-                <p class="foodtruck-closed-text">Ti aspettiamo per il prossimo evento!</p>
-            </div>
-        `;
-        return;
-    }
+        const grid = document.querySelector('.location-grid');
+        if (!grid) return;
 
-    // Only initialize if not already initialized
-    if (foodtruckMap) {
-        foodtruckMap.invalidateSize();
-        return;
-    }
+        const locationCards = grid.querySelectorAll('.location');
+        locationCards.forEach(card => {
+            const btn = card.querySelector('.store-select-btn');
+            if (!btn) return;
+            const storeKey = btn.getAttribute('data-store');
+            const badge = card.querySelector('.loc-badge');
 
-    foodtruckMap = L.map('map').setView([lat, lng], 18);
+            if (storeKey === 'FOODTRUCK') {
+                if (badge) badge.remove();
+                card.style.order = '10';
+                return;
+            }
 
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-        attribution: '&copy; <a href="https://carto.com/">CARTO</a> | © OpenStreetMap',
-        subdomains: "abcd",
-        maxZoom: 19
-    }).addTo(foodtruckMap);
+            const intervals = storeSchedules[storeKey];
+            if (!intervals) return;
 
-    const customDivIcon = L.divIcon({
-        html: `
-      <div class="marker-wrapper">
-        <div class="marker-label">CLICCAMI</div>
-        <img src="./img/logofoodclean.webp" class="marker-img" />
-      </div>
-    `,
-        className: "",
-        iconSize: [80, 50],
-        iconAnchor: [16, 64]
-    });
+            const isOpen = intervals.some(inv => currentMins >= inv.start && currentMins < inv.end);
 
-    const marker = L.marker([lat, lng], {
-        icon: customDivIcon
-    }).addTo(foodtruckMap);
-    marker.on('click', () => {
-        const url = `https://www.google.com/maps?q=${lat},${lng}`;
-        window.open(url, '_blank');
-    });
-
-    window.addEventListener('load', () => {
-        if (foodtruckMap) {
-            foodtruckMap.invalidateSize();
-        }
-    });
-
-    const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            const menuModal = document.getElementById('menuModal');
-            if (menuModal && menuModal.style.display === 'block') {
-                setTimeout(() => {
-                    if (foodtruckMap) {
-                        foodtruckMap.invalidateSize();
-                    }
-                }, 100);
+            if (isOpen) {
+                if (badge) {
+                    badge.textContent = 'Aperto';
+                    badge.className = 'loc-badge badge-open';
+                }
+                card.classList.remove('store-closed');
+                card.classList.add('store-open');
+                card.style.order = '1';
+            } else {
+                if (badge) {
+                    badge.textContent = 'Chiuso';
+                    badge.className = 'loc-badge badge-closed';
+                }
+                card.classList.remove('store-open');
+                card.classList.add('store-closed');
+                card.style.order = '5';
             }
         });
-    });
-
-    const menuModal = document.getElementById('menuModal');
-    if (menuModal) {
-        observer.observe(menuModal, {
-            attributes: true,
-            attributeFilter: ['style']
-        });
+    } catch (e) {
+        console.warn('Errore calcolo stato orari locali:', e);
     }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    updateStoreStatusAndOrder();
+    setInterval(updateStoreStatusAndOrder, 60000);
+
     const initialHash = window.location.hash;
 
     if (initialHash && initialHash !== '#' && initialHash !== '#home') {
@@ -1985,11 +1904,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                // Lazy load Leaflet when menu modal is opened (non-blocking)
                 if (modalId === "menuModal") {
-                    setTimeout(() => {
-                        initializeFoodTruckMap();
-                    }, 50);
+                    updateStoreStatusAndOrder();
                 }
             } else {
                 if (landing) landing.style.display = 'flex';
@@ -2527,7 +2443,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const service = parseInt(document.getElementById('service_quality').value);
             const clean = parseInt(document.getElementById('cleanliness').value);
 
-            if (loadingOverlayEl) loadingOverlayEl.classList.add('active');
+            if (loadingOverlayEl) {
+                loadingOverlayEl.style.display = 'flex';
+                loadingOverlayEl.classList.add('active');
+            }
             
             const imageIds = await uploadImages();
 
@@ -2553,7 +2472,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 const data = await response.json();
-                if (loadingOverlayEl) loadingOverlayEl.classList.remove('active');
+                if (loadingOverlayEl) {
+                    loadingOverlayEl.classList.remove('active');
+                    loadingOverlayEl.style.display = 'none';
+                }
 
                 if (!response.ok) {
                     alert(data.detail ? JSON.stringify(data.detail) : "Errore durante l'invio del feedback.");
@@ -2592,6 +2514,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                     
+                    googleMapsModalEl.style.display = 'flex';
                     googleMapsModalEl.classList.add('active');
                 } else {
                     resetFormState();
@@ -2604,7 +2527,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
             } catch (error) {
-                if (loadingOverlayEl) loadingOverlayEl.classList.remove('active');
+                if (loadingOverlayEl) {
+                    loadingOverlayEl.classList.remove('active');
+                    loadingOverlayEl.style.display = 'none';
+                }
                 alert("Errore di connessione. Riprova più tardi.");
                 console.error(error);
             }
@@ -2657,7 +2583,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (closeModalBtnEl) {
         closeModalBtnEl.addEventListener('click', () => {
-            if (googleMapsModalEl) googleMapsModalEl.classList.remove('active');
+            if (googleMapsModalEl) {
+                googleMapsModalEl.classList.remove('active');
+                googleMapsModalEl.style.display = 'none';
+            }
             resetFormState();
             showReceiptError("Feedback Inviato", "Grazie mille! Puoi chiudere questa pagina.");
         });

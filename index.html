@@ -4,12 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciccio's Burger | Hamburgeria a Palermo & Gluten Free</title>
-    <meta name="description" content="Burger gourmet da 170g, ingredienti selezionati e store 100% Gluten Free a Palermo. Consulta il nostro menù e ordina a domicilio!">
-    <meta name="keywords" content="Ciccio's Burger, hamburgeria Palermo, hamburger artigianali Palermo, burger gourmet Palermo, hamburger senza glutine Palermo, panineria Palermo, burger delivery Mondello">
+    <title>Ciccio's Burger | Hamburgeria Artigianale a Palermo & Mondello</title>
+    <meta name="description" content="I burger artigianali di Ciccio's a Palermo e Mondello: carne di qualità selezionata, bun soffice e salse fatte in casa. Scegli il tuo locale preferito e ordina a domicilio!">
+    <meta name="keywords" content="Ciccio's Burger, hamburgeria Palermo, hamburger artigianali Palermo, burger gourmet Palermo, panineria Mondello, burger delivery Palermo, street food Palermo">
     <meta name="author" content="Ciccio's Burger">
     <link rel="canonical" href="https://cicciosburger.it/">
+    <link rel="alternate" hreflang="it" href="https://cicciosburger.it/">
+    <link rel="alternate" hreflang="x-default" href="https://cicciosburger.it/">
     <meta name="robots" content="index, follow">
+
+    <!-- Local SEO Geo Tags (Palermo / Mondello) -->
+    <meta name="geo.region" content="IT-PA">
+    <meta name="geo.placename" content="Palermo">
+    <meta name="geo.position" content="38.1274;13.3558">
+    <meta name="ICBM" content="38.1274, 13.3558">
 
     <link rel="shortcut icon" type="image/x-icon" href="./img/icon_bg.ico">
     <link rel="preconnect" href="https://api.cicciosburger.it">
@@ -46,6 +54,7 @@
     .lang-switch-btn .lang-label{letter-spacing:.5px}
     @media (max-width:600px){#landing-page{overflow:hidden}header{padding:5px 5px 0 5px}header img,header object{max-height:48svh;max-width:90%}.button-container{margin-top:10px;gap:10px}.button-container>div,.button-container>a{padding:12px 6px;min-height:88px;border-radius:14px}.button-container .svgicon{width:1.8rem;height:1.8rem;max-width:1.8rem;max-height:1.8rem;margin-bottom:6px}.button{font-size:.95rem}.company-vat{font-size:.68rem;margin-top:8px;margin-bottom:2px}footer p{transform:translateY(-2.5px)}}
     @media (max-height:670px){header img,header object{max-height:26svh;max-width:60%}.button-container{gap:8px}.button-container>div,.button-container>a{padding:8px 4px;min-height:72px;border-radius:10px}.button-container .svgicon{width:1.5rem;height:1.5rem;max-width:1.5rem;max-height:1.5rem;margin-bottom:4px}.button{font-size:.82rem}.company-vat{font-size:.62rem;margin-top:4px;margin-bottom:1px}}
+    .modal, .modal-overlay, .loading-overlay { display: none; }
     </style>
 
     <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -60,12 +69,12 @@
         })();
     </script>
     <script src="translations.js" defer></script>
-    <script src="script.js?v=24" defer></script>
+    <script src="script.js?v=46" defer></script>
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:site_name" content="Ciccio's Burger">
-    <meta property="og:title" content="Ciccio's Burger | Hamburgeria Artigianale a Palermo">
-    <meta property="og:description" content="Burger gourmet con manzo selezionato 170g, salse home made e store 100% Gluten Free a Palermo (La Lumia, Mondello, Stadio, Sperlinga).">
+    <meta property="og:title" content="Ciccio's Burger | Hamburgeria Artigianale a Palermo & Mondello">
+    <meta property="og:description" content="Burger artigianali, ingredienti selezionati e salse fatte in casa. Sedi a Palermo (La Lumia, Mondello, Stadio, Sperlinga). Consulta il menù e ordina!">
     <meta property="og:image" content="https://cicciosburger.it/img/logo_bg.webp">
     <meta property="og:url" content="https://cicciosburger.it/">
     <meta property="og:type" content="website">
@@ -73,8 +82,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ciccio's Burger | Hamburgeria Artigianale a Palermo">
-    <meta name="twitter:description" content="Consulta il menù, scopri le nostre sedi a Palermo e ordina a domicilio.">
+    <meta name="twitter:title" content="Ciccio's Burger | Hamburgeria Artigianale a Palermo & Mondello">
+    <meta name="twitter:description" content="Burger artigianali, ingredienti selezionati e salse fatte in casa. Sedi a Palermo (La Lumia, Mondello, Stadio, Sperlinga). Consulta il menù e ordina!">
     <meta name="twitter:image" content="https://cicciosburger.it/img/logo_bg.webp">
 
     <!-- Schema.org JSON-LD Structured Data for Local SEO & Menu -->
@@ -86,6 +95,12 @@
           "@type": "Restaurant",
           "@id": "https://cicciosburger.it/#restaurant",
           "name": "Ciccio's Burger",
+          "alternateName": [
+            "Ciccios Burger",
+            "Ciccio Burger",
+            "Ciccios",
+            "Ciccio's"
+          ],
           "legalName": "Food Lab S.r.l.",
           "vatID": "IT06914660821",
           "taxID": "06914660821",
@@ -93,101 +108,47 @@
           "url": "https://cicciosburger.it",
           "logo": "https://cicciosburger.it/img/logocleanbigsmaller.svg",
           "image": "https://cicciosburger.it/img/logo_bg.webp",
-          "description": "Hamburgeria artigianale a Palermo con burger gourmet di manzo da 170g, ingredienti selezionati e punto vendita dedicato 100% Gluten Free.",
-          "servesCuisine": ["Hamburger", "Gourmet Burger", "American", "Gluten-Free"],
+          "description": "Hamburgeria artigianale a Palermo con burger gourmet, bun fresco e salse fatte in casa. Sedi a Palermo Centro, Mondello, Stadio e Sperlinga.",
+          "servesCuisine": ["Hamburger Artigianale", "Gourmet Burger", "Panini & Street Food", "American", "Pollo Fritto Crispy"],
+          "keywords": "hamburger palermo, hamburgeria palermo, panineria mondello, street food mondello, burger delivery palermo, hamburger a domicilio palermo, burger gourmet palermo, panineria palermo, migliori hamburger palermo, hamburger mondello",
+          "knowsAbout": [
+            "Migliori Hamburger Artigianali a Palermo",
+            "Panineria e Street Food a Mondello",
+            "Burger Gourmet con carne di qualità selezionata",
+            "Consegna Hamburger a Domicilio e Asporto a Palermo",
+            "Panini e Burger a Palermo Centro e zona Stadio",
+            "Food Truck per Eventi e Compleanni a Palermo"
+          ],
           "priceRange": "€€",
+          "paymentAccepted": "Cash, Credit Card, Debit Card, Contactless, Apple Pay, Google Pay, Satispay",
+          "currenciesAccepted": "EUR",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "295"
+          },
           "sameAs": [
             "https://www.instagram.com/cicciosburger_",
-            "https://www.tiktok.com/@cicciosburger"
+            "https://www.tiktok.com/@cicciosburger",
+            "https://g.page/r/CbsPCzOzinijEBM",
+            "https://g.page/r/CarxQuOMfjwYEBM",
+            "https://g.page/r/CZUYaLApJkg6EBM",
+            "https://g.page/r/CWi3u76szxXbEBM",
+            "https://g.page/r/CfxNiBYtEtLjEBM"
           ],
-          "hasMenu": {
-            "@type": "Menu",
-            "name": "Menù Ciccio's Burger",
-            "url": "https://cicciosburger.it",
-            "hasMenuSection": [
-              {
-                "@type": "MenuSection",
-                "name": "Ciccio's Burger",
-                "hasMenuItem": [
-                  {
-                    "@type": "MenuItem",
-                    "name": "Crispy Goat",
-                    "description": "Bun, burger di pollo pastellato e fritto, cheddar, bacon, lattuga, salsa Ciccio's",
-                    "offers": {
-                      "@type": "Offer",
-                      "price": "9.90",
-                      "priceCurrency": "EUR"
-                    }
-                  },
-                  {
-                    "@type": "MenuItem",
-                    "name": "Brie",
-                    "description": "Bun, burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's",
-                    "offers": {
-                      "@type": "Offer",
-                      "price": "9.90",
-                      "priceCurrency": "EUR"
-                    }
-                  },
-                  {
-                    "@type": "MenuItem",
-                    "name": "Talè",
-                    "description": "Bun, burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
-                    "offers": {
-                      "@type": "Offer",
-                      "price": "9.90",
-                      "priceCurrency": "EUR"
-                    }
-                  },
-                  {
-                    "@type": "MenuItem",
-                    "name": "Tuma",
-                    "description": "Bun, burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's",
-                    "offers": {
-                      "@type": "Offer",
-                      "price": "9.90",
-                      "priceCurrency": "EUR"
-                    }
-                  },
-                  {
-                    "@type": "MenuItem",
-                    "name": "Pancetta",
-                    "description": "Bun, burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
-                    "offers": {
-                      "@type": "Offer",
-                      "price": "9.90",
-                      "priceCurrency": "EUR"
-                    }
-                  }
-                ]
-              },
-              {
-                "@type": "MenuSection",
-                "name": "Gluten Free",
-                "hasMenuItem": [
-                  {
-                    "@type": "MenuItem",
-                    "name": "Crispy Goat Gluten Free",
-                    "description": "Bun senza glutine, pollo pastellato e fritto sg, cheddar, bacon, lattuga, salsa Ciccio's",
-                    "offers": {
-                      "@type": "Offer",
-                      "price": "10.90",
-                      "priceCurrency": "EUR"
-                    }
-                  },
-                  {
-                    "@type": "MenuItem",
-                    "name": "Pancetta Gluten Free",
-                    "description": "Bun senza glutine, burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's",
-                    "offers": {
-                      "@type": "Offer",
-                      "price": "10.90",
-                      "priceCurrency": "EUR"
-                    }
-                  }
-                ]
-              }
-            ]
+          "potentialAction": {
+            "@type": "OrderAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://menuof.com/site/foodlab?m=0",
+              "inLanguage": "it",
+              "actionPlatform": [
+                "http://schema.org/DesktopWebPlatform",
+                "http://schema.org/MobileWebPlatform"
+              ]
+            }
           },
           "department": [
             {
@@ -197,9 +158,17 @@
               "telephone": "+390917375333",
               "priceRange": "€€",
               "servesCuisine": ["Hamburger", "Gourmet Burger", "American"],
+              "hasMap": "https://g.page/r/CbsPCzOzinijEBM",
+              "sameAs": "https://g.page/r/CbsPCzOzinijEBM",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.1290071",
+                "longitude": "13.3549637"
+              },
+              "areaServed": ["Palermo Centro", "Politeama", "Ruggero Settimo", "Via Libertà"],
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "V. Isidoro La Lumia, 73",
+                "streetAddress": "Via Isidoro La Lumia, 30",
                 "addressLocality": "Palermo",
                 "postalCode": "90139",
                 "addressRegion": "PA",
@@ -226,7 +195,15 @@
               "image": "https://cicciosburger.it/img/mondello.webp",
               "telephone": "+390917375333",
               "priceRange": "€€",
-              "servesCuisine": ["Hamburger", "Gourmet Burger", "American"],
+              "servesCuisine": ["Hamburger", "Gourmet Burger", "Panineria Mondello", "Street Food"],
+              "hasMap": "https://g.page/r/CarxQuOMfjwYEBM",
+              "sameAs": "https://g.page/r/CarxQuOMfjwYEBM",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.1891924",
+                "longitude": "13.3148793"
+              },
+              "areaServed": ["Mondello", "Valdesi", "Partanna Mondello", "Capo Gallo"],
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Viale dell'Olimpo, 7",
@@ -249,9 +226,17 @@
               "telephone": "+390917375333",
               "priceRange": "€€",
               "servesCuisine": ["Hamburger", "Gourmet Burger", "American"],
+              "hasMap": "https://g.page/r/CZUYaLApJkg6EBM",
+              "sameAs": "https://g.page/r/CZUYaLApJkg6EBM",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.1481154",
+                "longitude": "13.3405517"
+              },
+              "areaServed": ["Zona Stadio", "Viale del Fante", "Favorita", "San Lorenzo", "Resuttana", "Viale Strasburgo"],
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Vle del Fante, 50 B",
+                "streetAddress": "Viale del Fante, 50",
                 "addressLocality": "Palermo",
                 "postalCode": "90146",
                 "addressRegion": "PA",
@@ -279,9 +264,17 @@
               "telephone": "+390917375333",
               "priceRange": "€€",
               "servesCuisine": ["Hamburger", "Gourmet Burger", "American"],
+              "hasMap": "https://g.page/r/CWi3u76szxXbEBM",
+              "sameAs": "https://g.page/r/CWi3u76szxXbEBM",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.1403057",
+                "longitude": "13.3391924"
+              },
+              "areaServed": ["Sperlinga", "Via Boris Giuliano", "Sciuti", "Notarbartolo"],
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Vle Giorgio Boris Giuliano, 4",
+                "streetAddress": "Via Boris Giuliano, 21",
                 "addressLocality": "Palermo",
                 "postalCode": "90144",
                 "addressRegion": "PA",
@@ -301,6 +294,13 @@
               "telephone": "+390917375333",
               "priceRange": "€€",
               "servesCuisine": ["Hamburger", "Gluten-Free"],
+              "hasMap": "https://g.page/r/CfxNiBYtEtLjEBM",
+              "sameAs": "https://g.page/r/CfxNiBYtEtLjEBM",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.1402305",
+                "longitude": "13.3391674"
+              },
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Via Principe di Paternò, 15",
@@ -324,43 +324,85 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Dove si trova l'hamburgeria senza glutine di Ciccio's Burger a Palermo?",
+              "name": "Quali sono i migliori hamburger e panini da provare da Ciccio's Burger a Palermo?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Il punto vendita dedicato 100% Gluten Free di Ciccio's Burger a Palermo si trova in Via Principe di Paternò, 15 (90144 Palermo). Offre burger artigianali senza glutine, bun dedicati, starters e patatine in totale sicurezza da contaminazione."
+                "text": "I burger gourmet di punta di Ciccio's Burger sono preparati con carne di manzo selezionata e ricette originali: Crispy Goat (con pollo pastellato fritto e bacon croccante), Brie (con brie e cipolla caramellata), Talè (con taleggio, guanciale e pere caramellate), Tuma (con tuma al miele) e Pancetta (con scamorza affumicata e confettura di fichi)."
               }
             },
             {
               "@type": "Question",
-              "name": "Quali sono le sedi di Ciccio's Burger a Palermo?",
+              "name": "Dove mangiare un burger o street food a Mondello?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Ciccio's Burger è presente a Palermo con 5 store: La Lumia (V. Isidoro La Lumia, 73), Mondello (Viale dell'Olimpo, 7), Stadio (Vle del Fante, 50 B), Sperlinga (Vle Giorgio Boris Giuliano, 4) e Gluten Free (Via Principe di Paternò, 15)."
+                "text": "Ciccio's Burger a Mondello si trova in Viale dell'Olimpo, 7. È il locale ideale per pranzo, cena o street food a Mondello con orario continuato dalle 12:00 alle 00:00."
               }
             },
             {
               "@type": "Question",
-              "name": "Quali sono i burger gourmet più famosi di Ciccio's Burger?",
+              "name": "Quali sono le sedi di Ciccio's Burger a Palermo e Mondello?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "I burger gourmet di punta di Ciccio's Burger hanno patty di manzo da 170g e ingredienti tipici: Crispy Goat (pollo fritto e bacon), Brie (cipolla caramellata e brie), Talè (taleggio, guanciale e pere caramellate), Tuma (tuma caramellata al miele) e Pancetta (scamorza, pancetta e confettura di fichi)."
+                "text": "Ciccio's Burger è presente a Palermo con store posizionati nei punti chiave della città: La Lumia (Via Isidoro La Lumia, 30 - Centro / Politeama), Mondello (Viale dell'Olimpo, 7), Stadio (Viale del Fante, 50 - Zona Stadio / Favorita), Sperlinga (Via Boris Giuliano, 21) e il punto vendita Gluten Free in Via Principe di Paternò, 15."
               }
             },
             {
               "@type": "Question",
-              "name": "Come posso ordinare a domicilio da Ciccio's Burger a Palermo?",
+              "name": "Come posso ordinare hamburger a domicilio (delivery) o per asporto a Palermo?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "È possibile consultare il menù e ordinare a domicilio (delivery) o per asporto direttamente dal sito ufficiale cicciosburger.it oppure chiamando il numero 0917375333."
+                "text": "È possibile consultare il menù completo e ordinare hamburger e panini a domicilio con consegna rapida o per asporto direttamente dal sito ufficiale cicciosburger.it oppure chiamando il numero 0917375333."
               }
             },
             {
               "@type": "Question",
-              "name": "Ciccio's Burger dispone di un Food Truck per eventi?",
+              "name": "Ciccio's Burger dispone di un Burger Truck per eventi e catering?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sì, Ciccio's Burger dispone di un Burger Truck itinerante attivo a Palermo e disponibile per eventi privati, compleanni e manifestazioni."
+                "text": "Sì, Ciccio's Burger dispone di un Burger Truck itinerante a Palermo disponibile per eventi privati, feste di compleanno, matrimoni e manifestazioni di street food con menù burger dedicato."
               }
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://cicciosburger.it/#website",
+          "url": "https://cicciosburger.it/",
+          "name": "Ciccio's Burger",
+          "description": "Hamburgeria Artigianale a Palermo & Mondello",
+          "inLanguage": "it-IT",
+          "publisher": {
+            "@id": "https://cicciosburger.it/#restaurant"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://cicciosburger.it/#sitenavigation",
+          "name": "Sezioni Principali",
+          "itemListElement": [
+            {
+              "@type": "SiteNavigationElement",
+              "position": 1,
+              "name": "Menù e Orari",
+              "url": "https://cicciosburger.it/#menuModal"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 2,
+              "name": "Te lo portiamo a casa",
+              "url": "https://menuof.com/site/foodlab?m=0"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 3,
+              "name": "The Burger Club",
+              "url": "https://cicciosburger.it/#membershipModal"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 4,
+              "name": "Merchandising",
+              "url": "https://cicciosburger.it/#orderModal"
             }
           ]
         }
@@ -381,7 +423,7 @@
             <header>
                 <img src="./img/logocleanbigsmaller.svg" alt="Ciccio's Burger Logo - Hamburgeria Artigianale Palermo" width="256" height="353" fetchpriority="high">
                 <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">
-                    Ciccio's Burger - Hamburgeria Artigianale & Gluten Free a Palermo
+                    Ciccio's Burger - Hamburgeria Artigianale a Palermo & Mondello
                 </h1>
             </header>
 
@@ -466,7 +508,16 @@
                 <div class="location-grid">
                     <!-- Lumia -->
                     <div class="location">
-                        <img src="./img/lumia.webp" alt="Ciccio's Burger - Store La Lumia Palermo" class="loc-pic" width="800" height="518" loading="lazy" decoding="async">
+                        <div class="loc-header">
+                            <h2>La Lumia</h2>
+                            <span class="loc-badge">Aperto</span>
+                        </div>
+                        <div class="loc-address">
+                            <svg class="pin-icon" viewBox="0 0 384 512" width="13" height="13" fill="currentColor">
+                                <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                            </svg>
+                            <span>Via Isidoro La Lumia, 30 • Palermo Centro</span>
+                        </div>
                         <div class="box-orari">
                             <div class="day">
                                 <span class="label">Lunedì - Domenica</span>
@@ -476,20 +527,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="location-actions" style="display: flex; gap: 10px; margin-top: 10px;">
-                            <a href="https://maps.app.goo.gl/immtevJZezTBbfa48" target="_blank"
-                                class="open-google-maps-button" style="flex: 1;">
-                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger La Lumia" class="maps-img" width="20" height="28" loading="lazy" decoding="async"> Maps
+                        <div class="location-actions">
+                            <a href="https://g.page/r/CbsPCzOzinijEBM" target="_blank"
+                                class="open-google-maps-button">
+                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger La Lumia" class="maps-img" width="16" height="22" loading="lazy" decoding="async"> Maps
                             </a>
-                            <button class="store-select-btn" data-store="LUMIA"
-                                style="flex: 1; padding: 10px; cursor: pointer; color: black; font-weight: bold; background: white; border: none; border-radius: 4px;">VAI
-                                AL MENU</button>
+                            <button class="store-select-btn" data-store="LUMIA">VAI AL MENÙ</button>
                         </div>
                     </div>
 
                     <!-- Mondello -->
                     <div class="location">
-                        <img src="./img/mondello.webp" alt="Ciccio's Burger - Store Mondello Palermo" class="loc-pic" width="800" height="518" loading="lazy" decoding="async">
+                        <div class="loc-header">
+                            <h2>Mondello</h2>
+                            <span class="loc-badge">Aperto</span>
+                        </div>
+                        <div class="loc-address">
+                            <svg class="pin-icon" viewBox="0 0 384 512" width="13" height="13" fill="currentColor">
+                                <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                            </svg>
+                            <span>Viale dell'Olimpo, 7 • Mondello</span>
+                        </div>
                         <div class="box-orari">
                             <div class="day">
                                 <span class="label">Lunedì - Domenica</span>
@@ -498,20 +556,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="location-actions" style="display: flex; gap: 10px; margin-top: 10px;">
-                            <a href="https://maps.app.goo.gl/G9pAkig2cQM2UMPz6" target="_blank"
-                                class="open-google-maps-button" style="flex: 1;">
-                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger Mondello" class="maps-img" width="20" height="28" loading="lazy" decoding="async"> Maps
+                        <div class="location-actions">
+                            <a href="https://g.page/r/CarxQuOMfjwYEBM" target="_blank"
+                                class="open-google-maps-button">
+                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger Mondello" class="maps-img" width="16" height="22" loading="lazy" decoding="async"> Maps
                             </a>
-                            <button class="store-select-btn" data-store="MONDELLO"
-                                style="flex: 1; padding: 10px; cursor: pointer; color: black; font-weight: bold; background: white; border: none; border-radius: 4px;">VAI
-                                AL MENU</button>
+                            <button class="store-select-btn" data-store="MONDELLO">VAI AL MENÙ</button>
                         </div>
                     </div>
 
                     <!-- Stadio -->
                     <div class="location">
-                        <img src="./img/stadio.webp" alt="Ciccio's Burger - Store Stadio Viale del Fante Palermo" class="loc-pic" width="800" height="518" loading="lazy" decoding="async">
+                        <div class="loc-header">
+                            <h2>Stadio</h2>
+                            <span class="loc-badge">Aperto</span>
+                        </div>
+                        <div class="loc-address">
+                            <svg class="pin-icon" viewBox="0 0 384 512" width="13" height="13" fill="currentColor">
+                                <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                            </svg>
+                            <span>Viale del Fante, 50 • Zona Stadio</span>
+                        </div>
                         <div class="box-orari">
                             <div class="day">
                                 <span class="label">Lunedì - Domenica</span>
@@ -521,20 +586,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="location-actions" style="display: flex; gap: 10px; margin-top: 10px;">
-                            <a href="https://www.google.com/maps/place/Viale+del+Fante,+50,+90146+Palermo+PA/@38.1481196,13.3405517,17z/"
-                                target="_blank" class="open-google-maps-button" style="flex: 1;">
-                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger Stadio" class="maps-img" width="20" height="28" loading="lazy" decoding="async"> Maps
+                        <div class="location-actions">
+                            <a href="https://g.page/r/CZUYaLApJkg6EBM"
+                                target="_blank" class="open-google-maps-button">
+                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger Stadio" class="maps-img" width="16" height="22" loading="lazy" decoding="async"> Maps
                             </a>
-                            <button class="store-select-btn" data-store="STADIO"
-                                style="flex: 1; padding: 10px; cursor: pointer; color: black; font-weight: bold; background: white; border: none; border-radius: 4px;">VAI
-                                AL MENU</button>
+                            <button class="store-select-btn" data-store="STADIO">VAI AL MENÙ</button>
                         </div>
                     </div>
 
                     <!-- Terrasini (Nascosto temporaneamente perché non ancora aperto) -->
                     <div class="location" style="display: none;">
-                        <img src="./img/stadio.webp" alt="Ciccio's Burger Terrasini" class="loc-pic" width="800" height="518" loading="lazy" decoding="async">
+                        <div class="loc-header">
+                            <h2>Terrasini</h2>
+                        </div>
                         <div class="box-orari">
                             <div class="day">
                                 <span class="label">Lunedì - Domenica</span>
@@ -544,16 +609,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="location-actions" style="display: flex; gap: 10px; margin-top: 10px;">
-                            <button class="store-select-btn" data-store="TERRASINI"
-                                style="flex: 1; padding: 10px; cursor: pointer; color: black; font-weight: bold; background: white; border: none; border-radius: 4px;">VAI
-                                AL MENU</button>
+                        <div class="location-actions">
+                            <button class="store-select-btn" data-store="TERRASINI">VAI AL MENÙ</button>
                         </div>
                     </div>
 
                     <!-- Sperlinga -->
                     <div class="location">
-                        <img src="./img/sperlinga.webp" alt="Ciccio's Burger - Store Sperlinga Palermo" class="loc-pic" width="800" height="518" loading="lazy" decoding="async">
+                        <div class="loc-header">
+                            <h2>Sperlinga</h2>
+                            <span class="loc-badge">Aperto</span>
+                        </div>
+                        <div class="loc-address">
+                            <svg class="pin-icon" viewBox="0 0 384 512" width="13" height="13" fill="currentColor">
+                                <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                            </svg>
+                            <span>Via Boris Giuliano, 21 • Sperlinga</span>
+                        </div>
                         <div class="box-orari">
                             <div class="day">
                                 <span class="label">Lunedì - Domenica</span>
@@ -562,21 +634,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="location-actions" style="display: flex; gap: 10px; margin-top: 10px;">
-                            <a href="https://www.google.com/maps/place/Ciccio%E2%80%99s+Burger+-+Sperlinga/@38.1403057,13.3417673,17z/data=!3m1!4b1!4m6!3m5!1s0x1319efa39fa03de9:0xdb15cfacbebbb768!8m2!3d38.1403057!4d13.3417673!16s"
-                                target="_blank" class="open-google-maps-button" style="flex: 1;">
-                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger Sperlinga" class="maps-img" width="20" height="28" loading="lazy" decoding="async"> Maps
+                        <div class="location-actions">
+                            <a href="https://g.page/r/CWi3u76szxXbEBM"
+                                target="_blank" class="open-google-maps-button">
+                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger Sperlinga" class="maps-img" width="16" height="22" loading="lazy" decoding="async"> Maps
                             </a>
-                            <button class="store-select-btn" data-store="SPERLINGA"
-                                style="flex: 1; padding: 10px; cursor: pointer; color: black; font-weight: bold; background: white; border: none; border-radius: 4px;">VAI
-                                AL MENU</button>
+                            <button class="store-select-btn" data-store="SPERLINGA">VAI AL MENÙ</button>
                         </div>
                     </div>
 
                     <!-- Gluten Free -->
                     <div class="location">
-                        <img src="./img/glutenfree.webp" alt="Ciccio's Burger - Store 100% Gluten Free Palermo" class="loc-pic" width="800" height="518" loading="lazy" decoding="async">
-
+                        <div class="loc-header">
+                            <h2>Gluten Free</h2>
+                            <span class="loc-badge">Aperto</span>
+                        </div>
+                        <div class="loc-address">
+                            <svg class="pin-icon" viewBox="0 0 384 512" width="13" height="13" fill="currentColor">
+                                <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                            </svg>
+                            <span>Via Principe di Paternò, 15</span>
+                        </div>
                         <div class="box-orari">
                             <div class="day">
                                 <span class="label">Lunedì - Domenica</span>
@@ -584,33 +662,36 @@
                                     <div class="slot evening">18:30 - 23:00</div>
                                 </div>
                             </div>
-
-
                         </div>
-                        <div class="location-actions" style="display: flex; gap: 10px; margin-top: 10px;">
-                            <a href="https://www.google.com/maps/place/Via+Principe+di+Patern%C3%B2,+15,+90144+Palermo+PA/@38.1402551,13.3416611,20.5z/"
-                                target="_blank" class="open-google-maps-button" style="flex: 1;">
-                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger Gluten Free" class="maps-img" width="20" height="28" loading="lazy" decoding="async"> Maps
+                        <div class="location-actions">
+                            <a href="https://g.page/r/CfxNiBYtEtLjEBM"
+                                target="_blank" class="open-google-maps-button">
+                                <img src="./img/googlemaps.webp" alt="Google Maps Ciccio's Burger Gluten Free" class="maps-img" width="16" height="22" loading="lazy" decoding="async"> Maps
                             </a>
-                            <button class="store-select-btn" data-store="GLUTENFREE"
-                                style="flex: 1; padding: 10px; cursor: pointer; color: black; font-weight: bold; background: white; border: none; border-radius: 4px;">VAI
-                                AL MENU</button>
+                            <button class="store-select-btn" data-store="GLUTENFREE">VAI AL MENÙ</button>
                         </div>
                     </div>
 
                     <!-- Burger Truck -->
                     <div class="location">
-                        <div id="map"></div>
-                        <h3>Burger Truck</h3>
-                        <div class="box-orari">
-                            <div class="day">
-                                <!-- <span class="label">Burger Truck</span> -->
-                            </div>
+                        <div class="loc-header">
+                            <h2>Burger Truck</h2>
                         </div>
-                        <div class="location-actions" style="display: flex; gap: 10px; margin-top: 10px;">
-                            <button class="store-select-btn" data-store="FOODTRUCK"
-                                style="flex: 1; padding: 10px; cursor: pointer; color: black; font-weight: bold; background: white; border: none; border-radius: 4px;">VAI
-                                AL MENU</button>
+                        <div class="loc-address" style="margin: 6px 0 10px 0;">
+                            <svg viewBox="0 0 448 512" width="14" height="14" fill="#e1306c" style="flex-shrink:0;">
+                                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                            </svg>
+                            <span>Vieni a scoprire i nostri prossimi eventi su Instagram</span>
+                        </div>
+                        <div class="location-actions">
+                            <a href="https://www.instagram.com/cicciosburger_/" target="_blank"
+                                class="open-google-maps-button" style="border-color: rgba(225, 48, 108, 0.4); background: rgba(225, 48, 108, 0.12);">
+                                <svg viewBox="0 0 448 512" width="15" height="15" fill="#e1306c">
+                                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                                </svg>
+                                <span>Instagram</span>
+                            </a>
+                            <button class="store-select-btn" data-store="FOODTRUCK">VAI AL MENÙ</button>
                         </div>
                     </div>
                 </div>
@@ -1165,7 +1246,7 @@
         </div>
 
         <!-- Modal for 5 Stars -->
-        <div id="googleMapsModal" class="modal-overlay">
+        <div id="googleMapsModal" class="modal-overlay" style="display: none;">
             <div class="modal-content glass-container" style="max-width: 500px; margin: 0 auto; text-align: center;">
                 <h2>Grazie per la recensione! 🎉</h2>
                 <p id="earnedPointsMessage" style="color: #2ecc71; font-weight: bold; margin-bottom: 10px; font-size: 1.15rem;"></p>
@@ -1180,7 +1261,7 @@
         </div>
 
         <!-- Loading Overlay -->
-        <div id="loadingOverlay" class="loading-overlay">
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
             <div class="spinner"></div>
         </div>
 
