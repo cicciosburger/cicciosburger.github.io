@@ -600,6 +600,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const image = document.createElement('img');
         image.classList.add('product-img');
         image.src = product.thumb;
+        image.width = 800;
+        image.height = 500;
         image.loading = "lazy";
         image.decoding = "async";
         productDiv.appendChild(image);
