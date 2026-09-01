@@ -38,6 +38,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: ⚡ Minify JS & CSS Assets
+        run: |
+          npx --yes esbuild script.js --minify --outfile=script.js --allow-overwrite
+          npx --yes esbuild translations.js --minify --outfile=translations.js --allow-overwrite
+          npx --yes esbuild styles.css --minify --outfile=styles.css --allow-overwrite
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
