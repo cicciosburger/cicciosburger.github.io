@@ -323,22 +323,8 @@ document.addEventListener('DOMContentLoaded', function () {
             storeButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     currentStore = button.getAttribute('data-store');
-
-                    document.getElementById('menuModal').style.display = 'none';
-
-                    const productPage = document.getElementById('productListingPage');
-                    productPage.style.display = 'block';
-                    const scrollWrapper = document.getElementById('menu-scroll-wrapper');
-                    if (scrollWrapper) {
-                        scrollWrapper.scrollTop = 0;
-                    }
-                    window.scrollTo(0, 0);
-
                     history.pushState(null, '', '#menu-' + currentStore.toLowerCase());
-
-                    setTimeout(() => {
-                        generateMenu('productListingPage', currentStore);
-                    }, 0);
+                    window.handleRouting();
                 });
             });
         })
@@ -1816,20 +1802,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    let currentActiveModal = null;
-
     window.handleRouting = function () {
         document.documentElement.classList.remove('has-initial-hash');
         const hash = window.location.hash.substring(1);
         const landing = document.getElementById('landing-page');
 
         if (!hash || hash === 'home') {
-            if (currentActiveModal) {
-                currentActiveModal.style.display = 'none';
-                currentActiveModal = null;
-            } else {
-                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
-            }
+            document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
             if (landing) landing.style.display = 'block';
             const cBanner = document.getElementById('cookieConsent');
             if (cBanner) cBanner.style.display = 'none';
@@ -1880,11 +1859,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById(modalId);
         if (modal) {
             if (landing) landing.style.display = 'none';
-            if (currentActiveModal && currentActiveModal !== modal) {
-                currentActiveModal.style.display = 'none';
-            }
+            document.querySelectorAll('.modal').forEach(m => {
+                if (m !== modal) m.style.display = 'none';
+            });
             modal.style.display = 'block';
-            currentActiveModal = modal;
+
+            if (modalId === 'productListingPage') {
+                const scrollWrapper = document.getElementById('menu-scroll-wrapper');
+                if (scrollWrapper) {
+                    scrollWrapper.scrollTop = 0;
+                }
+            }
 
                 if (modalId === 'feedbackModal') {
                     if (idScontrino) {

@@ -80,14 +80,17 @@ footer {
     scrollbar-color: #444 #0e0e0e;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 main {
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     width: 100%;
+    margin-top: auto;
+    margin-bottom: 5px;
 }
 
 header {
