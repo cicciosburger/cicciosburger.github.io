@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /invito/
+Disallow: /backtoschool/
+Allow: /
+
+Sitemap: https://cicciosburger.it/sitemap.xml

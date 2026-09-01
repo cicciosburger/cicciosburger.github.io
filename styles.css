@@ -73,7 +73,6 @@ footer {
     scrollbar-color: #444 #0e0e0e;
     display: flex;
     flex-direction: column;
-    padding-bottom: 25px;
 }
 
 main {
@@ -209,6 +208,17 @@ footer p {
     padding-bottom: 0px;
     line-height: 1;
     transform: translateY(1px);
+}
+
+.company-vat {
+    font-size: 0.75rem;
+    color: #888888;
+    opacity: 0.55;
+    margin-top: 18px;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    font-weight: 300;
 }
 
 @media (max-width: 450px) {

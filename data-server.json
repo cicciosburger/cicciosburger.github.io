@@ -1,0 +1,210 @@
+{
+    "valid_shops": [
+        "stadio",
+        "lumia",
+        "sperlinga"
+    ],
+    "available_sizes": {
+        "Tshirt Brie": {
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 20.0,
+            "image": "img/shop/tshirtBrie.webp"
+        },
+        "Tshirt Double Triple": {
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 20.0,
+            "image": "img/shop/tshirtDoubleTriple.webp"
+        },
+        "Tshirt Old School": {
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 20.0,
+            "image": "img/shop/tshirtOldSchool.webp"
+        },
+        "Tshirt Pancetta": {
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 20.0,
+            "image": "img/shop/tshirtPancetta.webp"
+        },
+        "Tshirt Tuma": {
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 20.0,
+            "image": "img/shop/tshirtTuma.webp"
+        },
+        "Tshirt Bambini Make It Happy": {
+            "sizes": [
+                "3-4 anni (XS)"
+            ],
+            "price": 12.0,
+            "image": "img/shop/tshirtBabyMakeItHappy.webp"
+        },
+        "Tshirt Bambini Burger Gang": {
+            "sizes": [
+                "5-6 anni (S)",
+                "7-8 anni (M)"
+            ],
+            "price": 12.0,
+            "image": "img/shop/tshirtBabyBurgerGang.webp"
+        },
+        "Cappello Vai in buca": {
+            "sizes": [
+                "unica"
+            ],
+            "price": 15.0,
+            "image": "img/shop/cappello_bianco.webp"
+        },
+        "Cappello Ciccio's": {
+            "sizes": [
+                "unica"
+            ],
+            "price": 15.0,
+            "image": "img/shop/cappello_nero.webp"
+        },
+        "Cappello Ciccio's Burger Truck": {
+            "sizes": [
+                "unica"
+            ],
+            "price": 15.0,
+            "image": "img/shop/cappello_rosso.webp"
+        },
+        "Cappello Ciccio's Fottuto Vizio": {
+            "sizes": [
+                "unica"
+            ],
+            "price": 15.0,
+            "image": "img/shop/cappello_vizio.webp"
+        },
+        "Tshirt Ciccio's Gluten Free": {
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 14.9,
+            "image": "img/shop/GLUTEN_MOCKUP_BACK.webp"
+        },
+        "Tshirt Ciccio's Spacca": {
+            "sizes": [
+                "S",
+                "M"
+            ],
+            "price": 14.9,
+            "image": "img/shop/cicciosSpacca.webp"
+        },
+        "Tshirt Menu Bianca": {
+            "sizes": [
+                "M"
+            ],
+            "price": 14.9,
+            "image": "img/shop/cicciosMenuBianco.webp"
+        },
+        "Tshirt Ciccio's Foodtruck": {
+            "sizes": [
+                "M",
+                "L"
+            ],
+            "price": 14.9,
+            "image": "img/shop/cicciosFoodtruck.webp"
+        },
+        "Tshirt Ciccio's Crafting Burgers": {
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "price": 14.9,
+            "image": "img/shop/cicciosCraftingBurgers.webp"
+        },
+        "Tshirt Bambini Ciccio's Spacca": {
+            "sizes": [
+                "5-6 anni (S)",
+                "7-8 anni (M)",
+                "9-10 anni (L)"
+            ],
+            "price": 9.9,
+            "image": "img/shop/cicciosSpaccaBaby.webp"
+        },
+        "Tshirt Bambini Ciccio's Crafting Burgers": {
+            "sizes": [
+                "5-6 anni (S)",
+                "9-10 anni (L)"
+            ],
+            "price": 9.9,
+            "image": "img/shop/cicciosCraftingBurgersBaby.webp"
+        },
+        "Tshirt Bambini AstroCiccio's": {
+            "sizes": [
+                "5-6 anni (S)",
+                "7-8 anni (M)"
+            ],
+            "price": 9.9,
+            "image": "img/shop/astroCicciosBaby.webp"
+        },
+        "Tshirt Manica Lunga Nera": {
+            "sizes": [
+                "L"
+            ],
+            "price": 29.9,
+            "image": "img/shop/manichelungheciccios.webp"
+        },
+        "Felpa Bambini Blu": {
+            "sizes": [
+                "3-4 anni (XS)",
+                "5-6 anni (S)",
+                "7-8 anni (M)",
+                "9-10 anni (L)",
+                "11-12 anni (XL)"
+            ],
+            "price": 27.9,
+            "image": "img/shop/felpacicciosbaby.webp"
+        },
+        "Telo Mare": {
+            "sizes": [
+                "unica"
+            ],
+            "price": 15.0,
+            "image": "img/shop/telomare.webp"
+        },
+        "Shopper": {
+            "sizes": [
+                "unica"
+            ],
+            "price": 9.9,
+            "image": "img/shop/shopper.webp"
+        },
+        "Pastelli": {
+            "sizes": [
+                "unica"
+            ],
+            "price": 4.9,
+            "image": "img/shop/pastelli.webp"
+        }
+    }
+}
