@@ -1881,7 +1881,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (doSpecialRoute) {
                     if (typeof window.generateMenu === 'function') {
-                        window.generateMenu('productListingPage', newStore);
+                        setTimeout(() => {
+                            window.generateMenu('productListingPage', newStore);
+                        }, 0);
                     }
                 }
 
