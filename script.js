@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (e) {}
         updateLanguageUI();
         if (menuData) {
-            generateMenu('productListingPage', currentStore);
+            generateMenu('productListingPage', currentStore, true);
         }
     }
 
@@ -341,7 +341,10 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error loading menu:', error));
 
-    window.generateMenu = function generateMenu(modalId, menuType) {
+    let lastRenderedStore = null;
+    let lastRenderedLang = null;
+
+    window.generateMenu = function generateMenu(modalId, menuType, force = false) {
         let contentId;
         if (modalId == 'menuModal' || modalId == 'productListingPage') {
             contentId = 'generatedContentLocale';
@@ -349,6 +352,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const container = document.getElementById(contentId);
         if (!container) return;
+
+        if (!force && lastRenderedStore === menuType && lastRenderedLang === currentLang && container.children.length > 0) {
+            return;
+        }
+        lastRenderedStore = menuType;
+        lastRenderedLang = currentLang;
+
         container.innerHTML = '';
         const fragment = document.createDocumentFragment();
 
