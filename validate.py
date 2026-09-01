@@ -1,4 +1,4 @@
-import json, os, sys
+import json, os, sys, subprocess
 
 def validate():
     error = False
@@ -71,6 +71,22 @@ def validate():
                     if name not in allergeni:
                         print(f"  [ERROR] Manca allergene per: '{name}' (nel prodotto '{item.get('title')}')")
                         error = True
+
+    print("\n5. Controllo Sintassi JavaScript...")
+    js_files = ['script.js', 'translations.js']
+    for js_file in js_files:
+        if os.path.exists(js_file):
+            try:
+                res = subprocess.run(['node', '-c', js_file], capture_output=True, text=True, check=False)
+                if res.returncode != 0:
+                    print(f"  [ERROR] Errore di sintassi in {js_file}:")
+                    for line in res.stderr.strip().split('\n'):
+                        print(f"    {line}")
+                    error = True
+                else:
+                    print(f"  [OK] {js_file} sintassi valida.")
+            except FileNotFoundError:
+                print(f"  [WARNING] Node.js non trovato nel PATH, impossibile eseguire il lint di {js_file}")
 
     if error:
         print("\n[FALLITO] ALCUNI TEST SONO FALLITI. Controlla gli errori sopra.")
