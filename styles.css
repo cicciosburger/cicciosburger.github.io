@@ -143,10 +143,14 @@ header object {
 
 .button-container>div:hover,
 .button-container>a:hover {
-    transform: translateY(-4px) scale(1.02);
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-container>div:active,
+.button-container>a:active {
+    opacity: 0.8;
 }
 
 .button-container .svgicon {
@@ -156,13 +160,7 @@ header object {
     max-height: 2.2rem;
     margin-bottom: 8px;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-    transition: transform 0.3s ease;
     flex-shrink: 0;
-}
-
-.button-container>div:hover .svgicon,
-.button-container>a:hover .svgicon {
-    transform: scale(1.08);
 }
 
 .button {
