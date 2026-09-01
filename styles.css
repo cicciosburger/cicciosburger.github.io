@@ -33,6 +33,13 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+html.has-initial-hash #landing-page {
+    display: none !important;
+}
+
+.container {
     padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
