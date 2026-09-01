@@ -336,9 +336,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     history.pushState(null, '', '#menu-' + currentStore.toLowerCase());
 
-                    window.requestAnimationFrame(() => {
+                    setTimeout(() => {
                         generateMenu('productListingPage', currentStore);
-                    });
+                    }, 0);
                 });
             });
         })
@@ -465,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (navContainer && (modalId == 'menuModal' || modalId == 'productListingPage')) {
                     const btn = document.createElement('button');
-                    btn.className = 'category-nav-btn';
+                    btn.className = 'category-nav-btn' + (navFragment.childNodes.length === 0 ? ' active' : '');
                     btn.setAttribute('data-target', safeId);
                     btn.textContent = displayCatName.split('(')[0].trim();
                     btn.onclick = () => {
@@ -583,8 +583,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         scrollContainer.addEventListener('scroll', scrollHandler, { passive: true });
         scrollContainer._scrollHandler = scrollHandler;
-
-        updateSpy();
     }
 
 
@@ -1818,13 +1816,26 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
+    let currentActiveModal = null;
+
     window.handleRouting = function () {
         document.documentElement.classList.remove('has-initial-hash');
         const hash = window.location.hash.substring(1);
         const landing = document.getElementById('landing-page');
 
-        document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
-        
+        if (!hash || hash === 'home') {
+            if (currentActiveModal) {
+                currentActiveModal.style.display = 'none';
+                currentActiveModal = null;
+            } else {
+                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+            }
+            if (landing) landing.style.display = 'block';
+            const cBanner = document.getElementById('cookieConsent');
+            if (cBanner) cBanner.style.display = 'none';
+            return;
+        }
+
         // Pulisci gli overlay del feedback se usciamo dalla rotta di feedback
         if (!hash.startsWith('feedback')) {
             const lOverlay = document.getElementById('loadingOverlay');
@@ -1833,44 +1844,47 @@ document.addEventListener('DOMContentLoaded', () => {
             if (gOverlay) gOverlay.classList.remove('active');
         }
 
-        if (hash) {
-            let modalId = hash;
-            let doSpecialRoute = false;
-            let newStore = null;
+        let modalId = hash;
+        let doSpecialRoute = false;
+        let newStore = null;
 
-            // Club Card dynamics mapping
-            let club_type = null;
-            if (hash === 'copCardModal' || hash === 'gdfCardModal' || hash === 'firemanCardModal' || hash === 'armyCardModal') {
-                modalId = 'copCardModal';
-                club_type = hash === 'gdfCardModal' ? 'gdf' :
-                            hash === 'firemanCardModal' ? 'fireman' :
-                            hash === 'armyCardModal' ? 'army' : 'cop';
+        // Club Card dynamics mapping
+        let club_type = null;
+        if (hash === 'copCardModal' || hash === 'gdfCardModal' || hash === 'firemanCardModal' || hash === 'armyCardModal') {
+            modalId = 'copCardModal';
+            club_type = hash === 'gdfCardModal' ? 'gdf' :
+                        hash === 'firemanCardModal' ? 'fireman' :
+                        hash === 'armyCardModal' ? 'army' : 'cop';
+        }
+
+        // Integrazione Gestione Feedback Modal
+        let idScontrino = null;
+        if (hash.startsWith('feedback')) {
+            modalId = 'feedbackModal';
+            const paramIndex = hash.indexOf('?');
+            if (paramIndex !== -1) {
+                const params = new URLSearchParams(hash.substring(paramIndex + 1));
+                idScontrino = params.get('id_scontrino');
             }
+        } else if (hash === 'foodtruck' || hash === 'noglutine') {
+            modalId = 'productListingPage';
+            doSpecialRoute = true;
+            newStore = hash === 'foodtruck' ? "FOODTRUCK" : "GLUTENFREE";
+            history.replaceState(null, '', '#menu-' + newStore.toLowerCase());
+        } else if (hash.startsWith('menu-')) {
+            modalId = 'productListingPage';
+            doSpecialRoute = true;
+            newStore = hash.substring(5).toUpperCase();
+        }
 
-            // Integrazione Gestione Feedback Modal
-            let idScontrino = null;
-            if (hash.startsWith('feedback')) {
-                modalId = 'feedbackModal';
-                const paramIndex = hash.indexOf('?');
-                if (paramIndex !== -1) {
-                    const params = new URLSearchParams(hash.substring(paramIndex + 1));
-                    idScontrino = params.get('id_scontrino');
-                }
-            } else if (hash === 'foodtruck' || hash === 'noglutine') {
-                modalId = 'productListingPage';
-                doSpecialRoute = true;
-                newStore = hash === 'foodtruck' ? "FOODTRUCK" : "GLUTENFREE";
-                history.replaceState(null, '', '#menu-' + newStore.toLowerCase());
-            } else if (hash.startsWith('menu-')) {
-                modalId = 'productListingPage';
-                doSpecialRoute = true;
-                newStore = hash.substring(5).toUpperCase();
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            if (landing) landing.style.display = 'none';
+            if (currentActiveModal && currentActiveModal !== modal) {
+                currentActiveModal.style.display = 'none';
             }
-
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                if (landing) landing.style.display = 'none';
-                modal.style.display = 'block';
+            modal.style.display = 'block';
+            currentActiveModal = modal;
 
                 if (modalId === 'feedbackModal') {
                     if (idScontrino) {
