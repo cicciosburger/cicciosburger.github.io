@@ -94,12 +94,12 @@ main {
 }
 
 header {
-    flex: 1;
+    flex: 1 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 0;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
     width: 100%;
 }
 
@@ -107,18 +107,19 @@ header img,
 header object {
     width: auto;
     height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 92%;
+    max-height: 52svh;
     object-fit: contain;
-    margin-bottom: 0;
+    margin: 0 auto;
 }
 
 .button-container {
-    margin-top: 30px;
+    margin-top: 15px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    align-items: stretch;
 }
 
 .button-container>div,
@@ -126,66 +127,63 @@ header object {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
-    padding: 20px 10px;
+    padding: 16px 8px;
+    min-height: 105px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     text-decoration: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .button-container>div:hover,
 .button-container>a:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: translateY(-4px) scale(1.02);
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .button-container .svgicon {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-bottom: 10px;
+    width: 2.2rem;
+    height: 2.2rem;
+    max-width: 2.2rem;
+    max-height: 2.2rem;
+    margin-bottom: 8px;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .button-container>div:hover .svgicon,
 .button-container>a:hover .svgicon {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .button {
     display: block;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 0;
+    margin: 0;
     text-decoration: none;
-    width: auto;
+    width: 100%;
     text-align: center;
     font-weight: 600;
     border: none;
     background: transparent;
     box-shadow: none;
     letter-spacing: 0.5px;
-}
-
-.button-container>a:hover,
-.button-container>div:hover {
-    opacity: 0.7;
-    transform: translateY(-4px);
+    line-height: 1.2;
 }
 
 .store-select-btn {
     transition: all 0.3s ease;
-}
-
-.store-select-btn:hover {
-    opacity: 0.7;
-    transform: translateY(-4px);
 }
 
 .social-footer {
@@ -223,16 +221,84 @@ footer p {
 .company-vat {
     font-size: 0.75rem;
     color: #a8a8a8;
-    margin-top: 18px;
-    margin-bottom: 5px;
+    margin-top: 12px;
+    margin-bottom: 4px;
     letter-spacing: 0.5px;
     text-align: center;
     font-weight: 300;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
+    #landing-page {
+        overflow: hidden;
+    }
+    header {
+        padding: 5px 5px 0 5px;
+    }
+    header img,
+    header object {
+        max-height: 48svh;
+        max-width: 90%;
+    }
+    .button-container {
+        margin-top: 10px;
+        gap: 10px;
+    }
+    .button-container>div,
+    .button-container>a {
+        padding: 12px 6px;
+        min-height: 88px;
+        border-radius: 14px;
+    }
+    .button-container .svgicon {
+        width: 1.8rem;
+        height: 1.8rem;
+        max-width: 1.8rem;
+        max-height: 1.8rem;
+        margin-bottom: 6px;
+    }
+    .button {
+        font-size: 0.95rem;
+    }
+    .company-vat {
+        font-size: 0.68rem;
+        margin-top: 8px;
+        margin-bottom: 2px;
+    }
     footer p {
         transform: translateY(-2.5px);
+    }
+}
+
+@media (max-height: 670px) {
+    header img,
+    header object {
+        max-height: 26svh;
+        max-width: 60%;
+    }
+    .button-container {
+        gap: 8px;
+    }
+    .button-container>div,
+    .button-container>a {
+        padding: 8px 4px;
+        min-height: 72px;
+        border-radius: 10px;
+    }
+    .button-container .svgicon {
+        width: 1.5rem;
+        height: 1.5rem;
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+        margin-bottom: 4px;
+    }
+    .button {
+        font-size: 0.82rem;
+    }
+    .company-vat {
+        font-size: 0.62rem;
+        margin-top: 4px;
+        margin-bottom: 1px;
     }
 }
 
