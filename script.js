@@ -531,40 +531,31 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     function setupScrollSpy(scrollContainer, navContainer) {
-        if (scrollContainer._scrollHandler) {
-            scrollContainer.removeEventListener('scroll', scrollContainer._scrollHandler);
+        if (scrollContainer._observer) {
+            scrollContainer._observer.disconnect();
         }
 
-        let ticking = false;
+        const headers = scrollContainer.querySelectorAll('h1.collapsible');
+        if (!headers.length) return;
 
-        const updateSpy = () => {
-            const containerRect = scrollContainer.getBoundingClientRect();
-            const headers = scrollContainer.querySelectorAll('h1.collapsible');
-            const threshold = containerRect.top + 150;
-
-            let activeHeader = null;
-
-            for (let i = 0; i < headers.length; i++) {
-                const header = headers[i];
-                const headerRect = header.getBoundingClientRect();
-                if (headerRect.top <= threshold) {
-                    activeHeader = header;
-                } else {
-                    break;
+        const observer = new IntersectionObserver((entries) => {
+            let visibleHeader = null;
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    visibleHeader = entry.target;
                 }
-            }
+            });
 
-            if (activeHeader) {
+            if (visibleHeader) {
                 if (scrollTargetId) {
-                    if (activeHeader.id === scrollTargetId) {
+                    if (visibleHeader.id === scrollTargetId) {
                         scrollTargetId = null;
                     } else {
-                        ticking = false;
                         return;
                     }
                 }
 
-                const id = activeHeader.id;
+                const id = visibleHeader.id;
                 const activeBtn = navContainer.querySelector(`.category-nav-btn[data-target="${id}"]`);
 
                 if (activeBtn && !activeBtn.classList.contains('active')) {
@@ -578,18 +569,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
             }
-            ticking = false;
-        };
+        }, {
+            root: scrollContainer,
+            rootMargin: '0px 0px -70% 0px',
+            threshold: 0
+        });
 
-        const scrollHandler = () => {
-            if (!ticking) {
-                window.requestAnimationFrame(updateSpy);
-                ticking = true;
-            }
-        };
-
-        scrollContainer.addEventListener('scroll', scrollHandler, { passive: true });
-        scrollContainer._scrollHandler = scrollHandler;
+        headers.forEach(h => observer.observe(h));
+        scrollContainer._observer = observer;
     }
 
 
