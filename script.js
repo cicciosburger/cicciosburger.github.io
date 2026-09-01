@@ -114,7 +114,7 @@ async function initializeFoodTruckMap() {
         html: `
       <div class="marker-wrapper">
         <div class="marker-label">CLICCAMI</div>
-        <img src="./img/logofoodclean.png" class="marker-img" />
+        <img src="./img/logofoodclean.webp" class="marker-img" />
       </div>
     `,
         className: "",
@@ -1885,14 +1885,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Update Image
                     const clubImages = {
-                        'cop': './img/tessere/cop_logo_large.png',
-                        'gdf': './img/tessere/gdf_logo_large.png',
-                        'fireman': './img/tessere/fireman_logo_large.png',
-                        'army': './img/tessere/army_logo_large.png'
+                        'cop': './img/tessere/cop_logo_large.webp',
+                        'gdf': './img/tessere/gdf_logo_large.webp',
+                        'fireman': './img/tessere/fireman_logo_large.webp',
+                        'army': './img/tessere/army_logo_large.webp'
                     };
                     const modalImg = document.querySelector('#copCardModal .modal-content img');
                     if (modalImg) {
-                        modalImg.src = clubImages[club_type] || './img/tessere/cop_logo_large.png';
+                        modalImg.src = clubImages[club_type] || './img/tessere/cop_logo_large.webp';
                     }
 
                     // Update Info Prompt/Text
