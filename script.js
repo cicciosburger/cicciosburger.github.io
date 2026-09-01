@@ -327,6 +327,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.handleRouting();
                 });
             });
+
+            // Pre-riscaldamento in idle del menù per azzerare il tempo al primo click
+            if (typeof window.requestIdleCallback === 'function') {
+                window.requestIdleCallback(() => {
+                    generateMenu('productListingPage', currentStore);
+                });
+            } else {
+                setTimeout(() => {
+                    generateMenu('productListingPage', currentStore);
+                }, 100);
+            }
         })
         .catch(error => console.error('Error loading menu:', error));
 
@@ -1973,9 +1984,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                // Lazy load Leaflet when menu modal is opened
+                // Lazy load Leaflet when menu modal is opened (non-blocking)
                 if (modalId === "menuModal") {
-                    initializeFoodTruckMap();
+                    setTimeout(() => {
+                        initializeFoodTruckMap();
+                    }, 50);
                 }
             } else {
                 if (landing) landing.style.display = 'flex';
