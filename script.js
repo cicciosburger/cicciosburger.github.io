@@ -296,6 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.scrollTo(0, 0);
                 }
                 history.replaceState(null, '', '#menu-' + currentStore.toLowerCase());
+                generateMenu('productListingPage', currentStore);
             } else if (initialHash.toLowerCase().startsWith('#menu-')) {
                 currentStore = initialHash.substring(6).toUpperCase();
 
@@ -306,9 +307,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     productPage.style.display = 'block';
                     window.scrollTo(0, 0);
                 }
+                generateMenu('productListingPage', currentStore);
             }
-
-            generateMenu('productListingPage', currentStore);
 
             const storeButtons = document.querySelectorAll('.store-select-btn');
             storeButtons.forEach(button => {
@@ -1878,11 +1878,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (modalId === "membershipModal" || modalId === "copCardModal" || modalId === "orderModal") {
                     if (!localStorage.getItem("cookieConsent")) {
+                        if (cookieConsentBanner) cookieConsentBanner.style.display = "block";
                         disableForm();
                     } else {
+                        if (cookieConsentBanner) cookieConsentBanner.style.display = "none";
                         enableForm();
                         loadRecaptcha();
                     }
+                } else {
+                    if (cookieConsentBanner) cookieConsentBanner.style.display = "none";
                 }
 
                 if (modalId === "customizeModal") {
@@ -1993,8 +1997,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cookieConsentBanner.style.display = "none";
         disableForm();
     });
-
-    checkCookieConsent();
 
     // Toggle for special clubs selector
     const trigger = document.getElementById("club-selector-trigger");
