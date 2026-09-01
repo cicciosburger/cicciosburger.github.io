@@ -2491,8 +2491,12 @@ a {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     padding: 6px 12px;
+    min-width: 62px;
+    height: 32px;
+    box-sizing: border-box;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
@@ -2500,14 +2504,13 @@ a {
     font-size: 0.95rem;
     color: white;
     user-select: none;
-    transition: all 0.25s ease;
+    transition: background 0.25s ease, border-color 0.25s ease;
     backdrop-filter: blur(4px);
 }
 
 .lang-switch-btn:hover {
     background: rgba(255, 255, 255, 0.18);
     border-color: orange;
-    transform: scale(1.04);
 }
 
 .lang-switch-btn .lang-flag {
