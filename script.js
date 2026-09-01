@@ -314,7 +314,6 @@ document.addEventListener('DOMContentLoaded', function () {
             storeButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     currentStore = button.getAttribute('data-store');
-                    generateMenu('productListingPage', currentStore);
 
                     document.getElementById('menuModal').style.display = 'none';
 
@@ -327,19 +326,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.scrollTo(0, 0);
 
                     history.pushState(null, '', '#menu-' + currentStore.toLowerCase());
+
+                    window.requestAnimationFrame(() => {
+                        generateMenu('productListingPage', currentStore);
+                    });
                 });
             });
         })
         .catch(error => console.error('Error loading menu:', error));
 
     window.generateMenu = function generateMenu(modalId, menuType) {
-        let contentId
+        let contentId;
         if (modalId == 'menuModal' || modalId == 'productListingPage') {
-            contentId = 'generatedContentLocale'
+            contentId = 'generatedContentLocale';
         }
 
         const container = document.getElementById(contentId);
+        if (!container) return;
         container.innerHTML = '';
+        const fragment = document.createDocumentFragment();
 
         // Foodtruck event banner: inject/remove inside scroll wrapper
         const scrollWrapper = document.getElementById('menu-scroll-wrapper');
@@ -381,6 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!menuData) return;
 
         const navContainer = document.getElementById('category-nav');
+        const navFragment = document.createDocumentFragment();
         if (navContainer && (modalId == 'menuModal' || modalId == 'productListingPage')) {
             navContainer.innerHTML = '';
         }
@@ -434,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const parts = displayCatName.split('(');
                     categoryTitle.textContent = parts[0].trim();
 
-                    container.appendChild(categoryTitle);
+                    fragment.appendChild(categoryTitle);
 
                     const subtitle = document.createElement('p');
                     subtitle.className = 'category-subtitle';
@@ -442,10 +448,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     subtitle.style.color = "#aaa";
                     subtitle.style.marginBottom = "15px";
                     subtitle.textContent = parts[1].replace(')', '').trim();
-                    container.appendChild(subtitle);
+                    fragment.appendChild(subtitle);
                 } else {
                     categoryTitle.textContent = displayCatName;
-                    container.appendChild(categoryTitle);
+                    fragment.appendChild(categoryTitle);
                 }
 
                 if (navContainer && (modalId == 'menuModal' || modalId == 'productListingPage')) {
@@ -469,18 +475,23 @@ document.addEventListener('DOMContentLoaded', function () {
                             block: 'nearest'
                         });
                     };
-                    navContainer.appendChild(btn);
+                    navFragment.appendChild(btn);
                 }
 
                 const categoryDiv = document.createElement('div');
                 categoryDiv.classList.add('menu-grid', 'content');
-                container.appendChild(categoryDiv);
+                fragment.appendChild(categoryDiv);
 
                 filteredProducts.forEach(product => {
                     const productDiv = createProductElement(product);
                     categoryDiv.appendChild(productDiv);
                 });
             }
+        }
+
+        container.appendChild(fragment);
+        if (navContainer && navFragment.hasChildNodes()) {
+            navContainer.appendChild(navFragment);
         }
 
         // Hide spiegazione div if no MENU category is present
@@ -501,22 +512,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         setupIngredientToggle(modalId, container);
-    }
+    };
 
     function setupScrollSpy(scrollContainer, navContainer) {
         if (scrollContainer._scrollHandler) {
             scrollContainer.removeEventListener('scroll', scrollContainer._scrollHandler);
         }
 
-        const scrollHandler = () => {
-            const containerRect = scrollContainer.getBoundingClientRect();
-            const headers = Array.from(scrollContainer.querySelectorAll('h1.collapsible'));
+        let ticking = false;
 
+        const updateSpy = () => {
+            const containerRect = scrollContainer.getBoundingClientRect();
+            const headers = scrollContainer.querySelectorAll('h1.collapsible');
             const threshold = containerRect.top + 150;
 
             let activeHeader = null;
 
-            for (const header of headers) {
+            for (let i = 0; i < headers.length; i++) {
+                const header = headers[i];
                 const headerRect = header.getBoundingClientRect();
                 if (headerRect.top <= threshold) {
                     activeHeader = header;
@@ -530,6 +543,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (activeHeader.id === scrollTargetId) {
                         scrollTargetId = null;
                     } else {
+                        ticking = false;
                         return;
                     }
                 }
@@ -537,11 +551,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const id = activeHeader.id;
                 const activeBtn = navContainer.querySelector(`.category-nav-btn[data-target="${id}"]`);
 
-                const currentlyActive = document.querySelectorAll('.category-nav-btn.active');
-                const shouldUpdate = !activeBtn.classList.contains('active') || currentlyActive.length !== 1 || currentlyActive[0] !== activeBtn;
-
-                if (shouldUpdate) {
-                    document.querySelectorAll('.category-nav-btn').forEach(b => b.classList.remove('active'));
+                if (activeBtn && !activeBtn.classList.contains('active')) {
+                    const prev = navContainer.querySelector('.category-nav-btn.active');
+                    if (prev) prev.classList.remove('active');
                     activeBtn.classList.add('active');
                     activeBtn.scrollIntoView({
                         behavior: 'smooth',
@@ -550,12 +562,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
             }
+            ticking = false;
         };
 
-        scrollContainer.addEventListener('scroll', scrollHandler);
+        const scrollHandler = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateSpy);
+                ticking = true;
+            }
+        };
+
+        scrollContainer.addEventListener('scroll', scrollHandler, { passive: true });
         scrollContainer._scrollHandler = scrollHandler;
 
-        scrollHandler();
+        updateSpy();
     }
 
 
@@ -580,6 +600,7 @@ document.addEventListener('DOMContentLoaded', function () {
         image.classList.add('product-img');
         image.src = product.thumb;
         image.loading = "lazy";
+        image.decoding = "async";
         productDiv.appendChild(image);
 
         const productInfoDiv = document.createElement('div');
