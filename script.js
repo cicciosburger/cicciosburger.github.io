@@ -161,6 +161,15 @@ async function initializeFoodTruckMap() {
 document.addEventListener('DOMContentLoaded', function () {
     const initialHash = window.location.hash;
 
+    if (initialHash && initialHash !== '#' && initialHash !== '#home') {
+        const landing = document.getElementById('landing-page');
+        if (landing) landing.style.display = 'none';
+        if (initialHash.startsWith('#menu-') || initialHash === '#foodtruck' || initialHash === '#noglutine' || initialHash === '#terrasini') {
+            const productPage = document.getElementById('productListingPage');
+            if (productPage) productPage.style.display = 'block';
+        }
+    }
+
     let allergeniIngredientiMap = {};
     let menuData = null;
     let scrollTargetId = null;
@@ -1810,6 +1819,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     window.handleRouting = function () {
+        document.documentElement.classList.remove('has-initial-hash');
         const hash = window.location.hash.substring(1);
         const landing = document.getElementById('landing-page');
 
