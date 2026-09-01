@@ -318,7 +318,7 @@
     </script>
 
     <link rel="shortcut icon" type="image/x-icon" href="./img/icon_bg.ico">
-    <link rel="preconnect" href="https://api.cicciosburger.it">
+    <link rel="preconnect" href="https://api.cicciosburger.it" crossorigin>
     <link rel="dns-prefetch" href="https://api.cicciosburger.it">
     <link rel="preload" href="./img/logocleanbigsmaller.svg" as="image" type="image/svg+xml" fetchpriority="high">
     <link rel="preload" href="fonts/font_personalizzato.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -331,7 +331,7 @@
 <body>
     <div class="container">
         <div id="landing-page" style="position: relative;">
-            <div class="lang-switch-btn" style="position: absolute; top: 15px; right: 15px; z-index: 100;">
+            <div class="lang-switch-btn" role="button" tabindex="0" aria-label="Cambia lingua / Switch language" style="position: absolute; top: 15px; right: 15px; z-index: 100;">
                 <span class="lang-flag"></span>
                 <span class="lang-label">IT</span>
             </div>
