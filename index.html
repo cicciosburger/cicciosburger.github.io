@@ -11,6 +11,23 @@
     <link rel="canonical" href="https://cicciosburger.it/">
     <meta name="robots" content="index, follow">
 
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon_bg.ico">
+    <link rel="preconnect" href="https://api.cicciosburger.it" crossorigin>
+    <link rel="dns-prefetch" href="https://api.cicciosburger.it">
+    <link rel="preload" href="./img/logocleanbigsmaller.svg" as="image" type="image/svg+xml" fetchpriority="high">
+    <link rel="preload" href="fonts/font_personalizzato.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            var h = window.location.hash;
+            if (h && h !== '#' && h !== '#home') {
+                document.documentElement.classList.add('has-initial-hash');
+            }
+        })();
+    </script>
+    <script src="translations.js" defer></script>
+    <script src="script.js?v=22" defer></script>
+
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:site_name" content="Ciccio's Burger">
     <meta property="og:title" content="Ciccio's Burger | Hamburgeria Artigianale a Palermo">
@@ -316,23 +333,6 @@
       ]
     }
     </script>
-
-    <link rel="shortcut icon" type="image/x-icon" href="./img/icon_bg.ico">
-    <link rel="preconnect" href="https://api.cicciosburger.it" crossorigin>
-    <link rel="dns-prefetch" href="https://api.cicciosburger.it">
-    <link rel="preload" href="./img/logocleanbigsmaller.svg" as="image" type="image/svg+xml" fetchpriority="high">
-    <link rel="preload" href="fonts/font_personalizzato.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        (function() {
-            var h = window.location.hash;
-            if (h && h !== '#' && h !== '#home') {
-                document.documentElement.classList.add('has-initial-hash');
-            }
-        })();
-    </script>
-    <script src="translations.js" defer></script>
-    <script src="script.js?v=21" defer></script>
 </head>
 
 
