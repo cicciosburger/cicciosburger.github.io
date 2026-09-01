@@ -11,8 +11,8 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "FOODTRUCK",
-        "GLUTENFREE"
+        "GLUTENFREE",
+        "FOODTRUCK"
       ]
     },
     {
@@ -25,8 +25,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -151,7 +150,7 @@
       "title": "LINGOTTI 2PZ",
       "price": 4.5,
       "ingredients": "Maxi nuggets di pollo con panatura super croccante*",
-      "thumb": "./img/menu/starters/lingottinocheddar.png",
+      "thumb": "./img/menu/starters/lingottinocheddar.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -190,8 +189,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -218,8 +216,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -232,8 +229,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -246,8 +242,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -260,22 +255,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "PUNTA RAISI",
-      "price": 9.9,
-      "ingredients": "pane, roast beef, crema di fagiolina, patate al forno, olio evo, pomodoro",
-      "thumb": "./img/menu/ciccios/punta_raisi.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "TERRASINI",
-        "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -302,8 +282,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -316,8 +295,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -330,8 +308,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -358,8 +335,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -561,7 +537,7 @@
       "title": "HAPPY CICCIO'S",
       "price": 10.9,
       "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + Acqua 25cl / Coca Cola 15cl",
-      "thumb": "./img/menu/classic/happc-1.png",
+      "thumb": "./img/menu/classic/happc-1.webp",
       "available_in": [
         "GLUTENFREE"
       ]
@@ -572,7 +548,7 @@
       "title": "HAPPY CICCIO'S",
       "price": 8.9,
       "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + 2 Nuggets + Acqua 25cl / Coca Cola 15cl",
-      "thumb": "./img/menu/classic/happc-1.png",
+      "thumb": "./img/menu/classic/happc-1.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -604,22 +580,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
-      ]
-    },
-    {
-      "title": "PUNTA RAISI MENU",
-      "price": 14.9,
-      "ingredients": "pane, roast beef, crema di fagiolina, patate al forno, olio evo, pomodoro",
-      "thumb": "./img/menu/ciccios/punta_raisi.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "TERRASINI",
-        "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -816,9 +777,8 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
         "GLUTENFREE",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -847,8 +807,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -862,8 +821,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -877,8 +835,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -892,8 +849,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -907,8 +863,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -922,8 +877,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -951,9 +905,8 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
         "GLUTENFREE",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -967,8 +920,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -982,8 +934,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -996,8 +947,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -1024,8 +974,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -1038,8 +987,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -1052,8 +1000,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -1066,8 +1013,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -1101,8 +1047,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -1164,8 +1109,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -1179,8 +1123,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -1194,8 +1137,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     }
   ],
