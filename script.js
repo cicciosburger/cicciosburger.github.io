@@ -1809,7 +1809,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!hash || hash === 'home') {
             document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
-            if (landing) landing.style.display = 'block';
+            if (landing) landing.style.display = 'flex';
             const cBanner = document.getElementById('cookieConsent');
             if (cBanner) cBanner.style.display = 'none';
             return;
@@ -1976,7 +1976,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     initializeFoodTruckMap();
                 }
             } else {
-                if (landing) landing.style.display = 'block';
+                if (landing) landing.style.display = 'flex';
             }
 
         if (typeof window.updateFloatingCartButtonVisibility === 'function') {
