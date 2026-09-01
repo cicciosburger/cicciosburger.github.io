@@ -1389,11 +1389,15 @@ function getCookie(name) {
 }
 
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
     let merch = [];
     let cart = [];
+    let merchLoaded = false;
+    let merchLoading = false;
 
     async function fetchMerch() {
+        if (merchLoaded || merchLoading) return;
+        merchLoading = true;
         try {
             const response = await fetch("data.json");
             const data = await response.json();
@@ -1407,13 +1411,17 @@ document.addEventListener("DOMContentLoaded", async () => {
             }));
 
             renderProducts();
+            merchLoaded = true;
         } catch (err) {
             console.error("Errore nel caricamento dei prodotti:", err);
+        } finally {
+            merchLoading = false;
         }
     }
 
     function renderProducts() {
         const container = document.getElementById("merch-products");
+        if (!container) return;
         container.innerHTML = "";
         merch.forEach(product => {
             const card = document.createElement("div");
@@ -1424,7 +1432,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 .join("");
 
             card.innerHTML = `
-        <img src="${product.img}" class="merch-product-img" alt="${product.name}">
+        <img src="${product.img}" class="merch-product-img" alt="${product.name}" loading="lazy" decoding="async">
         <h3>${product.name}</h3>
         <p><strong>€${product.price.toFixed(2)}</strong></p>
         <div class="merch-card-bottom">
@@ -1436,6 +1444,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             container.appendChild(card);
         });
     }
+
+    window.fetchMerch = fetchMerch;
 
     window.addToCart = function (productId, btn) {
         const size = document.getElementById(`merch-size-${productId}`).value;
@@ -1671,7 +1681,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    await fetchMerch();
+    const showOrderBtn = document.getElementById("showOrderFormButton");
+    if (showOrderBtn) {
+        showOrderBtn.addEventListener("click", fetchMerch, { once: true });
+    }
+    if (window.location.hash === "#orderModal") {
+        fetchMerch();
+    } else if ('requestIdleCallback' in window) {
+        requestIdleCallback(fetchMerch, { timeout: 4000 });
+    } else {
+        setTimeout(fetchMerch, 3000);
+    }
 });
 
 
