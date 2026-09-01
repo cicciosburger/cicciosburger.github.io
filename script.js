@@ -168,6 +168,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Multilingual Language Management ---
     function detectInitialLanguage() {
+        const params = new URLSearchParams(window.location.search);
+        const urlLang = params.get('lang');
+        if (urlLang && (urlLang.toLowerCase() === 'en' || urlLang.toLowerCase() === 'it')) {
+            const lang = urlLang.toLowerCase();
+            localStorage.setItem('site_lang', lang);
+            return lang;
+        }
+
         const saved = localStorage.getItem('site_lang');
         if (saved) return saved;
         
@@ -229,6 +237,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function toggleLanguage() {
         currentLang = currentLang === 'it' ? 'en' : 'it';
         localStorage.setItem('site_lang', currentLang);
+        try {
+            const url = new URL(window.location.href);
+            if (currentLang === 'en') {
+                url.searchParams.set('lang', 'en');
+            } else {
+                url.searchParams.delete('lang');
+            }
+            window.history.replaceState({}, '', url.toString());
+        } catch (e) {}
         updateLanguageUI();
         if (menuData) {
             generateMenu('productListingPage', currentStore);
