@@ -1873,12 +1873,12 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'block';
 
             if (modalId === 'productListingPage') {
-                const scrollWrapper = document.getElementById('menu-scroll-wrapper');
-                if (scrollWrapper && scrollWrapper.scrollTop !== 0) {
-                    requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    const scrollWrapper = document.getElementById('menu-scroll-wrapper');
+                    if (scrollWrapper) {
                         scrollWrapper.scrollTop = 0;
-                    });
-                }
+                    }
+                });
             }
 
                 if (modalId === 'feedbackModal') {
@@ -1996,11 +1996,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof window.updateFloatingCartButtonVisibility === 'function') {
             window.updateFloatingCartButtonVisibility();
         }
-        if (window.scrollY !== 0) {
-            requestAnimationFrame(() => {
-                window.scrollTo(0, 0);
-            });
-        }
+        requestAnimationFrame(() => {
+            window.scrollTo(0, 0);
+        });
     };
 
 
