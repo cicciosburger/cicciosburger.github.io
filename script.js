@@ -1874,8 +1874,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (modalId === 'productListingPage') {
                 const scrollWrapper = document.getElementById('menu-scroll-wrapper');
-                if (scrollWrapper) {
-                    scrollWrapper.scrollTop = 0;
+                if (scrollWrapper && scrollWrapper.scrollTop !== 0) {
+                    requestAnimationFrame(() => {
+                        scrollWrapper.scrollTop = 0;
+                    });
                 }
             }
 
@@ -1994,7 +1996,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof window.updateFloatingCartButtonVisibility === 'function') {
             window.updateFloatingCartButtonVisibility();
         }
-        window.scrollTo(0, 0);
+        if (window.scrollY !== 0) {
+            requestAnimationFrame(() => {
+                window.scrollTo(0, 0);
+            });
+        }
     };
 
 
