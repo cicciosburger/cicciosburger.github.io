@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciccio's Burger | Hamburgeria Artigianale a Palermo & Mondello</title>
-    <meta name="description" content="I burger artigianali di Ciccio's a Palermo e Mondello: carne di qualità selezionata, bun soffice e salse fatte in casa. Scegli il tuo locale preferito e ordina a domicilio!">
+    <title>Ciccio's Burger | Hamburgeria a Palermo & Mondello</title>
+    <meta name="description" content="Burger artigianali a Palermo e Mondello: carne selezionata, bun soffice e salse home-made. Scopri il menu e ordina subito a domicilio o da asporto!">
     <meta name="keywords" content="Ciccio's Burger, hamburgeria Palermo, hamburger artigianali Palermo, burger gourmet Palermo, panineria Mondello, burger delivery Palermo, street food Palermo">
     <meta name="author" content="Ciccio's Burger">
     <link rel="canonical" href="https://cicciosburger.it/">
@@ -34,6 +34,7 @@
     #landing-page{overflow-y:auto;flex:1;width:100%;scrollbar-width:thin;scrollbar-color:#444 #0e0e0e;display:flex;flex-direction:column;justify-content:space-between}
     header{flex:1 1 auto;display:flex;align-items:center;justify-content:center;min-height:0;padding:10px 10px 0 10px;width:100%}
     header img,header object{width:auto;height:auto;max-width:92%;max-height:52svh;aspect-ratio:256/353;object-fit:contain;margin:0 auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     main{flex:0 0 auto;display:flex;flex-direction:column;justify-content:flex-end;width:100%;margin-top:auto;margin-bottom:5px}
     .button-container{margin-top:15px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:100%;align-items:stretch}
     .button-container>div,.button-container>a{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:16px 8px;min-height:105px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:all .3s cubic-bezier(.25,.8,.25,1);cursor:pointer;text-decoration:none;box-shadow:0 4px 6px rgba(0,0,0,.1);box-sizing:border-box}
@@ -69,7 +70,7 @@
         })();
     </script>
     <script src="translations.js" defer></script>
-    <script src="script.js?v=46" defer></script>
+    <script src="script.js?v=47" defer></script>
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:site_name" content="Ciccio's Burger">
@@ -138,6 +139,202 @@
             "https://g.page/r/CWi3u76szxXbEBM",
             "https://g.page/r/CfxNiBYtEtLjEBM"
           ],
+          "foundingDate": "2021-03",
+          "brand": {
+            "@type": "Brand",
+            "name": "Ciccio's Burger",
+            "logo": "https://cicciosburger.it/img/logocleanbigsmaller.svg"
+          },
+          "hasMenu": {
+            "@type": "Menu",
+            "name": "Menù Ciccio's Burger",
+            "hasMenuSection": [
+              {
+                "@type": "MenuSection",
+                "name": "Ciccio's Burger",
+                "description": "I burger gourmet iconici di Ciccio's Burger a Palermo e Mondello",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Crispy Goat",
+                    "description": "Bun artigianale, burger di pollo pastellato e fritto al momento, formaggio cheddar, bacon croccante, lattuga fresca e salsa Ciccio's home-made",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Brie",
+                    "description": "Bun brioche, burger di manzo 170g, formaggio brie fuso, cipolla caramellata, songino, bacon e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Talè",
+                    "description": "Bun artigianale, burger di manzo 170g, taleggio Dop, guanciale croccante, pere caramellate, granella di nocciole e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Tuma",
+                    "description": "Bun, burger di manzo 170g, tuma siciliana caramellata al miele locale, cipolla caramellata, cipolla croccante e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Pancetta",
+                    "description": "Bun brioche, burger di manzo 170g, scamorza affumicata, pancetta dolce, cipolla caramellata, confettura di fichi e cipolla croccante",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Porchetta 2.0",
+                    "description": "Pane artigianale, porchetta, cipolla caramellata all'aceto balsamico, salsa chimichurri fresca e maionese al pepe nero",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Double Triple",
+                    "description": "Bun, doppio burger di manzo 170g (340g carne), triplo cheddar, doppio bacon e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "11.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Super Crispy",
+                    "description": "Bun, filetto di pollo fritto con speciale panatura super croccante artigianale, pomodoro, lattuga e maionese",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Old School",
+                    "description": "Bun, burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's e salsa barbecue",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Big",
+                    "description": "Bun brioche, doppio burger di manzo 170g, formaggio cheddar, scamorza, pomodoro, lattuga, bacon e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "11.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Zola",
+                    "description": "Bun, burger di manzo 170g, gorgonzola cremoso, pere caramellate, noci e songino",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Green Veggie",
+                    "description": "Bun artigianale, burger 100% vegetale, formaggio cheddar, lattuga, cipolla caramellata e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "9.90", "priceCurrency": "EUR" }
+                  }
+                ]
+              },
+              {
+                "@type": "MenuSection",
+                "name": "Classic Burger",
+                "description": "I grandi classici dello street food americano preparati con ingredienti freschi",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Hamburger",
+                    "description": "Bun brioche, burger di manzo 170g e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "6.50", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Cheeseburger",
+                    "description": "Bun brioche, burger di manzo 170g, formaggio cheddar fuso e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "7.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Bacon Cheeseburger",
+                    "description": "Bun, burger di manzo 170g, cheddar, fette di bacon croccante e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "8.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "American Bacon Cheese",
+                    "description": "Bun, burger di manzo 170g, cheddar, bacon, pomodoro fresco, lattuga e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "8.90", "priceCurrency": "EUR" }
+                  }
+                ]
+              },
+              {
+                "@type": "MenuSection",
+                "name": "Starters & Sfizi",
+                "description": "Patatine fritte con buccia, finger food artigianale e bocconcini di pollo",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Fries",
+                    "description": "Patate fritte con buccia dorate e croccanti",
+                    "offers": { "@type": "Offer", "price": "3.50", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Waffle Fries",
+                    "description": "Patatine fritte con taglio a nido d'ape waffle",
+                    "offers": { "@type": "Offer", "price": "3.50", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Bacon Cheddar Fries",
+                    "description": "Patate con buccia condite con calda crema cheddar home-made e bacon croccante",
+                    "offers": { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Nuggets Artigianali",
+                    "description": "Bocconcini di pollo fresco tritati e pastellati a mano al momento",
+                    "offers": { "@type": "Offer", "price": "2.70", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Chicken Pop Corn",
+                    "description": "Polpettine di pollo fatte a mano con speciale panatura super croccante",
+                    "offers": { "@type": "Offer", "price": "2.70", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Provola Goat",
+                    "description": "Stick di provola dolce con tripla pastellatura a mano e cuore filante",
+                    "offers": { "@type": "Offer", "price": "4.50", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Meat Balls",
+                    "description": "Polpettine di carne di manzo fatte a mano con panatura al formaggio",
+                    "offers": { "@type": "Offer", "price": "2.70", "priceCurrency": "EUR" }
+                  }
+                ]
+              },
+              {
+                "@type": "MenuSection",
+                "name": "100% Gluten Free Senza Glutine",
+                "description": "Tutti i burger di Ciccio's in versione certificata senza glutine in laboratorio dedicato",
+                "hasMenuItem": [
+                  {
+                    "@type": "MenuItem",
+                    "name": "Crispy Goat Gluten Free",
+                    "description": "Bun senza glutine artigianale, burger di pollo pastellato e fritto senza glutine, cheddar, bacon e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "13.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Bacon Cheese Gluten Free",
+                    "description": "Bun senza glutine, burger di manzo senza glutine, formaggio cheddar fuso, bacon croccante e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "12.90", "priceCurrency": "EUR" }
+                  },
+                  {
+                    "@type": "MenuItem",
+                    "name": "Talè Gluten Free",
+                    "description": "Bun gluten free, burger di manzo, taleggio Dop, guanciale, pere caramellate, granella di nocciole e salsa Ciccio's",
+                    "offers": { "@type": "Offer", "price": "13.90", "priceCurrency": "EUR" }
+                  }
+                ]
+              }
+            ]
+          },
           "potentialAction": {
             "@type": "OrderAction",
             "target": {
@@ -403,6 +600,12 @@
               "position": 4,
               "name": "Merchandising",
               "url": "https://cicciosburger.it/#orderModal"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 5,
+              "name": "La Nostra Storia",
+              "url": "https://cicciosburger.it/#storyModal"
             }
           ]
         }
@@ -422,7 +625,7 @@
             <!-- Header -->
             <header>
                 <img src="./img/logocleanbigsmaller.svg" alt="Ciccio's Burger Logo - Hamburgeria Artigianale Palermo" width="256" height="353" fetchpriority="high">
-                <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">
+                <h1 class="sr-only">
                     Ciccio's Burger - Hamburgeria Artigianale a Palermo & Mondello
                 </h1>
             </header>
@@ -477,7 +680,7 @@
                         </p>
                     </div>
                 </div>
-                <p class="company-vat">Food Lab Srl • P.IVA 06914660821</p>
+                <p class="company-vat">Food Lab Srl • P.IVA 06914660821 • <a href="#storyModal" class="open-modal story-nav-link" data-modal="storyModal">La Nostra Storia</a></p>
             </main>
         </div>
 
@@ -493,6 +696,115 @@
                 <button id="acceptCookiesBtn" class="accept-btn">Accetta</button>
             </div>
         </div>
+
+        <!-- La Nostra Storia Modal -->
+        <div id="storyModal" class="modal">
+            <div class="modal-content story-modal-content">
+                <span class="close-modal" data-target="home">
+                    <svg style="width: 24px; height: 18px;" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" />
+                    </svg>
+                    <span>Torna Indietro</span>
+                </span>
+                <h2 class="modal-title" style="margin-top: 20px; margin-bottom: 20px;">LA NOSTRA STORIA</h2>
+
+                <article class="story-article">
+                    <div class="story-grid">
+                        <!-- Capitolo 1 -->
+                        <div class="story-card">
+                            <span class="story-date">2012</span>
+                            <h3>È nato prima il logo e poi l'hamburgeria</h3>
+                            <p>Sembra strano a dirsi, ma la storia di Ciccio's comincia quasi dieci anni prima di accendere la prima piastra per un hamburger a Palermo.</p>
+                            <p>Nel <strong>2012</strong> una mia amica, Vittoria, mi disegnò un ritratto stilizzato con la mia faccia. Ai tempi non esisteva nessun locale e nessun piano di aprire un ristorante: quel logo mi piaceva così tanto che ho iniziato a stamparlo su magliette e cappellini da regalare agli amici. Poi, col tempo, mi sono chiesto: <em>"Cosa posso costruire attorno a questo logo?"</em>. La risposta è stata un'hamburgeria artigianale con una sua vera identità. Oggi quel ritratto è un marchio registrato.</p>
+                        </div>
+
+                        <!-- Capitolo 2 -->
+                        <div class="story-card">
+                            <span class="story-date">Marzo 2021</span>
+                            <h3>La dark kitchen in piena pandemia</h3>
+                            <p>Ciccio's Burger apre a <strong>marzo del 2021</strong>, partendo da una <strong>dark kitchen</strong>. Che non voleva dire lavorare al buio, ma lavorare in un laboratorio dedicato solo alle consegne a domicilio e all'asporto: niente tavoli, niente sala, solo la piastra sempre accesa per portare i burger caldi a casa della gente in tutta Palermo.</p>
+                            <p>Abbiamo passato mesi a fare prove su prove prima di trovare la quadra perfetta: un <strong>blend di carne di manzo</strong> macinato fresco con il giusto equilibrio di grasso per restare succoso, un <strong>bun brioche artigianale</strong> morbido ma compatto per non sfaldarsi durante il tragitto in motorino, e le nostre <strong>salse fatte in casa</strong> ogni mattina.</p>
+                            <p>Siamo partiti con 10 panini storici: i classici come il <em>Burger</em>, il <em>Cheeseburger</em>, il <em>Bacon Cheese</em> e l'<em>American Bacon</em>, e poi le ricette speciali che tanti clienti ci chiedono ancora oggi: dal <em>Brie</em> con cipolla caramellata, al <em>Big</em> con doppio burger e scamorza, lo <em>Zola</em> con gorgonzola e pere, l'<em>Egg</em> con l'uovo all'occhio di bue e guanciale croccante, il <em>Chicken</em> con pollo alla piastra e maionese al guacamole, fino al primo indimenticabile <em>Crispy</em> con panatura artigianale.</p>
+                        </div>
+
+                        <!-- Capitolo 3 -->
+                        <div class="story-card">
+                            <span class="story-date">Design & Brand</span>
+                            <h3>I temi grafici: cambiare faccia a ogni stagione</h3>
+                            <p>Fin dai primi giorni ci siamo divertiti a non prenderci troppo sul serio con la grafica. Abbiamo iniziato a trasformare la faccia di Ciccio a ogni stagione e a ogni novità, creando packaging e menù a tema.</p>
+                            <p>Il primissimo nel 2021 è stato <em>Ciccio nello Spazio</em>, poi sono arrivati <em>Ciccio Summer</em>, l'<em>Antica Polleria Ciccio's</em>, le parodie artistiche delle <em>Gallerie Ciccio's</em> con la Gioconda e Marilyn Monroe, il tema di Natale, la <em>Notte degli Oscar</em> e <em>Cicciopoli</em>. A oggi abbiamo superato gli 8 temi grafici e continuiamo a disegnarne di nuovi a ogni apertura.</p>
+                        </div>
+
+                        <!-- Capitolo 4 -->
+                        <div class="story-card">
+                            <span class="story-date">I Locali</span>
+                            <h3>Dalle consegne ai locali su strada</h3>
+                            <p>I clienti hanno iniziato a chiederci un posto dove sedersi e mangiare il panino appena tolto dalla piastra. Così è iniziata l'avventura dei locali fisici:</p>
+                            <div class="story-timeline">
+                                <div class="timeline-step">
+                                    <span class="timeline-date">SET 2023</span>
+                                    <div class="timeline-content">
+                                        <strong>La Lumia</strong> (Via Isidoro La Lumia, 30), il primo locale in centro città, tra il Politeama e Via Libertà, diventato subito un punto di ritrovo per pranzo e cena.
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <span class="timeline-date">FEB 2024</span>
+                                    <div class="timeline-content">
+                                        <strong>Sperlinga</strong> (Via Boris Giuliano, 21), il secondo punto vendita, aperto col tema <em>Cicciopoli</em> nella zona residenziale tra Notarbartolo, Sciuti e Piazza Unità d'Italia.
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <span class="timeline-date">FEB 2025</span>
+                                    <div class="timeline-content">
+                                        <strong>Stadio</strong> (Viale del Fante, 50), la sede per San Lorenzo, Resuttana, Viale Strasburgo e l'area della Favorita.
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <span class="timeline-date">LUG 2025</span>
+                                    <div class="timeline-content">
+                                        <strong>Mondello</strong> (Viale dell'Olimpo, 7), il locale della borgata marinara aperto a orario continuato per accogliere chi torna da una giornata di mare a Mondello e Valdesi.
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <span class="timeline-date">LUG 2025</span>
+                                    <div class="timeline-content">
+                                        <strong>Burger Truck</strong>, la cucina su ruote per portare i nostri burger in giro per festival di street food, concerti ed eventi privati in tutta la Sicilia.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Capitolo 5 -->
+                        <div class="story-card">
+                            <span class="story-date">Marzo 2026</span>
+                            <h3>La sfida del Senza Glutine in Via Principe di Paternò 15</h3>
+                            <p>Molti locali si limitano a scaldare un panino confezionato senza glutine sulla stessa piastra degli altri, rischiando la contaminazione da farine per chi è celiaco. Per noi non era il modo giusto di fare le cose.</p>
+                            <p>A <strong>marzo del 2026</strong> abbiamo inaugurato un <strong>laboratorio e locale interamente dedicato al 100% Gluten Free in Via Principe di Paternò, 15</strong>: piastre esclusive, friggitrici separate, bun artigianali senza glutine certificati e zero rischi di contaminazione. La massima tranquillità per i celiaci, con lo stesso identico sapore di sempre.</p>
+                        </div>
+
+                        <!-- Capitolo 6 -->
+                        <div class="story-card">
+                            <span class="story-date">Territorio</span>
+                            <h3>Gli ingredienti della nostra terra</h3>
+                            <p>Negli anni il menù è cresciuto accostando lo street food americano alle materie prime della nostra isola: dal <strong>Crispy Goat</strong> con pollo pastellato e fritto al momento, al <strong>Talè</strong> con taleggio e pere caramellate, al <strong>Tuma</strong> con la tuma siciliana al miele, fino al <strong>Brie</strong> e al <strong>Pancetta</strong> con scamorza affumicata e confettura di fichi.</p>
+                        </div>
+
+                        <!-- Capitolo 7 -->
+                        <div class="story-card">
+                            <span class="story-date">Il Viaggio Continua</span>
+                            <h3>Il bello deve ancora venire</h3>
+                            <p>Dai motorini della dark kitchen nel 2021 alle sedi di oggi, il tempo è volato ma l'attenzione alle cose fatte per bene è rimasta la stessa della prima sera.</p>
+                            <p>Se sei nostro cliente da quando eravamo solo consegne a domicilio o se ci hai scoperti oggi: <strong>grazie di fare parte di questa storia.</strong></p>
+                            <p style="margin-top: 16px; margin-bottom: 0;">
+                                <a href="#menuModal" class="open-modal story-menu-cta" data-modal="menuModal">→ Scopri il nostro menù e le sedi</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
         <!-- Location Selector Modal/Page -->
         <div id="menuModal" class="modal">
             <div class="modal-content">
@@ -503,13 +815,13 @@
                     </svg>
                     <span>Torna Indietro</span>
                 </span>
-                <h1 style="margin-top: 20px; margin-bottom: 15px;">SELEZIONA IL LOCALE</h1>
+                <h2 class="modal-title" style="margin-top: 20px; margin-bottom: 15px;">SELEZIONA IL LOCALE</h2>
 
                 <div class="location-grid">
                     <!-- Lumia -->
                     <div class="location">
                         <div class="loc-header">
-                            <h2>La Lumia</h2>
+                            <h3>La Lumia</h3>
                             <span class="loc-badge">Aperto</span>
                         </div>
                         <div class="loc-address">
@@ -539,7 +851,7 @@
                     <!-- Mondello -->
                     <div class="location">
                         <div class="loc-header">
-                            <h2>Mondello</h2>
+                            <h3>Mondello</h3>
                             <span class="loc-badge">Aperto</span>
                         </div>
                         <div class="loc-address">
@@ -568,7 +880,7 @@
                     <!-- Stadio -->
                     <div class="location">
                         <div class="loc-header">
-                            <h2>Stadio</h2>
+                            <h3>Stadio</h3>
                             <span class="loc-badge">Aperto</span>
                         </div>
                         <div class="loc-address">
@@ -598,7 +910,7 @@
                     <!-- Terrasini (Nascosto temporaneamente perché non ancora aperto) -->
                     <div class="location" style="display: none;">
                         <div class="loc-header">
-                            <h2>Terrasini</h2>
+                            <h3>Terrasini</h3>
                         </div>
                         <div class="box-orari">
                             <div class="day">
@@ -617,7 +929,7 @@
                     <!-- Sperlinga -->
                     <div class="location">
                         <div class="loc-header">
-                            <h2>Sperlinga</h2>
+                            <h3>Sperlinga</h3>
                             <span class="loc-badge">Aperto</span>
                         </div>
                         <div class="loc-address">
@@ -646,7 +958,7 @@
                     <!-- Gluten Free -->
                     <div class="location">
                         <div class="loc-header">
-                            <h2>Gluten Free</h2>
+                            <h3>Gluten Free</h3>
                             <span class="loc-badge">Aperto</span>
                         </div>
                         <div class="loc-address">
@@ -675,7 +987,7 @@
                     <!-- Burger Truck -->
                     <div class="location">
                         <div class="loc-header">
-                            <h2>Burger Truck</h2>
+                            <h3>Burger Truck</h3>
                         </div>
                         <div class="loc-address" style="margin: 6px 0 10px 0;">
                             <svg viewBox="0 0 448 512" width="14" height="14" fill="#e1306c" style="flex-shrink:0;">
@@ -730,13 +1042,236 @@
                         <p class="spiegazione-text">BURGER + PATATINE + STARTER*** + BIBITA</p>
                         <p class="spiegazione-text-bold">+3,50€ al costo del panino</p>
                     </div>
-                    <div id="generatedContentLocale"></div>
+                    <div id="generatedContentLocale">
+                        <!-- Pre-rendered Static Menu for Search Engine Crawlers & Fast Initial Render -->
+                        <h2 class="collapsible" id="ciccios-burger">CICCIO'S BURGER</h2>
+                        <div class="menu-grid content">
+                            <div class="product">
+                                <img src="./img/menu/ciccios/crispygoat.webp" alt="Crispy Goat Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">CRISPY GOAT</h3>
+                                    <p class="product-description">bun, burger di pollo pastellato e fritto*, cheddar, bacon, lattuga, salsa Ciccio's</p>
+                                    <p class="product-price">9,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/ciccios/brie.webp" alt="Brie Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">BRIE</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, songino, brie, cipolla caramellata, bacon, salsa Ciccio's</p>
+                                    <p class="product-price">9,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/ciccios/tale.webp" alt="Talè Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">TALÈ</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's</p>
+                                    <p class="product-price">9,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/ciccios/tuma.webp" alt="Tuma Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">TUMA</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, songino, cipolla caramellata, tuma caramellata al miele, cipolla croccante, salsa Ciccio's</p>
+                                    <p class="product-price">9,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/ciccios/pancetta.webp" alt="Pancetta Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">PANCETTA</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, songino, scamorza, pancetta dolce, cipolla caramellata, confettura di fichi, cipolla croccante, salsa Ciccio's</p>
+                                    <p class="product-price">9,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/ciccios/doubletriple.webp" alt="Double Triple Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">DOUBLE TRIPLE</h3>
+                                    <p class="product-description">bun, doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's</p>
+                                    <p class="product-price">11,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/ciccios/supercrispy.webp" alt="Super Crispy Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">SUPER CRISPY</h3>
+                                    <p class="product-description">bun, burger di pollo fritto con panatura super croccante*, lattuga, pomodoro, maionese</p>
+                                    <p class="product-price">9,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/ciccios/oldschool.webp" alt="Old School Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">OLD SCHOOL</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, doppio cheddar, cipolla caramellata, doppio bacon, salsa white Ciccio's, salsa bbq</p>
+                                    <p class="product-price">9,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/ciccios/BIG.webp" alt="Big Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">BIG</h3>
+                                    <p class="product-description">bun, doppio burger di manzo 170g, pomodoro, lattuga, cheddar, scamorza, bacon, salsa Ciccio's</p>
+                                    <p class="product-price">11,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/ciccios/zola.webp" alt="Zola Burger" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">ZOLA</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, songino, gorgonzola, pere caramellate, noci</p>
+                                    <p class="product-price">9,90€</p>
+                                </div>
+                            </div>
+                        </div>
 
-                    <h4 style="text-align: left; font-size: 1.4rem;">* Prodotto fresco, lavorato e abbattuto</h4>
-                    <h4 style="text-align: left; font-size: 1.4rem;">** Prodotto congelato</h4>
-                    <h4 style="text-align: left; font-size: 1.4rem;">*** Starters a scelta tra: nuggets, meatball,
-                        chicken pop corn, green nuggets(la variante green è solo per il menu Green)
-                    </h4>
+                        <h2 class="collapsible" id="classic-burger">CLASSIC BURGER</h2>
+                        <div class="menu-grid content">
+                            <div class="product">
+                                <img src="./img/menu/classic/hamburger.webp" alt="Hamburger Classic" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">HAMBURGER</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, salsa Ciccio's</p>
+                                    <p class="product-price">6,50€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/classic/cheeseburger.webp" alt="Cheeseburger Classic" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">CHEESEBURGER</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, cheddar, salsa Ciccio's</p>
+                                    <p class="product-price">7,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/classic/baconcheeseburger.webp" alt="Bacon Cheeseburger Classic" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">BACON CHEESEBURGER</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, cheddar, bacon, salsa Ciccio's</p>
+                                    <p class="product-price">8,90€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/classic/americanbaconcheese.webp" alt="American Bacon Cheese Classic" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">AMERICAN BACONCHEESE</h3>
+                                    <p class="product-description">bun, burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's</p>
+                                    <p class="product-price">8,90€</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="collapsible" id="starters">STARTERS & SFIZI</h2>
+                        <div class="menu-grid content">
+                            <div class="product">
+                                <img src="./img/menu/starters/fries.webp" alt="Fries Patatine" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">FRIES</h3>
+                                    <p class="product-description">patate con buccia**</p>
+                                    <p class="product-price">3,50€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/starters/baconcheesefries.webp" alt="Bacon Cheddar Fries" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">BACON CHEDDAR FRIES</h3>
+                                    <p class="product-description">patate con buccia**, crema cheddar home made, bacon croccante</p>
+                                    <p class="product-price">7,00€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/starters/nuggets.webp" alt="Nuggets Artigianali" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">NUGGETS</h3>
+                                    <p class="product-description">bocconcini di pollo tritato pastellati fatti a mano*</p>
+                                    <p class="product-price">da 2,70€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/starters/provolagoat.webp" alt="Provola Goat" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">PROVOLA GOAT</h3>
+                                    <p class="product-description">provola dolce con tripla pastellatura a mano*</p>
+                                    <p class="product-price">4,50€</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="collapsible" id="bevande">BEVANDE</h2>
+                        <div class="menu-grid content">
+                            <div class="product">
+                                <img src="./img/menu/bibite/cocanormale.webp" alt="Coca Cola" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">COCA COLA 33CL</h3>
+                                    <p class="product-price">2,50€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/bibite/cocazero.webp" alt="Coca Cola Zero" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">COCA COLA ZERO 33CL</h3>
+                                    <p class="product-price">2,50€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/bibite/fanta.webp" alt="Fanta" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">FANTA 33CL</h3>
+                                    <p class="product-price">2,50€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/bibite/cereslager.webp" alt="Ceres Lager" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">CERES LAGER 33CL</h3>
+                                    <p class="product-price">3,50€</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="collapsible" id="salse">SALSE HOME-MADE</h2>
+                        <div class="menu-grid content">
+                            <div class="product">
+                                <img src="./img/menu/salse/salsaciccios.webp" alt="Salsa Ciccio's" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">SALSA CICCIO'S</h3>
+                                    <p class="product-description">salsa speciale della casa</p>
+                                    <p class="product-price">0,40€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/salse/maioneseciccios.webp" alt="Maionese Ciccio's" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">MAIONESE CICCIO'S</h3>
+                                    <p class="product-description">maionese fresca preparata nei nostri laboratori</p>
+                                    <p class="product-price">0,40€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/salse/salsaCheddarBacon.webp" alt="Salsa Cheddar e Bacon" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">SALSA CHEDDAR E BACON</h3>
+                                    <p class="product-description">salsa cheddar calda e bacon croccante</p>
+                                    <p class="product-price">7,00€</p>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="./img/menu/salse/bbqciccios.webp" alt="Salsa BBQ" loading="lazy">
+                                <div class="product-info">
+                                    <h3 class="product-title">BBQ CICCIO'S</h3>
+                                    <p class="product-description">salsa barbecue affumicata</p>
+                                    <p class="product-price">0,40€</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="menu-note" style="text-align: left; font-size: 1.1rem; color: #aaa; margin: 4px 0;">* Prodotto fresco, lavorato e abbattuto</p>
+                    <p class="menu-note" style="text-align: left; font-size: 1.1rem; color: #aaa; margin: 4px 0;">** Prodotto congelato</p>
+                    <p class="menu-note" style="text-align: left; font-size: 1.1rem; color: #aaa; margin: 4px 0;">*** Starters a scelta tra: nuggets, meatball, chicken pop corn, green nuggets (la variante green è solo per il menu Green)</p>
                     <div id="menuDisclaimerBanner" style="margin-top: 20px; padding: 12px 15px; background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 8px; font-size: 0.9rem; color: #e0e0e0; text-align: left; line-height: 1.4;" data-i18n="disclaimerTranslation">
                         ⚠️ Le traduzioni in inglese sono a scopo informativo. Per informazioni ufficiali e per allergie o intolleranze alimentari, si prega di fare sempre riferimento al personale di cassa.
                     </div>
@@ -1066,20 +1601,20 @@
                     continuare. </div>
 
                 <div id="merch-active-content">
-                    <h1 class="merch-title">Prenota il tuo Merch</h1>
+                    <h2 class="merch-title">Prenota il tuo Merch</h2>
 
                     <!-- Prodotti -->
                     <div id="merch-products" class="merch-grid"></div>
 
                     <!-- Carrello -->
                     <div class="merch-card">
-                        <h2 class="merch-subtitle">Il tuo carrello</h2>
+                        <h3 class="merch-subtitle">Il tuo carrello</h3>
                         <div id="merch-cart-items"></div>
                     </div>
 
                     <!-- Dati utente -->
                     <div class="merch-card" style="margin-top: 3rem;">
-                        <h2 class="merch-subtitle">Dati per la prenotazione</h2>
+                        <h3 class="merch-subtitle">Dati per la prenotazione</h3>
                         <form onsubmit="handleSubmit(event)">
                             <div class="merch-form-grid">
                                 <input type="text" placeholder="Nome" class="merch-input" required>
@@ -1151,7 +1686,7 @@
                 
                 <!-- Wrapper per il form di feedback vero e proprio -->
                 <div id="feedbackFormWrapper" style="display: none;">
-                    <h1 style="margin-top: 20px; margin-bottom: 5px; font-size: clamp(2.2rem, 6vw, 3.5rem); white-space: nowrap; color: var(--primary-color); text-align: center;">Lascia un Feedback</h1>
+                    <h2 style="margin-top: 20px; margin-bottom: 5px; font-size: clamp(2.2rem, 6vw, 3.5rem); white-space: nowrap; color: var(--primary-color); text-align: center;">Lascia un Feedback</h2>
                     <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 1.2rem; line-height: 1.5; text-align: center;">Grazie per aver mangiato da Ciccio's, aiutaci a migliorare scrivendo come è andata la tua esperienza.</p>
                     <div id="loyaltyBanner" class="loyalty-banner"></div>
                     
