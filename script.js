@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
 
-                const categoryTitle = document.createElement('h1');
+                const categoryTitle = document.createElement('h2');
                 categoryTitle.classList.add('collapsible');
 
                 const safeId = categoryName.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', function () {
             scrollContainer._observer.disconnect();
         }
 
-        const headers = scrollContainer.querySelectorAll('h1.collapsible');
+        const headers = scrollContainer.querySelectorAll('.collapsible');
         if (!headers.length) return;
 
         const observer = new IntersectionObserver((entries) => {
