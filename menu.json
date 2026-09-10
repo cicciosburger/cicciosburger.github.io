@@ -207,6 +207,15 @@
       ]
     },
     {
+      "title": "GOMU GOMU",
+      "price": 9.9,
+      "ingredients": "bun, coscia di pollo, peperoncino, lattuga, maionese giapponese",
+      "thumb": "./img/menu/ciccios/gomugomu.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
       "title": "TALÈ",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, songino, taleggio, guanciale croccante, pere caramellate, nocciole, salsa Ciccio's",
