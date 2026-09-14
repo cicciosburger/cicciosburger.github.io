@@ -125,6 +125,13 @@ const TRANSLATIONS = {
         "taleggio": "taleggio cheese",
         "tiramisù": "tiramisu",
         "triplo cheddar": "triple cheddar cheese",
+        "burger di manzo": "beef patty",
+        "lonzardo": "lonzardo (cured pork loin with lard)",
+        "scaglie di pecorino primitivo": "primitivo pecorino cheese shavings",
+        "lonzardo scaglie di pecorino primitivo": "lonzardo (cured pork loin) with primitivo pecorino cheese shavings",
+        "salame calabro piccante": "spicy Calabrian salami",
+        "stracciatella": "stracciatella cheese",
+        "maionese alla 'nduja": "'nduja mayonnaise",
         "tuma caramellata al miele": "honey caramelized tuma cheese"
     },
 

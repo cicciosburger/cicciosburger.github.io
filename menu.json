@@ -180,6 +180,32 @@
   ],
   "CICCIO'S BURGER": [
     {
+      "title": "LONZARDO",
+      "price": 9.9,
+      "ingredients": "bun, burger di manzo, lonzardo scaglie di pecorino primitivo, confettura di fichi, cipolla caramellata, songino, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/lonzardo.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "TERRASINI",
+        "SPERLINGA",
+        "MONDELLO"
+      ]
+    },
+    {
+      "title": "CALABRESE 2.0",
+      "price": 9.9,
+      "ingredients": "bun, burger di manzo, salame calabro piccante, stracciatella, maionese alla 'nduja, songino",
+      "thumb": "./img/menu/ciccios/calabrese2.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "TERRASINI",
+        "SPERLINGA",
+        "MONDELLO"
+      ]
+    },
+    {
       "title": "CRISPY GOAT",
       "price": 9.9,
       "ingredients": "bun, burger di pollo pastellato e fritto*, cheddar, bacon, lattuga, salsa Ciccio's",
@@ -558,6 +584,32 @@
       "price": 8.9,
       "ingredients": "Hamburger / Cheeseburger / Mini Super Crispy + Patatine + 2 Nuggets + Acqua 25cl / Coca Cola 15cl",
       "thumb": "./img/menu/classic/happc-1.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "TERRASINI",
+        "SPERLINGA",
+        "MONDELLO"
+      ]
+    },
+    {
+      "title": "LONZARDO MENU",
+      "price": 14.9,
+      "ingredients": null,
+      "thumb": "./img/menu/ciccios/lonzardo.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "TERRASINI",
+        "SPERLINGA",
+        "MONDELLO"
+      ]
+    },
+    {
+      "title": "CALABRESE 2.0 MENU",
+      "price": 14.9,
+      "ingredients": null,
+      "thumb": "./img/menu/ciccios/calabrese2.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
