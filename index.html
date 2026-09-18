@@ -409,12 +409,20 @@
                 "addressRegion": "PA",
                 "addressCountry": "IT"
               },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "12:00",
-                "closes": "00:00"
-              }
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                  "opens": "12:00",
+                  "closes": "15:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                  "opens": "18:30",
+                  "closes": "23:00"
+                }
+              ]
             },
             {
               "@type": "Restaurant",
@@ -439,20 +447,12 @@
                 "addressRegion": "PA",
                 "addressCountry": "IT"
               },
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                  "opens": "12:00",
-                  "closes": "15:00"
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                  "opens": "18:30",
-                  "closes": "23:00"
-                }
-              ]
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "12:00",
+                "closes": "23:00"
+              }
             },
             {
               "@type": "Restaurant",
@@ -532,7 +532,7 @@
               "name": "Dove mangiare un burger o street food a Mondello?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Ciccio's Burger a Mondello si trova in Viale dell'Olimpo, 7. È il locale ideale per pranzo, cena o street food a Mondello con orario continuato dalle 12:00 alle 00:00."
+                "text": "Ciccio's Burger a Mondello si trova in Viale dell'Olimpo, 7. È il locale ideale per pranzo, cena o street food a Mondello con orario 12:00-15:00 e 18:30-23:00."
               }
             },
             {
@@ -763,7 +763,7 @@
                                 <div class="timeline-step">
                                     <span class="timeline-date">LUG 2025</span>
                                     <div class="timeline-content">
-                                        <strong>Mondello</strong> (Viale dell'Olimpo, 7), il locale della borgata marinara aperto a orario continuato per accogliere chi torna da una giornata di mare a Mondello e Valdesi.
+                                        <strong>Mondello</strong> (Viale dell'Olimpo, 7), il locale della borgata marinara per accogliere chi torna da una giornata di mare a Mondello e Valdesi.
                                     </div>
                                 </div>
                                 <div class="timeline-step">
@@ -864,7 +864,8 @@
                             <div class="day">
                                 <span class="label">Lunedì - Domenica</span>
                                 <div class="time-bar">
-                                    <div class="slot morning">12:00 - 00:00</div>
+                                    <div class="slot morning">12:00 - 15:00</div>
+                                    <div class="slot evening">18:30 - 23:00</div>
                                 </div>
                             </div>
                         </div>
@@ -893,8 +894,7 @@
                             <div class="day">
                                 <span class="label">Lunedì - Domenica</span>
                                 <div class="time-bar">
-                                    <div class="slot morning">12:00 - 15:00</div>
-                                    <div class="slot evening">18:30 - 23:00</div>
+                                    <div class="slot morning">12:00 - 23:00</div>
                                 </div>
                             </div>
                         </div>
