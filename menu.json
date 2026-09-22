@@ -184,26 +184,14 @@
       "price": 9.9,
       "ingredients": "bun, burger di manzo, lonzardo scaglie di pecorino primintio, confettura di fichi, cipolla caramellata, songino, salsa Ciccio's",
       "thumb": "./img/menu/ciccios/lonzardo.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "TERRASINI",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
+      "available_in": []
     },
     {
       "title": "CALABRESE 2.0",
       "price": 9.9,
       "ingredients": "bun, burger di manzo, salame calabro piccante, stracciatella, maionese alla 'nduja, songino",
       "thumb": "./img/menu/ciccios/calabrese2.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "TERRASINI",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
+      "available_in": []
     },
     {
       "title": "CRISPY GOAT",
@@ -285,13 +273,7 @@
       "price": 9.9,
       "ingredients": "pane, cipolla caramellata con aceto balsamico, porchetta, salsa chimichurri, maionese al pepe nero",
       "thumb": "./img/menu/ciccios/porchetta2.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "TERRASINI",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
+      "available_in": []
     },
     {
       "title": "DOUBLE TRIPLE",
@@ -597,26 +579,14 @@
       "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/lonzardo.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "TERRASINI",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
+      "available_in": []
     },
     {
       "title": "CALABRESE 2.0 MENU",
       "price": 14.9,
       "ingredients": null,
       "thumb": "./img/menu/ciccios/calabrese2.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "TERRASINI",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
+      "available_in": []
     },
     {
       "title": "BIG MENU",
@@ -636,13 +606,7 @@
       "price": 14.9,
       "ingredients": "pane, cipolla caramellata con aceto balsamico, porchetta, salsa chimichurri, maionese al pepe nero",
       "thumb": "./img/menu/ciccios/porchetta2.webp",
-      "available_in": [
-        "LUMIA",
-        "STADIO",
-        "TERRASINI",
-        "SPERLINGA",
-        "MONDELLO"
-      ]
+      "available_in": []
     },
     {
       "title": "DOUBLE TRIPLE MENU",
