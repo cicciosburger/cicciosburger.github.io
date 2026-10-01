@@ -24,7 +24,6 @@ function updateStoreStatusAndOrder() {
 
         const storeSchedules = {
             'LUMIA': [{ start: 12 * 60, end: 15 * 60 }, { start: 18 * 60 + 30, end: 23 * 60 }],
-            'MONDELLO': [{ start: 12 * 60, end: 15 * 60 }, { start: 18 * 60 + 30, end: 23 * 60 }],
             'STADIO': [{ start: 12 * 60, end: 23 * 60 }],
             'SPERLINGA': [{ start: 18 * 60 + 30, end: 23 * 60 }],
             'GLUTENFREE': [{ start: 18 * 60 + 30, end: 23 * 60 }]
