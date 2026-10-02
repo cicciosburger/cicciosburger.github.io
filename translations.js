@@ -7,6 +7,8 @@ const TRANSLATIONS = {
         "STARTERS": "STARTERS",
         "CICCIO'S BURGER": "CICCIO'S BURGERS",
         "CLASSIC": "CLASSICS",
+        "BURGERS": "BURGERS",
+        "Burgers": "BURGERS",
         "SPECIAL": "SPECIALS",
         "SWEETS": "DESSERTS",
         "SALSE": "SAUCES",
