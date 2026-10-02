@@ -225,9 +225,7 @@
       "price": 9.9,
       "ingredients": "bun, coscia di pollo, peperoncino, lattuga, maionese giapponese",
       "thumb": "./img/menu/ciccios/gomugomu.webp",
-      "available_in": [
-        "FOODTRUCK"
-      ]
+      "available_in": []
     },
     {
       "title": "TALÈ",
@@ -552,7 +550,7 @@
   "BURGERS": [
     {
       "title": "HAMBURGER",
-      "price": 6.5,
+      "price": 10.0,
       "ingredients": "bun, burger di manzo 170g, salsa Ciccio's",
       "thumb": "./img/menu/classic/hamburger.webp",
       "available_in": [
@@ -561,7 +559,7 @@
     },
     {
       "title": "CHEESEBURGER",
-      "price": 7.9,
+      "price": 10.0,
       "ingredients": "bun, burger di manzo 170g, cheddar, salsa Ciccio's",
       "thumb": "./img/menu/classic/cheeseburger.webp",
       "available_in": [
@@ -570,7 +568,7 @@
     },
     {
       "title": "BACON CHEESEBURGER",
-      "price": 8.9,
+      "price": 10.0,
       "ingredients": "bun, burger di manzo 170g, cheddar, bacon, salsa Ciccio's",
       "thumb": "./img/menu/classic/baconcheeseburger.webp",
       "available_in": [
@@ -579,7 +577,7 @@
     },
     {
       "title": "AMERICAN BACONCHEESE",
-      "price": 8.9,
+      "price": 10.0,
       "ingredients": "bun, burger di manzo 170g, cheddar, bacon, pomodoro, lattuga, salsa Ciccio's",
       "thumb": "./img/menu/classic/americanbaconcheese.webp",
       "available_in": [
