@@ -274,6 +274,15 @@
       "available_in": []
     },
     {
+      "title": "YELLOW 2.0",
+      "price": 9.9,
+      "ingredients": "bun, tuma caramellata con confettura di pesca gialla, composta di cipolla rossa, songino, tuma, cipolla caramellata, cipolla croccante, salsa Ciccio's",
+      "thumb": "./img/menu/ciccios/tuma.webp",
+      "available_in": [
+        "FOODTRUCK"
+      ]
+    },
+    {
       "title": "DOUBLE TRIPLE",
       "price": 11.9,
       "ingredients": "bun, doppio burger di manzo 170g, triplo cheddar, doppio bacon, salsa Ciccio's",

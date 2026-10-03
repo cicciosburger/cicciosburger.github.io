@@ -134,7 +134,10 @@ const TRANSLATIONS = {
         "salame calabro piccante": "spicy Calabrian salami",
         "stracciatella": "stracciatella cheese",
         "maionese alla 'nduja": "'nduja mayonnaise",
-        "tuma caramellata al miele": "honey caramelized tuma cheese"
+        "tuma caramellata al miele": "honey caramelized tuma cheese",
+        "tuma caramellata con confettura di pesca gialla": "caramelized tuma cheese with yellow peach jam",
+        "composta di cipolla rossa": "red onion compote",
+        "tuma": "tuma cheese"
     },
 
     // Allergen Labels (Italian -> English)
