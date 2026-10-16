@@ -228,9 +228,13 @@
     {
       "title": "GOMU GOMU",
       "price": 9.9,
-      "ingredients": "bun, coscia di pollo, peperoncino, lattuga, maionese giapponese",
+      "ingredients": "bun, coscia di pollo marinata e fritta con panatura al panko, salsa special jalapeno, lattuga",
       "thumb": "./img/menu/ciccios/gomugomu.webp",
-      "available_in": []
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA"
+      ]
     },
     {
       "title": "TALÈ",
@@ -809,6 +813,17 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO"
+      ]
+    },
+    {
+      "title": "GOMU GOMU MENU",
+      "price": 14.9,
+      "ingredients": null,
+      "thumb": "./img/menu/ciccios/gomugomu.webp",
+      "available_in": [
+        "LUMIA",
+        "STADIO",
+        "SPERLINGA"
       ]
     },
     {
