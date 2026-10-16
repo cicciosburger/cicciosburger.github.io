@@ -177,7 +177,7 @@
       "title": "CASARO",
       "price": 9.9,
       "ingredients": "bun, burger di manzo 170g, songino, provola, cipolla caramellata, salsa white Ciccio's, capuliato di pomodoro ciliegino",
-      "thumb": "./img/logo.webp",
+      "thumb": "./img/menu/ciccios/casaro.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
@@ -640,7 +640,7 @@
       "title": "CASARO MENU",
       "price": 14.9,
       "ingredients": null,
-      "thumb": "./img/logo.webp",
+      "thumb": "./img/menu/ciccios/casaro.webp",
       "available_in": [
         "LUMIA",
         "STADIO",
