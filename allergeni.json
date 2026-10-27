@@ -10,7 +10,7 @@
     "polpettine di pollo fatte a mano con speciale panatura super croccante* sg": "Latte",
     "polpettine di carne fatte a mano con speciale panatura al formaggio*": "Glutine, Latte",
     "polpettine di carne fatte a mano con speciale panatura al formaggio* sg": "Latte",
-    "provola": "Chiedi in cassa",
+    "provola": "Latte",
     "provola dolce con tripla pastellatura a mano*": "Glutine, Latte",
     "provola dolce con tripla pastellatura a mano* sg": "Latte",
     "nuggets vegetali**": "Uova, Soia, Latte, Sedano, Senape, Glutine",
@@ -54,7 +54,7 @@
     "mortadella": "Frutta a guscio",
     "lattuga": null,
     "pomodoro": null,
-    "capuliato di pomodoro ciliegino": "Chiedi in cassa",
+    "capuliato di pomodoro ciliegino": "Solfiti, può contenere tracce di: Pesce, Frutta a guscio, Molluschi, Sesamo, Sedano, Senape, Glutine",
     "cipolla": null,
     "cipolla caramellata": null,
     "cipolla croccante": null,
@@ -112,6 +112,6 @@
     "salame calabro piccante": null,
     "stracciatella": "Latte",
     "maionese alla 'nduja": "Senape, Uova, può contenere tracce di Arachidi e derivati e Pesce",
-    "coscia di pollo marinata e fritta con panatura al panko": "Chiedi in cassa",
-    "salsa special jalapeno": "Chiedi in cassa"
+    "coscia di pollo marinata e fritta con panatura al panko": "Frumento, Soia, Latte, Uova, Frutta a guscio, Sesamo",
+    "salsa special jalapeno": "Sesamo, Uova, Glutine, Soia, Frumento, Orzo, Arachidi, può contenere tracce di: Frutta a guscio, Pesce, Latte, Senape"
 }
