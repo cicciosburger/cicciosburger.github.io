@@ -105,6 +105,7 @@ const TRANSLATIONS = {
         "patatine waffle": "waffle fries",
         "peperoncino": "chili pepper",
         "pere caramellate": "caramelized pears",
+        "arance caramellate": "caramelized oranges",
         "polpettine di carne fatte a mano con speciale panatura al formaggio*": "handmade meat bites with cheese breading*",
         "polpettine di carne fatte a mano con speciale panatura al formaggio* sg": "handmade meat bites with cheese breading* (GF)",
         "polpettine di pollo fatte a mano con speciale panatura super croccante*": "handmade chicken bites with super crispy breading*",

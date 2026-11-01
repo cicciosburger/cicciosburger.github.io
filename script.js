@@ -579,11 +579,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const allergenSpan = document.createElement('span');
             allergenSpan.className = "allergens";
 
-            const found = Object.entries(product.allergeniIngredientiMap || {}).find(([key]) =>
-                key.toLowerCase().includes(name.toLowerCase()) || name.toLowerCase().includes(key.toLowerCase())
-            );
-
-            let rawAllergen = found ? found[1] : null;
+            const allergenMap = product.allergeniIngredientiMap || {};
+            const matchKey = allergenMap.hasOwnProperty(name)
+                ? name
+                : Object.keys(allergenMap).find(k => k.trim().toLowerCase() === name.trim().toLowerCase());
+            let rawAllergen = matchKey !== undefined ? allergenMap[matchKey] : null;
             let allergenDisplay = translateAllergenText(rawAllergen);
 
             allergenSpan.textContent = allergenDisplay;

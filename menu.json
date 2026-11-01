@@ -221,8 +221,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -288,7 +287,6 @@
       "ingredients": "bun, tuma caramellata con confettura di pesca gialla, composta di cipolla rossa, songino, tuma, cipolla caramellata, cipolla croccante, salsa Ciccio's",
       "thumb": "./img/menu/ciccios/tuma.webp",
       "available_in": [
-        "FOODTRUCK"
       ]
     },
     {
@@ -354,8 +352,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
@@ -468,6 +465,15 @@
       "thumb": "./img/menu/ciccios/zola.webp",
       "available_in": [
         "GLUTENFREE"
+      ]
+    },
+    {
+      "title": "FAVORITA",
+      "price": 9.9,
+      "ingredients": "bun, burger di manzo 170g, salsa white Ciccio's, songino, scamorza, arance caramellate, guanciale croccante, cipolla croccante",
+      "thumb": "./img/logocleanbigsmaller.svg",
+      "available_in": [
+        "FOODTRUCK"
       ]
     }
   ],
@@ -891,7 +897,8 @@
         "TERRASINI",
         "SPERLINGA",
         "GLUTENFREE",
-        "MONDELLO"
+        "MONDELLO",
+        "FOODTRUCK"
       ]
     },
     {
@@ -905,8 +912,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -1004,8 +1010,7 @@
         "TERRASINI",
         "SPERLINGA",
         "MONDELLO",
-        "GLUTENFREE",
-        "FOODTRUCK"
+        "GLUTENFREE"
       ]
     },
     {
@@ -1073,8 +1078,7 @@
         "STADIO",
         "TERRASINI",
         "SPERLINGA",
-        "MONDELLO",
-        "FOODTRUCK"
+        "MONDELLO"
       ]
     },
     {
